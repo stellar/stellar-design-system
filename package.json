@@ -22,9 +22,9 @@
     ]
   },
   "scripts": {
-    "prepare": "yarn build ; yarn build:commonjs",
-    "build": "tsc -p tsconfig.json",
-    "build:commonjs": "webpack --mode production",
+    "build": "webpack --mode production",
+    "build:tsc": "tsc -p tsconfig.json",
+    "prepare": "yarn build; yarn build:tsc",
     "install-if-package-changed": "git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD | grep --quiet yarn.lock && yarn install || exit 0"
   },
   "peerDependencies": {},
