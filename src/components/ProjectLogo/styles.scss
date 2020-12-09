@@ -1,0 +1,34 @@
+.ProjectLogo {
+  display: flex;
+  align-items: center;
+
+  a {
+    display: block;
+    overflow: hidden;
+    height: 1.5rem;
+    width: 1.9rem;
+    margin-right: 0.75rem;
+
+    // TODO: make this dynamic
+    @media (min-width: 600px) {
+      width: 6rem;
+    }
+
+    svg {
+      color: var(--color-text);
+      height: 100%;
+      width: 6rem;
+    }
+  }
+
+  .ProjectLogoTitle {
+    background-color: var(--color-accent);
+    color: var(--color-background-main);
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    font-weight: var(--font-weight-medium);
+    padding: 0.2rem 0.375rem 0.125rem;
+    border-radius: 0.125rem;
+  }
+}

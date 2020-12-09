@@ -1,0 +1,51 @@
+.Select {
+  width: 100%;
+
+  .SelectWrapper {
+    border: 1px solid var(--color-border-input);
+    border-radius: 0.125rem;
+    background-color: var(--color-background-input);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    &[data-disabled="true"] {
+      opacity: 0.5;
+    }
+
+    select {
+      height: 100%;
+      padding: 0.45rem 2rem 0.45rem 0.75rem;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      color: var(--color-text-input);
+      border-radius: 0.125rem;
+      border: none;
+      background-color: transparent;
+      flex: 1;
+      min-width: 0;
+      appearance: none;
+    }
+
+    .SelectIconWrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+      width: 1rem;
+      height: 1rem;
+      position: absolute;
+      top: 0.6875rem;
+      right: 0.6rem;
+      pointer-events: none;
+
+      svg {
+        width: 0.5rem;
+        height: 0.5rem;
+        fill: var(--color-text-input);
+      }
+    }
+  }
+}
