@@ -38,6 +38,10 @@
   // Z-index
   --z-index-tooltip: 20;
   --z-index-modal: 30;
+
+  // Loader
+  --loader-size: 1rem;
+  --loader-color: #666666;
 }
 
 html,
@@ -50,6 +54,7 @@ button {
 
 body {
   min-height: 100vh;
+  min-width: 320px;
   padding: 0;
   margin: 0;
   background-color: var(--color-background-main);

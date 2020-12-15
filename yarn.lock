@@ -2144,6 +2144,11 @@ concurrently@^5.3.0:
     tree-kill "^1.2.2"
     yargs "^13.3.0"
 
+configurable-date-input-polyfill@^2.7.2:
+  version "2.7.2"
+  resolved "https://registry.yarnpkg.com/configurable-date-input-polyfill/-/configurable-date-input-polyfill-2.7.2.tgz#8dad92a6dcb6650a7398d581f25acb1f32774468"
+  integrity sha512-s2kdlrogNwXxbLFOmDxVXbWTKkohF7AuC3LQSb+q6e8gUCd+p/cYsy/m/yTUs1y0Cy/691Yks1aDjFZavB/yhQ==
+
 confusing-browser-globals@^1.0.10:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/confusing-browser-globals/-/confusing-browser-globals-1.0.10.tgz#30d1e7f3d1b882b25ec4933d1d1adac353d20a59"

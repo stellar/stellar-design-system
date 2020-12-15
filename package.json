@@ -69,6 +69,7 @@
     "webpack-cli": "^4.2.0"
   },
   "dependencies": {
+    "configurable-date-input-polyfill": "^2.7.2",
     "normalize.css": "^8.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
