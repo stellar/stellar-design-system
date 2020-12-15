@@ -1,3 +1,4 @@
+export { ReactComponent as IconCalendar } from "./assets/icons/calendar.svg";
 export { ReactComponent as IconCheckmark } from "./assets/icons/checkmark.svg";
 export { ReactComponent as IconClose } from "./assets/icons/close.svg";
 export { ReactComponent as IconCopy } from "./assets/icons/copy.svg";

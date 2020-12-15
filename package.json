@@ -1,6 +1,6 @@
 {
   "name": "@stellar/design-system",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-alpha.1",
   "author": "Stellar Development Foundation <hello@stellar.org>",
   "description": "Components for Stellar Development Foundation’s design system",
   "license": "Apache-2.0",
@@ -69,6 +69,7 @@
     "webpack-cli": "^4.2.0"
   },
   "dependencies": {
+    "configurable-date-input-polyfill": "^2.7.2",
     "normalize.css": "^8.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
