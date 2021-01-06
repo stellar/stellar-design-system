@@ -1,0 +1,19 @@
+.InfoBlock {
+  border-radius: 0.25rem;
+  padding: 1.5rem;
+  color: var(--color-text);
+  width: 100%;
+  line-height: 1.5rem;
+
+  &.info {
+    background-color: var(--color-background-secondary);
+  }
+
+  &.error {
+    background-color: var(--color-error-off);
+  }
+
+  &.warning {
+    background-color: var(--color-warning-off);
+  }
+}
