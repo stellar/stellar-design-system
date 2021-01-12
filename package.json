@@ -22,6 +22,7 @@
     ]
   },
   "scripts": {
+    "start": "webpack --watch",
     "build": "webpack --mode production",
     "build:tsc": "tsc -p tsconfig.json",
     "prepare": "yarn build; yarn build:tsc",
