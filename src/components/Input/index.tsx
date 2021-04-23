@@ -19,13 +19,19 @@ export const Input = ({
 }: InputProps) => (
   <div className="Input">
     {label && <label htmlFor={id}>{label}</label>}
-    <div className="InputContainer">
-      <div className="InputWrapper" data-disabled={props.disabled}>
+
+    <div className="Input__container">
+      {/* TODO: create a helper for disabled as it will be used often */}
+      <div className={`Input__wrapper ${props.disabled ? "disabled" : ""}`}>
         <input id={id} aria-invalid={!!error} {...props} />
       </div>
-      {rightElement && <div className="InputRightElement">{rightElement}</div>}
+
+      {rightElement && (
+        <div className="Input__element--right">{rightElement}</div>
+      )}
     </div>
-    {error && <div className="InputError">{error}</div>}
-    {note && <div className="InputNote">{note}</div>}
+
+    {error && <div className="Input__note error">{error}</div>}
+    {note && <div className="Input__note">{note}</div>}
   </div>
 );

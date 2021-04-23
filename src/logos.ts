@@ -1,1 +1,1 @@
-export { ReactComponent as LogoStellar } from "./assets/logos/logo-stellar.svg";
+export { ReactComponent as LogoStellar } from "./assets/logos/stellar.svg";
