@@ -27,7 +27,7 @@
     "@babel/core": "^7.13.16",
     "@babel/preset-env": "^7.13.15",
     "@babel/preset-typescript": "^7.13.0",
-    "@stellar/eslint-config": "^1.0.5",
+    "@stellar/eslint-config": "^2.0.0",
     "@stellar/prettier-config": "^1.0.1",
     "@stellar/tsconfig": "^1.0.2",
     "@svgr/webpack": "^5.5.0",
