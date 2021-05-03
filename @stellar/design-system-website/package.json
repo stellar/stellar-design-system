@@ -1,0 +1,10 @@
+{
+  "name": "@stellar/design-system-website",
+  "version": "0.1.0",
+  "author": "Stellar Development Foundation <hello@stellar.org>",
+  "description": "Stellar Development Foundation’s design system website",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@stellar/design-system": "0.1.0-alpha.3"
+  }
+}
