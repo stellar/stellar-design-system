@@ -6,15 +6,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
-    "types": [
-      "node"
-    ]
+    "types": ["node"]
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "build",
-    "node_modules"
-  ]
+  "include": ["src"],
+  "exclude": ["build", "node_modules"]
 }

@@ -7,7 +7,7 @@ everything as consistent as possible.
 ## File structure overview
 
 ```javascript
-root/packages/sds
+root/@stellar/design-system
   |-- build/
   |-- src/
     |-- assets/

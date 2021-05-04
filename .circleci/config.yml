@@ -14,7 +14,7 @@ defaults: &defaults
     # documented at https://circleci.com/docs/2.0/circleci-images/
     # - image: circleci/mongo:3.4.4
 
-  working_directory: ~/repo/packages/sds
+  working_directory: ~/repo/@stellar/design-system
 
 jobs:
   build:
@@ -43,15 +43,13 @@ jobs:
       - run: yarn build
 
       - persist_to_workspace:
-          root: ~/repo
-          paths:
-            - packages/sds
+          root: ~/repo/@stellar/design-system
 
   deploy:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: ~/repo/packages/sds
+          at: ~/repo/@stellar/design-system
       - run:
           name: Authenticate with registry
           command:

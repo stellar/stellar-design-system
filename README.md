@@ -33,10 +33,10 @@ Available components can be found
 
 This repo has two parts to it:
 
-- [Stellar Design System repo](./packages/sds/) - everything for the design
-  system,
-- [Stellar Design System website repo](./packages/sds-web/) - website for the
-  design system.
+- [Stellar Design System repo](./@stellar/design-system/) - everything for the
+  design system,
+- [Stellar Design System website repo](./@stellar/design-system-website/) -
+  website for the design system.
 
 ### Scripts
 

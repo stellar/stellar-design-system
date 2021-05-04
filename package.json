@@ -1,7 +1,8 @@
 {
   "private": true,
   "workspaces": [
-    "packages/*"
+    "@stellar/design-system",
+    "@stellar/design-system-website"
   ],
   "lint-staged": {
     "src/**/*.ts?(x)": [
