@@ -17,7 +17,9 @@
     "watch:tsc": "tsc -w -p tsconfig.json",
     "watch:dev": "webpack --watch --mode development",
     "clean": "rimraf ./build",
-    "start": "run-p clean watch:tsc watch:dev"
+    "start": "run-p clean watch:tsc watch:dev",
+    "install-if-package-changed": "git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD | grep --quiet yarn.lock && yarn install || exit 0",
+    "pre-commit": "concurrently 'pretty-quick --staged' 'lint-staged' 'tsc --noEmit'"
   },
   "peerDependencies": {},
   "devDependencies": {

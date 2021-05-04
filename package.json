@@ -14,8 +14,6 @@
     "build": "yarn build:sds && yarn build:sds-web",
     "start:sds": "yarn workspace @stellar/design-system start",
     "start:sds-web": "yarn workspace @stellar/design-system-website start",
-    "install-if-package-changed": "git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD | grep --quiet yarn.lock && yarn install || exit 0",
-    "pre-commit": "concurrently 'pretty-quick --staged' 'lint-staged' 'tsc --noEmit'",
     "clean": "rm -rf node_modules && rm -rf */**/node_modules && rm -rf */**/build"
   }
 }

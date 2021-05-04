@@ -28,3 +28,28 @@ import { Button } from "@stellar/design-system";
 
 Available components can be found
 [here](https://github.com/stellar/stellar-design-system/tree/main/src/components).
+
+## Development
+
+This repo has two parts to it:
+
+- [Stellar Design System repo](./packages/sds/) - everything for the design
+  system,
+- [Stellar Design System website repo](./packages/sds-web/) - website for the
+  design system.
+
+### Scripts
+
+`build:sds` build Stellar Design System (`sds`) project only
+
+`build:sds-web` build Stellar Design System Website (`sds-web`) project only
+
+`build` build both projects
+
+`start:sds` start `sds` project for local development
+
+`start:sds-web` start `sds-web` project for local development
+
+**Note:** You need to run each `start` command in its own window or tab
+
+`clean` delete `node_modules` and `build` directories in the whole repo
