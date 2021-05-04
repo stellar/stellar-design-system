@@ -1,4 +1,4 @@
-# Guide
+# Stellar Design System Guide
 
 This document highlights the overall file structure of the Stellar Design System
 project, along with some guidelines of creating components and naming to keep
@@ -7,8 +7,8 @@ everything as consistent as possible.
 ## File structure overview
 
 ```javascript
-root
-  |-- dist/
+root/@stellar/design-system
+  |-- build/
   |-- src/
     |-- assets/
       |-- fonts/

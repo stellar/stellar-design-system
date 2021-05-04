@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "sourceRoot": "./src",
+    "baseUrl": "./src",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "declarationDir": "build",
+    "moduleResolution": "node",
+    "outDir": "build",
+    "jsx": "react-jsx"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "build", "src/entry.ts"]
+}
