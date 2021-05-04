@@ -1,8 +1,7 @@
 {
   "private": true,
   "workspaces": [
-    "@stellar/design-system",
-    "@stellar/design-system-website"
+    "packages/*"
   ],
   "lint-staged": {
     "src/**/*.ts?(x)": [
@@ -10,9 +9,12 @@
     ]
   },
   "scripts": {
-    "build:design-system": "yarn workspace @stellar/design-system build",
-    "build": "yarn build:design-system",
+    "build:sds": "yarn workspace @stellar/design-system build",
+    "build:sds-web": "yarn workspace @stellar/design-system-website build",
+    "build": "yarn build:sds && yarn build:sds-web",
+    "start:sds-web": "yarn workspace @stellar/design-system-website start",
     "install-if-package-changed": "git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD | grep --quiet yarn.lock && yarn install || exit 0",
-    "pre-commit": "concurrently 'pretty-quick --staged' 'lint-staged' 'tsc --noEmit'"
+    "pre-commit": "concurrently 'pretty-quick --staged' 'lint-staged' 'tsc --noEmit'",
+    "clean": "rm -rf node_modules && rm -rf */**/node_modules && rm -rf */**/build"
   }
 }

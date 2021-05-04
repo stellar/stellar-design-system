@@ -1,13 +1,11 @@
 {
   "extends": "@stellar/tsconfig",
   "compilerOptions": {
-    "declaration": true,
     "lib": ["es2015", "dom", "dom.iterable"],
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "target": "es5",
-    "skipLibCheck": true,
-    "jsx": "react"
-  },
+    "skipLibCheck": true
+  }
 }

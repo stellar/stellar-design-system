@@ -8,12 +8,12 @@
     "url": "git@github.com:stellar/stellar-design-system.git",
     "type": "git"
   },
-  "main": "dist/final.min.js",
-  "types": "dist/index.d.ts",
+  "main": "build/final.min.js",
+  "types": "build/index.d.ts",
   "scripts": {
-    "build": "rimraf ./dist && webpack --mode production",
+    "build:prod": "rimraf ./build && webpack --mode production",
     "build:tsc": "tsc -p tsconfig.json",
-    "prepare": "husky install; yarn build; yarn build:tsc"
+    "build": "yarn build:prod && yarn build:tsc"
   },
   "peerDependencies": {},
   "devDependencies": {

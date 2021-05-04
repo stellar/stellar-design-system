@@ -14,7 +14,7 @@ defaults: &defaults
     # documented at https://circleci.com/docs/2.0/circleci-images/
     # - image: circleci/mongo:3.4.4
 
-  working_directory: ~/repo
+  working_directory: ~/repo/@stellar/design-system
 
 jobs:
   build:
@@ -44,7 +44,8 @@ jobs:
 
       - persist_to_workspace:
           root: ~/repo
-          paths: .
+          paths:
+            - @stellar/design-system
 
   deploy:
     <<: *defaults

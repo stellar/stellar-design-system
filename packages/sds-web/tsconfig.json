@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "sourceRoot": "./src",
+    "baseUrl": "./src",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "types": ["node"],
+    "paths": {
+      "@stellar/design-system": ["../../packages/sds/build"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["build", "node_modules"]
+}
