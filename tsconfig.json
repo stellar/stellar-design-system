@@ -6,6 +6,6 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "target": "es5",
-    "skipLibCheck": true
+    "jsx": "react-jsx"
   }
 }
