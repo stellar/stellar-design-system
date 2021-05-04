@@ -45,7 +45,7 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths:
-            - /@stellar/design-system
+            - "@stellar/design-system"
 
   deploy:
     <<: *defaults
