@@ -6,11 +6,15 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
-    "types": ["node"],
-    "paths": {
-      "@stellar/design-system": ["../../packages/sds/build"]
-    }
+    "types": [
+      "node"
+    ]
   },
-  "include": ["src"],
-  "exclude": ["build", "node_modules"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "build",
+    "node_modules"
+  ]
 }
