@@ -43,7 +43,9 @@ jobs:
       - run: yarn build
 
       - persist_to_workspace:
-          root: ~/repo/@stellar/design-system
+          root: ~/repo
+          paths:
+            - /@stellar/design-system
 
   deploy:
     <<: *defaults
