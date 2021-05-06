@@ -1,0 +1,20 @@
+.inset {
+  padding: 2rem;
+
+  & > * {
+    margin-bottom: 2rem;
+  }
+}
+
+.item-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.item-wrapper {
+  background-color: var(--color-background-off);
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: center;
+}

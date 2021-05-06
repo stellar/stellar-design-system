@@ -75,6 +75,7 @@ body,
 input,
 textarea,
 button {
+  // TODO: make this variable
   font-size: 16px;
   font-weight: var(--font-weight-normal);
   font-family: var(--font-family-base);

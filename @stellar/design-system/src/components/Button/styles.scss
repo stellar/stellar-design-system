@@ -1,31 +1,33 @@
 .Button {
   font-size: 1rem;
-  line-height: 1.75rem;
-  padding: 0.5rem 1.5rem;
+  line-height: 1.56rem;
+  padding: 0.6rem 1.5rem;
   font-weight: var(--font-weight-medium);
-  color: var(--color-text-contrast);
-  background-color: var(--color-accent);
   border-radius: 0.125rem;
-  box-shadow: 0 0.5rem 1rem -0.5rem var(--color-shadow);
   border: 1px solid var(--color-accent);
   cursor: pointer;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  background-color: var(--Button-color-background);
+  color: var(--Button-color-text);
 
-  &:hover {
-    background-color: var(--color-accent-off);
+  &--primary {
+    --Button-color-background: var(--color-accent);
+    --Button-color-text: var(--color-text-contrast);
+
+    box-shadow: 0 0.5rem 1rem -0.5rem var(--color-shadow);
+
+    &:hover {
+      background-color: var(--color-accent-off);
+    }
   }
 
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 0.6;
-  }
+  &--secondary {
+    --Button-color-background: var(--color-background-main);
+    --Button-color-text: var(--color-accent);
 
-  &[data-variant="secondary"] {
-    color: var(--color-accent);
-    background-color: var(--color-background-main);
     box-shadow: none;
 
     &:hover {
@@ -33,16 +35,35 @@
     }
   }
 
-  .ButtonIcon {
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+
+    &:hover {
+      background-color: var(--Button-color-background);
+    }
+  }
+
+  &Icon {
     display: block;
     width: 1rem;
     height: 1rem;
     margin-bottom: 0.3rem;
-    margin-right: 0.5rem;
     position: relative;
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    // TODO: once flex gap has better support, we can remove these
+    &--left {
+      margin-right: 0.5rem;
+    }
+
+    &--right {
+      margin-left: 0.5rem;
+    }
 
     svg {
-      fill: var(--color-text-contrast);
+      fill: var(--Button-color-text);
       width: 100%;
       height: 100%;
       position: absolute;
