@@ -16,7 +16,7 @@ interface TextButtonProps
   iconLeft?: React.ReactNode;
   iconRight?: React.ReactNode;
   variant?: TextButtonVariant;
-  children: string;
+  children: string | React.ReactNode;
 }
 
 export const TextButton: React.FC<TextButtonProps> & TextButtonComponent = ({

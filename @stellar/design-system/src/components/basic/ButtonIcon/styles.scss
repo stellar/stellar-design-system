@@ -7,13 +7,15 @@
   flex-shrink: 0;
   flex-grow: 0;
 
+  --ButtonIcon-gap: 0.5rem;
+
   // TODO: once flex gap has better support, we can remove these
   &--left {
-    margin-right: 0.5rem;
+    margin-right: var(--ButtonIcon-gap);
   }
 
   &--right {
-    margin-left: 0.5rem;
+    margin-left: var(--ButtonIcon-gap);
   }
 
   svg {
