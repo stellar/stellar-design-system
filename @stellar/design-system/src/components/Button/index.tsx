@@ -1,4 +1,5 @@
 import React from "react";
+import { ButtonIcon } from "../basic/ButtonIcon";
 import "./styles.scss";
 
 enum ButtonVariant {
@@ -6,23 +7,9 @@ enum ButtonVariant {
   secondary = "secondary",
 }
 
-enum ButtonIconPosition {
-  left = "left",
-  right = "right",
-}
-
 interface ButtonComponent {
   variant: typeof ButtonVariant;
 }
-
-interface ButtonIconProps {
-  position: ButtonIconPosition;
-  children: React.ReactNode;
-}
-
-const ButtonIcon = ({ position, children }: ButtonIconProps) => (
-  <span className={`ButtonIcon ButtonIcon--${position}`}>{children}</span>
-);
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   iconLeft?: React.ReactNode;
@@ -40,11 +27,11 @@ export const Button: React.FC<ButtonProps> & ButtonComponent = ({
 }) => (
   <button className={`Button Button--${variant}`} {...props}>
     {iconLeft ? (
-      <ButtonIcon position={ButtonIconPosition.left}>{iconLeft}</ButtonIcon>
+      <ButtonIcon position={ButtonIcon.position.left}>{iconLeft}</ButtonIcon>
     ) : null}
     {children}
     {iconRight ? (
-      <ButtonIcon position={ButtonIconPosition.right}>{iconRight}</ButtonIcon>
+      <ButtonIcon position={ButtonIcon.position.right}>{iconRight}</ButtonIcon>
     ) : null}
   </button>
 );

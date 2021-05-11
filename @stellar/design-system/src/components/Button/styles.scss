@@ -44,31 +44,9 @@
     }
   }
 
-  &Icon {
-    display: block;
-    width: 1rem;
-    height: 1rem;
-    margin-bottom: 0.3rem;
-    position: relative;
-    flex-shrink: 0;
-    flex-grow: 0;
-
-    // TODO: once flex gap has better support, we can remove these
-    &--left {
-      margin-right: 0.5rem;
-    }
-
-    &--right {
-      margin-left: 0.5rem;
-    }
-
+  .ButtonIcon {
     svg {
       fill: var(--Button-color-text);
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
     }
   }
 }

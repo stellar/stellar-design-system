@@ -1,26 +1,40 @@
 import React from "react";
+import { ButtonIcon } from "../basic/ButtonIcon";
 import "./styles.scss";
 
-export enum TextButtonVariant {
+enum TextButtonVariant {
   primary = "primary",
   secondary = "secondary",
 }
 
+interface TextButtonComponent {
+  variant: typeof TextButtonVariant;
+}
+
 interface TextButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  icon?: React.ReactNode;
+  iconLeft?: React.ReactNode;
+  iconRight?: React.ReactNode;
   variant?: TextButtonVariant;
   children: string;
 }
 
-export const TextButton: React.FC<TextButtonProps> = ({
-  icon,
+export const TextButton: React.FC<TextButtonProps> & TextButtonComponent = ({
+  iconLeft,
+  iconRight,
   variant = TextButtonVariant.primary,
   children,
   ...props
 }) => (
-  <button className="TextButton" data-variant={variant} {...props}>
-    {icon && <span className="TextButtonIcon">{icon}</span>}
+  <button className={`TextButton TextButton--${variant}`} {...props}>
+    {iconLeft ? (
+      <ButtonIcon position={ButtonIcon.position.left}>{iconLeft}</ButtonIcon>
+    ) : null}
     {children}
+    {iconRight ? (
+      <ButtonIcon position={ButtonIcon.position.right}>{iconRight}</ButtonIcon>
+    ) : null}
   </button>
 );
+
+TextButton.variant = TextButtonVariant;
