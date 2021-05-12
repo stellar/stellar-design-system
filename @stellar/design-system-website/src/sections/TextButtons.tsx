@@ -33,6 +33,9 @@ export const TextButtons = () => (
           Label
         </TextButton>
       </div>
+      <div className="item-wrapper">
+        <TextButton isLoading>Label</TextButton>
+      </div>
     </div>
 
     <Heading3>Secondary</Heading3>
@@ -76,6 +79,11 @@ export const TextButtons = () => (
           iconRight={<IconCheckmark />}
           disabled
         >
+          Label
+        </TextButton>
+      </div>
+      <div className="item-wrapper">
+        <TextButton variant={TextButton.variant.secondary} isLoading>
           Label
         </TextButton>
       </div>

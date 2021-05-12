@@ -1,4 +1,6 @@
 .TextButton {
+  --loader-color: var(--TextButton-color-text);
+
   font-size: 1rem;
   font-family: var(--font-family-base);
   line-height: 1.75rem;
@@ -31,6 +33,10 @@
     &:hover {
       text-decoration: none;
     }
+
+    &:disabled {
+      text-decoration: underline;
+    }
   }
 
   &:disabled {
@@ -42,5 +48,9 @@
     svg {
       fill: var(--TextButton-color-text);
     }
+  }
+
+  .Loader {
+    margin-left: 0.5rem;
   }
 }

@@ -1,4 +1,6 @@
 .Button {
+  --loader-color: var(--Button-color-text);
+
   font-size: 1rem;
   line-height: 1.56rem;
   padding: 0.6rem 1.5rem;
@@ -48,5 +50,9 @@
     svg {
       fill: var(--Button-color-text);
     }
+  }
+
+  .Loader {
+    margin-left: 0.5rem;
   }
 }

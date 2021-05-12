@@ -33,6 +33,9 @@ export const Buttons = () => (
           Label
         </Button>
       </div>
+      <div className="item-wrapper">
+        <Button isLoading>Label</Button>
+      </div>
     </div>
 
     <Heading3>Secondary</Heading3>
@@ -73,6 +76,11 @@ export const Buttons = () => (
           iconRight={<IconCheckmark />}
           disabled
         >
+          Label
+        </Button>
+      </div>
+      <div className="item-wrapper">
+        <Button variant={Button.variant.secondary} isLoading>
           Label
         </Button>
       </div>
