@@ -9,7 +9,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  vertical-align: middle;
+  vertical-align: bottom;
 
   &--primary {
     --TextLink-color-text: var(--color-accent);
@@ -28,7 +28,7 @@
     --TextLink-color-text: var(--color-link);
 
     &:hover {
-      --TextLink-color-text: var(---color-text);
+      --TextLink-color-text: var(--color-text);
 
       &.TextLink__disabled {
         --TextLink-color-text: var(--color-link);
