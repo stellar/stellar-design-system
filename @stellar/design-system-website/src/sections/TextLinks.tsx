@@ -28,11 +28,7 @@ export const TextLinks = () => (
       <div className="item-wrapper">
         <p>
           Some text{" "}
-          <TextLink
-            href="https://stellar.org"
-            iconLeft={<IconCheckmark />}
-            disabled
-          >
+          <TextLink href="https://stellar.org" iconLeft={<IconCheckmark />}>
             external link
           </TextLink>{" "}
           more text

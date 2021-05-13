@@ -23,4 +23,12 @@
   padding: 3rem 2rem;
   display: flex;
   justify-content: center;
+
+  &.inline {
+    align-items: center;
+
+    & > * {
+      margin-right: 1rem;
+    }
+  }
 }
