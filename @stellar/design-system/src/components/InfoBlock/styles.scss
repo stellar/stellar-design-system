@@ -5,15 +5,15 @@
   width: 100%;
   line-height: 1.5rem;
 
-  &.info {
+  &--info {
     background-color: var(--color-background-secondary);
   }
 
-  &.error {
+  &--error {
     background-color: var(--color-error-off);
   }
 
-  &.warning {
+  &--warning {
     background-color: var(--color-warning-off);
   }
 }
