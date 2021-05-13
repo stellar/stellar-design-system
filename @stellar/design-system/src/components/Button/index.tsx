@@ -1,11 +1,12 @@
 import React from "react";
 import { Loader } from "../Loader";
-import { ButtonIcon } from "../basic/ButtonIcon";
+import { ButtonIcon } from "../utils/ButtonIcon";
 import "./styles.scss";
 
 enum ButtonVariant {
   primary = "primary",
   secondary = "secondary",
+  tertiary = "tertiary",
 }
 
 interface ButtonComponent {

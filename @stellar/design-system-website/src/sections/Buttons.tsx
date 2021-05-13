@@ -85,5 +85,50 @@ export const Buttons = () => (
         </Button>
       </div>
     </div>
+
+    <Heading3>Tertiary</Heading3>
+    <div className="item-container item-container-dark">
+      <div className="item-wrapper">
+        <Button variant={Button.variant.tertiary}>Label</Button>
+      </div>
+      <div className="item-wrapper">
+        <Button variant={Button.variant.tertiary} disabled>
+          Label
+        </Button>
+      </div>
+      <div className="item-wrapper">
+        <Button variant={Button.variant.tertiary} iconLeft={<IconCheckmark />}>
+          Label
+        </Button>
+      </div>
+      <div className="item-wrapper">
+        <Button
+          variant={Button.variant.tertiary}
+          iconLeft={<IconCheckmark />}
+          disabled
+        >
+          Label
+        </Button>
+      </div>
+      <div className="item-wrapper">
+        <Button variant={Button.variant.tertiary} iconRight={<IconCheckmark />}>
+          Label
+        </Button>
+      </div>
+      <div className="item-wrapper">
+        <Button
+          variant={Button.variant.tertiary}
+          iconRight={<IconCheckmark />}
+          disabled
+        >
+          Label
+        </Button>
+      </div>
+      <div className="item-wrapper">
+        <Button variant={Button.variant.tertiary} isLoading>
+          Label
+        </Button>
+      </div>
+    </div>
   </div>
 );

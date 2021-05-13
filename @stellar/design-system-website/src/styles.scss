@@ -12,6 +12,12 @@
   gap: 1rem;
 }
 
+.item-container-dark {
+  .item-wrapper {
+    background-color: var(--color-background-contrast);
+  }
+}
+
 .item-wrapper {
   background-color: var(--color-background-off);
   padding: 3rem 2rem;

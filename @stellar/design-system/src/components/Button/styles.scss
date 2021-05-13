@@ -6,7 +6,7 @@
   padding: 0.6rem 1.5rem;
   font-weight: var(--font-weight-medium);
   border-radius: 0.125rem;
-  border: 1px solid var(--color-accent);
+  border: 1px solid var(--Button-color-border);
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -18,6 +18,7 @@
   &--primary {
     --Button-color-background: var(--color-accent);
     --Button-color-text: var(--color-text-contrast);
+    --Button-color-border: var(--color-accent);
 
     box-shadow: 0 0.5rem 1rem -0.5rem var(--color-shadow);
 
@@ -29,6 +30,7 @@
   &--secondary {
     --Button-color-background: var(--color-background-main);
     --Button-color-text: var(--color-accent);
+    --Button-color-border: var(--color-accent);
 
     box-shadow: none;
 
@@ -37,9 +39,21 @@
     }
   }
 
+  &--tertiary {
+    --Button-color-background: var(--color-background-main);
+    --Button-color-text: var(--color-accent);
+    --Button-color-border: transparent;
+
+    box-shadow: 0 0.5rem 1rem -0.5rem var(--color-shadow);
+
+    &:hover {
+      background-color: var(--color-background-off);
+    }
+  }
+
   &:disabled {
     cursor: not-allowed;
-    opacity: 0.6;
+    opacity: var(--opacity-disabled-button);
 
     &:hover {
       background-color: var(--Button-color-background);

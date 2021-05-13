@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonIcon } from "../basic/ButtonIcon";
+import { ButtonIcon } from "../utils/ButtonIcon";
 import "./styles.scss";
 
 enum TextLinkVariant {
@@ -12,31 +12,58 @@ interface TextLinkComponent {
 }
 
 interface TextLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  href: string;
   iconLeft?: React.ReactNode;
   iconRight?: React.ReactNode;
   variant?: TextLinkVariant;
+  disabled?: Boolean;
+  underline?: Boolean;
   children: string | React.ReactNode;
 }
 
 export const TextLink: React.FC<TextLinkProps> & TextLinkComponent = ({
-  href,
   iconLeft,
   iconRight,
   variant = TextLinkVariant.primary,
+  disabled,
+  underline,
   children,
   ...props
 }) => {
-  const isExternalLink = href.startsWith("http") || href.startsWith("//");
+  const { href, onClick } = props;
+  const isExternalLink = href?.startsWith("http") || href?.startsWith("//");
+
+  const handleClick = (
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+  ) => {
+    if (onClick && !disabled) {
+      event.preventDefault();
+      onClick(event);
+    }
+  };
+
+  const customProps = {
+    ...(isExternalLink && !disabled
+      ? { rel: "noreferrer noopener", target: "_blank" }
+      : {}),
+    ...(href && disabled ? { href: undefined } : { href }),
+    ...(onClick
+      ? {
+          onClick: handleClick,
+          role: "button",
+        }
+      : {}),
+  };
+
+  const additionalClasses = [
+    ...(underline ? ["TextLink__underline"] : []),
+    ...(disabled ? ["TextLink__disabled"] : []),
+  ].join(" ");
 
   return (
     <a
-      href={href}
-      className={`TextLink TextLink--${variant}`}
-      {...(isExternalLink
-        ? { rel: "noreferrer noopener", target: "_blank" }
-        : {})}
+      className={`TextLink TextLink--${variant} ${additionalClasses}`}
       {...props}
+      {...customProps}
     >
       {iconLeft ? (
         <ButtonIcon position={ButtonIcon.position.left}>{iconLeft}</ButtonIcon>
