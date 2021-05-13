@@ -1,3 +1,4 @@
+import { Assets } from "sections/Assets";
 import { Branding } from "sections/Branding";
 import { Buttons } from "sections/Buttons";
 import { IconButtons } from "sections/IconButtons";
@@ -12,6 +13,7 @@ export const App = () => (
   <>
     <Typography />
     <Branding />
+    <Assets />
     <Loaders />
     <Buttons />
     <IconButtons />

@@ -1,9 +1,4 @@
-import {
-  TextLink,
-  IconCheckmark,
-  Heading2,
-  Heading3,
-} from "@stellar/design-system";
+import { TextLink, Icon, Heading2, Heading3 } from "@stellar/design-system";
 
 export const TextLinks = () => (
   <div className="inset">
@@ -28,7 +23,7 @@ export const TextLinks = () => (
       <div className="item-wrapper">
         <p>
           Some text{" "}
-          <TextLink href="https://stellar.org" iconLeft={<IconCheckmark />}>
+          <TextLink href="https://stellar.org" iconLeft={<Icon.Checkmark />}>
             external link
           </TextLink>{" "}
           more text
@@ -36,8 +31,8 @@ export const TextLinks = () => (
       </div>
       <div className="item-wrapper">
         <p>
-          Some text <TextLink iconRight={<IconCheckmark />}>link</TextLink> more
-          text
+          Some text <TextLink iconRight={<Icon.Checkmark />}>link</TextLink>{" "}
+          more text
         </p>
       </div>
     </div>
@@ -63,7 +58,7 @@ export const TextLinks = () => (
           Some text{" "}
           <TextLink
             href="https://stellar.org"
-            iconLeft={<IconCheckmark />}
+            iconLeft={<Icon.Checkmark />}
             underline
           >
             external link
@@ -74,7 +69,7 @@ export const TextLinks = () => (
       <div className="item-wrapper">
         <p>
           Some text{" "}
-          <TextLink iconRight={<IconCheckmark />} underline>
+          <TextLink iconRight={<Icon.Checkmark />} underline>
             link
           </TextLink>{" "}
           more text
@@ -105,7 +100,7 @@ export const TextLinks = () => (
           Some text{" "}
           <TextLink
             variant={TextLink.variant.secondary}
-            iconLeft={<IconCheckmark />}
+            iconLeft={<Icon.Checkmark />}
           >
             link
           </TextLink>{" "}
@@ -117,7 +112,7 @@ export const TextLinks = () => (
           Some text{" "}
           <TextLink
             variant={TextLink.variant.secondary}
-            iconRight={<IconCheckmark />}
+            iconRight={<Icon.Checkmark />}
           >
             link
           </TextLink>{" "}
@@ -151,7 +146,7 @@ export const TextLinks = () => (
           Some text{" "}
           <TextLink
             variant={TextLink.variant.secondary}
-            iconLeft={<IconCheckmark />}
+            iconLeft={<Icon.Checkmark />}
             underline
           >
             link
@@ -164,7 +159,7 @@ export const TextLinks = () => (
           Some text{" "}
           <TextLink
             variant={TextLink.variant.secondary}
-            iconRight={<IconCheckmark />}
+            iconRight={<Icon.Checkmark />}
             underline
           >
             link

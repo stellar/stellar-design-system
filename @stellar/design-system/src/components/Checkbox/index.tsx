@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.scss";
-import { IconCheckmark } from "../../icons";
+import { Icon } from "../../icons";
 
 interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
@@ -13,7 +13,7 @@ export const Checkbox = ({ id, label, ...props }: CheckboxProps) => (
     <label htmlFor={id}>
       {label}
       <span className="CheckboxIconContainer" aria-hidden="true">
-        <IconCheckmark />
+        <Icon.Checkmark />
       </span>
     </label>
   </div>

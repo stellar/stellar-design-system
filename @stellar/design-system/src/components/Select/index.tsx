@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.scss";
-import { IconDropdown } from "../../icons";
+import { Icon } from "../../icons";
 
 interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   id: string;
@@ -16,7 +16,7 @@ export const Select = ({ id, label, children, ...props }: SelectProps) => (
         {children}
       </select>
       <span className="SelectIconWrapper" aria-hidden="true">
-        <IconDropdown />
+        <Icon.Dropdown />
       </span>
     </div>
   </div>

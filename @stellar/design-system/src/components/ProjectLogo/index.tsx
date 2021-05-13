@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.scss";
-import { LogoStellar } from "../../logos";
+import { Logo } from "../../logos";
 
 interface ProjectLogoProps {
   title: string;
@@ -13,7 +13,7 @@ export const ProjectLogo: React.FC<ProjectLogoProps> = ({
 }) => (
   <div className="ProjectLogo">
     <a href={link} rel="noreferrer noopener">
-      <LogoStellar />
+      <Logo.Stellar />
     </a>
     <div className="ProjectLogoTitle">{title}</div>
   </div>

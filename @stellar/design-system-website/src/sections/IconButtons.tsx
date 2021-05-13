@@ -1,4 +1,4 @@
-import { Heading2, IconButton, IconInfo } from "@stellar/design-system";
+import { Heading2, IconButton, Icon } from "@stellar/design-system";
 
 export const IconButtons = () => (
   <div className="inset">
@@ -6,85 +6,85 @@ export const IconButtons = () => (
 
     <div className="item-container">
       <div className="item-wrapper inline">
-        <IconButton icon={<IconInfo />} altText="Default" />
+        <IconButton icon={<Icon.Info />} altText="Default" />
 
         <IconButton
-          icon={<IconInfo />}
+          icon={<Icon.Info />}
           altText="Success"
           variant={IconButton.variant.success}
         />
 
         <IconButton
-          icon={<IconInfo />}
+          icon={<Icon.Info />}
           altText="Error"
           variant={IconButton.variant.error}
         />
 
         <IconButton
-          icon={<IconInfo />}
+          icon={<Icon.Info />}
           altText="Warning"
           variant={IconButton.variant.warning}
         />
 
         <IconButton
-          icon={<IconInfo />}
+          icon={<Icon.Info />}
           altText="Highlight"
           variant={IconButton.variant.highlight}
         />
 
         <IconButton
-          icon={<IconInfo />}
+          icon={<Icon.Info />}
           altText="Custom color"
           customColor="#f0f"
         />
 
         <IconButton
-          icon={<IconInfo />}
+          icon={<Icon.Info />}
           altText="Custom size"
           customSize="2rem"
         />
       </div>
 
       <div className="item-wrapper inline">
-        <IconButton icon={<IconInfo />} altText="Default" disabled />
+        <IconButton icon={<Icon.Info />} altText="Default" disabled />
 
         <IconButton
-          icon={<IconInfo />}
+          icon={<Icon.Info />}
           altText="Success"
           variant={IconButton.variant.success}
           disabled
         />
 
         <IconButton
-          icon={<IconInfo />}
+          icon={<Icon.Info />}
           altText="Error"
           variant={IconButton.variant.error}
           disabled
         />
 
         <IconButton
-          icon={<IconInfo />}
+          icon={<Icon.Info />}
           altText="Warning"
           variant={IconButton.variant.warning}
           disabled
         />
 
         <IconButton
-          icon={<IconInfo />}
+          icon={<Icon.Info />}
           altText="Highlight"
           variant={IconButton.variant.highlight}
           disabled
         />
 
         <IconButton
-          icon={<IconInfo />}
+          icon={<Icon.Info />}
           altText="Custom color"
           customColor="#f0f"
           disabled
         />
 
         <IconButton
-          icon={<IconInfo />}
+          icon={<Icon.Info />}
           altText="Custom size"
           customSize="2rem"
           disabled

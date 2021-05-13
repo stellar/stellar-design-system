@@ -1,9 +1,4 @@
-import {
-  Button,
-  IconCheckmark,
-  Heading2,
-  Heading3,
-} from "@stellar/design-system";
+import { Button, Icon, Heading2, Heading3 } from "@stellar/design-system";
 
 export const Buttons = () => (
   <div className="inset">
@@ -18,18 +13,18 @@ export const Buttons = () => (
         <Button disabled>Label</Button>
       </div>
       <div className="item-wrapper">
-        <Button iconLeft={<IconCheckmark />}>Label</Button>
+        <Button iconLeft={<Icon.Checkmark />}>Label</Button>
       </div>
       <div className="item-wrapper">
-        <Button iconLeft={<IconCheckmark />} disabled>
+        <Button iconLeft={<Icon.Checkmark />} disabled>
           Label
         </Button>
       </div>
       <div className="item-wrapper">
-        <Button iconRight={<IconCheckmark />}>Label</Button>
+        <Button iconRight={<Icon.Checkmark />}>Label</Button>
       </div>
       <div className="item-wrapper">
-        <Button iconRight={<IconCheckmark />} disabled>
+        <Button iconRight={<Icon.Checkmark />} disabled>
           Label
         </Button>
       </div>
@@ -49,14 +44,17 @@ export const Buttons = () => (
         </Button>
       </div>
       <div className="item-wrapper">
-        <Button variant={Button.variant.secondary} iconLeft={<IconCheckmark />}>
+        <Button
+          variant={Button.variant.secondary}
+          iconLeft={<Icon.Checkmark />}
+        >
           Label
         </Button>
       </div>
       <div className="item-wrapper">
         <Button
           variant={Button.variant.secondary}
-          iconLeft={<IconCheckmark />}
+          iconLeft={<Icon.Checkmark />}
           disabled
         >
           Label
@@ -65,7 +63,7 @@ export const Buttons = () => (
       <div className="item-wrapper">
         <Button
           variant={Button.variant.secondary}
-          iconRight={<IconCheckmark />}
+          iconRight={<Icon.Checkmark />}
         >
           Label
         </Button>
@@ -73,7 +71,7 @@ export const Buttons = () => (
       <div className="item-wrapper">
         <Button
           variant={Button.variant.secondary}
-          iconRight={<IconCheckmark />}
+          iconRight={<Icon.Checkmark />}
           disabled
         >
           Label
@@ -97,28 +95,31 @@ export const Buttons = () => (
         </Button>
       </div>
       <div className="item-wrapper">
-        <Button variant={Button.variant.tertiary} iconLeft={<IconCheckmark />}>
+        <Button variant={Button.variant.tertiary} iconLeft={<Icon.Checkmark />}>
           Label
         </Button>
       </div>
       <div className="item-wrapper">
         <Button
           variant={Button.variant.tertiary}
-          iconLeft={<IconCheckmark />}
+          iconLeft={<Icon.Checkmark />}
           disabled
         >
           Label
         </Button>
       </div>
       <div className="item-wrapper">
-        <Button variant={Button.variant.tertiary} iconRight={<IconCheckmark />}>
+        <Button
+          variant={Button.variant.tertiary}
+          iconRight={<Icon.Checkmark />}
+        >
           Label
         </Button>
       </div>
       <div className="item-wrapper">
         <Button
           variant={Button.variant.tertiary}
-          iconRight={<IconCheckmark />}
+          iconRight={<Icon.Checkmark />}
           disabled
         >
           Label
