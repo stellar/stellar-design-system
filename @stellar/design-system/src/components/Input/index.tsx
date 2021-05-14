@@ -1,4 +1,6 @@
 import React from "react";
+import { FieldElement } from "../utils/FieldElement";
+import { FieldNote } from "../utils/FieldNote";
 import "./styles.scss";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -30,7 +32,9 @@ export const Input: React.FC<InputProps> = ({
 
       <div className="Input__container">
         {leftElement && (
-          <div className="Input__element--left">{leftElement}</div>
+          <FieldElement position={FieldElement.position.left}>
+            {leftElement}
+          </FieldElement>
         )}
 
         <div className="Input__wrapper">
@@ -38,12 +42,16 @@ export const Input: React.FC<InputProps> = ({
         </div>
 
         {rightElement && (
-          <div className="Input__element--right">{rightElement}</div>
+          <FieldElement position={FieldElement.position.right}>
+            {rightElement}
+          </FieldElement>
         )}
       </div>
 
-      {note && <div className="Input__note">{note}</div>}
-      {error && <div className="Input__note Input__note--error">{error}</div>}
+      {note && <FieldNote>{note}</FieldNote>}
+      {error && (
+        <FieldNote variant={FieldNote.variant.error}>{error}</FieldNote>
+      )}
     </div>
   );
 };

@@ -18,7 +18,7 @@
       // TODO: hard coded color
       --TextLink-color-text: #230f7b;
 
-      &.TextLink__disabled {
+      &.TextLink--disabled {
         --TextLink-color-text: var(--color-accent);
       }
     }
@@ -30,7 +30,7 @@
     &:hover {
       --TextLink-color-text: var(--color-text);
 
-      &.TextLink__disabled {
+      &.TextLink--disabled {
         --TextLink-color-text: var(--color-link);
       }
     }
@@ -48,7 +48,7 @@
     cursor: not-allowed;
     opacity: var(--opacity-disabled-button);
 
-    &.TextLink__underline {
+    &.TextLink--underline {
       text-decoration: underline;
     }
   }

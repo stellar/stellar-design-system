@@ -1,0 +1,66 @@
+@mixin form-field-container {
+  --form-field-border-radius: 0.125rem;
+  // TODO: hard coded color
+  --form-field-border-hover-color: #999999;
+
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin form-field-wrapper {
+  border: 1px solid var(--color-border-input);
+  border-radius: var(--form-field-border-radius);
+  background-color: var(--color-background-input);
+}
+
+@mixin form-field-base {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.75rem;
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-input);
+  border-radius: var(--form-field-border-radius);
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  min-width: 0;
+}
+
+@mixin form-field-wrapper-hover {
+  border-color: var(--form-field-border-hover-color);
+}
+
+@mixin form-field-focus {
+  &:focus-visible {
+    outline: 1px solid var(--color-accent);
+  }
+}
+
+@mixin form-field-disabled {
+  &:disabled {
+    cursor: not-allowed;
+    color: var(--color-text-input-placeholder);
+  }
+}
+
+@mixin form-field-wrapper-error($elClass) {
+  #{$elClass} {
+    border-color: var(--color-error);
+
+    &:hover {
+      border-color: var(--form-field-border-hover-color);
+    }
+  }
+}
+
+@mixin form-field-wrapper-disabled($elClass) {
+  #{$elClass} {
+    background-color: var(--color-background-off);
+
+    &:hover {
+      border-color: var(--color-border-input);
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.FieldElement {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--color-text);
+  display: flex;
+
+  &--left {
+    margin-right: 1rem;
+  }
+
+  &--right {
+    margin-left: 1rem;
+  }
+}
