@@ -1,3 +1,4 @@
+// Form field
 @mixin form-field-container {
   --form-field-border-radius: 0.125rem;
   // TODO: hard coded color
@@ -63,4 +64,73 @@
       border-color: var(--color-border-input);
     }
   }
+}
+
+// Checkbox + radio button
+@mixin checkbox-radio-label {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  font-weight: var(--font-weight-normal);
+  color: var(--color-note);
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  text-transform: none;
+  margin-bottom: 0;
+}
+
+@mixin checkbox-radio-base-selectors($type) {
+  input[type="#{$type}"] {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+  input[type="#{$type}"] + label::before {
+    background-color: var(--color-background-input);
+  }
+
+  input[type="#{$type}"]:checked + label::before {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+
+  input[type="#{$type}"]:checked + label > span {
+    display: block;
+  }
+}
+
+@mixin checkbox-radio-container {
+  content: "";
+  margin-top: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+  display: block;
+  margin-right: 0.75rem;
+  border: 1px solid var(--color-accent);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.16);
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+@mixin checkbox-radio-disabled {
+  opacity: var(--opacity-disabled-button);
+}
+
+@mixin checkbox-radio-icon-container {
+  width: calc(1rem + 2px);
+  height: calc(1rem + 2px);
+  margin-top: 0.25rem;
+  display: none;
+  z-index: 2;
+  position: absolute;
+}
+
+@mixin checkbox-radio-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }

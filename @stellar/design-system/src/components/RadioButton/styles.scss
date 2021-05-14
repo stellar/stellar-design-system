@@ -1,17 +1,23 @@
 @use "../../mixins.scss";
 
-.Checkbox {
+.RadioButton {
   display: flex;
   align-items: center;
 
-  @include mixins.checkbox-radio-base-selectors("checkbox");
+  @include mixins.checkbox-radio-base-selectors("radio");
 
   label {
     @include mixins.checkbox-radio-label;
 
+    &::before,
+    &::after {
+      flex-shrink: 0;
+      flex-grow: 0;
+    }
+
     &::before {
       @include mixins.checkbox-radio-container;
-      border-radius: 0.125rem;
+      border-radius: 1rem;
     }
   }
 
@@ -20,12 +26,15 @@
 
     span {
       @include mixins.checkbox-radio-icon-wrapper;
-    }
 
-    svg {
-      width: 0.6rem;
-      height: 0.6rem;
-      fill: var(--color-background-input);
+      &::after {
+        content: "";
+        display: block;
+        width: 0.4rem;
+        height: 0.4rem;
+        border-radius: 0.4rem;
+        background-color: var(--color-background-input);
+      }
     }
   }
 

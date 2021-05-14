@@ -6,6 +6,7 @@ import {
   Icon,
   IconButton,
   Checkbox,
+  RadioButton,
 } from "@stellar/design-system";
 
 export const FormElements = () => (
@@ -150,33 +151,7 @@ export const FormElements = () => (
       </div>
     </div>
 
-    <Heading3>Checkbox</Heading3>
-    <div className="item-container">
-      <div className="item-wrapper">
-        <Checkbox id="checkbox-1" label="Label" />
-      </div>
-
-      <div className="item-wrapper">
-        <Checkbox id="checkbox-2" label="Disabled" disabled />
-      </div>
-
-      <div className="item-wrapper">
-        <Checkbox id="checkbox-3" label="Checked" checked />
-      </div>
-
-      <div className="item-wrapper">
-        <Checkbox id="checkbox-4" label="Checked disabled" checked disabled />
-      </div>
-
-      <div className="item-wrapper">
-        <Checkbox
-          id="checkbox-5"
-          label="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia reprehenderit ipsam facilis! Illum odio veritatis corporis nihil asperiores eum nam in error repudiandae necessitatibus maiores maxime, amet, blanditiis, et sapiente."
-        />
-      </div>
-    </div>
-
-    <Heading3>Inline</Heading3>
+    <Heading3>Inline input and select</Heading3>
     <div className="item-container">
       <div className="item-wrapper inline">
         <Input
@@ -190,6 +165,62 @@ export const FormElements = () => (
           <option>Option 1</option>
           <option>Option 2</option>
         </Select>
+      </div>
+    </div>
+
+    <Heading3>Checkbox</Heading3>
+    <div className="item-container">
+      <div className="item-wrapper">
+        <Checkbox id="checkbox-1" label="Label" />
+      </div>
+
+      <div className="item-wrapper">
+        <Checkbox id="checkbox-2" label="Disabled" disabled />
+      </div>
+
+      <div className="item-wrapper">
+        <Checkbox id="checkbox-3" label="Checked" defaultChecked />
+      </div>
+
+      <div className="item-wrapper">
+        <Checkbox
+          id="checkbox-4"
+          label="Checked disabled"
+          defaultChecked
+          disabled
+        />
+      </div>
+
+      <div className="item-wrapper">
+        <Checkbox
+          id="checkbox-5"
+          label="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia reprehenderit ipsam facilis! Illum odio veritatis corporis nihil asperiores eum nam in error repudiandae necessitatibus maiores maxime, amet, blanditiis, et sapiente."
+        />
+      </div>
+    </div>
+
+    <Heading3>Checkbox</Heading3>
+    <div className="item-container">
+      <div className="item-wrapper">
+        <div>
+          <RadioButton id="radio-1-1" name="radio-1" label="Label 1" />
+          <RadioButton id="radio-1-2" name="radio-1" label="Label 2" disabled />
+          <RadioButton id="radio-1-3" name="radio-1" label="Label 3" />
+        </div>
+      </div>
+
+      <div className="item-wrapper">
+        <div>
+          <RadioButton id="radio-2-1" name="radio-2" label="Label 1" disabled />
+          <RadioButton id="radio-2-2" name="radio-2" label="Label 2" disabled />
+          <RadioButton
+            id="radio-2-3"
+            name="radio-2"
+            label="Label 3"
+            defaultChecked
+            disabled
+          />
+        </div>
       </div>
     </div>
   </div>

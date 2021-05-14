@@ -7,7 +7,11 @@ interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string | React.ReactNode;
 }
 
-export const Checkbox = ({ id, label, ...props }: CheckboxProps) => {
+export const Checkbox: React.FC<CheckboxProps> = ({
+  id,
+  label,
+  ...props
+}: CheckboxProps) => {
   const additionalClasses = [
     ...(props.disabled ? ["Checkbox--disabled"] : []),
   ].join(" ");

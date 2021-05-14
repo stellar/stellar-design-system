@@ -6,5 +6,6 @@ export * from "./IconButton";
 export * from "./Input";
 export * from "./Loader";
 export * from "./ProjectLogo";
+export * from "./RadioButton";
 export * from "./Select";
 export * from "./TextLink";
