@@ -5,6 +5,7 @@ import {
   Select,
   Icon,
   IconButton,
+  Checkbox,
 } from "@stellar/design-system";
 
 export const FormElements = () => (
@@ -146,6 +147,32 @@ export const FormElements = () => (
           <option>Option 1</option>
           <option>Option 2</option>
         </Select>
+      </div>
+    </div>
+
+    <Heading3>Checkbox</Heading3>
+    <div className="item-container">
+      <div className="item-wrapper">
+        <Checkbox id="checkbox-1" label="Label" />
+      </div>
+
+      <div className="item-wrapper">
+        <Checkbox id="checkbox-2" label="Disabled" disabled />
+      </div>
+
+      <div className="item-wrapper">
+        <Checkbox id="checkbox-3" label="Checked" checked />
+      </div>
+
+      <div className="item-wrapper">
+        <Checkbox id="checkbox-4" label="Checked disabled" checked disabled />
+      </div>
+
+      <div className="item-wrapper">
+        <Checkbox
+          id="checkbox-5"
+          label="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia reprehenderit ipsam facilis! Illum odio veritatis corporis nihil asperiores eum nam in error repudiandae necessitatibus maiores maxime, amet, blanditiis, et sapiente."
+        />
       </div>
     </div>
 

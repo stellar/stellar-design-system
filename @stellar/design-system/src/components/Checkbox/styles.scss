@@ -17,47 +17,61 @@
     border-color: var(--color-accent);
   }
 
-  input[type="checkbox"]:checked + label span {
-    display: flex;
+  input[type="checkbox"]:checked + label > span {
+    display: block;
   }
 
   label {
     font-size: 1rem;
-    line-height: 1.5rem;
+    line-height: 1.75rem;
+    font-weight: var(--font-weight-normal);
+    color: var(--color-note);
     flex: 1;
     display: flex;
+    align-items: flex-start;
     position: relative;
     text-transform: none;
+    margin-bottom: 0;
 
     &::before {
       content: "";
-      display: block;
-      margin-right: 0.75rem;
-      margin-top: 0.0625rem;
+      margin-top: 0.25rem;
       width: 1rem;
       height: 1rem;
+      display: block;
+      margin-right: 0.75rem;
       border-radius: 0.125rem;
-      border: 1px solid var(--color-border-input);
-      box-shadow: 0 0.25rem 0.5rem -0.25rem var(--color-shadow);
+      border: 1px solid var(--color-accent);
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.16);
       z-index: 1;
+      flex-shrink: 0;
     }
   }
 
-  .CheckboxIconContainer {
+  &__icon {
+    width: calc(1rem + 2px);
+    height: calc(1rem + 2px);
+    margin-top: 0.25rem;
     display: none;
-    justify-content: center;
-    align-items: center;
     z-index: 2;
-    width: 1rem;
-    height: 1rem;
     position: absolute;
-    top: 0.125rem;
-    left: 0.0625rem;
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
 
     svg {
       width: 0.6rem;
       height: 0.6rem;
       fill: var(--color-background-input);
     }
+  }
+
+  &--disabled {
+    opacity: var(--opacity-disabled-button);
   }
 }

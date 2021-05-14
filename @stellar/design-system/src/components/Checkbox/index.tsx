@@ -4,17 +4,25 @@ import { Icon } from "../../icons";
 
 interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
-  label: string;
+  label: string | React.ReactNode;
 }
 
-export const Checkbox = ({ id, label, ...props }: CheckboxProps) => (
-  <div className="Checkbox">
-    <input type="checkbox" id={id} {...props} />
-    <label htmlFor={id}>
-      {label}
-      <span className="CheckboxIconContainer" aria-hidden="true">
-        <Icon.Checkmark />
-      </span>
-    </label>
-  </div>
-);
+export const Checkbox = ({ id, label, ...props }: CheckboxProps) => {
+  const additionalClasses = [
+    ...(props.disabled ? ["Checkbox--disabled"] : []),
+  ].join(" ");
+
+  return (
+    <div className={`Checkbox ${additionalClasses}`}>
+      <input type="checkbox" id={id} {...props} />
+      <label htmlFor={id}>
+        {label}
+        <span className="Checkbox__icon" aria-hidden="true">
+          <span>
+            <Icon.Checkmark />
+          </span>
+        </span>
+      </label>
+    </div>
+  );
+};
