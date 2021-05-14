@@ -1,6 +1,7 @@
 import { Assets } from "sections/Assets";
 import { Branding } from "sections/Branding";
 import { Buttons } from "sections/Buttons";
+import { FormElements } from "sections/FormElements";
 import { IconButtons } from "sections/IconButtons";
 import { InfoBlocks } from "sections/InfoBlocks";
 import { Loaders } from "sections/Loaders";
@@ -19,5 +20,6 @@ export const App = () => (
     <IconButtons />
     <TextLinks />
     <InfoBlocks />
+    <FormElements />
   </>
 );

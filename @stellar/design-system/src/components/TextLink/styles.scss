@@ -36,7 +36,7 @@
     }
   }
 
-  &__underline {
+  &--underline {
     text-decoration: underline;
 
     &:hover {
@@ -44,7 +44,7 @@
     }
   }
 
-  &__disabled {
+  &--disabled {
     cursor: not-allowed;
     opacity: var(--opacity-disabled-button);
 

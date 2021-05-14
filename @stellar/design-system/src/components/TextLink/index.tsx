@@ -55,8 +55,8 @@ export const TextLink: React.FC<TextLinkProps> & TextLinkComponent = ({
   };
 
   const additionalClasses = [
-    ...(underline ? ["TextLink__underline"] : []),
-    ...(disabled ? ["TextLink__disabled"] : []),
+    ...(underline ? ["TextLink--underline"] : []),
+    ...(disabled ? ["TextLink--disabled"] : []),
   ].join(" ");
 
   return (
