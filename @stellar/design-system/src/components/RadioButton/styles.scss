@@ -25,14 +25,16 @@
     @include mixins.checkbox-radio-icon-container;
 
     span {
+      --radio-button-selected-size: 0.4rem;
       @include mixins.checkbox-radio-icon-wrapper;
 
       &::after {
+        @include mixins.checkbox-radio-icon-centered;
         content: "";
         display: block;
-        width: 0.4rem;
-        height: 0.4rem;
-        border-radius: 0.4rem;
+        width: var(--radio-button-selected-size);
+        height: var(--radio-button-selected-size);
+        border-radius: var(--radio-button-selected-size);
         background-color: var(--color-background-input);
       }
     }

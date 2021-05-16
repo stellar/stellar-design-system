@@ -199,7 +199,7 @@ export const FormElements = () => (
       </div>
     </div>
 
-    <Heading3>Checkbox</Heading3>
+    <Heading3>Radio button</Heading3>
     <div className="item-container">
       <div className="item-wrapper">
         <div>
