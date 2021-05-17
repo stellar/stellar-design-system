@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./styles.scss";
 
 export enum ButtonVariant {
@@ -17,9 +17,15 @@ export const Button: React.FC<ButtonProps> = ({
   variant = ButtonVariant.primary,
   children,
   ...props
-}) => (
-  <button className="Button" data-variant={variant} {...props}>
-    {icon && <span className="ButtonIcon">{icon}</span>}
-    {children}
-  </button>
-);
+}) => {
+  useEffect(() => {
+    console.log("button");
+  }, []);
+
+  return (
+    <button className="Button" data-variant={variant} {...props}>
+      {icon && <span className="ButtonIcon">{icon}</span>}
+      {children}
+    </button>
+  );
+};
