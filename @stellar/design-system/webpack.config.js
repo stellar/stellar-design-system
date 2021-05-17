@@ -9,10 +9,20 @@ module.exports = {
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "build"),
-    libraryTarget: "commonjs-module",
+    libraryTarget: "umd",
   },
   resolve: {
     extensions: [".js", ".json", ".ts", ".tsx"],
+  },
+  externals: {
+    react: {
+      commonjs: "react",
+      commonjs2: "react",
+    },
+    "react-dom": {
+      commonjs: "react-dom",
+      commonjs2: "react-dom",
+    },
   },
   module: {
     rules: [
