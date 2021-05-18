@@ -239,7 +239,7 @@ export const FormElements = () => {
             <RadioButton
               id="radio-2-2"
               name="radio-2"
-              label="Label 2"
+              label="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas molestias maxime nemo blanditiis corrupti."
               disabled
             />
             <RadioButton

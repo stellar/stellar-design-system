@@ -5,6 +5,7 @@ import { FormElements } from "sections/FormElements";
 import { IconButtons } from "sections/IconButtons";
 import { InfoBlocks } from "sections/InfoBlocks";
 import { Loaders } from "sections/Loaders";
+import { Modals } from "sections/Modals";
 import { TextLinks } from "sections/TextLinks";
 import { Typography } from "sections/Typography";
 
@@ -21,5 +22,6 @@ export const App = () => (
     <TextLinks />
     <InfoBlocks />
     <FormElements />
+    <Modals />
   </>
 );

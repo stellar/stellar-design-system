@@ -5,6 +5,7 @@ export * from "./InfoBlock";
 export * from "./IconButton";
 export * from "./Input";
 export * from "./Loader";
+export * from "./Modal";
 export * from "./ProjectLogo";
 export * from "./RadioButton";
 export * from "./Select";
