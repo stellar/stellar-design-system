@@ -1,7 +1,13 @@
-import { TextLink, Icon, Heading2, Heading3 } from "@stellar/design-system";
+import {
+  TextLink,
+  Icon,
+  Heading2,
+  Heading3,
+  Layout,
+} from "@stellar/design-system";
 
 export const TextLinks = () => (
-  <div className="inset">
+  <Layout.Inset>
     <Heading2>Text link</Heading2>
 
     <Heading3>Primary</Heading3>
@@ -168,5 +174,5 @@ export const TextLinks = () => (
         </p>
       </div>
     </div>
-  </div>
+  </Layout.Inset>
 );

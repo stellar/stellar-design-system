@@ -25,6 +25,8 @@
   --color-border-input: #cccccc;
   --color-shadow: rgba(0, 0, 0, 0.48);
 
+  --font-size: 16px;
+
   // Font weight
   --font-weight-light: 300;
   --font-weight-normal: 400;
@@ -45,6 +47,10 @@
 
   // Opacity
   --opacity-disabled-button: 0.4;
+
+  // Layout
+  --layout-window-width-min: 320px;
+  --layout-window-width-max: 1296px;
 }
 
 html,
@@ -57,7 +63,7 @@ button {
 
 body {
   min-height: 100vh;
-  min-width: 320px;
+  min-width: var(--layout-window-width-min);
   padding: 0;
   margin: 0;
   background-color: var(--color-background-main);
@@ -78,8 +84,7 @@ body,
 input,
 textarea,
 button {
-  // TODO: make this variable
-  font-size: 16px;
+  font-size: var(--font-size);
   font-weight: var(--font-weight-normal);
   font-family: var(--font-family-base);
   line-height: 1;
@@ -165,4 +170,18 @@ div#root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+// Generic
+.error {
+  color: var(--color-error);
+}
+
+.success {
+  color: var(--color-success);
+}
+
+.warning {
+  color: var(--color-warning);
 }

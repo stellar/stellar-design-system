@@ -5,6 +5,7 @@ export * from "./InfoBlock";
 export * from "./IconButton";
 export * from "./Identicon";
 export * from "./Input";
+export * from "./Layout";
 export * from "./Loader";
 export * from "./Modal";
 export * from "./ProjectLogo";

@@ -1,8 +1,8 @@
-.inset {
-  padding: 2rem;
-
-  & > * {
-    margin-bottom: 2rem;
+.Layout__content {
+  .Layout__inset {
+    & > * {
+      margin-bottom: 2rem;
+    }
   }
 }
 

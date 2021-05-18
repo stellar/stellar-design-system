@@ -6,10 +6,11 @@ import {
   Heading5,
   Heading6,
   Eyebrow,
+  Layout,
 } from "@stellar/design-system";
 
 export const Typography = () => (
-  <div className="inset">
+  <Layout.Inset>
     <Heading2>Typography</Heading2>
 
     <div>
@@ -54,5 +55,5 @@ export const Typography = () => (
         <code>Code example (code)</code> on this line
       </p>
     </div>
-  </div>
+  </Layout.Inset>
 );

@@ -1,3 +1,5 @@
+import { Layout } from "@stellar/design-system";
+
 import { Assets } from "sections/Assets";
 import { Branding } from "sections/Branding";
 import { Buttons } from "sections/Buttons";
@@ -14,16 +16,26 @@ import "styles.scss";
 
 export const App = () => (
   <>
-    <Typography />
-    <Branding />
-    <Identicons />
-    <Assets />
-    <Loaders />
-    <Buttons />
-    <IconButtons />
-    <TextLinks />
-    <InfoBlocks />
-    <FormElements />
-    <Modals />
+    {/* TODO: update project link */}
+    <Layout.Header
+      projectTitle="Design System"
+      projectLink="https://www.stellar.org"
+    />
+
+    <Layout.Content>
+      <Typography />
+      <Branding />
+      <Identicons />
+      <Assets />
+      <Loaders />
+      <Buttons />
+      <IconButtons />
+      <TextLinks />
+      <InfoBlocks />
+      <FormElements />
+      <Modals />
+    </Layout.Content>
+
+    <Layout.Footer gitHubLink="https://github.com/stellar/stellar-design-system" />
   </>
 );

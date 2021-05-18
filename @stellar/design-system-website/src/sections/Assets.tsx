@@ -1,7 +1,7 @@
-import { Heading2, Heading3, Icon, Logo } from "@stellar/design-system";
+import { Heading2, Heading3, Icon, Logo, Layout } from "@stellar/design-system";
 
 export const Assets = () => (
-  <div className="inset">
+  <Layout.Inset>
     <Heading2>Assets</Heading2>
 
     <Heading3>Icons</Heading3>
@@ -42,5 +42,5 @@ export const Assets = () => (
         <Logo.Trezor />
       </div>
     </div>
-  </div>
+  </Layout.Inset>
 );

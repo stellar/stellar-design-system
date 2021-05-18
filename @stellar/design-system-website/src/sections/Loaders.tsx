@@ -1,7 +1,7 @@
-import { Heading2, Heading3, Loader } from "@stellar/design-system";
+import { Heading2, Heading3, Loader, Layout } from "@stellar/design-system";
 
 export const Loaders = () => (
-  <div className="inset">
+  <Layout.Inset>
     <Heading2>Loaders</Heading2>
 
     <Heading3>Loader</Heading3>
@@ -14,5 +14,5 @@ export const Loaders = () => (
         <Loader size="3rem" />
       </div>
     </div>
-  </div>
+  </Layout.Inset>
 );

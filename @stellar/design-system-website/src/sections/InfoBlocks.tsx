@@ -1,7 +1,7 @@
-import { Heading2, InfoBlock } from "@stellar/design-system";
+import { Heading2, InfoBlock, Layout } from "@stellar/design-system";
 
 export const InfoBlocks = () => (
-  <div className="inset">
+  <Layout.Inset>
     <Heading2>Info blocks</Heading2>
 
     <div className="item-container">
@@ -17,5 +17,5 @@ export const InfoBlocks = () => (
         <InfoBlock variant={InfoBlock.variant.warning}>Warning block</InfoBlock>
       </div>
     </div>
-  </div>
+  </Layout.Inset>
 );

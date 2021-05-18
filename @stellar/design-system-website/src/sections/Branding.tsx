@@ -1,7 +1,12 @@
-import { Heading2, Heading3, ProjectLogo } from "@stellar/design-system";
+import {
+  Heading2,
+  Heading3,
+  ProjectLogo,
+  Layout,
+} from "@stellar/design-system";
 
 export const Branding = () => (
-  <div className="inset">
+  <Layout.Inset>
     <Heading2>Branding</Heading2>
 
     <Heading3>Project logo</Heading3>
@@ -10,5 +15,5 @@ export const Branding = () => (
         <ProjectLogo title="Project name" />
       </div>
     </div>
-  </div>
+  </Layout.Inset>
 );

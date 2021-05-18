@@ -7,6 +7,7 @@ import {
   InfoBlock,
   Checkbox,
   RadioButton,
+  Layout,
 } from "@stellar/design-system";
 
 export const Modals = () => {
@@ -14,7 +15,7 @@ export const Modals = () => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
-    <div className="inset">
+    <Layout.Inset>
       <Heading2>Modal</Heading2>
 
       <div className="item-container">
@@ -117,6 +118,6 @@ export const Modals = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </div>
+    </Layout.Inset>
   );
 };

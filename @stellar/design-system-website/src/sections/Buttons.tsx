@@ -1,7 +1,13 @@
-import { Button, Icon, Heading2, Heading3 } from "@stellar/design-system";
+import {
+  Button,
+  Icon,
+  Heading2,
+  Heading3,
+  Layout,
+} from "@stellar/design-system";
 
 export const Buttons = () => (
-  <div className="inset">
+  <Layout.Inset>
     <Heading2>Button</Heading2>
 
     <Heading3>Primary</Heading3>
@@ -131,5 +137,5 @@ export const Buttons = () => (
         </Button>
       </div>
     </div>
-  </div>
+  </Layout.Inset>
 );

@@ -1,7 +1,7 @@
-import { Heading2, Identicon, TextLink } from "@stellar/design-system";
+import { Heading2, Identicon, TextLink, Layout } from "@stellar/design-system";
 
 export const Identicons = () => (
-  <div className="inset">
+  <Layout.Inset>
     <Heading2>Identicons</Heading2>
 
     <div className="item-container">
@@ -60,5 +60,5 @@ export const Identicons = () => (
         />
       </div>
     </div>
-  </div>
+  </Layout.Inset>
 );

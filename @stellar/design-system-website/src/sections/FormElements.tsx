@@ -9,13 +9,14 @@ import {
   Checkbox,
   RadioButton,
   Toggle,
+  Layout,
 } from "@stellar/design-system";
 
 export const FormElements = () => {
   const [toggleActive, setToggleActive] = useState(false);
 
   return (
-    <div className="inset">
+    <Layout.Inset>
       <Heading2>Form elements</Heading2>
 
       <Heading3>Input</Heading3>
@@ -328,6 +329,6 @@ export const FormElements = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Layout.Inset>
   );
 };
