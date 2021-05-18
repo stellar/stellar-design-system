@@ -3,6 +3,7 @@ export * from "./Checkbox";
 export * from "./Heading";
 export * from "./InfoBlock";
 export * from "./IconButton";
+export * from "./Identicon";
 export * from "./Input";
 export * from "./Loader";
 export * from "./Modal";

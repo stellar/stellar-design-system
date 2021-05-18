@@ -15,6 +15,6 @@ export const ProjectLogo: React.FC<ProjectLogoProps> = ({
     <a href={link} rel="noreferrer noopener">
       <Logo.Stellar />
     </a>
-    <div className="ProjectLogoTitle">{title}</div>
+    <div className="ProjectLogo__title">{title}</div>
   </div>
 );

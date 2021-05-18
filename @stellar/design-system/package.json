@@ -68,6 +68,7 @@
   },
   "dependencies": {
     "configurable-date-input-polyfill": "^2.8.2",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "stellar-identicon-js": "^1.0.0"
   }
 }

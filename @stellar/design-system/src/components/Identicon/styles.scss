@@ -1,0 +1,52 @@
+.Identicon {
+  --Identicon-size: 2.75rem;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &__icon {
+    width: var(--Identicon-size);
+    height: var(--Identicon-size);
+    background-color: var(--color-background-secondary);
+    border: 1px solid var(--color-background-off);
+    border-radius: calc(var(--Identicon-size) / 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    img {
+      width: 45%;
+      height: 45%;
+    }
+  }
+
+  &__address {
+    margin-left: 0.5rem;
+    word-break: break-all;
+    font-family: var(--font-family-monospace);
+    color: var(--color-text);
+  }
+}
+
+.TextLink {
+  .Identicon__address {
+    text-decoration: underline;
+    color: var(--color-text);
+  }
+
+  &:hover {
+    .Identicon__address {
+      text-decoration: none;
+    }
+  }
+}
+
+.TextLink--disabled {
+  &:hover {
+    .Identicon__address {
+      text-decoration: underline;
+    }
+  }
+}

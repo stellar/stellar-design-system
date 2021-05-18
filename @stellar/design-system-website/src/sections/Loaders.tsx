@@ -9,6 +9,10 @@ export const Loaders = () => (
       <div className="item-wrapper">
         <Loader />
       </div>
+
+      <div className="item-wrapper">
+        <Loader size="3rem" />
+      </div>
     </div>
   </div>
 );

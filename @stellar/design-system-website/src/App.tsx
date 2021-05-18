@@ -3,6 +3,7 @@ import { Branding } from "sections/Branding";
 import { Buttons } from "sections/Buttons";
 import { FormElements } from "sections/FormElements";
 import { IconButtons } from "sections/IconButtons";
+import { Identicons } from "sections/Identicons";
 import { InfoBlocks } from "sections/InfoBlocks";
 import { Loaders } from "sections/Loaders";
 import { Modals } from "sections/Modals";
@@ -15,6 +16,7 @@ export const App = () => (
   <>
     <Typography />
     <Branding />
+    <Identicons />
     <Assets />
     <Loaders />
     <Buttons />
