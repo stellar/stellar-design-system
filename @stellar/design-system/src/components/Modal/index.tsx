@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import ReactDOM from "react-dom";
 import { Icon } from "../../icons";
 import { Heading2 } from "../Heading";
@@ -74,12 +74,18 @@ export const Modal: React.FC<ModalProps> & ModalComponent = ({
   useEffect(() => {
     if (disableWindowScrollWhenOpened && visible) {
       document.body.classList.add(MODAL_OPEN_CLASS_NAME);
-      document.addEventListener("keyup", closeOnEscape);
     } else {
       document.body.classList.remove(MODAL_OPEN_CLASS_NAME);
+    }
+  }, [disableWindowScrollWhenOpened, visible]);
+
+  useEffect(() => {
+    if (visible) {
+      document.addEventListener("keyup", closeOnEscape);
+    } else {
       document.removeEventListener("keyup", closeOnEscape);
     }
-  }, [closeOnEscape, disableWindowScrollWhenOpened, visible]);
+  }, [visible, closeOnEscape]);
 
   if (!parent || !visible) {
     return null;

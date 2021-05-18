@@ -3,6 +3,7 @@
 .Checkbox {
   display: flex;
   align-items: center;
+  position: relative;
 
   @include mixins.checkbox-radio-base-selectors("checkbox");
 

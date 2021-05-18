@@ -5,6 +5,8 @@ import {
   Modal,
   Button,
   InfoBlock,
+  Checkbox,
+  RadioButton,
 } from "@stellar/design-system";
 
 export const Modals = () => {
@@ -84,6 +86,25 @@ export const Modals = () => {
               provident! Aperiam.
             </p>
           </InfoBlock>
+
+          <Checkbox
+            id="modal-checkbox-1"
+            label="Pariatur
+            eius beatae sint dolorem, excepturi quos enim, et ullam suscipit
+            voluptates voluptas accusantium repellendus amet explicabo, iure
+            veritatis aperiam alias molestiae."
+          />
+
+          <RadioButton id="modal-radio-1" name="modal-radio" label="Label 1" />
+          <RadioButton
+            id="modal-radio-2"
+            name="modal-radio"
+            label="Pariatur
+            eius beatae sint dolorem, excepturi quos enim, et ullam suscipit
+            voluptates voluptas accusantium repellendus amet explicabo, iure
+            veritatis aperiam alias molestiae."
+          />
+          <RadioButton id="modal-radio-3" name="modal-radio" label="Label 3" />
         </Modal.Body>
 
         <Modal.Footer>
