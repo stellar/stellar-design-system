@@ -1,24 +1,67 @@
 .TextLink {
-  font-weight: var(--font-weight-normal);
-  color: var(--color-text);
-  text-decoration: underline;
+  --loader-color: var(--TextLink-color-text);
+
+  color: var(--TextLink-color-text);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
   cursor: pointer;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  vertical-align: bottom;
 
-  &:hover {
-    text-decoration: none;
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    opacity: 0.6;
-  }
-
-  &[data-variant="secondary"] {
-    color: var(--color-link);
-    text-decoration: none;
+  &--primary {
+    --TextLink-color-text: var(--color-accent);
 
     &:hover {
-      opacity: 0.7;
+      // TODO: hard coded color
+      --TextLink-color-text: #230f7b;
+
+      &.TextLink--disabled {
+        --TextLink-color-text: var(--color-accent);
+      }
     }
+  }
+
+  &--secondary {
+    --TextLink-color-text: var(--color-link);
+
+    &:hover {
+      --TextLink-color-text: var(--color-text);
+
+      &.TextLink--disabled {
+        --TextLink-color-text: var(--color-link);
+      }
+    }
+  }
+
+  &--underline {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: var(--opacity-disabled-button);
+
+    &.TextLink--underline {
+      text-decoration: underline;
+    }
+  }
+
+  .ButtonIcon {
+    --ButtonIcon-gap: 0.25rem;
+
+    svg {
+      fill: var(--TextLink-color-text);
+    }
+  }
+
+  .Loader {
+    margin-left: 0.5rem;
   }
 }

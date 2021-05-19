@@ -1,0 +1,50 @@
+.IconButton {
+  --IconButton-size: 1.25rem;
+
+  cursor: pointer;
+  width: var(--IconButton-size);
+  height: var(--IconButton-size);
+  flex-shrink: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--IconButton-color);
+  }
+
+  &--default {
+    --IconButton-color: var(--color-link);
+  }
+
+  &--error {
+    --IconButton-color: var(--color-error);
+  }
+
+  &--success {
+    --IconButton-color: var(--color-success);
+  }
+
+  &--warning {
+    --IconButton-color: var(--color-warning);
+  }
+
+  &--highlight {
+    --IconButton-color: var(--color-accent);
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: var(--opacity-disabled-button);
+  }
+}

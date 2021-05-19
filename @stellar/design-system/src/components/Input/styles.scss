@@ -1,60 +1,38 @@
+@use "../../mixins.scss";
+
 .Input {
   width: 100%;
 
   &__container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include mixins.form-field-container;
   }
 
   &__wrapper {
-    border: 1px solid var(--color-border-input);
-    border-radius: 0.125rem;
-    background-color: var(--color-background-input);
+    @include mixins.form-field-wrapper;
     flex: 1;
     height: 100%;
 
-    &[data-disabled="true"] {
-      opacity: 0.5;
+    &:hover {
+      @include mixins.form-field-wrapper-hover;
     }
 
     input {
-      padding: 0.55rem 0.75rem;
-      font-size: 1rem;
-      line-height: 1.5rem;
-      color: var(--color-text-input);
-      border-radius: 0.125rem;
-      border: none;
-      background-color: transparent;
-      width: 100%;
-      min-width: 0;
+      @include mixins.form-field-base;
+      @include mixins.form-field-focus;
 
       &::placeholder {
         color: var(--color-text-input-placeholder);
       }
+
+      @include mixins.form-field-disabled;
     }
   }
 
-  &__element {
-    &--right {
-      margin-left: 1rem;
-      font-size: 1rem;
-      line-height: 1.5rem;
-      color: var(--color-text);
-    }
+  &--error {
+    @include mixins.form-field-wrapper-error(".Input__wrapper");
   }
 
-  &__note {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    line-height: 1.4rem;
-    color: var(--color-note);
-
-    &--error {
-      font-size: 1rem;
-      line-height: 1.5rem;
-      color: var(--color-error);
-    }
+  &--disabled {
+    @include mixins.form-field-wrapper-disabled(".Input__wrapper");
   }
 }

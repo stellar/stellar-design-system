@@ -1,0 +1,146 @@
+// Form field
+@mixin form-field-container {
+  --form-field-border-radius: 0.125rem;
+  // TODO: hard coded color
+  --form-field-border-hover-color: #999999;
+
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin form-field-wrapper {
+  border: 1px solid var(--color-border-input);
+  border-radius: var(--form-field-border-radius);
+  background-color: var(--color-background-input);
+}
+
+@mixin form-field-base {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.75rem;
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-input);
+  border-radius: var(--form-field-border-radius);
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  min-width: 0;
+}
+
+@mixin form-field-wrapper-hover {
+  border-color: var(--form-field-border-hover-color);
+}
+
+@mixin form-field-focus {
+  &:focus-visible {
+    outline: 1px solid var(--color-accent);
+  }
+}
+
+@mixin form-field-disabled {
+  &:disabled {
+    cursor: not-allowed;
+    color: var(--color-text-input-placeholder);
+  }
+}
+
+@mixin form-field-wrapper-error($elClass) {
+  #{$elClass} {
+    border-color: var(--color-error);
+
+    &:hover {
+      border-color: var(--form-field-border-hover-color);
+    }
+  }
+}
+
+@mixin form-field-wrapper-disabled($elClass) {
+  #{$elClass} {
+    background-color: var(--color-background-off);
+
+    &:hover {
+      border-color: var(--color-border-input);
+    }
+  }
+}
+
+// Checkbox + radio button
+@mixin checkbox-radio-label {
+  --checkbox-radio-line-height: 1.75rem;
+  --checkbox-radio-container-size: 1.125rem;
+  --checkbox-radio-offset-top: 0.3125rem;
+
+  font-size: 1rem;
+  line-height: var(--checkbox-radio-line-height);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-note);
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  text-transform: none;
+  margin-bottom: 0;
+}
+
+@mixin checkbox-radio-base-selectors($type) {
+  input[type="#{$type}"] {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+  input[type="#{$type}"] + label::before {
+    background-color: var(--color-background-input);
+  }
+
+  input[type="#{$type}"]:checked + label::before {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+
+  input[type="#{$type}"]:checked + label > span {
+    display: block;
+  }
+}
+
+@mixin checkbox-radio-container {
+  content: "";
+  margin-top: var(--checkbox-radio-offset-top);
+  width: 1rem;
+  height: 1rem;
+  display: block;
+  margin-right: 0.75rem;
+  border: 1px solid var(--color-accent);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.16);
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+@mixin checkbox-radio-disabled {
+  opacity: var(--opacity-disabled-button);
+}
+
+@mixin checkbox-radio-icon-container {
+  width: var(--checkbox-radio-container-size);
+  height: var(--checkbox-radio-container-size);
+  margin-top: var(--checkbox-radio-offset-top);
+  display: none;
+  z-index: 2;
+  position: absolute;
+}
+
+@mixin checkbox-radio-icon-wrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin checkbox-radio-icon-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -6,38 +6,53 @@
 }
 
 // Base font size 16px
-// 32 / 40 (font size / line height)
+// 48 / 60 (font size / line height)
 h1 {
+  @include base-heading;
+  font-size: 3rem;
+  line-height: 3.75rem;
+}
+
+// 40 / 48
+h2 {
+  @include base-heading;
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+
+// 32 / 40
+h3 {
   @include base-heading;
   font-size: 2rem;
   line-height: 2.5rem;
 }
 
-// 24 / 32
-h2 {
+// 24 / 36
+h4 {
   @include base-heading;
   font-size: 1.5rem;
-  line-height: 2rem;
+  line-height: 2.25rem;
 }
 
 // 20 / 30
-h3 {
-  @include base-heading;
-  font-size: 1.25rem;
-  line-height: 1.875rem;
-}
-
-// 16 / 24
-h4 {
-  @include base-heading;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  font-weight: var(--font-weight-medium);
-}
-
-// 16 / 24
 h5 {
   @include base-heading;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.88rem;
+}
+
+// 18 / 28
+h6 {
+  @include base-heading;
+  font-size: 1.13rem;
+  line-height: 1.75rem;
+}
+
+// 14 / 22
+.Eyebrow {
+  @include base-heading;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
 }

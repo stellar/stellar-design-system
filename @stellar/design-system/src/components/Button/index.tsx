@@ -1,25 +1,53 @@
 import React from "react";
+import { Loader } from "../Loader";
+import { ButtonIcon } from "../utils/ButtonIcon";
 import "./styles.scss";
 
-export enum ButtonVariant {
+enum ButtonVariant {
   primary = "primary",
   secondary = "secondary",
+  tertiary = "tertiary",
+}
+
+interface ButtonComponent {
+  variant: typeof ButtonVariant;
 }
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  icon?: React.ReactNode;
+  iconLeft?: React.ReactNode;
+  iconRight?: React.ReactNode;
   variant?: ButtonVariant;
-  children: string;
+  isLoading?: Boolean;
+  children: string | React.ReactNode;
 }
 
-export const Button: React.FC<ButtonProps> = ({
-  icon,
+export const Button: React.FC<ButtonProps> & ButtonComponent = ({
+  iconLeft,
+  iconRight,
   variant = ButtonVariant.primary,
+  isLoading,
   children,
   ...props
 }) => (
-  <button className="Button" data-variant={variant} {...props}>
-    {icon && <span className="ButtonIcon">{icon}</span>}
-    {children}
+  <button
+    className={`Button Button--${variant}`}
+    {...props}
+    {...(isLoading ? { disabled: true } : {})}
+  >
+    {iconLeft ? (
+      <ButtonIcon position={ButtonIcon.position.left}>{iconLeft}</ButtonIcon>
+    ) : null}
+    {isLoading ? (
+      <>
+        Loading <Loader />
+      </>
+    ) : (
+      children
+    )}
+    {iconRight ? (
+      <ButtonIcon position={ButtonIcon.position.right}>{iconRight}</ButtonIcon>
+    ) : null}
   </button>
 );
+
+Button.variant = ButtonVariant;

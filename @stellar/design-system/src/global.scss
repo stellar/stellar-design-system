@@ -25,6 +25,8 @@
   --color-border-input: #cccccc;
   --color-shadow: rgba(0, 0, 0, 0.48);
 
+  --font-size: 16px;
+
   // Font weight
   --font-weight-light: 300;
   --font-weight-normal: 400;
@@ -42,6 +44,13 @@
   // Loader
   --loader-size: 1rem;
   --loader-color: #666666;
+
+  // Opacity
+  --opacity-disabled-button: 0.4;
+
+  // Layout
+  --layout-window-width-min: 320px;
+  --layout-window-width-max: 1296px;
 }
 
 html,
@@ -54,7 +63,7 @@ button {
 
 body {
   min-height: 100vh;
-  min-width: 320px;
+  min-width: var(--layout-window-width-min);
   padding: 0;
   margin: 0;
   background-color: var(--color-background-main);
@@ -75,7 +84,7 @@ body,
 input,
 textarea,
 button {
-  font-size: 16px;
+  font-size: var(--font-size);
   font-weight: var(--font-weight-normal);
   font-family: var(--font-family-base);
   line-height: 1;
@@ -105,17 +114,55 @@ ul {
   }
 }
 
-strong {
+strong,
+b {
   font-weight: var(--font-weight-medium);
 }
 
 p {
-  line-height: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.75rem;
   margin: 0;
+  color: var(--color-note);
+
+  &.Paragraph--secondary {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
 
   &:not(:last-child) {
     margin-bottom: 1.5rem;
   }
+}
+
+code {
+  // TODO: hard coded color
+  color: #490be3;
+  font-family: var(--font-family-monospace);
+  border-radius: 0.1875rem;
+  border: 0.5px solid var(--color-background-off);
+  background-color: var(--color-background-secondary);
+  padding: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  font-weight: var(--font-weight-medium);
+  display: inline;
+  line-break: anywhere;
+}
+
+label {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-text-contrast);
 }
 
 /* page wrapper */
@@ -123,14 +170,18 @@ div#root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
-label {
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  color: var(--color-text);
-  font-weight: var(--font-weight-normal);
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  display: block;
+// Generic
+.error {
+  color: var(--color-error);
+}
+
+.success {
+  color: var(--color-success);
+}
+
+.warning {
+  color: var(--color-warning);
 }

@@ -1,0 +1,69 @@
+.Toggle {
+  --toogle-width: 2.5rem;
+  --toggle-height: 1.5rem;
+  --toggle-circle-size: 1rem;
+  --toggle-label-gap: 0.75rem;
+
+  display: flex;
+  align-items: center;
+
+  &__track {
+    width: var(--toogle-width);
+    height: var(--toggle-height);
+    border-radius: var(--toggle-circle-size);
+    border: 1px solid var(--color-accent);
+    cursor: pointer;
+    background-color: var(--color-background-main);
+    display: flex;
+    align-items: center;
+    padding: 0 0.25rem;
+    transition: background 0.5s;
+
+    &::after {
+      display: block;
+      content: "";
+      width: var(--toggle-circle-size);
+      height: var(--toggle-circle-size);
+      border-radius: var(--toggle-circle-size);
+      background-color: var(--color-accent);
+      transition: all 0.4s;
+    }
+  }
+
+  &__input {
+    display: none;
+
+    &:checked ~ .Toggle__track {
+      background-color: var(--color-accent);
+
+      &::after {
+        background-color: var(--color-background-main);
+        transform: translateX(0.8rem);
+      }
+    }
+  }
+
+  span {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    color: var(--color-note);
+    font-weight: var(--font-weight-normal);
+    text-transform: none;
+  }
+
+  span ~ .Toggle__track {
+    margin-left: var(--toggle-label-gap);
+  }
+
+  .Toggle__track ~ span {
+    margin-left: var(--toggle-label-gap);
+  }
+
+  &--disabled {
+    opacity: 0.6;
+
+    .Toggle__track {
+      cursor: not-allowed;
+    }
+  }
+}

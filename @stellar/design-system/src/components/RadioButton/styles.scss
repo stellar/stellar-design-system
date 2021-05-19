@@ -1,0 +1,47 @@
+@use "../../mixins.scss";
+
+.RadioButton {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  @include mixins.checkbox-radio-base-selectors("radio");
+
+  label {
+    @include mixins.checkbox-radio-label;
+
+    &::before,
+    &::after {
+      flex-shrink: 0;
+      flex-grow: 0;
+    }
+
+    &::before {
+      @include mixins.checkbox-radio-container;
+      border-radius: 1rem;
+    }
+  }
+
+  &__icon {
+    @include mixins.checkbox-radio-icon-container;
+
+    span {
+      --radio-button-selected-size: 0.4rem;
+      @include mixins.checkbox-radio-icon-wrapper;
+
+      &::after {
+        @include mixins.checkbox-radio-icon-centered;
+        content: "";
+        display: block;
+        width: var(--radio-button-selected-size);
+        height: var(--radio-button-selected-size);
+        border-radius: var(--radio-button-selected-size);
+        background-color: var(--color-background-input);
+      }
+    }
+  }
+
+  &--disabled {
+    @include mixins.checkbox-radio-disabled;
+  }
+}

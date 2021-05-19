@@ -1,0 +1,28 @@
+.ButtonIcon {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  flex-shrink: 0;
+  flex-grow: 0;
+
+  --ButtonIcon-gap: 0.5rem;
+
+  // TODO: once flex gap has better support, we can remove these
+  &--left {
+    margin-right: var(--ButtonIcon-gap);
+  }
+
+  &--right {
+    margin-left: var(--ButtonIcon-gap);
+  }
+
+  svg {
+    fill: inherit;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
