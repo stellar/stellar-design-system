@@ -20,17 +20,17 @@ export enum ComponentDetailsId {
 
 // TODO: update when details are added
 interface ComponentDetailsList {
-  assets: ComponentDetails | undefined;
-  branding: ComponentDetails | undefined;
+  assets: ComponentDetails;
+  branding: ComponentDetails;
   buttons: ComponentDetails;
   formElements: ComponentDetails | undefined;
-  iconButtons: ComponentDetails | undefined;
-  identicons: ComponentDetails | undefined;
+  iconButtons: ComponentDetails;
+  identicons: ComponentDetails;
   infoBlocks: ComponentDetails | undefined;
-  loaders: ComponentDetails | undefined;
+  loaders: ComponentDetails;
   modals: ComponentDetails | undefined;
   textLinks: ComponentDetails | undefined;
-  typography: ComponentDetails | undefined;
+  typography: ComponentDetails;
 }
 
 interface ComponentDetails {

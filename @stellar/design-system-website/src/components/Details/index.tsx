@@ -92,42 +92,50 @@ export const Details = () => {
       })}
 
       {/* props */}
-      <Heading2>Props</Heading2>
+      {props.length ? (
+        <>
+          <Heading2>Props</Heading2>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Prop</th>
-            <th>Type</th>
-            <th>Default</th>
-            <th>Optional</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          {props.map((prop: ComponentProp) => (
-            <tr key={prop.prop}>
-              <td>
-                <code>{prop.prop}</code>
-              </td>
-              <td>{renderPropType(prop.type)}</td>
-              <td>{prop.default ? <code>{prop.default}</code> : null}</td>
-              <td>{prop.optional ? "Yes" : null}</td>
-              <td>{prop.description ?? null}</td>
-            </tr>
-          ))}
-          {externalProps?.link ? (
-            <tr>
-              <td colSpan={5}>
-                Including all valid{" "}
-                <TextLink href={externalProps.link}>
-                  {externalProps.label || "attributes"}
-                </TextLink>
-              </td>
-            </tr>
-          ) : null}
-        </tbody>
-      </table>
+          <table>
+            <thead>
+              <tr>
+                <th>Prop</th>
+                <th>Type</th>
+                <th>Default</th>
+                <th>Optional</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              {props.map((componentProp: ComponentProp) => (
+                <tr key={componentProp.prop}>
+                  <td>
+                    <code>{componentProp.prop}</code>
+                  </td>
+                  <td>{renderPropType(componentProp.type)}</td>
+                  <td>
+                    {componentProp.default ? (
+                      <code>{componentProp.default}</code>
+                    ) : null}
+                  </td>
+                  <td>{componentProp.optional ? "Yes" : null}</td>
+                  <td>{componentProp.description ?? null}</td>
+                </tr>
+              ))}
+              {externalProps?.link ? (
+                <tr>
+                  <td colSpan={5}>
+                    Including all valid{" "}
+                    <TextLink href={externalProps.link}>
+                      {externalProps.label || "attributes"}
+                    </TextLink>
+                  </td>
+                </tr>
+              ) : null}
+            </tbody>
+          </table>
+        </>
+      ) : null}
     </Layout.Inset>
   );
 };

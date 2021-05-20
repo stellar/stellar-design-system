@@ -12,7 +12,11 @@ const getHeadingComponent =
       return <Component {...props}>{children}</Component>;
     }
 
-    return <div className="Eyebrow">{children}</div>;
+    return (
+      <div className="Eyebrow" {...props}>
+        {children}
+      </div>
+    );
   };
 
 export const Heading1 = getHeadingComponent("h1");

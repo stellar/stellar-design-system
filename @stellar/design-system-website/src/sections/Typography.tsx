@@ -8,8 +8,8 @@ import {
   Eyebrow,
   Layout,
 } from "@stellar/design-system";
-import { getComponentDetailsLink } from "helpers/getComponentDetailsLink";
 import { RouteLink } from "components/RouteLink";
+import { getComponentDetailsLink } from "helpers/getComponentDetailsLink";
 import { ComponentDetailsId } from "types/types.d";
 
 export const Typography = () => (

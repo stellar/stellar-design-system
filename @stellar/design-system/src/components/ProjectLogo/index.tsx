@@ -4,7 +4,7 @@ import { Logo } from "../../logos";
 
 interface ProjectLogoProps {
   title: string;
-  link?: string;
+  link: string;
 }
 
 export const ProjectLogo: React.FC<ProjectLogoProps> = ({
