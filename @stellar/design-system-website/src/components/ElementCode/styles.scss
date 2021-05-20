@@ -1,0 +1,19 @@
+.ElementCode {
+  background-color: rgb(42, 39, 52);
+  height: 100%;
+
+  pre {
+    padding: 1rem;
+    line-height: 1.4rem;
+    margin: 0;
+  }
+
+  &__line-number {
+    font-family: var(--font-family-monospace);
+    margin-right: 0.2rem;
+    opacity: 0.5;
+    width: 2rem;
+    display: inline-block;
+    user-select: none;
+  }
+}

@@ -55,3 +55,5 @@ export const Input: React.FC<InputProps> = ({
     </div>
   );
 };
+
+Input.displayName = "Input";

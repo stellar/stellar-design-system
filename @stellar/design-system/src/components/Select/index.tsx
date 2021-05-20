@@ -14,7 +14,7 @@ interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   children: React.ReactNode;
 }
 
-export const Select = ({
+export const Select: React.FC<SelectProps> = ({
   id,
   label,
   leftElement,
@@ -63,3 +63,5 @@ export const Select = ({
     </div>
   );
 };
+
+Select.displayName = "Select";

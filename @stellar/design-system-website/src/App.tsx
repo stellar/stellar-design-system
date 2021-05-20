@@ -1,4 +1,7 @@
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Layout } from "@stellar/design-system";
+
+import { Details } from "components/Details";
 
 import { Assets } from "sections/Assets";
 import { Branding } from "sections/Branding";
@@ -15,7 +18,7 @@ import { Typography } from "sections/Typography";
 import "styles.scss";
 
 export const App = () => (
-  <>
+  <Router>
     {/* TODO: update project link */}
     <Layout.Header
       projectTitle="Design System"
@@ -23,19 +26,31 @@ export const App = () => (
     />
 
     <Layout.Content>
-      <Typography />
-      <Branding />
-      <Identicons />
-      <Assets />
-      <Loaders />
-      <Buttons />
-      <IconButtons />
-      <TextLinks />
-      <InfoBlocks />
-      <FormElements />
-      <Modals />
+      <Switch>
+        <Route exact path="/">
+          <>
+            <Typography />
+            <Branding />
+            <Identicons />
+            <Assets />
+            <Loaders />
+            <Buttons />
+            <IconButtons />
+            <TextLinks />
+            <InfoBlocks />
+            <FormElements />
+            <Modals />
+          </>
+        </Route>
+
+        <Route exact path="/component/:id">
+          <Details />
+        </Route>
+
+        {/* TODO: add 404 */}
+      </Switch>
     </Layout.Content>
 
     <Layout.Footer gitHubLink="https://github.com/stellar/stellar-design-system" />
-  </>
+  </Router>
 );

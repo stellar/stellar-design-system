@@ -23,4 +23,5 @@ export const InfoBlock: React.FC<InfoBlockProps> & InfoBlockComponent = ({
   <div className={`InfoBlock InfoBlock--${variant}`}>{children}</div>
 );
 
+InfoBlock.displayName = "InfoBlock";
 InfoBlock.variant = InfoBlockVariant;

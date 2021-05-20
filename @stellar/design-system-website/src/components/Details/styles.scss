@@ -1,0 +1,28 @@
+.Details {
+  &__example__container {
+    display: flex;
+  }
+
+  &__example__details {
+    background-color: var(--color-background-secondary);
+    padding: 1rem;
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__example__component {
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+
+    & > * {
+      margin-right: 1rem;
+    }
+  }
+
+  &__example__code {
+    flex: 0.5;
+  }
+}

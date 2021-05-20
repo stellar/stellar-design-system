@@ -59,4 +59,5 @@ export const Toggle: React.FC<ToggleProps> & ToggleComponent = ({
   );
 };
 
+Toggle.displayName = "Toggle";
 Toggle.labelPosition = LabelPosition;

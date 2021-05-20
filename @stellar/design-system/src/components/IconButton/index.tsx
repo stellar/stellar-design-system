@@ -47,4 +47,5 @@ export const IconButton: React.FC<IconButtonProps> & IconButtonComponent = ({
   );
 };
 
+IconButton.displayName = "IconButton";
 IconButton.variant = IconButtonVariant;
