@@ -75,18 +75,19 @@ export const Details = () => {
 
         return (
           <div className="Details__example" key={`example-${Math.random()}`}>
-            <div className="Details__example__container">
-              <div className="Details__example__details">
-                {exampleTitle ? <Heading5>{exampleTitle}</Heading5> : null}
-                {exampleDescription ? <p>{exampleDescription}</p> : null}
-                <div className="Details__example__component">
-                  {component.map((c) => c)}
+            {exampleTitle ? <Heading5>{exampleTitle}</Heading5> : null}
+            {exampleDescription ? <p>{exampleDescription}</p> : null}
+
+            {component.map((c) => (
+              <div className="Details__example__container">
+                <div className="Details__example__details">
+                  <div className="Details__example__component">{c}</div>
+                </div>
+                <div className="Details__example__code">
+                  <ElementCode element={c} />
                 </div>
               </div>
-              <div className="Details__example__code">
-                <ElementCode element={component} />
-              </div>
-            </div>
+            ))}
           </div>
         );
       })}

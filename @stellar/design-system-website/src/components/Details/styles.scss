@@ -16,13 +16,16 @@
     flex: 1;
     justify-content: flex-start;
     align-items: center;
-
-    & > * {
-      margin-right: 1rem;
-    }
+    flex-wrap: wrap;
   }
 
   &__example__code {
+    background-color: rgb(42, 39, 52);
     flex: 0.5;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    overflow-x: auto;
+    justify-content: center;
   }
 }
