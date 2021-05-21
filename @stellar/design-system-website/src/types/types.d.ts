@@ -8,28 +8,35 @@ export enum ComponentDetailsId {
   assets = "assets",
   branding = "branding",
   buttons = "buttons",
-  formElements = "formElements",
+  checkboxes = "checkboxes",
   iconButtons = "iconButtons",
   identicons = "identicons",
   infoBlocks = "infoBlocks",
+  inputs = "inputs",
   loaders = "loaders",
   modals = "modals",
+  radioButtons = "radioButtons",
+  selects = "selects",
   textLinks = "textLinks",
+  toggles = "toggles",
   typography = "typography",
 }
 
-// TODO: update when details are added
 interface ComponentDetailsList {
   assets: ComponentDetails;
   branding: ComponentDetails;
   buttons: ComponentDetails;
-  formElements: ComponentDetails | undefined;
+  checkboxes: ComponentDetails;
   iconButtons: ComponentDetails;
   identicons: ComponentDetails;
-  infoBlocks: ComponentDetails | undefined;
+  infoBlocks: ComponentDetails;
+  inputs: ComponentDetails;
   loaders: ComponentDetails;
-  modals: ComponentDetails | undefined;
-  textLinks: ComponentDetails | undefined;
+  modals: ComponentDetails;
+  radioButtons: ComponentDetails;
+  selects: ComponentDetails;
+  textLinks: ComponentDetails;
+  toggles: ComponentDetails;
   typography: ComponentDetails;
 }
 
@@ -40,12 +47,20 @@ interface ComponentDetails {
   examples: ComponentExample[];
   props: ComponentProp[];
   externalProps?: ComponentExternalProps;
+  notes?: React.ReactNode[];
+  subComponents?: {
+    description: string | React.ReactNode;
+    components: SubComponent[];
+  };
 }
 
 interface ComponentExample {
   title: string;
   description: string | undefined;
   component: React.ReactNode[];
+  // In cases where we need to provide state and helper methods to preview the
+  // component (for example, Modal)
+  previewExampleOverride?: React.Element[];
 }
 
 interface ComponentProp {
@@ -59,4 +74,10 @@ interface ComponentProp {
 interface ComponentExternalProps {
   link: string;
   label: string | undefined;
+}
+
+interface SubComponent {
+  component: string;
+  description: string;
+  props: ComponentProp[];
 }

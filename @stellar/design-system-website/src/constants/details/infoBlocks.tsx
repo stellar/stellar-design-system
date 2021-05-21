@@ -1,9 +1,9 @@
-// import { Button, Icon } from "@stellar/design-system";
+import { InfoBlock } from "@stellar/design-system";
 import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 
-export const modals: ComponentDetails = {
-  id: ComponentDetailsId.modals,
-  title: "Modals",
+export const infoBlocks: ComponentDetails = {
+  id: ComponentDetailsId.infoBlocks,
+  title: "Info blocks",
   description: (
     <p>
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
@@ -16,15 +16,28 @@ export const modals: ComponentDetails = {
     {
       title: "",
       description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
-      component: [],
+      component: [
+        <InfoBlock>Information (default) block</InfoBlock>,
+        <InfoBlock variant={InfoBlock.variant.error}>Error block</InfoBlock>,
+        <InfoBlock variant={InfoBlock.variant.warning}>
+          <p>Warning block</p>
+        </InfoBlock>,
+      ],
     },
   ],
   props: [
     {
-      prop: "",
-      type: [""],
+      prop: "children",
+      type: ["string", "React.ReactNode"],
       default: null,
       optional: false,
+      description: "",
+    },
+    {
+      prop: "variant",
+      type: ["info", "error", "warning"],
+      default: "info",
+      optional: true,
       description: "",
     },
   ],

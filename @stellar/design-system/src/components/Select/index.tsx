@@ -9,8 +9,8 @@ interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   label?: string;
   leftElement?: string | React.ReactNode;
   rightElement?: string | React.ReactNode;
-  note?: React.ReactNode;
-  error?: string;
+  note?: string | React.ReactNode;
+  error?: string | string;
   children: React.ReactNode;
 }
 
