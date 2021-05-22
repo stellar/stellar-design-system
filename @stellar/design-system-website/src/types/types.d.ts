@@ -60,7 +60,8 @@ interface ComponentExample {
   component: React.ReactNode[];
   // In cases where we need to provide state and helper methods to preview the
   // component (for example, Modal)
-  previewExampleOverride?: React.Element[];
+  previewExampleOverride?: any[];
+  useGridLayout?: boolean;
 }
 
 interface ComponentProp {

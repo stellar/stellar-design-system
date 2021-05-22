@@ -108,6 +108,58 @@ export const Details = () => {
     </table>
   );
 
+  const renderExample = (
+    components: React.ReactNode[],
+    options?: {
+      previewExampleOverride?: React.Component[];
+      useGridLayout?: boolean;
+    },
+  ) => {
+    const { previewExampleOverride, useGridLayout } = options || {};
+
+    if (useGridLayout) {
+      return (
+        <div className="Details__example__grid">
+          {components.map((component, index) => (
+            <div
+              className="Details__example__container"
+              key={`grid-container-${Math.random()}`}
+            >
+              <div className="Details__example__details">
+                <div className="Details__example__component">
+                  {previewExampleOverride?.[index]
+                    ? previewExampleOverride[index]
+                    : component}
+                </div>
+              </div>
+              <div className="Details__example__code">
+                <ElementCode element={component} />
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+    }
+
+    return components.map((component, index) => (
+      <div
+        className="Details__example__container"
+        key={`container-${Math.random()}`}
+      >
+        <div className="Details__example__details">
+          <div className="Details__example__component">
+            {previewExampleOverride?.[index]
+              ? previewExampleOverride[index]
+              : component}
+          </div>
+        </div>
+        <div className="Details__example__code">
+          <ElementCode element={component} />
+        </div>
+      </div>
+    ));
+  };
+
   return (
     <Layout.Inset>
       {/* heading */}
@@ -125,6 +177,7 @@ export const Details = () => {
           description: exampleDescription,
           component,
           previewExampleOverride,
+          useGridLayout,
         } = example;
 
         return (
@@ -132,23 +185,10 @@ export const Details = () => {
             {exampleTitle ? <Heading5>{exampleTitle}</Heading5> : null}
             {exampleDescription ? <p>{exampleDescription}</p> : null}
 
-            {component.map((c, index) => (
-              <div
-                className="Details__example__container"
-                key={`container-${Math.random()}`}
-              >
-                <div className="Details__example__details">
-                  <div className="Details__example__component">
-                    {previewExampleOverride?.[index]
-                      ? previewExampleOverride[index]
-                      : c}
-                  </div>
-                </div>
-                <div className="Details__example__code">
-                  <ElementCode element={c} />
-                </div>
-              </div>
-            ))}
+            {renderExample(component, {
+              previewExampleOverride,
+              useGridLayout,
+            })}
           </div>
         );
       })}
