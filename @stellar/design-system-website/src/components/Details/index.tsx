@@ -57,6 +57,7 @@ export const Details = () => {
     const size = type.length;
 
     return type.map((item, index) => (
+      // eslint-disable-next-line react/no-array-index-key
       <span key={`type-${index}`}>
         <code>{item}</code>
         {size !== index + 1 ? " | " : ""}
@@ -80,6 +81,7 @@ export const Details = () => {
       </thead>
       <tbody>
         {renderProps.map((componentProp, index) => (
+          // eslint-disable-next-line react/no-array-index-key
           <tr key={`${componentProp.prop}-${index}`}>
             <td>
               <code>{componentProp.prop}</code>
