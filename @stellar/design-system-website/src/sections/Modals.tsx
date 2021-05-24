@@ -9,6 +9,9 @@ import {
   RadioButton,
   Layout,
 } from "@stellar/design-system";
+import { RouteLink } from "components/RouteLink";
+import { getComponentDetailsLink } from "helpers/getComponentDetailsLink";
+import { ComponentDetailsId } from "types/types.d";
 
 export const Modals = () => {
   const [simpleModalVisible, setSimpleModalVisible] = useState(false);
@@ -16,7 +19,11 @@ export const Modals = () => {
 
   return (
     <Layout.Inset>
-      <Heading2>Modal</Heading2>
+      <Heading2>
+        <RouteLink href={getComponentDetailsLink(ComponentDetailsId.modals)}>
+          Modals
+        </RouteLink>
+      </Heading2>
 
       <div className="item-container">
         <div className="item-wrapper">

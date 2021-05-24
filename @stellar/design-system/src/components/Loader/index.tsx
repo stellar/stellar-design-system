@@ -19,3 +19,5 @@ export const Loader: React.FC<LoaderProps> = ({ size }: LoaderProps) => {
     </div>
   );
 };
+
+Loader.displayName = "Loader";

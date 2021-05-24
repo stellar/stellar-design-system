@@ -1,8 +1,15 @@
 import { Heading2, InfoBlock, Layout } from "@stellar/design-system";
+import { RouteLink } from "components/RouteLink";
+import { getComponentDetailsLink } from "helpers/getComponentDetailsLink";
+import { ComponentDetailsId } from "types/types.d";
 
 export const InfoBlocks = () => (
   <Layout.Inset>
-    <Heading2>Info blocks</Heading2>
+    <Heading2>
+      <RouteLink href={getComponentDetailsLink(ComponentDetailsId.infoBlocks)}>
+        Info blocks
+      </RouteLink>
+    </Heading2>
 
     <div className="item-container">
       <div className="item-wrapper">

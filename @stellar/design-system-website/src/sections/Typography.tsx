@@ -8,10 +8,17 @@ import {
   Eyebrow,
   Layout,
 } from "@stellar/design-system";
+import { RouteLink } from "components/RouteLink";
+import { getComponentDetailsLink } from "helpers/getComponentDetailsLink";
+import { ComponentDetailsId } from "types/types.d";
 
 export const Typography = () => (
   <Layout.Inset>
-    <Heading2>Typography</Heading2>
+    <Heading2>
+      <RouteLink href={getComponentDetailsLink(ComponentDetailsId.typography)}>
+        Typography
+      </RouteLink>
+    </Heading2>
 
     <div>
       <Heading1>Heading 1</Heading1>

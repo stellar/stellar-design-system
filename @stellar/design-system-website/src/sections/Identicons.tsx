@@ -1,8 +1,15 @@
 import { Heading2, Identicon, TextLink, Layout } from "@stellar/design-system";
+import { RouteLink } from "components/RouteLink";
+import { getComponentDetailsLink } from "helpers/getComponentDetailsLink";
+import { ComponentDetailsId } from "types/types.d";
 
 export const Identicons = () => (
   <Layout.Inset>
-    <Heading2>Identicons</Heading2>
+    <Heading2>
+      <RouteLink href={getComponentDetailsLink(ComponentDetailsId.identicons)}>
+        Identicons
+      </RouteLink>
+    </Heading2>
 
     <div className="item-container">
       <div className="item-wrapper">

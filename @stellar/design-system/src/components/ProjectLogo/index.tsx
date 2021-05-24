@@ -4,7 +4,7 @@ import { Logo } from "../../logos";
 
 interface ProjectLogoProps {
   title: string;
-  link?: string;
+  link: string;
 }
 
 export const ProjectLogo: React.FC<ProjectLogoProps> = ({
@@ -18,3 +18,5 @@ export const ProjectLogo: React.FC<ProjectLogoProps> = ({
     <div className="ProjectLogo__title">{title}</div>
   </div>
 );
+
+ProjectLogo.displayName = "ProjectLogo";

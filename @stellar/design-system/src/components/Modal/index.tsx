@@ -105,6 +105,10 @@ export const Modal: React.FC<ModalProps> & ModalComponent = ({
   );
 };
 
+Modal.displayName = "Modal";
 Modal.Heading = ModalHeading;
+Modal.Heading.displayName = "Modal.Heading";
 Modal.Body = ModalBody;
+Modal.Body.displayName = "Modal.Body";
 Modal.Footer = ModalFooter;
+Modal.Footer.displayName = "Modal.Footer";

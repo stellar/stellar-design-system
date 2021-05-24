@@ -11,6 +11,9 @@ import {
   Toggle,
   Layout,
 } from "@stellar/design-system";
+import { RouteLink } from "components/RouteLink";
+import { getComponentDetailsLink } from "helpers/getComponentDetailsLink";
+import { ComponentDetailsId } from "types/types.d";
 
 export const FormElements = () => {
   const [toggleActive, setToggleActive] = useState(false);
@@ -19,7 +22,11 @@ export const FormElements = () => {
     <Layout.Inset>
       <Heading2>Form elements</Heading2>
 
-      <Heading3>Input</Heading3>
+      <Heading3>
+        <RouteLink href={getComponentDetailsLink(ComponentDetailsId.inputs)}>
+          Inputs
+        </RouteLink>
+      </Heading3>
       <div className="item-container">
         <div className="item-wrapper">
           <Input id="input-1" label="Label" placeholder="Placeholder" />
@@ -94,7 +101,11 @@ export const FormElements = () => {
         </div>
       </div>
 
-      <Heading3>Select</Heading3>
+      <Heading3>
+        <RouteLink href={getComponentDetailsLink(ComponentDetailsId.selects)}>
+          Selects
+        </RouteLink>
+      </Heading3>
       <div className="item-container">
         <div className="item-wrapper">
           <Select id="select-1">
@@ -183,7 +194,13 @@ export const FormElements = () => {
         </div>
       </div>
 
-      <Heading3>Checkbox</Heading3>
+      <Heading3>
+        <RouteLink
+          href={getComponentDetailsLink(ComponentDetailsId.checkboxes)}
+        >
+          Checkbox
+        </RouteLink>
+      </Heading3>
       <div className="item-container">
         <div className="item-wrapper">
           <Checkbox id="checkbox-1" label="Label" />
@@ -214,7 +231,13 @@ export const FormElements = () => {
         </div>
       </div>
 
-      <Heading3>Radio button</Heading3>
+      <Heading3>
+        <RouteLink
+          href={getComponentDetailsLink(ComponentDetailsId.radioButtons)}
+        >
+          Radio buttons
+        </RouteLink>
+      </Heading3>
       <div className="item-container">
         <div className="item-wrapper">
           <div>
@@ -254,7 +277,11 @@ export const FormElements = () => {
         </div>
       </div>
 
-      <Heading3>Toggle</Heading3>
+      <Heading3>
+        <RouteLink href={getComponentDetailsLink(ComponentDetailsId.toggles)}>
+          Toggles
+        </RouteLink>
+      </Heading3>
       <div className="item-container">
         <div className="item-wrapper">
           <div>

@@ -78,4 +78,5 @@ export const TextLink: React.FC<TextLinkProps> & TextLinkComponent = ({
   );
 };
 
+TextLink.displayName = "TextLink";
 TextLink.variant = TextLinkVariant;

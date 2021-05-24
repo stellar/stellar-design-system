@@ -6,6 +6,64 @@
   }
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--color-text);
+  margin-top: 2rem;
+
+  th {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    color: var(--color-note);
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    text-align: left;
+    padding-bottom: 1.0625rem;
+  }
+
+  thead,
+  tr:not(:last-child) {
+    border-bottom: 1px solid var(--color-background-off);
+  }
+
+  th,
+  td {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    vertical-align: top;
+
+    label {
+      margin-bottom: 0;
+    }
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: 0;
+  }
+
+  th:last-child:not(:first-child),
+  td:last-child:not(:first-child) {
+    padding-right: 0;
+    text-align: right;
+  }
+
+  td {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    word-break: break-word;
+    vertical-align: middle;
+
+    a {
+      display: block;
+    }
+  }
+}
+
+// REMOVE
 .item-container {
   display: grid;
   grid-template-columns: 1fr;

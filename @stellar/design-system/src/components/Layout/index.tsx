@@ -104,6 +104,10 @@ const Footer: React.FC<FooterProps> = ({
 };
 
 Layout.Inset = Inset;
+Layout.Inset.displayName = "Layout.Inset";
 Layout.Content = Content;
+Layout.Content.displayName = "Layout.Content";
 Layout.Header = Header;
+Layout.Header.displayName = "Layout.Header";
 Layout.Footer = Footer;
+Layout.Footer.displayName = "Layout.Footer";

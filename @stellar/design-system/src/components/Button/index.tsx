@@ -50,4 +50,5 @@ export const Button: React.FC<ButtonProps> & ButtonComponent = ({
   </button>
 );
 
+Button.displayName = "Button";
 Button.variant = ButtonVariant;

@@ -8,8 +8,8 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   leftElement?: string | React.ReactNode;
   rightElement?: string | React.ReactNode;
-  note?: React.ReactNode;
-  error?: string;
+  note?: string | React.ReactNode;
+  error?: string | React.ReactNode;
 }
 
 export const Input: React.FC<InputProps> = ({
@@ -55,3 +55,5 @@ export const Input: React.FC<InputProps> = ({
     </div>
   );
 };
+
+Input.displayName = "Input";

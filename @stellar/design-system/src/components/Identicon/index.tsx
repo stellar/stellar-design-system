@@ -62,3 +62,5 @@ const shortenStellarAddress = (key: string) => {
 
   return `${key.slice(0, 5)}…${key.slice(-5)}`;
 };
+
+Identicon.displayName = "Identicon";

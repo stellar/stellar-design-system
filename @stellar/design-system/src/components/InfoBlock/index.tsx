@@ -13,7 +13,7 @@ interface InfoBlockComponent {
 
 interface InfoBlockProps extends React.InputHTMLAttributes<HTMLInputElement> {
   variant?: InfoBlockVariant;
-  children: React.ReactNode;
+  children: string | React.ReactNode;
 }
 
 export const InfoBlock: React.FC<InfoBlockProps> & InfoBlockComponent = ({
@@ -23,4 +23,5 @@ export const InfoBlock: React.FC<InfoBlockProps> & InfoBlockComponent = ({
   <div className={`InfoBlock InfoBlock--${variant}`}>{children}</div>
 );
 
+InfoBlock.displayName = "InfoBlock";
 InfoBlock.variant = InfoBlockVariant;

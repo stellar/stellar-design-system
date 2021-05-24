@@ -27,3 +27,5 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
     </div>
   );
 };
+
+RadioButton.displayName = "RadioButton";

@@ -30,3 +30,5 @@ export const Checkbox: React.FC<CheckboxProps> = ({
     </div>
   );
 };
+
+Checkbox.displayName = "Checkbox";

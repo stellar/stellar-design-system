@@ -5,10 +5,17 @@ import {
   Heading3,
   Layout,
 } from "@stellar/design-system";
+import { RouteLink } from "components/RouteLink";
+import { getComponentDetailsLink } from "helpers/getComponentDetailsLink";
+import { ComponentDetailsId } from "types/types.d";
 
 export const TextLinks = () => (
   <Layout.Inset>
-    <Heading2>Text link</Heading2>
+    <Heading2>
+      <RouteLink href={getComponentDetailsLink(ComponentDetailsId.textLinks)}>
+        Text links
+      </RouteLink>
+    </Heading2>
 
     <Heading3>Primary</Heading3>
     <div className="item-container">
