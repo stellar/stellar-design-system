@@ -12,6 +12,9 @@ export const branding: ComponentDetails = {
       cumque cum quidem illo architecto!
     </p>
   ),
+  displayExamples: [
+    <ProjectLogo link="https://stellar.org" title="Project name" />,
+  ],
   examples: [
     {
       title: "Project logo",

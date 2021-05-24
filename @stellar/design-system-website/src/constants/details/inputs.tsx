@@ -12,6 +12,9 @@ export const inputs: ComponentDetails = {
       cumque cum quidem illo architecto!
     </p>
   ),
+  displayExamples: [
+    <Input id="input-3" label="Label" placeholder="Placeholder" />,
+  ],
   examples: [
     {
       title: "Default",

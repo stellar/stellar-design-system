@@ -12,6 +12,14 @@ export const infoBlocks: ComponentDetails = {
       cumque cum quidem illo architecto!
     </p>
   ),
+  displayExamples: [
+    <InfoBlock>Information (default) block</InfoBlock>,
+    <InfoBlock variant={InfoBlock.variant.error}>Error block</InfoBlock>,
+    <InfoBlock variant={InfoBlock.variant.warning}>
+      <p>Warning block</p>
+    </InfoBlock>,
+  ],
+
   examples: [
     {
       title: "",

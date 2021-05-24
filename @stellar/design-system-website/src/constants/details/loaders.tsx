@@ -12,6 +12,7 @@ export const loaders: ComponentDetails = {
       cumque cum quidem illo architecto!
     </p>
   ),
+  displayExamples: [<Loader />],
   examples: [
     {
       title: "Default",

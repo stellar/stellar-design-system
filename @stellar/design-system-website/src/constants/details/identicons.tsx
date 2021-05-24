@@ -12,6 +12,18 @@ export const identicons: ComponentDetails = {
       cumque cum quidem illo architecto!
     </p>
   ),
+  displayExamples: [
+    <Identicon
+      publicAddress="GC26L4VPX5J63UEL25RJFLRSDWYPCC3P2WNLF2NHZ3DY577LRGDTLQHV"
+      shortenAddress
+    />,
+    <TextLink>
+      <Identicon
+        publicAddress="GC26L4VPX5J63UEL25RJFLRSDWYPCC3P2WNLF2NHZ3DY577LRGDTLQHV"
+        federatedAddress="test*stellar.org"
+      />
+    </TextLink>,
+  ],
   examples: [
     {
       title: "Default",

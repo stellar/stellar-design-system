@@ -12,6 +12,14 @@ export const iconButtons: ComponentDetails = {
       cumque cum quidem illo architecto!
     </p>
   ),
+  displayExamples: [
+    <IconButton icon={<Icon.Info />} altText="Default" />,
+    <IconButton
+      icon={<Icon.Info />}
+      altText="Success"
+      variant={IconButton.variant.success}
+    />,
+  ],
   examples: [
     {
       title: "Default",

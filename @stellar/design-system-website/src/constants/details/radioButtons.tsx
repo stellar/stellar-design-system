@@ -12,6 +12,11 @@ export const radioButtons: ComponentDetails = {
       cumque cum quidem illo architecto!
     </p>
   ),
+  displayExamples: [
+    <RadioButton id="radio-1-1" name="radio-1" label="Label 1" />,
+    <RadioButton id="radio-1-2" name="radio-1" label="Disabled" disabled />,
+    <RadioButton id="radio-1-3" name="radio-1" label="Label 3" />,
+  ],
   examples: [
     {
       title: "Default",

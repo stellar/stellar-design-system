@@ -12,6 +12,7 @@ export const assets: ComponentDetails = {
       cumque cum quidem illo architecto!
     </p>
   ),
+  displayExamples: [],
   examples: [
     {
       title: "Icons",

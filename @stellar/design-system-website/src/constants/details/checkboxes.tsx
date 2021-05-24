@@ -12,6 +12,10 @@ export const checkboxes: ComponentDetails = {
       cumque cum quidem illo architecto!
     </p>
   ),
+  displayExamples: [
+    <Checkbox id="checkbox-1" label="Label" />,
+    <Checkbox id="checkbox-3" label="Checked" defaultChecked />,
+  ],
   examples: [
     {
       title: "Default",

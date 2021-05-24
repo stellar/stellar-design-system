@@ -13,6 +13,33 @@ export const textLinks: ComponentDetails = {
       cumque cum quidem illo architecto!
     </p>
   ),
+  displayExamples: [
+    <p>
+      Some text <TextLink>link</TextLink> more text
+    </p>,
+    <p>
+      Some text{" "}
+      <TextLink underline iconRight={<Icon.Checkmark />}>
+        link
+      </TextLink>{" "}
+      more text
+    </p>,
+    <p>
+      Some text <TextLink variant={TextLink.variant.secondary}>link</TextLink>{" "}
+      more text
+    </p>,
+    <p>
+      Some text{" "}
+      <TextLink
+        variant={TextLink.variant.secondary}
+        underline
+        iconRight={<Icon.Checkmark />}
+      >
+        link
+      </TextLink>{" "}
+      more text
+    </p>,
+  ],
   examples: [
     {
       title: "Primary (default)",

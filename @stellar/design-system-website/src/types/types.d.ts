@@ -45,6 +45,7 @@ interface ComponentDetails {
   title: string;
   description: React.ReactNode;
   examples: ComponentExample[];
+  displayExamples: React.ReactNode[];
   props: ComponentProp[];
   externalProps?: ComponentExternalProps;
   notes?: React.ReactNode[];

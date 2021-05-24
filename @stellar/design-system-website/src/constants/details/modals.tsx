@@ -123,6 +123,7 @@ export const modals: ComponentDetails = {
       cumque cum quidem illo architecto!
     </p>
   ),
+  displayExamples: [<SimpleModalExample />],
   examples: [
     {
       title: "Simple text modal",

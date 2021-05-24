@@ -12,6 +12,12 @@ export const selects: ComponentDetails = {
       cumque cum quidem illo architecto!
     </p>
   ),
+  displayExamples: [
+    <Select id="select-1" label="Label">
+      <option>Option 1</option>
+      <option>Option 2</option>
+    </Select>,
+  ],
   examples: [
     {
       title: "Default",

@@ -12,6 +12,22 @@ export const toggles: ComponentDetails = {
       cumque cum quidem illo architecto!
     </p>
   ),
+  displayExamples: [
+    <Toggle
+      id="toggle-5"
+      checked={false}
+      onChange={() => {}}
+      labelOff="Off"
+      labelOn="On"
+    />,
+    <Toggle
+      id="toggle-5"
+      checked={true}
+      onChange={() => {}}
+      labelOff="Off"
+      labelOn="On"
+    />,
+  ],
   examples: [
     {
       title: "Default",

@@ -11,6 +11,18 @@ export const buttons: ComponentDetails = {
       another.
     </p>
   ),
+  displayExamples: [
+    <Button>Label</Button>,
+    <Button iconLeft={<Icon.Checkmark />}>Label</Button>,
+    <Button variant={Button.variant.secondary}>Label</Button>,
+    <Button variant={Button.variant.secondary} iconLeft={<Icon.Checkmark />}>
+      Label
+    </Button>,
+    <Button variant={Button.variant.tertiary}>Label</Button>,
+    <Button variant={Button.variant.tertiary} iconLeft={<Icon.Checkmark />}>
+      Label
+    </Button>,
+  ],
   examples: [
     {
       title: "Primary (default)",
