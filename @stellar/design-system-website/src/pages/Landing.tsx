@@ -69,7 +69,7 @@ export const Landing = () => (
       return (
         <div key={key}>
           <Heading3>
-            <RouteLink href={`/${Routes.component}/${comp.id}`}>
+            <RouteLink href={`./${Routes.component}/${comp.id}`}>
               {comp.title}
             </RouteLink>
           </Heading3>

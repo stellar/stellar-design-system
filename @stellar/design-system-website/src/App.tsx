@@ -16,12 +16,12 @@ export const App = () => (
 
     <Layout.Content>
       <Switch>
-        <Route exact path="/">
-          <Landing />
-        </Route>
-
         <Route exact path="/component/:id">
           <Details />
+        </Route>
+
+        <Route path="/">
+          <Landing />
         </Route>
 
         {/* TODO: add 404 */}
