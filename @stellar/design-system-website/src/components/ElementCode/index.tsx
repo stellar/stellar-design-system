@@ -4,7 +4,13 @@ import reactElementToJSXString from "react-element-to-jsx-string";
 
 import "./styles.scss";
 
-export const ElementCode = ({ element }: { element: React.ReactNode }) => (
+export const ElementCode = ({
+  element,
+  id,
+}: {
+  element: React.ReactNode;
+  id: number;
+}) => (
   <div className="ElementCode">
     <Highlight
       {...defaultProps}
@@ -12,7 +18,7 @@ export const ElementCode = ({ element }: { element: React.ReactNode }) => (
       code={reactElementToJSXString(element, {
         showFunctions: true,
       })}
-      key={`element-code-${Math.random()}`}
+      key={`element-code-${id}`}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre className={className} style={style}>

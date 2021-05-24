@@ -57,7 +57,7 @@ export const Details = () => {
     const size = type.length;
 
     return type.map((item, index) => (
-      <span key={`type-${Math.random()}`}>
+      <span key={`type-${index}`}>
         <code>{item}</code>
         {size !== index + 1 ? " | " : ""}
       </span>
@@ -79,8 +79,8 @@ export const Details = () => {
         </tr>
       </thead>
       <tbody>
-        {renderProps.map((componentProp) => (
-          <tr key={`${componentProp.prop}-${Math.random()}`}>
+        {renderProps.map((componentProp, index) => (
+          <tr key={`${componentProp.prop}-${index}`}>
             <td>
               <code>{componentProp.prop}</code>
             </td>
@@ -123,7 +123,8 @@ export const Details = () => {
           {components.map((component, index) => (
             <div
               className="Details__example__container"
-              key={`grid-container-${Math.random()}`}
+              // eslint-disable-next-line react/no-array-index-key
+              key={`grid-container-${index}`}
             >
               <div className="Details__example__details">
                 <div className="Details__example__component">
@@ -133,7 +134,7 @@ export const Details = () => {
                 </div>
               </div>
               <div className="Details__example__code">
-                <ElementCode element={component} />
+                <ElementCode element={component} id={index} />
               </div>
             </div>
           ))}
@@ -142,10 +143,8 @@ export const Details = () => {
     }
 
     return components.map((component, index) => (
-      <div
-        className="Details__example__container"
-        key={`container-${Math.random()}`}
-      >
+      // eslint-disable-next-line react/no-array-index-key
+      <div className="Details__example__container" key={`container-${index}`}>
         <div className="Details__example__details">
           <div className="Details__example__component">
             {previewExampleOverride?.[index]
@@ -154,7 +153,7 @@ export const Details = () => {
           </div>
         </div>
         <div className="Details__example__code">
-          <ElementCode element={component} />
+          <ElementCode element={component} id={index} />
         </div>
       </div>
     ));
@@ -171,7 +170,7 @@ export const Details = () => {
       {/* examples */}
       <Heading2>Examples</Heading2>
 
-      {examples.map((example: ComponentExample) => {
+      {examples.map((example: ComponentExample, index) => {
         const {
           title: exampleTitle,
           description: exampleDescription,
@@ -181,7 +180,8 @@ export const Details = () => {
         } = example;
 
         return (
-          <div className="Details__example" key={`example-${Math.random()}`}>
+          // eslint-disable-next-line react/no-array-index-key
+          <div className="Details__example" key={`example-${index}`}>
             {exampleTitle ? <Heading5>{exampleTitle}</Heading5> : null}
             {exampleDescription ? <p>{exampleDescription}</p> : null}
 
@@ -208,8 +208,9 @@ export const Details = () => {
 
           <p>{subComponents.description}</p>
 
-          {subComponents.components.map((sub) => (
-            <React.Fragment key={`subcomponent-${Math.random()}`}>
+          {subComponents.components.map((sub, index) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <React.Fragment key={`subcomponent-${index}`}>
               <Heading4>{sub.component}</Heading4>
 
               <p>{sub.description}</p>
@@ -225,10 +226,9 @@ export const Details = () => {
         <>
           <Heading2>Notes</Heading2>
 
-          {notes.map((note: React.ReactNode) => (
-            <React.Fragment key={`note-${Math.random()}`}>
-              {note}
-            </React.Fragment>
+          {notes.map((note: React.ReactNode, index) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <React.Fragment key={`note-${index}`}>{note}</React.Fragment>
           ))}
         </>
       ) : null}
