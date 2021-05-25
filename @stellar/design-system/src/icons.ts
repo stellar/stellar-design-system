@@ -16,6 +16,8 @@ import { ReactComponent as Remove } from "./assets/icons/remove.svg";
 import { ReactComponent as Search } from "./assets/icons/search.svg";
 import { ReactComponent as Send } from "./assets/icons/send.svg";
 import { ReactComponent as Settings } from "./assets/icons/settings.svg";
+import { ReactComponent as Success } from "./assets/icons/success.svg";
+import { ReactComponent as Warning } from "./assets/icons/warning.svg";
 
 export const Icon = {
   ArrowLeft,
@@ -36,4 +38,6 @@ export const Icon = {
   Search,
   Send,
   Settings,
+  Success,
+  Warning,
 };

@@ -59,7 +59,7 @@ export const Landing = () => (
       officia vel illum, alias aspernatur molestiae minus ipsa officiis.
     </p>
 
-    {componentsDisplayOrder.map((key, index) => {
+    {componentsDisplayOrder.map((key) => {
       const comp = componentDetails[key];
 
       if (!comp) {
@@ -76,7 +76,7 @@ export const Landing = () => (
           {comp.description}
 
           <div>
-            {comp.displayExamples.map((example) => (
+            {comp.displayExamples.map((example, index) => (
               // eslint-disable-next-line react/no-array-index-key
               <React.Fragment key={`example-${comp.id}-${index}`}>
                 {example}

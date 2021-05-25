@@ -14,21 +14,72 @@ export const infoBlocks: ComponentDetails = {
   ),
   displayExamples: [
     <InfoBlock>Information (default) block</InfoBlock>,
+    <InfoBlock variant={InfoBlock.variant.success}>Success block</InfoBlock>,
     <InfoBlock variant={InfoBlock.variant.error}>Error block</InfoBlock>,
-    <InfoBlock variant={InfoBlock.variant.warning}>
-      <p>Warning block</p>
-    </InfoBlock>,
+    <InfoBlock variant={InfoBlock.variant.warning}>Warning block</InfoBlock>,
   ],
-
   examples: [
     {
-      title: "",
+      title: "Information (default)",
       description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
       component: [
         <InfoBlock>Information (default) block</InfoBlock>,
+        <InfoBlock>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
+            temporibus possimus quidem cum illum soluta nam delectus corrupti
+            modi, nisi cupiditate beatae esse itaque? Voluptate sequi recusandae
+            asperiores hic commodi.
+          </p>
+        </InfoBlock>,
+      ],
+    },
+    {
+      title: "Success",
+      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      component: [
+        <InfoBlock variant={InfoBlock.variant.success}>
+          Success block
+        </InfoBlock>,
+        <InfoBlock variant={InfoBlock.variant.success}>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
+            temporibus possimus quidem cum illum soluta nam delectus corrupti
+            modi, nisi cupiditate beatae esse itaque? Voluptate sequi recusandae
+            asperiores hic commodi.
+          </p>
+        </InfoBlock>,
+      ],
+    },
+    {
+      title: "Error",
+      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      component: [
         <InfoBlock variant={InfoBlock.variant.error}>Error block</InfoBlock>,
+        <InfoBlock variant={InfoBlock.variant.error}>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
+            temporibus possimus quidem cum illum soluta nam delectus corrupti
+            modi, nisi cupiditate beatae esse itaque? Voluptate sequi recusandae
+            asperiores hic commodi.
+          </p>
+        </InfoBlock>,
+      ],
+    },
+    {
+      title: "Warning",
+      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      component: [
         <InfoBlock variant={InfoBlock.variant.warning}>
-          <p>Warning block</p>
+          Warning block
+        </InfoBlock>,
+        <InfoBlock variant={InfoBlock.variant.warning}>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
+            temporibus possimus quidem cum illum soluta nam delectus corrupti
+            modi, nisi cupiditate beatae esse itaque? Voluptate sequi recusandae
+            asperiores hic commodi.
+          </p>
         </InfoBlock>,
       ],
     },
@@ -43,7 +94,7 @@ export const infoBlocks: ComponentDetails = {
     },
     {
       prop: "variant",
-      type: ["info", "error", "warning"],
+      type: ["info", "success", "error", "warning"],
       default: "info",
       optional: true,
       description: "",

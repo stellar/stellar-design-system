@@ -12,7 +12,7 @@
 
     &::before {
       @include mixins.checkbox-radio-container;
-      border-radius: 0.125rem;
+      border-radius: 0.25rem;
     }
   }
 
