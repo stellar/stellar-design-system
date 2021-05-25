@@ -1,8 +1,10 @@
 import React from "react";
+import { Icon } from "../../icons";
 import "./styles.scss";
 
 enum InfoBlockVariant {
   info = "info",
+  success = "success",
   error = "error",
   warning = "warning",
 }
@@ -19,9 +21,21 @@ interface InfoBlockProps extends React.InputHTMLAttributes<HTMLInputElement> {
 export const InfoBlock: React.FC<InfoBlockProps> & InfoBlockComponent = ({
   variant = InfoBlockVariant.info,
   children,
-}: InfoBlockProps) => (
-  <div className={`InfoBlock InfoBlock--${variant}`}>{children}</div>
-);
+}: InfoBlockProps) => {
+  const variantIcon = {
+    [InfoBlockVariant.info]: <Icon.Info />,
+    [InfoBlockVariant.success]: <Icon.Success />,
+    [InfoBlockVariant.error]: <Icon.Error />,
+    [InfoBlockVariant.warning]: <Icon.Warning />,
+  };
+
+  return (
+    <div className={`InfoBlock InfoBlock--${variant}`}>
+      <div className="InfoBlock__icon">{variantIcon[variant]}</div>
+      {children}
+    </div>
+  );
+};
 
 InfoBlock.displayName = "InfoBlock";
 InfoBlock.variant = InfoBlockVariant;

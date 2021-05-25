@@ -36,6 +36,8 @@ export const assets: ComponentDetails = {
         <Icon.Search />,
         <Icon.Send />,
         <Icon.Settings />,
+        <Icon.Success />,
+        <Icon.Warning />,
       ],
       useGridLayout: true,
     },

@@ -1,19 +1,71 @@
 .InfoBlock {
   border-radius: 0.25rem;
-  padding: 1.5rem;
-  color: var(--color-text);
+  border: 1px solid transparent;
+  padding: 1rem;
+  padding-left: 2.5rem;
   width: 100%;
-  line-height: 1.5rem;
+  line-height: 1.75rem;
+  position: relative;
+
+  // TODO: hard coded colors, rgba doesn't like CSS var
 
   &--info {
-    background-color: var(--color-background-secondary);
+    background-color: rgba(#3e1bdb, 0.04);
+    color: #3e1bdb;
+    border-color: rgba(#3e1bdb, 0.2);
+
+    svg {
+      fill: #3e1bdb;
+    }
+  }
+
+  &--success {
+    background-color: rgba(#20bf6b, 0.04);
+    color: #20bf6b;
+    border-color: rgba(#20bf6b, 0.2);
+
+    svg {
+      fill: #20bf6b;
+    }
   }
 
   &--error {
-    background-color: var(--color-error-off);
+    background-color: rgba(#eb3b5a, 0.04);
+    color: #eb3b5a;
+    border-color: rgba(#eb3b5a, 0.2);
+
+    svg {
+      fill: #eb3b5a;
+    }
   }
 
   &--warning {
-    background-color: var(--color-warning-off);
+    background-color: rgba(#f7b731, 0.04);
+    color: #f7b731;
+    border-color: rgba(#f7b731, 0.2);
+
+    svg {
+      fill: #f7b731;
+    }
+  }
+
+  &__icon {
+    width: 1rem;
+    height: 1.75rem;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  p {
+    color: inherit;
   }
 }
