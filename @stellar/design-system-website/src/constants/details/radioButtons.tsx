@@ -4,14 +4,11 @@ import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 export const radioButtons: ComponentDetails = {
   id: ComponentDetailsId.radioButtons,
   title: "Radio buttons",
-  description: (
-    <p>
+  description: `
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
       consequuntur sequi magni beatae. Facere repellat voluptates perferendis,
       reprehenderit qui, maiores corporis expedita consectetur error, incidunt
-      cumque cum quidem illo architecto!
-    </p>
-  ),
+      cumque cum quidem illo architecto!`,
   displayExamples: [
     <RadioButton id="radio-1-1" name="radio-1" label="Label 1" />,
     <RadioButton id="radio-1-2" name="radio-1" label="Disabled" disabled />,

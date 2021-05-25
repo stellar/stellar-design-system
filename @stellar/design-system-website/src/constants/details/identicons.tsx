@@ -4,14 +4,11 @@ import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 export const identicons: ComponentDetails = {
   id: ComponentDetailsId.identicons,
   title: "Identicons",
-  description: (
-    <p>
+  description: `
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
       consequuntur sequi magni beatae. Facere repellat voluptates perferendis,
       reprehenderit qui, maiores corporis expedita consectetur error, incidunt
-      cumque cum quidem illo architecto!
-    </p>
-  ),
+      cumque cum quidem illo architecto!`,
   displayExamples: [
     <Identicon
       publicAddress="GC26L4VPX5J63UEL25RJFLRSDWYPCC3P2WNLF2NHZ3DY577LRGDTLQHV"

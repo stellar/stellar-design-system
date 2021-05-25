@@ -57,7 +57,7 @@ interface ComponentDetails {
 
 interface ComponentExample {
   title: string;
-  description: string | undefined;
+  description: string | React.ReactNode | undefined;
   component: React.ReactNode[];
   // In cases where we need to provide state and helper methods to preview the
   // component (for example, Modal)

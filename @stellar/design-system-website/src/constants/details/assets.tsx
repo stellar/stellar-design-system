@@ -4,14 +4,11 @@ import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 export const assets: ComponentDetails = {
   id: ComponentDetailsId.assets,
   title: "Assets",
-  description: (
-    <p>
+  description: `
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
       consequuntur sequi magni beatae. Facere repellat voluptates perferendis,
       reprehenderit qui, maiores corporis expedita consectetur error, incidunt
-      cumque cum quidem illo architecto!
-    </p>
-  ),
+      cumque cum quidem illo architecto!`,
   displayExamples: [],
   examples: [
     {

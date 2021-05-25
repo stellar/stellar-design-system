@@ -12,14 +12,9 @@ import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 export const typography: ComponentDetails = {
   id: ComponentDetailsId.typography,
   title: "Typography",
-  description: (
-    <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
-      consequuntur sequi magni beatae. Facere repellat voluptates perferendis,
-      reprehenderit qui, maiores corporis expedita consectetur error, incidunt
-      cumque cum quidem illo architecto!
-    </p>
-  ),
+  description: `Typography (including headings, paragraph, and other text types) examples
+  and documentation. These components don’t have any special props, and
+  inherit their native HTML attributes.`,
   displayExamples: [
     <Heading1>Heading 1</Heading1>,
     <Heading2>Heading 2</Heading2>,
@@ -32,7 +27,12 @@ export const typography: ComponentDetails = {
   examples: [
     {
       title: "Heading",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: (
+        <>
+          HTML headings <code>h1</code> through <code>h6</code>, and "eyebrow"
+          element.
+        </>
+      ),
       component: [
         <Heading1>Heading 1</Heading1>,
         <Heading2>Heading 2</Heading2>,
@@ -45,7 +45,13 @@ export const typography: ComponentDetails = {
     },
     {
       title: "Paragraph",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: (
+        <>
+          Text paragraph is an HTML <code>p</code> tag, not a custom component.
+          It has primary (default) and secondary variants. Secondary variant is
+          applied by adding a class <code>Paragraph--secondary</code>.
+        </>
+      ),
       component: [
         <p>
           Primary: Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -54,7 +60,6 @@ export const typography: ComponentDetails = {
           laborum!
         </p>,
 
-        // TODO: ??? how to handle this better?
         <p className="Paragraph--secondary">
           Secondary: Lorem ipsum, dolor sit amet consectetur adipisicing elit.
           Repellat ipsum distinctio in a modi quod dolor iusto, repellendus non,
@@ -64,8 +69,9 @@ export const typography: ComponentDetails = {
       ],
     },
     {
-      title: "Text",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      title: "Text elements",
+      description:
+        "Text elements to make some text stand out. All of them are native HTML elements.",
       component: [
         <p>
           <strong>Bolded (strong)</strong> text and <b>bolded (b)</b> text
@@ -84,10 +90,10 @@ export const typography: ComponentDetails = {
   props: [
     {
       prop: "children",
-      type: ["string", "React.ReactNode"],
+      type: ["string", "ReactNode"],
       default: null,
       optional: false,
-      description: "",
+      description: "Content of the component",
     },
   ],
   externalProps: {

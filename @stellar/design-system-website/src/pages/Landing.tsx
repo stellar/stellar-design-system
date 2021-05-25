@@ -179,7 +179,7 @@ export const Landing = () => (
               {comp.title}
             </RouteLink>
           </Heading3>
-          {comp.description}
+          <p>{comp.description}</p>
 
           <div>
             {comp.displayExamples.map((example, index) => (
