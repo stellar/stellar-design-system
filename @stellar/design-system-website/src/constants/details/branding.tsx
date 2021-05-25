@@ -4,18 +4,14 @@ import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 export const branding: ComponentDetails = {
   id: ComponentDetailsId.branding,
   title: "Branding",
-  description: `
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
-      consequuntur sequi magni beatae. Facere repellat voluptates perferendis,
-      reprehenderit qui, maiores corporis expedita consectetur error, incidunt
-      cumque cum quidem illo architecto!`,
+  description: `Branding components, such as project logo.`,
   displayExamples: [
     <ProjectLogo link="https://stellar.org" title="Project name" />,
   ],
   examples: [
     {
       title: "Project logo",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "Project’s logo with a name and link.",
       component: [
         <ProjectLogo link="https://stellar.org" title="Project name" />,
       ],
@@ -27,14 +23,14 @@ export const branding: ComponentDetails = {
       type: ["string"],
       default: null,
       optional: false,
-      description: "",
+      description: "Project name",
     },
     {
       prop: "link",
       type: ["string"],
       default: null,
       optional: false,
-      description: "",
+      description: "Project website link",
     },
   ],
   externalProps: {
