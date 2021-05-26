@@ -4,11 +4,12 @@ import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 export const selects: ComponentDetails = {
   id: ComponentDetailsId.selects,
   title: "Selects",
-  description: `
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
-      consequuntur sequi magni beatae. Facere repellat voluptates perferendis,
-      reprehenderit qui, maiores corporis expedita consectetur error, incidunt
-      cumque cum quidem illo architecto!`,
+  description: (
+    <>
+      <code>Select</code> component is a form select element, which inherits all
+      native HTML <code>select</code> element attributes.
+    </>
+  ),
   displayExamples: [
     <Select id="select-1" label="Label">
       <option>Option 1</option>
@@ -18,7 +19,7 @@ export const selects: ComponentDetails = {
   examples: [
     {
       title: "Default",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <Select id="select-1">
           <option>Option 1</option>
@@ -32,7 +33,7 @@ export const selects: ComponentDetails = {
     },
     {
       title: "Select with label",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <Select id="select-3" label="Label">
           <option>Option 1</option>
@@ -46,7 +47,7 @@ export const selects: ComponentDetails = {
     },
     {
       title: "Select with note / error",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <Select id="select-5" label="Label" note="Note message">
           <option>Option 1</option>
@@ -60,7 +61,7 @@ export const selects: ComponentDetails = {
     },
     {
       title: "Input with elements",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <Select id="select-7" label="Label" rightElement="text">
           <option>Option 1</option>
@@ -87,49 +88,49 @@ export const selects: ComponentDetails = {
       type: ["string"],
       default: null,
       optional: false,
-      description: "",
+      description: "ID of the select should be unique",
     },
     {
       prop: "children",
       type: ["ReactNode"],
       default: null,
       optional: false,
-      description: "",
+      description: "Select options or optgroup with options",
     },
     {
       prop: "label",
       type: ["string"],
       default: null,
       optional: true,
-      description: "",
+      description: "Label of the select",
     },
     {
       prop: "leftElement",
       type: ["string", "ReactNode"],
       default: null,
       optional: true,
-      description: "",
+      description: "Element on the left of the select",
     },
     {
       prop: "rightElement",
       type: ["string", "ReactNode"],
       default: null,
       optional: true,
-      description: "",
+      description: "Element on the right of the select",
     },
     {
       prop: "note",
       type: ["string", "ReactNode"],
       default: null,
       optional: true,
-      description: "",
+      description: "Note message of the select",
     },
     {
       prop: "error",
       type: ["string", "ReactNode"],
       default: null,
       optional: true,
-      description: "",
+      description: "Error message of the select",
     },
   ],
   externalProps: {

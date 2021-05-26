@@ -4,11 +4,14 @@ import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 export const iconButtons: ComponentDetails = {
   id: ComponentDetailsId.iconButtons,
   title: "Icon buttons",
-  description: `
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
-      consequuntur sequi magni beatae. Facere repellat voluptates perferendis,
-      reprehenderit qui, maiores corporis expedita consectetur error, incidunt
-      cumque cum quidem illo architecto!`,
+  description: (
+    <>
+      <code>IconButton</code> is similar to the <code>Button</code>, and is used
+      to trigger an action. There are five variants (color is the only
+      difference): <code>default</code>, <code>error</code>,{" "}
+      <code>success</code>, <code>warning</code>, <code>highlight</code>.
+    </>
+  ),
   displayExamples: [
     <IconButton icon={<Icon.Info />} altText="Default" />,
     <IconButton
@@ -20,7 +23,7 @@ export const iconButtons: ComponentDetails = {
   examples: [
     {
       title: "Default",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <IconButton icon={<Icon.Info />} altText="Default" />,
         <IconButton icon={<Icon.Info />} altText="Default" disabled />,
@@ -28,7 +31,7 @@ export const iconButtons: ComponentDetails = {
     },
     {
       title: "Success",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <IconButton
           icon={<Icon.Info />}
@@ -45,7 +48,7 @@ export const iconButtons: ComponentDetails = {
     },
     {
       title: "Error",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <IconButton
           icon={<Icon.Info />}
@@ -62,7 +65,7 @@ export const iconButtons: ComponentDetails = {
     },
     {
       title: "Warning",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <IconButton
           icon={<Icon.Info />}
@@ -79,7 +82,7 @@ export const iconButtons: ComponentDetails = {
     },
     {
       title: "Highlight",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <IconButton
           icon={<Icon.Info />}
@@ -96,7 +99,7 @@ export const iconButtons: ComponentDetails = {
     },
     {
       title: "Custom color",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <IconButton
           icon={<Icon.Info />}
@@ -113,7 +116,7 @@ export const iconButtons: ComponentDetails = {
     },
     {
       title: "Custom size",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <IconButton
           icon={<Icon.Info />}
@@ -132,38 +135,38 @@ export const iconButtons: ComponentDetails = {
   props: [
     {
       prop: "icon",
-      type: ["React.ReactNode"],
+      type: ["ReactNode"],
       default: null,
       optional: false,
-      description: "",
+      description: "The icon element",
     },
     {
       prop: "altText",
       type: ["string"],
       default: null,
       optional: false,
-      description: "",
+      description: "Alternative text to show on hover",
     },
     {
       prop: "variant",
       type: ["default", "error", "success", "warning", "highlight"],
       default: "default",
       optional: true,
-      description: "",
+      description: "Variant of the component",
     },
     {
       prop: "customColor",
       type: ["string"],
       default: null,
       optional: true,
-      description: "",
+      description: "Set custom color of the component",
     },
     {
       prop: "customSize",
       type: ["string"],
       default: null,
       optional: true,
-      description: "",
+      description: "Set custom size of the component",
     },
   ],
   externalProps: {

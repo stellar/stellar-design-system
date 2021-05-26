@@ -4,11 +4,13 @@ import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 export const radioButtons: ComponentDetails = {
   id: ComponentDetailsId.radioButtons,
   title: "Radio buttons",
-  description: `
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
-      consequuntur sequi magni beatae. Facere repellat voluptates perferendis,
-      reprehenderit qui, maiores corporis expedita consectetur error, incidunt
-      cumque cum quidem illo architecto!`,
+  description: (
+    <>
+      <code>RadioButton</code> component is a form input element, which allows
+      you to select a single value from a group of options for submission. All
+      native HTML <code>radio</code> input attributes apply.
+    </>
+  ),
   displayExamples: [
     <RadioButton id="radio-1-1" name="radio-1" label="Label 1" />,
     <RadioButton id="radio-1-2" name="radio-1" label="Disabled" disabled />,
@@ -17,7 +19,7 @@ export const radioButtons: ComponentDetails = {
   examples: [
     {
       title: "Default",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <div>
           <RadioButton id="radio-1-1" name="radio-1" label="Label 1" />
@@ -28,7 +30,7 @@ export const radioButtons: ComponentDetails = {
     },
     {
       title: "Checked and disabled",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <div>
           <RadioButton id="radio-2-1" name="radio-2" label="Label 1" disabled />
@@ -55,14 +57,14 @@ export const radioButtons: ComponentDetails = {
       type: ["string"],
       default: null,
       optional: false,
-      description: "",
+      description: "ID of the radio button should be unique",
     },
     {
       prop: "label",
       type: ["string", "ReactNode"],
       default: null,
       optional: false,
-      description: "",
+      description: "Label of the radio button",
     },
   ],
   externalProps: {

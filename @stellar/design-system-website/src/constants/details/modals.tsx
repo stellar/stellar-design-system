@@ -115,16 +115,17 @@ const ModalExample = () => {
 export const modals: ComponentDetails = {
   id: ComponentDetailsId.modals,
   title: "Modals",
-  description: `
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
-      consequuntur sequi magni beatae. Facere repellat voluptates perferendis,
-      reprehenderit qui, maiores corporis expedita consectetur error, incidunt
-      cumque cum quidem illo architecto!`,
+  description: (
+    <>
+      Modal is a dialog window with an overlay background, which is rendered on
+      top of the rest of the website.
+    </>
+  ),
   displayExamples: [<SimpleModalExample />],
   examples: [
     {
       title: "Simple text modal",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       previewExampleOverride: [<SimpleModalExample />],
       component: [
         <Modal visible={false} onClose={() => {}}>
@@ -139,7 +140,7 @@ export const modals: ComponentDetails = {
     },
     {
       title: "Fully-featured modal",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "Modal with scrolling content using modal sub-components.",
       previewExampleOverride: [<ModalExample />],
       component: [
         <Modal visible={false} onClose={() => {}}>
@@ -228,42 +229,42 @@ export const modals: ComponentDetails = {
       type: ["ReactNode"],
       default: null,
       optional: false,
-      description: "",
+      description: "Content of the modal",
     },
     {
       prop: "visible",
       type: ["boolean"],
       default: null,
       optional: false,
-      description: "",
+      description: "State to show or hide the modal",
     },
     {
       prop: "onClose",
       type: ["() => void"],
       default: null,
       optional: false,
-      description: "",
+      description: "Function to handle modal closed action",
     },
     {
       prop: "parentId",
       type: ["string"],
       default: "root",
       optional: true,
-      description: "",
+      description: "ID of the modal parent (affects the position of the modal)",
     },
     {
       prop: "disableWindowScrollWhenOpened",
       type: ["boolean"],
       default: "true",
       optional: true,
-      description: "",
+      description: "Don’t allow window scrolling when modal is visible",
     },
     {
       prop: "offsetTop",
       type: ["string"],
       default: null,
       optional: true,
-      description: "",
+      description: "Offset top position of the modal",
     },
   ],
   externalProps: {
@@ -273,47 +274,47 @@ export const modals: ComponentDetails = {
   subComponents: {
     description: (
       <>
-        <code>Modal.Heading</code>, <code>Modal.Body</code>,{" "}
-        <code>Modal.Footer</code>
+        Modal sub-components <code>Modal.Heading</code>, <code>Modal.Body</code>
+        , <code>Modal.Footer</code> help to structure the modal content.
       </>
     ),
     components: [
       {
         component: "Heading",
-        description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+        description: "",
         props: [
           {
             prop: "children",
             type: ["string", "ReactNode"],
             default: null,
             optional: false,
-            description: "",
+            description: "Content of the modal heading",
           },
         ],
       },
       {
         component: "Body",
-        description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+        description: "",
         props: [
           {
             prop: "children",
             type: ["string", "ReactNode"],
             default: null,
             optional: false,
-            description: "",
+            description: "Content of the modal body",
           },
         ],
       },
       {
         component: "Footer",
-        description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+        description: "",
         props: [
           {
             prop: "children",
             type: ["string", "ReactNode"],
             default: null,
             optional: false,
-            description: "",
+            description: "Content of the modal footer",
           },
         ],
       },

@@ -5,11 +5,14 @@ import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 export const textLinks: ComponentDetails = {
   id: ComponentDetailsId.textLinks,
   title: "Text links",
-  description: `
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
-      consequuntur sequi magni beatae. Facere repellat voluptates perferendis,
-      reprehenderit qui, maiores corporis expedita consectetur error, incidunt
-      cumque cum quidem illo architecto!`,
+  description: (
+    <>
+      <code>TextLink</code> component is a styled HTML anchor (<code>a</code>)
+      element. Use <code>TextLink</code> to open links or to navigate to other
+      pages. There are two variants (<code>primary</code> and{" "}
+      <code>secondary</code>), and underline prop.
+    </>
+  ),
   displayExamples: [
     <p>
       Some text <TextLink>link</TextLink> more text
@@ -40,7 +43,7 @@ export const textLinks: ComponentDetails = {
   examples: [
     {
       title: "Primary (default)",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <p>
           Some text <TextLink>link</TextLink> more text
@@ -52,7 +55,7 @@ export const textLinks: ComponentDetails = {
     },
     {
       title: "Primary (default) with icon on the left",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <p>
           Some text <TextLink iconLeft={<Icon.Checkmark />}>link</TextLink> more
@@ -69,7 +72,7 @@ export const textLinks: ComponentDetails = {
     },
     {
       title: "Primary (default) with icon on the right",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <p>
           Some text <TextLink iconRight={<Icon.Checkmark />}>link</TextLink>{" "}
@@ -86,7 +89,7 @@ export const textLinks: ComponentDetails = {
     },
     {
       title: "Primary (default) underline",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <p>
           Some text <TextLink underline>link</TextLink> more text
@@ -102,7 +105,7 @@ export const textLinks: ComponentDetails = {
     },
     {
       title: "Primary (default) underline with icon on the left",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <p>
           Some text{" "}
@@ -122,7 +125,7 @@ export const textLinks: ComponentDetails = {
     },
     {
       title: "Primary (default) underline with icon on the right",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <p>
           Some text{" "}
@@ -143,7 +146,7 @@ export const textLinks: ComponentDetails = {
 
     {
       title: "Secondary",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <p>
           Some text{" "}
@@ -161,7 +164,7 @@ export const textLinks: ComponentDetails = {
     },
     {
       title: "Secondary with icon on the left",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <p>
           Some text{" "}
@@ -188,7 +191,7 @@ export const textLinks: ComponentDetails = {
     },
     {
       title: "Secondary with icon on the right",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <p>
           Some text{" "}
@@ -215,7 +218,7 @@ export const textLinks: ComponentDetails = {
     },
     {
       title: "Secondary underline",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <p>
           Some text{" "}
@@ -235,7 +238,7 @@ export const textLinks: ComponentDetails = {
     },
     {
       title: "Secondary underline with icon on the left",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <p>
           Some text{" "}
@@ -264,7 +267,7 @@ export const textLinks: ComponentDetails = {
     },
     {
       title: "Secondary underline with icon on the right",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <p>
           Some text{" "}
@@ -298,42 +301,42 @@ export const textLinks: ComponentDetails = {
       type: ["string", "ReactNode"],
       default: null,
       optional: false,
-      description: "",
+      description: "Content of the component",
     },
     {
       prop: "iconLeft",
       type: ["ReactNode"],
       default: null,
       optional: true,
-      description: "",
+      description: "Icon element on the left of the content",
     },
     {
       prop: "iconRight",
       type: ["ReactNode"],
       default: null,
       optional: true,
-      description: "",
+      description: "Icon element on the right of the content",
     },
     {
       prop: "variant",
       type: ["primary", "secondary"],
       default: "primary",
       optional: true,
-      description: "",
+      description: "Variant of the component",
     },
     {
       prop: "disabled",
       type: ["Boolean"],
       default: null,
       optional: true,
-      description: "",
+      description: "Disable the component",
     },
     {
       prop: "underline",
       type: ["Boolean"],
       default: null,
       optional: true,
-      description: "",
+      description: "Underline the text",
     },
   ],
   externalProps: {
