@@ -5,15 +5,17 @@ export const loaders: ComponentDetails = {
   id: ComponentDetailsId.loaders,
   title: "Loaders",
   description: `
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
-      consequuntur sequi magni beatae. Facere repellat voluptates perferendis,
-      reprehenderit qui, maiores corporis expedita consectetur error, incidunt
-      cumque cum quidem illo architecto!`,
+      Loading state indicators.`,
   displayExamples: [<Loader />],
   examples: [
     {
       title: "Default",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: (
+        <>
+          Loader component color is set in CSS, and the size can also be set in
+          CSS or through the <code>size</code> prop.
+        </>
+      ),
       component: [<Loader />, <Loader size="3rem" />],
     },
   ],
@@ -23,7 +25,7 @@ export const loaders: ComponentDetails = {
       type: ["string"],
       default: null,
       optional: true,
-      description: "",
+      description: "Set custom size of the component",
     },
   ],
   externalProps: {
