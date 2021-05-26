@@ -29,9 +29,8 @@ export const Details = () => {
   useEffect(() => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
     });
-  }, []);
+  }, [params.id]);
 
   if (!componentDetails[params.id]) {
     return (
@@ -69,45 +68,47 @@ export const Details = () => {
     renderProps: ComponentProp[],
     renderExternalProps?: ComponentExternalProps,
   ) => (
-    <table>
-      <thead>
-        <tr>
-          <th>Prop</th>
-          <th>Type</th>
-          <th>Default</th>
-          <th>Optional</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        {renderProps.map((componentProp, index) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <tr key={`${componentProp.prop}-${index}`}>
-            <td>
-              <code>{componentProp.prop}</code>
-            </td>
-            <td>{renderPropType(componentProp.type)}</td>
-            <td>
-              {componentProp.default ? (
-                <code>{componentProp.default}</code>
-              ) : null}
-            </td>
-            <td>{componentProp.optional ? "Yes" : null}</td>
-            <td>{componentProp.description ?? null}</td>
-          </tr>
-        ))}
-        {renderExternalProps?.link ? (
+    <div className="TableContainer">
+      <table>
+        <thead>
           <tr>
-            <td colSpan={5}>
-              Including all valid{" "}
-              <TextLink href={renderExternalProps.link}>
-                {renderExternalProps.label || "attributes"}
-              </TextLink>
-            </td>
+            <th>Prop</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Optional</th>
+            <th>Description</th>
           </tr>
-        ) : null}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {renderProps.map((componentProp, index) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <tr key={`${componentProp.prop}-${index}`}>
+              <td>
+                <code>{componentProp.prop}</code>
+              </td>
+              <td>{renderPropType(componentProp.type)}</td>
+              <td>
+                {componentProp.default ? (
+                  <code>{componentProp.default}</code>
+                ) : null}
+              </td>
+              <td>{componentProp.optional ? "Yes" : null}</td>
+              <td>{componentProp.description ?? null}</td>
+            </tr>
+          ))}
+          {renderExternalProps?.link ? (
+            <tr>
+              <td colSpan={5}>
+                Including all valid{" "}
+                <TextLink href={renderExternalProps.link}>
+                  {renderExternalProps.label || "attributes"}
+                </TextLink>
+              </td>
+            </tr>
+          ) : null}
+        </tbody>
+      </table>
+    </div>
   );
 
   const renderExample = (
@@ -183,7 +184,7 @@ export const Details = () => {
 
         return (
           // eslint-disable-next-line react/no-array-index-key
-          <div className="Details__example" key={`example-${index}`}>
+          <div className="Section Details__example" key={`example-${index}`}>
             {exampleTitle ? <Heading3>{exampleTitle}</Heading3> : null}
             {exampleDescription ? <p>{exampleDescription}</p> : null}
 
@@ -197,42 +198,42 @@ export const Details = () => {
 
       {/* props */}
       {props.length ? (
-        <>
+        <div className="Section">
           <Heading2>Props</Heading2>
           {renderPropsTable(props, externalProps)}
-        </>
+        </div>
       ) : null}
 
       {/* sub-components */}
       {subComponents?.components.length ? (
-        <>
+        <div className="Section">
           <Heading2>Sub-components</Heading2>
 
           <p>{subComponents.description}</p>
 
           {subComponents.components.map((sub, index) => (
             // eslint-disable-next-line react/no-array-index-key
-            <React.Fragment key={`subcomponent-${index}`}>
+            <div className="Section" key={`subcomponent-${index}`}>
               <Heading4>{sub.component}</Heading4>
 
               <p>{sub.description}</p>
 
               {renderPropsTable(sub.props)}
-            </React.Fragment>
+            </div>
           ))}
-        </>
+        </div>
       ) : null}
 
       {/* notes */}
       {notes?.length ? (
-        <>
+        <div className="Section">
           <Heading2>Notes</Heading2>
 
           {notes.map((note: React.ReactNode, index) => (
             // eslint-disable-next-line react/no-array-index-key
             <React.Fragment key={`note-${index}`}>{note}</React.Fragment>
           ))}
-        </>
+        </div>
       ) : null}
     </Layout.Inset>
   );

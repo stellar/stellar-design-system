@@ -1,7 +1,7 @@
 .Details {
   &__example__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
     gap: 1rem;
 
     .Details__example__container {
@@ -37,6 +37,11 @@
 
   &__example__container {
     display: flex;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+      margin-bottom: 1rem;
+    }
   }
 
   &__example__details {
