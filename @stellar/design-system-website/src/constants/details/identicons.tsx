@@ -4,11 +4,15 @@ import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 export const identicons: ComponentDetails = {
   id: ComponentDetailsId.identicons,
   title: "Identicons",
-  description: `
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
-      consequuntur sequi magni beatae. Facere repellat voluptates perferendis,
-      reprehenderit qui, maiores corporis expedita consectetur error, incidunt
-      cumque cum quidem illo architecto!`,
+  description: (
+    <>
+      Unique identicons of public Stellar keys. We’re using awesome{" "}
+      <TextLink href="https://github.com/Lobstrco/stellar-identicon-js">
+        stellar-identicon-js
+      </TextLink>
+      .
+    </>
+  ),
   displayExamples: [
     <Identicon
       publicAddress="GC26L4VPX5J63UEL25RJFLRSDWYPCC3P2WNLF2NHZ3DY577LRGDTLQHV"
@@ -24,7 +28,7 @@ export const identicons: ComponentDetails = {
   examples: [
     {
       title: "Default",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <Identicon publicAddress="GC26L4VPX5J63UEL25RJFLRSDWYPCC3P2WNLF2NHZ3DY577LRGDTLQHV" />,
         <Identicon
@@ -38,8 +42,8 @@ export const identicons: ComponentDetails = {
       ],
     },
     {
-      title: "Inside link",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      title: "Inside a link",
+      description: "",
       component: [
         <TextLink>
           <Identicon
@@ -75,28 +79,28 @@ export const identicons: ComponentDetails = {
       type: ["string"],
       default: null,
       optional: false,
-      description: "",
+      description: "Stellar public key or address",
     },
     {
       prop: "size",
       type: ["string"],
       default: null,
       optional: true,
-      description: "",
+      description: "Set custom size of the component",
     },
     {
       prop: "shortenAddress",
       type: ["boolean"],
       default: "false",
       optional: true,
-      description: "",
+      description: "Use shortened Stellar public key or address",
     },
     {
       prop: "federatedAddress",
       type: ["string"],
       default: null,
       optional: true,
-      description: "",
+      description: "Provide federated address",
     },
   ],
   externalProps: {
