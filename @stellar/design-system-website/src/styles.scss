@@ -31,12 +31,14 @@
 }
 
 table {
+  --table-min-width: 900px;
+
   width: 100%;
   border-collapse: collapse;
   font-size: 1rem;
   line-height: 1.5rem;
   color: var(--color-text);
-  min-width: 900px;
+  min-width: var(--table-min-width);
 
   th {
     font-size: 0.875rem;
