@@ -18,6 +18,10 @@ root/@stellar/design-system
       |-- Component/
         |-- index.tsx
         |-- styles.scss
+      |-- utils
+        |-- Component/
+          |-- index.tsx
+          |-- styles.scss
       |-- index.ts
     |-- types/
     |-- entry.ts
@@ -26,8 +30,13 @@ root/@stellar/design-system
     |-- icons.ts
     |-- index.ts
     |-- logos.ts
+    |-- mixins.scss
   |-- ...config files and docs
 ```
+
+## `build/`
+
+Optimized, production ready output of the design system.
 
 ## `assets/`
 
@@ -166,6 +175,11 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 - Use as few wrapping elements as possible (use CSS selectors, flex, grid, etc.
   to achieve the same result).
 
+### `/components/utils/`
+
+Helper components, which are not part of the Design System. The component
+structure should be the same as the main components.
+
 ### `/components/index.ts`
 
 All components are listed in this file.
@@ -178,7 +192,7 @@ export * from "./Checkbox";
 
 ## `/types`
 
-TODO
+Global types go here.
 
 ## `entry.ts`
 
@@ -255,3 +269,7 @@ All SVG logo files are listed here. The exported logo components should be named
 ```javascript
 export { ReactComponent as LogoStellar } from "./assets/logos/stellar.svg";
 ```
+
+## `mixins.scss`
+
+Sass mixins to share among components.

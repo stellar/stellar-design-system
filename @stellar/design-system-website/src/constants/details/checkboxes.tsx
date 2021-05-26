@@ -4,11 +4,13 @@ import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 export const checkboxes: ComponentDetails = {
   id: ComponentDetailsId.checkboxes,
   title: "Checkboxes",
-  description: `
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
-      consequuntur sequi magni beatae. Facere repellat voluptates perferendis,
-      reprehenderit qui, maiores corporis expedita consectetur error, incidunt
-      cumque cum quidem illo architecto!`,
+  description: (
+    <>
+      <code>Checkbox</code> component is a form input element, which allows you
+      to select single values for submission. All native HTML{" "}
+      <code>checkbox</code> input attributes apply.
+    </>
+  ),
   displayExamples: [
     <Checkbox id="checkbox-1" label="Label" />,
     <Checkbox id="checkbox-3" label="Checked" defaultChecked />,
@@ -16,7 +18,7 @@ export const checkboxes: ComponentDetails = {
   examples: [
     {
       title: "Default",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <Checkbox id="checkbox-1" label="Label" />,
         <Checkbox id="checkbox-2" label="Disabled" disabled />,
@@ -24,7 +26,7 @@ export const checkboxes: ComponentDetails = {
     },
     {
       title: "Checked",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <Checkbox id="checkbox-3" label="Checked" defaultChecked />,
         <Checkbox
@@ -37,7 +39,7 @@ export const checkboxes: ComponentDetails = {
     },
     {
       title: "Checkbox with long label",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <Checkbox
           id="checkbox-5"
@@ -57,14 +59,14 @@ export const checkboxes: ComponentDetails = {
       type: ["string"],
       default: null,
       optional: false,
-      description: "",
+      description: "ID of the checkbox should be unique",
     },
     {
       prop: "label",
       type: ["string", "ReactNode"],
       default: null,
       optional: true,
-      description: "",
+      description: "Label of the checkbox",
     },
   ],
   externalProps: {

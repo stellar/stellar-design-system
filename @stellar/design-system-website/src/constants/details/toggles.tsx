@@ -4,11 +4,12 @@ import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 export const toggles: ComponentDetails = {
   id: ComponentDetailsId.toggles,
   title: "Toggles",
-  description: `
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
-      consequuntur sequi magni beatae. Facere repellat voluptates perferendis,
-      reprehenderit qui, maiores corporis expedita consectetur error, incidunt
-      cumque cum quidem illo architecto!`,
+  description: (
+    <>
+      <code>Toggle</code> component is similar to <code>Checkbox</code>{" "}
+      component, which allows to toggle/switch between on and off states.
+    </>
+  ),
   displayExamples: [
     <Toggle
       id="toggle-5"
@@ -28,7 +29,7 @@ export const toggles: ComponentDetails = {
   examples: [
     {
       title: "Default",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <Toggle id="toggle-1" checked={false} onChange={() => {}} />,
         <Toggle id="toggle-2" checked={false} onChange={() => {}} disabled />,
@@ -36,7 +37,7 @@ export const toggles: ComponentDetails = {
     },
     {
       title: "Toggle on",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <Toggle id="toggle-3" checked={true} onChange={() => {}} />,
         <Toggle id="toggle-4" checked={true} onChange={() => {}} disabled />,
@@ -44,7 +45,7 @@ export const toggles: ComponentDetails = {
     },
     {
       title: "Toggle with labels",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <Toggle
           id="toggle-5"
@@ -65,7 +66,7 @@ export const toggles: ComponentDetails = {
     },
     {
       title: "Toggle on with labels",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <Toggle
           id="toggle-7"
@@ -86,7 +87,7 @@ export const toggles: ComponentDetails = {
     },
     {
       title: "Toggle with labels on the right",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <Toggle
           id="toggle-9"
@@ -109,7 +110,7 @@ export const toggles: ComponentDetails = {
     },
     {
       title: "Toggle on with labels on the right",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <Toggle
           id="toggle-11"
@@ -137,49 +138,49 @@ export const toggles: ComponentDetails = {
       type: ["string"],
       default: null,
       optional: false,
-      description: "",
+      description: "ID of the toggle should be unique",
     },
     {
       prop: "checked",
       type: ["boolean"],
       default: null,
       optional: false,
-      description: "",
+      description: `If "true" the toggle state is "on"`,
     },
     {
       prop: "onChange",
       type: ["() => void"],
       default: null,
       optional: false,
-      description: "",
+      description: "Function to handle the toggle state change",
     },
     {
       prop: "disabled",
       type: ["boolean"],
       default: null,
       optional: true,
-      description: "",
+      description: "Disable the toggle",
     },
     {
       prop: "labelOn",
       type: ["string"],
       default: null,
       optional: true,
-      description: "",
+      description: "On label of the toggle",
     },
     {
       prop: "labelOff",
       type: ["string"],
       default: null,
       optional: true,
-      description: "",
+      description: "Off label of the toggle",
     },
     {
       prop: "labelPosition",
       type: ["left", "right"],
       default: "left",
       optional: true,
-      description: "",
+      description: "Position of the label",
     },
   ],
   externalProps: {

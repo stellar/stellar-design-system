@@ -4,23 +4,24 @@ import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 export const inputs: ComponentDetails = {
   id: ComponentDetailsId.inputs,
   title: "Inputs",
-  description: `
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
-      consequuntur sequi magni beatae. Facere repellat voluptates perferendis,
-      reprehenderit qui, maiores corporis expedita consectetur error, incidunt
-      cumque cum quidem illo architecto!`,
+  description: (
+    <>
+      <code>Input</code> component is a form input element, which inherits all
+      native HTML <code>input</code> element attributes.
+    </>
+  ),
   displayExamples: [
     <Input id="input-3" label="Label" placeholder="Placeholder" />,
   ],
   examples: [
     {
       title: "Default",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [<Input id="input-1" />, <Input id="input-2" disabled />],
     },
     {
       title: "Input with label and placeholder",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <Input id="input-3" label="Label" placeholder="Placeholder" />,
         <Input id="input-4" label="Label" placeholder="Placeholder" disabled />,
@@ -28,7 +29,7 @@ export const inputs: ComponentDetails = {
     },
     {
       title: "Input with label and value",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <Input
           id="input-5"
@@ -47,7 +48,7 @@ export const inputs: ComponentDetails = {
     },
     {
       title: "Input with label and note / error",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <Input
           id="input-7"
@@ -66,7 +67,7 @@ export const inputs: ComponentDetails = {
     },
     {
       title: "Input with elements",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <Input
           id="input-9"
@@ -95,42 +96,42 @@ export const inputs: ComponentDetails = {
       type: ["string"],
       default: null,
       optional: false,
-      description: "",
+      description: "ID of the input should be unique",
     },
     {
       prop: "label",
       type: ["string"],
       default: null,
       optional: true,
-      description: "",
+      description: "Label of the input",
     },
     {
       prop: "leftElement",
       type: ["string", "ReactNode"],
       default: null,
       optional: true,
-      description: "",
+      description: "Element on the left of the input",
     },
     {
       prop: "rightElement",
       type: ["string", "ReactNode"],
       default: null,
       optional: true,
-      description: "",
+      description: "Element on the right of the input",
     },
     {
       prop: "note",
       type: ["string", "ReactNode"],
       default: null,
       optional: true,
-      description: "",
+      description: "Note message of the input",
     },
     {
       prop: "error",
       type: ["string", "ReactNode"],
       default: null,
       optional: true,
-      description: "",
+      description: "Error message of the input",
     },
   ],
   externalProps: {

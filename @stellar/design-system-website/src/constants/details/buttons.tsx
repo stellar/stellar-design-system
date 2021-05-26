@@ -4,11 +4,14 @@ import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 export const buttons: ComponentDetails = {
   id: ComponentDetailsId.buttons,
   title: "Buttons",
-  description: `
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
-      consequuntur sequi magni beatae. Facere repellat voluptates perferendis,
-      reprehenderit qui, maiores corporis expedita consectetur error, incidunt
-      cumque cum quidem illo architecto!`,
+  description: (
+    <>
+      <code>Button</code> is used to trigger an action that is not opening a
+      link (use <code>TextLink</code> instead). There are three variants of the{" "}
+      <code>Button</code>: <code>primary</code>, <code>secondary</code>, and{" "}
+      <code>tertiary</code>.
+    </>
+  ),
   displayExamples: [
     <Button>Label</Button>,
     <Button iconLeft={<Icon.Checkmark />}>Label</Button>,
@@ -24,7 +27,7 @@ export const buttons: ComponentDetails = {
   examples: [
     {
       title: "Primary (default)",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <Button>Label</Button>,
         <Button disabled>Label</Button>,
@@ -191,35 +194,35 @@ export const buttons: ComponentDetails = {
       type: ["string", "ReactNode"],
       default: null,
       optional: false,
-      description: "Label of the button.",
+      description: "Label of the button",
     },
     {
       prop: "iconLeft",
       type: ["ReactNode"],
       default: null,
       optional: true,
-      description: "",
+      description: "Icon element on the left of the label",
     },
     {
       prop: "iconRight",
       type: ["ReactNode"],
       default: null,
       optional: true,
-      description: "",
+      description: "Icon element on the right of the label",
     },
     {
       prop: "isLoading",
       type: ["Boolean"],
       default: null,
       optional: true,
-      description: "",
+      description: "Loading state indicator",
     },
     {
       prop: "variant",
       type: ["primary", "secondary", "tertiary"],
       default: "primary",
       optional: true,
-      description: "",
+      description: "Variant of the button",
     },
   ],
   externalProps: {
