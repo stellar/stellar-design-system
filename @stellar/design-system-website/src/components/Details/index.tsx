@@ -29,9 +29,8 @@ export const Details = () => {
   useEffect(() => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
     });
-  }, []);
+  }, [params.id]);
 
   if (!componentDetails[params.id]) {
     return (

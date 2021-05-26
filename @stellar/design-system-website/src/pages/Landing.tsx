@@ -85,28 +85,28 @@ export const Landing = () => {
           Install using <code>npm</code> or <code>yarn</code>.
         </p>
 
-        <pre>
+        <p>
           <code>npm install @stellar/design-system</code>
-        </pre>
+        </p>
 
-        <pre>
+        <p>
           <code>yarn add @stellar/design-system</code>
-        </pre>
+        </p>
 
         <p>
           Add the main CSS file to your project (for example, the main{" "}
           <code>index</code> file of your React project).
         </p>
 
-        <pre>
+        <p>
           <code>import "@stellar/design-system/dist/styles.min.css";</code>
-        </pre>
+        </p>
 
         <p>Import components in your project.</p>
 
-        <pre>
+        <p>
           <code>{`import { Button, Input } from "@stellar/design-system";`}</code>
-        </pre>
+        </p>
       </div>
 
       <div className="Section">
