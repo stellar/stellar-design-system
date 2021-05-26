@@ -4,14 +4,11 @@ import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 export const checkboxes: ComponentDetails = {
   id: ComponentDetailsId.checkboxes,
   title: "Checkboxes",
-  description: (
-    <p>
+  description: `
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
       consequuntur sequi magni beatae. Facere repellat voluptates perferendis,
       reprehenderit qui, maiores corporis expedita consectetur error, incidunt
-      cumque cum quidem illo architecto!
-    </p>
-  ),
+      cumque cum quidem illo architecto!`,
   displayExamples: [
     <Checkbox id="checkbox-1" label="Label" />,
     <Checkbox id="checkbox-3" label="Checked" defaultChecked />,

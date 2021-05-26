@@ -5,12 +5,11 @@ export const infoBlocks: ComponentDetails = {
   id: ComponentDetailsId.infoBlocks,
   title: "Info blocks",
   description: (
-    <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
-      consequuntur sequi magni beatae. Facere repellat voluptates perferendis,
-      reprehenderit qui, maiores corporis expedita consectetur error, incidunt
-      cumque cum quidem illo architecto!
-    </p>
+    <>
+      Use info blocks or status messages to draw user attention. There are four
+      variants <code>info</code>, <code>success</code>, <code>error</code>, and{" "}
+      <code>warning</code>.
+    </>
   ),
   displayExamples: [
     <InfoBlock>Information (default) block</InfoBlock>,
@@ -20,8 +19,8 @@ export const infoBlocks: ComponentDetails = {
   ],
   examples: [
     {
-      title: "Information (default)",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      title: "Info (default)",
+      description: "",
       component: [
         <InfoBlock>Information (default) block</InfoBlock>,
         <InfoBlock>
@@ -36,7 +35,7 @@ export const infoBlocks: ComponentDetails = {
     },
     {
       title: "Success",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <InfoBlock variant={InfoBlock.variant.success}>
           Success block
@@ -53,7 +52,7 @@ export const infoBlocks: ComponentDetails = {
     },
     {
       title: "Error",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <InfoBlock variant={InfoBlock.variant.error}>Error block</InfoBlock>,
         <InfoBlock variant={InfoBlock.variant.error}>
@@ -68,7 +67,7 @@ export const infoBlocks: ComponentDetails = {
     },
     {
       title: "Warning",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "",
       component: [
         <InfoBlock variant={InfoBlock.variant.warning}>
           Warning block
@@ -87,17 +86,17 @@ export const infoBlocks: ComponentDetails = {
   props: [
     {
       prop: "children",
-      type: ["string", "React.ReactNode"],
+      type: ["string", "ReactNode"],
       default: null,
       optional: false,
-      description: "",
+      description: "Content of the component",
     },
     {
       prop: "variant",
       type: ["info", "success", "error", "warning"],
       default: "info",
       optional: true,
-      description: "",
+      description: "Variant of the component",
     },
   ],
   externalProps: {

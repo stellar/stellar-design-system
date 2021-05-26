@@ -3,7 +3,7 @@ import {
   Heading1,
   Heading2,
   TextLink,
-  Heading5,
+  Heading3,
   Heading4,
 } from "@stellar/design-system";
 import React, { useEffect } from "react";
@@ -167,7 +167,7 @@ export const Details = () => {
       <Heading1>{title}</Heading1>
 
       {/* description */}
-      {description}
+      <p>{description}</p>
 
       {/* examples */}
       <Heading2>Examples</Heading2>
@@ -184,7 +184,7 @@ export const Details = () => {
         return (
           // eslint-disable-next-line react/no-array-index-key
           <div className="Details__example" key={`example-${index}`}>
-            {exampleTitle ? <Heading5>{exampleTitle}</Heading5> : null}
+            {exampleTitle ? <Heading3>{exampleTitle}</Heading3> : null}
             {exampleDescription ? <p>{exampleDescription}</p> : null}
 
             {renderExample(component, {

@@ -4,19 +4,12 @@ import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 export const assets: ComponentDetails = {
   id: ComponentDetailsId.assets,
   title: "Assets",
-  description: (
-    <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
-      consequuntur sequi magni beatae. Facere repellat voluptates perferendis,
-      reprehenderit qui, maiores corporis expedita consectetur error, incidunt
-      cumque cum quidem illo architecto!
-    </p>
-  ),
+  description: `Collection of icon and logo assets.`,
   displayExamples: [],
   examples: [
     {
       title: "Icons",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description: "SVG icon components, which are styled in CSS.",
       component: [
         <Icon.ArrowLeft />,
         <Icon.ArrowRight />,
@@ -43,7 +36,8 @@ export const assets: ComponentDetails = {
     },
     {
       title: "Logos",
-      description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+      description:
+        "SVG logo components, which can be styled in CSS if necessary.",
       component: [
         <Logo.Albedo />,
         <Logo.Freighter />,

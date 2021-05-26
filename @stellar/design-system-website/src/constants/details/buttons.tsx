@@ -4,13 +4,11 @@ import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 export const buttons: ComponentDetails = {
   id: ComponentDetailsId.buttons,
   title: "Buttons",
-  description: (
-    <p>
-      <code>Button</code> is used for actions, like in forms, while{" "}
-      <code>TextLink</code> is used for destinations, or moving from one page to
-      another.
-    </p>
-  ),
+  description: `
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio
+      consequuntur sequi magni beatae. Facere repellat voluptates perferendis,
+      reprehenderit qui, maiores corporis expedita consectetur error, incidunt
+      cumque cum quidem illo architecto!`,
   displayExamples: [
     <Button>Label</Button>,
     <Button iconLeft={<Icon.Checkmark />}>Label</Button>,
