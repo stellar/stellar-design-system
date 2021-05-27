@@ -31,6 +31,7 @@ root/@stellar/design-system
     |-- index.ts
     |-- logos.ts
     |-- mixins.scss
+    |-- normalize.scss
   |-- ...config files and docs
 ```
 
@@ -273,3 +274,7 @@ export { ReactComponent as LogoStellar } from "./assets/logos/stellar.svg";
 ## `mixins.scss`
 
 Sass mixins to share among components.
+
+## `normalize.scss`
+
+Normalize CSS to make UI more consistent in all browsers.
