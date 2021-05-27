@@ -1,8 +1,4 @@
-// TODO: minimize it
-@import "normalize.css";
-
 @mixin light-theme-palette {
-  // Colors
   --color-background-main: #ffffff;
   --color-background-secondary: #fafafa;
   --color-background-contrast: #292d3e;
@@ -27,7 +23,6 @@
 }
 
 @mixin dark-theme-palette {
-  // Colors
   --color-background-main: #333333;
   --color-background-secondary: #444444;
   --color-background-contrast: #eeeeee;
