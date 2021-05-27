@@ -32,8 +32,8 @@
   --color-text-contrast: #333333;
   --color-text-input: #ffffff;
   --color-text-input-placeholder: #999999;
-  --color-note: #666666;
-  --color-link: #666666;
+  --color-note: #cccccc;
+  --color-link: #cccccc;
   --color-accent: #3e1bdb;
   --color-accent-off: #3115af;
   --color-success: #20bf6b;
@@ -106,6 +106,7 @@ body {
   margin: 0;
   background-color: var(--color-background-main);
   overflow-x: hidden;
+  transition: background-color ease-in-out 200ms;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
