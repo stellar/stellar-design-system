@@ -31,6 +31,12 @@
     @media (min-width: 600px) {
       --Layout-header-padding-vertical: 3rem;
     }
+
+    .Layout__inset {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   &__footer {

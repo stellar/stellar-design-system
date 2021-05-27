@@ -2,6 +2,7 @@ import React from "react";
 import { Logo } from "../../logos";
 import { ProjectLogo } from "../ProjectLogo";
 import { TextLink } from "../TextLink";
+import { ToggleDarkMode } from "../ToggleDarkMode";
 import "./styles.scss";
 
 interface LayoutComponent {
@@ -32,18 +33,32 @@ const Content: React.FC<ContentProps> = ({ children }: ContentProps) => (
 interface HeaderProps {
   projectTitle: string;
   projectLink: string;
+  hasDarkModeToggle?: boolean;
   children?: React.ReactNode;
 }
+
+const stringToCamelcase = (str: string) =>
+  str
+    .replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) =>
+      index === 0 ? word.toLowerCase() : word.toUpperCase(),
+    )
+    .replace(/\s+/g, "");
 
 const Header: React.FC<HeaderProps> = ({
   projectTitle,
   projectLink,
+  hasDarkModeToggle,
   children,
 }: HeaderProps) => (
   <div className="Layout__header">
     <Inset>
       <ProjectLogo title={projectTitle} link={projectLink} />
       {children}
+      {hasDarkModeToggle ? (
+        <ToggleDarkMode
+          storageKeyId={`stellarTheme:${stringToCamelcase(projectTitle)}`}
+        />
+      ) : null}
     </Inset>
   </div>
 );

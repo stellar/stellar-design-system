@@ -1,8 +1,8 @@
 // TODO: minimize it
 @import "normalize.css";
 
-:root {
-  // Color
+@mixin light-theme-palette {
+  // Colors
   --color-background-main: #ffffff;
   --color-background-secondary: #fafafa;
   --color-background-contrast: #292d3e;
@@ -24,6 +24,49 @@
   --color-border-main: #e5e5e5;
   --color-border-input: #cccccc;
   --color-shadow: rgba(0, 0, 0, 0.48);
+}
+
+@mixin dark-theme-palette {
+  // Colors
+  --color-background-main: #333333;
+  --color-background-secondary: #444444;
+  --color-background-contrast: #eeeeee;
+  --color-background-off: #555555;
+  --color-background-input: #333333;
+  --color-text: #ffffff;
+  --color-text-contrast: #333333;
+  --color-text-input: #ffffff;
+  --color-text-input-placeholder: #999999;
+  --color-note: #666666;
+  --color-link: #666666;
+  --color-accent: #3e1bdb;
+  --color-accent-off: #3115af;
+  --color-success: #20bf6b;
+  --color-error: #eb3b5a;
+  --color-error-off: #ffedee;
+  --color-warning: #f7b731;
+  --color-warning-off: #faecd8;
+  --color-border-main: #e5e5e5;
+  --color-border-input: #cccccc;
+  --color-shadow: rgba(0, 0, 0, 0.48);
+}
+
+body.dark-mode {
+  @include dark-theme-palette;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    @include dark-theme-palette;
+  }
+
+  body.light-mode {
+    @include light-theme-palette;
+  }
+}
+
+:root {
+  @include light-theme-palette;
 
   --font-size: 16px;
 
@@ -91,7 +134,7 @@ button {
   line-height: 1;
 }
 
-/* Remove spinners (up and down arrows) from number inputs */
+// Remove spinners (up and down arrows) from number inputs
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -166,7 +209,7 @@ label {
   color: var(--color-text-contrast);
 }
 
-/* page wrapper */
+// Page wrapper
 div#root {
   display: flex;
   flex-direction: column;

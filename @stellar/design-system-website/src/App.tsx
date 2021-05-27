@@ -12,6 +12,7 @@ export const App = () => (
     <Layout.Header
       projectTitle="Design System"
       projectLink="https://www.stellar.org"
+      hasDarkModeToggle
     />
 
     <Layout.Content>
