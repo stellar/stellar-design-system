@@ -7,11 +7,11 @@ enum ModeValue {
   dark = "dark-mode",
 }
 
-export const ToggleDarkMode = ({ storageKeyId }: { storageKeyId: string }) => {
+export const ToggleDarkMode = ({ storageKeyId }: { storageKeyId?: string }) => {
   const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
 
   const getCurrentMode = useCallback(() => {
-    const modeSaved = localStorage.getItem(storageKeyId);
+    const modeSaved = storageKeyId ? localStorage.getItem(storageKeyId) : null;
 
     if (modeSaved) {
       return modeSaved;
@@ -48,10 +48,12 @@ export const ToggleDarkMode = ({ storageKeyId }: { storageKeyId: string }) => {
 
     setIsDarkMode(_isDarkMode);
 
-    if (_isDarkMode) {
-      localStorage.setItem(storageKeyId, ModeValue.dark);
-    } else {
-      localStorage.setItem(storageKeyId, ModeValue.light);
+    if (storageKeyId) {
+      if (_isDarkMode) {
+        localStorage.setItem(storageKeyId, ModeValue.dark);
+      } else {
+        localStorage.setItem(storageKeyId, ModeValue.light);
+      }
     }
   };
 

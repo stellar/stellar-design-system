@@ -13,3 +13,4 @@ export * from "./RadioButton";
 export * from "./Select";
 export * from "./TextLink";
 export * from "./Toggle";
+export * from "./ToggleDarkMode";
