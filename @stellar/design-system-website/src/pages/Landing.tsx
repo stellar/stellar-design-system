@@ -129,6 +129,7 @@ export const Landing = () => {
             <TextLink href="https://github.com/stellar/stellar-design-system/tree/main/%40stellar/design-system-website">
               repo
             </TextLink>
+            )
           </li>
         </ul>
 
