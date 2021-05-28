@@ -13,6 +13,7 @@ export enum ComponentDetailsId {
   identicons = "identicons",
   infoBlocks = "infoBlocks",
   inputs = "inputs",
+  layout = "layout",
   loaders = "loaders",
   modals = "modals",
   radioButtons = "radioButtons",
@@ -31,6 +32,7 @@ interface ComponentDetailsList {
   identicons: ComponentDetails;
   infoBlocks: ComponentDetails;
   inputs: ComponentDetails;
+  layout: ComponentDetails;
   loaders: ComponentDetails;
   modals: ComponentDetails;
   radioButtons: ComponentDetails;
