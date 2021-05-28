@@ -21,7 +21,7 @@
       @include mixins.form-field-focus;
 
       &::placeholder {
-        color: var(--color-text-input-placeholder);
+        color: var(--pal-text-tertiary);
       }
 
       @include mixins.form-field-disabled;

@@ -27,6 +27,11 @@
 
       @include mixins.form-field-focus;
       @include mixins.form-field-disabled;
+
+      option {
+        background-color: var(--pal-background-primary);
+        color: var(--pal-text-primary);
+      }
     }
   }
 
@@ -46,7 +51,7 @@
     svg {
       width: 100%;
       height: 100%;
-      fill: var(--color-text-input);
+      fill: var(--pal-text-primary);
     }
   }
 
@@ -59,7 +64,7 @@
 
     .Select__icon {
       svg {
-        fill: var(--color-text-input-placeholder);
+        fill: var(--pal-text-tertiary);
       }
     }
   }

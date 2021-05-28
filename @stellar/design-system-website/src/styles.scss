@@ -7,7 +7,7 @@
 }
 
 .ComponentContainer {
-  border-bottom: 1px solid var(--color-border-main);
+  border-bottom: 1px solid var(--pal-border-primary);
   padding-bottom: 1.5rem;
 }
 
@@ -37,13 +37,13 @@ table {
   border-collapse: collapse;
   font-size: 1rem;
   line-height: 1.5rem;
-  color: var(--color-text);
+  color: var(--pal-text-primary);
   min-width: var(--table-min-width);
 
   th {
     font-size: 0.875rem;
     line-height: 1.125rem;
-    color: var(--color-note);
+    color: var(--pal-text-secondary);
     font-weight: var(--font-weight-medium);
     text-transform: uppercase;
     text-align: left;
@@ -57,7 +57,7 @@ table {
 
   thead,
   tr:not(:last-child) {
-    border-bottom: 1px solid var(--color-background-off);
+    border-bottom: 1px solid var(--pal-background-secondary);
   }
 
   th,
@@ -77,12 +77,14 @@ table {
 
     @media (max-width: 900px) {
       // Sticky first column
-      background-color: var(--color-background-secondary);
-      left: 0;
-      position: sticky;
-      padding-left: 1rem;
-      box-shadow: 0 0 0.5rem var(--color-shadow);
-      clip-path: inset(0 -0.5rem 0 0);
+      &:not(:last-child) {
+        background-color: var(--pal-background-primary-alt);
+        left: 0;
+        position: sticky;
+        padding-left: 1rem;
+        box-shadow: 0 0 0.5rem rgba(var(--pal-shadow-rbg), 0.48);
+        clip-path: inset(0 -0.5rem 0 0);
+      }
     }
   }
 

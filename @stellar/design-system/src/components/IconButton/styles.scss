@@ -20,23 +20,23 @@
   }
 
   &--default {
-    --IconButton-color: var(--color-link);
+    --IconButton-color: var(--pal-text-secondary);
   }
 
   &--error {
-    --IconButton-color: var(--color-error);
+    --IconButton-color: var(--pal-error);
   }
 
   &--success {
-    --IconButton-color: var(--color-success);
+    --IconButton-color: var(--pal-success);
   }
 
   &--warning {
-    --IconButton-color: var(--color-warning);
+    --IconButton-color: var(--pal-warning);
   }
 
   &--highlight {
-    --IconButton-color: var(--color-accent);
+    --IconButton-color: var(--pal-brand-primary);
   }
 
   &:hover {

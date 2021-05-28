@@ -1,49 +1,71 @@
 @mixin light-theme-palette {
-  --color-background-main: #ffffff;
-  --color-background-secondary: #fafafa;
-  --color-background-contrast: #292d3e;
-  --color-background-off: #f2f2f2;
-  --color-background-input: #ffffff;
-  --color-text: #000000;
-  --color-text-contrast: #ffffff;
-  --color-text-input: #000000;
-  --color-text-input-placeholder: #999999;
-  --color-note: #666666;
-  --color-link: #666666;
-  --color-accent: #3e1bdb;
-  --color-accent-off: #3115af;
-  --color-success: #20bf6b;
-  --color-error: #eb3b5a;
-  --color-error-off: #ffedee;
-  --color-warning: #f7b731;
-  --color-warning-off: #faecd8;
-  --color-border-main: #e5e5e5;
-  --color-border-input: #cccccc;
-  --color-shadow: rgba(0, 0, 0, 0.48);
+  --pal-brand-primary: #3e1bdb;
+  // -rgb color is needed for rgba(). Hex color CSS variable doesn't work.
+  --pal-brand-primary-rgb: 62, 27, 219;
+  --pal-brand-primary-on: #ffffff;
+  --pal-brand-secondary: #230f7b;
+  --pal-brand-secondary-on: #ffffff;
+  --pal-brand-tertiary: #9f94eb;
+  --pal-brand-tertiary-on: #ffffff;
+
+  --pal-background-primary: #ffffff;
+  --pal-background-primary-alt: #fafafa;
+  --pal-background-secondary: #f2f2f2;
+  --pal-background-tertiary: #292d3e;
+
+  --pal-success: #20bf6b;
+  --pal-success-rgb: 32, 191, 107;
+  --pal-success-on: #ffffff;
+  --pal-error: #eb3b5a;
+  --pal-error-rgb: 235, 59, 90;
+  --pal-error-on: #ffffff;
+  --pal-warning: #f7b731;
+  --pal-warning-rgb: 247, 183, 49;
+  --pal-warning-on: #ffffff;
+
+  --pal-text-primary: #000000;
+  --pal-text-secondary: #666666;
+  --pal-text-tertiary: #999999;
+
+  --pal-border-primary: #f2f2f2;
+  --pal-border-secondary: #cccccc;
+
+  --pal-shadow-rbg: 0, 0, 0;
 }
 
+// TODO: update
 @mixin dark-theme-palette {
-  --color-background-main: #333333;
-  --color-background-secondary: #444444;
-  --color-background-contrast: #eeeeee;
-  --color-background-off: #555555;
-  --color-background-input: #333333;
-  --color-text: #ffffff;
-  --color-text-contrast: #333333;
-  --color-text-input: #ffffff;
-  --color-text-input-placeholder: #999999;
-  --color-note: #cccccc;
-  --color-link: #cccccc;
-  --color-accent: #3e1bdb;
-  --color-accent-off: #3115af;
-  --color-success: #20bf6b;
-  --color-error: #eb3b5a;
-  --color-error-off: #ffedee;
-  --color-warning: #f7b731;
-  --color-warning-off: #faecd8;
-  --color-border-main: #e5e5e5;
-  --color-border-input: #cccccc;
-  --color-shadow: rgba(0, 0, 0, 0.48);
+  --pal-brand-primary: #4d52ff;
+  --pal-brand-primary-rgb: 77, 82, 255;
+  --pal-brand-primary-on: #ffffff;
+  --pal-brand-secondary: #8a8eff;
+  --pal-brand-secondary-on: #ffffff;
+  --pal-brand-tertiary: #9f94eb;
+  --pal-brand-tertiary-on: #ffffff;
+
+  --pal-background-primary: #333333;
+  --pal-background-primary-alt: #444444;
+  --pal-background-secondary: #555555;
+  --pal-background-tertiary: #777777;
+
+  --pal-success: #20bf6b;
+  --pal-success-rgb: 32, 191, 107;
+  --pal-success-on: #ffffff;
+  --pal-error: #eb3b5a;
+  --pal-error-rgb: 235, 59, 90;
+  --pal-error-on: #ffffff;
+  --pal-warning: #f7b731;
+  --pal-warning-rgb: 247, 183, 49;
+  --pal-warning-on: #ffffff;
+
+  --pal-text-primary: #ffffff;
+  --pal-text-secondary: #eeeeee;
+  --pal-text-tertiary: #cccccc;
+
+  --pal-border-primary: #888888;
+  --pal-border-secondary: #999999;
+
+  --pal-shadow-rbg: 100, 100, 100;
 }
 
 body.dark-mode {
@@ -79,10 +101,6 @@ body.dark-mode {
   --z-index-tooltip: 20;
   --z-index-modal: 30;
 
-  // Loader
-  --loader-size: 1rem;
-  --loader-color: #666666;
-
   // Opacity
   --opacity-disabled-button: 0.4;
 
@@ -96,7 +114,7 @@ body,
 input,
 textarea,
 button {
-  color: var(--color-text);
+  color: var(--pal-text-primary);
 }
 
 body {
@@ -104,7 +122,7 @@ body {
   min-width: var(--layout-window-width-min);
   padding: 0;
   margin: 0;
-  background-color: var(--color-background-main);
+  background-color: var(--pal-background-primary);
   overflow-x: hidden;
   transition: background-color ease-in-out 200ms;
   -webkit-font-smoothing: antialiased;
@@ -163,7 +181,7 @@ p {
   font-size: 1rem;
   line-height: 1.75rem;
   margin: 0;
-  color: var(--color-note);
+  color: var(--pal-text-secondary);
 
   &.Paragraph--secondary {
     font-size: 0.875rem;
@@ -176,12 +194,11 @@ p {
 }
 
 code {
-  // TODO: hard coded color
-  color: #490be3;
+  color: var(--pal-brand-primary);
   font-family: var(--font-family-monospace);
   border-radius: 0.1875rem;
-  border: 0.5px solid var(--color-background-off);
-  background-color: var(--color-background-secondary);
+  border: 0.5px solid var(--pal-background-secondary);
+  background-color: var(--pal-background-primary-alt);
   padding: 0.25rem;
   font-size: 0.875rem;
   line-height: 1.5rem;
@@ -193,7 +210,7 @@ code {
 label {
   font-size: 0.875rem;
   line-height: 1.375rem;
-  color: var(--color-text);
+  color: var(--pal-text-primary);
   font-weight: var(--font-weight-medium);
   text-transform: uppercase;
   margin-bottom: 0.5rem;
@@ -201,8 +218,8 @@ label {
 }
 
 ::selection {
-  background-color: var(--color-accent);
-  color: var(--color-text-contrast);
+  background-color: var(--pal-brand-primary);
+  color: var(--pal-brand-primary-on);
 }
 
 // Page wrapper
@@ -215,13 +232,13 @@ div#root {
 
 // Generic
 .error {
-  color: var(--color-error);
+  color: var(--pal-error);
 }
 
 .success {
-  color: var(--color-success);
+  color: var(--pal-success);
 }
 
 .warning {
-  color: var(--color-warning);
+  color: var(--pal-warning);
 }

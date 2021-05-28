@@ -1,3 +1,13 @@
+@mixin info-block($color) {
+  background-color: rgba($color, 0.04);
+  color: rgb($color);
+  border-color: rgba($color, 0.2);
+
+  svg {
+    fill: rgb($color);
+  }
+}
+
 .InfoBlock {
   border-radius: 0.25rem;
   border: 1px solid transparent;
@@ -7,46 +17,20 @@
   line-height: 1.75rem;
   position: relative;
 
-  // TODO: hard coded colors, rgba doesn't like CSS var
-
   &--info {
-    background-color: rgba(#3e1bdb, 0.04);
-    color: #3e1bdb;
-    border-color: rgba(#3e1bdb, 0.2);
-
-    svg {
-      fill: #3e1bdb;
-    }
+    @include info-block(var(--pal-brand-primary-rgb));
   }
 
   &--success {
-    background-color: rgba(#20bf6b, 0.04);
-    color: #20bf6b;
-    border-color: rgba(#20bf6b, 0.2);
-
-    svg {
-      fill: #20bf6b;
-    }
+    @include info-block(var(--pal-success-rgb));
   }
 
   &--error {
-    background-color: rgba(#eb3b5a, 0.04);
-    color: #eb3b5a;
-    border-color: rgba(#eb3b5a, 0.2);
-
-    svg {
-      fill: #eb3b5a;
-    }
+    @include info-block(var(--pal-error-rgb));
   }
 
   &--warning {
-    background-color: rgba(#f7b731, 0.04);
-    color: #f7b731;
-    border-color: rgba(#f7b731, 0.2);
-
-    svg {
-      fill: #f7b731;
-    }
+    @include info-block(var(--pal-warning-rgb));
   }
 
   &__icon {
