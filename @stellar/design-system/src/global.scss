@@ -35,18 +35,18 @@
 
 // TODO: update
 @mixin dark-theme-palette {
-  --pal-brand-primary: #4d52ff;
+  --pal-brand-primary: #5a60fc;
   --pal-brand-primary-rgb: 77, 82, 255;
   --pal-brand-primary-on: #ffffff;
-  --pal-brand-secondary: #8a8eff;
+  --pal-brand-secondary: #6469ff;
   --pal-brand-secondary-on: #ffffff;
-  --pal-brand-tertiary: #9f94eb;
+  --pal-brand-tertiary: #797efa;
   --pal-brand-tertiary-on: #ffffff;
 
-  --pal-background-primary: #333333;
-  --pal-background-primary-alt: #444444;
-  --pal-background-secondary: #555555;
-  --pal-background-tertiary: #777777;
+  --pal-background-primary: #0b0b0b;
+  --pal-background-primary-alt: #1b1b1b;
+  --pal-background-secondary: #2b2b2b;
+  --pal-background-tertiary: #3b3b3b;
 
   --pal-success: #20bf6b;
   --pal-success-rgb: 32, 191, 107;
@@ -62,8 +62,8 @@
   --pal-text-secondary: #eeeeee;
   --pal-text-tertiary: #cccccc;
 
-  --pal-border-primary: #888888;
-  --pal-border-secondary: #999999;
+  --pal-border-primary: #2b2b2b;
+  --pal-border-secondary: #4b4b4b;
 
   --pal-shadow-rbg: 100, 100, 100;
 }
