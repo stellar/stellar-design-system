@@ -29,6 +29,7 @@ const componentsDisplayOrder = [
   ComponentDetailsId.radioButtons,
   ComponentDetailsId.toggles,
   ComponentDetailsId.modals,
+  ComponentDetailsId.layout,
 ];
 
 export const Landing = () => {

@@ -6,6 +6,7 @@ import { identicons } from "constants/details/identicons";
 import { iconButtons } from "constants/details/iconButtons";
 import { infoBlocks } from "constants/details/infoBlocks";
 import { inputs } from "constants/details/inputs";
+import { layout } from "constants/details/layout";
 import { loaders } from "constants/details/loaders";
 import { modals } from "constants/details/modals";
 import { radioButtons } from "constants/details/radioButtons";
@@ -24,6 +25,7 @@ export const componentDetails: ComponentDetailsList = {
   identicons,
   infoBlocks,
   inputs,
+  layout,
   loaders,
   modals,
   radioButtons,
