@@ -68,19 +68,20 @@
   --pal-shadow-rbg: 100, 100, 100;
 }
 
-body.dark-mode {
-  @include dark-theme-palette;
-}
+// TODO: removing until we have dark mode colors
+// body.dark-mode {
+//   @include dark-theme-palette;
+// }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    @include dark-theme-palette;
-  }
+// @media (prefers-color-scheme: dark) {
+//   body {
+//     @include dark-theme-palette;
+//   }
 
-  body.light-mode {
-    @include light-theme-palette;
-  }
-}
+//   body.light-mode {
+//     @include light-theme-palette;
+//   }
+// }
 
 :root {
   @include light-theme-palette;
@@ -241,4 +242,77 @@ div#root {
 
 .warning {
   color: var(--pal-warning);
+}
+
+// Table
+table.Table {
+  --table-min-width: 900px;
+
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--pal-text-primary);
+  min-width: var(--table-min-width);
+
+  th {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    color: var(--pal-text-secondary);
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    text-align: left;
+    padding-top: 1.0625rem;
+    padding-bottom: 1.0625rem;
+
+    @media (min-width: 900px) {
+      padding-top: 0;
+    }
+  }
+
+  thead,
+  tr:not(:last-child) {
+    border-bottom: 1px solid var(--pal-background-secondary);
+  }
+
+  th,
+  td {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    vertical-align: top;
+
+    label {
+      margin-bottom: 0;
+    }
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: 0;
+
+    @media (max-width: 900px) {
+      // Sticky first column
+      &:not(:last-child) {
+        background-color: var(--pal-background-primary-alt);
+        left: 0;
+        position: sticky;
+        padding-left: 1rem;
+        box-shadow: 0 0 0.5rem rgba(var(--pal-shadow-rbg), 0.48);
+        clip-path: inset(0 -0.5rem 0 0);
+      }
+    }
+  }
+
+  th:last-child:not(:first-child),
+  td:last-child:not(:first-child) {
+    padding-right: 0;
+    text-align: right;
+  }
+
+  td {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    word-break: break-word;
+    vertical-align: middle;
+  }
 }

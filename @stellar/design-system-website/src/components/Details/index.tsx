@@ -68,47 +68,47 @@ export const Details = () => {
     renderProps: ComponentProp[],
     renderExternalProps?: ComponentExternalProps,
   ) => (
-    <div className="TableContainer">
-      <table>
-        <thead>
-          <tr>
-            <th>Prop</th>
-            <th>Type</th>
-            <th>Default</th>
-            <th>Optional</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          {renderProps.map((componentProp, index) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <tr key={`${componentProp.prop}-${index}`}>
-              <td>
-                <code>{componentProp.prop}</code>
-              </td>
-              <td>{renderPropType(componentProp.type)}</td>
-              <td>
-                {componentProp.default ? (
-                  <code>{componentProp.default}</code>
-                ) : null}
-              </td>
-              <td>{componentProp.optional ? "Yes" : null}</td>
-              <td>{componentProp.description ?? null}</td>
-            </tr>
-          ))}
-          {renderExternalProps?.link ? (
+    <>
+      <div className="TableContainer">
+        <table className="Table">
+          <thead>
             <tr>
-              <td colSpan={5}>
-                Including all valid{" "}
-                <TextLink href={renderExternalProps.link}>
-                  {renderExternalProps.label || "attributes"}
-                </TextLink>
-              </td>
+              <th>Prop</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Optional</th>
+              <th>Description</th>
             </tr>
-          ) : null}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {renderProps.map((componentProp, index) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <tr key={`${componentProp.prop}-${index}`}>
+                <td>
+                  <code>{componentProp.prop}</code>
+                </td>
+                <td>{renderPropType(componentProp.type)}</td>
+                <td>
+                  {componentProp.default ? (
+                    <code>{componentProp.default}</code>
+                  ) : null}
+                </td>
+                <td>{componentProp.optional ? "Yes" : null}</td>
+                <td>{componentProp.description ?? null}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {renderExternalProps?.link ? (
+        <div className="TableNoteContainer">
+          Including all valid{" "}
+          <TextLink href={renderExternalProps.link}>
+            {renderExternalProps.label || "attributes"}
+          </TextLink>
+        </div>
+      ) : null}
+    </>
   );
 
   const renderExample = (
