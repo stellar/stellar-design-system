@@ -8,10 +8,9 @@ import "styles.scss";
 
 export const App = () => (
   <Router basename={process.env.PUBLIC_URL}>
-    {/* TODO: update project link */}
     <Layout.Header
       projectTitle="Design System"
-      projectLink="https://www.stellar.org"
+      projectLink="https://stellar.github.io/stellar-design-system"
       // TODO: removing until we have dark mode colors
       // hasDarkModeToggle
     />
