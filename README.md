@@ -27,7 +27,7 @@ import { Button } from "@stellar/design-system";
 ```
 
 Available components can be found
-[here](https://github.com/stellar/stellar-design-system/tree/main/src/components).
+[here](./@stellar/design-system/src/components).
 
 ## Development
 

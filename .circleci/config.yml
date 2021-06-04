@@ -50,15 +50,13 @@ jobs:
   deploy:
     <<: *defaults
     steps:
-      - attach_workspace:
-          at: ~/repo/@stellar/design-system
       - run:
           name: Authenticate with registry
           command:
             echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
       - run:
           name: Publish package
-          command: npm publish --access public
+          command: yarn publish:sds
 
 workflows:
   version: 2
