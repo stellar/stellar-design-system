@@ -21,6 +21,6 @@
     "prepare": "husky install",
     "install-if-package-changed": "git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD | grep --quiet yarn.lock && yarn install || exit 0",
     "pre-commit": "concurrently 'pretty-quick --staged' 'lint-staged' 'yarn tsc:sds' 'yarn tsc:sds-web'",
-    "publish:sds": "npm publish --workspace @stellar/design-system --access public"
+    "publish:sds": "npm publish --workspace @stellar/design-system --access public --dry-run"
   }
 }
