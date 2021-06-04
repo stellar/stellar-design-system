@@ -7,7 +7,7 @@ import { Landing } from "pages/Landing";
 import "styles.scss";
 
 export const App = () => (
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     {/* TODO: update project link */}
     <Layout.Header
       projectTitle="Design System"

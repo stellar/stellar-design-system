@@ -4,6 +4,7 @@
   "author": "Stellar Development Foundation <hello@stellar.org>",
   "description": "Stellar Development Foundation’s design system website",
   "license": "Apache-2.0",
+  "homepage": "https://stellar.github.io/stellar-design-system",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
