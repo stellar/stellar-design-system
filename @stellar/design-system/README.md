@@ -235,8 +235,6 @@ CSS file that contains all font files.
 Main CSS file that has all the global styles shared among all components.
 
 ```scss
-@import "normalize.css";
-
 :root {
   // Colors and other variables
 }
