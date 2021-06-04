@@ -50,10 +50,14 @@ jobs:
   deploy:
     <<: *defaults
     steps:
+      - attach_workspace:
+          at: ~/repo
+
       - run:
           name: Authenticate with registry
           command:
             echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+
       - run:
           name: Publish package
           command: yarn publish:sds
