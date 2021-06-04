@@ -12,6 +12,8 @@ export const App = () => (
     <Layout.Header
       projectTitle="Design System"
       projectLink="https://www.stellar.org"
+      // TODO: removing until we have dark mode colors
+      // hasDarkModeToggle
     />
 
     <Layout.Content>

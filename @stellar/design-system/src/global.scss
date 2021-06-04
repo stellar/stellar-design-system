@@ -1,26 +1,90 @@
+@mixin light-theme-palette {
+  --pal-brand-primary: #3e1bdb;
+  // -rgb color is needed for rgba(). Hex color CSS variable doesn't work.
+  --pal-brand-primary-rgb: 62, 27, 219;
+  --pal-brand-primary-on: #ffffff;
+  --pal-brand-secondary: #230f7b;
+  --pal-brand-secondary-on: #ffffff;
+  --pal-brand-tertiary: #9f94eb;
+  --pal-brand-tertiary-on: #ffffff;
+
+  --pal-background-primary: #ffffff;
+  --pal-background-primary-alt: #fafafa;
+  --pal-background-secondary: #f2f2f2;
+  --pal-background-tertiary: #292d3e;
+
+  --pal-success: #20bf6b;
+  --pal-success-rgb: 32, 191, 107;
+  --pal-success-on: #ffffff;
+  --pal-error: #eb3b5a;
+  --pal-error-rgb: 235, 59, 90;
+  --pal-error-on: #ffffff;
+  --pal-warning: #f7b731;
+  --pal-warning-rgb: 247, 183, 49;
+  --pal-warning-on: #ffffff;
+
+  --pal-text-primary: #000000;
+  --pal-text-secondary: #666666;
+  --pal-text-tertiary: #999999;
+
+  --pal-border-primary: #f2f2f2;
+  --pal-border-secondary: #cccccc;
+
+  --pal-shadow-rbg: 0, 0, 0;
+}
+
+// TODO: update
+@mixin dark-theme-palette {
+  --pal-brand-primary: #5a60fc;
+  --pal-brand-primary-rgb: 77, 82, 255;
+  --pal-brand-primary-on: #ffffff;
+  --pal-brand-secondary: #6469ff;
+  --pal-brand-secondary-on: #ffffff;
+  --pal-brand-tertiary: #797efa;
+  --pal-brand-tertiary-on: #ffffff;
+
+  --pal-background-primary: #0b0b0b;
+  --pal-background-primary-alt: #1b1b1b;
+  --pal-background-secondary: #2b2b2b;
+  --pal-background-tertiary: #3b3b3b;
+
+  --pal-success: #20bf6b;
+  --pal-success-rgb: 32, 191, 107;
+  --pal-success-on: #ffffff;
+  --pal-error: #eb3b5a;
+  --pal-error-rgb: 235, 59, 90;
+  --pal-error-on: #ffffff;
+  --pal-warning: #f7b731;
+  --pal-warning-rgb: 247, 183, 49;
+  --pal-warning-on: #ffffff;
+
+  --pal-text-primary: #ffffff;
+  --pal-text-secondary: #eeeeee;
+  --pal-text-tertiary: #cccccc;
+
+  --pal-border-primary: #2b2b2b;
+  --pal-border-secondary: #4b4b4b;
+
+  --pal-shadow-rbg: 100, 100, 100;
+}
+
+// TODO: removing until we have dark mode colors
+// body.dark-mode {
+//   @include dark-theme-palette;
+// }
+
+// @media (prefers-color-scheme: dark) {
+//   body {
+//     @include dark-theme-palette;
+//   }
+
+//   body.light-mode {
+//     @include light-theme-palette;
+//   }
+// }
+
 :root {
-  // Color
-  --color-background-main: #ffffff;
-  --color-background-secondary: #fafafa;
-  --color-background-contrast: #292d3e;
-  --color-background-off: #f2f2f2;
-  --color-background-input: #ffffff;
-  --color-text: #000000;
-  --color-text-contrast: #ffffff;
-  --color-text-input: #000000;
-  --color-text-input-placeholder: #999999;
-  --color-note: #666666;
-  --color-link: #666666;
-  --color-accent: #3e1bdb;
-  --color-accent-off: #3115af;
-  --color-success: #20bf6b;
-  --color-error: #eb3b5a;
-  --color-error-off: #ffedee;
-  --color-warning: #f7b731;
-  --color-warning-off: #faecd8;
-  --color-border-main: #e5e5e5;
-  --color-border-input: #cccccc;
-  --color-shadow: rgba(0, 0, 0, 0.48);
+  @include light-theme-palette;
 
   --font-size: 16px;
 
@@ -38,10 +102,6 @@
   --z-index-tooltip: 20;
   --z-index-modal: 30;
 
-  // Loader
-  --loader-size: 1rem;
-  --loader-color: #666666;
-
   // Opacity
   --opacity-disabled-button: 0.4;
 
@@ -55,7 +115,7 @@ body,
 input,
 textarea,
 button {
-  color: var(--color-text);
+  color: var(--pal-text-primary);
 }
 
 body {
@@ -63,8 +123,9 @@ body {
   min-width: var(--layout-window-width-min);
   padding: 0;
   margin: 0;
-  background-color: var(--color-background-main);
+  background-color: var(--pal-background-primary);
   overflow-x: hidden;
+  transition: background-color ease-in-out 200ms;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -88,7 +149,7 @@ button {
   line-height: 1;
 }
 
-/* Remove spinners (up and down arrows) from number inputs */
+// Remove spinners (up and down arrows) from number inputs
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -121,7 +182,7 @@ p {
   font-size: 1rem;
   line-height: 1.75rem;
   margin: 0;
-  color: var(--color-note);
+  color: var(--pal-text-secondary);
 
   &.Paragraph--secondary {
     font-size: 0.875rem;
@@ -134,12 +195,11 @@ p {
 }
 
 code {
-  // TODO: hard coded color
-  color: #490be3;
+  color: var(--pal-brand-primary);
   font-family: var(--font-family-monospace);
   border-radius: 0.1875rem;
-  border: 0.5px solid var(--color-background-off);
-  background-color: var(--color-background-secondary);
+  border: 0.5px solid var(--pal-background-secondary);
+  background-color: var(--pal-background-primary-alt);
   padding: 0.25rem;
   font-size: 0.875rem;
   line-height: 1.5rem;
@@ -151,7 +211,7 @@ code {
 label {
   font-size: 0.875rem;
   line-height: 1.375rem;
-  color: var(--color-text);
+  color: var(--pal-text-primary);
   font-weight: var(--font-weight-medium);
   text-transform: uppercase;
   margin-bottom: 0.5rem;
@@ -159,11 +219,11 @@ label {
 }
 
 ::selection {
-  background-color: var(--color-accent);
-  color: var(--color-text-contrast);
+  background-color: var(--pal-brand-primary);
+  color: var(--pal-brand-primary-on);
 }
 
-/* page wrapper */
+// Page wrapper
 div#root {
   display: flex;
   flex-direction: column;
@@ -173,13 +233,86 @@ div#root {
 
 // Generic
 .error {
-  color: var(--color-error);
+  color: var(--pal-error);
 }
 
 .success {
-  color: var(--color-success);
+  color: var(--pal-success);
 }
 
 .warning {
-  color: var(--color-warning);
+  color: var(--pal-warning);
+}
+
+// Table
+table.Table {
+  --table-min-width: 900px;
+
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--pal-text-primary);
+  min-width: var(--table-min-width);
+
+  th {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    color: var(--pal-text-secondary);
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    text-align: left;
+    padding-top: 1.0625rem;
+    padding-bottom: 1.0625rem;
+
+    @media (min-width: 900px) {
+      padding-top: 0;
+    }
+  }
+
+  thead,
+  tr:not(:last-child) {
+    border-bottom: 1px solid var(--pal-background-secondary);
+  }
+
+  th,
+  td {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    vertical-align: top;
+
+    label {
+      margin-bottom: 0;
+    }
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: 0;
+
+    @media (max-width: 900px) {
+      // Sticky first column
+      &:not(:last-child) {
+        background-color: var(--pal-background-primary-alt);
+        left: 0;
+        position: sticky;
+        padding-left: 1rem;
+        box-shadow: 0 0 0.5rem rgba(var(--pal-shadow-rbg), 0.48);
+        clip-path: inset(0 -0.5rem 0 0);
+      }
+    }
+  }
+
+  th:last-child:not(:first-child),
+  td:last-child:not(:first-child) {
+    padding-right: 0;
+    text-align: right;
+  }
+
+  td {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    word-break: break-word;
+    vertical-align: middle;
+  }
 }

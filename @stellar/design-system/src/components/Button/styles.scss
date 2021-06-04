@@ -1,5 +1,7 @@
 .Button {
-  --loader-color: var(--Button-color-text);
+  --Button-color-text: transparent;
+  --Button-color-background: transparent;
+  --Button-color-border: transparent;
 
   font-size: 1rem;
   line-height: 1.56rem;
@@ -16,38 +18,38 @@
   color: var(--Button-color-text);
 
   &--primary {
-    --Button-color-background: var(--color-accent);
-    --Button-color-text: var(--color-text-contrast);
-    --Button-color-border: var(--color-accent);
+    --Button-color-background: var(--pal-brand-primary);
+    --Button-color-text: var(--pal-brand-primary-on);
+    --Button-color-border: var(--pal-brand-primary);
 
-    box-shadow: 0 0.5rem 1rem -0.5rem var(--color-shadow);
+    box-shadow: 0 0.5rem 1rem -0.5rem rgba(var(--pal-shadow-rbg), 0.48);
 
     &:hover {
-      background-color: var(--color-accent-off);
+      background-color: var(--pal-brand-secondary);
     }
   }
 
   &--secondary {
-    --Button-color-background: var(--color-background-main);
-    --Button-color-text: var(--color-accent);
-    --Button-color-border: var(--color-accent);
+    --Button-color-background: var(--pal-background-primary);
+    --Button-color-text: var(--pal-brand-primary);
+    --Button-color-border: var(--pal-brand-primary);
 
     box-shadow: none;
 
     &:hover {
-      background-color: var(--color-background-off);
+      background-color: var(--pal-background-secondary);
     }
   }
 
   &--tertiary {
-    --Button-color-background: var(--color-background-main);
-    --Button-color-text: var(--color-accent);
+    --Button-color-background: var(--pal-background-primary);
+    --Button-color-text: var(--pal-brand-primary);
     --Button-color-border: transparent;
 
-    box-shadow: 0 0.5rem 1rem -0.5rem var(--color-shadow);
+    box-shadow: 0 0.5rem 1rem -0.5rem rgba(var(--pal-shadow-rbg), 0.48);
 
     &:hover {
-      background-color: var(--color-background-off);
+      background-color: var(--pal-background-secondary);
     }
   }
 
@@ -67,6 +69,7 @@
   }
 
   .Loader {
+    --Loader-color: var(--Button-color-text);
     margin-left: 0.5rem;
   }
 }

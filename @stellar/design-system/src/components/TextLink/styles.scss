@@ -1,5 +1,5 @@
 .TextLink {
-  --loader-color: var(--TextLink-color-text);
+  --TextLink-color-text: transparent;
 
   color: var(--TextLink-color-text);
   font-weight: var(--font-weight-medium);
@@ -12,26 +12,25 @@
   vertical-align: bottom;
 
   &--primary {
-    --TextLink-color-text: var(--color-accent);
+    --TextLink-color-text: var(--pal-brand-primary);
 
     &:hover {
-      // TODO: hard coded color
-      --TextLink-color-text: #230f7b;
+      --TextLink-color-text: var(--pal-brand-secondary);
 
       &.TextLink--disabled {
-        --TextLink-color-text: var(--color-accent);
+        --TextLink-color-text: var(--pal-brand-primary);
       }
     }
   }
 
   &--secondary {
-    --TextLink-color-text: var(--color-link);
+    --TextLink-color-text: var(--pal-text-secondary);
 
     &:hover {
-      --TextLink-color-text: var(--color-text);
+      --TextLink-color-text: var(--pal-text-primary);
 
       &.TextLink--disabled {
-        --TextLink-color-text: var(--color-link);
+        --TextLink-color-text: var(--pal-text-secondary);
       }
     }
   }
@@ -62,6 +61,7 @@
   }
 
   .Loader {
+    --Loader-color: var(--TextLink-color-text);
     margin-left: 0.5rem;
   }
 }

@@ -28,7 +28,7 @@
       @include mixins.checkbox-radio-icon-centered;
       width: var(--checkbox-selected-size);
       height: var(--checkbox-selected-size);
-      fill: var(--color-background-input);
+      fill: var(--pal-background-primary);
     }
   }
 

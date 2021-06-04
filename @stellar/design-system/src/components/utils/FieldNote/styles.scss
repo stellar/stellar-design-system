@@ -2,9 +2,9 @@
   margin-top: 0.5rem;
   font-size: 0.875rem;
   line-height: 1.375rem;
-  color: var(--color-note);
+  color: var(--pal-text-secondary);
 
   &--error {
-    color: var(--color-error);
+    color: var(--pal-error);
   }
 }
