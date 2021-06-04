@@ -50,8 +50,10 @@ jobs:
   deploy:
     <<: *defaults
     steps:
-      - attach_workspace:
-          at: ~/repo/@stellar/design-system
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - "@stellar/design-system"
       - run:
           name: Authenticate with registry
           command:
