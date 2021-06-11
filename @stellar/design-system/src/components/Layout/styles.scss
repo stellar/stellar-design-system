@@ -42,7 +42,7 @@
   &__footer {
     --Layout-footer-padding-top: 1rem;
     --Layout-footer-padding-bottom: 1rem;
-    --Layout-footer-margin-top: 6rem;
+    --Layout-footer-margin-top: 3rem;
     --Layout-footer-border-color: var(--pal-border-primary);
 
     margin-top: var(--Layout-footer-margin-top);
@@ -50,6 +50,7 @@
     @media (min-width: 600px) {
       --Layout-footer-padding-top: 1.5rem;
       --Layout-footer-padding-bottom: 3rem;
+      --Layout-footer-margin-top: 6rem;
     }
 
     &__content {
