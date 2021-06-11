@@ -158,6 +158,7 @@ ul {
   padding: 0 0 0 1rem;
   margin: 0;
   list-style-type: none;
+  color: var(--pal-text-secondary);
 
   li {
     position: relative;
@@ -251,6 +252,7 @@ table.Table {
   line-height: 1.5rem;
   color: var(--pal-text-primary);
   min-width: var(--table-min-width);
+  color: var(--pal-text-secondary);
 
   th {
     font-size: 0.875rem;
