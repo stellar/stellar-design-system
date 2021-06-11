@@ -1,0 +1,33 @@
+.ToggleDarkMode {
+  --ToggleDarkMode-size: 3rem;
+  --ToggleDarkMode-icon-size: 1.2rem;
+
+  cursor: pointer;
+  width: var(--ToggleDarkMode-size);
+  height: var(--ToggleDarkMode-size);
+  border-radius: calc(var(--ToggleDarkMode-size) / 2);
+  flex-shrink: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-color: var(--pal-background-primary);
+  border: 1px solid var(--pal-border-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: var(--ToggleDarkMode-icon-size);
+    height: var(--ToggleDarkMode-icon-size);
+    fill: var(--pal-text-secondary);
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: var(--opacity-disabled-button);
+  }
+}

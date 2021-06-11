@@ -8,8 +8,8 @@
   &__icon {
     width: var(--Identicon-size);
     height: var(--Identicon-size);
-    background-color: var(--pal-background-primary-alt);
-    border: 1px solid var(--pal-background-secondary);
+    background-color: var(--pal-background-secondary);
+    border: 1px solid var(--pal-border-primary);
     border-radius: calc(var(--Identicon-size) / 2);
     display: flex;
     align-items: center;

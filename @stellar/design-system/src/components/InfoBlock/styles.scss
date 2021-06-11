@@ -1,36 +1,49 @@
-@mixin info-block($color) {
-  background-color: rgba($color, 0.04);
-  color: rgb($color);
-  border-color: rgba($color, 0.2);
+@mixin info-block($bg, $icon) {
+  background-color: rgba($bg, 0.04);
+  border-color: rgba($bg, 0.2);
 
   svg {
-    fill: rgb($color);
+    fill: $icon;
   }
 }
 
 .InfoBlock {
   border-radius: 0.25rem;
-  border: 1px solid transparent;
-  padding: 1rem;
-  padding-left: 2.5rem;
   width: 100%;
-  line-height: 1.75rem;
-  position: relative;
+  background-color: var(--pal-background-primary);
+
+  &__content {
+    border-radius: 0.25rem;
+    border: 1px solid transparent;
+    padding: 1rem;
+    padding-left: 2.5rem;
+    line-height: 1.75rem;
+    position: relative;
+    color: var(--pal-text-primary);
+  }
 
   &--info {
-    @include info-block(var(--pal-brand-primary-rgb));
+    .InfoBlock__content {
+      @include info-block(var(--pal-brand-primary-rgb), var(--pal-text-link));
+    }
   }
 
   &--success {
-    @include info-block(var(--pal-success-rgb));
+    .InfoBlock__content {
+      @include info-block(var(--pal-success-rgb), rgb(var(--pal-success-rgb)));
+    }
   }
 
   &--error {
-    @include info-block(var(--pal-error-rgb));
+    .InfoBlock__content {
+      @include info-block(var(--pal-error-rgb), rgb(var(--pal-error-rgb)));
+    }
   }
 
   &--warning {
-    @include info-block(var(--pal-warning-rgb));
+    .InfoBlock__content {
+      @include info-block(var(--pal-warning-rgb), rgb(var(--pal-warning-rgb)));
+    }
   }
 
   &__icon {

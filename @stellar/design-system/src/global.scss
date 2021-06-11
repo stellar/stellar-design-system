@@ -3,15 +3,10 @@
   // -rgb color is needed for rgba(). Hex color CSS variable doesn't work.
   --pal-brand-primary-rgb: 62, 27, 219;
   --pal-brand-primary-on: #ffffff;
-  --pal-brand-secondary: #230f7b;
-  --pal-brand-secondary-on: #ffffff;
-  --pal-brand-tertiary: #9f94eb;
-  --pal-brand-tertiary-on: #ffffff;
 
   --pal-background-primary: #ffffff;
-  --pal-background-primary-alt: #fafafa;
-  --pal-background-secondary: #f2f2f2;
-  --pal-background-tertiary: #292d3e;
+  --pal-background-secondary: #fafafa;
+  --pal-background-tertiary: #f2f2f2;
 
   --pal-success: #20bf6b;
   --pal-success-rgb: 32, 191, 107;
@@ -23,69 +18,57 @@
   --pal-warning-rgb: 247, 183, 49;
   --pal-warning-on: #ffffff;
 
-  --pal-text-primary: #000000;
-  --pal-text-secondary: #666666;
-  --pal-text-tertiary: #999999;
+  --pal-text-base-rgb: 0, 0, 0;
+  --pal-text-primary: rgba(var(--pal-text-base-rgb), 1);
+  --pal-text-secondary: rgba(var(--pal-text-base-rgb), 0.6);
+  --pal-text-tertiary: rgba(var(--pal-text-base-rgb), 0.4);
+  --pal-text-link: #5332e6;
 
-  --pal-border-primary: #f2f2f2;
-  --pal-border-secondary: #cccccc;
+  --pal-border-base-rgb: 0, 0, 0;
+  --pal-border-primary: rgba(var(--pal-text-base-rgb), 0.08);
+  --pal-border-secondary: rgba(var(--pal-text-base-rgb), 0.16);
 
   --pal-shadow-rbg: 0, 0, 0;
 }
 
-// TODO: update
 @mixin dark-theme-palette {
-  --pal-brand-primary: #5a60fc;
-  --pal-brand-primary-rgb: 77, 82, 255;
+  --pal-brand-primary: #5332e6;
+  // -rgb color is needed for rgba(). Hex color CSS variable doesn't work.
+  --pal-brand-primary-rgb: 83, 50, 230;
   --pal-brand-primary-on: #ffffff;
-  --pal-brand-secondary: #6469ff;
-  --pal-brand-secondary-on: #ffffff;
-  --pal-brand-tertiary: #797efa;
-  --pal-brand-tertiary-on: #ffffff;
 
-  --pal-background-primary: #0b0b0b;
-  --pal-background-primary-alt: #1b1b1b;
-  --pal-background-secondary: #2b2b2b;
-  --pal-background-tertiary: #3b3b3b;
+  --pal-background-primary: #292d3e;
+  --pal-background-secondary: #303448;
+  --pal-background-tertiary: #222634;
 
-  --pal-success: #20bf6b;
-  --pal-success-rgb: 32, 191, 107;
+  --pal-success: #26db7b;
+  --pal-success-rgb: 38, 219, 123;
   --pal-success-on: #ffffff;
-  --pal-error: #eb3b5a;
-  --pal-error-rgb: 235, 59, 90;
+  --pal-error: #ee5a74;
+  --pal-error-rgb: 238, 90, 116;
   --pal-error-on: #ffffff;
-  --pal-warning: #f7b731;
-  --pal-warning-rgb: 247, 183, 49;
+  --pal-warning: #f8c252;
+  --pal-warning-rgb: 248, 194, 82;
   --pal-warning-on: #ffffff;
 
-  --pal-text-primary: #ffffff;
-  --pal-text-secondary: #eeeeee;
-  --pal-text-tertiary: #cccccc;
+  --pal-text-base-rgb: 255, 255, 255;
+  --pal-text-primary: rgba(var(--pal-text-base-rgb), 1);
+  --pal-text-secondary: rgba(var(--pal-text-base-rgb), 0.6);
+  --pal-text-tertiary: rgba(var(--pal-text-base-rgb), 0.4);
+  --pal-text-link: #6260eb;
 
-  --pal-border-primary: #2b2b2b;
-  --pal-border-secondary: #4b4b4b;
+  --pal-border-base-rgb: 255, 255, 255;
+  --pal-border-primary: rgba(var(--pal-text-base-rgb), 0.08);
+  --pal-border-secondary: rgba(var(--pal-text-base-rgb), 0.16);
 
-  --pal-shadow-rbg: 100, 100, 100;
+  --pal-shadow-rbg: 0, 0, 0;
 }
 
-// TODO: removing until we have dark mode colors
-// body.dark-mode {
-//   @include dark-theme-palette;
-// }
-
-// @media (prefers-color-scheme: dark) {
-//   body {
-//     @include dark-theme-palette;
-//   }
-
-//   body.light-mode {
-//     @include light-theme-palette;
-//   }
-// }
-
 :root {
-  @include light-theme-palette;
+  // Palette
+  @include dark-theme-palette;
 
+  // Font size
   --font-size: 16px;
 
   // Font weight
@@ -108,6 +91,20 @@
   // Layout
   --layout-window-width-min: 320px;
   --layout-window-width-max: 1296px;
+}
+
+body.light-mode {
+  @include light-theme-palette;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    @include light-theme-palette;
+  }
+
+  body.dark-mode {
+    @include dark-theme-palette;
+  }
 }
 
 html,
@@ -161,6 +158,7 @@ ul {
   padding: 0 0 0 1rem;
   margin: 0;
   list-style-type: none;
+  color: var(--pal-text-secondary);
 
   li {
     position: relative;
@@ -195,11 +193,11 @@ p {
 }
 
 code {
-  color: var(--pal-brand-primary);
+  color: inherit;
   font-family: var(--font-family-monospace);
   border-radius: 0.1875rem;
-  border: 0.5px solid var(--pal-background-secondary);
-  background-color: var(--pal-background-primary-alt);
+  border: 0.5px solid var(--pal-border-primary);
+  background-color: var(--pal-background-secondary);
   padding: 0.25rem;
   font-size: 0.875rem;
   line-height: 1.5rem;
@@ -254,6 +252,7 @@ table.Table {
   line-height: 1.5rem;
   color: var(--pal-text-primary);
   min-width: var(--table-min-width);
+  color: var(--pal-text-secondary);
 
   th {
     font-size: 0.875rem;
@@ -272,7 +271,7 @@ table.Table {
 
   thead,
   tr:not(:last-child) {
-    border-bottom: 1px solid var(--pal-background-secondary);
+    border-bottom: 1px solid var(--pal-border-primary);
   }
 
   th,
@@ -293,7 +292,7 @@ table.Table {
     @media (max-width: 900px) {
       // Sticky first column
       &:not(:last-child) {
-        background-color: var(--pal-background-primary-alt);
+        background-color: var(--pal-background-secondary);
         left: 0;
         position: sticky;
         padding-left: 1rem;
