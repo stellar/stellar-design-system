@@ -91,6 +91,9 @@
   // Layout
   --layout-window-width-min: 320px;
   --layout-window-width-max: 1296px;
+
+  // Animations
+  --anim-transition-default: linear 300ms;
 }
 
 body.light-mode {

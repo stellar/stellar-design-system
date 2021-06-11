@@ -13,7 +13,8 @@
   padding: 1.5rem 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: border-color linear 300ms, box-shadow linear 300ms;
+  transition: border-color var(--anim-transition-default),
+    box-shadow var(--anim-transition-default);
 
   @media (hover: hover) {
     &:hover {

@@ -12,6 +12,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 1;
+  transition: opacity var(--anim-transition-default);
 
   svg {
     width: 100%;
@@ -39,8 +41,10 @@
     --IconButton-color: var(--pal-brand-primary);
   }
 
-  &:hover {
-    opacity: 0.6;
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.6;
+    }
   }
 
   &:disabled {

@@ -16,6 +16,7 @@
   justify-content: center;
   background-color: var(--Button-color-background);
   color: var(--Button-color-text);
+  transition: background-color var(--anim-transition-default);
 
   &--primary {
     --Button-color-background: var(--pal-brand-primary);
@@ -25,8 +26,10 @@
     box-shadow: 0 0.5rem 1rem -0.5rem rgba(var(--pal-shadow-rbg), 0.48);
 
     // TODO: hover color
+    // @media (hover: hover) {
     // &:hover {
     //   background-color: var(--pal-brand-secondary);
+    // }
     // }
   }
 
@@ -37,8 +40,10 @@
 
     box-shadow: none;
 
-    &:hover {
-      background-color: var(--pal-background-tertiary);
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--pal-background-tertiary);
+      }
     }
   }
 
@@ -49,8 +54,10 @@
 
     box-shadow: 0 0.5rem 1rem -0.5rem rgba(var(--pal-shadow-rbg), 0.48);
 
-    &:hover {
-      background-color: var(--pal-background-tertiary);
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--pal-background-tertiary);
+      }
     }
   }
 
@@ -58,8 +65,10 @@
     cursor: not-allowed;
     opacity: var(--opacity-disabled-button);
 
-    &:hover {
-      background-color: var(--Button-color-background);
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--Button-color-background);
+      }
     }
   }
 
