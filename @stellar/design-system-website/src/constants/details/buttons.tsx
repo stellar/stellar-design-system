@@ -12,18 +12,7 @@ export const buttons: ComponentDetails = {
       <code>tertiary</code>.
     </>
   ),
-  displayExamples: [
-    <Button>Label</Button>,
-    <Button iconLeft={<Icon.Checkmark />}>Label</Button>,
-    <Button variant={Button.variant.secondary}>Label</Button>,
-    <Button variant={Button.variant.secondary} iconLeft={<Icon.Checkmark />}>
-      Label
-    </Button>,
-    <Button variant={Button.variant.tertiary}>Label</Button>,
-    <Button variant={Button.variant.tertiary} iconLeft={<Icon.Checkmark />}>
-      Label
-    </Button>,
-  ],
+  shortDescription: "Used to trigger an action that is not opening a link",
   examples: [
     {
       title: "Primary (default)",

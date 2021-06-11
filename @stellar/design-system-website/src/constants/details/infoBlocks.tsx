@@ -11,12 +11,7 @@ export const infoBlocks: ComponentDetails = {
       <code>warning</code>.
     </>
   ),
-  displayExamples: [
-    <InfoBlock>Information (default) block</InfoBlock>,
-    <InfoBlock variant={InfoBlock.variant.success}>Success block</InfoBlock>,
-    <InfoBlock variant={InfoBlock.variant.error}>Error block</InfoBlock>,
-    <InfoBlock variant={InfoBlock.variant.warning}>Warning block</InfoBlock>,
-  ],
+  shortDescription: "Use info blocks or status messages to draw user attention",
   examples: [
     {
       title: "Info (default)",

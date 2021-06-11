@@ -10,22 +10,7 @@ export const toggles: ComponentDetails = {
       component, which allows to toggle/switch between on and off states.
     </>
   ),
-  displayExamples: [
-    <Toggle
-      id="toggle-5"
-      checked={false}
-      onChange={() => {}}
-      labelOff="Off"
-      labelOn="On"
-    />,
-    <Toggle
-      id="toggle-5"
-      checked={true}
-      onChange={() => {}}
-      labelOff="Off"
-      labelOn="On"
-    />,
-  ],
+  shortDescription: "Similar to Checkbox component, which allows to toggle",
   examples: [
     {
       title: "Default",

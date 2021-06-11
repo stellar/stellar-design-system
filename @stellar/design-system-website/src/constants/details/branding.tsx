@@ -5,9 +5,7 @@ export const branding: ComponentDetails = {
   id: ComponentDetailsId.branding,
   title: "Branding",
   description: `Branding components, such as project logo.`,
-  displayExamples: [
-    <ProjectLogo link="https://stellar.org" title="Project name" />,
-  ],
+  shortDescription: "Branding components, such as project logos",
   examples: [
     {
       title: "Project logo",

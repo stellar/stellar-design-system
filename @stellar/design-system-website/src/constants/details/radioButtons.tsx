@@ -11,11 +11,8 @@ export const radioButtons: ComponentDetails = {
       native HTML <code>radio</code> input attributes apply.
     </>
   ),
-  displayExamples: [
-    <RadioButton id="radio-1-1" name="radio-1" label="Label 1" />,
-    <RadioButton id="radio-1-2" name="radio-1" label="Disabled" disabled />,
-    <RadioButton id="radio-1-3" name="radio-1" label="Label 3" />,
-  ],
+  shortDescription:
+    "Form input element, select a single value from a group of options",
   examples: [
     {
       title: "Default",

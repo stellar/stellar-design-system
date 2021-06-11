@@ -11,7 +11,7 @@ export const layout: ComponentDetails = {
       page layouts.
     </>
   ),
-  displayExamples: [],
+  shortDescription: "Elements to build page layouts",
   examples: [
     {
       title: "Default header",

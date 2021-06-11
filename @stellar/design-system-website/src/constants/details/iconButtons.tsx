@@ -12,14 +12,7 @@ export const iconButtons: ComponentDetails = {
       <code>success</code>, <code>warning</code>, <code>highlight</code>.
     </>
   ),
-  displayExamples: [
-    <IconButton icon={<Icon.Info />} altText="Default" />,
-    <IconButton
-      icon={<Icon.Info />}
-      altText="Success"
-      variant={IconButton.variant.success}
-    />,
-  ],
+  shortDescription: "Similar to the Button, and is used to trigger an action",
   examples: [
     {
       title: "Default",

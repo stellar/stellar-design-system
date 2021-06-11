@@ -13,33 +13,8 @@ export const textLinks: ComponentDetails = {
       <code>secondary</code>), and underline prop.
     </>
   ),
-  displayExamples: [
-    <p>
-      Some text <TextLink>link</TextLink> more text
-    </p>,
-    <p>
-      Some text{" "}
-      <TextLink underline iconRight={<Icon.Checkmark />}>
-        link
-      </TextLink>{" "}
-      more text
-    </p>,
-    <p>
-      Some text <TextLink variant={TextLink.variant.secondary}>link</TextLink>{" "}
-      more text
-    </p>,
-    <p>
-      Some text{" "}
-      <TextLink
-        variant={TextLink.variant.secondary}
-        underline
-        iconRight={<Icon.Checkmark />}
-      >
-        link
-      </TextLink>{" "}
-      more text
-    </p>,
-  ],
+  shortDescription:
+    "Used to trigger an action to open links or to navigate to other pages",
   examples: [
     {
       title: "Primary (default)",

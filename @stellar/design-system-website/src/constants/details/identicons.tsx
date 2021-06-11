@@ -13,18 +13,7 @@ export const identicons: ComponentDetails = {
       .
     </>
   ),
-  displayExamples: [
-    <Identicon
-      publicAddress="GC26L4VPX5J63UEL25RJFLRSDWYPCC3P2WNLF2NHZ3DY577LRGDTLQHV"
-      shortenAddress
-    />,
-    <TextLink>
-      <Identicon
-        publicAddress="GC26L4VPX5J63UEL25RJFLRSDWYPCC3P2WNLF2NHZ3DY577LRGDTLQHV"
-        federatedAddress="test*stellar.org"
-      />
-    </TextLink>,
-  ],
+  shortDescription: "Unique identicons of public Stellar keys",
   examples: [
     {
       title: "Default",

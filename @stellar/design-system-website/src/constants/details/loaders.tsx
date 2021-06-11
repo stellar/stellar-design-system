@@ -6,7 +6,7 @@ export const loaders: ComponentDetails = {
   title: "Loaders",
   description: `
       Loading state indicators.`,
-  displayExamples: [<Loader />],
+  shortDescription: "Loading state indicators",
   examples: [
     {
       title: "Default",

@@ -15,15 +15,7 @@ export const typography: ComponentDetails = {
   description: `Typography (including headings, paragraph, and other text types) examples
   and documentation. These components don’t have any special props, and
   inherit their native HTML attributes.`,
-  displayExamples: [
-    <Heading1>Heading 1</Heading1>,
-    <Heading2>Heading 2</Heading2>,
-    <Heading3>Heading 3</Heading3>,
-    <Heading4>Heading 4</Heading4>,
-    <Heading5>Heading 5</Heading5>,
-    <Heading6>Heading 6</Heading6>,
-    <Eyebrow>Eyebrow</Eyebrow>,
-  ],
+  shortDescription: "Headings, paragraph, and other text types",
   examples: [
     {
       title: "Heading",

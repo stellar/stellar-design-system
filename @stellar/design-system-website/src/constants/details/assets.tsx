@@ -5,7 +5,8 @@ export const assets: ComponentDetails = {
   id: ComponentDetailsId.assets,
   title: "Assets",
   description: `Collection of icon and logo assets.`,
-  displayExamples: [],
+  shortDescription:
+    "Collection of icon and partner logo assets used across product and brand",
   examples: [
     {
       title: "Icons",

@@ -1,0 +1,39 @@
+.ComponentsList {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1.5rem;
+}
+
+.ComponentCard {
+  border: 1px solid var(--pal-border-primary);
+  background-color: var(--pal-background-secondary);
+  overflow: hidden;
+  height: 8rem;
+  padding: 1.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: border-color linear 300ms, box-shadow linear 300ms;
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--pal-border-secondary);
+      box-shadow: 0 1.5rem 3rem -1.5rem rgba(var(--pal-shadow-rbg), 0.16);
+    }
+  }
+
+  &__title {
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    color: var(--pal-text-primary);
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+      fill: var(--pal-text-primary);
+      margin-left: 0.4rem;
+    }
+  }
+}
