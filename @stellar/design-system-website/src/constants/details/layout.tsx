@@ -109,6 +109,13 @@ export const layout: ComponentDetails = {
             description: "Hide legal links",
           },
           {
+            prop: "hideTopBorder",
+            type: ["boolean"],
+            default: null,
+            optional: true,
+            description: "Hide top border",
+          },
+          {
             prop: "gitHubLink",
             type: ["string"],
             default: null,
