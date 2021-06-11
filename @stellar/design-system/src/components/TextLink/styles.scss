@@ -12,10 +12,11 @@
   vertical-align: bottom;
 
   &--primary {
-    --TextLink-color-text: var(--pal-brand-primary);
+    --TextLink-color-text: var(--pal-text-link);
 
     &:hover {
-      --TextLink-color-text: var(--pal-brand-secondary);
+      // TODO: hover color
+      // --TextLink-color-text: var(--pal-brand-secondary);
 
       &.TextLink--disabled {
         --TextLink-color-text: var(--pal-brand-primary);

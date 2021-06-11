@@ -31,8 +31,10 @@ export const InfoBlock: React.FC<InfoBlockProps> & InfoBlockComponent = ({
 
   return (
     <div className={`InfoBlock InfoBlock--${variant}`}>
-      <div className="InfoBlock__icon">{variantIcon[variant]}</div>
-      {children}
+      <div className="InfoBlock__content">
+        <div className="InfoBlock__icon">{variantIcon[variant]}</div>
+        {children}
+      </div>
     </div>
   );
 };

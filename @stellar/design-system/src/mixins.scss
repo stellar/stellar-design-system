@@ -57,7 +57,7 @@
 
 @mixin form-field-wrapper-disabled($elClass) {
   #{$elClass} {
-    background-color: var(--pal-background-secondary);
+    background-color: var(--pal-background-tertiary);
 
     &:hover {
       border-color: var(--pal-border-secondary);

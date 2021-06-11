@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
-import { IconButton } from "../IconButton";
+// import { IconButton } from "../IconButton";
 import { Icon } from "../../icons";
+import "./styles.scss";
 
 enum ModeValue {
   light = "light-mode",
@@ -58,11 +59,21 @@ export const ToggleDarkMode = ({ storageKeyId }: { storageKeyId?: string }) => {
   };
 
   return (
-    <IconButton
+    // <IconButton
+    //   id="dark-mode-toggle"
+    //   onClick={handleToggle}
+    //   icon={isDarkMode ? <Icon.Sun /> : <Icon.Moon />}
+    //   altText={isDarkMode ? "Activate light mode" : "Activate dark mode"}
+    // />
+    <button
       id="dark-mode-toggle"
+      className="ToggleDarkMode"
+      title={isDarkMode ? "Activate light mode" : "Activate dark mode"}
       onClick={handleToggle}
-      icon={isDarkMode ? <Icon.Sun /> : <Icon.Moon />}
-      altText={isDarkMode ? "Activate light mode" : "Activate dark mode"}
-    />
+    >
+      {isDarkMode ? <Icon.Sun /> : <Icon.Moon />}
+    </button>
   );
 };
+
+ToggleDarkMode.displayName = "ToggleDarkMode";

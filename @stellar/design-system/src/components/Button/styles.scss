@@ -24,32 +24,33 @@
 
     box-shadow: 0 0.5rem 1rem -0.5rem rgba(var(--pal-shadow-rbg), 0.48);
 
-    &:hover {
-      background-color: var(--pal-brand-secondary);
-    }
+    // TODO: hover color
+    // &:hover {
+    //   background-color: var(--pal-brand-secondary);
+    // }
   }
 
   &--secondary {
     --Button-color-background: var(--pal-background-primary);
-    --Button-color-text: var(--pal-brand-primary);
-    --Button-color-border: var(--pal-brand-primary);
+    --Button-color-text: var(--pal-text-link);
+    --Button-color-border: var(--pal-text-link);
 
     box-shadow: none;
 
     &:hover {
-      background-color: var(--pal-background-secondary);
+      background-color: var(--pal-background-tertiary);
     }
   }
 
   &--tertiary {
     --Button-color-background: var(--pal-background-primary);
-    --Button-color-text: var(--pal-brand-primary);
+    --Button-color-text: var(--pal-text-link);
     --Button-color-border: transparent;
 
     box-shadow: 0 0.5rem 1rem -0.5rem rgba(var(--pal-shadow-rbg), 0.48);
 
     &:hover {
-      background-color: var(--pal-background-secondary);
+      background-color: var(--pal-background-tertiary);
     }
   }
 
