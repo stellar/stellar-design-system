@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from "react";
-// import { IconButton } from "../IconButton";
 import { Icon } from "../../icons";
 import "./styles.scss";
 
@@ -59,12 +58,6 @@ export const ToggleDarkMode = ({ storageKeyId }: { storageKeyId?: string }) => {
   };
 
   return (
-    // <IconButton
-    //   id="dark-mode-toggle"
-    //   onClick={handleToggle}
-    //   icon={isDarkMode ? <Icon.Sun /> : <Icon.Moon />}
-    //   altText={isDarkMode ? "Activate light mode" : "Activate dark mode"}
-    // />
     <button
       id="dark-mode-toggle"
       className="ToggleDarkMode"
