@@ -10,9 +10,8 @@ export const inputs: ComponentDetails = {
       native HTML <code>input</code> element attributes.
     </>
   ),
-  displayExamples: [
-    <Input id="input-3" label="Label" placeholder="Placeholder" />,
-  ],
+  shortDescription:
+    "Form input element, which inherits all native HTML input element attributes",
   examples: [
     {
       title: "Default",

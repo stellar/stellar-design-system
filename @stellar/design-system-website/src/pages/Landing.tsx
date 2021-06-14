@@ -1,49 +1,18 @@
 import {
   Layout,
   Heading2,
-  Heading3,
   Heading1,
   InfoBlock,
   TextLink,
-  Icon,
 } from "@stellar/design-system";
-import React from "react";
-import { useHistory } from "react-router-dom";
+import { ComponentsList } from "components/ComponentsList";
 
-import { componentDetails } from "constants/componentDetails";
-import { ComponentDetailsId, Routes } from "types/types.d";
+export const Landing = () => (
+  <Layout.Inset>
+    <Heading1>Stellar Design System</Heading1>
 
-const componentsDisplayOrder = [
-  ComponentDetailsId.typography,
-  ComponentDetailsId.branding,
-  ComponentDetailsId.assets,
-  ComponentDetailsId.identicons,
-  ComponentDetailsId.loaders,
-  ComponentDetailsId.infoBlocks,
-  ComponentDetailsId.buttons,
-  ComponentDetailsId.iconButtons,
-  ComponentDetailsId.textLinks,
-  ComponentDetailsId.inputs,
-  ComponentDetailsId.selects,
-  ComponentDetailsId.checkboxes,
-  ComponentDetailsId.radioButtons,
-  ComponentDetailsId.toggles,
-  ComponentDetailsId.modals,
-  ComponentDetailsId.layout,
-];
-
-export const Landing = () => {
-  const history = useHistory();
-
-  const goToComponentDetails = (componentId: string) => {
-    history.push(`./${Routes.component}/${componentId}`);
-  };
-
-  return (
-    <Layout.Inset>
-      <Heading1>Stellar Design System</Heading1>
-
-      <div className="Section">
+    <div className="Section">
+      <div className="Section__content">
         <p>
           Stellar Design System (SDS) is an opinionated React component library
           (we hope it will grow into a full-featured design system in the
@@ -55,8 +24,10 @@ export const Landing = () => {
           API will have many breaking changes.
         </InfoBlock>
       </div>
+    </div>
 
-      <div className="Section">
+    <div className="Section">
+      <div className="Section__content">
         <Heading2>Tech stack</Heading2>
 
         <ul>
@@ -67,8 +38,10 @@ export const Landing = () => {
           <li>Webpack</li>
         </ul>
       </div>
+    </div>
 
-      <div className="Section">
+    <div className="Section">
+      <div className="Section__content">
         <Heading2>Current version</Heading2>
 
         <TextLink href="https://www.npmjs.com/package/@stellar/design-system">
@@ -78,8 +51,10 @@ export const Landing = () => {
           />
         </TextLink>
       </div>
+    </div>
 
-      <div className="Section">
+    <div className="Section">
+      <div className="Section__content">
         <Heading2>Usage</Heading2>
 
         <p>
@@ -109,8 +84,10 @@ export const Landing = () => {
           <code>{`import { Button, Input } from "@stellar/design-system";`}</code>
         </p>
       </div>
+    </div>
 
-      <div className="Section">
+    <div className="Section">
+      <div className="Section__content">
         <Heading2>Local development</Heading2>
 
         <p>The design system repo has two parts:</p>
@@ -181,48 +158,21 @@ export const Landing = () => {
 
         <InfoBlock>
           You need to run each <code>start</code> command in its own window or
-          tab
+          tab.
         </InfoBlock>
       </div>
+    </div>
 
-      <Heading2>Components</Heading2>
-      <p>
-        Below is a list of all components and assets. Click on the links to view
-        details of the component.
-      </p>
+    <div className="Section">
+      <div className="Section__content">
+        <Heading2>Components</Heading2>
+        <p>
+          Below is a list of all components and assets. Click on the links to
+          view details of the component.
+        </p>
+      </div>
 
-      {componentsDisplayOrder.map((key) => {
-        const comp = componentDetails[key];
-
-        if (!comp) {
-          return null;
-        }
-
-        return (
-          <div className="Section ComponentContainer" key={key}>
-            <Heading3>{comp.title}</Heading3>
-            <p>{comp.description}</p>
-
-            <div className="ComponentExamplesContainer">
-              {comp.displayExamples.map((example, index) => (
-                // eslint-disable-next-line react/no-array-index-key
-                <React.Fragment key={`example-${comp.id}-${index}`}>
-                  {example}
-                </React.Fragment>
-              ))}
-            </div>
-
-            <p>
-              <TextLink
-                onClick={() => goToComponentDetails(comp.id)}
-                iconRight={<Icon.ArrowRight />}
-              >
-                Read More
-              </TextLink>
-            </p>
-          </div>
-        );
-      })}
-    </Layout.Inset>
-  );
-};
+      <ComponentsList />
+    </div>
+  </Layout.Inset>
+);

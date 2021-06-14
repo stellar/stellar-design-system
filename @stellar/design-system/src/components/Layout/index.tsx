@@ -66,6 +66,7 @@ const Header: React.FC<HeaderProps> = ({
 interface FooterProps {
   marginTop?: string;
   hideLegalLinks?: boolean;
+  hideTopBorder?: boolean;
   gitHubLink?: string;
   gitHubLabel?: string;
   children?: React.ReactNode;
@@ -74,45 +75,49 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({
   marginTop,
   hideLegalLinks,
+  hideTopBorder,
   gitHubLink,
   gitHubLabel,
   children,
 }: FooterProps) => {
   const customStyle = {
     ...(marginTop ? { "--Layout-footer-margin-top": marginTop } : {}),
+    ...(hideTopBorder ? { "--Layout-footer-border-color": "transparent" } : {}),
   } as React.CSSProperties;
 
   return (
     <div className="Layout__footer" style={customStyle}>
       <Inset>
-        {hideLegalLinks ? null : (
-          <div className="Layout__footer__legal">
-            <TextLink
-              href="https://www.stellar.org/terms-of-service"
-              variant={TextLink.variant.secondary}
-            >
-              Terms of Service
-            </TextLink>
+        <div className="Layout__footer__content">
+          {hideLegalLinks ? null : (
+            <div className="Layout__footer__legal">
+              <TextLink
+                href="https://www.stellar.org/terms-of-service"
+                variant={TextLink.variant.secondary}
+              >
+                Terms of Service
+              </TextLink>
 
-            <TextLink
-              href="https://www.stellar.org/privacy-policy"
-              variant={TextLink.variant.secondary}
-            >
-              Privacy Policy
-            </TextLink>
-          </div>
-        )}
+              <TextLink
+                href="https://www.stellar.org/privacy-policy"
+                variant={TextLink.variant.secondary}
+              >
+                Privacy Policy
+              </TextLink>
+            </div>
+          )}
 
-        {gitHubLink ? (
-          <TextLink
-            href={gitHubLink}
-            variant={TextLink.variant.secondary}
-            iconLeft={<Logo.GitHub />}
-          >
-            {gitHubLabel ?? "GitHub"}
-          </TextLink>
-        ) : null}
-        {children}
+          {gitHubLink ? (
+            <TextLink
+              href={gitHubLink}
+              variant={TextLink.variant.secondary}
+              iconLeft={<Logo.GitHub />}
+            >
+              {gitHubLabel ?? "GitHub"}
+            </TextLink>
+          ) : null}
+          {children}
+        </div>
       </Inset>
     </div>
   );

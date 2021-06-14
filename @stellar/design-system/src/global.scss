@@ -91,6 +91,9 @@
   // Layout
   --layout-window-width-min: 320px;
   --layout-window-width-max: 1296px;
+
+  // Animations
+  --anim-transition-default: linear 300ms;
 }
 
 body.light-mode {
@@ -112,7 +115,7 @@ body,
 input,
 textarea,
 button {
-  color: var(--pal-text-primary);
+  color: var(--pal-text-secondary);
 }
 
 body {
@@ -153,43 +156,45 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-ul {
-  line-height: 1.75rem;
-  padding: 0 0 0 1rem;
-  margin: 0;
-  list-style-type: none;
-  color: var(--pal-text-secondary);
-
-  li {
-    position: relative;
-  }
-
-  li::before {
-    content: "-";
-    position: absolute;
-    left: -1rem;
-  }
-}
-
 strong,
 b {
   font-weight: var(--font-weight-medium);
 }
 
-p {
+// Text block elements
+p,
+ul,
+ol {
   font-size: 1rem;
   line-height: 1.75rem;
   margin: 0;
   color: var(--pal-text-secondary);
 
+  &:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+p {
   &.Paragraph--secondary {
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
+}
 
-  &:not(:last-child) {
-    margin-bottom: 1.5rem;
-  }
+ul {
+  padding: 0 0 0 1rem;
+  list-style-type: none;
+}
+
+li {
+  position: relative;
+}
+
+li::before {
+  content: "-";
+  position: absolute;
+  left: -1rem;
 }
 
 code {

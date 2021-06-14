@@ -10,12 +10,8 @@ export const selects: ComponentDetails = {
       native HTML <code>select</code> element attributes.
     </>
   ),
-  displayExamples: [
-    <Select id="select-1" label="Label">
-      <option>Option 1</option>
-      <option>Option 2</option>
-    </Select>,
-  ],
+  shortDescription:
+    "Form select element, which inherits all native HTML select element attributes",
   examples: [
     {
       title: "Default",

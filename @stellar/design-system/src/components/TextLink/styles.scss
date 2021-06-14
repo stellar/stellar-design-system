@@ -10,16 +10,19 @@
   align-items: center;
   justify-content: center;
   vertical-align: bottom;
+  transition: color var(--anim-transition-default);
 
   &--primary {
     --TextLink-color-text: var(--pal-text-link);
 
-    &:hover {
-      // TODO: hover color
-      // --TextLink-color-text: var(--pal-brand-secondary);
+    @media (hover: hover) {
+      &:hover {
+        // TODO: hover color
+        // --TextLink-color-text: var(--pal-brand-secondary);
 
-      &.TextLink--disabled {
-        --TextLink-color-text: var(--pal-brand-primary);
+        &.TextLink--disabled {
+          --TextLink-color-text: var(--pal-brand-primary);
+        }
       }
     }
   }
@@ -27,11 +30,13 @@
   &--secondary {
     --TextLink-color-text: var(--pal-text-secondary);
 
-    &:hover {
-      --TextLink-color-text: var(--pal-text-primary);
+    @media (hover: hover) {
+      &:hover {
+        --TextLink-color-text: var(--pal-text-primary);
 
-      &.TextLink--disabled {
-        --TextLink-color-text: var(--pal-text-secondary);
+        &.TextLink--disabled {
+          --TextLink-color-text: var(--pal-text-secondary);
+        }
       }
     }
   }
@@ -39,8 +44,10 @@
   &--underline {
     text-decoration: underline;
 
-    &:hover {
-      text-decoration: none;
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 
@@ -58,6 +65,7 @@
 
     svg {
       fill: var(--TextLink-color-text);
+      transition: fill var(--anim-transition-default);
     }
   }
 

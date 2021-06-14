@@ -11,7 +11,7 @@ export const layout: ComponentDetails = {
       page layouts.
     </>
   ),
-  displayExamples: [],
+  shortDescription: "Elements to build page layouts",
   examples: [
     {
       title: "Default header",
@@ -107,6 +107,13 @@ export const layout: ComponentDetails = {
             default: null,
             optional: true,
             description: "Hide legal links",
+          },
+          {
+            prop: "hideTopBorder",
+            type: ["boolean"],
+            default: null,
+            optional: true,
+            description: "Hide top border",
           },
           {
             prop: "gitHubLink",

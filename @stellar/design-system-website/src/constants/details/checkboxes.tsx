@@ -11,10 +11,8 @@ export const checkboxes: ComponentDetails = {
       <code>checkbox</code> input attributes apply.
     </>
   ),
-  displayExamples: [
-    <Checkbox id="checkbox-1" label="Label" />,
-    <Checkbox id="checkbox-3" label="Checked" defaultChecked />,
-  ],
+  shortDescription:
+    "Form input element, which allows you to select single values for submission",
   examples: [
     {
       title: "Default",

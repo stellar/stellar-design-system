@@ -121,7 +121,8 @@ export const modals: ComponentDetails = {
       top of the rest of the website.
     </>
   ),
-  displayExamples: [<SimpleModalExample />],
+  shortDescription:
+    "A dialog window with an overlay background, rendered on top",
   examples: [
     {
       title: "Simple text modal",
