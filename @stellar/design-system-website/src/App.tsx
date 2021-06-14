@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Layout } from "@stellar/design-system";
 
-import { Details } from "components/Details";
 import { Landing } from "pages/Landing";
+import { ComponentDetails } from "pages/ComponentDetails";
 
 import "styles.scss";
 
@@ -18,7 +18,7 @@ export const App = () => (
     <Layout.Content>
       <Switch>
         <Route exact path="/component/:id">
-          <Details />
+          <ComponentDetails />
         </Route>
 
         <Route path="/">

@@ -6,8 +6,7 @@ import {
   Heading3,
   Heading4,
 } from "@stellar/design-system";
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React from "react";
 import { ElementCode } from "components/ElementCode";
 import { componentDetails } from "constants/componentDetails";
 import {
@@ -19,24 +18,16 @@ import {
 
 import "./styles.scss";
 
-interface paramProps {
-  id: ComponentDetailsId;
-}
-
-export const Details = () => {
-  const params: paramProps = useParams();
-
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-    });
-  }, [params.id]);
-
-  if (!componentDetails[params.id]) {
+export const Details = ({
+  componentId,
+}: {
+  componentId: ComponentDetailsId;
+}) => {
+  if (!componentId) {
     return (
       <Layout.Inset>
         <p>
-          Component <code>{params.id}</code> does not exist
+          Component <code>{componentId}</code> does not exist
         </p>
       </Layout.Inset>
     );
@@ -50,7 +41,7 @@ export const Details = () => {
     externalProps,
     notes,
     subComponents,
-  } = componentDetails[params.id];
+  } = componentDetails[componentId];
 
   const renderPropType = (type: string[]) => {
     const size = type.length;
