@@ -1,8 +1,10 @@
 import React from "react";
+import { Icon } from "../../icons";
 import { Logo } from "../../logos";
 import { ProjectLogo } from "../ProjectLogo";
 import { TextLink } from "../TextLink";
 import { ToggleDarkMode } from "../ToggleDarkMode";
+import { NavButton } from "../NavButton";
 import "./styles.scss";
 
 interface LayoutComponent {
@@ -34,6 +36,7 @@ interface HeaderProps {
   projectTitle: string;
   projectLink: string;
   hasDarkModeToggle?: boolean;
+  onOpenMenu?: () => void;
   children?: React.ReactNode;
 }
 
@@ -48,17 +51,28 @@ const Header: React.FC<HeaderProps> = ({
   projectTitle,
   projectLink,
   hasDarkModeToggle,
+  onOpenMenu,
   children,
 }: HeaderProps) => (
   <div className="Layout__header">
     <Inset>
       <ProjectLogo title={projectTitle} link={projectLink} />
       {children}
-      {hasDarkModeToggle ? (
-        <ToggleDarkMode
-          storageKeyId={`stellarTheme:${stringToCamelcase(projectTitle)}`}
-        />
-      ) : null}
+      <div className="Layout__header__buttons">
+        {hasDarkModeToggle ? (
+          <ToggleDarkMode
+            storageKeyId={`stellarTheme:${stringToCamelcase(projectTitle)}`}
+          />
+        ) : null}
+        {onOpenMenu ? (
+          <NavButton
+            id="open-side-nav-button"
+            title="Open side navigation"
+            onClick={onOpenMenu}
+            icon={<Icon.Menu />}
+          />
+        ) : null}
+      </div>
     </Inset>
   </div>
 );

@@ -1,26 +1,30 @@
-.ToggleDarkMode {
-  --ToggleDarkMode-size: 3rem;
-  --ToggleDarkMode-icon-size: 1.2rem;
+.NavButton {
+  --NavButton-size: 3rem;
+  --NavButton-icon-size: 1.2rem;
 
   cursor: pointer;
-  width: var(--ToggleDarkMode-size);
-  height: var(--ToggleDarkMode-size);
-  border-radius: calc(var(--ToggleDarkMode-size) / 2);
+  width: var(--NavButton-size);
+  height: var(--NavButton-size);
+  border-radius: calc(var(--NavButton-size) / 2);
   flex-shrink: 0;
   border: none;
   padding: 0;
   margin: 0;
-  background-color: var(--pal-background-primary);
-  border: 1px solid var(--pal-border-primary);
+  background-color: transparent;
+  border: 1px solid transparent;
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 1;
   transition: opacity var(--anim-transition-default);
 
+  &--border {
+    border-color: var(--pal-border-primary);
+  }
+
   svg {
-    width: var(--ToggleDarkMode-icon-size);
-    height: var(--ToggleDarkMode-icon-size);
+    width: var(--NavButton-icon-size);
+    height: var(--NavButton-icon-size);
     fill: var(--pal-text-secondary);
   }
 

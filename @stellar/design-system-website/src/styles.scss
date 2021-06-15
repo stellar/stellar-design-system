@@ -8,6 +8,51 @@
   }
 }
 
+.Layout__containerWithSubnav {
+  display: flex;
+  // border: 1px solid #ff0;
+
+  &__subnavWrapper {
+    --SideNav-width: 16rem;
+    --SideNav-translate-x: var(--SideNav-width);
+
+    width: var(--SideNav-width);
+    padding-right: 1rem;
+    flex-shrink: 0;
+    // border: 1px solid #f0f;
+    background-color: transparent;
+
+    @media (max-width: 600px) {
+      margin-right: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(var(--pal-shadow-rbg), 0.6);
+      z-index: var(--z-index-modal);
+      display: none;
+
+      &.SideNav--open {
+        display: block;
+      }
+    }
+
+    & > * {
+      @media (max-width: 600px) {
+        transition: transform var(--anim-transition-default);
+        transform: translateX(calc(var(--SideNav-translate-x) * -1));
+      }
+    }
+  }
+
+  &__contentWrapper {
+    // border: 1px solid #fff;
+    overflow: hidden;
+    flex: 1;
+  }
+}
+
 .ComponentContainer {
   border-bottom: 1px solid var(--pal-border-primary);
   padding-bottom: 1.5rem;

@@ -8,6 +8,7 @@ export * from "./Input";
 export * from "./Layout";
 export * from "./Loader";
 export * from "./Modal";
+export * from "./NavButton";
 export * from "./ProjectLogo";
 export * from "./RadioButton";
 export * from "./Select";

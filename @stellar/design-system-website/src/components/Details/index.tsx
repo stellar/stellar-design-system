@@ -1,5 +1,4 @@
 import {
-  Layout,
   Heading1,
   Heading2,
   TextLink,
@@ -25,11 +24,11 @@ export const Details = ({
 }) => {
   if (!componentId) {
     return (
-      <Layout.Inset>
+      <>
         <p>
           Component <code>{componentId}</code> does not exist
         </p>
-      </Layout.Inset>
+      </>
     );
   }
 
@@ -154,7 +153,7 @@ export const Details = ({
   };
 
   return (
-    <Layout.Inset>
+    <>
       {/* heading */}
       <Heading1>{title}</Heading1>
 
@@ -226,6 +225,6 @@ export const Details = ({
           ))}
         </div>
       ) : null}
-    </Layout.Inset>
+    </>
   );
 };

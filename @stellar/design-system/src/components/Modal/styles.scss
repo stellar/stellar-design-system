@@ -62,35 +62,15 @@
     }
   }
 
-  &__close-button {
-    width: 3rem;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
+  &__close {
     position: absolute;
     top: 1rem;
     right: 0.75rem;
-    cursor: pointer;
-
-    &:hover {
-      opacity: 0.8;
-    }
-
-    svg {
-      width: 1rem;
-      height: 1rem;
-      fill: var(--pal-text-secondary);
-    }
   }
 
   &__background {
     position: absolute;
-    background-color: rgba(var(--pal-shadow-rbg), 0.24);
+    background-color: rgba(var(--pal-shadow-rbg), 0.6);
     top: 0;
     bottom: 0;
     left: 0;

@@ -9,7 +9,7 @@ export const ComponentsList = () => {
   const history = useHistory();
 
   const goToComponentDetails = (componentId: string) => {
-    history.push(`./${Routes.component}/${componentId}`);
+    history.push(`/${Routes.component}/${componentId}`);
   };
 
   return (
