@@ -10,7 +10,6 @@
 
 .Layout__containerWithSubnav {
   display: flex;
-  // border: 1px solid #ff0;
 
   &__subnavWrapper {
     --SideNav-width: 16rem;
@@ -19,7 +18,6 @@
     width: var(--SideNav-width);
     padding-right: 1rem;
     flex-shrink: 0;
-    // border: 1px solid #f0f;
     background-color: transparent;
 
     @media (max-width: 600px) {
@@ -47,7 +45,6 @@
   }
 
   &__contentWrapper {
-    // border: 1px solid #fff;
     overflow: hidden;
     flex: 1;
   }

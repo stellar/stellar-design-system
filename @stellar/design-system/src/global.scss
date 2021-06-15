@@ -18,10 +18,9 @@
   --pal-warning-rgb: 247, 183, 49;
   --pal-warning-on: #ffffff;
 
-  --pal-text-base-rgb: 0, 0, 0;
-  --pal-text-primary: rgba(var(--pal-text-base-rgb), 1);
-  --pal-text-secondary: rgba(var(--pal-text-base-rgb), 0.6);
-  --pal-text-tertiary: rgba(var(--pal-text-base-rgb), 0.4);
+  --pal-text-primary: #000;
+  --pal-text-secondary: #666;
+  --pal-text-tertiary: #999;
   --pal-text-link: #5332e6;
 
   --pal-border-base-rgb: 0, 0, 0;
@@ -29,6 +28,9 @@
   --pal-border-secondary: rgba(var(--pal-text-base-rgb), 0.16);
 
   --pal-shadow-rbg: 0, 0, 0;
+
+  --pal-example-details: #f2f2f2;
+  --pal-example-code: #292d3e;
 }
 
 @mixin dark-theme-palette {
@@ -51,10 +53,9 @@
   --pal-warning-rgb: 248, 194, 82;
   --pal-warning-on: #ffffff;
 
-  --pal-text-base-rgb: 255, 255, 255;
-  --pal-text-primary: rgba(var(--pal-text-base-rgb), 1);
-  --pal-text-secondary: rgba(var(--pal-text-base-rgb), 0.6);
-  --pal-text-tertiary: rgba(var(--pal-text-base-rgb), 0.4);
+  --pal-text-primary: #fff;
+  --pal-text-secondary: #a9abb2;
+  --pal-text-tertiary: #7f818b;
   --pal-text-link: #6260eb;
 
   --pal-border-base-rgb: 255, 255, 255;
@@ -62,6 +63,9 @@
   --pal-border-secondary: rgba(var(--pal-text-base-rgb), 0.16);
 
   --pal-shadow-rbg: 0, 0, 0;
+
+  --pal-example-details: #303448;
+  --pal-example-code: #222634;
 }
 
 :root {
@@ -262,7 +266,7 @@ table.Table {
   th {
     font-size: 0.875rem;
     line-height: 1.125rem;
-    color: var(--pal-text-secondary);
+    color: var(--pal-text-primary);
     font-weight: var(--font-weight-medium);
     text-transform: uppercase;
     text-align: left;

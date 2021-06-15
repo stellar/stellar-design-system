@@ -1,74 +1,61 @@
 .Details {
-  &__example__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
-    gap: 1rem;
+  &__example {
+    &__container {
+      display: block;
 
-    .Details__example__container {
-      flex-direction: column;
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
 
-      .ElementCode {
-        .ElementCode__line-number {
-          display: none;
-        }
-
-        pre {
-          text-align: center;
-        }
+      @media (min-width: 900px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
       }
     }
 
-    .Details__example__details {
+    &__details {
+      background-color: var(--pal-example-details);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+
+      @media (min-width: 900px) {
+        border-radius: 0.5rem;
+      }
+    }
+
+    &__component {
+      display: flex;
       flex: 1;
+      justify-content: flex-start;
       align-items: center;
-      padding-top: 2rem;
-      padding-bottom: 2rem;
+      flex-wrap: wrap;
+    }
 
-      svg {
-        width: 100%;
-        height: 2rem;
-        fill: var(--pal-text-primary);
+    &__code {
+      background-color: var(--pal-example-code);
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      overflow-x: auto;
+      justify-content: center;
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+
+      @media (min-width: 900px) {
+        border-radius: 0.5rem;
       }
     }
+  }
+}
 
-    .Details__example__code {
-      overflow: hidden;
+td.Table__props {
+  code {
+    &:not(:last-child) {
+      margin-right: 0.5rem;
     }
-  }
-
-  &__example__container {
-    display: flex;
-
-    @media (max-width: 900px) {
-      flex-direction: column;
-      margin-bottom: 1rem;
-    }
-  }
-
-  &__example__details {
-    background-color: var(--pal-background-tertiary);
-    padding: 1rem;
-    flex: 0.5;
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__example__component {
-    display: flex;
-    flex: 1;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  &__example__code {
-    // TODO: hard coded color to match default code theme
-    background-color: rgb(42, 39, 52);
-    flex: 0.5;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    overflow-x: auto;
-    justify-content: center;
   }
 }
