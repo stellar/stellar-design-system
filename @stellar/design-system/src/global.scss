@@ -139,7 +139,8 @@ body {
     box-sizing: border-box;
   }
 
-  &.modal-open {
+  &.modal-open,
+  &.no-body-scroll {
     overflow: hidden;
   }
 }

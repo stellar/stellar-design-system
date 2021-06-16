@@ -8,34 +8,41 @@ interface SideNavProps {
   onClose: () => void;
 }
 
-export const SideNav = ({ activeItemId, onClick, onClose }: SideNavProps) => (
-  <div className="SideNav">
-    <div className="SideNav__content">
-      {componentsInDisplayOrder.map((item) => {
-        const isActive = activeItemId === item.id;
+export const SideNav = ({ activeItemId, onClick, onClose }: SideNavProps) => {
+  const handleClick = (itemId: string) => {
+    onClick(itemId);
+    onClose();
+  };
 
-        return (
-          <div
-            key={`subnav-${item.id}`}
-            role="button"
-            className={`SideNav__item ${
-              isActive ? "SideNav__item--active" : ""
-            }`}
-            {...(isActive ? {} : { onClick: () => onClick(item.id) })}
-          >
-            {item.label}
-          </div>
-        );
-      })}
-    </div>
+  return (
+    <div className="SideNav">
+      <div className="SideNav__content">
+        {componentsInDisplayOrder.map((item) => {
+          const isActive = activeItemId === item.id;
 
-    <div className="SideNav__close">
-      <NavButton
-        id="side-nav-close"
-        title="Close side navigation"
-        onClick={onClose}
-        icon={<Icon.Close />}
-      />
+          return (
+            <div
+              key={`subnav-${item.id}`}
+              role="button"
+              className={`SideNav__item ${
+                isActive ? "SideNav__item--active" : ""
+              }`}
+              {...(isActive ? {} : { onClick: () => handleClick(item.id) })}
+            >
+              {item.label}
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="SideNav__close">
+        <NavButton
+          id="side-nav-close"
+          title="Close side navigation"
+          onClick={onClose}
+          icon={<Icon.Close />}
+        />
+      </div>
     </div>
-  </div>
-);
+  );
+};

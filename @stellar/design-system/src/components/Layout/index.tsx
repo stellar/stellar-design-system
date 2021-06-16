@@ -36,7 +36,10 @@ interface HeaderProps {
   projectTitle: string;
   projectLink: string;
   hasDarkModeToggle?: boolean;
-  onOpenMenu?: () => void;
+  menu?: {
+    isEnabled: boolean;
+    onOpen: () => void;
+  };
   children?: React.ReactNode;
 }
 
@@ -51,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({
   projectTitle,
   projectLink,
   hasDarkModeToggle,
-  onOpenMenu,
+  menu,
   children,
 }: HeaderProps) => (
   <div className="Layout__header">
@@ -64,11 +67,11 @@ const Header: React.FC<HeaderProps> = ({
             storageKeyId={`stellarTheme:${stringToCamelcase(projectTitle)}`}
           />
         ) : null}
-        {onOpenMenu ? (
+        {menu?.isEnabled ? (
           <NavButton
             id="open-side-nav-button"
             title="Open side navigation"
-            onClick={onOpenMenu}
+            onClick={menu.onOpen}
             icon={<Icon.Menu />}
           />
         ) : null}
