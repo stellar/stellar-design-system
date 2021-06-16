@@ -5,21 +5,11 @@ import {
   InfoBlock,
   TextLink,
 } from "@stellar/design-system";
-import { useEffect, useContext } from "react";
 import { ComponentsList } from "components/ComponentsList";
-import { SideNavContext } from "context/SideNav";
+import { useSideNavEnabled } from "hooks/useSideNavEnabled";
 
 export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
-  // TODO: same as in ComponentDetails page, use custom hook?
-  const { setSideNavState } = useContext(SideNavContext);
-
-  useEffect(() => {
-    setSideNavState({
-      isEnabled: Boolean(sideNavEnabled),
-      isVisible: false,
-      isOpen: false,
-    });
-  }, [setSideNavState, sideNavEnabled]);
+  useSideNavEnabled(Boolean(sideNavEnabled));
 
   return (
     <Layout.Inset>

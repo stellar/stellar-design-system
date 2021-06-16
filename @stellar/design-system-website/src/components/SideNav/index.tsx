@@ -22,7 +22,7 @@ export const SideNav = ({ activeItemId, onClick, onClose }: SideNavProps) => {
 
           return (
             <div
-              key={`subnav-${item.id}`}
+              key={`sideNav-${item.id}`}
               role="button"
               className={`SideNav__item ${
                 isActive ? "SideNav__item--active" : ""

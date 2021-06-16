@@ -24,11 +24,6 @@ export const App = () => {
     [sideNavState, setSideNavState],
   );
 
-  const updateSideNavState = (props: { [key: string]: boolean }) => {
-    const _sideNavState = sideNavState;
-    setSideNavState({ ..._sideNavState, ...props });
-  };
-
   // Handle media query for small/large page UI
   useLayoutEffect(() => {
     const mediaQuery = window.matchMedia(`(max-width: ${BREAKPOINT_SMALL}px)`);
@@ -75,6 +70,13 @@ export const App = () => {
     }
   }, [sideNavState.isOpen]);
 
+  const toggleSideNav = (isOpen: boolean) => {
+    setSideNavState({
+      isEnabled: sideNavState.isEnabled,
+      isOpen,
+    });
+  };
+
   return (
     <Router>
       <SideNavContext.Provider value={sideNavStateValue}>
@@ -85,14 +87,17 @@ export const App = () => {
           hasDarkModeToggle
           menu={{
             isEnabled: sideNavState.isEnabled,
-            onOpen: () => updateSideNavState({ isOpen: true }),
+            onOpen: () => toggleSideNav(true),
           }}
         />
 
         <Layout.Content>
           <Switch>
             <Route exact path="/component/:id">
-              <ComponentDetails sideNavEnabled />
+              <ComponentDetails
+                sideNavEnabled
+                onToggleSideNav={toggleSideNav}
+              />
             </Route>
 
             <Route path="/">

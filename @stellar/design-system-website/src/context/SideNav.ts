@@ -1,12 +1,13 @@
 import { createContext } from "react";
 
+type SideNavStateProps = {
+  isEnabled: boolean;
+  isOpen: boolean;
+};
+
 interface SideNavContextProps {
-  sideNavState: {
-    isEnabled: boolean;
-    isOpen: boolean;
-  };
-  // TODO: any
-  setSideNavState: (props: any) => void;
+  sideNavState: SideNavStateProps;
+  setSideNavState: (props: SideNavStateProps) => void;
 }
 
 export const SideNavContext = createContext<SideNavContextProps>({

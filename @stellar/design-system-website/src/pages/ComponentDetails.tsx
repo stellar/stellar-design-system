@@ -1,9 +1,9 @@
 import { Layout } from "@stellar/design-system";
-import { useEffect, useContext } from "react";
+import { useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { Details } from "components/Details";
 import { SideNav } from "components/SideNav";
-import { SideNavContext } from "context/SideNav";
+import { useSideNavEnabled } from "hooks/useSideNavEnabled";
 import { ComponentDetailsId, Routes } from "types/types.d";
 
 interface paramProps {
@@ -12,27 +12,15 @@ interface paramProps {
 
 export const ComponentDetails = ({
   sideNavEnabled,
+  onToggleSideNav,
 }: {
-  sideNavEnabled?: boolean;
+  sideNavEnabled: boolean;
+  onToggleSideNav: (isOpen: boolean) => void;
 }) => {
   const history = useHistory();
   const params: paramProps = useParams();
 
-  const { sideNavState, setSideNavState } = useContext(SideNavContext);
-
-  // TODO: same as in App.tsx, create custom hook?
-  const updateSideNavState = (props: { [key: string]: boolean }) => {
-    const _sideNavState = sideNavState;
-    setSideNavState({ ..._sideNavState, ...props });
-  };
-
-  useEffect(() => {
-    setSideNavState({
-      isEnabled: Boolean(sideNavEnabled),
-      isVisible: false,
-      isOpen: false,
-    });
-  }, [setSideNavState, sideNavEnabled]);
+  useSideNavEnabled(Boolean(sideNavEnabled));
 
   useEffect(() => {
     window.scrollTo({
@@ -44,19 +32,17 @@ export const ComponentDetails = ({
     history.push(`/${Routes.component}/${componentId}`);
   };
 
-  // TODO: consistent names (SideNav vs Subnav)
-
   return (
     <Layout.Inset>
-      <div className="Layout__containerWithSubnav">
-        <div className="Layout__containerWithSubnav__subnavWrapper">
+      <div className="Layout__containerWithSideNav">
+        <div className="Layout__containerWithSideNav__sideNavWrapper">
           <SideNav
             activeItemId={params.id}
             onClick={onSideNavItemClick}
-            onClose={() => updateSideNavState({ isOpen: false })}
+            onClose={() => onToggleSideNav(false)}
           />
         </div>
-        <div className="Layout__containerWithSubnav__contentWrapper">
+        <div className="Layout__containerWithSideNav__contentWrapper">
           <Details componentId={params.id} />
         </div>
       </div>
