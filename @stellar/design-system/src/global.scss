@@ -18,9 +18,10 @@
   --pal-warning-rgb: 247, 183, 49;
   --pal-warning-on: #ffffff;
 
-  --pal-text-primary: #000;
-  --pal-text-secondary: #666;
-  --pal-text-tertiary: #999;
+  --pal-text-base-rgb: 0, 0, 0;
+  --pal-text-primary: rgba(var(--pal-text-base-rgb), 1);
+  --pal-text-secondary: rgba(var(--pal-text-base-rgb), 0.6);
+  --pal-text-tertiary: rgba(var(--pal-text-base-rgb), 0.4);
   --pal-text-link: #5332e6;
 
   --pal-border-base-rgb: 0, 0, 0;
@@ -53,9 +54,10 @@
   --pal-warning-rgb: 248, 194, 82;
   --pal-warning-on: #ffffff;
 
-  --pal-text-primary: #fff;
-  --pal-text-secondary: #a9abb2;
-  --pal-text-tertiary: #7f818b;
+  --pal-text-base-rgb: 255, 255, 255;
+  --pal-text-primary: rgba(var(--pal-text-base-rgb), 1);
+  --pal-text-secondary: rgba(var(--pal-text-base-rgb), 0.6);
+  --pal-text-tertiary: rgba(var(--pal-text-base-rgb), 0.4);
   --pal-text-link: #6260eb;
 
   --pal-border-base-rgb: 255, 255, 255;

@@ -4,38 +4,48 @@ import reactElementToJSXString from "react-element-to-jsx-string";
 
 import "./styles.scss";
 
+interface ElementCodeProps {
+  element: React.ReactNode;
+  id: number;
+  displayNameOnly?: boolean;
+}
+
 export const ElementCode = ({
   element,
   id,
-}: {
-  element: React.ReactNode;
-  id: number;
-}) => (
-  <div className="ElementCode">
-    <Highlight
-      {...defaultProps}
-      theme={customTheme}
-      language="tsx"
-      code={reactElementToJSXString(element, {
-        showFunctions: true,
-      })}
-      key={`element-code-${id}`}
-    >
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={style}>
-          {tokens.map((line, i) => (
-            <div {...getLineProps({ line, key: i })}>
-              <span className="ElementCode__line-number">{i + 1}</span>
-              {line.map((token, key) => (
-                <span {...getTokenProps({ token, key })} />
-              ))}
-            </div>
-          ))}
-        </pre>
-      )}
-    </Highlight>
-  </div>
-);
+  displayNameOnly,
+}: ElementCodeProps) => {
+  if (displayNameOnly) {
+    return <>{reactElementToJSXString(element).replace(/<(.*) \/>/, "$1")}</>;
+  }
+
+  return (
+    <div className="ElementCode">
+      <Highlight
+        {...defaultProps}
+        theme={customTheme}
+        language="tsx"
+        code={reactElementToJSXString(element, {
+          showFunctions: true,
+        })}
+        key={`element-code-${id}`}
+      >
+        {({ className, style, tokens, getLineProps, getTokenProps }) => (
+          <pre className={className} style={style}>
+            {tokens.map((line, i) => (
+              <div {...getLineProps({ line, key: i })}>
+                <span className="ElementCode__line-number">{i + 1}</span>
+                {line.map((token, key) => (
+                  <span {...getTokenProps({ token, key })} />
+                ))}
+              </div>
+            ))}
+          </pre>
+        )}
+      </Highlight>
+    </div>
+  );
+};
 
 // TODO: update theme to match
 const customTheme: PrismTheme = {

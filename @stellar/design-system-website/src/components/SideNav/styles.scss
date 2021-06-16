@@ -1,9 +1,12 @@
 .SideNav {
   width: var(--SideNav-width);
-  background-color: var(--pal-background-primary);
   height: 100%;
   overflow-y: auto;
   position: relative;
+
+  @media (max-width: 600px) {
+    background-color: var(--pal-background-primary);
+  }
 
   &__content {
     @media (max-width: 600px) {

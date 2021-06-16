@@ -16,13 +16,11 @@ export const Details = ({
 }: {
   componentId: ComponentDetailsId;
 }) => {
-  if (!componentId) {
+  if (!componentId || !componentDetails[componentId]) {
     return (
-      <>
-        <p>
-          Component <code>{componentId}</code> does not exist
-        </p>
-      </>
+      <p>
+        Component <code>{componentId}</code> does not exist.
+      </p>
     );
   }
 
@@ -102,22 +100,20 @@ export const Details = ({
 
     if (useGridLayout) {
       return (
-        <div className="Details__example__grid">
+        <div className="Details__grid">
           {components.map((component, index) => (
             <div
-              className="Details__example__container"
+              className="Details__grid__container"
               // eslint-disable-next-line react/no-array-index-key
               key={`grid-container-${index}`}
             >
-              <div className="Details__example__details">
-                <div className="Details__example__component">
-                  {previewExampleOverride?.[index]
-                    ? previewExampleOverride[index]
-                    : component}
-                </div>
+              <div className="Details__grid__icon">
+                {previewExampleOverride?.[index]
+                  ? previewExampleOverride[index]
+                  : component}
               </div>
-              <div className="Details__example__code">
-                <ElementCode element={component} id={index} />
+              <div className="Details__grid__title">
+                <ElementCode element={component} id={index} displayNameOnly />
               </div>
             </div>
           ))}
