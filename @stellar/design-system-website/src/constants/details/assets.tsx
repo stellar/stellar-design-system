@@ -1,4 +1,4 @@
-import { Icon, Logo } from "@stellar/design-system";
+import { Icon, Logo, TextLink } from "@stellar/design-system";
 import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 
 export const assets: ComponentDetails = {
@@ -10,7 +10,12 @@ export const assets: ComponentDetails = {
   examples: [
     {
       title: "Icons",
-      description: "SVG icon components, which are styled in CSS.",
+      description: (
+        <>
+          SVG icon components, which are styled in CSS. We’re using awesome{" "}
+          <TextLink href="https://feathericons.com/">Feather</TextLink> icons.
+        </>
+      ),
       component: [
         <Icon.Activity />,
         <Icon.Airplay />,
