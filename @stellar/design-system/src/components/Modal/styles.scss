@@ -1,3 +1,5 @@
+@use "../../mixins.scss";
+
 .Modal {
   --Modal-offset-top: 0;
 
@@ -84,7 +86,7 @@
     svg {
       width: 1rem;
       height: 1rem;
-      fill: var(--pal-text-secondary);
+      @include mixins.svg-color(var(--pal-text-secondary));
     }
   }
 

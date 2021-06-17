@@ -27,7 +27,11 @@
       svg {
         width: 100%;
         height: 2rem;
-        fill: var(--pal-text-primary);
+        stroke: var(--pal-text-primary);
+
+        &[data-color="fill"] {
+          fill: var(--pal-text-primary);
+        }
       }
     }
 

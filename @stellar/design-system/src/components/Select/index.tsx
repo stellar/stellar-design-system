@@ -45,7 +45,7 @@ export const Select: React.FC<SelectProps> = ({
             {children}
           </select>
           <span className="Select__icon" aria-hidden="true">
-            <Icon.Dropdown />
+            <Icon.ChevronDown />
           </span>
         </div>
 

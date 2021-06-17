@@ -27,11 +27,11 @@ export const buttons: ComponentDetails = {
       title: "Primary with icon on the left",
       description: "",
       component: [
-        <Button iconLeft={<Icon.Checkmark />}>Label</Button>,
-        <Button iconLeft={<Icon.Checkmark />} disabled>
+        <Button iconLeft={<Icon.Check />}>Label</Button>,
+        <Button iconLeft={<Icon.Check />} disabled>
           Label
         </Button>,
-        <Button iconLeft={<Icon.Checkmark />} isLoading>
+        <Button iconLeft={<Icon.Check />} isLoading>
           Label
         </Button>,
       ],
@@ -40,11 +40,11 @@ export const buttons: ComponentDetails = {
       title: "Primary with icon on the right",
       description: "",
       component: [
-        <Button iconRight={<Icon.Checkmark />}>Label</Button>,
-        <Button iconRight={<Icon.Checkmark />} disabled>
+        <Button iconRight={<Icon.Check />}>Label</Button>,
+        <Button iconRight={<Icon.Check />} disabled>
           Label
         </Button>,
-        <Button iconRight={<Icon.Checkmark />} isLoading>
+        <Button iconRight={<Icon.Check />} isLoading>
           Label
         </Button>,
       ],
@@ -66,22 +66,19 @@ export const buttons: ComponentDetails = {
       title: "Secondary with icon on the left",
       description: "",
       component: [
-        <Button
-          variant={Button.variant.secondary}
-          iconLeft={<Icon.Checkmark />}
-        >
+        <Button variant={Button.variant.secondary} iconLeft={<Icon.Check />}>
           Label
         </Button>,
         <Button
           variant={Button.variant.secondary}
-          iconLeft={<Icon.Checkmark />}
+          iconLeft={<Icon.Check />}
           disabled
         >
           Label
         </Button>,
         <Button
           variant={Button.variant.secondary}
-          iconLeft={<Icon.Checkmark />}
+          iconLeft={<Icon.Check />}
           isLoading
         >
           Label
@@ -92,22 +89,19 @@ export const buttons: ComponentDetails = {
       title: "Secondary with icon on the right",
       description: "",
       component: [
-        <Button
-          variant={Button.variant.secondary}
-          iconRight={<Icon.Checkmark />}
-        >
+        <Button variant={Button.variant.secondary} iconRight={<Icon.Check />}>
           Label
         </Button>,
         <Button
           variant={Button.variant.secondary}
-          iconRight={<Icon.Checkmark />}
+          iconRight={<Icon.Check />}
           disabled
         >
           Label
         </Button>,
         <Button
           variant={Button.variant.secondary}
-          iconRight={<Icon.Checkmark />}
+          iconRight={<Icon.Check />}
           isLoading
         >
           Label
@@ -131,19 +125,19 @@ export const buttons: ComponentDetails = {
       title: "Tertiary with icon on the left",
       description: "",
       component: [
-        <Button variant={Button.variant.tertiary} iconLeft={<Icon.Checkmark />}>
+        <Button variant={Button.variant.tertiary} iconLeft={<Icon.Check />}>
           Label
         </Button>,
         <Button
           variant={Button.variant.tertiary}
-          iconLeft={<Icon.Checkmark />}
+          iconLeft={<Icon.Check />}
           disabled
         >
           Label
         </Button>,
         <Button
           variant={Button.variant.tertiary}
-          iconLeft={<Icon.Checkmark />}
+          iconLeft={<Icon.Check />}
           isLoading
         >
           Label
@@ -154,22 +148,19 @@ export const buttons: ComponentDetails = {
       title: "Tertiary with icon on the right",
       description: "",
       component: [
-        <Button
-          variant={Button.variant.tertiary}
-          iconRight={<Icon.Checkmark />}
-        >
+        <Button variant={Button.variant.tertiary} iconRight={<Icon.Check />}>
           Label
         </Button>,
         <Button
           variant={Button.variant.tertiary}
-          iconRight={<Icon.Checkmark />}
+          iconRight={<Icon.Check />}
           disabled
         >
           Label
         </Button>,
         <Button
           variant={Button.variant.tertiary}
-          iconRight={<Icon.Checkmark />}
+          iconRight={<Icon.Check />}
           isLoading
         >
           Label

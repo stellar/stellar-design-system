@@ -23,7 +23,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
         {label}
         <span className="Checkbox__icon" aria-hidden="true">
           <span>
-            <Icon.Checkmark />
+            <Icon.Check />
           </span>
         </span>
       </label>

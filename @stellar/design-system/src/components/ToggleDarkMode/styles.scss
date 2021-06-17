@@ -1,3 +1,5 @@
+@use "../../mixins.scss";
+
 .ToggleDarkMode {
   --ToggleDarkMode-size: 3rem;
   --ToggleDarkMode-icon-size: 1.2rem;
@@ -21,7 +23,7 @@
   svg {
     width: var(--ToggleDarkMode-icon-size);
     height: var(--ToggleDarkMode-icon-size);
-    fill: var(--pal-text-secondary);
+    @include mixins.svg-color(var(--pal-text-secondary));
   }
 
   @media (hover: hover) {

@@ -143,3 +143,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin svg-color($color) {
+  stroke: $color;
+
+  &[data-color="fill"] {
+    fill: $color;
+    stroke: none;
+  }
+}

@@ -1,9 +1,11 @@
+@use "../../mixins.scss";
+
 @mixin info-block($bg, $icon) {
   background-color: rgba($bg, 0.04);
   border-color: rgba($bg, 0.2);
 
   svg {
-    fill: $icon;
+    @include mixins.svg-color($icon);
   }
 }
 
