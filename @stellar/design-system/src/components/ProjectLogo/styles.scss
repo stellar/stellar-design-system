@@ -1,3 +1,5 @@
+@use "../../mixins.scss";
+
 .ProjectLogo {
   display: flex;
   align-items: center;
@@ -16,9 +18,9 @@
     }
 
     svg {
-      fill: var(--pal-text-primary);
       height: 100%;
       width: 6rem;
+      @include mixins.svg-color(var(--pal-text-primary));
     }
   }
 

@@ -12,8 +12,10 @@
     flex: 1;
     height: 100%;
 
-    &:hover {
-      @include mixins.form-field-wrapper-hover;
+    @media (hover: hover) {
+      &:hover {
+        @include mixins.form-field-wrapper-hover;
+      }
     }
 
     input {

@@ -1,3 +1,5 @@
+@use "../../mixins.scss";
+
 .Modal {
   --Modal-offset-top: 0;
 
@@ -66,6 +68,19 @@
     position: absolute;
     top: 1rem;
     right: 0.75rem;
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    svg {
+      width: 1.2rem;
+      height: 1.2rem;
+      @include mixins.svg-color(var(--pal-text-secondary));
+    }
   }
 
   &__background {

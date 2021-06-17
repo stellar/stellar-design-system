@@ -1,3 +1,5 @@
+@use "../../mixins.scss";
+
 .Button {
   --Button-color-text: transparent;
   --Button-color-background: transparent;
@@ -74,7 +76,7 @@
 
   .ButtonIcon {
     svg {
-      fill: var(--Button-color-text);
+      @include mixins.svg-color(var(--Button-color-text));
     }
   }
 

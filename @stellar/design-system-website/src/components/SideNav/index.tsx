@@ -40,7 +40,7 @@ export const SideNav = ({ activeItemId, onClick, onClose }: SideNavProps) => {
           id="side-nav-close"
           title="Close side navigation"
           onClick={onClose}
-          icon={<Icon.Close />}
+          icon={<Icon.X />}
         />
       </div>
     </div>

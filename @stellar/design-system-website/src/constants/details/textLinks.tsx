@@ -33,12 +33,12 @@ export const textLinks: ComponentDetails = {
       description: "",
       component: [
         <p>
-          Some text <TextLink iconLeft={<Icon.Checkmark />}>link</TextLink> more
+          Some text <TextLink iconLeft={<Icon.Check />}>link</TextLink> more
           text
         </p>,
         <p>
           Some text{" "}
-          <TextLink iconLeft={<Icon.Checkmark />} disabled>
+          <TextLink iconLeft={<Icon.Check />} disabled>
             link
           </TextLink>{" "}
           more text
@@ -50,12 +50,12 @@ export const textLinks: ComponentDetails = {
       description: "",
       component: [
         <p>
-          Some text <TextLink iconRight={<Icon.Checkmark />}>link</TextLink>{" "}
-          more text
+          Some text <TextLink iconRight={<Icon.Check />}>link</TextLink> more
+          text
         </p>,
         <p>
           Some text{" "}
-          <TextLink iconRight={<Icon.Checkmark />} disabled>
+          <TextLink iconRight={<Icon.Check />} disabled>
             link
           </TextLink>{" "}
           more text
@@ -84,14 +84,14 @@ export const textLinks: ComponentDetails = {
       component: [
         <p>
           Some text{" "}
-          <TextLink underline iconLeft={<Icon.Checkmark />}>
+          <TextLink underline iconLeft={<Icon.Check />}>
             link
           </TextLink>{" "}
           more text
         </p>,
         <p>
           Some text{" "}
-          <TextLink underline iconLeft={<Icon.Checkmark />} disabled>
+          <TextLink underline iconLeft={<Icon.Check />} disabled>
             link
           </TextLink>{" "}
           more text
@@ -104,14 +104,14 @@ export const textLinks: ComponentDetails = {
       component: [
         <p>
           Some text{" "}
-          <TextLink underline iconRight={<Icon.Checkmark />}>
+          <TextLink underline iconRight={<Icon.Check />}>
             link
           </TextLink>{" "}
           more text
         </p>,
         <p>
           Some text{" "}
-          <TextLink underline iconRight={<Icon.Checkmark />} disabled>
+          <TextLink underline iconRight={<Icon.Check />} disabled>
             link
           </TextLink>{" "}
           more text
@@ -145,7 +145,7 @@ export const textLinks: ComponentDetails = {
           Some text{" "}
           <TextLink
             variant={TextLink.variant.secondary}
-            iconLeft={<Icon.Checkmark />}
+            iconLeft={<Icon.Check />}
           >
             link
           </TextLink>{" "}
@@ -155,7 +155,7 @@ export const textLinks: ComponentDetails = {
           Some text{" "}
           <TextLink
             variant={TextLink.variant.secondary}
-            iconLeft={<Icon.Checkmark />}
+            iconLeft={<Icon.Check />}
             disabled
           >
             link
@@ -172,7 +172,7 @@ export const textLinks: ComponentDetails = {
           Some text{" "}
           <TextLink
             variant={TextLink.variant.secondary}
-            iconRight={<Icon.Checkmark />}
+            iconRight={<Icon.Check />}
           >
             link
           </TextLink>{" "}
@@ -182,7 +182,7 @@ export const textLinks: ComponentDetails = {
           Some text{" "}
           <TextLink
             variant={TextLink.variant.secondary}
-            iconRight={<Icon.Checkmark />}
+            iconRight={<Icon.Check />}
             disabled
           >
             link
@@ -220,7 +220,7 @@ export const textLinks: ComponentDetails = {
           <TextLink
             variant={TextLink.variant.secondary}
             underline
-            iconLeft={<Icon.Checkmark />}
+            iconLeft={<Icon.Check />}
           >
             link
           </TextLink>{" "}
@@ -231,7 +231,7 @@ export const textLinks: ComponentDetails = {
           <TextLink
             variant={TextLink.variant.secondary}
             underline
-            iconLeft={<Icon.Checkmark />}
+            iconLeft={<Icon.Check />}
             disabled
           >
             link
@@ -249,7 +249,7 @@ export const textLinks: ComponentDetails = {
           <TextLink
             variant={TextLink.variant.secondary}
             underline
-            iconRight={<Icon.Checkmark />}
+            iconRight={<Icon.Check />}
           >
             link
           </TextLink>{" "}
@@ -260,7 +260,7 @@ export const textLinks: ComponentDetails = {
           <TextLink
             variant={TextLink.variant.secondary}
             underline
-            iconRight={<Icon.Checkmark />}
+            iconRight={<Icon.Check />}
             disabled
           >
             link

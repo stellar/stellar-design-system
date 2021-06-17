@@ -1,3 +1,5 @@
+@use "../../mixins.scss";
+
 .TextLink {
   --TextLink-color-text: transparent;
 
@@ -64,8 +66,9 @@
     --ButtonIcon-gap: 0.25rem;
 
     svg {
-      fill: var(--TextLink-color-text);
-      transition: fill var(--anim-transition-default);
+      transition: fill var(--anim-transition-default),
+        stroke var(--anim-transition-default);
+      @include mixins.svg-color(var(--TextLink-color-text));
     }
   }
 

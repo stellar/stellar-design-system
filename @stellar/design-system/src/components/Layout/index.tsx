@@ -1,6 +1,5 @@
 import React from "react";
 import { Icon } from "../../icons";
-import { Logo } from "../../logos";
 import { ProjectLogo } from "../ProjectLogo";
 import { TextLink } from "../TextLink";
 import { ToggleDarkMode } from "../ToggleDarkMode";
@@ -128,7 +127,7 @@ const Footer: React.FC<FooterProps> = ({
             <TextLink
               href={gitHubLink}
               variant={TextLink.variant.secondary}
-              iconLeft={<Logo.GitHub />}
+              iconLeft={<Icon.Github />}
             >
               {gitHubLabel ?? "GitHub"}
             </TextLink>

@@ -1,3 +1,5 @@
+@use "../../mixins.scss";
+
 .NavButton {
   --NavButton-size: 3rem;
   --NavButton-icon-size: 1.2rem;
@@ -25,7 +27,8 @@
   svg {
     width: var(--NavButton-icon-size);
     height: var(--NavButton-icon-size);
-    fill: var(--pal-text-secondary);
+
+    @include mixins.svg-color(var(--pal-text-secondary));
   }
 
   @media (hover: hover) {
