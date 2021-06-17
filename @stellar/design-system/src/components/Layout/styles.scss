@@ -37,6 +37,11 @@
       justify-content: space-between;
       align-items: center;
     }
+
+    &__buttons {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__footer {

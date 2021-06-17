@@ -1,13 +1,5 @@
-import {
-  Layout,
-  Heading1,
-  Heading2,
-  TextLink,
-  Heading3,
-  Heading4,
-} from "@stellar/design-system";
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Heading1, Heading2, TextLink, Heading4 } from "@stellar/design-system";
+import React from "react";
 import { ElementCode } from "components/ElementCode";
 import { componentDetails } from "constants/componentDetails";
 import {
@@ -19,26 +11,16 @@ import {
 
 import "./styles.scss";
 
-interface paramProps {
-  id: ComponentDetailsId;
-}
-
-export const Details = () => {
-  const params: paramProps = useParams();
-
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-    });
-  }, [params.id]);
-
-  if (!componentDetails[params.id]) {
+export const Details = ({
+  componentId,
+}: {
+  componentId: ComponentDetailsId;
+}) => {
+  if (!componentId || !componentDetails[componentId]) {
     return (
-      <Layout.Inset>
-        <p>
-          Component <code>{params.id}</code> does not exist
-        </p>
-      </Layout.Inset>
+      <p>
+        Component <code>{componentId}</code> does not exist.
+      </p>
     );
   }
 
@@ -50,19 +32,13 @@ export const Details = () => {
     externalProps,
     notes,
     subComponents,
-  } = componentDetails[params.id];
+  } = componentDetails[componentId];
 
-  const renderPropType = (type: string[]) => {
-    const size = type.length;
-
-    return type.map((item, index) => (
+  const renderPropType = (type: string[]) =>
+    type.map((item, index) => (
       // eslint-disable-next-line react/no-array-index-key
-      <span key={`type-${index}`}>
-        <code>{item}</code>
-        {size !== index + 1 ? " | " : ""}
-      </span>
+      <code key={`type-${index}`}>{item}</code>
     ));
-  };
 
   const renderPropsTable = (
     renderProps: ComponentProp[],
@@ -87,7 +63,9 @@ export const Details = () => {
                 <td>
                   <code>{componentProp.prop}</code>
                 </td>
-                <td>{renderPropType(componentProp.type)}</td>
+                <td className="Table__props">
+                  {renderPropType(componentProp.type)}
+                </td>
                 <td>
                   {componentProp.default ? (
                     <code>{componentProp.default}</code>
@@ -122,22 +100,20 @@ export const Details = () => {
 
     if (useGridLayout) {
       return (
-        <div className="Details__example__grid">
+        <div className="Details__grid">
           {components.map((component, index) => (
             <div
-              className="Details__example__container"
+              className="Details__grid__container"
               // eslint-disable-next-line react/no-array-index-key
               key={`grid-container-${index}`}
             >
-              <div className="Details__example__details">
-                <div className="Details__example__component">
-                  {previewExampleOverride?.[index]
-                    ? previewExampleOverride[index]
-                    : component}
-                </div>
+              <div className="Details__grid__icon">
+                {previewExampleOverride?.[index]
+                  ? previewExampleOverride[index]
+                  : component}
               </div>
-              <div className="Details__example__code">
-                <ElementCode element={component} id={index} />
+              <div className="Details__grid__title">
+                <ElementCode element={component} id={index} displayNameOnly />
               </div>
             </div>
           ))}
@@ -163,38 +139,42 @@ export const Details = () => {
   };
 
   return (
-    <Layout.Inset>
+    <>
       {/* heading */}
-      <Heading1>{title}</Heading1>
+      <div className="Section">
+        <Heading1>{title}</Heading1>
 
-      {/* description */}
-      <p>{description}</p>
+        {/* description */}
+        <p>{description}</p>
+      </div>
 
       {/* examples */}
-      <Heading2>Examples</Heading2>
+      <div className="Section">
+        <Heading2>Examples</Heading2>
 
-      {examples.map((example: ComponentExample, index) => {
-        const {
-          title: exampleTitle,
-          description: exampleDescription,
-          component,
-          previewExampleOverride,
-          useGridLayout,
-        } = example;
+        {examples.map((example: ComponentExample, index) => {
+          const {
+            title: exampleTitle,
+            description: exampleDescription,
+            component,
+            previewExampleOverride,
+            useGridLayout,
+          } = example;
 
-        return (
-          // eslint-disable-next-line react/no-array-index-key
-          <div className="Section Details__example" key={`example-${index}`}>
-            {exampleTitle ? <Heading3>{exampleTitle}</Heading3> : null}
-            {exampleDescription ? <p>{exampleDescription}</p> : null}
+          return (
+            // eslint-disable-next-line react/no-array-index-key
+            <div className="Section Details__example" key={`example-${index}`}>
+              {exampleTitle ? <Heading4>{exampleTitle}</Heading4> : null}
+              {exampleDescription ? <p>{exampleDescription}</p> : null}
 
-            {renderExample(component, {
-              previewExampleOverride,
-              useGridLayout,
-            })}
-          </div>
-        );
-      })}
+              {renderExample(component, {
+                previewExampleOverride,
+                useGridLayout,
+              })}
+            </div>
+          );
+        })}
+      </div>
 
       {/* props */}
       {props.length ? (
@@ -235,6 +215,6 @@ export const Details = () => {
           ))}
         </div>
       ) : null}
-    </Layout.Inset>
+    </>
   );
 };

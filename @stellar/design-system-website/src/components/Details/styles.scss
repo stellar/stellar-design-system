@@ -1,28 +1,76 @@
 .Details {
-  &__example__grid {
+  &__example {
+    &__container {
+      display: block;
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+      @media (min-width: 900px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+    }
+
+    &__details {
+      background-color: var(--pal-example-details);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+
+      @media (min-width: 900px) {
+        border-radius: 0.5rem;
+      }
+    }
+
+    &__component {
+      display: flex;
+      flex: 1;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    &__code {
+      background-color: var(--pal-example-code);
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      overflow-x: auto;
+      justify-content: center;
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+
+      @media (min-width: 900px) {
+        border-radius: 0.5rem;
+      }
+    }
+  }
+
+  &__grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
     gap: 1rem;
 
-    .Details__example__container {
+    &__container {
+      background-color: var(--pal-example-details);
+      border-radius: 0.5rem;
+      height: 9rem;
+      overflow: hidden;
+      display: flex;
       flex-direction: column;
-
-      .ElementCode {
-        .ElementCode__line-number {
-          display: none;
-        }
-
-        pre {
-          text-align: center;
-        }
-      }
     }
 
-    .Details__example__details {
+    &__icon {
       flex: 1;
+      display: flex;
       align-items: center;
-      padding-top: 2rem;
-      padding-bottom: 2rem;
+      justify-content: center;
+      padding: 2rem 1rem;
 
       svg {
         width: 100%;
@@ -31,44 +79,20 @@
       }
     }
 
-    .Details__example__code {
-      overflow: hidden;
+    &__title {
+      padding: 1rem;
+      padding-top: 0;
+      text-align: center;
+      color: var(--pal-text-tertiary);
+      font-family: var(--font-family-monospace);
     }
   }
+}
 
-  &__example__container {
-    display: flex;
-
-    @media (max-width: 900px) {
-      flex-direction: column;
-      margin-bottom: 1rem;
+td.Table__props {
+  code {
+    &:not(:last-child) {
+      margin-right: 0.5rem;
     }
-  }
-
-  &__example__details {
-    background-color: var(--pal-background-tertiary);
-    padding: 1rem;
-    flex: 0.5;
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__example__component {
-    display: flex;
-    flex: 1;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  &__example__code {
-    // TODO: hard coded color to match default code theme
-    background-color: rgb(42, 39, 52);
-    flex: 0.5;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    overflow-x: auto;
-    justify-content: center;
   }
 }

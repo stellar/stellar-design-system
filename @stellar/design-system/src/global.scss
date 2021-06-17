@@ -29,6 +29,9 @@
   --pal-border-secondary: rgba(var(--pal-text-base-rgb), 0.16);
 
   --pal-shadow-rbg: 0, 0, 0;
+
+  --pal-example-details: #f2f2f2;
+  --pal-example-code: #292d3e;
 }
 
 @mixin dark-theme-palette {
@@ -62,6 +65,9 @@
   --pal-border-secondary: rgba(var(--pal-text-base-rgb), 0.16);
 
   --pal-shadow-rbg: 0, 0, 0;
+
+  --pal-example-details: #303448;
+  --pal-example-code: #222634;
 }
 
 :root {
@@ -133,7 +139,8 @@ body {
     box-sizing: border-box;
   }
 
-  &.modal-open {
+  &.modal-open,
+  &.no-body-scroll {
     overflow: hidden;
   }
 }
@@ -262,7 +269,7 @@ table.Table {
   th {
     font-size: 0.875rem;
     line-height: 1.125rem;
-    color: var(--pal-text-secondary);
+    color: var(--pal-text-primary);
     font-weight: var(--font-weight-medium);
     text-transform: uppercase;
     text-align: left;

@@ -11,6 +11,7 @@ import { ReactComponent as Edit } from "./assets/icons/edit.svg";
 import { ReactComponent as Error } from "./assets/icons/error.svg";
 import { ReactComponent as Help } from "./assets/icons/help.svg";
 import { ReactComponent as Info } from "./assets/icons/info.svg";
+import { ReactComponent as Menu } from "./assets/icons/menu.svg";
 import { ReactComponent as Moon } from "./assets/icons/moon.svg";
 import { ReactComponent as Receive } from "./assets/icons/receive.svg";
 import { ReactComponent as Remove } from "./assets/icons/remove.svg";
@@ -35,6 +36,7 @@ export const Icon = {
   Error,
   Help,
   Info,
+  Menu,
   Moon,
   Receive,
   Remove,
