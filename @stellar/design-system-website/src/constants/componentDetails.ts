@@ -9,6 +9,7 @@ import { inputs } from "constants/details/inputs";
 import { layout } from "constants/details/layout";
 import { loaders } from "constants/details/loaders";
 import { modals } from "constants/details/modals";
+import { navButtons } from "constants/details/navButtons";
 import { radioButtons } from "constants/details/radioButtons";
 import { selects } from "constants/details/selects";
 import { textLinks } from "constants/details/textLinks";
@@ -28,6 +29,7 @@ export const componentDetails: ComponentDetailsList = {
   layout,
   loaders,
   modals,
+  navButtons,
   radioButtons,
   selects,
   textLinks,

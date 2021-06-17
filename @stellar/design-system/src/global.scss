@@ -215,7 +215,10 @@ code {
   line-height: 1.5rem;
   font-weight: var(--font-weight-medium);
   display: inline;
-  line-break: anywhere;
+
+  &[data-break] {
+    line-break: anywhere;
+  }
 }
 
 label {
