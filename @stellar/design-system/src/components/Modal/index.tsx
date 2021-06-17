@@ -1,7 +1,8 @@
 import React, { useEffect, useCallback } from "react";
 import ReactDOM from "react-dom";
-import { Icon } from "../../icons";
 import { Heading2 } from "../Heading";
+import { NavButton } from "../NavButton";
+import { Icon } from "../../icons";
 
 import "./styles.scss";
 
@@ -95,9 +96,14 @@ export const Modal: React.FC<ModalProps> & ModalComponent = ({
     <div className="Modal" style={customStyle}>
       <div className="Modal__container">
         <div className="Modal__content">{children}</div>
-        <button className="Modal__close-button" onClick={onClose}>
-          <Icon.X />
-        </button>
+        <div className="Modal__close">
+          <NavButton
+            id="modal-close-button"
+            title="Close modal"
+            onClick={onClose}
+            icon={<Icon.X />}
+          />
+        </div>
       </div>
       <div className="Modal__background" onClick={onClose} />
     </div>,

@@ -1,0 +1,45 @@
+.SideNav {
+  width: var(--SideNav-width);
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+
+  @media (max-width: 600px) {
+    background-color: var(--pal-background-primary);
+  }
+
+  &__content {
+    @media (max-width: 600px) {
+      padding: 1.875rem 1rem;
+    }
+  }
+
+  &__item {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    color: var(--pal-text-primary);
+    opacity: 0.4;
+    transition: opacity var(--anim-transition-default);
+    cursor: pointer;
+    margin-bottom: 0.75rem;
+
+    &--active {
+      opacity: 1;
+      cursor: default;
+      font-weight: var(--font-weight-medium);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 1;
+        font-weight: var(--font-weight-medium);
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 0.5rem;
+  }
+}

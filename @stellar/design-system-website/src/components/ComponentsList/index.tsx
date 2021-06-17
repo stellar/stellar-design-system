@@ -1,39 +1,21 @@
 import { Icon } from "@stellar/design-system";
 import { useHistory } from "react-router-dom";
 import { componentDetails } from "constants/componentDetails";
-import { ComponentDetailsId, Routes } from "types/types.d";
+import { componentsInDisplayOrder } from "constants/componentsInDisplayOrder";
+import { Routes } from "types/types.d";
 import "./styles.scss";
-
-const componentsDisplayOrder = [
-  ComponentDetailsId.typography,
-  ComponentDetailsId.branding,
-  ComponentDetailsId.assets,
-  ComponentDetailsId.identicons,
-  ComponentDetailsId.loaders,
-  ComponentDetailsId.infoBlocks,
-  ComponentDetailsId.buttons,
-  ComponentDetailsId.iconButtons,
-  ComponentDetailsId.textLinks,
-  ComponentDetailsId.inputs,
-  ComponentDetailsId.selects,
-  ComponentDetailsId.checkboxes,
-  ComponentDetailsId.radioButtons,
-  ComponentDetailsId.toggles,
-  ComponentDetailsId.modals,
-  ComponentDetailsId.layout,
-];
 
 export const ComponentsList = () => {
   const history = useHistory();
 
   const goToComponentDetails = (componentId: string) => {
-    history.push(`./${Routes.component}/${componentId}`);
+    history.push(`/${Routes.component}/${componentId}`);
   };
 
   return (
     <div className="ComponentsList">
-      {componentsDisplayOrder.map((key) => {
-        const comp = componentDetails[key];
+      {componentsInDisplayOrder.map((key) => {
+        const comp = componentDetails[key.id];
 
         if (!comp) {
           return null;
@@ -42,7 +24,7 @@ export const ComponentsList = () => {
         return (
           <div
             className="ComponentCard"
-            key={key}
+            key={key.id}
             onClick={() => goToComponentDetails(comp.id)}
             role="button"
           >
