@@ -86,4 +86,5 @@ interface SubComponent {
   component: string;
   description: string;
   props: ComponentProp[];
+  notes?: React.ReactNode[];
 }

@@ -1,4 +1,10 @@
-import { Heading1, Heading2, TextLink, Heading4 } from "@stellar/design-system";
+import {
+  Heading1,
+  Heading2,
+  Heading4,
+  Heading5,
+  TextLink,
+} from "@stellar/design-system";
 import React from "react";
 import { ElementCode } from "components/ElementCode";
 import { componentDetails } from "constants/componentDetails";
@@ -199,6 +205,19 @@ export const Details = ({
               <p>{sub.description}</p>
 
               {renderPropsTable(sub.props)}
+
+              {sub.notes ? (
+                <div className="SubSection">
+                  <Heading5>Notes</Heading5>
+
+                  {sub.notes.map((note, idx) => (
+                    // eslint-disable-next-line react/no-array-index-key
+                    <React.Fragment key={`subnote-${idx}`}>
+                      {note}
+                    </React.Fragment>
+                  ))}
+                </div>
+              ) : null}
             </div>
           ))}
         </div>
