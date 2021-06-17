@@ -36,17 +36,21 @@
     color: var(--pal-text-primary);
   }
 
-  &:hover {
-    .Identicon__address {
-      text-decoration: none;
+  @media (hover: hover) {
+    &:hover {
+      .Identicon__address {
+        text-decoration: none;
+      }
     }
   }
 }
 
 .TextLink--disabled {
-  &:hover {
-    .Identicon__address {
-      text-decoration: underline;
+  @media (hover: hover) {
+    &:hover {
+      .Identicon__address {
+        text-decoration: underline;
+      }
     }
   }
 }

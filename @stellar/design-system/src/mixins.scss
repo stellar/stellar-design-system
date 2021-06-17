@@ -13,6 +13,7 @@
   border: 1px solid var(--pal-border-secondary);
   border-radius: var(--form-field-border-radius);
   background-color: var(--pal-background-primary);
+  transition: border-color var(--anim-transition-default);
 }
 
 @mixin form-field-base {
@@ -49,8 +50,10 @@
   #{$elClass} {
     border-color: var(--pal-error);
 
-    &:hover {
-      border-color: var(--form-field-border-hover-color);
+    @media (hover: hover) {
+      &:hover {
+        border-color: var(--form-field-border-hover-color);
+      }
     }
   }
 }
@@ -59,8 +62,10 @@
   #{$elClass} {
     background-color: var(--pal-background-tertiary);
 
-    &:hover {
-      border-color: var(--pal-border-secondary);
+    @media (hover: hover) {
+      &:hover {
+        border-color: var(--pal-border-secondary);
+      }
     }
   }
 }

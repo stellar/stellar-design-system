@@ -79,13 +79,15 @@
     right: 0.75rem;
     cursor: pointer;
 
-    &:hover {
-      opacity: 0.8;
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
     svg {
-      width: 1rem;
-      height: 1rem;
+      width: 1.2rem;
+      height: 1.2rem;
       @include mixins.svg-color(var(--pal-text-secondary));
     }
   }
