@@ -18,6 +18,7 @@ export enum ComponentDetailsId {
   modals = "modals",
   radioButtons = "radioButtons",
   selects = "selects",
+  tags = "tags",
   textLinks = "textLinks",
   toggles = "toggles",
   typography = "typography",
@@ -37,6 +38,7 @@ interface ComponentDetailsList {
   modals: ComponentDetails;
   radioButtons: ComponentDetails;
   selects: ComponentDetails;
+  tags: ComponentDetails;
   textLinks: ComponentDetails;
   toggles: ComponentDetails;
   typography: ComponentDetails;

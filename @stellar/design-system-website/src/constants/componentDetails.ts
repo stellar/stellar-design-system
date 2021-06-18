@@ -11,6 +11,7 @@ import { loaders } from "constants/details/loaders";
 import { modals } from "constants/details/modals";
 import { radioButtons } from "constants/details/radioButtons";
 import { selects } from "constants/details/selects";
+import { tags } from "constants/details/tags";
 import { textLinks } from "constants/details/textLinks";
 import { toggles } from "constants/details/toggles";
 import { typography } from "constants/details/typography";
@@ -30,6 +31,7 @@ export const componentDetails: ComponentDetailsList = {
   modals,
   radioButtons,
   selects,
+  tags,
   textLinks,
   toggles,
   typography,

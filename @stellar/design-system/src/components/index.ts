@@ -12,6 +12,7 @@ export * from "./NavButton";
 export * from "./ProjectLogo";
 export * from "./RadioButton";
 export * from "./Select";
+export * from "./Tag";
 export * from "./TextLink";
 export * from "./Toggle";
 export * from "./ToggleDarkMode";
