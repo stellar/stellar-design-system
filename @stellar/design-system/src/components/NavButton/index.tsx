@@ -10,14 +10,14 @@ interface NavButtonProps {
   showBorder?: boolean;
 }
 
-export const NavButton = ({
+export const NavButton: React.FC<NavButtonProps> = ({
   id,
   title,
   onClick,
   icon,
   disabled,
   showBorder,
-}: NavButtonProps) => (
+}) => (
   <button
     id={id}
     className={`NavButton ${showBorder ? "NavButton--border" : ""}`}

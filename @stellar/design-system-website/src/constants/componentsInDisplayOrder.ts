@@ -67,6 +67,10 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
     label: "Toggles",
   },
   {
+    id: ComponentDetailsId.tags,
+    label: "Tags",
+  },
+  {
     id: ComponentDetailsId.modals,
     label: "Modals",
   },
