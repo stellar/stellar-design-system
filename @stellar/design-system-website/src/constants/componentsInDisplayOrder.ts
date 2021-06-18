@@ -39,6 +39,10 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
     label: "Icon buttons",
   },
   {
+    id: ComponentDetailsId.navButtons,
+    label: "Navigation buttons",
+  },
+  {
     id: ComponentDetailsId.textLinks,
     label: "Text links",
   },

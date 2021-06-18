@@ -16,6 +16,7 @@ export enum ComponentDetailsId {
   layout = "layout",
   loaders = "loaders",
   modals = "modals",
+  navButtons = "navButtons",
   radioButtons = "radioButtons",
   selects = "selects",
   textLinks = "textLinks",
@@ -35,6 +36,7 @@ interface ComponentDetailsList {
   layout: ComponentDetails;
   loaders: ComponentDetails;
   modals: ComponentDetails;
+  navButtons: ComponentDetails;
   radioButtons: ComponentDetails;
   selects: ComponentDetails;
   textLinks: ComponentDetails;
@@ -84,4 +86,5 @@ interface SubComponent {
   component: string;
   description: string;
   props: ComponentProp[];
+  notes?: React.ReactNode[];
 }

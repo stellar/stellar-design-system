@@ -170,6 +170,39 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
 
       <div className="Section">
         <div className="Section__content">
+          <Heading2>Developer notes</Heading2>
+
+          <ul>
+            <li>
+              Use the Design System components "as is", don’t modify existing
+              ones to fit your needs if the component doesn’t allow it.
+            </li>
+            <li>
+              If a component doesn’t exist, it’s OK to create it locally for
+              your project (we’ll keep adding more components to SDS as we go).
+            </li>
+            <li>
+              If you are creating a component locally, use only color variables
+              available in the SDS palette (in <code>global.scss</code>). This
+              is very important for the light and dark modes to work. When in
+              doubt, please check with the Design team.
+            </li>
+            <li>
+              <code>styled-components</code> are not currently supported, but
+              you can use them as wrappers/containers for SDS components.
+            </li>
+            <li>
+              SVG icons are styled using <code>stroke</code> property. To change
+              the <code>fill</code> color instead, we need to use{" "}
+              <code>{`svg[data-color="fill"] { fill: ...; }`}</code> (icon and
+              logo assets in SDS have this attribute added).
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="Section">
+        <div className="Section__content">
           <Heading2>Components</Heading2>
           <p>
             Below is a list of all components and assets. Click on the links to

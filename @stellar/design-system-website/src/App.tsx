@@ -80,10 +80,8 @@ export const App = () => {
   return (
     <Router>
       <SideNavContext.Provider value={sideNavStateValue}>
-        {/* TODO: update project link */}
         <Layout.Header
           projectTitle="Design System"
-          projectLink="https://www.stellar.org"
           hasDarkModeToggle
           menu={{
             isEnabled: sideNavState.isEnabled,

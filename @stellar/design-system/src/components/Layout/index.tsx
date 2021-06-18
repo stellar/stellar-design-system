@@ -33,7 +33,7 @@ const Content: React.FC<ContentProps> = ({ children }: ContentProps) => (
 
 interface HeaderProps {
   projectTitle: string;
-  projectLink: string;
+  projectLink?: string;
   hasDarkModeToggle?: boolean;
   menu?: {
     isEnabled: boolean;
