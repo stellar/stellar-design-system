@@ -1,8 +1,8 @@
 @use "../../mixins.scss";
 
 @mixin info-block($bg, $icon) {
-  background-color: rgba($bg, 0.04);
-  border-color: rgba($bg, 0.2);
+  background-color: rgba($bg, 0.16);
+  border-color: rgba($bg, 0.4);
 
   svg {
     @include mixins.svg-color($icon);

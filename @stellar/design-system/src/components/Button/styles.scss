@@ -9,7 +9,7 @@
   line-height: 1.56rem;
   padding: 0.6rem 1.5rem;
   font-weight: var(--font-weight-medium);
-  border-radius: 0.25rem;
+  border-radius: 0.125rem;
   border: 1px solid var(--Button-color-border);
   cursor: pointer;
   display: flex;
@@ -27,12 +27,11 @@
 
     box-shadow: 0 0.5rem 1rem -0.5rem rgba(var(--pal-shadow-rbg), 0.48);
 
-    // TODO: hover color
-    // @media (hover: hover) {
-    // &:hover {
-    //   background-color: var(--pal-brand-secondary);
-    // }
-    // }
+    @media (hover: hover) {
+      &:hover {
+        --Button-color-background: var(--pal-brand-primary-hover);
+      }
+    }
   }
 
   &--secondary {
@@ -44,21 +43,22 @@
 
     @media (hover: hover) {
       &:hover {
-        background-color: var(--pal-background-tertiary);
+        --Button-color-background: var(--pal-brand-primary);
+        --Button-color-text: var(--pal-brand-primary-on);
       }
     }
   }
 
   &--tertiary {
     --Button-color-background: var(--pal-background-primary);
-    --Button-color-text: var(--pal-text-link);
-    --Button-color-border: transparent;
+    --Button-color-text: var(--pal-text-primary);
+    --Button-color-border: var(--pal-border-primary);
 
-    box-shadow: 0 0.5rem 1rem -0.5rem rgba(var(--pal-shadow-rbg), 0.48);
+    box-shadow: none;
 
     @media (hover: hover) {
       &:hover {
-        background-color: var(--pal-background-tertiary);
+        --Button-color-background: var(--pal-background-tertiary);
       }
     }
   }
