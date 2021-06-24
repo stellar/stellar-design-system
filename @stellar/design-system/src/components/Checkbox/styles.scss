@@ -24,9 +24,9 @@
     }
 
     svg {
-      --checkbox-selected-size: 0.6rem;
+      --checkbox-selected-size: 0.75rem;
       @include mixins.checkbox-radio-icon-centered;
-      @include mixins.svg-color(var(--pal-background-primary));
+      @include mixins.svg-color(var(--pal-brand-primary-on));
       width: var(--checkbox-selected-size);
       height: var(--checkbox-selected-size);
     }

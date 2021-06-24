@@ -37,8 +37,9 @@
       background-color: var(--pal-brand-primary);
 
       &::after {
-        background-color: var(--pal-background-primary);
-        transform: translateX(0.8rem);
+        background-color: var(--pal-brand-primary-on);
+        // Need to offset the border width
+        transform: translateX(calc(0.8rem + 1px));
       }
     }
   }
