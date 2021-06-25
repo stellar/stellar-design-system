@@ -1,5 +1,13 @@
 @use "../../mixins.scss";
 
+@mixin SvgIcon($color) {
+  .ButtonIcon {
+    svg {
+      @include mixins.svg-color($color);
+    }
+  }
+}
+
 .Button {
   --Button-color-text: transparent;
   --Button-color-background: transparent;
@@ -29,7 +37,7 @@
 
     @media (hover: hover) {
       &:hover {
-        --Button-color-background: var(--pal-brand-primary-hover);
+        background-color: var(--pal-brand-primary-hover);
       }
     }
   }
@@ -43,8 +51,10 @@
 
     @media (hover: hover) {
       &:hover {
-        --Button-color-background: var(--pal-brand-primary);
-        --Button-color-text: var(--pal-brand-primary-on);
+        background-color: var(--pal-brand-primary);
+        color: var(--pal-brand-primary-on);
+
+        @include SvgIcon(var(--pal-brand-primary-on));
       }
     }
   }
@@ -58,7 +68,7 @@
 
     @media (hover: hover) {
       &:hover {
-        --Button-color-background: var(--pal-background-tertiary);
+        background-color: var(--pal-background-tertiary);
       }
     }
   }
@@ -70,15 +80,14 @@
     @media (hover: hover) {
       &:hover {
         background-color: var(--Button-color-background);
+        color: var(--Button-color-text);
+
+        @include SvgIcon(var(--Button-color-text));
       }
     }
   }
 
-  .ButtonIcon {
-    svg {
-      @include mixins.svg-color(var(--Button-color-text));
-    }
-  }
+  @include SvgIcon(var(--Button-color-text));
 
   .Loader {
     --Loader-color: var(--Button-color-text);
