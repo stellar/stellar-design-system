@@ -1,5 +1,13 @@
 @use "../../mixins.scss";
 
+@mixin SvgIcon($color) {
+  .ButtonIcon {
+    svg {
+      @include mixins.svg-color($color);
+    }
+  }
+}
+
 .Button {
   --Button-color-text: transparent;
   --Button-color-background: transparent;
@@ -9,7 +17,7 @@
   line-height: 1.56rem;
   padding: 0.6rem 1.5rem;
   font-weight: var(--font-weight-medium);
-  border-radius: 0.25rem;
+  border-radius: 0.125rem;
   border: 1px solid var(--Button-color-border);
   cursor: pointer;
   display: flex;
@@ -27,12 +35,11 @@
 
     box-shadow: 0 0.5rem 1rem -0.5rem rgba(var(--pal-shadow-rbg), 0.48);
 
-    // TODO: hover color
-    // @media (hover: hover) {
-    // &:hover {
-    //   background-color: var(--pal-brand-secondary);
-    // }
-    // }
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--pal-brand-primary-hover);
+      }
+    }
   }
 
   &--secondary {
@@ -44,17 +51,20 @@
 
     @media (hover: hover) {
       &:hover {
-        background-color: var(--pal-background-tertiary);
+        background-color: var(--pal-brand-primary);
+        color: var(--pal-brand-primary-on);
+
+        @include SvgIcon(var(--pal-brand-primary-on));
       }
     }
   }
 
   &--tertiary {
     --Button-color-background: var(--pal-background-primary);
-    --Button-color-text: var(--pal-text-link);
-    --Button-color-border: transparent;
+    --Button-color-text: var(--pal-text-primary);
+    --Button-color-border: var(--pal-border-primary);
 
-    box-shadow: 0 0.5rem 1rem -0.5rem rgba(var(--pal-shadow-rbg), 0.48);
+    box-shadow: none;
 
     @media (hover: hover) {
       &:hover {
@@ -70,15 +80,14 @@
     @media (hover: hover) {
       &:hover {
         background-color: var(--Button-color-background);
+        color: var(--Button-color-text);
+
+        @include SvgIcon(var(--Button-color-text));
       }
     }
   }
 
-  .ButtonIcon {
-    svg {
-      @include mixins.svg-color(var(--Button-color-text));
-    }
-  }
+  @include SvgIcon(var(--Button-color-text));
 
   .Loader {
     --Loader-color: var(--Button-color-text);

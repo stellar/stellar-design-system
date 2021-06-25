@@ -37,16 +37,11 @@ export const Button: React.FC<ButtonProps> & ButtonComponent = ({
     {iconLeft ? (
       <ButtonIcon position={ButtonIcon.position.left}>{iconLeft}</ButtonIcon>
     ) : null}
-    {isLoading ? (
-      <>
-        Loading <Loader />
-      </>
-    ) : (
-      children
-    )}
+    {children}
     {iconRight ? (
       <ButtonIcon position={ButtonIcon.position.right}>{iconRight}</ButtonIcon>
     ) : null}
+    {isLoading ? <Loader /> : null}
   </button>
 );
 

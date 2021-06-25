@@ -2,6 +2,8 @@
   --pal-brand-primary: #3e1bdb;
   // -rgb color is needed for rgba(). Hex color CSS variable doesn't work.
   --pal-brand-primary-rgb: 62, 27, 219;
+  --pal-brand-primary-hover: #241080;
+  --pal-brand-primary-hover-rgb: 36, 16, 128;
   --pal-brand-primary-on: #ffffff;
 
   --pal-background-primary: #ffffff;
@@ -23,6 +25,7 @@
   --pal-text-secondary: rgba(var(--pal-text-base-rgb), 0.6);
   --pal-text-tertiary: rgba(var(--pal-text-base-rgb), 0.4);
   --pal-text-link: #5332e6;
+  --pal-text-link-hover: #241080;
 
   --pal-border-base-rgb: 0, 0, 0;
   --pal-border-primary: rgba(var(--pal-text-base-rgb), 0.08);
@@ -38,6 +41,8 @@
   --pal-brand-primary: #5332e6;
   // -rgb color is needed for rgba(). Hex color CSS variable doesn't work.
   --pal-brand-primary-rgb: 83, 50, 230;
+  --pal-brand-primary-hover: #937eef;
+  --pal-brand-primary-hover-rgb: 147, 126, 239;
   --pal-brand-primary-on: #ffffff;
 
   --pal-background-primary: #292d3e;
@@ -59,6 +64,7 @@
   --pal-text-secondary: rgba(var(--pal-text-base-rgb), 0.6);
   --pal-text-tertiary: rgba(var(--pal-text-base-rgb), 0.4);
   --pal-text-link: #6260eb;
+  --pal-text-link-hover: #937eef;
 
   --pal-border-base-rgb: 255, 255, 255;
   --pal-border-primary: rgba(var(--pal-text-base-rgb), 0.08);
@@ -76,6 +82,7 @@
 
   // Font size
   --font-size: 16px;
+  --font-size-secondary: 14px;
 
   // Font weight
   --font-weight-light: 300;
@@ -92,7 +99,7 @@
   --z-index-modal: 30;
 
   // Opacity
-  --opacity-disabled-button: 0.4;
+  --opacity-disabled-button: 0.6;
 
   // Layout
   --layout-window-width-min: 320px;
@@ -258,14 +265,13 @@ table.Table {
 
   width: 100%;
   border-collapse: collapse;
-  font-size: 1rem;
+  font-size: var(--font-size-secondary);
   line-height: 1.5rem;
   color: var(--pal-text-primary);
   min-width: var(--table-min-width);
   color: var(--pal-text-secondary);
 
   th {
-    font-size: 0.875rem;
     line-height: 1.125rem;
     color: var(--pal-text-primary);
     font-weight: var(--font-weight-medium);

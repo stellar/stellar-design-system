@@ -19,8 +19,7 @@
 
     @media (hover: hover) {
       &:hover {
-        // TODO: hover color
-        // --TextLink-color-text: var(--pal-brand-secondary);
+        --TextLink-color-text: var(--pal-text-link-hover);
 
         &.TextLink--disabled {
           --TextLink-color-text: var(--pal-brand-primary);
@@ -30,14 +29,14 @@
   }
 
   &--secondary {
-    --TextLink-color-text: var(--pal-text-secondary);
+    --TextLink-color-text: var(--pal-text-primary);
 
     @media (hover: hover) {
       &:hover {
-        --TextLink-color-text: var(--pal-text-primary);
+        --TextLink-color-text: var(--pal-text-secondary);
 
         &.TextLink--disabled {
-          --TextLink-color-text: var(--pal-text-secondary);
+          --TextLink-color-text: var(--pal-text-primary);
         }
       }
     }
