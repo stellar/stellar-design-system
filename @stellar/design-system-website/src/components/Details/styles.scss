@@ -1,5 +1,7 @@
 .Details {
   &__example {
+    --Details-example-container-radius: 0.25rem;
+
     &__container {
       display: block;
 
@@ -19,11 +21,11 @@
       padding: 1rem;
       display: flex;
       flex-direction: column;
-      border-top-left-radius: 0.5rem;
-      border-top-right-radius: 0.5rem;
+      border-top-left-radius: var(--Details-example-container-radius);
+      border-top-right-radius: var(--Details-example-container-radius);
 
       @media (min-width: 900px) {
-        border-radius: 0.5rem;
+        border-radius: var(--Details-example-container-radius);
       }
     }
 
@@ -42,11 +44,11 @@
       flex-direction: column;
       overflow-x: auto;
       justify-content: center;
-      border-bottom-left-radius: 0.5rem;
-      border-bottom-right-radius: 0.5rem;
+      border-bottom-left-radius: var(--Details-example-container-radius);
+      border-bottom-right-radius: var(--Details-example-container-radius);
 
       @media (min-width: 900px) {
-        border-radius: 0.5rem;
+        border-radius: var(--Details-example-container-radius);
       }
     }
   }
@@ -58,8 +60,8 @@
 
     &__container {
       background-color: var(--pal-example-details);
-      border-radius: 0.5rem;
-      height: 9rem;
+      border-radius: var(--Details-example-container-radius);
+      height: 10rem;
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -74,7 +76,7 @@
 
       svg {
         width: 100%;
-        height: 2rem;
+        height: 1.5rem;
         stroke: var(--pal-text-primary);
 
         &[data-color="fill"] {
@@ -86,9 +88,10 @@
     &__title {
       padding: 1rem;
       padding-top: 0;
+      padding-bottom: 1.5rem;
       text-align: center;
       color: var(--pal-text-tertiary);
-      font-family: var(--font-family-monospace);
+      font-size: var(--font-size-secondary);
     }
   }
 }
