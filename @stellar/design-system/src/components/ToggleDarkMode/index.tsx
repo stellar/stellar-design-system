@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { NavButton } from "../NavButton";
 import { Icon } from "../../icons";
 
-enum ModeValue {
+export enum ModeValue {
   light = "light-mode",
   dark = "dark-mode",
 }
