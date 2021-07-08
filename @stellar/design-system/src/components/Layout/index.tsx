@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Icon } from "../../icons";
 import { ProjectLogo } from "../ProjectLogo";
 import { TextLink } from "../TextLink";
-import { ToggleDarkMode } from "../ToggleDarkMode";
+import { ToggleDarkMode, ModeValue } from "../ToggleDarkMode";
 import { NavButton } from "../NavButton";
 import "./styles.scss";
 
@@ -55,29 +55,38 @@ const Header: React.FC<HeaderProps> = ({
   hasDarkModeToggle,
   menu,
   children,
-}: HeaderProps) => (
-  <div className="Layout__header">
-    <Inset>
-      <ProjectLogo title={projectTitle} link={projectLink} />
-      {children}
-      <div className="Layout__header__buttons">
-        {hasDarkModeToggle ? (
-          <ToggleDarkMode
-            storageKeyId={`stellarTheme:${stringToCamelcase(projectTitle)}`}
-          />
-        ) : null}
-        {menu?.isEnabled ? (
-          <NavButton
-            id="open-side-nav-button"
-            title="Open side navigation"
-            onClick={menu.onOpen}
-            icon={<Icon.Menu />}
-          />
-        ) : null}
-      </div>
-    </Inset>
-  </div>
-);
+}: HeaderProps) => {
+  // Set default mode to light, if there is no theme toggle
+  useEffect(() => {
+    if (!hasDarkModeToggle) {
+      document.body.classList.add(ModeValue.light);
+    }
+  }, [hasDarkModeToggle]);
+
+  return (
+    <div className="Layout__header">
+      <Inset>
+        <ProjectLogo title={projectTitle} link={projectLink} />
+        {children}
+        <div className="Layout__header__buttons">
+          {hasDarkModeToggle ? (
+            <ToggleDarkMode
+              storageKeyId={`stellarTheme:${stringToCamelcase(projectTitle)}`}
+            />
+          ) : null}
+          {menu?.isEnabled ? (
+            <NavButton
+              id="open-side-nav-button"
+              title="Open side navigation"
+              onClick={menu.onOpen}
+              icon={<Icon.Menu />}
+            />
+          ) : null}
+        </div>
+      </Inset>
+    </div>
+  );
+};
 
 interface FooterProps {
   marginTop?: string;

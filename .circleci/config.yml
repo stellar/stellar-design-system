@@ -60,7 +60,8 @@ jobs:
 
       - run:
           name: Publish package
-          command: yarn publish:sds
+          command:
+            npm publish --workspace @stellar/design-system --access public
 
 workflows:
   version: 2
