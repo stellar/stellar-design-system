@@ -1,4 +1,5 @@
 import React from "react";
+import { InfoButtonWithTooltip } from "../InfoButtonWithTooltip";
 import { FieldElement } from "../utils/FieldElement";
 import { FieldNote } from "../utils/FieldNote";
 import { Icon } from "../../icons";
@@ -12,6 +13,7 @@ interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   note?: string | React.ReactNode;
   error?: string | string;
   children: React.ReactNode;
+  tooltipText?: string | React.ReactNode;
 }
 
 export const Select: React.FC<SelectProps> = ({
@@ -22,6 +24,7 @@ export const Select: React.FC<SelectProps> = ({
   note,
   error,
   children,
+  tooltipText,
   ...props
 }: SelectProps) => {
   const additionalClasses = [
@@ -31,7 +34,12 @@ export const Select: React.FC<SelectProps> = ({
 
   return (
     <div className={`Select ${additionalClasses}`}>
-      {label && <label htmlFor={id}>{label}</label>}
+      {label && <div className="SelectLabel__wrapper">
+        <label htmlFor={id}>{label}</label>
+        {tooltipText && (
+          <InfoButtonWithTooltip>{tooltipText}</InfoButtonWithTooltip>
+        )}
+      </div>}
 
       <div className="Select__container">
         {leftElement && (

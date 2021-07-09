@@ -1,4 +1,5 @@
 import React from "react";
+import { InfoButtonWithTooltip } from "../InfoButtonWithTooltip";
 import { FieldElement } from "../utils/FieldElement";
 import { FieldNote } from "../utils/FieldNote";
 import "./styles.scss";
@@ -10,6 +11,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   rightElement?: string | React.ReactNode;
   note?: string | React.ReactNode;
   error?: string | React.ReactNode;
+  tooltipText?: string | React.ReactNode;
 }
 
 export const Input: React.FC<InputProps> = ({
@@ -19,6 +21,7 @@ export const Input: React.FC<InputProps> = ({
   rightElement,
   note,
   error,
+  tooltipText,
   ...props
 }: InputProps) => {
   const additionalClasses = [
@@ -28,7 +31,12 @@ export const Input: React.FC<InputProps> = ({
 
   return (
     <div className={`Input ${additionalClasses}`}>
-      {label && <label htmlFor={id}>{label}</label>}
+      {label && <div className="InputLabel__wrapper">
+        <label htmlFor={id}>{label}</label>
+        {tooltipText && (
+          <InfoButtonWithTooltip>{tooltipText}</InfoButtonWithTooltip>
+        )}
+      </div>}
 
       <div className="Input__container">
         {leftElement && (

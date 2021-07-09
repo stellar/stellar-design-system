@@ -2,6 +2,30 @@
 
 .Select {
   width: 100%;
+  
+  .SelectLabel {
+    width: 100%;
+
+    &__wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+
+      label {
+        margin-bottom: 0;
+      }
+
+      .InfoButton {
+        margin-left: 0.5rem;
+      }
+
+      .InfoButtonTooltip {
+        right: auto;
+        left: 0;
+      }
+    }
+  }
 
   &__container {
     @include mixins.form-field-container;
@@ -71,3 +95,4 @@
     }
   }
 }
+
