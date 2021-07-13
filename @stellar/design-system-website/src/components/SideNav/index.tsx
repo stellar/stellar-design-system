@@ -1,5 +1,11 @@
+import { useEffect, createRef, useState } from "react";
 import { NavButton, Icon } from "@stellar/design-system";
+import { debounce } from "lodash";
 import { componentsInDisplayOrder } from "constants/componentsInDisplayOrder";
+import {
+  CSS_CLASS_LAYOUT_CONTAINER,
+  BREAKPOINT_SMALL,
+} from "constants/variables";
 import "./styles.scss";
 
 interface SideNavProps {
@@ -9,13 +15,54 @@ interface SideNavProps {
 }
 
 export const SideNav = ({ activeItemId, onClick, onClose }: SideNavProps) => {
+  const sideNavRef = createRef<HTMLDivElement>();
+
+  const [containerOffsetTop, setContainerOffsetTop] = useState(0);
+  const [isSideNavFixed, setIsSideNavFixed] = useState(false);
+
+  const scrollHandler = debounce(() => {
+    window.requestAnimationFrame(() => {
+      const isLargeScreen = window.matchMedia(
+        `(min-width: ${BREAKPOINT_SMALL}px)`,
+      );
+      const isFixed =
+        isLargeScreen.matches && window.pageYOffset >= containerOffsetTop;
+
+      setIsSideNavFixed(isFixed);
+    });
+  }, 50);
+
+  // Get and set offset top of the layout container
+  useEffect(() => {
+    if (sideNavRef?.current) {
+      const offsetTop = (
+        sideNavRef?.current?.closest(
+          `.${CSS_CLASS_LAYOUT_CONTAINER}`,
+        ) as HTMLDivElement
+      )?.offsetTop;
+      setContainerOffsetTop(offsetTop || 0);
+    }
+  }, [sideNavRef]);
+
+  // Handle scroll
+  useEffect(() => {
+    window.addEventListener("scroll", scrollHandler, true);
+
+    return () => {
+      window.removeEventListener("scroll", scrollHandler, true);
+    };
+  }, [scrollHandler]);
+
   const handleClick = (itemId: string) => {
     onClick(itemId);
     onClose();
   };
 
   return (
-    <div className="SideNav">
+    <div
+      className={`SideNav ${isSideNavFixed ? "SideNav--fixed" : ""}`}
+      ref={sideNavRef}
+    >
       <div className="SideNav__content">
         {componentsInDisplayOrder.map((item) => {
           const isActive = activeItemId === item.id;

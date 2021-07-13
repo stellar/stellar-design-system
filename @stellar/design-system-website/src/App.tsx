@@ -5,14 +5,15 @@ import { Layout } from "@stellar/design-system";
 import { Landing } from "pages/Landing";
 import { ComponentDetails } from "pages/ComponentDetails";
 import { SideNavContext } from "context/SideNav";
+import {
+  BREAKPOINT_SMALL,
+  CSS_CLASS_SMALL_SCREEN,
+  CSS_CLASS_SIDE_NAV_OPEN_TRIGGER,
+  CSS_CLASS_SIDE_NAV_OPEN,
+  CSS_CLASS_DISABLE_BODY_SCROLL,
+} from "constants/variables";
 
 import "styles.scss";
-
-const BREAKPOINT_SMALL = 600;
-const CSS_CLASS_SMALL_SCREEN = "small-screen";
-const CSS_CLASS_SIDE_NAV_OPEN_TRIGGER = "side-nav-open-trigger";
-const CSS_CLASS_SIDE_NAV_OPEN = "side-nav-open";
-const CSS_CLASS_DISABLE_BODY_SCROLL = "no-body-scroll";
 
 export const App = () => {
   const [sideNavState, setSideNavState] = useState({

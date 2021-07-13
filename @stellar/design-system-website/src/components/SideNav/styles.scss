@@ -1,12 +1,21 @@
 .SideNav {
-  width: 100%;
-  height: 100%;
+  width: calc(var(--SideNav-width) - 1rem);
+  // 8 rem is top + footer
+  height: calc(100% - 8rem);
   overflow-y: auto;
   position: relative;
+  top: 0;
+  transition: top var(--anim-transition-default);
+
+  &--fixed {
+    position: fixed;
+    top: 1rem;
+  }
 
   @media (max-width: 600px) {
     background-color: var(--pal-background-primary);
     width: var(--SideNav-width);
+    height: 100%;
   }
 
   &__content {
