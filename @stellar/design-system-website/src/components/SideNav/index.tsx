@@ -17,10 +17,15 @@ interface SideNavProps {
 export const SideNav = ({ activeItemId, onClick, onClose }: SideNavProps) => {
   const sideNavRef = createRef<HTMLDivElement>();
 
-  const [containerOffsetTop, setContainerOffsetTop] = useState(0);
+  const [containerOffsetTop, setContainerOffsetTop] =
+    useState<number | undefined>();
   const [isSideNavFixed, setIsSideNavFixed] = useState(false);
 
   const scrollHandler = debounce(() => {
+    if (!containerOffsetTop) {
+      return;
+    }
+
     window.requestAnimationFrame(() => {
       const isLargeScreen = window.matchMedia(
         `(min-width: ${BREAKPOINT_SMALL}px)`,
