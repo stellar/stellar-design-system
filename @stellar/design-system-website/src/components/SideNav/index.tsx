@@ -1,4 +1,4 @@
-import { useEffect, createRef, useState } from "react";
+import { useLayoutEffect, createRef, useState } from "react";
 import { NavButton, Icon } from "@stellar/design-system";
 import { debounce } from "lodash";
 import { componentsInDisplayOrder } from "constants/componentsInDisplayOrder";
@@ -33,7 +33,7 @@ export const SideNav = ({ activeItemId, onClick, onClose }: SideNavProps) => {
   }, 50);
 
   // Get and set offset top of the layout container
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (sideNavRef?.current) {
       const offsetTop = (
         sideNavRef?.current?.closest(
@@ -45,7 +45,7 @@ export const SideNav = ({ activeItemId, onClick, onClose }: SideNavProps) => {
   }, [sideNavRef]);
 
   // Handle scroll
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.addEventListener("scroll", scrollHandler, true);
 
     return () => {
