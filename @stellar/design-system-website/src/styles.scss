@@ -12,6 +12,10 @@
   margin-top: 1rem;
 }
 
+.Layout__header {
+  z-index: 1;
+}
+
 .Layout__containerWithSideNav {
   display: flex;
 
