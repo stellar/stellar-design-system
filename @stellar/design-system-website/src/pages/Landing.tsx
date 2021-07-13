@@ -6,6 +6,7 @@ import {
   TextLink,
 } from "@stellar/design-system";
 import { ComponentsList } from "components/ComponentsList";
+import GitHub from "generated/gitInfo";
 import { useSideNavEnabled } from "hooks/useSideNavEnabled";
 
 export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
@@ -48,12 +49,17 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
         <div className="Section__content">
           <Heading2>Current version</Heading2>
 
-          <TextLink href="https://www.npmjs.com/package/@stellar/design-system">
-            <img
-              src="https://img.shields.io/npm/v/@stellar/design-system.svg?style=flat-square"
-              alt="npm version"
-            />
-          </TextLink>
+          <p>
+            <TextLink href="https://www.npmjs.com/package/@stellar/design-system">
+              <img
+                src="https://img.shields.io/npm/v/@stellar/design-system.svg?style=flat-square"
+                alt="npm version"
+              />
+            </TextLink>
+          </p>
+          <p>
+            Website: <code>{GitHub.commitHash}</code>
+          </p>
         </div>
       </div>
 
