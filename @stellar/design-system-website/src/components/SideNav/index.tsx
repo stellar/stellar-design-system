@@ -40,7 +40,6 @@ export const SideNav = ({ activeItemId, onClick, onClose }: SideNavProps) => {
   // Get and set offset top of the layout container
   useLayoutEffect(() => {
     if (sideNavRef?.current) {
-      console.log("TEST");
       const offsetTop = (
         sideNavRef?.current?.closest(
           `.${CSS_CLASS_LAYOUT_CONTAINER}`,
