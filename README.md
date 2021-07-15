@@ -17,7 +17,7 @@ Add the main CSS file to your project (for example, the main `index` file of
 your React project):
 
 ```javascript
-import "@stellar/design-system/dist/styles.min.css";
+import "@stellar/design-system/build/styles.min.css";
 ```
 
 Import Stellar Design System components:

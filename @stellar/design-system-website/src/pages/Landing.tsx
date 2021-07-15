@@ -85,7 +85,7 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
           </p>
 
           <p>
-            <code>import "@stellar/design-system/dist/styles.min.css";</code>
+            <code>import "@stellar/design-system/build/styles.min.css";</code>
           </p>
 
           <p>Import components in your project.</p>
