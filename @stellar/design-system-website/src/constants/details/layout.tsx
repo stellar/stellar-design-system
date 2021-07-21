@@ -18,7 +18,7 @@ export const layout: ComponentDetails = {
       description: "",
       component: [
         <Layout.Header
-          projectTitle="Project name"
+          projectTitle="Design System"
           projectLink="https://stellar.org"
           hasDarkModeToggle
         />,
