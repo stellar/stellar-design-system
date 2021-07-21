@@ -7,7 +7,15 @@ export enum ModeValue {
   dark = "dark-mode",
 }
 
-export const ToggleDarkMode = ({ storageKeyId }: { storageKeyId?: string }) => {
+interface ToggleDarkModeProps {
+  storageKeyId?: string;
+  showBorder?: boolean;
+}
+
+export const ToggleDarkMode = ({
+  storageKeyId,
+  showBorder,
+}: ToggleDarkModeProps) => {
   const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
 
   const getCurrentMode = useCallback(() => {
@@ -63,6 +71,7 @@ export const ToggleDarkMode = ({ storageKeyId }: { storageKeyId?: string }) => {
       title={isDarkMode ? "Activate light mode" : "Activate dark mode"}
       onClick={handleToggle}
       icon={isDarkMode ? <Icon.Sun /> : <Icon.Moon />}
+      showBorder={showBorder}
     />
   );
 };

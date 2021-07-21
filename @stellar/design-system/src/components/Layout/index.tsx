@@ -35,6 +35,8 @@ interface HeaderProps {
   projectTitle: string;
   projectLink?: string;
   hasDarkModeToggle?: boolean;
+  onSignOut?: () => void;
+  showButtonBorder?: boolean;
   menu?: {
     isEnabled: boolean;
     onOpen: () => void;
@@ -53,6 +55,8 @@ const Header: React.FC<HeaderProps> = ({
   projectTitle,
   projectLink,
   hasDarkModeToggle,
+  onSignOut,
+  showButtonBorder,
   menu,
   children,
 }: HeaderProps) => {
@@ -69,17 +73,26 @@ const Header: React.FC<HeaderProps> = ({
         <ProjectLogo title={projectTitle} link={projectLink} />
         {children}
         <div className="Layout__header__buttons">
+          {onSignOut ? (
+            <TextLink id="sign-out-button" role="button" onClick={onSignOut}>
+              Sign out
+            </TextLink>
+          ) : null}
+
           {hasDarkModeToggle ? (
             <ToggleDarkMode
               storageKeyId={`stellarTheme:${stringToCamelcase(projectTitle)}`}
+              showBorder={showButtonBorder}
             />
           ) : null}
+
           {menu?.isEnabled ? (
             <NavButton
               id="open-side-nav-button"
               title="Open side navigation"
               onClick={menu.onOpen}
               icon={<Icon.Menu />}
+              showBorder={showButtonBorder}
             />
           ) : null}
         </div>
