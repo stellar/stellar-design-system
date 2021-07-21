@@ -41,6 +41,15 @@
     &__buttons {
       display: flex;
       align-items: center;
+
+      & > * {
+        margin-left: 0.5rem;
+      }
+
+      // Text links need a bit more spacing
+      .TextLink:not(:last-child) {
+        margin-right: 1rem;
+      }
     }
   }
 

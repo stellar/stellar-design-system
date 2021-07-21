@@ -20,6 +20,7 @@ export const layout: ComponentDetails = {
         <Layout.Header
           projectTitle="Project name"
           projectLink="https://stellar.org"
+          hasDarkModeToggle
         />,
       ],
     },
@@ -87,6 +88,27 @@ export const layout: ComponentDetails = {
             default: null,
             optional: false,
             description: "Link of the project",
+          },
+          {
+            prop: "hasDarkModeToggle",
+            type: ["boolean"],
+            default: null,
+            optional: true,
+            description: "Show theme toggle button",
+          },
+          {
+            prop: "onSignOut",
+            type: ["() => void"],
+            default: null,
+            optional: true,
+            description: "Show sign out link if function is provided",
+          },
+          {
+            prop: "showButtonBorder",
+            type: ["boolean"],
+            default: null,
+            optional: true,
+            description: "Show border around navigation buttons",
           },
           {
             prop: "children",
