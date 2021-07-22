@@ -21,6 +21,10 @@
       &:hover {
         --TextLink-color-text: var(--pal-text-link-hover);
 
+        &.TextLink--underline {
+          --TextLink-color-text: var(--pal-text-link);
+        }
+
         &.TextLink--disabled {
           --TextLink-color-text: var(--pal-brand-primary);
         }
@@ -34,6 +38,10 @@
     @media (hover: hover) {
       &:hover {
         --TextLink-color-text: var(--pal-text-secondary);
+
+        &.TextLink--underline {
+          --TextLink-color-text: var(--pal-text-primary);
+        }
 
         &.TextLink--disabled {
           --TextLink-color-text: var(--pal-text-primary);

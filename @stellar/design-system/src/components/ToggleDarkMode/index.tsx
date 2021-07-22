@@ -10,11 +10,13 @@ export enum ModeValue {
 interface ToggleDarkModeProps {
   storageKeyId?: string;
   showBorder?: boolean;
+  onToggleEnd?: (isDarkMode: boolean) => void;
 }
 
 export const ToggleDarkMode = ({
   storageKeyId,
   showBorder,
+  onToggleEnd,
 }: ToggleDarkModeProps) => {
   const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -62,6 +64,10 @@ export const ToggleDarkMode = ({
       } else {
         localStorage.setItem(storageKeyId, ModeValue.light);
       }
+    }
+
+    if (onToggleEnd) {
+      onToggleEnd(_isDarkMode);
     }
   };
 
