@@ -35,6 +35,7 @@ interface HeaderProps {
   projectTitle: string;
   projectLink?: string;
   hasDarkModeToggle?: boolean;
+  onDarkModeToggleEnd?: (isDarkMode: boolean) => void;
   onSignOut?: () => void;
   showButtonBorder?: boolean;
   menu?: {
@@ -55,6 +56,7 @@ const Header: React.FC<HeaderProps> = ({
   projectTitle,
   projectLink,
   hasDarkModeToggle,
+  onDarkModeToggleEnd,
   onSignOut,
   showButtonBorder,
   menu,
@@ -83,6 +85,7 @@ const Header: React.FC<HeaderProps> = ({
             <ToggleDarkMode
               storageKeyId={`stellarTheme:${stringToCamelcase(projectTitle)}`}
               showBorder={showButtonBorder}
+              onToggleEnd={onDarkModeToggleEnd}
             />
           ) : null}
 

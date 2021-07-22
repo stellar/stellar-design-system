@@ -97,6 +97,13 @@ export const layout: ComponentDetails = {
             description: "Show theme toggle button",
           },
           {
+            prop: "onDarkModeToggleEnd",
+            type: ["(isDarkMode: boolean) => void"],
+            default: null,
+            optional: true,
+            description: "Function to call at the end of the toggle event",
+          },
+          {
             prop: "onSignOut",
             type: ["() => void"],
             default: null,
