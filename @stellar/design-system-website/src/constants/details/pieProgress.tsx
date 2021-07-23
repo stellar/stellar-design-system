@@ -8,7 +8,7 @@ export const pieProgress: ComponentDetails = {
   shortDescription: "Pie chart to show state progress",
   examples: [
     {
-      title: "Pie Progress",
+      title: "Custom background color and size",
       description: "Pie progress with four steps (two passed and one failed).",
       component: [
         <PieProgress
