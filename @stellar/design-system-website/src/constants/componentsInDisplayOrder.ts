@@ -78,4 +78,8 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
     id: ComponentDetailsId.layout,
     label: "Layout",
   },
+  {
+    id: ComponentDetailsId.pieProgress,
+    label: "Pie progress",
+  },
 ];
