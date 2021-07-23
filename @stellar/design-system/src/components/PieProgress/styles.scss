@@ -9,7 +9,6 @@
   height: var(--PieProgress-size);
   border-radius: calc(var(--PieProgress-size) / 2);
   position: relative;
-  transition: background linear 300ms;
 
   &::after {
     content: "";
