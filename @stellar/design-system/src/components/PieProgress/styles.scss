@@ -1,0 +1,25 @@
+.PieProgress {
+  --PieProgress-size: 1.5rem;
+  --PieProgress-inner-size: calc(
+    var(--PieProgress-size) - (var(--PieProgress-size) * 0.3)
+  );
+  --PieProgress-background-color: var(--pal-background-primary);
+
+  width: var(--PieProgress-size);
+  height: var(--PieProgress-size);
+  border-radius: calc(var(--PieProgress-size) / 2);
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: var(--PieProgress-inner-size);
+    height: var(--PieProgress-inner-size);
+    border-radius: calc(var(--PieProgress-inner-size) / 2);
+    background-color: var(--PieProgress-background-color);
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+}

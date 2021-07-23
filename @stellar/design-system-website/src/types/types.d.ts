@@ -17,6 +17,7 @@ export enum ComponentDetailsId {
   loaders = "loaders",
   modals = "modals",
   navButtons = "navButtons",
+  pieProgress = "pieProgress",
   radioButtons = "radioButtons",
   selects = "selects",
   tags = "tags",
@@ -38,6 +39,7 @@ interface ComponentDetailsList {
   loaders: ComponentDetails;
   modals: ComponentDetails;
   navButtons: ComponentDetails;
+  pieProgress: ComponentDetails;
   radioButtons: ComponentDetails;
   selects: ComponentDetails;
   tags: ComponentDetails;

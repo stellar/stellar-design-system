@@ -10,6 +10,7 @@ import { layout } from "constants/details/layout";
 import { loaders } from "constants/details/loaders";
 import { modals } from "constants/details/modals";
 import { navButtons } from "constants/details/navButtons";
+import { pieProgress } from "constants/details/pieProgress";
 import { radioButtons } from "constants/details/radioButtons";
 import { selects } from "constants/details/selects";
 import { tags } from "constants/details/tags";
@@ -31,6 +32,7 @@ export const componentDetails: ComponentDetailsList = {
   loaders,
   modals,
   navButtons,
+  pieProgress,
   radioButtons,
   selects,
   tags,
