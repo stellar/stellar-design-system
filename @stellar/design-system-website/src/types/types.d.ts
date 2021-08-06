@@ -20,6 +20,7 @@ export enum ComponentDetailsId {
   pieProgress = "pieProgress",
   radioButtons = "radioButtons",
   selects = "selects",
+  statusBars = "statusBars",
   tags = "tags",
   textLinks = "textLinks",
   toggles = "toggles",
@@ -42,6 +43,7 @@ interface ComponentDetailsList {
   pieProgress: ComponentDetails;
   radioButtons: ComponentDetails;
   selects: ComponentDetails;
+  statusBars: ComponentDetails;
   tags: ComponentDetails;
   textLinks: ComponentDetails;
   toggles: ComponentDetails;

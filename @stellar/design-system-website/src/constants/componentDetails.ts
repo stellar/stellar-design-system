@@ -13,6 +13,7 @@ import { navButtons } from "constants/details/navButtons";
 import { pieProgress } from "constants/details/pieProgress";
 import { radioButtons } from "constants/details/radioButtons";
 import { selects } from "constants/details/selects";
+import { statusBars } from "constants/details/statusBars";
 import { tags } from "constants/details/tags";
 import { textLinks } from "constants/details/textLinks";
 import { toggles } from "constants/details/toggles";
@@ -35,6 +36,7 @@ export const componentDetails: ComponentDetailsList = {
   pieProgress,
   radioButtons,
   selects,
+  statusBars,
   tags,
   textLinks,
   toggles,

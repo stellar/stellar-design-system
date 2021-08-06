@@ -31,6 +31,10 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
     label: "Info blocks",
   },
   {
+    id: ComponentDetailsId.statusBars,
+    label: "Status bars",
+  },
+  {
     id: ComponentDetailsId.buttons,
     label: "Buttons",
   },
