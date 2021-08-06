@@ -17,6 +17,7 @@ import { statusBars } from "constants/details/statusBars";
 import { tags } from "constants/details/tags";
 import { textLinks } from "constants/details/textLinks";
 import { toggles } from "constants/details/toggles";
+import { tooltips } from "constants/details/tooltips";
 import { typography } from "constants/details/typography";
 import { ComponentDetailsList } from "types/types.d";
 
@@ -40,5 +41,6 @@ export const componentDetails: ComponentDetailsList = {
   tags,
   textLinks,
   toggles,
+  tooltips,
   typography,
 };

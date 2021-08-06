@@ -24,6 +24,7 @@ export enum ComponentDetailsId {
   tags = "tags",
   textLinks = "textLinks",
   toggles = "toggles",
+  tooltips = "tooltips",
   typography = "typography",
 }
 
@@ -47,6 +48,7 @@ interface ComponentDetailsList {
   tags: ComponentDetails;
   textLinks: ComponentDetails;
   toggles: ComponentDetails;
+  tooltips: ComponentDetails;
   typography: ComponentDetails;
 }
 
