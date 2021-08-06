@@ -137,7 +137,6 @@ body {
   padding: 0;
   margin: 0;
   background-color: var(--pal-background-primary);
-  overflow-x: hidden;
   transition: background-color ease-in-out 200ms;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -243,7 +242,6 @@ div#root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
 // Generic
