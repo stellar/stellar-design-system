@@ -90,4 +90,8 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
     id: ComponentDetailsId.tooltips,
     label: "Tooltips",
   },
+  {
+    id: ComponentDetailsId.detailsTooltips,
+    label: "Details tooltips",
+  },
 ];

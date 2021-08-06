@@ -3,6 +3,7 @@ import { branding } from "constants/details/branding";
 import { buttons } from "constants/details/buttons";
 import { checkboxes } from "constants/details/checkboxes";
 import { identicons } from "constants/details/identicons";
+import { detailsTooltips } from "constants/details/detailsTooltips";
 import { iconButtons } from "constants/details/iconButtons";
 import { infoBlocks } from "constants/details/infoBlocks";
 import { inputs } from "constants/details/inputs";
@@ -26,6 +27,7 @@ export const componentDetails: ComponentDetailsList = {
   branding,
   buttons,
   checkboxes,
+  detailsTooltips,
   iconButtons,
   identicons,
   infoBlocks,
