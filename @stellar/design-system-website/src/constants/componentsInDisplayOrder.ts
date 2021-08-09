@@ -94,4 +94,8 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
     id: ComponentDetailsId.detailsTooltips,
     label: "Details tooltips",
   },
+  {
+    id: ComponentDetailsId.copyTexts,
+    label: "Copy text",
+  },
 ];

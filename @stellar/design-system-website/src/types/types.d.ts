@@ -9,6 +9,7 @@ export enum ComponentDetailsId {
   branding = "branding",
   buttons = "buttons",
   checkboxes = "checkboxes",
+  copyTexts = "copyTexts",
   detailsTooltips = "detailsTooltips",
   iconButtons = "iconButtons",
   identicons = "identicons",
@@ -34,6 +35,7 @@ interface ComponentDetailsList {
   branding: ComponentDetails;
   buttons: ComponentDetails;
   checkboxes: ComponentDetails;
+  copyTexts: ComponentDetails;
   detailsTooltips: ComponentDetails;
   iconButtons: ComponentDetails;
   identicons: ComponentDetails;

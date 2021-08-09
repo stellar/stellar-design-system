@@ -9,7 +9,7 @@
   left: 0;
   width: 100%;
   z-index: var(--z-index-modal);
-  min-width: var(--size-min-window);
+  min-width: var(--layout-window-width-min);
   min-height: 100vh;
   overflow: hidden;
 

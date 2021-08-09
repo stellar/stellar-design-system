@@ -1,5 +1,6 @@
 export * from "./Button";
 export * from "./Checkbox";
+export * from "./CopyText";
 export * from "./DetailsTooltip";
 export * from "./Heading";
 export * from "./InfoBlock";
