@@ -31,6 +31,10 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
     label: "Info blocks",
   },
   {
+    id: ComponentDetailsId.statusBars,
+    label: "Status bars",
+  },
+  {
     id: ComponentDetailsId.buttons,
     label: "Buttons",
   },
@@ -81,5 +85,17 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
   {
     id: ComponentDetailsId.pieProgress,
     label: "Pie progress",
+  },
+  {
+    id: ComponentDetailsId.tooltips,
+    label: "Tooltips",
+  },
+  {
+    id: ComponentDetailsId.detailsTooltips,
+    label: "Details tooltips",
+  },
+  {
+    id: ComponentDetailsId.copyTexts,
+    label: "Copy text",
   },
 ];

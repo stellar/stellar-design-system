@@ -9,7 +9,7 @@
   left: 0;
   width: 100%;
   z-index: var(--z-index-modal);
-  min-width: var(--size-min-window);
+  min-width: var(--layout-window-width-min);
   min-height: 100vh;
   overflow: hidden;
 
@@ -47,10 +47,7 @@
       width: 100%;
       margin-top: 1.5rem;
       margin-bottom: 1rem;
-
-      & > *:not(:first-child) {
-        margin-left: 0.5rem;
-      }
+      gap: 0.5rem;
     }
 
     .ModalBody {
@@ -90,5 +87,26 @@
     bottom: 0;
     left: 0;
     right: 0;
+  }
+
+  // Make headings one step smaller
+  h2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    line-height: 1.88rem;
+  }
+
+  h5 {
+    font-size: 1.13rem;
+    line-height: 1.75rem;
   }
 }

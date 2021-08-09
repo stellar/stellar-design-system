@@ -74,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({
       <Inset>
         <ProjectLogo title={projectTitle} link={projectLink} />
         {children}
-        <div className="Layout__header__buttons">
+        <div className="Layout__rightSide--inline">
           {onSignOut ? (
             <TextLink id="sign-out-button" role="button" onClick={onSignOut}>
               Sign out
@@ -148,16 +148,18 @@ const Footer: React.FC<FooterProps> = ({
             </div>
           )}
 
-          {gitHubLink ? (
-            <TextLink
-              href={gitHubLink}
-              variant={TextLink.variant.secondary}
-              iconLeft={<Icon.Github />}
-            >
-              {gitHubLabel ?? "GitHub"}
-            </TextLink>
-          ) : null}
-          {children}
+          <div className="Layout__rightSide--inline">
+            {gitHubLink ? (
+              <TextLink
+                href={gitHubLink}
+                variant={TextLink.variant.secondary}
+                iconLeft={<Icon.Github />}
+              >
+                {gitHubLabel ?? "GitHub"}
+              </TextLink>
+            ) : null}
+            {children}
+          </div>
         </div>
       </Inset>
     </div>

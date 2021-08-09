@@ -1,5 +1,7 @@
 export * from "./Button";
 export * from "./Checkbox";
+export * from "./CopyText";
+export * from "./DetailsTooltip";
 export * from "./Heading";
 export * from "./InfoBlock";
 export * from "./IconButton";
@@ -13,7 +15,9 @@ export * from "./PieProgress";
 export * from "./ProjectLogo";
 export * from "./RadioButton";
 export * from "./Select";
+export * from "./StatusBar";
 export * from "./Tag";
 export * from "./TextLink";
 export * from "./Toggle";
+export * from "./Tooltip";
 export * from "./ToggleDarkMode";

@@ -9,6 +9,8 @@ export enum ComponentDetailsId {
   branding = "branding",
   buttons = "buttons",
   checkboxes = "checkboxes",
+  copyTexts = "copyTexts",
+  detailsTooltips = "detailsTooltips",
   iconButtons = "iconButtons",
   identicons = "identicons",
   infoBlocks = "infoBlocks",
@@ -20,9 +22,11 @@ export enum ComponentDetailsId {
   pieProgress = "pieProgress",
   radioButtons = "radioButtons",
   selects = "selects",
+  statusBars = "statusBars",
   tags = "tags",
   textLinks = "textLinks",
   toggles = "toggles",
+  tooltips = "tooltips",
   typography = "typography",
 }
 
@@ -31,6 +35,8 @@ interface ComponentDetailsList {
   branding: ComponentDetails;
   buttons: ComponentDetails;
   checkboxes: ComponentDetails;
+  copyTexts: ComponentDetails;
+  detailsTooltips: ComponentDetails;
   iconButtons: ComponentDetails;
   identicons: ComponentDetails;
   infoBlocks: ComponentDetails;
@@ -42,9 +48,11 @@ interface ComponentDetailsList {
   pieProgress: ComponentDetails;
   radioButtons: ComponentDetails;
   selects: ComponentDetails;
+  statusBars: ComponentDetails;
   tags: ComponentDetails;
   textLinks: ComponentDetails;
   toggles: ComponentDetails;
+  tooltips: ComponentDetails;
   typography: ComponentDetails;
 }
 
