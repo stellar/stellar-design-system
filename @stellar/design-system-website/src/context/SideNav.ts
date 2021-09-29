@@ -15,5 +15,7 @@ export const SideNavContext = createContext<SideNavContextProps>({
     isEnabled: false,
     isOpen: false,
   },
-  setSideNavState: () => {},
+  setSideNavState: () => {
+    // do nothing
+  },
 });
