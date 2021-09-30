@@ -21,13 +21,17 @@ export const navButtons: ComponentDetails = {
         <NavButton
           id="nav-button-menu-1"
           title="Menu"
-          onClick={() => {}}
+          onClick={() => {
+            // do nothing
+          }}
           icon={<Icon.Menu />}
         />,
         <NavButton
           id="nav-button-menu-2"
           title="Menu"
-          onClick={() => {}}
+          onClick={() => {
+            // do nothing
+          }}
           icon={<Icon.Menu />}
           showBorder
         />,
@@ -40,13 +44,17 @@ export const navButtons: ComponentDetails = {
         <NavButton
           id="nav-button-close-1"
           title="Close"
-          onClick={() => {}}
+          onClick={() => {
+            // do nothing
+          }}
           icon={<Icon.X />}
         />,
         <NavButton
           id="nav-button-close-2"
           title="Close"
-          onClick={() => {}}
+          onClick={() => {
+            // do nothing
+          }}
           icon={<Icon.X />}
           showBorder
         />,
@@ -59,13 +67,17 @@ export const navButtons: ComponentDetails = {
         <NavButton
           id="nav-button-dark-1"
           title="Dark mode"
-          onClick={() => {}}
+          onClick={() => {
+            // do nothing
+          }}
           icon={<Icon.Moon />}
         />,
         <NavButton
           id="nav-button-dark-2"
           title="Dark mode"
-          onClick={() => {}}
+          onClick={() => {
+            // do nothing
+          }}
           icon={<Icon.Moon />}
           showBorder
         />,
