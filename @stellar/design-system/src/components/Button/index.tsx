@@ -9,15 +9,22 @@ enum ButtonVariant {
   tertiary = "tertiary",
 }
 
+enum ButtonSize {
+  default = "default",
+  small = "small",
+}
+
 interface ButtonComponent {
   variant: typeof ButtonVariant;
+  size: typeof ButtonSize;
 }
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   iconLeft?: React.ReactNode;
   iconRight?: React.ReactNode;
   variant?: ButtonVariant;
-  isLoading?: Boolean;
+  isLoading?: boolean;
+  size?: ButtonSize;
   children: string | React.ReactNode;
 }
 
@@ -26,24 +33,35 @@ export const Button: React.FC<ButtonProps> & ButtonComponent = ({
   iconRight,
   variant = ButtonVariant.primary,
   isLoading,
+  size = ButtonSize.default,
   children,
   ...props
-}) => (
-  <button
-    className={`Button Button--${variant}`}
-    {...props}
-    {...(isLoading ? { disabled: true } : {})}
-  >
-    {iconLeft ? (
-      <ButtonIcon position={ButtonIcon.position.left}>{iconLeft}</ButtonIcon>
-    ) : null}
-    {children}
-    {iconRight ? (
-      <ButtonIcon position={ButtonIcon.position.right}>{iconRight}</ButtonIcon>
-    ) : null}
-    {isLoading ? <Loader /> : null}
-  </button>
-);
+}) => {
+  const additionalClasses = [
+    `Button--${variant}`,
+    ...(size !== ButtonSize.default ? [`Button--${size}`] : []),
+  ].join(" ");
+
+  return (
+    <button
+      className={`Button ${additionalClasses}`}
+      {...props}
+      {...(isLoading ? { disabled: true } : {})}
+    >
+      {iconLeft ? (
+        <ButtonIcon position={ButtonIcon.position.left}>{iconLeft}</ButtonIcon>
+      ) : null}
+      {children}
+      {iconRight ? (
+        <ButtonIcon position={ButtonIcon.position.right}>
+          {iconRight}
+        </ButtonIcon>
+      ) : null}
+      {isLoading ? <Loader /> : null}
+    </button>
+  );
+};
 
 Button.displayName = "Button";
 Button.variant = ButtonVariant;
+Button.size = ButtonSize;

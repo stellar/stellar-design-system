@@ -21,6 +21,7 @@ export const buttons: ComponentDetails = {
         <Button>Label</Button>,
         <Button disabled>Label</Button>,
         <Button isLoading>Label</Button>,
+        <Button size={Button.size.small}>Label</Button>,
       ],
     },
     {
@@ -32,6 +33,9 @@ export const buttons: ComponentDetails = {
           Label
         </Button>,
         <Button iconLeft={<Icon.Check />} isLoading>
+          Label
+        </Button>,
+        <Button iconLeft={<Icon.Check />} size={Button.size.small}>
           Label
         </Button>,
       ],
@@ -47,6 +51,9 @@ export const buttons: ComponentDetails = {
         <Button iconRight={<Icon.Check />} isLoading>
           Label
         </Button>,
+        <Button iconRight={<Icon.Check />} size={Button.size.small}>
+          Label
+        </Button>,
       ],
     },
     {
@@ -58,6 +65,9 @@ export const buttons: ComponentDetails = {
           Label
         </Button>,
         <Button variant={Button.variant.secondary} isLoading>
+          Label
+        </Button>,
+        <Button variant={Button.variant.secondary} size={Button.size.small}>
           Label
         </Button>,
       ],
@@ -80,6 +90,13 @@ export const buttons: ComponentDetails = {
           variant={Button.variant.secondary}
           iconLeft={<Icon.Check />}
           isLoading
+        >
+          Label
+        </Button>,
+        <Button
+          variant={Button.variant.secondary}
+          iconLeft={<Icon.Check />}
+          size={Button.size.small}
         >
           Label
         </Button>,
@@ -106,6 +123,13 @@ export const buttons: ComponentDetails = {
         >
           Label
         </Button>,
+        <Button
+          variant={Button.variant.secondary}
+          iconRight={<Icon.Check />}
+          size={Button.size.small}
+        >
+          Label
+        </Button>,
       ],
     },
     {
@@ -117,6 +141,9 @@ export const buttons: ComponentDetails = {
           Label
         </Button>,
         <Button variant={Button.variant.tertiary} isLoading>
+          Label
+        </Button>,
+        <Button variant={Button.variant.tertiary} size={Button.size.small}>
           Label
         </Button>,
       ],
@@ -142,6 +169,13 @@ export const buttons: ComponentDetails = {
         >
           Label
         </Button>,
+        <Button
+          variant={Button.variant.tertiary}
+          iconLeft={<Icon.Check />}
+          size={Button.size.small}
+        >
+          Label
+        </Button>,
       ],
     },
     {
@@ -162,6 +196,13 @@ export const buttons: ComponentDetails = {
           variant={Button.variant.tertiary}
           iconRight={<Icon.Check />}
           isLoading
+        >
+          Label
+        </Button>,
+        <Button
+          variant={Button.variant.tertiary}
+          iconRight={<Icon.Check />}
+          size={Button.size.small}
         >
           Label
         </Button>,
@@ -203,6 +244,13 @@ export const buttons: ComponentDetails = {
       default: "primary",
       optional: true,
       description: "Variant of the button",
+    },
+    {
+      prop: "size",
+      type: ["default", "small"],
+      default: "default",
+      optional: true,
+      description: "Size of the button",
     },
   ],
   externalProps: {
