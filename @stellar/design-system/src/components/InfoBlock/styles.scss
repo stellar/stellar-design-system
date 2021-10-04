@@ -1,8 +1,8 @@
 @use "../../mixins.scss";
 
-@mixin info-block($bg, $icon) {
-  background-color: rgba($bg, 0.16);
-  border-color: rgba($bg, 0.4);
+@mixin info-block($bg, $border, $icon) {
+  background-color: $bg;
+  border-color: $border;
 
   svg {
     @include mixins.svg-color($icon);
@@ -10,42 +10,45 @@
 }
 
 .InfoBlock {
-  border-radius: 0.25rem;
   width: 100%;
-  background-color: var(--pal-background-primary);
-
-  &__content {
-    border-radius: 0.25rem;
-    border: 1px solid transparent;
-    padding: 1rem;
-    padding-left: 2.5rem;
-    line-height: 1.75rem;
-    position: relative;
-    color: var(--pal-text-secondary);
-  }
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  padding-left: 2.5rem;
+  line-height: 1.75rem;
+  position: relative;
+  color: var(--pal-text-secondary);
 
   &--info {
-    .InfoBlock__content {
-      @include info-block(var(--pal-brand-primary-rgb), var(--pal-text-link));
-    }
+    @include info-block(
+      var(--pal-info-background),
+      var(--pal-info-border),
+      var(--pal-info)
+    );
   }
 
   &--success {
-    .InfoBlock__content {
-      @include info-block(var(--pal-success-rgb), rgb(var(--pal-success-rgb)));
-    }
+    @include info-block(
+      var(--pal-success-background),
+      var(--pal-success-border),
+      var(--pal-success)
+    );
   }
 
   &--error {
-    .InfoBlock__content {
-      @include info-block(var(--pal-error-rgb), rgb(var(--pal-error-rgb)));
-    }
+    @include info-block(
+      var(--pal-error-background),
+      var(--pal-error-border),
+      var(--pal-error)
+    );
   }
 
   &--warning {
-    .InfoBlock__content {
-      @include info-block(var(--pal-warning-rgb), rgb(var(--pal-warning-rgb)));
-    }
+    @include info-block(
+      var(--pal-warning-background),
+      var(--pal-warning-border),
+      var(--pal-warning)
+    );
   }
 
   &__icon {

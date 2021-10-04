@@ -1,15 +1,14 @@
 .Tooltip {
   position: absolute;
-  background-color: var(--pal-background-primary);
   max-width: 16.875rem;
   border-radius: 0.125rem;
-  border: 1px solid rgba(var(--pal-brand-primary-rgb), 0.4);
+  border: 1px solid var(--pal-info-border);
   z-index: var(--z-index-tooltip);
   cursor: default;
 
   &__content {
     padding: 0.5rem 1rem;
-    background-color: rgba(var(--pal-brand-primary-rgb), 0.16);
+    background-color: var(--pal-info-background);
     color: var(--pal-text-secondary);
     font-size: var(--font-size-secondary);
     line-height: 1.5em;

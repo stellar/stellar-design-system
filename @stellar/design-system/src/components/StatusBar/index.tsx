@@ -23,9 +23,7 @@ export const StatusBar: React.FC<StatusBarProps> & StatusBarComponent = ({
   children,
 }) => (
   <div className={`StatusBar StatusBar--${variant}`}>
-    <div className="StatusBar__content">
-      <Layout.Inset>{children}</Layout.Inset>
-    </div>
+    <Layout.Inset>{children}</Layout.Inset>
   </div>
 );
 
