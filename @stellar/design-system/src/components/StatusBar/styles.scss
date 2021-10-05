@@ -1,33 +1,35 @@
-@mixin status-bar($color) {
-  background-color: rgba($color, 0.16);
-  border-bottom: 1px solid rgba($color, 0.4);
+@mixin status-bar($bg, $border) {
+  background-color: $bg;
+  border-bottom: 1px solid $border;
 }
 
 .StatusBar {
   width: 100%;
-  background-color: var(--pal-background-primary);
-
-  &__content {
-    padding: 0.5rem 0;
-    text-align: center;
-    color: var(--pal-text-secondary);
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
+  padding: 0.5rem 0;
+  text-align: center;
+  color: var(--pal-text-secondary);
+  font-size: 1rem;
+  line-height: 1.5rem;
 
   &--info {
-    @include status-bar(var(--pal-brand-primary-rgb));
+    @include status-bar(var(--pal-info-background), var(--pal-info-border));
   }
 
   &--success {
-    @include status-bar(var(--pal-success-rgb));
+    @include status-bar(
+      var(--pal-success-background),
+      var(--pal-success-border)
+    );
   }
 
   &--error {
-    @include status-bar(var(--pal-error-rgb));
+    @include status-bar(var(--pal-error-background), var(--pal-error-border));
   }
 
   &--warning {
-    @include status-bar(var(--pal-warning-rgb));
+    @include status-bar(
+      var(--pal-warning-background),
+      var(--pal-warning-border)
+    );
   }
 }

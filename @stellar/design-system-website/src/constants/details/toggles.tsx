@@ -16,16 +16,24 @@ export const toggles: ComponentDetails = {
       title: "Default",
       description: "",
       component: [
-        <Toggle id="toggle-1" checked={false} onChange={() => {}} />,
-        <Toggle id="toggle-2" checked={false} onChange={() => {}} disabled />,
+        <Toggle id="toggle-1" checked={false} onChange={() => {
+          // do nothing
+        }} />,
+        <Toggle id="toggle-2" checked={false} onChange={() => {
+          // do nothing
+        }} disabled />,
       ],
     },
     {
       title: "Toggle on",
       description: "",
       component: [
-        <Toggle id="toggle-3" checked={true} onChange={() => {}} />,
-        <Toggle id="toggle-4" checked={true} onChange={() => {}} disabled />,
+        <Toggle id="toggle-3" checked={true} onChange={() => {
+          // do nothing
+        }} />,
+        <Toggle id="toggle-4" checked={true} onChange={() => {
+          // do nothing
+        }} disabled />,
       ],
     },
     {
@@ -35,14 +43,18 @@ export const toggles: ComponentDetails = {
         <Toggle
           id="toggle-5"
           checked={false}
-          onChange={() => {}}
+          onChange={() => {
+            // do nothing
+          }}
           labelOff="Off"
           labelOn="On"
         />,
         <Toggle
           id="toggle-6"
           checked={false}
-          onChange={() => {}}
+          onChange={() => {
+            // do nothing
+          }}
           labelOff="Off"
           labelOn="On"
           disabled
@@ -56,14 +68,18 @@ export const toggles: ComponentDetails = {
         <Toggle
           id="toggle-7"
           checked={true}
-          onChange={() => {}}
+          onChange={() => {
+            // do nothing
+          }}
           labelOff="Off"
           labelOn="On"
         />,
         <Toggle
           id="toggle-8"
           checked={true}
-          onChange={() => {}}
+          onChange={() => {
+            // do nothing
+          }}
           labelOff="Off"
           labelOn="On"
           disabled
@@ -77,7 +93,9 @@ export const toggles: ComponentDetails = {
         <Toggle
           id="toggle-9"
           checked={false}
-          onChange={() => {}}
+          onChange={() => {
+            // do nothing
+          }}
           labelOff="Off"
           labelOn="On"
           labelPosition={Toggle.labelPosition.right}
@@ -85,7 +103,9 @@ export const toggles: ComponentDetails = {
         <Toggle
           id="toggle-10"
           checked={false}
-          onChange={() => {}}
+          onChange={() => {
+            // do nothing
+          }}
           labelOff="Off"
           labelOn="On"
           labelPosition={Toggle.labelPosition.right}
@@ -100,7 +120,9 @@ export const toggles: ComponentDetails = {
         <Toggle
           id="toggle-11"
           checked={true}
-          onChange={() => {}}
+          onChange={() => {
+            // do nothing
+          }}
           labelOff="Off"
           labelOn="On"
           labelPosition={Toggle.labelPosition.right}
@@ -108,7 +130,9 @@ export const toggles: ComponentDetails = {
         <Toggle
           id="toggle-12"
           checked={true}
-          onChange={() => {}}
+          onChange={() => {
+            // do nothing
+          }}
           labelOff="Off"
           labelOn="On"
           labelPosition={Toggle.labelPosition.right}
