@@ -1,9 +1,6 @@
 @mixin light-theme-palette {
   --pal-brand-primary: #3e1bdb;
-  // -rgb color is needed for rgba(). Hex color CSS variable doesn't work.
-  --pal-brand-primary-rgb: 62, 27, 219;
   --pal-brand-primary-hover: #241080;
-  --pal-brand-primary-hover-rgb: 36, 16, 128;
   --pal-brand-primary-on: #ffffff;
 
   --pal-background-primary: #ffffff;
@@ -11,25 +8,33 @@
   --pal-background-tertiary: #f2f2f2;
 
   --pal-success: #20bf6b;
-  --pal-success-rgb: 32, 191, 107;
+  --pal-success-background: #dbf5e7;
+  --pal-success-border: #90dfb5;
   --pal-success-on: #ffffff;
+
   --pal-error: #eb3b5a;
-  --pal-error-rgb: 235, 59, 90;
+  --pal-error-background: #fce0e5;
+  --pal-error-border: #f59ead;
   --pal-error-on: #ffffff;
+
   --pal-warning: #f7b731;
-  --pal-warning-rgb: 247, 183, 49;
+  --pal-warning-background: #fef3de;
+  --pal-warning-border: #fbdb99;
   --pal-warning-on: #ffffff;
 
-  --pal-text-base-rgb: 0, 0, 0;
-  --pal-text-primary: rgba(var(--pal-text-base-rgb), 1);
-  --pal-text-secondary: rgba(var(--pal-text-base-rgb), 0.6);
-  --pal-text-tertiary: rgba(var(--pal-text-base-rgb), 0.4);
+  --pal-info: #5332e6;
+  --pal-info-background: #e0dbf9;
+  --pal-info-border: #9f8eed;
+  --pal-info-on: #ffffff;
+
+  --pal-text-primary: #000000;
+  --pal-text-secondary: #333333;
+  --pal-text-tertiary: #666666;
   --pal-text-link: #5332e6;
   --pal-text-link-hover: #241080;
 
-  --pal-border-base-rgb: 0, 0, 0;
-  --pal-border-primary: rgba(var(--pal-text-base-rgb), 0.08);
-  --pal-border-secondary: rgba(var(--pal-text-base-rgb), 0.16);
+  --pal-border-primary: #ebebeb;
+  --pal-border-secondary: #e7e7e7;
 
   --pal-shadow-rbg: 0, 0, 0;
 
@@ -39,10 +44,7 @@
 
 @mixin dark-theme-palette {
   --pal-brand-primary: #5332e6;
-  // -rgb color is needed for rgba(). Hex color CSS variable doesn't work.
-  --pal-brand-primary-rgb: 83, 50, 230;
   --pal-brand-primary-hover: #937eef;
-  --pal-brand-primary-hover-rgb: 147, 126, 239;
   --pal-brand-primary-on: #ffffff;
 
   --pal-background-primary: #292d3e;
@@ -50,25 +52,33 @@
   --pal-background-tertiary: #222634;
 
   --pal-success: #26db7b;
-  --pal-success-rgb: 38, 219, 123;
+  --pal-success-background: #284445;
+  --pal-success-border: #257554;
   --pal-success-on: #ffffff;
+
   --pal-error: #ee5a74;
-  --pal-error-rgb: 238, 90, 116;
+  --pal-error-background: #482f42;
+  --pal-error-border: #89344c;
   --pal-error-on: #ffffff;
+
   --pal-warning: #f8c252;
-  --pal-warning-rgb: 248, 194, 82;
+  --pal-warning-background: #4a433c;
+  --pal-warning-border: #8f7138;
   --pal-warning-on: #ffffff;
 
-  --pal-text-base-rgb: 255, 255, 255;
-  --pal-text-primary: rgba(var(--pal-text-base-rgb), 1);
-  --pal-text-secondary: rgba(var(--pal-text-base-rgb), 0.6);
-  --pal-text-tertiary: rgba(var(--pal-text-base-rgb), 0.4);
+  --pal-info: #6260eb;
+  --pal-info-background: #2c2a57;
+  --pal-info-border: #33248c;
+  --pal-info-on: #ffffff;
+
+  --pal-text-primary: #ffffff;
+  --pal-text-secondary: #cccccc;
+  --pal-text-tertiary: #999999;
   --pal-text-link: #6260eb;
   --pal-text-link-hover: #937eef;
 
-  --pal-border-base-rgb: 255, 255, 255;
-  --pal-border-primary: rgba(var(--pal-text-base-rgb), 0.08);
-  --pal-border-secondary: rgba(var(--pal-text-base-rgb), 0.16);
+  --pal-border-primary: #3a3e4d;
+  --pal-border-secondary: #4b4f5d;
 
   --pal-shadow-rbg: 0, 0, 0;
 
