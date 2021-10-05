@@ -15,8 +15,8 @@ interface TextLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   iconLeft?: React.ReactNode;
   iconRight?: React.ReactNode;
   variant?: TextLinkVariant;
-  disabled?: Boolean;
-  underline?: Boolean;
+  disabled?: boolean;
+  underline?: boolean;
   children: string | React.ReactNode;
 }
 

@@ -13,7 +13,9 @@ interface LayoutComponent {
   Footer: React.FC<FooterProps>;
 }
 
-export const Layout: LayoutComponent = () => {};
+export const Layout: LayoutComponent = () => {
+  // do nothing
+};
 
 interface InsetProps {
   children: React.ReactNode;
