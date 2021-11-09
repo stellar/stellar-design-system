@@ -1,6 +1,6 @@
 {
   "name": "@stellar/design-system",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "author": "Stellar Development Foundation <hello@stellar.org>",
   "description": "Components for Stellar Development Foundation’s design system",
   "license": "Apache-2.0",
