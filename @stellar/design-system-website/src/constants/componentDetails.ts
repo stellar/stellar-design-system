@@ -1,4 +1,5 @@
 import { assets } from "constants/details/assets";
+import { avatars } from "constants/details/avatars";
 import { branding } from "constants/details/branding";
 import { buttons } from "constants/details/buttons";
 import { checkboxes } from "constants/details/checkboxes";
@@ -25,6 +26,7 @@ import { ComponentDetailsList } from "types/types.d";
 
 export const componentDetails: ComponentDetailsList = {
   assets,
+  avatars,
   branding,
   buttons,
   checkboxes,

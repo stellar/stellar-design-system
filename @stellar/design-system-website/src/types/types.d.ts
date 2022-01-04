@@ -6,6 +6,7 @@ export enum Routes {
 
 export enum ComponentDetailsId {
   assets = "assets",
+  avatars = "avatars",
   branding = "branding",
   buttons = "buttons",
   checkboxes = "checkboxes",
@@ -32,6 +33,7 @@ export enum ComponentDetailsId {
 
 interface ComponentDetailsList {
   assets: ComponentDetails;
+  avatars: ComponentDetails;
   branding: ComponentDetails;
   buttons: ComponentDetails;
   checkboxes: ComponentDetails;
