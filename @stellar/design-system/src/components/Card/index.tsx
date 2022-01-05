@@ -19,3 +19,5 @@ export const Card = ({ children, noPadding, noShadow }: CardProps) => {
     </div>
   );
 };
+
+Card.displayName = "Card";
