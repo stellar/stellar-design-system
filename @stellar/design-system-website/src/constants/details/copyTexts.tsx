@@ -26,11 +26,7 @@ export const copyTexts: ComponentDetails = {
       title: "With tooltip",
       description: "Done label is shown in the tooltip instead of inline",
       component: [
-        <CopyText
-          textToCopy="Test copy"
-          showTooltip
-          tooltipPosition={CopyText.tooltipPosition.right}
-        >
+        <CopyText textToCopy="Test copy" showTooltip>
           Copy with tooltip
         </CopyText>,
       ],
@@ -43,7 +39,7 @@ export const copyTexts: ComponentDetails = {
           textToCopy="Test copy"
           showCopyIcon
           showTooltip
-          tooltipPosition={CopyText.tooltipPosition.right}
+          tooltipPosition={CopyText.tooltipPosition.RIGHT}
         >
           <TextLink>Copy</TextLink>
         </CopyText>,
@@ -81,7 +77,20 @@ export const copyTexts: ComponentDetails = {
     },
     {
       prop: "tooltipPosition",
-      type: ["bottom", "right"],
+      type: [
+        "bottom",
+        "bottom-start",
+        "bottom-end",
+        "left",
+        "left-start",
+        "left-end",
+        "right",
+        "right-start",
+        "right-end",
+        "top",
+        "top-start",
+        "top-end",
+      ],
       default: "bottom",
       optional: true,
       description: "Position of the tooltip",

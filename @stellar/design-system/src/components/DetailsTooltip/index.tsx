@@ -1,14 +1,8 @@
-import { useRef, useState, useLayoutEffect } from "react";
-import { Tooltip } from "../Tooltip";
+import { Tooltip, TooltipPosition } from "../Tooltip";
 import { IconButton } from "../IconButton";
 import { Icon } from "../../icons";
 
 import "./styles.scss";
-
-enum TooltipPosition {
-  left = "left",
-  right = "right",
-}
 
 interface DetailsTooltipComponent {
   tooltipPosition: typeof TooltipPosition;
@@ -31,50 +25,16 @@ export const DetailsTooltip: React.FC<DetailsTooltipProps> &
   children,
   isInline,
   altText = "Learn more",
-  tooltipPosition = TooltipPosition.right,
+  tooltipPosition = TooltipPosition.RIGHT,
   customIcon = <Icon.Info />,
   customColor,
   customSize,
 }) => {
-  const toggleEl = useRef<null | HTMLDivElement>(null);
-  const tooltipEl = useRef<null | HTMLDivElement>(null);
-  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
-
-  useLayoutEffect(() => {
-    if (isTooltipVisible) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isTooltipVisible]);
-
-  const handleClickOutside = (event: MouseEvent) => {
-    // Do nothing if clicking tooltip itself or link inside the tooltip
-    if (
-      event.target === tooltipEl?.current ||
-      tooltipEl?.current?.contains(event.target as Node)
-    ) {
-      return;
-    }
-
-    if (!toggleEl?.current?.contains(event.target as Node)) {
-      setIsTooltipVisible(false);
-    }
-  };
-
   const getExtraClasses = () => {
     const classes: string[] = [];
 
     if (isInline) {
       classes.push("DetailsTooltip--inline");
-    }
-
-    if (isTooltipVisible) {
-      classes.push("DetailsTooltip--open");
     }
 
     return classes.join(" ");
@@ -83,21 +43,15 @@ export const DetailsTooltip: React.FC<DetailsTooltipProps> &
   return (
     <div className={`DetailsTooltip ${getExtraClasses()}`}>
       <div className="DetailsTooltip__component">{children}</div>
-      <div
-        ref={toggleEl}
-        className={`DetailsTooltip__button DetailsTooltip--${tooltipPosition}`}
-      >
-        <IconButton
-          altText={altText}
-          icon={customIcon}
-          customSize={customSize}
-          customColor={customColor}
-          onClick={() => setIsTooltipVisible(!isTooltipVisible)}
-        />
-
-        <div ref={tooltipEl} className="DetailsTooltip__tooltipWrapper">
-          <Tooltip isVisible={isTooltipVisible}>{details}</Tooltip>
-        </div>
+      <div className="DetailsTooltip__button">
+        <Tooltip content={details} position={tooltipPosition}>
+          <IconButton
+            altText={altText}
+            icon={customIcon}
+            customSize={customSize}
+            customColor={customColor}
+          />
+        </Tooltip>
       </div>
     </div>
   );

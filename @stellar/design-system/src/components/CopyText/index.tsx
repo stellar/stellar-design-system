@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
-import { Tooltip } from "../Tooltip";
+import { Tooltip, TooltipPosition } from "../Tooltip";
 import { Icon } from "../../icons";
 import "./styles.scss";
-
-enum TooltipPosition {
-  bottom = "bottom",
-  right = "right",
-}
 
 interface CopyTextComponent {
   tooltipPosition: typeof TooltipPosition;
@@ -28,7 +23,7 @@ export const CopyText: React.FC<CopyTextProps> & CopyTextComponent = ({
   showCopyIcon,
   showTooltip,
   doneLabel = "Copied",
-  tooltipPosition = TooltipPosition.bottom,
+  tooltipPosition = TooltipPosition.BOTTOM,
   title = "Copy",
   children,
 }) => {
@@ -63,26 +58,24 @@ export const CopyText: React.FC<CopyTextProps> & CopyTextComponent = ({
 
   return (
     <div className="CopyText">
-      <CopyToClipboard text={textToCopy} onCopy={handleCopyDone}>
-        <div title={title} role="button" className="CopyText__content">
-          {renderElement(children)}
+      <Tooltip
+        content={doneLabel}
+        position={tooltipPosition}
+        isVisible={showTooltip && isTooltipVisible}
+        disableClick
+      >
+        <CopyToClipboard text={textToCopy} onCopy={handleCopyDone}>
+          <div title={title} role="button" className="CopyText__content">
+            {renderElement(children)}
 
-          {showCopyIcon ? (
-            <div className="CopyText__content__copy-icon">
-              <Icon.Copy />
-            </div>
-          ) : null}
-        </div>
-      </CopyToClipboard>
-
-      {showTooltip ? (
-        <Tooltip
-          className={`CopyText__tooltip CopyText__tooltip--${tooltipPosition}`}
-          isVisible={isTooltipVisible}
-        >
-          {doneLabel}
-        </Tooltip>
-      ) : null}
+            {showCopyIcon ? (
+              <div className="CopyText__content__copy-icon">
+                <Icon.Copy />
+              </div>
+            ) : null}
+          </div>
+        </CopyToClipboard>
+      </Tooltip>
     </div>
   );
 };

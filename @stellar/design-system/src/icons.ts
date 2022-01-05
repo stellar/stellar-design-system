@@ -243,6 +243,7 @@ import { ReactComponent as ThumbsUp } from "./assets/icons/thumbs-up.svg";
 import { ReactComponent as ToggleLeft } from "./assets/icons/toggle-left.svg";
 import { ReactComponent as ToggleRight } from "./assets/icons/toggle-right.svg";
 import { ReactComponent as Tool } from "./assets/icons/tool.svg";
+import { ReactComponent as TooltipPoint } from "./assets/icons/tooltip-point.svg";
 import { ReactComponent as Trash2 } from "./assets/icons/trash-2.svg";
 import { ReactComponent as Trash } from "./assets/icons/trash.svg";
 import { ReactComponent as Trello } from "./assets/icons/trello.svg";
@@ -532,6 +533,7 @@ export const Icon = {
   ToggleLeft,
   ToggleRight,
   Tool,
+  TooltipPoint,
   Trash2,
   Trash,
   Trello,

@@ -11,10 +11,7 @@ export const detailsTooltips: ComponentDetails = {
       title: "Default tooltip",
       description: "Tooltip is positioned on the left.",
       component: [
-        <DetailsTooltip
-          details="More information to display inside the tooltip"
-          tooltipPosition={DetailsTooltip.tooltipPosition.left}
-        >
+        <DetailsTooltip details="More information to display inside the tooltip">
           <span>Info element</span>
         </DetailsTooltip>,
       ],
@@ -25,7 +22,6 @@ export const detailsTooltips: ComponentDetails = {
       component: [
         <DetailsTooltip
           details="More information to display inside the tooltip"
-          tooltipPosition={DetailsTooltip.tooltipPosition.left}
           customIcon={<Icon.HelpCircle />}
         >
           <span>Question element</span>
@@ -64,7 +60,20 @@ export const detailsTooltips: ComponentDetails = {
     },
     {
       prop: "tooltipPosition",
-      type: ["left", "right"],
+      type: [
+        "bottom",
+        "bottom-start",
+        "bottom-end",
+        "left",
+        "left-start",
+        "left-end",
+        "right",
+        "right-start",
+        "right-end",
+        "top",
+        "top-start",
+        "top-end",
+      ],
       default: "right",
       optional: true,
       description: "Position of the tooltip relative to the element",

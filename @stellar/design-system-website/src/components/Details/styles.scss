@@ -96,10 +96,18 @@
   }
 }
 
-td.Table__props {
+td {
   code {
-    &:not(:last-child) {
-      margin-right: 0.5rem;
+    word-break: normal;
+  }
+
+  &.Table__props {
+    max-width: 18.75rem;
+
+    code {
+      &:not(:last-child) {
+        margin-right: 0.5rem;
+      }
     }
   }
 }

@@ -1,5 +1,4 @@
 .CopyText {
-  position: relative;
   display: inline-block;
 
   &__content {
@@ -27,21 +26,6 @@
       &:hover {
         opacity: var(--opacity-disabled-button);
       }
-    }
-  }
-
-  &__tooltip {
-    top: 2.7rem;
-    right: -1rem;
-
-    &--bottom {
-      right: 50%;
-      transform: translateX(50%);
-    }
-
-    &--right {
-      top: 50%;
-      transform: translate(100%, -50%);
     }
   }
 }
