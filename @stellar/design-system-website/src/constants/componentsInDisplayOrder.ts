@@ -83,6 +83,10 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
     label: "Modals",
   },
   {
+    id: ComponentDetailsId.cards,
+    label: "Cards",
+  },
+  {
     id: ComponentDetailsId.layout,
     label: "Layout",
   },

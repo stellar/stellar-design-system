@@ -2,6 +2,7 @@ import { assets } from "constants/details/assets";
 import { avatars } from "constants/details/avatars";
 import { branding } from "constants/details/branding";
 import { buttons } from "constants/details/buttons";
+import { cards } from "constants/details/cards";
 import { checkboxes } from "constants/details/checkboxes";
 import { copyTexts } from "constants/details/copyTexts";
 import { identicons } from "constants/details/identicons";
@@ -29,6 +30,7 @@ export const componentDetails: ComponentDetailsList = {
   avatars,
   branding,
   buttons,
+  cards,
   checkboxes,
   copyTexts,
   detailsTooltips,
