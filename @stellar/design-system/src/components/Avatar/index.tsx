@@ -54,3 +54,5 @@ export const Avatar = ({ source, size, borderColor }: AvatarProps) => {
     </div>
   );
 };
+
+Avatar.displayName = "Avatar";
