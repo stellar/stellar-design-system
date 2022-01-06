@@ -44,7 +44,8 @@ interface HeaderProps {
     isEnabled: boolean;
     onOpen: () => void;
   };
-  children?: React.ReactNode;
+  contentCenter?: React.ReactElement;
+  contentRight?: React.ReactElement;
 }
 
 const stringToCamelcase = (str: string) =>
@@ -62,7 +63,8 @@ const Header: React.FC<HeaderProps> = ({
   onSignOut,
   showButtonBorder,
   menu,
-  children,
+  contentCenter,
+  contentRight,
 }: HeaderProps) => {
   // Set default mode to light, if there is no theme toggle
   useEffect(() => {
@@ -73,10 +75,21 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <div className="Layout__header">
-      <Inset>
-        <ProjectLogo title={projectTitle} link={projectLink} />
-        {children}
-        <div className="Layout__rightSide--inline">
+      <Layout.Inset>
+        {/* Left */}
+        <div className="Layout__header--left">
+          <ProjectLogo title={projectTitle} link={projectLink} />
+        </div>
+
+        {/* Center */}
+        {contentCenter ? (
+          <div className="Layout__header--center">{contentCenter}</div>
+        ) : null}
+
+        {/* Right */}
+        <div className="Layout__header--right">
+          {contentRight ?? null}
+
           {onSignOut ? (
             <TextLink id="sign-out-button" role="button" onClick={onSignOut}>
               Sign out
@@ -101,7 +114,7 @@ const Header: React.FC<HeaderProps> = ({
             />
           ) : null}
         </div>
-      </Inset>
+      </Layout.Inset>
     </div>
   );
 };

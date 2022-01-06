@@ -10,9 +10,7 @@ export const branding: ComponentDetails = {
     {
       title: "Project logo",
       description: "Project’s logo with a name and link.",
-      component: [
-        <ProjectLogo link="https://stellar.org" title="Project name" />,
-      ],
+      component: [<ProjectLogo title="Project name" />],
     },
   ],
   props: [
@@ -26,8 +24,8 @@ export const branding: ComponentDetails = {
     {
       prop: "link",
       type: ["string"],
-      default: null,
-      optional: false,
+      default: "/",
+      optional: true,
       description: "Project website link",
     },
   ],

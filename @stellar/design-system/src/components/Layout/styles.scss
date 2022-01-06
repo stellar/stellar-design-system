@@ -22,19 +22,11 @@
     align-items: stretch;
   }
 
-  // In header and footer
-  &__rightSide--inline {
+  &__inset,
+  &__header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-
-    & > * {
-      margin-left: 0.5rem;
-    }
-
-    // Text links need a bit more spacing
-    .TextLink:not(:last-child) {
-      margin-right: 1rem;
-    }
   }
 
   &__header {
@@ -48,9 +40,51 @@
     }
 
     .Layout__inset {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+
+      & > div {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+
+    .NavButton {
+      margin-right: -0.8rem;
+    }
+
+    &--left {
+      justify-content: flex-start;
+    }
+
+    &--center {
+      justify-content: center;
+      flex-grow: 1;
+
+      @media (max-width: 900px) {
+        min-width: 100%;
+        order: 1;
+      }
+    }
+
+    &--right {
+      justify-content: flex-end;
+    }
+  }
+
+  // In footer
+  &__rightSide--inline {
+    display: flex;
+    align-items: center;
+
+    & > * {
+      margin-left: 0.5rem;
+    }
+
+    // Text links need a bit more spacing
+    .TextLink:not(:last-child) {
+      margin-right: 1rem;
     }
   }
 

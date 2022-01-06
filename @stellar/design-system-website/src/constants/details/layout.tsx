@@ -17,11 +17,7 @@ export const layout: ComponentDetails = {
       title: "Default header",
       description: "",
       component: [
-        <Layout.Header
-          projectTitle="Design System"
-          projectLink="https://stellar.org"
-          hasDarkModeToggle
-        />,
+        <Layout.Header projectTitle="Design System" hasDarkModeToggle />,
       ],
     },
     {
@@ -86,7 +82,7 @@ export const layout: ComponentDetails = {
             prop: "projectLink",
             type: ["string"],
             default: null,
-            optional: false,
+            optional: true,
             description: "Link of the project",
           },
           {
@@ -118,11 +114,25 @@ export const layout: ComponentDetails = {
             description: "Show border around navigation buttons",
           },
           {
-            prop: "children",
-            type: ["ReactNode"],
+            prop: "contentCenter",
+            type: ["ReactElement"],
             default: null,
             optional: true,
-            description: "Custom content in the header",
+            description: "Custom content in the middle",
+          },
+          {
+            prop: "contentRight",
+            type: ["ReactElement"],
+            default: null,
+            optional: true,
+            description: "Custom content on the right",
+          },
+          {
+            prop: "menu",
+            type: ["{ isEnabled: boolean; onOpen: () => void; }"],
+            default: null,
+            optional: true,
+            description: "Show burger menu icon",
           },
         ],
       },
