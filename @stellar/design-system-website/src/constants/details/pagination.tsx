@@ -8,8 +8,8 @@ export const pagination: ComponentDetails = {
   shortDescription: "Range of pages for long lists",
   examples: [
     {
-      title: "Project logo",
-      description: "Project’s logo with a name and link.",
+      title: "Pagination",
+      description: "",
       component: [
         <Pagination
           pageSize={5}
