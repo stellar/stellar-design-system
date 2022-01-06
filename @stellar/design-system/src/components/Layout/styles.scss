@@ -22,16 +22,12 @@
     align-items: stretch;
   }
 
-  &__inset,
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
   &__header {
     --Layout-header-padding-vertical: 1rem;
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-top: var(--Layout-header-padding-vertical);
     padding-bottom: var(--Layout-header-padding-vertical);
 
@@ -40,6 +36,9 @@
     }
 
     .Layout__inset {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       gap: 0.5rem;
       flex-wrap: wrap;
 

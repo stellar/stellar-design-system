@@ -13,6 +13,7 @@ export * from "./Layout";
 export * from "./Loader";
 export * from "./Modal";
 export * from "./NavButton";
+export * from "./Pagination";
 export * from "./PieProgress";
 export * from "./ProjectLogo";
 export * from "./RadioButton";

@@ -91,6 +91,10 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
     label: "Layout",
   },
   {
+    id: ComponentDetailsId.pagination,
+    label: "Pagination",
+  },
+  {
     id: ComponentDetailsId.pieProgress,
     label: "Pie progress",
   },
