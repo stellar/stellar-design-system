@@ -14,17 +14,17 @@ interface TableColumnLabel {
   sortBy?: boolean;
 }
 
-interface TableProps<DataItem> {
-  data: DataItem[];
+interface TableProps<T> {
+  data: T[];
   columnLabels: TableColumnLabel[];
-  renderItemRow: (item: DataItem) => React.ReactElement;
+  renderItemRow: (item: T) => React.ReactElement;
   hideNumberColumn?: boolean;
   isLoading?: boolean;
   emptyMessage?: string;
   pageSize?: number;
 }
 
-export const Table = <DataItem extends Record<string, any>>({
+export const Table = <T extends Record<string, any>>({
   data,
   columnLabels,
   renderItemRow,
@@ -32,13 +32,13 @@ export const Table = <DataItem extends Record<string, any>>({
   isLoading,
   emptyMessage = "No data to show",
   pageSize,
-}: TableProps<DataItem>) => {
+}: TableProps<T>) => {
   const chunkData = useCallback(
-    (items: DataItem[]) => chunk(items, pageSize || items.length),
+    (items: T[]) => chunk(items, pageSize || items.length),
     [pageSize],
   );
 
-  const [localData, setLocalData] = useState<DataItem[][]>(chunkData(data));
+  const [localData, setLocalData] = useState<T[][]>(chunkData(data));
   const [currentSortKey, setCurrentSortKey] = useState<string | null>(null);
   const [sortOrder, setSortOder] = useState<SortOrder | null>(null);
   const [currentPage, setCurrentPage] = useState(1);

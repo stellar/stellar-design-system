@@ -66,7 +66,13 @@ const renderItemRow = (item: any) => (
 export const tables: ComponentDetails = {
   id: ComponentDetailsId.tables,
   title: "Tables",
-  description: `Display sets of data in a table. Table data can be sorted and with pagination.`,
+  description: (
+    <>
+      Display sets of data in a table. Table data can be sorted and with
+      pagination. If any of the table labels have <code>sortBy</code> flag
+      enabled, the table becomes sortable.
+    </>
+  ),
   shortDescription: "Display data in a table",
   examples: [
     {
@@ -106,21 +112,95 @@ export const tables: ComponentDetails = {
         />,
       ],
     },
+    {
+      title: "Table without data",
+      description: "",
+      component: [
+        <Table
+          columnLabels={sortableTableLabels}
+          data={[]}
+          renderItemRow={renderItemRow}
+        />,
+      ],
+    },
   ],
   props: [
     {
-      prop: "title",
+      prop: "data",
+      type: ["T[]"],
+      default: null,
+      optional: false,
+      description: "Data to display in table",
+    },
+    {
+      prop: "columnLabels",
+      type: ["TableColumnLabel[]"],
+      default: null,
+      optional: false,
+      description: "Column label data",
+    },
+    {
+      prop: "renderItemRow",
+      type: ["(item: T) => React.ReactElement"],
+      default: null,
+      optional: false,
+      description: "Function to render table rows",
+    },
+    {
+      prop: "hideNumberColumn",
+      type: ["boolean"],
+      default: null,
+      optional: true,
+      description: "Hide number column",
+    },
+    {
+      prop: "isLoading",
+      type: ["boolean"],
+      default: null,
+      optional: true,
+      description: "Set table in loading state",
+    },
+    {
+      prop: "emptyMessage",
+      type: ["string"],
+      default: "No data to show",
+      optional: true,
+      description: "Table empty message",
+    },
+    {
+      prop: "pageSize",
+      type: ["number"],
+      default: null,
+      optional: true,
+      description: "Page size for pagination",
+    },
+    {
+      prop: "TableColumnLabel",
+      type: [],
+      default: null,
+      optional: false,
+      description: "",
+    },
+    {
+      prop: "id",
       type: ["string"],
       default: null,
       optional: false,
-      description: "Project name",
+      description: "Path to data property in object, it is used in sorting",
     },
     {
-      prop: "link",
+      prop: "label",
       type: ["string"],
-      default: "/",
+      default: null,
+      optional: false,
+      description: "Column label",
+    },
+    {
+      prop: "sortBy",
+      type: ["boolean"],
+      default: null,
       optional: true,
-      description: "Project website link",
+      description: "Enable sorting for this column using ID",
     },
   ],
   externalProps: {
