@@ -91,6 +91,10 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
     label: "Layout",
   },
   {
+    id: ComponentDetailsId.tables,
+    label: "Tables",
+  },
+  {
     id: ComponentDetailsId.pagination,
     label: "Pagination",
   },

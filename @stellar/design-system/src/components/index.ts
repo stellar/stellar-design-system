@@ -19,6 +19,7 @@ export * from "./ProjectLogo";
 export * from "./RadioButton";
 export * from "./Select";
 export * from "./StatusBar";
+export * from "./Table";
 export * from "./Tag";
 export * from "./TextLink";
 export * from "./Toggle";

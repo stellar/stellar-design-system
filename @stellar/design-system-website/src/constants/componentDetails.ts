@@ -19,6 +19,7 @@ import { pieProgress } from "constants/details/pieProgress";
 import { radioButtons } from "constants/details/radioButtons";
 import { selects } from "constants/details/selects";
 import { statusBars } from "constants/details/statusBars";
+import { tables } from "constants/details/tables";
 import { tags } from "constants/details/tags";
 import { textLinks } from "constants/details/textLinks";
 import { toggles } from "constants/details/toggles";
@@ -48,6 +49,7 @@ export const componentDetails: ComponentDetailsList = {
   radioButtons,
   selects,
   statusBars,
+  tables,
   tags,
   textLinks,
   toggles,
