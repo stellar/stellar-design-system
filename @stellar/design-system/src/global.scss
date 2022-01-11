@@ -6,6 +6,7 @@
   --pal-background-primary: #ffffff;
   --pal-background-secondary: #fafafa;
   --pal-background-tertiary: #f2f2f2;
+  --pal-background-tooltip: #191b25;
 
   --pal-success: #20bf6b;
   --pal-success-background: #dbf5e7;
@@ -50,6 +51,7 @@
   --pal-background-primary: #292d3e;
   --pal-background-secondary: #303448;
   --pal-background-tertiary: #222634;
+  --pal-background-tooltip: #191b25;
 
   --pal-success: #26db7b;
   --pal-success-background: #284445;
@@ -112,11 +114,14 @@
   --opacity-disabled-button: 0.6;
 
   // Layout
-  --layout-window-width-min: 320px;
+  --layout-window-width-min: 360px;
   --layout-window-width-max: 1296px;
 
   // Animations
   --anim-transition-default: cubic-bezier(0.65, 0.05, 0.36, 1) 200ms;
+
+  // Avatar
+  --Avatar-image-size: 100%;
 }
 
 body.light-mode {
@@ -265,77 +270,4 @@ div#root {
 
 .warning {
   color: var(--pal-warning);
-}
-
-// Table
-table.Table {
-  --table-min-width: 900px;
-
-  width: 100%;
-  border-collapse: collapse;
-  font-size: var(--font-size-secondary);
-  line-height: 1.5rem;
-  color: var(--pal-text-primary);
-  min-width: var(--table-min-width);
-  color: var(--pal-text-secondary);
-
-  th {
-    line-height: 1.125rem;
-    color: var(--pal-text-primary);
-    font-weight: var(--font-weight-medium);
-    text-transform: uppercase;
-    text-align: left;
-    padding-top: 1.0625rem;
-    padding-bottom: 1.0625rem;
-
-    @media (min-width: 900px) {
-      padding-top: 0;
-    }
-  }
-
-  thead,
-  tr:not(:last-child) {
-    border-bottom: 1px solid var(--pal-border-primary);
-  }
-
-  th,
-  td {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    vertical-align: top;
-
-    label {
-      margin-bottom: 0;
-    }
-  }
-
-  th:first-child,
-  td:first-child {
-    padding-left: 0;
-
-    @media (max-width: 900px) {
-      // Sticky first column
-      &:not(:last-child) {
-        background-color: var(--pal-background-secondary);
-        left: 0;
-        position: sticky;
-        padding-left: 1rem;
-        box-shadow: 0 0 0.5rem rgba(var(--pal-shadow-rbg), 0.48);
-        clip-path: inset(0 -0.5rem 0 0);
-      }
-    }
-  }
-
-  th:last-child:not(:first-child),
-  td:last-child:not(:first-child) {
-    padding-right: 0;
-    text-align: right;
-  }
-
-  td {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    word-break: break-word;
-    vertical-align: middle;
-  }
 }

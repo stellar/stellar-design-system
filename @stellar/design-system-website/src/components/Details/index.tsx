@@ -51,7 +51,7 @@ export const Details = ({
     renderExternalProps?: ComponentExternalProps,
   ) => (
     <>
-      <div className="TableContainer">
+      <div className="DetailsTableContainer">
         <table className="Table">
           <thead>
             <tr>

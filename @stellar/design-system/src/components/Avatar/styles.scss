@@ -1,0 +1,59 @@
+.Avatar {
+  --Avatar-size: 3rem;
+  --Avatar-image-size: 70%;
+  --Avatar-border-color: var(--pal-background-primary);
+  --Avatar-border-width: calc(var(--Avatar-size) / 12);
+  --Avatar-background-color: var(--pal-background-secondary);
+  --Avatar-icon-color: var(--pal-text-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  %borderRadius {
+    border-radius: calc(var(--Avatar-size) / 2);
+  }
+
+  %avatarDimensions {
+    width: var(--Avatar-image-size);
+    height: var(--Avatar-image-size);
+  }
+
+  &__item {
+    @extend %borderRadius;
+    width: var(--Avatar-size);
+    height: var(--Avatar-size);
+    background-color: var(--Avatar-background-color);
+    border: var(--Avatar-border-width) solid var(--Avatar-border-color);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      @extend %avatarDimensions;
+      // add white background to all icons regardless of dark mode
+      background-color: #fff;
+      display: block;
+    }
+
+    &__icon {
+      @extend %avatarDimensions;
+      svg {
+        width: 100%;
+        height: 100%;
+        stroke: var(--Avatar-icon-color);
+      }
+    }
+
+    &__bullet {
+      @extend %avatarDimensions;
+      @extend %borderRadius;
+      background-color: var(--pal-brand-primary);
+    }
+
+    &:not(:first-child) {
+      margin-left: calc(-1 * calc(var(--Avatar-size) / 2));
+    }
+  }
+}

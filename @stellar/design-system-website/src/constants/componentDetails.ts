@@ -1,6 +1,8 @@
 import { assets } from "constants/details/assets";
+import { avatars } from "constants/details/avatars";
 import { branding } from "constants/details/branding";
 import { buttons } from "constants/details/buttons";
+import { cards } from "constants/details/cards";
 import { checkboxes } from "constants/details/checkboxes";
 import { copyTexts } from "constants/details/copyTexts";
 import { identicons } from "constants/details/identicons";
@@ -12,10 +14,12 @@ import { layout } from "constants/details/layout";
 import { loaders } from "constants/details/loaders";
 import { modals } from "constants/details/modals";
 import { navButtons } from "constants/details/navButtons";
+import { pagination } from "constants/details/pagination";
 import { pieProgress } from "constants/details/pieProgress";
 import { radioButtons } from "constants/details/radioButtons";
 import { selects } from "constants/details/selects";
 import { statusBars } from "constants/details/statusBars";
+import { tables } from "constants/details/tables";
 import { tags } from "constants/details/tags";
 import { textLinks } from "constants/details/textLinks";
 import { toggles } from "constants/details/toggles";
@@ -25,8 +29,10 @@ import { ComponentDetailsList } from "types/types.d";
 
 export const componentDetails: ComponentDetailsList = {
   assets,
+  avatars,
   branding,
   buttons,
+  cards,
   checkboxes,
   copyTexts,
   detailsTooltips,
@@ -38,10 +44,12 @@ export const componentDetails: ComponentDetailsList = {
   loaders,
   modals,
   navButtons,
+  pagination,
   pieProgress,
   radioButtons,
   selects,
   statusBars,
+  tables,
   tags,
   textLinks,
   toggles,

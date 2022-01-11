@@ -19,6 +19,10 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
     label: "Assets",
   },
   {
+    id: ComponentDetailsId.avatars,
+    label: "Avatars",
+  },
+  {
     id: ComponentDetailsId.identicons,
     label: "Identicons",
   },
@@ -79,8 +83,20 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
     label: "Modals",
   },
   {
+    id: ComponentDetailsId.cards,
+    label: "Cards",
+  },
+  {
     id: ComponentDetailsId.layout,
     label: "Layout",
+  },
+  {
+    id: ComponentDetailsId.tables,
+    label: "Tables",
+  },
+  {
+    id: ComponentDetailsId.pagination,
+    label: "Pagination",
   },
   {
     id: ComponentDetailsId.pieProgress,

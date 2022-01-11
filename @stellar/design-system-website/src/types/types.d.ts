@@ -6,8 +6,10 @@ export enum Routes {
 
 export enum ComponentDetailsId {
   assets = "assets",
+  avatars = "avatars",
   branding = "branding",
   buttons = "buttons",
+  cards = "cards",
   checkboxes = "checkboxes",
   copyTexts = "copyTexts",
   detailsTooltips = "detailsTooltips",
@@ -19,10 +21,12 @@ export enum ComponentDetailsId {
   loaders = "loaders",
   modals = "modals",
   navButtons = "navButtons",
+  pagination = "pagination",
   pieProgress = "pieProgress",
   radioButtons = "radioButtons",
   selects = "selects",
   statusBars = "statusBars",
+  tables = "tables",
   tags = "tags",
   textLinks = "textLinks",
   toggles = "toggles",
@@ -32,8 +36,10 @@ export enum ComponentDetailsId {
 
 interface ComponentDetailsList {
   assets: ComponentDetails;
+  avatars: ComponentDetails;
   branding: ComponentDetails;
   buttons: ComponentDetails;
+  cards: ComponentDetails;
   checkboxes: ComponentDetails;
   copyTexts: ComponentDetails;
   detailsTooltips: ComponentDetails;
@@ -45,10 +51,12 @@ interface ComponentDetailsList {
   loaders: ComponentDetails;
   modals: ComponentDetails;
   navButtons: ComponentDetails;
+  pagination: ComponentDetails;
   pieProgress: ComponentDetails;
   radioButtons: ComponentDetails;
   selects: ComponentDetails;
   statusBars: ComponentDetails;
+  tables: ComponentDetails;
   tags: ComponentDetails;
   textLinks: ComponentDetails;
   toggles: ComponentDetails;

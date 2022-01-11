@@ -1,23 +1,94 @@
 .Tooltip {
-  position: absolute;
-  max-width: 16.875rem;
-  border-radius: 0.125rem;
-  border: 1px solid var(--pal-info-border);
+  --Tooltip-arrow-size: 1rem;
+  --Tooltip-arrow-offset: calc(-1 * var(--Tooltip-arrow-size));
+
+  position: relative;
   z-index: var(--z-index-tooltip);
-  cursor: default;
+  display: inline-block;
 
   &__content {
-    padding: 0.5rem 1rem;
-    background-color: var(--pal-info-background);
-    color: var(--pal-text-secondary);
-    font-size: var(--font-size-secondary);
-    line-height: 1.5em;
-    font-weight: var(--font-weight-normal);
-    text-transform: none;
+    width: max-content;
+    max-width: 16.875rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--pal-background-tooltip);
+    background-color: var(--pal-background-tooltip);
+    cursor: default;
+    box-shadow: 0 1rem 1rem rgba(var(--pal-shadow-rbg), 0.16);
 
-    a {
-      color: inherit;
-      white-space: nowrap;
+    &__container {
+      padding: 1rem;
+      color: var(--pal-brand-primary-on);
+      font-size: var(--font-size-secondary);
+      line-height: 1.25rem;
+      font-weight: var(--font-weight-normal);
+      text-align: left;
+      text-transform: none;
+
+      a {
+        color: inherit;
+        white-space: nowrap;
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    &__arrow {
+      position: absolute;
+      width: var(--Tooltip-arrow-size);
+      height: var(--Tooltip-arrow-size);
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: var(--pal-background-tooltip);
+      }
+    }
+
+    &[data-popper-placement="top"],
+    &[data-popper-placement="top-start"],
+    &[data-popper-placement="top-end"] {
+      .Tooltip__content__arrow {
+        bottom: var(--Tooltip-arrow-offset);
+
+        svg {
+          transform: rotate(270deg);
+        }
+      }
+    }
+
+    &[data-popper-placement="bottom"],
+    &[data-popper-placement="bottom-start"],
+    &[data-popper-placement="bottom-end"] {
+      .Tooltip__content__arrow {
+        top: var(--Tooltip-arrow-offset);
+
+        svg {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    &[data-popper-placement="left"],
+    &[data-popper-placement="left-start"],
+    &[data-popper-placement="left-end"] {
+      .Tooltip__content__arrow {
+        right: var(--Tooltip-arrow-offset);
+
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    &[data-popper-placement="right"],
+    &[data-popper-placement="right-start"],
+    &[data-popper-placement="right-end"] {
+      .Tooltip__content__arrow {
+        left: var(--Tooltip-arrow-offset);
+      }
     }
   }
 }
