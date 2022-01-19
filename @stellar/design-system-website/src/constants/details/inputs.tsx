@@ -99,7 +99,7 @@ export const inputs: ComponentDetails = {
     },
     {
       prop: "label",
-      type: ["string"],
+      type: ["string", "ReactNode"],
       default: null,
       optional: true,
       description: "Label of the input",

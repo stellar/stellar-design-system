@@ -6,7 +6,7 @@ import "./styles.scss";
 
 interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   id: string;
-  label?: string;
+  label?: string | React.ReactNode;
   leftElement?: string | React.ReactNode;
   rightElement?: string | React.ReactNode;
   note?: string | React.ReactNode;
