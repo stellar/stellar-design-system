@@ -126,6 +126,13 @@ export const tables: ComponentDetails = {
   ],
   props: [
     {
+      prop: "id",
+      type: ["string"],
+      default: "table",
+      optional: true,
+      description: "Optional ID used for row keys",
+    },
+    {
       prop: "data",
       type: ["T[]"],
       default: null,

@@ -15,6 +15,7 @@ interface TableColumnLabel {
 }
 
 interface TableProps<T> {
+  id?: string;
   data: T[];
   columnLabels: TableColumnLabel[];
   renderItemRow: (item: T) => React.ReactElement;
@@ -25,6 +26,7 @@ interface TableProps<T> {
 }
 
 export const Table = <T extends Record<string, any>>({
+  id = "table",
   data,
   columnLabels,
   renderItemRow,
@@ -138,7 +140,7 @@ export const Table = <T extends Record<string, any>>({
                   /* eslint-disable react/no-array-index-key */
                   <tr
                     className={item.href ? `Table__clickableRow` : ""}
-                    key={`row-${index}`}
+                    key={`${id}-row-${index}`}
                     onClick={() => (item.href ? history.push(item.href) : null)}
                   >
                     {hideNumberColumn ? null : (
