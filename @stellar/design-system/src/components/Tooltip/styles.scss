@@ -6,6 +6,10 @@
   z-index: var(--z-index-tooltip);
   display: inline-block;
 
+  &--opened {
+    z-index: calc(var(--z-index-tooltip) + 1);
+  }
+
   &__content {
     width: max-content;
     max-width: 16.875rem;
