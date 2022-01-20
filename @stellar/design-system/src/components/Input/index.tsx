@@ -5,7 +5,7 @@ import "./styles.scss";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
-  label?: string;
+  label?: string | React.ReactNode;
   leftElement?: string | React.ReactNode;
   rightElement?: string | React.ReactNode;
   note?: string | React.ReactNode;

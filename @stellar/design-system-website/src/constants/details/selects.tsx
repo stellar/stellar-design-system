@@ -95,7 +95,7 @@ export const selects: ComponentDetails = {
     },
     {
       prop: "label",
-      type: ["string"],
+      type: ["string", "ReactNode"],
       default: null,
       optional: true,
       description: "Label of the select",

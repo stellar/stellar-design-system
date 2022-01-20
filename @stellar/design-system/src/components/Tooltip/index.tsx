@@ -100,7 +100,7 @@ export const Tooltip: React.FC<TooltipProps> & TooltipComponent = ({
   }, [isTooltipVisible, handleClickOutside, disableClick]);
 
   return (
-    <div className="Tooltip">
+    <div className={`Tooltip ${isTooltipVisible ? "Tooltip--opened" : ""}`}>
       <div
         ref={referenceEl}
         className="Tooltip__component"
