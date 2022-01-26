@@ -298,7 +298,7 @@ export const buttons: ComponentDetails = {
       type: ["Boolean"],
       default: "false",
       optional: true,
-      description: "Width of the button",
+      description: "Sets width of the button to parent container",
     },
   ],
   externalProps: {
