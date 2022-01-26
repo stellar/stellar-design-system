@@ -13,7 +13,7 @@
     "lint-tsc": "tsc --noEmit"
   },
   "dependencies": {
-    "@stellar/design-system": "^0.5.0",
+    "@stellar/design-system": "^0.6.0",
     "lodash": "^4.17.21",
     "prism-react-renderer": "^1.2.1",
     "react": "^17.0.2",

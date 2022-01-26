@@ -25,6 +25,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   isLoading?: boolean;
   size?: ButtonSize;
+  fullWidth?: boolean;
   children: string | React.ReactNode;
 }
 
@@ -34,12 +35,14 @@ export const Button: React.FC<ButtonProps> & ButtonComponent = ({
   variant = ButtonVariant.primary,
   isLoading,
   size = ButtonSize.default,
+  fullWidth,
   children,
   ...props
 }) => {
   const additionalClasses = [
     `Button--${variant}`,
     ...(size !== ButtonSize.default ? [`Button--${size}`] : []),
+    ...(fullWidth ? [`Button--full-width`] : []),
   ].join(" ");
 
   return (
