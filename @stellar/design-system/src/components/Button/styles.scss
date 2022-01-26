@@ -80,6 +80,10 @@
     }
   }
 
+  &--full-width {
+    width: 100%;
+  }
+
   &:disabled {
     cursor: not-allowed;
     opacity: var(--opacity-disabled-button);
