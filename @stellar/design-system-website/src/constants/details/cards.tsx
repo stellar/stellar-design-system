@@ -21,6 +21,11 @@ export const cards: ComponentDetails = {
         </Card>,
       ],
     },
+    {
+      title: "Card with highlight",
+      description: "",
+      component: [<Card variant={Card.variant.highlight}>Content</Card>],
+    },
   ],
   props: [
     {
@@ -43,6 +48,13 @@ export const cards: ComponentDetails = {
       default: null,
       optional: true,
       description: "Remove card shadow",
+    },
+    {
+      prop: "variant",
+      type: ["default", "highlight"],
+      default: "default",
+      optional: true,
+      description: "Variant of the card",
     },
   ],
   externalProps: {
