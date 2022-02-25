@@ -1,6 +1,8 @@
 import { Input, IconButton, Icon } from "@stellar/design-system";
 import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 
+import { Field } from "./mocks";
+
 export const inputs: ComponentDetails = {
   id: ComponentDetailsId.inputs,
   title: "Inputs",
@@ -88,6 +90,18 @@ export const inputs: ComponentDetails = {
         />,
       ],
     },
+    {
+      title: "Input with custom input",
+      description: "",
+      component: [
+        <Input
+          customInput={<Field />}
+          id="input-12"
+          label="Label"
+          placeholder="Placeholder"
+        />,
+      ],
+    },
   ],
   props: [
     {
@@ -131,6 +145,14 @@ export const inputs: ComponentDetails = {
       default: null,
       optional: true,
       description: "Error message of the input",
+    },
+    {
+      prop: "customInput",
+      type: ["React.ReactNode"],
+      default: null,
+      optional: true,
+      description:
+        "Use a specific input rather than a generic HTML input (useful for Formik or otherwise controlled inputs)",
     },
   ],
   externalProps: {
