@@ -1,9 +1,10 @@
-import React from "react";
+import React, { cloneElement } from "react";
 import { FieldElement } from "../utils/FieldElement";
 import { FieldNote } from "../utils/FieldNote";
 import "./styles.scss";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  customInput?: React.ReactElement;
   id: string;
   label?: string | React.ReactNode;
   leftElement?: string | React.ReactNode;
@@ -13,6 +14,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const Input: React.FC<InputProps> = ({
+  customInput,
   id,
   label,
   leftElement,
@@ -26,6 +28,11 @@ export const Input: React.FC<InputProps> = ({
     ...(error ? ["Input--error"] : []),
   ].join(" ");
 
+  const baseInputProps = {
+    id,
+    "aria-invalid": !!error,
+  };
+
   return (
     <div className={`Input ${additionalClasses}`}>
       {label && <label htmlFor={id}>{label}</label>}
@@ -38,7 +45,11 @@ export const Input: React.FC<InputProps> = ({
         )}
 
         <div className="Input__wrapper">
-          <input id={id} aria-invalid={!!error} {...props} />
+          {customInput ? (
+            cloneElement(customInput, { ...baseInputProps, ...props })
+          ) : (
+            <input {...baseInputProps} {...props} />
+          )}
         </div>
 
         {rightElement && (

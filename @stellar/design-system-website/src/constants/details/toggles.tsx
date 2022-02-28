@@ -1,6 +1,8 @@
 import { Toggle } from "@stellar/design-system";
 import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 
+import { Field } from "./mocks";
+
 export const toggles: ComponentDetails = {
   id: ComponentDetailsId.toggles,
   title: "Toggles",
@@ -16,24 +18,42 @@ export const toggles: ComponentDetails = {
       title: "Default",
       description: "",
       component: [
-        <Toggle id="toggle-1" checked={false} onChange={() => {
-          // do nothing
-        }} />,
-        <Toggle id="toggle-2" checked={false} onChange={() => {
-          // do nothing
-        }} disabled />,
+        <Toggle
+          id="toggle-1"
+          checked={false}
+          onChange={() => {
+            // do nothing
+          }}
+        />,
+        <Toggle
+          id="toggle-2"
+          checked={false}
+          onChange={() => {
+            // do nothing
+          }}
+          disabled
+        />,
       ],
     },
     {
       title: "Toggle on",
       description: "",
       component: [
-        <Toggle id="toggle-3" checked={true} onChange={() => {
-          // do nothing
-        }} />,
-        <Toggle id="toggle-4" checked={true} onChange={() => {
-          // do nothing
-        }} disabled />,
+        <Toggle
+          id="toggle-3"
+          checked={true}
+          onChange={() => {
+            // do nothing
+          }}
+        />,
+        <Toggle
+          id="toggle-4"
+          checked={true}
+          onChange={() => {
+            // do nothing
+          }}
+          disabled
+        />,
       ],
     },
     {
@@ -140,6 +160,13 @@ export const toggles: ComponentDetails = {
         />,
       ],
     },
+    {
+      title: "Toggle with custom input",
+      description: "",
+      component: [
+        <Toggle customInput={<Field />} checked={true} id="toggle-13" />,
+      ],
+    },
   ],
   props: [
     {
@@ -190,6 +217,14 @@ export const toggles: ComponentDetails = {
       default: "left",
       optional: true,
       description: "Position of the label",
+    },
+    {
+      prop: "customInput",
+      type: ["React.ReactNode"],
+      default: null,
+      optional: true,
+      description:
+        "Use a specific input rather than a generic HTML input (useful for Formik or otherwise controlled inputs)",
     },
   ],
   externalProps: {
