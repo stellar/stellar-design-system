@@ -197,7 +197,7 @@ export const tables: ComponentDetails = {
     },
     {
       prop: "label",
-      type: ["string"],
+      type: ["string", "ReactNode"],
       default: null,
       optional: false,
       description: "Column label",
