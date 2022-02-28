@@ -10,7 +10,7 @@ import "./styles.scss";
 
 interface TableColumnLabel {
   id: string;
-  label: string;
+  label: string | React.ReactNode;
   sortBy?: boolean;
 }
 
