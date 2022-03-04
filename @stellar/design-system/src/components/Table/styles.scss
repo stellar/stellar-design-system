@@ -22,15 +22,39 @@
   overflow-x: auto;
 }
 
-table.Table {
-  --table-min-width: 900px;
+@mixin tableBreakpoint($bp) {
+  &[data-breakpoint="#{$bp}"] {
+    min-width: #{$bp}px;
 
+    th {
+      @media (min-width: #{$bp}px) {
+        padding-top: 0;
+      }
+    }
+
+    th:first-child,
+    td:first-child {
+      @media (max-width: #{$bp}px) {
+        // Sticky first column
+        &:not(:last-child) {
+          background-color: var(--pal-background-secondary);
+          left: 0;
+          position: sticky;
+          padding-left: 1rem;
+          box-shadow: 0 0 0.5rem rgba(var(--pal-shadow-rbg), 0.48);
+          clip-path: inset(0 -0.5rem 0 0);
+        }
+      }
+    }
+  }
+}
+
+table.Table {
   width: 100%;
   border-collapse: collapse;
   font-size: var(--font-size-secondary);
   line-height: 1.5rem;
   color: var(--pal-text-primary);
-  min-width: var(--table-min-width);
   color: var(--pal-text-secondary);
 
   th {
@@ -41,10 +65,6 @@ table.Table {
     text-align: left;
     padding-top: 1.0625rem;
     padding-bottom: 1.0625rem;
-
-    @media (min-width: 900px) {
-      padding-top: 0;
-    }
   }
 
   thead,
@@ -66,19 +86,15 @@ table.Table {
   th:first-child,
   td:first-child {
     padding-left: 0;
-
-    @media (max-width: 900px) {
-      // Sticky first column
-      &:not(:last-child) {
-        background-color: var(--pal-background-secondary);
-        left: 0;
-        position: sticky;
-        padding-left: 1rem;
-        box-shadow: 0 0 0.5rem rgba(var(--pal-shadow-rbg), 0.48);
-        clip-path: inset(0 -0.5rem 0 0);
-      }
-    }
   }
+
+  @include tableBreakpoint(900);
+  @include tableBreakpoint(800);
+  @include tableBreakpoint(700);
+  @include tableBreakpoint(600);
+  @include tableBreakpoint(500);
+  @include tableBreakpoint(400);
+  @include tableBreakpoint(300);
 
   td {
     padding-top: 1rem;

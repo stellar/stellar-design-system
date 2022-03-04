@@ -84,6 +84,7 @@ export const tables: ComponentDetails = {
           data={tableData}
           renderItemRow={renderItemRow}
           hideNumberColumn
+          breakpoint={400}
         />,
       ],
     },
@@ -96,6 +97,7 @@ export const tables: ComponentDetails = {
           data={tableData}
           renderItemRow={renderItemRow}
           pageSize={2}
+          breakpoint={400}
         />,
       ],
     },
@@ -108,6 +110,7 @@ export const tables: ComponentDetails = {
           data={tableData}
           renderItemRow={renderItemRow}
           pageSize={2}
+          breakpoint={400}
           isLoading
         />,
       ],
@@ -120,6 +123,7 @@ export const tables: ComponentDetails = {
           columnLabels={sortableTableLabels}
           data={[]}
           renderItemRow={renderItemRow}
+          breakpoint={400}
         />,
       ],
     },
@@ -152,6 +156,13 @@ export const tables: ComponentDetails = {
       default: null,
       optional: false,
       description: "Function to render table rows",
+    },
+    {
+      prop: "breakpoint",
+      type: ["300", "400", "500", "600", "700", "800", "900"],
+      default: null,
+      optional: false,
+      description: "Media query breakpoint to show sticky column layout",
     },
     {
       prop: "hideNumberColumn",
