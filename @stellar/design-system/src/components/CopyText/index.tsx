@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { Tooltip, TooltipPosition } from "../Tooltip";
-import { Icon } from "../../icons";
 import "./styles.scss";
 
 interface CopyTextComponent {
@@ -10,7 +9,6 @@ interface CopyTextComponent {
 
 interface CopyTextProps {
   textToCopy: string;
-  showCopyIcon?: boolean;
   showTooltip?: boolean;
   doneLabel?: string;
   tooltipPosition?: TooltipPosition;
@@ -20,7 +18,6 @@ interface CopyTextProps {
 
 export const CopyText: React.FC<CopyTextProps> & CopyTextComponent = ({
   textToCopy,
-  showCopyIcon,
   showTooltip,
   doneLabel = "Copied",
   tooltipPosition = TooltipPosition.BOTTOM,
@@ -67,12 +64,6 @@ export const CopyText: React.FC<CopyTextProps> & CopyTextComponent = ({
         <CopyToClipboard text={textToCopy} onCopy={handleCopyDone}>
           <div title={title} role="button" className="CopyText__content">
             {renderElement(children)}
-
-            {showCopyIcon ? (
-              <div className="CopyText__content__copy-icon">
-                <Icon.Copy />
-              </div>
-            ) : null}
           </div>
         </CopyToClipboard>
       </Tooltip>

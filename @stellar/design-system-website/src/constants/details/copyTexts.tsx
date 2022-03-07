@@ -1,4 +1,4 @@
-import { CopyText, TextLink } from "@stellar/design-system";
+import { CopyText, TextLink, IconButton } from "@stellar/design-system";
 import { ComponentDetails, ComponentDetailsId } from "types/types.d";
 
 export const copyTexts: ComponentDetails = {
@@ -32,16 +32,18 @@ export const copyTexts: ComponentDetails = {
       ],
     },
     {
-      title: "With copy icon",
+      title: "Using Icon button copy preset",
       description: "Text link with copy icon and tooltip",
       component: [
         <CopyText
           textToCopy="Test copy"
-          showCopyIcon
           showTooltip
           tooltipPosition={CopyText.tooltipPosition.RIGHT}
         >
-          <TextLink>Copy</TextLink>
+          <IconButton
+            preset={IconButton.preset.copy}
+            variant={IconButton.variant.highlight}
+          />
         </CopyText>,
       ],
     },
@@ -53,13 +55,6 @@ export const copyTexts: ComponentDetails = {
       default: null,
       optional: false,
       description: "Text to copy",
-    },
-    {
-      prop: "showCopyIcon",
-      type: ["boolean"],
-      default: null,
-      optional: true,
-      description: "Flag to enable copy icon",
     },
     {
       prop: "showTooltip",
