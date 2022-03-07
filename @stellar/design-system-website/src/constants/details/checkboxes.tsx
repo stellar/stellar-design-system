@@ -50,6 +50,22 @@ export const checkboxes: ComponentDetails = {
         />,
       ],
     },
+    {
+      title: "Checkbox with note / error",
+      description: "",
+      component: [
+        <Checkbox
+          id="checkbox-7"
+          label="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia reprehenderit ipsam facilis"
+          note="Note message"
+        />,
+        <Checkbox
+          id="checkbox-8"
+          label="Illum odio veritatis corporis nihil asperiores eum nam in error"
+          error="Error message"
+        />,
+      ],
+    },
   ],
   props: [
     {
