@@ -82,6 +82,20 @@ export const checkboxes: ComponentDetails = {
       optional: true,
       description: "Label of the checkbox",
     },
+    {
+      prop: "note",
+      type: ["string", "ReactNode"],
+      default: null,
+      optional: true,
+      description: "Note message of the checkbox",
+    },
+    {
+      prop: "error",
+      type: ["string", "ReactNode"],
+      default: null,
+      optional: true,
+      description: "Error message of the checkbox",
+    },
   ],
   externalProps: {
     link: "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes",
