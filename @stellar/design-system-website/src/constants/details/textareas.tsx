@@ -94,6 +94,13 @@ export const textareas: ComponentDetails = {
       description: "ID of the textarea should be unique",
     },
     {
+      prop: "children",
+      type: ["string"],
+      default: "",
+      optional: true,
+      description: "Content of the textarea",
+    },
+    {
       prop: "label",
       type: ["string", "ReactNode"],
       default: null,
