@@ -21,6 +21,7 @@ export * from "./Select";
 export * from "./StatusBar";
 export * from "./Table";
 export * from "./Tag";
+export * from "./Textarea";
 export * from "./TextLink";
 export * from "./Toggle";
 export * from "./Tooltip";
