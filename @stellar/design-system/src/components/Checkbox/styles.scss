@@ -1,18 +1,20 @@
 @use "../../mixins.scss";
 
 .Checkbox {
-  display: flex;
-  align-items: center;
-  position: relative;
+  &__container {
+    display: flex;
+    align-items: center;
+    position: relative;
 
-  @include mixins.checkbox-radio-base-selectors("checkbox");
+    @include mixins.checkbox-radio-base-selectors("checkbox");
 
-  label {
-    @include mixins.checkbox-radio-label;
+    label {
+      @include mixins.checkbox-radio-label;
 
-    &::before {
-      @include mixins.checkbox-radio-container;
-      border-radius: 0.25rem;
+      &::before {
+        @include mixins.checkbox-radio-container;
+        border-radius: 0.25rem;
+      }
     }
   }
 
@@ -29,6 +31,12 @@
       @include mixins.svg-color(var(--pal-brand-primary-on));
       width: var(--checkbox-selected-size);
       height: var(--checkbox-selected-size);
+    }
+  }
+
+  &--error {
+    label::before {
+      border-color: var(--pal-error);
     }
   }
 

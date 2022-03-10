@@ -4,7 +4,6 @@
   --IconButton-size: 1.25rem;
 
   cursor: pointer;
-  width: var(--IconButton-size);
   height: var(--IconButton-size);
   flex-shrink: 0;
   border: none;
@@ -18,9 +17,16 @@
   transition: opacity var(--anim-transition-default);
 
   svg {
-    width: 100%;
-    height: 100%;
+    width: var(--IconButton-size);
+    height: var(--IconButton-size);
     @include mixins.svg-color(var(--IconButton-color));
+  }
+
+  &__label {
+    color: var(--IconButton-color);
+    margin-right: 0.5rem;
+    font-weight: var(--font-weight-medium);
+    font-size: max(1rem, calc(var(--IconButton-size) * 0.75));
   }
 
   &--default {

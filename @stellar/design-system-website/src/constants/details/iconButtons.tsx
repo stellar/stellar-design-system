@@ -9,7 +9,8 @@ export const iconButtons: ComponentDetails = {
       <code>IconButton</code> is similar to the <code>Button</code>, and is used
       to trigger an action. There are five variants (color is the only
       difference): <code>default</code>, <code>error</code>,{" "}
-      <code>success</code>, <code>warning</code>, <code>highlight</code>.
+      <code>success</code>, <code>warning</code>, <code>highlight</code>; and
+      two presets: <code>copy</code> and <code>download</code>.
     </>
   ),
   shortDescription: "Similar to the Button, and is used to trigger an action",
@@ -20,6 +21,19 @@ export const iconButtons: ComponentDetails = {
       component: [
         <IconButton icon={<Icon.Info />} altText="Default" />,
         <IconButton icon={<Icon.Info />} altText="Default" disabled />,
+      ],
+    },
+    {
+      title: "Default with label",
+      description: "",
+      component: [
+        <IconButton icon={<Icon.Info />} label="Default" altText="Default" />,
+        <IconButton
+          icon={<Icon.Info />}
+          label="Default"
+          altText="Default"
+          disabled
+        />,
       ],
     },
     {
@@ -91,6 +105,36 @@ export const iconButtons: ComponentDetails = {
       ],
     },
     {
+      title: "Preset: copy",
+      description: "",
+      component: [
+        <IconButton
+          preset={IconButton.preset.copy}
+          variant={IconButton.variant.highlight}
+        />,
+        <IconButton
+          preset={IconButton.preset.copy}
+          variant={IconButton.variant.highlight}
+          disabled
+        />,
+      ],
+    },
+    {
+      title: "Preset: download",
+      description: "",
+      component: [
+        <IconButton
+          preset={IconButton.preset.download}
+          variant={IconButton.variant.highlight}
+        />,
+        <IconButton
+          preset={IconButton.preset.download}
+          variant={IconButton.variant.highlight}
+          disabled
+        />,
+      ],
+    },
+    {
       title: "Custom color",
       description: "",
       component: [
@@ -124,8 +168,34 @@ export const iconButtons: ComponentDetails = {
         />,
       ],
     },
+    {
+      title: "Custom size with label",
+      description: "",
+      component: [
+        <IconButton
+          icon={<Icon.Info />}
+          altText="Custom size"
+          label="Custom"
+          customSize="2rem"
+        />,
+        <IconButton
+          icon={<Icon.Info />}
+          altText="Custom size"
+          label="Custom"
+          customSize="2rem"
+          disabled
+        />,
+      ],
+    },
   ],
   props: [
+    {
+      prop: "IconButtonDefaultProps",
+      type: [],
+      default: null,
+      optional: false,
+      description: "",
+    },
     {
       prop: "icon",
       type: ["ReactNode"],
@@ -141,11 +211,39 @@ export const iconButtons: ComponentDetails = {
       description: "Alternative text to show on hover",
     },
     {
+      prop: "IconButtonPresetProps",
+      type: [],
+      default: null,
+      optional: false,
+      description: "",
+    },
+    {
+      prop: "preset",
+      type: ["copy", "download"],
+      default: null,
+      optional: false,
+      description: "Predefined set of icon buttons",
+    },
+    {
+      prop: "IconButtonBaseProps",
+      type: [],
+      default: null,
+      optional: false,
+      description: "",
+    },
+    {
       prop: "variant",
       type: ["default", "error", "success", "warning", "highlight"],
       default: "default",
       optional: true,
       description: "Variant of the component",
+    },
+    {
+      prop: "label",
+      type: ["string"],
+      default: null,
+      optional: true,
+      description: "Component label",
     },
     {
       prop: "customColor",
