@@ -21,6 +21,7 @@ import { selects } from "constants/details/selects";
 import { statusBars } from "constants/details/statusBars";
 import { tables } from "constants/details/tables";
 import { tags } from "constants/details/tags";
+import { textareas } from "constants/details/textareas";
 import { textLinks } from "constants/details/textLinks";
 import { toggles } from "constants/details/toggles";
 import { tooltips } from "constants/details/tooltips";
@@ -51,6 +52,7 @@ export const componentDetails: ComponentDetailsList = {
   statusBars,
   tables,
   tags,
+  textareas,
   textLinks,
   toggles,
   tooltips,
