@@ -167,6 +167,22 @@ export const toggles: ComponentDetails = {
         <Toggle customInput={<Field />} checked={true} id="toggle-13" />,
       ],
     },
+    {
+      title: "Toggle in settings",
+      description: "",
+      component: [
+        <div>
+          <label htmlFor="toggle-14">Setting label</label>
+          <Toggle
+            id="toggle-14"
+            checked={false}
+            onChange={() => {
+              // change state
+            }}
+          />
+        </div>,
+      ],
+    },
   ],
   props: [
     {

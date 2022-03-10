@@ -19,6 +19,7 @@ interface TableProps<T> {
   data: T[];
   columnLabels: TableColumnLabel[];
   renderItemRow: (item: T) => React.ReactElement;
+  breakpoint: 300 | 400 | 500 | 600 | 700 | 800 | 900;
   hideNumberColumn?: boolean;
   isLoading?: boolean;
   emptyMessage?: string;
@@ -30,6 +31,7 @@ export const Table = <T extends Record<string, any>>({
   data,
   columnLabels,
   renderItemRow,
+  breakpoint,
   hideNumberColumn,
   isLoading,
   emptyMessage = "No data to show",
@@ -115,6 +117,7 @@ export const Table = <T extends Record<string, any>>({
             className={["Table", isSortableTable ? "SortableTable" : ""].join(
               " ",
             )}
+            data-breakpoint={breakpoint}
           >
             <thead>
               <tr>

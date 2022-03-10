@@ -63,6 +63,10 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
     label: "Selects",
   },
   {
+    id: ComponentDetailsId.textareas,
+    label: "Textareas",
+  },
+  {
     id: ComponentDetailsId.checkboxes,
     label: "Checkboxes",
   },

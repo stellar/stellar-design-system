@@ -28,6 +28,7 @@ export enum ComponentDetailsId {
   statusBars = "statusBars",
   tables = "tables",
   tags = "tags",
+  textareas = "textareas",
   textLinks = "textLinks",
   toggles = "toggles",
   tooltips = "tooltips",
@@ -58,6 +59,7 @@ interface ComponentDetailsList {
   statusBars: ComponentDetails;
   tables: ComponentDetails;
   tags: ComponentDetails;
+  textareas: ComponentDetails;
   textLinks: ComponentDetails;
   toggles: ComponentDetails;
   tooltips: ComponentDetails;
