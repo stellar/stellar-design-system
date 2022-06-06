@@ -1,5 +1,5 @@
 import { Textarea } from "@stellar/design-system";
-import { ComponentDetails, ComponentDetailsId } from "types/types.d";
+import { ComponentDetails, ComponentDetailsId } from "types/types";
 
 import { TextareaField } from "./mocks";
 

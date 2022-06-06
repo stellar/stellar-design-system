@@ -6,7 +6,7 @@ import {
   RadioButton,
 } from "@stellar/design-system";
 import { useState } from "react";
-import { ComponentDetails, ComponentDetailsId } from "types/types.d";
+import { ComponentDetails, ComponentDetailsId } from "types/types";
 
 const SimpleModalExample = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -129,9 +129,12 @@ export const modals: ComponentDetails = {
       description: "",
       previewExampleOverride: [<SimpleModalExample />],
       component: [
-        <Modal visible={false} onClose={() => {
-          // do nothing
-        }}>
+        <Modal
+          visible={false}
+          onClose={() => {
+            // do nothing
+          }}
+        >
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
             eius beatae sint dolorem, excepturi quos enim, et ullam suscipit
@@ -146,9 +149,12 @@ export const modals: ComponentDetails = {
       description: "Modal with scrolling content using modal sub-components.",
       previewExampleOverride: [<ModalExample />],
       component: [
-        <Modal visible={false} onClose={() => {
-          // do nothing
-        }}>
+        <Modal
+          visible={false}
+          onClose={() => {
+            // do nothing
+          }}
+        >
           <Modal.Heading>Modal heading</Modal.Heading>
 
           <Modal.Body>

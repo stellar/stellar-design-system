@@ -4,7 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { Details } from "components/Details";
 import { SideNav } from "components/SideNav";
 import { useSideNavEnabled } from "hooks/useSideNavEnabled";
-import { ComponentDetailsId, Routes } from "types/types.d";
+import { ComponentDetailsId, Routes } from "types/types";
 
 interface paramProps {
   id: ComponentDetailsId;

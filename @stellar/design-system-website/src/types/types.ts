@@ -35,7 +35,7 @@ export enum ComponentDetailsId {
   typography = "typography",
 }
 
-interface ComponentDetailsList {
+export interface ComponentDetailsList {
   assets: ComponentDetails;
   avatars: ComponentDetails;
   branding: ComponentDetails;
@@ -66,7 +66,7 @@ interface ComponentDetailsList {
   typography: ComponentDetails;
 }
 
-interface ComponentDetails {
+export interface ComponentDetails {
   id: ComponentDetailsId;
   title: string;
   description: React.ReactNode;
@@ -81,7 +81,7 @@ interface ComponentDetails {
   };
 }
 
-interface ComponentExample {
+export interface ComponentExample {
   title: string;
   description: string | React.ReactNode | undefined;
   component: React.ReactNode[];
@@ -91,7 +91,7 @@ interface ComponentExample {
   useGridLayout?: boolean;
 }
 
-interface ComponentProp {
+export interface ComponentProp {
   prop: string;
   type: string[];
   default: string | null;
@@ -99,12 +99,12 @@ interface ComponentProp {
   description: string | undefined;
 }
 
-interface ComponentExternalProps {
+export interface ComponentExternalProps {
   link: string;
   label: string | undefined;
 }
 
-interface SubComponent {
+export interface SubComponent {
   component: string;
   description: string;
   props: ComponentProp[];

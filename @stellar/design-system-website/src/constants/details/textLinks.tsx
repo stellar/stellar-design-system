@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import { TextLink, Icon } from "@stellar/design-system";
-import { ComponentDetails, ComponentDetailsId } from "types/types.d";
+import { ComponentDetails, ComponentDetailsId } from "types/types";
 
 export const textLinks: ComponentDetails = {
   id: ComponentDetailsId.textLinks,

@@ -13,7 +13,7 @@ import {
   ComponentProp,
   ComponentDetailsId,
   ComponentExternalProps,
-} from "types/types.d";
+} from "types/types";
 
 import "./styles.scss";
 

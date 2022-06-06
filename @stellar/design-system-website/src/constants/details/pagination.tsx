@@ -1,5 +1,5 @@
 import { Pagination } from "@stellar/design-system";
-import { ComponentDetails, ComponentDetailsId } from "types/types.d";
+import { ComponentDetails, ComponentDetailsId } from "types/types";
 
 export const pagination: ComponentDetails = {
   id: ComponentDetailsId.pagination,
