@@ -1,5 +1,5 @@
 import { Icon, Logo, TextLink } from "@stellar/design-system";
-import { ComponentDetails, ComponentDetailsId } from "types/types.d";
+import { ComponentDetails, ComponentDetailsId } from "types/types";
 
 export const assets: ComponentDetails = {
   id: ComponentDetailsId.assets,

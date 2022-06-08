@@ -2,7 +2,7 @@ import { Icon } from "@stellar/design-system";
 import { useHistory } from "react-router-dom";
 import { componentDetails } from "constants/componentDetails";
 import { componentsInDisplayOrder } from "constants/componentsInDisplayOrder";
-import { Routes } from "types/types.d";
+import { Routes } from "types/types";
 import "./styles.scss";
 
 export const ComponentsList = () => {

@@ -1,4 +1,4 @@
-import { ComponentDetailsId } from "types/types.d";
+import { ComponentDetailsId } from "types/types";
 
 interface ComponentsInDisplayOrder {
   id: ComponentDetailsId;

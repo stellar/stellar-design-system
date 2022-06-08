@@ -7,7 +7,7 @@ import {
   Heading6,
   Eyebrow,
 } from "@stellar/design-system";
-import { ComponentDetails, ComponentDetailsId } from "types/types.d";
+import { ComponentDetails, ComponentDetailsId } from "types/types";
 
 export const typography: ComponentDetails = {
   id: ComponentDetailsId.typography,

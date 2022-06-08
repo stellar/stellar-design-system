@@ -1,5 +1,5 @@
 import { DetailsTooltip, Icon } from "@stellar/design-system";
-import { ComponentDetails, ComponentDetailsId } from "types/types.d";
+import { ComponentDetails, ComponentDetailsId } from "types/types";
 
 export const detailsTooltips: ComponentDetails = {
   id: ComponentDetailsId.detailsTooltips,

@@ -1,5 +1,5 @@
 import { Loader } from "@stellar/design-system";
-import { ComponentDetails, ComponentDetailsId } from "types/types.d";
+import { ComponentDetails, ComponentDetailsId } from "types/types";
 
 export const loaders: ComponentDetails = {
   id: ComponentDetailsId.loaders,

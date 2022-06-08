@@ -1,5 +1,5 @@
 import { CopyText, TextLink, IconButton } from "@stellar/design-system";
-import { ComponentDetails, ComponentDetailsId } from "types/types.d";
+import { ComponentDetails, ComponentDetailsId } from "types/types";
 
 export const copyTexts: ComponentDetails = {
   id: ComponentDetailsId.copyTexts,

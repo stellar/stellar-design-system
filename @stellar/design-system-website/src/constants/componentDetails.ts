@@ -26,7 +26,7 @@ import { textLinks } from "constants/details/textLinks";
 import { toggles } from "constants/details/toggles";
 import { tooltips } from "constants/details/tooltips";
 import { typography } from "constants/details/typography";
-import { ComponentDetailsList } from "types/types.d";
+import { ComponentDetailsList } from "types/types";
 
 export const componentDetails: ComponentDetailsList = {
   assets,

@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "outDir": "./build/",
     "sourceRoot": "./src",
     "baseUrl": "./src",
     "noEmit": true,
