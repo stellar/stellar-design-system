@@ -9,6 +9,7 @@ module.exports = {
   },
   output: {
     filename: "[name].js",
+    publicPath: "",
     path: path.resolve(__dirname, "build"),
     libraryTarget: "umd",
   },
