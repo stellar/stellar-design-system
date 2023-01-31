@@ -4,6 +4,9 @@
   "author": "Stellar Development Foundation <hello@stellar.org>",
   "description": "Stellar Development Foundation’s design system website",
   "license": "Apache-2.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "git-info": "rm -rf src/generated/ && mkdir src/generated/ && echo export default \"{\\\"commitHash\\\": \\\"$(git rev-parse --short HEAD)\\\"};\" > src/generated/gitInfo.ts",
     "start": "yarn git-info && webpack serve --open --config webpack.dev.js",
@@ -37,7 +40,6 @@
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "@babel/preset-typescript": "^7.17.12",
-    "@stellar/eslint-config": "^2.1.2",
     "@stellar/prettier-config": "^1.0.1",
     "@stellar/tsconfig": "^1.0.2",
     "@testing-library/jest-dom": "^5.16.1",
@@ -60,11 +62,8 @@
     "eslint-config-prettier": "^8.2.0",
     "eslint-config-react": "^1.1.7",
     "eslint-config-react-app": "^6.0.0",
-    "eslint-plugin-flowtype": "^6.1.0",
     "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jsdoc": "^36.1.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-webpack-plugin": "^3.1.1",

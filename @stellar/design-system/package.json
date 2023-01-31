@@ -10,6 +10,9 @@
   },
   "main": "build/final.min.js",
   "types": "build/index.d.ts",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "build:prod": "yarn clean && webpack --mode production",
     "build:tsc": "tsc -p tsconfig.json",
@@ -28,7 +31,6 @@
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
-    "@stellar/eslint-config": "^2.1.2",
     "@stellar/prettier-config": "^1.0.1",
     "@stellar/tsconfig": "^1.0.2",
     "@svgr/webpack": "^5.5.0",
@@ -45,7 +47,6 @@
     "eslint-config-prettier": "^8.2.0",
     "eslint-config-react": "^1.1.7",
     "eslint-config-react-app": "^6.0.0",
-    "eslint-plugin-flowtype": "^6.1.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
