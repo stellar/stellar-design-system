@@ -1,3 +1,6 @@
+// Import global CSS from Stellar Design System
+@import "@stellar/design-system/build/styles.min.css";
+
 .Section {
   &:not(:last-of-type) {
     margin-bottom: 4.5rem;

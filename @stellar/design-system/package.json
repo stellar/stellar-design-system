@@ -31,8 +31,6 @@
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
-    "@stellar/prettier-config": "^1.0.1",
-    "@stellar/tsconfig": "^1.0.2",
     "@svgr/webpack": "^5.5.0",
     "@types/react": "^17.0.38",
     "@types/react-copy-to-clipboard": "^5.0.2",
