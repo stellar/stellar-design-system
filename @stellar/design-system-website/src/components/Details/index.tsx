@@ -98,7 +98,7 @@ export const Details = ({
   const renderExample = (
     components: React.ReactNode[],
     options?: {
-      previewExampleOverride?: React.Component[];
+      previewExampleOverride?: React.ReactNode[];
       useGridLayout?: boolean;
     },
   ) => {

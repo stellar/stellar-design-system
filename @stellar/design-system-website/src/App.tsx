@@ -1,5 +1,5 @@
 import { useMemo, useState, useLayoutEffect, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Layout } from "@stellar/design-system";
 
 import { Landing } from "pages/Landing";
@@ -79,36 +79,35 @@ export const App = () => {
   };
 
   return (
-    <Router>
-      <SideNavContext.Provider value={sideNavStateValue}>
-        <Layout.Header
-          projectTitle="Design System"
-          hasDarkModeToggle
-          menu={{
-            isEnabled: sideNavState.isEnabled,
-            onOpen: () => toggleSideNav(true),
-          }}
-        />
+    <SideNavContext.Provider value={sideNavStateValue}>
+      <Layout.Header
+        projectTitle="Design System"
+        hasDarkModeToggle
+        menu={{
+          isEnabled: sideNavState.isEnabled,
+          onOpen: () => toggleSideNav(true),
+        }}
+      />
 
-        <Layout.Content>
-          <Switch>
-            <Route exact path="/component/:id">
+      <Layout.Content>
+        <Routes>
+          <Route
+            path="/component/:id"
+            element={
               <ComponentDetails
                 sideNavEnabled
                 onToggleSideNav={toggleSideNav}
               />
-            </Route>
+            }
+          />
 
-            <Route path="/">
-              <Landing />
-            </Route>
+          <Route path="/" element={<Landing />} />
 
-            {/* TODO: add 404 */}
-          </Switch>
-        </Layout.Content>
+          {/* TODO: add 404 */}
+        </Routes>
+      </Layout.Content>
 
-        <Layout.Footer gitHubLink="https://github.com/stellar/stellar-design-system" />
-      </SideNavContext.Provider>
-    </Router>
+      <Layout.Footer gitHubLink="https://github.com/stellar/stellar-design-system" />
+    </SideNavContext.Provider>
   );
 };

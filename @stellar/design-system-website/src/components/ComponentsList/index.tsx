@@ -1,15 +1,15 @@
 import { Icon } from "@stellar/design-system";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { componentDetails } from "constants/componentDetails";
 import { componentsInDisplayOrder } from "constants/componentsInDisplayOrder";
 import { Routes } from "types/types";
 import "./styles.scss";
 
 export const ComponentsList = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const goToComponentDetails = (componentId: string) => {
-    history.push(`/${Routes.component}/${componentId}`);
+    navigate(`/${Routes.component}/${componentId}`);
   };
 
   return (

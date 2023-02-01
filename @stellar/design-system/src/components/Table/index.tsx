@@ -1,5 +1,5 @@
 import React, { useCallback, useLayoutEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { chunk } from "lodash";
 import { Loader } from "../Loader";
 import { Pagination } from "../Pagination";
@@ -46,7 +46,7 @@ export const Table = <T extends Record<string, any>>({
   const [currentSortKey, setCurrentSortKey] = useState<string | null>(null);
   const [sortOrder, setSortOder] = useState<SortOrder | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const isSortableTable = Boolean(columnLabels.find((cl) => cl.sortBy));
 
@@ -144,7 +144,7 @@ export const Table = <T extends Record<string, any>>({
                   <tr
                     className={item.href ? `Table__clickableRow` : ""}
                     key={`${id}-row-${index}`}
-                    onClick={() => (item.href ? history.push(item.href) : null)}
+                    onClick={() => (item.href ? navigate(item.href) : null)}
                   >
                     {hideNumberColumn ? null : (
                       <td>
