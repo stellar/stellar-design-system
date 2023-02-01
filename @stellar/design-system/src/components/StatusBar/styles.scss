@@ -7,29 +7,23 @@
   width: 100%;
   padding: 0.5rem 0;
   text-align: center;
-  color: var(--pal-text-secondary);
+  color: var(--color-gray-80);
   font-size: 1rem;
   line-height: 1.5rem;
 
   &--info {
-    @include status-bar(var(--pal-info-background), var(--pal-info-border));
+    @include status-bar(var(--color-purple-40), var(--color-purple-50));
   }
 
   &--success {
-    @include status-bar(
-      var(--pal-success-background),
-      var(--pal-success-border)
-    );
+    @include status-bar(var(--color-green-40), var(--color-green-50));
   }
 
   &--error {
-    @include status-bar(var(--pal-error-background), var(--pal-error-border));
+    @include status-bar(var(--color-red-40), var(--color-red-50));
   }
 
   &--warning {
-    @include status-bar(
-      var(--pal-warning-background),
-      var(--pal-warning-border)
-    );
+    @include status-bar(var(--color-yellow-40), var(--color-yellow-50));
   }
 }

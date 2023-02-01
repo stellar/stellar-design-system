@@ -20,13 +20,13 @@
     svg {
       height: 100%;
       width: 6rem;
-      @include mixins.svg-color(var(--pal-text-primary));
+      @include mixins.svg-color(var(--color-gray-90));
     }
   }
 
   &__title {
-    background-color: var(--pal-brand-primary);
-    color: var(--pal-brand-primary-on);
+    background-color: var(--color-purple-60);
+    color: var(--color-white);
     text-transform: uppercase;
     font-size: 0.875rem;
     line-height: 1.125rem;

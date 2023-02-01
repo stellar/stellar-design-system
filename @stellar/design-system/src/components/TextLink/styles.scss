@@ -15,36 +15,36 @@
   transition: color var(--anim-transition-default);
 
   &--primary {
-    --TextLink-color-text: var(--pal-text-link);
+    --TextLink-color-text: var(--color-purple-70);
 
     @media (hover: hover) {
       &:hover {
-        --TextLink-color-text: var(--pal-text-link-hover);
+        --TextLink-color-text: var(--color-purple-80);
 
         &.TextLink--underline {
-          --TextLink-color-text: var(--pal-text-link);
+          --TextLink-color-text: var(--color-purple-70);
         }
 
         &.TextLink--disabled {
-          --TextLink-color-text: var(--pal-brand-primary);
+          --TextLink-color-text: var(--color-purple-60);
         }
       }
     }
   }
 
   &--secondary {
-    --TextLink-color-text: var(--pal-text-primary);
+    --TextLink-color-text: var(--color-gray-90);
 
     @media (hover: hover) {
       &:hover {
-        --TextLink-color-text: var(--pal-text-secondary);
+        --TextLink-color-text: var(--color-gray-80);
 
         &.TextLink--underline {
-          --TextLink-color-text: var(--pal-text-primary);
+          --TextLink-color-text: var(--color-gray-90);
         }
 
         &.TextLink--disabled {
-          --TextLink-color-text: var(--pal-text-primary);
+          --TextLink-color-text: var(--color-gray-90);
         }
       }
     }

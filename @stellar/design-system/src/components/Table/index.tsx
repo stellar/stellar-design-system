@@ -1,5 +1,4 @@
 import React, { useCallback, useLayoutEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { chunk } from "lodash";
 import { Loader } from "../Loader";
 import { Pagination } from "../Pagination";
@@ -46,7 +45,6 @@ export const Table = <T extends Record<string, any>>({
   const [currentSortKey, setCurrentSortKey] = useState<string | null>(null);
   const [sortOrder, setSortOder] = useState<SortOrder | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const navigate = useNavigate();
 
   const isSortableTable = Boolean(columnLabels.find((cl) => cl.sortBy));
 
@@ -140,12 +138,10 @@ export const Table = <T extends Record<string, any>>({
             <tbody>
               {localData[currentPage - 1].map(
                 (item, index) => (
+                  // TODO: handle clickable row by allowing to extend className
+                  // and add other props
                   /* eslint-disable react/no-array-index-key */
-                  <tr
-                    className={item.href ? `Table__clickableRow` : ""}
-                    key={`${id}-row-${index}`}
-                    onClick={() => (item.href ? navigate(item.href) : null)}
-                  >
+                  <tr key={`${id}-row-${index}`}>
                     {hideNumberColumn ? null : (
                       <td>
                         {getItemNumber(

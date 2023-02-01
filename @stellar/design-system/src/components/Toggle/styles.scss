@@ -11,9 +11,9 @@
     width: var(--toogle-width);
     height: var(--toggle-height);
     border-radius: var(--toggle-circle-size);
-    border: 1px solid var(--pal-brand-primary);
+    border: 1px solid var(--color-purple-60);
     cursor: pointer;
-    background-color: var(--pal-background-primary);
+    background-color: var(--color-gray-10);
     display: flex;
     align-items: center;
     padding: 0 0.25rem;
@@ -25,7 +25,7 @@
       width: var(--toggle-circle-size);
       height: var(--toggle-circle-size);
       border-radius: var(--toggle-circle-size);
-      background-color: var(--pal-brand-primary);
+      background-color: var(--color-purple-60);
       transition: all 0.4s;
     }
   }
@@ -34,10 +34,10 @@
     display: none;
 
     &:checked ~ .Toggle__track {
-      background-color: var(--pal-brand-primary);
+      background-color: var(--color-purple-60);
 
       &::after {
-        background-color: var(--pal-brand-primary-on);
+        background-color: var(--color-white);
         // Need to offset the border width
         transform: translateX(calc(0.8rem + 1px));
       }
@@ -47,7 +47,7 @@
   span {
     font-size: 1rem;
     line-height: 1.75rem;
-    color: var(--pal-text-secondary);
+    color: var(--color-gray-80);
     font-weight: var(--font-weight-normal);
     text-transform: none;
   }

@@ -8,7 +8,7 @@
     overflow-y: hidden;
 
     .Loader {
-      --Loader-color: var(--pal-brand-primary);
+      --Loader-color: var(--color-purple-60);
 
       position: absolute;
       top: 50%;
@@ -37,11 +37,10 @@
       @media (max-width: #{$bp}px) {
         // Sticky first column
         &:not(:last-child) {
-          background-color: var(--pal-background-secondary);
+          background-color: var(--color-gray-10);
           left: 0;
           position: sticky;
           padding-left: 1rem;
-          box-shadow: 0 0 0.5rem rgba(var(--pal-shadow-rbg), 0.48);
           clip-path: inset(0 -0.5rem 0 0);
         }
       }
@@ -54,12 +53,11 @@ table.Table {
   border-collapse: collapse;
   font-size: var(--font-size-secondary);
   line-height: 1.5rem;
-  color: var(--pal-text-primary);
-  color: var(--pal-text-secondary);
+  color: var(--color-gray-80);
 
   th {
     line-height: 1.125rem;
-    color: var(--pal-text-primary);
+    color: var(--color-gray-90);
     font-weight: var(--font-weight-medium);
     text-transform: uppercase;
     text-align: left;
@@ -69,7 +67,7 @@ table.Table {
 
   thead,
   tr:not(:last-child) {
-    border-bottom: 1px solid var(--pal-border-primary);
+    border-bottom: 1px solid var(--color-gray-30);
   }
 
   th,

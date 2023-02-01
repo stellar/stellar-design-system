@@ -17,12 +17,11 @@
     position: absolute;
     width: 80%;
     max-width: 600px;
-    background-color: var(--pal-background-primary);
+    background-color: var(--color-gray-20);
     border-radius: 0;
     z-index: calc(var(--z-index-modal) + 1);
     padding: 3.5rem 1.5rem 2rem;
     overflow: hidden;
-    box-shadow: 0 1.5rem 3rem -1.5rem rgba(var(--pal-shadow-rbg), 0.16);
     margin-top: var(--Modal-offset-top);
     top: 35%;
     left: 50%;
@@ -76,13 +75,14 @@
     svg {
       width: 1.2rem;
       height: 1.2rem;
-      @include mixins.svg-color(var(--pal-text-secondary));
+      @include mixins.svg-color(var(--color-gray-80));
     }
   }
 
   &__background {
     position: absolute;
-    background-color: rgba(var(--pal-shadow-rbg), 0.6);
+    // TODO: replace static color
+    background-color: rgba(0, 0, 0, 0.6);
     top: 0;
     bottom: 0;
     left: 0;

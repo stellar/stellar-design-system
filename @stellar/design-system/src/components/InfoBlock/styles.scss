@@ -17,37 +17,37 @@
   padding-left: 2.5rem;
   line-height: 1.75rem;
   position: relative;
-  color: var(--pal-text-secondary);
+  color: var(--color-gray-80);
 
   &--info {
     @include info-block(
-      var(--pal-info-background),
-      var(--pal-info-border),
-      var(--pal-info)
+      var(--color-purple-40),
+      var(--color-purple-50),
+      var(--color-purple-70)
     );
   }
 
   &--success {
     @include info-block(
-      var(--pal-success-background),
-      var(--pal-success-border),
-      var(--pal-success)
+      var(--color-green-40),
+      var(--color-green-50),
+      var(--color-green-70)
     );
   }
 
   &--error {
     @include info-block(
-      var(--pal-error-background),
-      var(--pal-error-border),
-      var(--pal-error)
+      var(--color-red-40),
+      var(--color-red-50),
+      var(--color-red-70)
     );
   }
 
   &--warning {
     @include info-block(
-      var(--pal-warning-background),
-      var(--pal-warning-border),
-      var(--pal-warning)
+      var(--color-yellow-40),
+      var(--color-yellow-50),
+      var(--color-yellow-70)
     );
   }
 

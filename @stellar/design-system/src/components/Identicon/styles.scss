@@ -8,8 +8,8 @@
   &__icon {
     width: var(--Identicon-size);
     height: var(--Identicon-size);
-    background-color: var(--pal-background-secondary);
-    border: 1px solid var(--pal-border-primary);
+    background-color: var(--color-gray-10);
+    border: 1px solid var(--color-gray-30);
     border-radius: calc(var(--Identicon-size) / 2);
     display: flex;
     align-items: center;
@@ -26,7 +26,7 @@
     margin-left: 0.5rem;
     word-break: break-all;
     font-family: var(--font-family-monospace);
-    color: var(--pal-text-primary);
+    color: var(--color-gray-90);
     line-height: 1.5;
   }
 }
@@ -34,7 +34,7 @@
 .TextLink {
   .Identicon__address {
     text-decoration: underline;
-    color: var(--pal-text-primary);
+    color: var(--color-gray-90);
   }
 
   @media (hover: hover) {

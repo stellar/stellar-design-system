@@ -22,9 +22,9 @@ export const PieProgress = ({
   const passedPercentage = Math.round((passed / total) * 100);
   const failedPercentage = Math.round((failed / total) * 100);
   const backgroundPieces = `conic-gradient(
-    var(--pal-success) ${passedPercentage}%,
-    var(--pal-error) 0 ${passedPercentage + failedPercentage}%,
-    var(--pal-background-tertiary) 0
+    var(--color-green-60) ${passedPercentage}%,
+    var(--color-red-60) 0 ${passedPercentage + failedPercentage}%,
+    var(--color-gray-20) 0
   )`;
 
   const customStyle = {

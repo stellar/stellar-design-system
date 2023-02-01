@@ -1,7 +1,7 @@
 // Form field
 @mixin form-field-container {
   --form-field-border-radius: 0.25rem;
-  --form-field-border-hover-color: var(--pal-text-tertiary);
+  --form-field-border-hover-color: var(--color-gray-70);
 
   width: 100%;
   display: flex;
@@ -10,9 +10,9 @@
 }
 
 @mixin form-field-wrapper {
-  border: 1px solid var(--pal-border-secondary);
+  border: 1px solid var(--color-gray-40);
   border-radius: var(--form-field-border-radius);
-  background-color: var(--pal-background-primary);
+  background-color: var(--color-gray-10);
   transition: border-color var(--anim-transition-default);
 }
 
@@ -21,7 +21,7 @@
   font-size: 1rem;
   line-height: 1.75rem;
   font-weight: var(--font-weight-normal);
-  color: var(--pal-text-primary);
+  color: var(--color-gray-90);
   border-radius: var(--form-field-border-radius);
   border: none;
   background-color: transparent;
@@ -35,20 +35,20 @@
 
 @mixin form-field-focus {
   &:focus-visible {
-    outline: 1px solid var(--pal-brand-primary);
+    outline: 1px solid var(--color-purple-60);
   }
 }
 
 @mixin form-field-disabled {
   &:disabled {
     cursor: not-allowed;
-    color: var(--pal-text-tertiary);
+    color: var(--color-gray-70);
   }
 }
 
 @mixin form-field-wrapper-error($elClass) {
   #{$elClass} {
-    border-color: var(--pal-error);
+    border-color: var(--color-red-60);
 
     @media (hover: hover) {
       &:hover {
@@ -60,11 +60,11 @@
 
 @mixin form-field-wrapper-disabled($elClass) {
   #{$elClass} {
-    background-color: var(--pal-background-tertiary);
+    background-color: var(--color-gray-20);
 
     @media (hover: hover) {
       &:hover {
-        border-color: var(--pal-border-secondary);
+        border-color: var(--color-gray-40);
       }
     }
   }
@@ -79,7 +79,7 @@
   font-size: 1rem;
   line-height: var(--checkbox-radio-line-height);
   font-weight: var(--font-weight-normal);
-  color: var(--pal-text-secondary);
+  color: var(--color-gray-80);
   flex: 1;
   display: flex;
   align-items: flex-start;
@@ -96,12 +96,12 @@
   }
 
   input[type="#{$type}"] + label::before {
-    background-color: var(--pal-background-primary);
+    background-color: var(--color-gray-10);
   }
 
   input[type="#{$type}"]:checked + label::before {
-    background-color: var(--pal-brand-primary);
-    border-color: var(--pal-brand-primary);
+    background-color: var(--color-purple-60);
+    border-color: var(--color-purple-60);
   }
 
   input[type="#{$type}"]:checked + label > span {
@@ -116,8 +116,7 @@
   height: 1rem;
   display: block;
   margin-right: 0.75rem;
-  border: 1px solid var(--pal-brand-primary);
-  box-shadow: 0 0.125rem 0.25rem rgba(var(--pal-shadow-rbg), 0.16);
+  border: 1px solid var(--color-purple-60);
   z-index: 1;
   flex-shrink: 0;
 }

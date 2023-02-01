@@ -3,8 +3,8 @@ import { NavButton } from "../NavButton";
 import { Icon } from "../../icons";
 
 export enum ModeValue {
-  light = "light-mode",
-  dark = "dark-mode",
+  light = "sds-theme-light",
+  dark = "sds-theme-dark",
 }
 
 interface ToggleDarkModeProps {

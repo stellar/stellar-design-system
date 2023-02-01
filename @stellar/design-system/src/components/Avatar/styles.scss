@@ -1,10 +1,10 @@
 .Avatar {
   --Avatar-size: 3rem;
   --Avatar-image-size: 70%;
-  --Avatar-border-color: var(--pal-background-primary);
+  --Avatar-border-color: var(--color-gray-50);
   --Avatar-border-width: calc(var(--Avatar-size) / 12);
-  --Avatar-background-color: var(--pal-background-secondary);
-  --Avatar-icon-color: var(--pal-text-primary);
+  --Avatar-background-color: var(--color-gray-10);
+  --Avatar-icon-color: var(--color-gray-90);
 
   display: flex;
   align-items: center;
@@ -33,7 +33,7 @@
     img {
       @extend %avatarDimensions;
       // add white background to all icons regardless of dark mode
-      background-color: #fff;
+      background-color: var(--color-white);
       display: block;
     }
 
@@ -49,7 +49,7 @@
     &__bullet {
       @extend %avatarDimensions;
       @extend %borderRadius;
-      background-color: var(--pal-brand-primary);
+      background-color: var(--color-purple-60);
     }
 
     &:not(:first-child) {

@@ -28,7 +28,7 @@
     svg {
       --checkbox-selected-size: 0.75rem;
       @include mixins.checkbox-radio-icon-centered;
-      @include mixins.svg-color(var(--pal-brand-primary-on));
+      @include mixins.svg-color(var(--color-white));
       width: var(--checkbox-selected-size);
       height: var(--checkbox-selected-size);
     }
@@ -36,7 +36,7 @@
 
   &--error {
     label::before {
-      border-color: var(--pal-error);
+      border-color: var(--color-red-60);
     }
   }
 

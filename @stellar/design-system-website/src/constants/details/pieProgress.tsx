@@ -15,7 +15,7 @@ export const pieProgress: ComponentDetails = {
           total={4}
           passed={2}
           failed={1}
-          customBackgroundColor="var(--pal-example-details)"
+          customBackgroundColor="var(--color-gray-80)"
           customSize="3rem"
         />,
       ],

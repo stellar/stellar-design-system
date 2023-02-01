@@ -58,7 +58,7 @@ body {
       left: 0;
       width: 100%;
       height: 100vh;
-      background-color: rgba(var(--pal-shadow-rbg), 0.6);
+      background-color: var(--color-gray-80);
       z-index: var(--z-index-modal);
       transform: translateX(-100%);
 
@@ -83,7 +83,7 @@ body {
 }
 
 .ComponentContainer {
-  border-bottom: 1px solid var(--pal-border-primary);
+  border-bottom: 1px solid var(--color-gray-30);
   padding-bottom: 1.5rem;
 }
 

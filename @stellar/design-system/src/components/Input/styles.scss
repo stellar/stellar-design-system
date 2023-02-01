@@ -23,7 +23,7 @@
       @include mixins.form-field-focus;
 
       &::placeholder {
-        color: var(--pal-text-tertiary);
+        color: var(--color-gray-70);
       }
 
       @include mixins.form-field-disabled;

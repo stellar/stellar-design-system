@@ -6,20 +6,18 @@
 }
 
 .ComponentCard {
-  border: 1px solid var(--pal-border-primary);
-  background-color: var(--pal-background-secondary);
+  border: 1px solid var(--color-gray-30);
+  background-color: var(--color-gray-10);
   overflow: hidden;
   height: 8rem;
   padding: 1.5rem 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: border-color var(--anim-transition-default),
-    box-shadow var(--anim-transition-default);
+  transition: border-color var(--anim-transition-default);
 
   @media (hover: hover) {
     &:hover {
-      border-color: var(--pal-border-secondary);
-      box-shadow: 0 1.5rem 3rem -1.5rem rgba(var(--pal-shadow-rbg), 0.16);
+      border-color: var(--color-gray-40);
     }
   }
 
@@ -28,12 +26,12 @@
     margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
-    color: var(--pal-text-primary);
+    color: var(--color-gray-90);
 
     svg {
       width: 1rem;
       height: 1rem;
-      stroke: var(--pal-text-primary);
+      stroke: var(--color-gray-90);
       margin-left: 0.4rem;
     }
   }

@@ -12,22 +12,24 @@
   border-radius: 0.125rem;
 
   &--default {
-    @include tag(var(--pal-text-secondary), var(--pal-background-secondary));
+    @include tag(var(--color-gray-80), var(--color-gray-10));
   }
 
+  // TODO: check colors
+
   &--highlight {
-    @include tag(var(--pal-info), var(--pal-info-background));
+    @include tag(var(--color-purple-50), var(--color-purple-40));
   }
 
   &--success {
-    @include tag(var(--pal-success), var(--pal-success-background));
+    @include tag(var(--color-green-50), var(--color-green-40));
   }
 
   &--error {
-    @include tag(var(--pal-error), var(--pal-error-background));
+    @include tag(var(--color-red-50), var(--color-red-40));
   }
 
   &--warning {
-    @include tag(var(--pal-warning), var(--pal-warning-background));
+    @include tag(var(--color-yellow-50), var(--color-yellow-40));
   }
 }
