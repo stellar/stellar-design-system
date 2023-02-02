@@ -91,6 +91,8 @@ export const App = () => {
 
       <Layout.Content>
         <Routes>
+          <Route path="/" element={<Landing />} />
+
           <Route
             path="/component/:id"
             element={
@@ -100,8 +102,6 @@ export const App = () => {
               />
             }
           />
-
-          <Route path="/" element={<Landing />} />
 
           {/* TODO: add 404 */}
         </Routes>
