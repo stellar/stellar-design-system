@@ -1,0 +1,145 @@
+@use "../../utils.scss" as *;
+
+.Heading {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: 0;
+
+  &--xxl {
+    font-size: pxToRem(40px);
+    line-height: pxToRem(48px);
+  }
+  &--xl {
+    font-size: pxToRem(36px);
+    line-height: pxToRem(44px);
+  }
+  &--lg {
+    font-size: pxToRem(32px);
+    line-height: pxToRem(40px);
+  }
+  &--md {
+    font-size: pxToRem(28px);
+    line-height: pxToRem(36px);
+  }
+  &--sm {
+    font-size: pxToRem(24px);
+    line-height: pxToRem(32px);
+  }
+  &--xs {
+    font-size: pxToRem(20px);
+    line-height: pxToRem(28px);
+  }
+}
+
+.Caption {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-semi-bold);
+  text-transform: uppercase;
+  letter-spacing: 0;
+
+  &--lg {
+    font-size: pxToRem(16px);
+    line-height: pxToRem(24px);
+  }
+  &--md {
+    font-size: pxToRem(14px);
+    line-height: pxToRem(22px);
+  }
+  &--sm {
+    font-size: pxToRem(12px);
+    line-height: pxToRem(20px);
+  }
+  &--xs {
+    font-size: pxToRem(10px);
+    line-height: pxToRem(16px);
+  }
+}
+
+.Paragraph {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: 0;
+
+  &--lg {
+    font-size: pxToRem(18px);
+    line-height: pxToRem(26px);
+  }
+  &--md {
+    font-size: pxToRem(16px);
+    line-height: pxToRem(24px);
+  }
+  &--sm {
+    font-size: pxToRem(14px);
+    line-height: pxToRem(22px);
+  }
+  &--xs {
+    font-size: pxToRem(12px);
+    line-height: pxToRem(20px);
+  }
+}
+
+.Title {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0;
+
+  &--lg {
+    font-size: pxToRem(18px);
+    line-height: pxToRem(26px);
+  }
+  &--md {
+    font-size: pxToRem(16px);
+    line-height: pxToRem(24px);
+  }
+  &--sm {
+    font-size: pxToRem(14px);
+    line-height: pxToRem(22px);
+  }
+  &--xs {
+    font-size: pxToRem(12px);
+    line-height: pxToRem(20px);
+  }
+}
+
+.Link {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0;
+
+  &--lg {
+    font-size: pxToRem(18px);
+    line-height: pxToRem(26px);
+  }
+  &--md {
+    font-size: pxToRem(16px);
+    line-height: pxToRem(24px);
+  }
+  &--sm {
+    font-size: pxToRem(14px);
+    line-height: pxToRem(22px);
+  }
+  &--xs {
+    font-size: pxToRem(12px);
+    line-height: pxToRem(20px);
+  }
+}
+
+.Code {
+  font-family: var(--font-family-monospace);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: 0;
+
+  &--md {
+    font-size: pxToRem(16px);
+    line-height: pxToRem(24px);
+  }
+  &--sm {
+    font-size: pxToRem(14px);
+    line-height: pxToRem(22px);
+  }
+  &--xs {
+    font-size: pxToRem(12px);
+    line-height: pxToRem(20px);
+  }
+}
