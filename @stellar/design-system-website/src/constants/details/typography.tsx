@@ -1,11 +1,4 @@
-import {
-  Caption,
-  Code,
-  Heading,
-  Link,
-  Paragraph,
-  Title,
-} from "@stellar/design-system";
+import { Caption, Heading, Paragraph, Title } from "@stellar/design-system";
 import { ComponentDetails, ComponentDetailsId } from "types/types";
 
 export const typography: ComponentDetails = {
@@ -47,8 +40,11 @@ export const typography: ComponentDetails = {
     {
       title: "Caption",
       description: (
-        // TODO: update text
-        <>Caption.</>
+        <>
+          Use <code>Caption</code> component to use for eyebrow subtitles paired
+          with a title, and secondary accent text in elements like badges and
+          network status.
+        </>
       ),
       component: [
         <Caption size="lg">Caption / LG</Caption>,
@@ -90,39 +86,16 @@ export const typography: ComponentDetails = {
     {
       title: "Title",
       description: (
-        // TODO: description
-        <>Title</>
+        <>
+          Use <code>Title</code> component when a semantic heading is not
+          needed. For example, banner title, navigation item, label, etc.
+        </>
       ),
       component: [
         <Title size="lg">Title / LG</Title>,
         <Title size="md">Title / MD</Title>,
         <Title size="sm">Title / SM</Title>,
         <Title size="xs">Title / XS</Title>,
-      ],
-    },
-    {
-      title: "Link",
-      description: (
-        // TODO: description
-        <>Link</>
-      ),
-      component: [
-        <Link size="lg">Link / LG</Link>,
-        <Link size="md">Link / MD</Link>,
-        <Link size="sm">Link / SM</Link>,
-        <Link size="xs">Link / XS</Link>,
-      ],
-    },
-    {
-      title: "Code",
-      description: (
-        // TODO: description
-        <>Code</>
-      ),
-      component: [
-        <Code size="md">Code / MD</Code>,
-        <Code size="sm">Code / SM</Code>,
-        <Code size="xs">Code / XS</Code>,
       ],
     },
   ],
@@ -232,59 +205,6 @@ export const typography: ComponentDetails = {
       default: null,
       optional: false,
       description: "Title text",
-    },
-    // Link
-    {
-      heading: "Link",
-      prop: "",
-      type: [""],
-      default: "",
-      optional: false,
-      description: "",
-    },
-    {
-      prop: "size",
-      type: ["lg", "md", "sm", "xs"],
-      default: null,
-      optional: false,
-      description: "Link size",
-    },
-    {
-      prop: "children",
-      type: ["string", "ReactNode"],
-      default: null,
-      optional: false,
-      description: "Link text",
-    },
-    {
-      prop: "asDiv",
-      type: ["boolean"],
-      default: null,
-      optional: true,
-      description: "Render link as div",
-    },
-    // Code
-    {
-      heading: "Code",
-      prop: "",
-      type: [""],
-      default: "",
-      optional: false,
-      description: "",
-    },
-    {
-      prop: "size",
-      type: ["md", "sm", "xs"],
-      default: null,
-      optional: false,
-      description: "Code size",
-    },
-    {
-      prop: "children",
-      type: ["string", "ReactNode"],
-      default: null,
-      optional: false,
-      description: "Code text",
     },
   ],
   externalProps: {
