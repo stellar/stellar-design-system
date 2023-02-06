@@ -1,10 +1,4 @@
-import {
-  Layout,
-  Heading2,
-  Heading1,
-  InfoBlock,
-  TextLink,
-} from "@stellar/design-system";
+import { Layout, Heading, InfoBlock, TextLink } from "@stellar/design-system";
 import { ComponentsList } from "components/ComponentsList";
 import GitHub from "generated/gitInfo";
 import { useSideNavEnabled } from "hooks/useSideNavEnabled";
@@ -14,7 +8,9 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
 
   return (
     <Layout.Inset>
-      <Heading1>Stellar Design System</Heading1>
+      <Heading as="h1" size="md">
+        Stellar Design System
+      </Heading>
 
       <div className="Section">
         <div className="Section__content">
@@ -33,7 +29,9 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
 
       <div className="Section">
         <div className="Section__content">
-          <Heading2>Tech stack</Heading2>
+          <Heading as="h2" size="md">
+            Tech stack
+          </Heading>
 
           <ul>
             <li>TypeScript</li>
@@ -47,7 +45,9 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
 
       <div className="Section">
         <div className="Section__content">
-          <Heading2>Current version</Heading2>
+          <Heading as="h2" size="md">
+            Current version
+          </Heading>
 
           <p>
             <TextLink href="https://www.npmjs.com/package/@stellar/design-system">
@@ -65,7 +65,9 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
 
       <div className="Section">
         <div className="Section__content">
-          <Heading2>Usage</Heading2>
+          <Heading as="h2" size="md">
+            Usage
+          </Heading>
 
           <p>
             Install using <code>npm</code> or <code>yarn</code>.
@@ -98,7 +100,9 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
 
       <div className="Section">
         <div className="Section__content">
-          <Heading2>Local development</Heading2>
+          <Heading as="h2" size="md">
+            Local development
+          </Heading>
 
           <p>The design system repo has two parts:</p>
 
@@ -176,7 +180,9 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
 
       <div className="Section">
         <div className="Section__content">
-          <Heading2>Developer notes</Heading2>
+          <Heading as="h2" size="md">
+            Developer notes
+          </Heading>
 
           <ul>
             <li>
@@ -209,7 +215,9 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
 
       <div className="Section">
         <div className="Section__content">
-          <Heading2>Components</Heading2>
+          <Heading as="h2" size="md">
+            Components
+          </Heading>
           <p>
             Below is a list of all components and assets. Click on the links to
             view details of the component.

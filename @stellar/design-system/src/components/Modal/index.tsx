@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback } from "react";
 import ReactDOM from "react-dom";
-import { Heading2 } from "../Heading";
 import { NavButton } from "../NavButton";
+import { Heading } from "../Typography";
 import { Icon } from "../../icons";
 
 import "./styles.scss";
@@ -21,7 +21,9 @@ interface ModalHeadingProps {
 const ModalHeading: React.FC<ModalHeadingProps> = ({
   children,
 }: ModalHeadingProps) => (
-  <Heading2 className="ModalHeading">{children}</Heading2>
+  <Heading as="h2" size="md" className="ModalHeading">
+    {children}
+  </Heading>
 );
 
 interface ModalBodyProps {
@@ -105,7 +107,7 @@ export const Modal: React.FC<ModalProps> & ModalComponent = ({
           />
         </div>
       </div>
-      <div className="Modal__background" onClick={onClose} />
+      <div className="Modal__background" role="button" onClick={onClose} />
     </div>,
     parent,
   );

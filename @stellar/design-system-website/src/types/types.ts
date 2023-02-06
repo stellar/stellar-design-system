@@ -97,6 +97,7 @@ export interface ComponentProp {
   default: string | null;
   optional: boolean;
   description: string | undefined;
+  heading?: string;
 }
 
 export interface ComponentExternalProps {
