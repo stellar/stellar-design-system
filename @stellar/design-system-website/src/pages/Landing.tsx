@@ -82,6 +82,23 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
           </p>
 
           <p>
+            Add Google Fonts (Inter Tight, Inter, and Roboto Mono){" "}
+            <code>index.html</code> file.
+          </p>
+
+          <p className="FontImports">
+            <code>
+              {`<link rel="preconnect" href="https://fonts.googleapis.com" />`}
+            </code>
+            <code>
+              {`<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />`}
+            </code>
+            <code>
+              {`<link href="https://fonts.googleapis.com/css2?family=Inter+Tight&family=Inter:wght@400;500;600&family=Roboto+Mono&display=swap" rel="stylesheet" />`}
+            </code>
+          </p>
+
+          <p>
             Add the main CSS file to your project (for example, the main{" "}
             <code>index</code> file of your React project).
           </p>
