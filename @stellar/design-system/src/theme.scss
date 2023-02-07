@@ -133,8 +133,9 @@
   --font-weight-semi-bold: 600;
 
   // Font family
-  --font-family-base: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
-  --font-family-monospace: "IBM Plex Mono", Consolas, Menlo, monospace;
+  --font-family-heading: "Inter Tight", sans-serif;
+  --font-family-base: "Inter", sans-serif;
+  --font-family-monospace: "Roboto Mono", monospace;
 
   // Z-index
   --z-index-tooltip: 20;

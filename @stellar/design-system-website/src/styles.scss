@@ -109,3 +109,13 @@ body {
 .TableNoteContainer {
   margin-top: 1rem;
 }
+
+.FontImports {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  code {
+    display: block;
+  }
+}
