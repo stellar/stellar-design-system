@@ -76,7 +76,7 @@ export const ToggleDarkMode = ({
       id="dark-mode-toggle"
       title={isDarkMode ? "Activate light mode" : "Activate dark mode"}
       onClick={handleToggle}
-      icon={isDarkMode ? <Icon.Sun /> : <Icon.Moon />}
+      icon={isDarkMode ? <Icon.ModeLight /> : <Icon.ModeDark />}
       showBorder={showBorder}
     />
   );

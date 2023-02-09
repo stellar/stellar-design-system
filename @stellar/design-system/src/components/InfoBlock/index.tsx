@@ -25,8 +25,8 @@ export const InfoBlock: React.FC<InfoBlockProps> & InfoBlockComponent = ({
   const variantIcon = {
     [InfoBlockVariant.info]: <Icon.Info />,
     [InfoBlockVariant.success]: <Icon.CheckCircle />,
-    [InfoBlockVariant.error]: <Icon.XCircle />,
-    [InfoBlockVariant.warning]: <Icon.AlertTriangle />,
+    [InfoBlockVariant.error]: <Icon.Error />,
+    [InfoBlockVariant.warning]: <Icon.Warning />,
   };
 
   return (
