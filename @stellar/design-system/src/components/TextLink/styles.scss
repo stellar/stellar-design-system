@@ -74,7 +74,7 @@
 
     svg {
       transition: fill var(--anim-transition-default);
-      @include mixins.svg-color(var(--TextLink-color-text));
+      fill: var(--TextLink-color-text);
     }
   }
 

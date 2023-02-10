@@ -82,7 +82,7 @@ export const App = () => {
     <SideNavContext.Provider value={sideNavStateValue}>
       <Layout.Header
         projectTitle="Design System"
-        hasDarkModeToggle
+        hasThemeSwitch
         menu={{
           isEnabled: sideNavState.isEnabled,
           onOpen: () => toggleSideNav(true),

@@ -3,7 +3,7 @@
 @mixin SvgIcon($color) {
   .ButtonIcon {
     svg {
-      @include mixins.svg-color($color);
+      fill: $color;
     }
   }
 }

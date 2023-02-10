@@ -24,5 +24,5 @@ export * from "./Textarea";
 export * from "./TextLink";
 export * from "./Toggle";
 export * from "./Tooltip";
-export * from "./ToggleDarkMode";
+export * from "./ThemeSwitch";
 export * from "./Typography";

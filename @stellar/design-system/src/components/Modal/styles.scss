@@ -75,7 +75,7 @@
     svg {
       width: 1.2rem;
       height: 1.2rem;
-      @include mixins.svg-color(var(--color-gray-80));
+      fill: var(--color-gray-80);
     }
   }
 
