@@ -17,7 +17,7 @@ export const layout: ComponentDetails = {
       title: "Default header",
       description: "",
       component: [
-        <Layout.Header projectTitle="Design System" hasDarkModeToggle />,
+        <Layout.Header projectTitle="Design System" hasThemeSwitch />,
       ],
     },
     {
@@ -86,18 +86,18 @@ export const layout: ComponentDetails = {
             description: "Link of the project",
           },
           {
-            prop: "hasDarkModeToggle",
+            prop: "hasThemeSwitch",
             type: ["boolean"],
             default: null,
             optional: true,
-            description: "Show theme toggle button",
+            description: "Show theme switch",
           },
           {
-            prop: "onDarkModeToggleEnd",
+            prop: "onThemeSwitchActionEnd",
             type: ["(isDarkMode: boolean) => void"],
             default: null,
             optional: true,
-            description: "Function to call at the end of the toggle event",
+            description: "Function to call at the end of the switch event",
           },
           {
             prop: "onSignOut",

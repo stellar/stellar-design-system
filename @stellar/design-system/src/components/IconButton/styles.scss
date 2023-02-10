@@ -19,7 +19,7 @@
   svg {
     width: var(--IconButton-size);
     height: var(--IconButton-size);
-    @include mixins.svg-color(var(--IconButton-color));
+    fill: var(--IconButton-color);
   }
 
   &__label {

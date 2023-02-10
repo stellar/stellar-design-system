@@ -27,8 +27,7 @@
   svg {
     width: var(--NavButton-icon-size);
     height: var(--NavButton-icon-size);
-
-    @include mixins.svg-color(var(--color-gray-80));
+    fill: var(--color-gray-80);
   }
 
   @media (hover: hover) {

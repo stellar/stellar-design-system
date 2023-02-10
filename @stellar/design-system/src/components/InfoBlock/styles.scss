@@ -5,7 +5,7 @@
   border-color: $border;
 
   svg {
-    @include mixins.svg-color($icon);
+    fill: $icon;
   }
 }
 

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Icon } from "../../icons";
 import { ProjectLogo } from "../ProjectLogo";
 import { TextLink } from "../TextLink";
-import { ToggleDarkMode, ModeValue } from "../ToggleDarkMode";
+import { ThemeMode, ThemeSwitch } from "../ThemeSwitch";
 import { NavButton } from "../NavButton";
 import "./styles.scss";
 
@@ -36,8 +36,8 @@ const Content: React.FC<ContentProps> = ({ children }: ContentProps) => (
 interface HeaderProps {
   projectTitle: string;
   projectLink?: string;
-  hasDarkModeToggle?: boolean;
-  onDarkModeToggleEnd?: (isDarkMode: boolean) => void;
+  hasThemeSwitch?: boolean;
+  onThemeSwitchActionEnd?: (isDarkMode: boolean) => void;
   onSignOut?: () => void;
   showButtonBorder?: boolean;
   menu?: {
@@ -58,8 +58,8 @@ const stringToCamelcase = (str: string) =>
 const Header: React.FC<HeaderProps> = ({
   projectTitle,
   projectLink,
-  hasDarkModeToggle,
-  onDarkModeToggleEnd,
+  hasThemeSwitch,
+  onThemeSwitchActionEnd,
   onSignOut,
   showButtonBorder,
   menu,
@@ -68,10 +68,10 @@ const Header: React.FC<HeaderProps> = ({
 }: HeaderProps) => {
   // Set default mode to light, if there is no theme toggle
   useEffect(() => {
-    if (!hasDarkModeToggle) {
-      document.body.classList.add(ModeValue.light);
+    if (!hasThemeSwitch) {
+      document.body.classList.add(ThemeMode.LIGHT);
     }
-  }, [hasDarkModeToggle]);
+  }, [hasThemeSwitch]);
 
   return (
     <div className="Layout__header">
@@ -96,11 +96,10 @@ const Header: React.FC<HeaderProps> = ({
             </TextLink>
           ) : null}
 
-          {hasDarkModeToggle ? (
-            <ToggleDarkMode
+          {hasThemeSwitch ? (
+            <ThemeSwitch
               storageKeyId={`stellarTheme:${stringToCamelcase(projectTitle)}`}
-              showBorder={showButtonBorder}
-              onToggleEnd={onDarkModeToggleEnd}
+              onActionEnd={onThemeSwitchActionEnd}
             />
           ) : null}
 

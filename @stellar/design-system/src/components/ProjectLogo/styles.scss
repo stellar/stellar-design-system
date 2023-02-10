@@ -20,7 +20,7 @@
     svg {
       height: 100%;
       width: 6rem;
-      @include mixins.svg-color(var(--color-gray-90));
+      fill: var(--color-gray-90);
     }
   }
 
