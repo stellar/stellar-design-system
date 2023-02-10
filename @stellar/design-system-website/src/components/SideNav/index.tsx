@@ -17,8 +17,9 @@ interface SideNavProps {
 export const SideNav = ({ activeItemId, onClick, onClose }: SideNavProps) => {
   const sideNavRef = createRef<HTMLDivElement>();
 
-  const [containerOffsetTop, setContainerOffsetTop] =
-    useState<number | undefined>();
+  const [containerOffsetTop, setContainerOffsetTop] = useState<
+    number | undefined
+  >();
   const [isSideNavFixed, setIsSideNavFixed] = useState(false);
 
   const scrollHandler = debounce(() => {
@@ -92,7 +93,7 @@ export const SideNav = ({ activeItemId, onClick, onClose }: SideNavProps) => {
           id="side-nav-close"
           title="Close side navigation"
           onClick={onClose}
-          icon={<Icon.X />}
+          icon={<Icon.Close />}
         />
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { createPopper, preventOverflow, flip } from "@popperjs/core";
-import { Icon } from "../../icons";
+import { ReactComponent as TooltipPoint } from "./tooltip-point.svg";
 import "./styles.scss";
 
 export enum TooltipPosition {
@@ -115,7 +115,7 @@ export const Tooltip: React.FC<TooltipProps> & TooltipComponent = ({
       >
         <div className="Tooltip__content__container">{content}</div>
         <div data-popper-arrow className="Tooltip__content__arrow">
-          <Icon.TooltipPoint />
+          <TooltipPoint />
         </div>
       </div>
     </div>

@@ -22,7 +22,7 @@ export const detailsTooltips: ComponentDetails = {
       component: [
         <DetailsTooltip
           details="More information to display inside the tooltip"
-          customIcon={<Icon.HelpCircle />}
+          customIcon={<Icon.Help />}
         >
           <span>Question element</span>
         </DetailsTooltip>,

@@ -46,7 +46,7 @@ const presetDetails = {
   [IconButtonPreset.copy]: {
     label: "Copy",
     altText: "Copy",
-    icon: <Icon.Copy />,
+    icon: <Icon.ContentCopy />,
   },
   [IconButtonPreset.download]: {
     label: "Download",

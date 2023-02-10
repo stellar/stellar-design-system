@@ -75,13 +75,9 @@
       padding: 2rem 1rem;
 
       svg {
-        width: 100%;
+        width: auto;
         height: 1.5rem;
-        stroke: var(--color-gray-90);
-
-        &[data-color="fill"] {
-          fill: var(--color-gray-90);
-        }
+        fill: var(--color-gray-90);
       }
     }
 

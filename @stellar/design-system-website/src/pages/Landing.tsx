@@ -220,12 +220,6 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
               <code>styled-components</code> are not currently supported, but
               you can use them as wrappers/containers for SDS components.
             </li>
-            <li>
-              SVG icons are styled using <code>stroke</code> property. To change
-              the <code>fill</code> color instead, we need to use{" "}
-              <code>{`svg[data-color="fill"] { fill: ...; }`}</code> (icon and
-              logo assets in SDS have this attribute added).
-            </li>
           </ul>
         </div>
       </div>
