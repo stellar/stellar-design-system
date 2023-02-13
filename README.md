@@ -38,6 +38,9 @@ This repo has two parts to it:
 - [Stellar Design System website repo](./@stellar/design-system-website/) -
   website for the design system.
 
+This project is tested with
+[BrowserStack](https://email.browserstack.com/c/eJwlzE1uwyAURtHV1DOQMf8D1lIB7yNBcewaSNl-LXV8dS6CMNas0imrFwo6abJLDUbCaKE2CCPNt1RpS8KQLQlIq9LCb94W3ivhVS9WGq4PjsEKsZ-TPh2xD8HesR6SPRpwMO3JOefJs3yZPL_Uijvv_Kb9Segvns_38gxZSYKzSaikfIFdBbIUSWFD1NbFZQ9zTp7aOTtaHzH_yxbqL0a8v31g32PjZ3v8AQZ4Rr0).
+
 ### Scripts
 
 `build:sds` build Stellar Design System (`sds`) project only
