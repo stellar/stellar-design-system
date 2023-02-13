@@ -1,101 +1,186 @@
-@use "../../mixins.scss";
+@use "../../utils.scss" as *;
 
-@mixin SvgIcon($color) {
-  .ButtonIcon {
-    svg {
-      fill: $color;
+// State
+@mixin buttonState() {
+  @media (hover: hover) {
+    &:hover {
+      color: var(--Button-color-text-hover);
+      background-color: var(--Button-color-background-hover);
+      border-color: var(--Button-color-border-hover);
     }
+  }
+
+  &:active {
+    color: var(--Button-color-text-active);
+    background-color: var(--Button-color-background-active);
+    border-color: var(--Button-color-border-active);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: var(--Button-color-text-disabled);
+    background-color: var(--Button-color-background-disabled);
+    border-color: var(--Button-color-border-disabled);
   }
 }
 
 .Button {
-  --Button-color-text: transparent;
-  --Button-color-background: transparent;
-  --Button-color-border: transparent;
+  // Variables
+  --Button-color-text-default: var(--color-white);
+  --Button-color-background-default: var(--color-purple-50);
+  --Button-color-border-default: var(--color-purple-50);
 
-  font-size: var(--font-size);
-  line-height: 1.56rem;
-  padding: 0.6rem 1.5rem;
-  font-weight: var(--font-weight-medium);
-  border-radius: 0.125rem;
-  border: 1px solid var(--Button-color-border);
-  cursor: pointer;
+  --Button-color-text-hover: var(--color-white);
+  --Button-color-background-hover: var(--color-purple-50);
+  --Button-color-border-hover: var(--color-purple-50);
+
+  --Button-color-text-active: var(--color-white);
+  --Button-color-background-active: var(--color-purple-50);
+  --Button-color-border-active: var(--color-purple-50);
+
+  --Button-color-text-disabled: var(--color-white);
+  --Button-color-background-disabled: var(--color-purple-50);
+  --Button-color-border-disabled: var(--color-purple-50);
+
+  --Button-font-size: #{pxToRem(16px)};
+  --Button-line-height: #{pxToRem(24px)};
+  --Button-gap: #{pxToRem(8px)};
+  --Button-padding-vertical: #{pxToRem(6px)};
+  --Button-padding-horizontal: #{pxToRem(12px)};
+
+  // Base
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: center;
-  background-color: var(--Button-color-background);
-  color: var(--Button-color-text);
-  transition: background-color var(--anim-transition-default);
+  align-items: center;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-medium);
+  border: 1px solid var(--Button-color-border-default);
+  color: var(--Button-color-text-default);
+  background-color: var(--Button-color-background-default);
+  border-radius: pxToRem(2px);
+  cursor: pointer;
+  transition: all var(--anim-transition-default);
 
-  &--small {
-    font-size: var(--font-size-secondary);
-    line-height: 1.5rem;
-    padding: 0.25rem 0.75rem;
-    font-weight: var(--font-weight-medium);
+  font-size: var(--Button-font-size);
+  line-height: var(--Button-line-height);
+  gap: var(--Button-gap);
+  padding: var(--Button-padding-vertical) var(--Button-padding-horizontal);
+
+  // Icon
+  &__icon {
+    width: var(--Button-font-size);
+    height: var(--Button-font-size);
+    display: block;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+    }
   }
 
-  &--primary {
-    --Button-color-background: var(--color-purple-60);
-    --Button-color-text: var(--color-white);
-    --Button-color-border: var(--color-purple-60);
+  .Loader {
+    --Loader-size: var(--Button-font-size);
+  }
 
-    @media (hover: hover) {
-      &:hover {
-        background-color: var(--color-purple-70);
-      }
-    }
+  // Variant
+  &--primary {
+    --Button-color-text-default: var(--color-white);
+    --Button-color-background-default: var(--color-purple-60);
+    --Button-color-border-default: var(--color-purple-60);
+
+    --Button-color-text-hover: var(--color-white);
+    --Button-color-background-hover: var(--color-purple-70);
+    --Button-color-border-hover: var(--color-purple-70);
+
+    --Button-color-text-active: var(--color-purple-40);
+    --Button-color-background-active: var(--color-purple-80);
+    --Button-color-border-active: var(--color-purple-80);
+
+    --Button-color-text-disabled: var(--color-white);
+    --Button-color-background-disabled: var(--color-purple-50);
+    --Button-color-border-disabled: var(--color-purple-50);
+
+    @include buttonState();
   }
 
   &--secondary {
-    --Button-color-background: var(--color-gray-10);
-    --Button-color-text: var(--color-purple-70);
-    --Button-color-border: var(--color-purple-70);
+    --Button-color-text-default: var(--color-purple-60);
+    --Button-color-background-default: var(--color-gray-00);
+    --Button-color-border-default: var(--color-purple-60);
 
-    @media (hover: hover) {
-      &:hover {
-        background-color: var(--color-purple-60);
-        color: var(--color-white);
+    --Button-color-text-hover: var(--color-white);
+    --Button-color-background-hover: var(--color-purple-60);
+    --Button-color-border-hover: var(--color-purple-60);
 
-        @include SvgIcon(var(--color-white));
-      }
-    }
+    --Button-color-text-active: var(--color-white);
+    --Button-color-background-active: var(--color-purple-70);
+    --Button-color-border-active: var(--color-purple-70);
+
+    --Button-color-text-disabled: var(--color-purple-50);
+    --Button-color-background-disabled: var(--color-gray-00);
+    --Button-color-border-disabled: var(--color-purple-50);
+
+    @include buttonState();
   }
 
   &--tertiary {
-    --Button-color-background: var(--color-gray-10);
-    --Button-color-text: var(--color-gray-90);
-    --Button-color-border: var(--color-gray-30);
+    --Button-color-text-default: var(--color-gray-80);
+    --Button-color-background-default: var(--color-gray-20);
+    --Button-color-border-default: var(--color-gray-20);
 
-    @media (hover: hover) {
-      &:hover {
-        background-color: var(--color-gray-20);
-      }
-    }
+    --Button-color-text-hover: var(--color-gray-80);
+    --Button-color-background-hover: var(--color-gray-40);
+    --Button-color-border-hover: var(--color-gray-40);
+
+    --Button-color-text-active: var(--color-gray-80);
+    --Button-color-background-active: var(--color-gray-50);
+    --Button-color-border-active: var(--color-gray-50);
+
+    --Button-color-text-disabled: var(--color-gray-60);
+    --Button-color-background-disabled: var(--color-gray-30);
+    --Button-color-border-disabled: var(--color-gray-30);
+
+    @include buttonState();
+  }
+
+  // Size
+  &--md {
+    --Button-font-size: #{pxToRem(16px)};
+    --Button-line-height: #{pxToRem(24px)};
+    --Button-gap: #{pxToRem(8px)};
+    --Button-padding-vertical: #{pxToRem(6px)};
+    --Button-padding-horizontal: #{pxToRem(12px)};
+  }
+
+  &--sm {
+    --Button-font-size: #{pxToRem(14px)};
+    --Button-line-height: #{pxToRem(22px)};
+    --Button-gap: #{pxToRem(6px)};
+    --Button-padding-vertical: #{pxToRem(5px)};
+    --Button-padding-horizontal: #{pxToRem(10px)};
+  }
+
+  &--xs {
+    --Button-font-size: #{pxToRem(12px)};
+    --Button-line-height: #{pxToRem(20px)};
+    --Button-gap: #{pxToRem(4px)};
+    --Button-padding-vertical: #{pxToRem(2px)};
+    --Button-padding-horizontal: #{pxToRem(6px)};
+  }
+
+  // Custom
+  &--uppercase {
+    text-transform: uppercase;
   }
 
   &--full-width {
     width: 100%;
   }
 
-  &:disabled {
-    cursor: not-allowed;
-    opacity: var(--opacity-disabled-button);
-
-    @media (hover: hover) {
-      &:hover {
-        background-color: var(--Button-color-background);
-        color: var(--Button-color-text);
-
-        @include SvgIcon(var(--Button-color-text));
-      }
-    }
-  }
-
-  @include SvgIcon(var(--Button-color-text));
-
+  // Loader
   .Loader {
-    --Loader-color: var(--Button-color-text);
-    margin-left: 0.5rem;
+    --Loader-color: currentColor;
   }
 }
