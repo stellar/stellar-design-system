@@ -76,12 +76,7 @@ export const inputs: ComponentDetails = {
           placeholder="Placeholder"
           rightElement="text"
         />,
-        <Input
-          id="input-10"
-          label="Label"
-          placeholder="Placeholder"
-          leftElement="text"
-        />,
+        <Input id="input-10" label="Label" placeholder="Placeholder" />,
         <Input
           id="input-11"
           label="Label"

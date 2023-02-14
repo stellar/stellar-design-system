@@ -57,9 +57,7 @@ export const Select: React.FC<SelectProps> = ({
       </div>
 
       {note && <FieldNote>{note}</FieldNote>}
-      {error && (
-        <FieldNote variant={FieldNote.variant.error}>{error}</FieldNote>
-      )}
+      {error && <FieldNote variant="error">{error}</FieldNote>}
     </div>
   );
 };

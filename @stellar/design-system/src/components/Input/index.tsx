@@ -3,11 +3,42 @@ import { FieldElement } from "../utils/FieldElement";
 import { FieldNote } from "../utils/FieldNote";
 import "./styles.scss";
 
+// TODO: move it's own component
+
+interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
+  children: string | React.ReactNode;
+  htmlFor: string;
+  isUppercase?: boolean;
+}
+
+export const Label: React.FC<LabelProps> = ({
+  children,
+  htmlFor,
+  isUppercase,
+  ...props
+}: LabelProps) => {
+  const additionalClasses = [...(isUppercase ? ["Label--uppercase"] : [])].join(
+    " ",
+  );
+
+  return (
+    <label
+      className={`Label ${additionalClasses}`}
+      htmlFor={htmlFor}
+      {...props}
+    >
+      {children}
+    </label>
+  );
+};
+
+Label.displayName = "Label";
+
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   customInput?: React.ReactElement;
   id: string;
   label?: string | React.ReactNode;
-  leftElement?: string | React.ReactNode;
+  isLabelUppercase?: boolean;
   rightElement?: string | React.ReactNode;
   note?: string | React.ReactNode;
   error?: string | React.ReactNode;
@@ -17,7 +48,7 @@ export const Input: React.FC<InputProps> = ({
   customInput,
   id,
   label,
-  leftElement,
+  isLabelUppercase,
   rightElement,
   note,
   error,
@@ -35,15 +66,13 @@ export const Input: React.FC<InputProps> = ({
 
   return (
     <div className={`Input ${additionalClasses}`}>
-      {label && <label htmlFor={id}>{label}</label>}
+      {label && (
+        <Label htmlFor={id} isUppercase={isLabelUppercase}>
+          {label}
+        </Label>
+      )}
 
       <div className="Input__container">
-        {leftElement && (
-          <FieldElement position={FieldElement.position.left}>
-            {leftElement}
-          </FieldElement>
-        )}
-
         <div className="Input__wrapper">
           {customInput ? (
             cloneElement(customInput, { ...baseInputProps, ...props })
@@ -52,6 +81,7 @@ export const Input: React.FC<InputProps> = ({
           )}
         </div>
 
+        {/* TODO: update this */}
         {rightElement && (
           <FieldElement position={FieldElement.position.right}>
             {rightElement}
@@ -60,9 +90,7 @@ export const Input: React.FC<InputProps> = ({
       </div>
 
       {note && <FieldNote>{note}</FieldNote>}
-      {error && (
-        <FieldNote variant={FieldNote.variant.error}>{error}</FieldNote>
-      )}
+      {error && <FieldNote variant="error">{error}</FieldNote>}
     </div>
   );
 };

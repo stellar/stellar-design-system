@@ -48,9 +48,7 @@ export const Textarea: React.FC<TextareaProps> = ({
       </div>
 
       {note && <FieldNote>{note}</FieldNote>}
-      {error && (
-        <FieldNote variant={FieldNote.variant.error}>{error}</FieldNote>
-      )}
+      {error && <FieldNote variant="error">{error}</FieldNote>}
     </div>
   );
 };
