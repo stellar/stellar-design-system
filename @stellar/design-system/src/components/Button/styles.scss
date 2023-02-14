@@ -57,7 +57,7 @@
   border: 1px solid var(--Button-color-border-default);
   color: var(--Button-color-text-default);
   background-color: var(--Button-color-background-default);
-  border-radius: pxToRem(2px);
+  border-radius: pxToRem(4px);
   cursor: pointer;
   transition: all var(--anim-transition-default);
 
@@ -94,11 +94,11 @@
     --Button-color-background-hover: var(--color-purple-70);
     --Button-color-border-hover: var(--color-purple-70);
 
-    --Button-color-text-active: var(--color-purple-40);
+    --Button-color-text-active: var(--color-gray-00);
     --Button-color-background-active: var(--color-purple-80);
     --Button-color-border-active: var(--color-purple-80);
 
-    --Button-color-text-disabled: var(--color-white);
+    --Button-color-text-disabled: var(--color-purple-70);
     --Button-color-background-disabled: var(--color-purple-50);
     --Button-color-border-disabled: var(--color-purple-50);
 
@@ -106,41 +106,41 @@
   }
 
   &--secondary {
-    --Button-color-text-default: var(--color-purple-60);
-    --Button-color-background-default: var(--color-gray-00);
-    --Button-color-border-default: var(--color-purple-60);
+    --Button-color-text-default: var(--color-gray-90);
+    --Button-color-background-default: var(--color-gray-20);
+    --Button-color-border-default: var(--color-gray-30);
 
-    --Button-color-text-hover: var(--color-white);
-    --Button-color-background-hover: var(--color-purple-60);
-    --Button-color-border-hover: var(--color-purple-60);
+    --Button-color-text-hover: var(--color-gray-90);
+    --Button-color-background-hover: var(--color-gray-30);
+    --Button-color-border-hover: var(--color-gray-40);
 
-    --Button-color-text-active: var(--color-white);
-    --Button-color-background-active: var(--color-purple-70);
-    --Button-color-border-active: var(--color-purple-70);
+    --Button-color-text-active: var(--color-gray-90);
+    --Button-color-background-active: var(--color-gray-40);
+    --Button-color-border-active: var(--color-gray-50);
 
-    --Button-color-text-disabled: var(--color-purple-50);
-    --Button-color-background-disabled: var(--color-gray-00);
-    --Button-color-border-disabled: var(--color-purple-50);
+    --Button-color-text-disabled: var(--color-gray-70);
+    --Button-color-background-disabled: var(--color-gray-50);
+    --Button-color-border-disabled: var(--color-gray-50);
 
     @include buttonState();
   }
 
   &--tertiary {
     --Button-color-text-default: var(--color-gray-80);
-    --Button-color-background-default: var(--color-gray-20);
-    --Button-color-border-default: var(--color-gray-20);
+    --Button-color-background-default: var(--color-gray-00);
+    --Button-color-border-default: var(--color-gray-30);
 
     --Button-color-text-hover: var(--color-gray-80);
-    --Button-color-background-hover: var(--color-gray-40);
+    --Button-color-background-hover: var(--color-gray-10);
     --Button-color-border-hover: var(--color-gray-40);
 
     --Button-color-text-active: var(--color-gray-80);
-    --Button-color-background-active: var(--color-gray-50);
+    --Button-color-background-active: var(--color-gray-20);
     --Button-color-border-active: var(--color-gray-50);
 
-    --Button-color-text-disabled: var(--color-gray-60);
-    --Button-color-background-disabled: var(--color-gray-30);
-    --Button-color-border-disabled: var(--color-gray-30);
+    --Button-color-text-disabled: var(--color-gray-70);
+    --Button-color-background-disabled: var(--color-gray-50);
+    --Button-color-border-disabled: var(--color-gray-50);
 
     @include buttonState();
   }
@@ -149,25 +149,25 @@
   &--md {
     --Button-font-size: #{pxToRem(16px)};
     --Button-line-height: #{pxToRem(24px)};
-    --Button-gap: #{pxToRem(8px)};
-    --Button-padding-vertical: #{pxToRem(6px)};
+    --Button-gap: #{pxToRem(7px)};
+    --Button-padding-vertical: #{pxToRem(8px)};
     --Button-padding-horizontal: #{pxToRem(12px)};
   }
 
   &--sm {
     --Button-font-size: #{pxToRem(14px)};
     --Button-line-height: #{pxToRem(22px)};
-    --Button-gap: #{pxToRem(6px)};
-    --Button-padding-vertical: #{pxToRem(5px)};
+    --Button-gap: #{pxToRem(7px)};
+    --Button-padding-vertical: #{pxToRem(6px)};
     --Button-padding-horizontal: #{pxToRem(10px)};
   }
 
   &--xs {
     --Button-font-size: #{pxToRem(12px)};
     --Button-line-height: #{pxToRem(20px)};
-    --Button-gap: #{pxToRem(4px)};
-    --Button-padding-vertical: #{pxToRem(2px)};
-    --Button-padding-horizontal: #{pxToRem(6px)};
+    --Button-gap: #{pxToRem(6px)};
+    --Button-padding-vertical: #{pxToRem(4px)};
+    --Button-padding-horizontal: #{pxToRem(8px)};
   }
 
   // Custom
