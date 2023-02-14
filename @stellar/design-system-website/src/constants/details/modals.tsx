@@ -13,7 +13,9 @@ const SimpleModalExample = () => {
 
   return (
     <div>
-      <Button onClick={() => setModalVisible(true)}>Show simple modal</Button>
+      <Button variant="primary" size="md" onClick={() => setModalVisible(true)}>
+        Show simple modal
+      </Button>
 
       <Modal visible={modalVisible} onClose={() => setModalVisible(false)}>
         <p>
@@ -32,7 +34,9 @@ const ModalExample = () => {
 
   return (
     <div>
-      <Button onClick={() => setModalVisible(true)}>Show modal</Button>
+      <Button variant="primary" size="md" onClick={() => setModalVisible(true)}>
+        Show modal
+      </Button>
 
       <Modal visible={modalVisible} onClose={() => setModalVisible(false)}>
         <Modal.Heading>Modal heading</Modal.Heading>
@@ -99,9 +103,12 @@ const ModalExample = () => {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button>Submit</Button>
+          <Button variant="primary" size="md">
+            Submit
+          </Button>
           <Button
-            variant={Button.variant.secondary}
+            variant="secondary"
+            size="md"
             onClick={() => setModalVisible(false)}
           >
             Cancel
@@ -227,8 +234,12 @@ export const modals: ComponentDetails = {
           </Modal.Body>
 
           <Modal.Footer>
-            <Button>Submit</Button>
-            <Button variant={Button.variant.secondary}>Cancel</Button>
+            <Button variant="primary" size="md">
+              Submit
+            </Button>
+            <Button variant="secondary" size="md">
+              Cancel
+            </Button>
           </Modal.Footer>
         </Modal>,
       ],
