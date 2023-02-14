@@ -1,31 +1,77 @@
-@use "../../mixins.scss";
 @use "../../utils.scss" as *;
 
 .Input {
-  width: 100%;
+  // Color
+  --Input-color-background: var(--color-gray-00);
+  --Input-color-border: var(--color-gray-30);
+  --Input-color-border-hover: var(--color-gray-40);
+  --Input-color-border-focus: var(--color-gray-50);
+  --Input-color-text: var(--color-gray-80);
 
-  &__container {
-    @include mixins.form-field-container;
+  // Size
+  --Input-font-size: #{pxToRem(16px)};
+  --Input-line-height: #{pxToRem(24px)};
+  --Input-padding-vertical: #{pxToRem(8px)};
+  --Input-padding-horizontal: #{pxToRem(12px)};
+  --Input-gap: #{pxToRem(8px)};
+  --Input-note-font-size: #{pxToRem(14px)};
+  --Input--note-line-height: #{pxToRem(22px)};
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--Input-gap);
+
+  &--md {
+    --Input-font-size: #{pxToRem(16px)};
+    --Input-line-height: #{pxToRem(24px)};
+    --Input-padding-vertical: #{pxToRem(8px)};
+    --Input-padding-horizontal: #{pxToRem(12px)};
+    --Input-gap: #{pxToRem(8px)};
+    --Input-note-font-size: #{pxToRem(14px)};
+    --Input--note-line-height: #{pxToRem(22px)};
   }
 
-  &__wrapper {
-    @include mixins.form-field-wrapper;
-    flex: 1;
-    height: 100%;
+  &--sm {
+    --Input-font-size: #{pxToRem(14px)};
+    --Input-line-height: #{pxToRem(22px)};
+    --Input-padding-vertical: #{pxToRem(6px)};
+    --Input-padding-horizontal: #{pxToRem(10px)};
+    --Input-gap: #{pxToRem(6px)};
+    --Input-note-font-size: #{pxToRem(14px)};
+    --Input--note-line-height: #{pxToRem(22px)};
+  }
 
-    @media (hover: hover) {
-      &:hover {
-        @include mixins.form-field-wrapper-hover;
-      }
-    }
+  &--xs {
+    --Input-font-size: #{pxToRem(12px)};
+    --Input-line-height: #{pxToRem(20px)};
+    --Input-padding-vertical: #{pxToRem(4px)};
+    --Input-padding-horizontal: #{pxToRem(8px)};
+    --Input-gap: #{pxToRem(4px)};
+    --Input-note-font-size: #{pxToRem(12px)};
+    --Input--note-line-height: #{pxToRem(20px)};
+  }
+
+  &__container {
+    position: relative;
+    font-family: var(--font-family-base);
+    background-color: var(--Input-color-background);
+    border: 1px solid var(--Input-color-border);
+    color: var(--Input-color-text);
+    border-radius: pxToRem(4px);
+    transition: border-color var(--anim-transition-default);
 
     input {
-      @include mixins.form-field-base;
-      @include mixins.form-field-focus;
-
-      &::placeholder {
-        color: var(--color-gray-70);
-      }
+      display: block;
+      width: 100%;
+      color: currentColor;
+      border: none;
+      background-color: transparent;
+      overflow: hidden;
+      border-radius: pxToRem(4px);
+      padding: var(--Input-padding-vertical) var(--Input-padding-horizontal);
+      font-size: var(--Input-font-size);
+      line-height: var(--Input-line-height);
 
       // Remove spinners (up and down arrows) from number inputs
       &[type="number"]::-webkit-inner-spin-button,
@@ -34,28 +80,74 @@
         margin: 0;
       }
 
-      @include mixins.form-field-disabled;
+      &:focus-visible {
+        outline: 1px solid var(--Input-color-border-focus);
+        border-color: transparent;
+      }
+
+      &::placeholder {
+        color: var(--color-gray-60);
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: var(--Input-color-border-hover);
+      }
+    }
+  }
+
+  &__side-element {
+    color: currentColor;
+    position: absolute;
+    top: var(--Input-padding-vertical);
+    bottom: var(--Input-padding-vertical);
+    right: var(--Input-padding-horizontal);
+    font-size: var(--Input-font-size);
+    line-height: var(--Input-line-height);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    svg {
+      fill: currentColor;
+      width: var(--Input-font-size);
+      height: var(--Input-font-size);
     }
   }
 
   &--error {
-    @include mixins.form-field-wrapper-error(".Input__wrapper");
+    --Input-color-background: var(--color-red-20);
+    --Input-color-border: var(--color-red-60);
+    --Input-color-text: var(--color-gray-80);
+
+    .Input__container {
+      input {
+        &:focus-visible {
+          --Input-color-border-focus: var(--color-red-70);
+        }
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          --Input-color-border-hover: var(--color-red-50);
+        }
+      }
+    }
   }
 
   &--disabled {
-    @include mixins.form-field-wrapper-disabled(".Input__wrapper");
+    --Input-color-background: var(--color-gray-40);
+    --Input-color-border: var(--color-gray-40);
+    --Input-color-text: var(--color-gray-60);
+
+    input {
+      cursor: not-allowed;
+    }
   }
-}
 
-// TODO: move to Label
-.Label {
-  font-family: var(--font-family-base);
-  font-weight: var(--font-weight-semi-bold);
-  font-size: pxToRem(12px);
-  line-height: pxToRem(20px);
-  color: var(--color-gray-60);
-
-  &--uppercase {
-    text-transform: uppercase;
+  .FieldNote {
+    font-size: var(--Input-note-font-size);
+    line-height: var(--Input--note-line-height);
   }
 }

@@ -3,15 +3,10 @@
 // =============================================================================
 // TODO: Move as much of this to components as possible. We don't want to affect
 // global styles on every website.
-html,
-body,
-input,
-textarea,
-button {
-  color: var(--color-gray-80);
-}
-
-body {
+.sds-theme-light,
+.sds-theme-dark {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size);
   min-height: 100vh;
   min-width: var(--layout-window-width-min);
   padding: 0;
