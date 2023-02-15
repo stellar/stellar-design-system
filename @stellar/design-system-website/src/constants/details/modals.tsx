@@ -1,7 +1,7 @@
 import {
   Modal,
   Button,
-  InfoBlock,
+  Notification,
   Checkbox,
   RadioButton,
 } from "@stellar/design-system";
@@ -73,14 +73,12 @@ const ModalExample = () => {
             veritatis aperiam alias molestiae.
           </p>
 
-          <InfoBlock variant={InfoBlock.variant.warning}>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ipsa
-              corrupti voluptatum molestias nesciunt ad sapiente placeat maxime
-              ullam saepe ab temporibus ratione at eos sed, voluptatem laborum
-              provident! Aperiam.
-            </p>
-          </InfoBlock>
+          <Notification variant="warning" title="Attention">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ipsa
+            corrupti voluptatum molestias nesciunt ad sapiente placeat maxime
+            ullam saepe ab temporibus ratione at eos sed, voluptatem laborum
+            provident! Aperiam.
+          </Notification>
 
           <Checkbox
             id="modal-checkbox-1"
@@ -196,14 +194,12 @@ export const modals: ComponentDetails = {
               veritatis aperiam alias molestiae.
             </p>
 
-            <InfoBlock variant={InfoBlock.variant.warning}>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
-                ipsa corrupti voluptatum molestias nesciunt ad sapiente placeat
-                maxime ullam saepe ab temporibus ratione at eos sed, voluptatem
-                laborum provident! Aperiam.
-              </p>
-            </InfoBlock>
+            <Notification variant="warning" title="Attention">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ipsa
+              corrupti voluptatum molestias nesciunt ad sapiente placeat maxime
+              ullam saepe ab temporibus ratione at eos sed, voluptatem laborum
+              provident! Aperiam.
+            </Notification>
 
             <Checkbox
               id="modal-checkbox-1"

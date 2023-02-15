@@ -15,12 +15,12 @@ export enum ComponentDetailsId {
   detailsTooltips = "detailsTooltips",
   iconButtons = "iconButtons",
   identicons = "identicons",
-  infoBlocks = "infoBlocks",
   inputs = "inputs",
   layout = "layout",
   loaders = "loaders",
   modals = "modals",
   navButtons = "navButtons",
+  notifications = "notifications",
   pagination = "pagination",
   pieProgress = "pieProgress",
   radioButtons = "radioButtons",
@@ -46,12 +46,12 @@ export interface ComponentDetailsList {
   detailsTooltips: ComponentDetails;
   iconButtons: ComponentDetails;
   identicons: ComponentDetails;
-  infoBlocks: ComponentDetails;
   inputs: ComponentDetails;
   layout: ComponentDetails;
   loaders: ComponentDetails;
   modals: ComponentDetails;
   navButtons: ComponentDetails;
+  notifications: ComponentDetails;
   pagination: ComponentDetails;
   pieProgress: ComponentDetails;
   radioButtons: ComponentDetails;

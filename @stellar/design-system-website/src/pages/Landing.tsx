@@ -1,4 +1,9 @@
-import { Layout, Heading, InfoBlock, TextLink } from "@stellar/design-system";
+import {
+  Layout,
+  Heading,
+  Notification,
+  TextLink,
+} from "@stellar/design-system";
 import { ComponentsList } from "components/ComponentsList";
 import GitHub from "generated/gitInfo";
 import { useSideNavEnabled } from "hooks/useSideNavEnabled";
@@ -20,10 +25,10 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
             the future) used in Stellar Development Foundation’s Web projects.
           </p>
 
-          <InfoBlock variant={InfoBlock.variant.warning}>
+          <Notification variant="warning" title="Attention">
             This project is at an early development stage. It is very likely the
             API will have many breaking changes.
-          </InfoBlock>
+          </Notification>
         </div>
       </div>
 
@@ -188,10 +193,10 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
             </li>
           </ul>
 
-          <InfoBlock>
+          <Notification variant="primary" title="Note">
             You need to run each <code>start</code> command in its own window or
             tab.
-          </InfoBlock>
+          </Notification>
         </div>
       </div>
 
