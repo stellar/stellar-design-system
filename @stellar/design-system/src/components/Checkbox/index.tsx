@@ -37,9 +37,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
       </div>
 
       {note && <FieldNote>{note}</FieldNote>}
-      {error && (
-        <FieldNote variant={FieldNote.variant.error}>{error}</FieldNote>
-      )}
+      {error && <FieldNote variant="error">{error}</FieldNote>}
     </div>
   );
 };

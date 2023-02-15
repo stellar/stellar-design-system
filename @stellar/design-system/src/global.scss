@@ -3,15 +3,10 @@
 // =============================================================================
 // TODO: Move as much of this to components as possible. We don't want to affect
 // global styles on every website.
-html,
-body,
-input,
-textarea,
-button {
-  color: var(--color-gray-80);
-}
-
-body {
+.sds-theme-light,
+.sds-theme-dark {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size);
   min-height: 100vh;
   min-width: var(--layout-window-width-min);
   padding: 0;
@@ -29,24 +24,6 @@ body {
   &.no-body-scroll {
     overflow: hidden;
   }
-}
-
-html,
-body,
-input,
-textarea,
-button {
-  font-size: var(--font-size);
-  font-weight: var(--font-weight-regular);
-  font-family: var(--font-family-base);
-  line-height: 1;
-}
-
-// Remove spinners (up and down arrows) from number inputs
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 
 strong,
@@ -105,16 +82,6 @@ code {
   &[data-break] {
     line-break: anywhere;
   }
-}
-
-label {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  color: var(--color-gray-90);
-  font-weight: var(--font-weight-medium);
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  display: block;
 }
 
 // Page wrapper
