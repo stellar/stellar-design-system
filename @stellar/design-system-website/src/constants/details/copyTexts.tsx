@@ -1,4 +1,4 @@
-import { CopyText, TextLink, IconButton } from "@stellar/design-system";
+import { CopyText, Link, IconButton } from "@stellar/design-system";
 import { ComponentDetails, ComponentDetailsId } from "types/types";
 
 export const copyTexts: ComponentDetails = {
@@ -9,9 +9,9 @@ export const copyTexts: ComponentDetails = {
       Use <code>CopyText</code> component to copy a string. Done action label
       can be displayed in a tooltip, by default it will replace component’s
       label inline. We’re using{" "}
-      <TextLink href="https://github.com/nkbt/react-copy-to-clipboard">
+      <Link href="https://github.com/nkbt/react-copy-to-clipboard">
         react-copy-to-clipboard
-      </TextLink>{" "}
+      </Link>{" "}
       to do the copy magic.
     </>
   ),

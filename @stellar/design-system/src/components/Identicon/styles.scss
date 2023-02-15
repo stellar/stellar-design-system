@@ -31,7 +31,7 @@
   }
 }
 
-.TextLink {
+.Link {
   .Identicon__address {
     text-decoration: underline;
     color: var(--color-gray-90);
@@ -46,7 +46,7 @@
   }
 }
 
-.TextLink--disabled {
+.Link--disabled {
   @media (hover: hover) {
     &:hover {
       .Identicon__address {

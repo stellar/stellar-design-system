@@ -1,4 +1,4 @@
-import { TextLink, Tooltip } from "@stellar/design-system";
+import { Link, Tooltip } from "@stellar/design-system";
 import { ComponentDetails, ComponentDetailsId } from "types/types";
 
 export const tooltips: ComponentDetails = {
@@ -7,8 +7,7 @@ export const tooltips: ComponentDetails = {
   description: (
     <>
       Tooltip is used to display info in a bubble. We are using awesome{" "}
-      <TextLink href="https://popper.js.org/">Popper</TextLink> for tooltip
-      positioning.
+      <Link href="https://popper.js.org/">Popper</Link> for tooltip positioning.
     </>
   ),
   shortDescription: "Tooltip is used to display info in a bubble",

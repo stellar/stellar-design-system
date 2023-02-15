@@ -1,4 +1,4 @@
-import { Layout, Heading, InfoBlock, TextLink } from "@stellar/design-system";
+import { Layout, Heading, InfoBlock, Link } from "@stellar/design-system";
 import { ComponentsList } from "components/ComponentsList";
 import GitHub from "generated/gitInfo";
 import { useSideNavEnabled } from "hooks/useSideNavEnabled";
@@ -50,12 +50,12 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
           </Heading>
 
           <p>
-            <TextLink href="https://www.npmjs.com/package/@stellar/design-system">
+            <Link href="https://www.npmjs.com/package/@stellar/design-system">
               <img
                 src="https://img.shields.io/npm/v/@stellar/design-system.svg?style=flat-square"
                 alt="npm version"
               />
-            </TextLink>
+            </Link>
           </p>
           <p>
             Website: <code>{GitHub.commitHash}</code>
@@ -127,17 +127,17 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
             <li>
               <code>@stellar/design-system</code> - everything for the design
               system (
-              <TextLink href="https://github.com/stellar/stellar-design-system/tree/main/%40stellar/design-system">
+              <Link href="https://github.com/stellar/stellar-design-system/tree/main/%40stellar/design-system">
                 repo
-              </TextLink>
+              </Link>
               )
             </li>
             <li>
               <code>@stellar/design-system-website</code> - website for the
               design system (what you are looking at now) (
-              <TextLink href="https://github.com/stellar/stellar-design-system/tree/main/%40stellar/design-system-website">
+              <Link href="https://github.com/stellar/stellar-design-system/tree/main/%40stellar/design-system-website">
                 repo
-              </TextLink>
+              </Link>
               )
             </li>
           </ul>

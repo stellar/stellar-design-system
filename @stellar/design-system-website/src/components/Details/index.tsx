@@ -1,4 +1,4 @@
-import { Heading, TextLink, Title } from "@stellar/design-system";
+import { Heading, Link, Title } from "@stellar/design-system";
 import React from "react";
 import { ElementCode } from "components/ElementCode";
 import { componentDetails } from "constants/componentDetails";
@@ -93,9 +93,9 @@ export const Details = ({
       {renderExternalProps?.link ? (
         <div className="TableNoteContainer">
           Including all valid{" "}
-          <TextLink href={renderExternalProps.link}>
+          <Link href={renderExternalProps.link}>
             {renderExternalProps.label || "attributes"}
-          </TextLink>
+          </Link>
         </div>
       ) : null}
     </>
