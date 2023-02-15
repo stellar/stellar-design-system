@@ -1,0 +1,115 @@
+@use "../../utils.scss" as *;
+
+// State
+@mixin linkState() {
+  @media (hover: hover) {
+    &:hover {
+      color: var(--Link-color-hover);
+    }
+  }
+}
+
+.Link {
+  // Variables
+  --Link-color-default: transparent;
+  --Link-color-hover: transparent;
+  --Link-color-disabled: transparent;
+
+  --Link-font-size: inherit;
+  --Link-line-height: inherit;
+  --Link-icon-size: 1rem;
+  --Link-gap: #{pxToRem(2px)};
+
+  // Base
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  vertical-align: bottom;
+  text-decoration: none;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-medium);
+
+  font-size: var(--Link-font-size);
+  line-height: var(--Link-line-height);
+  color: var(--Link-color-default);
+  gap: var(--Link-gap);
+
+  transition: all var(--anim-transition-default);
+
+  // Icon
+  &__icon {
+    width: var(--Link-icon-size);
+    height: var(--Link-icon-size);
+    display: block;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+    }
+  }
+
+  // Loader
+  .Loader {
+    --Loader-color: currentColor;
+  }
+
+  // Variant
+  &--primary {
+    --Link-color-default: var(--color-purple-60);
+    --Link-color-hover: var(--color-purple-70);
+    --Link-color-disabled: var(--color-purple-50);
+
+    @include linkState();
+  }
+
+  &--secondary {
+    --Link-color-default: var(--color-gray-60);
+    --Link-color-hover: var(--color-gray-70);
+    --Link-color-disabled: var(--color-gray-50);
+
+    @include linkState();
+  }
+
+  // Size
+  &--md {
+    --Link-font-size: #{pxToRem(16px)};
+    --Link-line-height: #{pxToRem(24px)};
+    --Link-icon-size: #{pxToRem(16px)};
+    --Link-gap: #{pxToRem(4px)};
+  }
+
+  &--sm {
+    --Link-font-size: #{pxToRem(14px)};
+    --Link-line-height: #{pxToRem(22px)};
+    --Link-icon-size: #{pxToRem(14px)};
+    --Link-gap: #{pxToRem(2px)};
+  }
+
+  &--xs {
+    --Link-font-size: #{pxToRem(12px)};
+    --Link-line-height: #{pxToRem(20px)};
+    --Link-icon-size: #{pxToRem(12px)};
+    --Link-gap: #{pxToRem(2px)};
+  }
+
+  // Custom
+  &--disabled {
+    cursor: not-allowed;
+    color: var(--Link-color-disabled);
+
+    &:hover {
+      color: var(--Link-color-disabled);
+    }
+  }
+
+  &--underline {
+    text-decoration: underline;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+}

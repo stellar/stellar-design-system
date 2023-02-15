@@ -51,8 +51,8 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
     label: "Navigation buttons",
   },
   {
-    id: ComponentDetailsId.textLinks,
-    label: "Text links",
+    id: ComponentDetailsId.links,
+    label: "Links",
   },
   {
     id: ComponentDetailsId.inputs,

@@ -22,7 +22,7 @@ import { statusBars } from "constants/details/statusBars";
 import { tables } from "constants/details/tables";
 import { tags } from "constants/details/tags";
 import { textareas } from "constants/details/textareas";
-import { textLinks } from "constants/details/textLinks";
+import { links } from "constants/details/links";
 import { toggles } from "constants/details/toggles";
 import { tooltips } from "constants/details/tooltips";
 import { typography } from "constants/details/typography";
@@ -41,6 +41,7 @@ export const componentDetails: ComponentDetailsList = {
   identicons,
   inputs,
   layout,
+  links,
   loaders,
   modals,
   navButtons,
@@ -53,7 +54,6 @@ export const componentDetails: ComponentDetailsList = {
   tables,
   tags,
   textareas,
-  textLinks,
   toggles,
   tooltips,
   typography,

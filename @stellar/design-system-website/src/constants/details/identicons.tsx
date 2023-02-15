@@ -1,4 +1,4 @@
-import { Identicon, TextLink } from "@stellar/design-system";
+import { Identicon, Link } from "@stellar/design-system";
 import { ComponentDetails, ComponentDetailsId } from "types/types";
 
 export const identicons: ComponentDetails = {
@@ -7,9 +7,9 @@ export const identicons: ComponentDetails = {
   description: (
     <>
       Unique identicons of public Stellar keys. We’re using awesome{" "}
-      <TextLink href="https://github.com/Lobstrco/stellar-identicon-js">
+      <Link href="https://github.com/Lobstrco/stellar-identicon-js">
         stellar-identicon-js
-      </TextLink>
+      </Link>
       .
     </>
   ),
@@ -34,31 +34,31 @@ export const identicons: ComponentDetails = {
       title: "Inside a link",
       description: "",
       component: [
-        <TextLink>
+        <Link>
           <Identicon
             publicAddress="GC26L4VPX5J63UEL25RJFLRSDWYPCC3P2WNLF2NHZ3DY577LRGDTLQHV"
             shortenAddress
           />
-        </TextLink>,
-        <TextLink disabled>
+        </Link>,
+        <Link isDisabled>
           <Identicon
             publicAddress="GC26L4VPX5J63UEL25RJFLRSDWYPCC3P2WNLF2NHZ3DY577LRGDTLQHV"
             shortenAddress
           />
-        </TextLink>,
-        <TextLink>
+        </Link>,
+        <Link>
           <Identicon
             publicAddress="GC26L4VPX5J63UEL25RJFLRSDWYPCC3P2WNLF2NHZ3DY577LRGDTLQHV"
             federatedAddress="test*stellar.org"
           />
-        </TextLink>,
-        <TextLink>
+        </Link>,
+        <Link>
           <Identicon
             publicAddress="GC26L4VPX5J63UEL25RJFLRSDWYPCC3P2WNLF2NHZ3DY577LRGDTLQHV"
             shortenAddress
             federatedAddress="test*stellar.org"
           />
-        </TextLink>,
+        </Link>,
       ],
     },
   ],
