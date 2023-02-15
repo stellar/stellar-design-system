@@ -34,14 +34,14 @@ export const links: ComponentDetails = {
       component: [
         <p>
           Some text{" "}
-          <Link icon={<Icon.ArrowRight />} iconPosition="left">
+          <Link icon={<Icon.ArrowLeft />} iconPosition="left">
             link
           </Link>{" "}
           more text
         </p>,
         <p>
           Some text{" "}
-          <Link icon={<Icon.ArrowRight />} iconPosition="left" isDisabled>
+          <Link icon={<Icon.ArrowLeft />} iconPosition="left" isDisabled>
             link
           </Link>{" "}
           more text
@@ -90,7 +90,7 @@ export const links: ComponentDetails = {
       component: [
         <p>
           Some text{" "}
-          <Link isUnderline icon={<Icon.ArrowRight />} iconPosition="left">
+          <Link isUnderline icon={<Icon.ArrowLeft />} iconPosition="left">
             link
           </Link>{" "}
           more text
@@ -99,7 +99,7 @@ export const links: ComponentDetails = {
           Some text{" "}
           <Link
             isUnderline
-            icon={<Icon.ArrowRight />}
+            icon={<Icon.ArrowLeft />}
             iconPosition="left"
             isDisabled
           >
@@ -374,7 +374,7 @@ export const links: ComponentDetails = {
           Some text{" "}
           <Link
             variant="secondary"
-            icon={<Icon.ArrowRight />}
+            icon={<Icon.ArrowLeft />}
             iconPosition="left"
           >
             link
@@ -385,7 +385,7 @@ export const links: ComponentDetails = {
           Some text{" "}
           <Link
             variant="secondary"
-            icon={<Icon.ArrowRight />}
+            icon={<Icon.ArrowLeft />}
             iconPosition="left"
             isDisabled
           >
@@ -453,7 +453,7 @@ export const links: ComponentDetails = {
           <Link
             variant="secondary"
             isUnderline
-            icon={<Icon.ArrowRight />}
+            icon={<Icon.ArrowLeft />}
             iconPosition="left"
           >
             link
@@ -465,7 +465,7 @@ export const links: ComponentDetails = {
           <Link
             variant="secondary"
             isUnderline
-            icon={<Icon.ArrowRight />}
+            icon={<Icon.ArrowLeft />}
             iconPosition="left"
             isDisabled
           >
