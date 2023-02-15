@@ -18,6 +18,7 @@ export enum ComponentDetailsId {
   infoBlocks = "infoBlocks",
   inputs = "inputs",
   layout = "layout",
+  links = "links",
   loaders = "loaders",
   modals = "modals",
   navButtons = "navButtons",
@@ -29,7 +30,6 @@ export enum ComponentDetailsId {
   tables = "tables",
   tags = "tags",
   textareas = "textareas",
-  textLinks = "textLinks",
   toggles = "toggles",
   tooltips = "tooltips",
   typography = "typography",
@@ -49,6 +49,7 @@ export interface ComponentDetailsList {
   infoBlocks: ComponentDetails;
   inputs: ComponentDetails;
   layout: ComponentDetails;
+  links: ComponentDetails;
   loaders: ComponentDetails;
   modals: ComponentDetails;
   navButtons: ComponentDetails;
@@ -60,7 +61,6 @@ export interface ComponentDetailsList {
   tables: ComponentDetails;
   tags: ComponentDetails;
   textareas: ComponentDetails;
-  textLinks: ComponentDetails;
   toggles: ComponentDetails;
   tooltips: ComponentDetails;
   typography: ComponentDetails;

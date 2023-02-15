@@ -7,7 +7,7 @@ export const buttons: ComponentDetails = {
   description: (
     <>
       <code>Button</code> is used to trigger an action that is not opening a
-      link (use <code>TextLink</code> instead). There are three variants of the{" "}
+      link (use <code>Link</code> instead). There are three variants of the{" "}
       <code>Button</code>: <code>primary</code>, <code>secondary</code>, and{" "}
       <code>tertiary</code>.
     </>

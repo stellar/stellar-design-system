@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Icon } from "../../icons";
 import { ProjectLogo } from "../ProjectLogo";
-import { TextLink } from "../TextLink";
+import { Link } from "../Link";
 import { ThemeMode, ThemeSwitch } from "../ThemeSwitch";
 import { NavButton } from "../NavButton";
 import "./styles.scss";
@@ -91,9 +91,9 @@ const Header: React.FC<HeaderProps> = ({
           {contentRight ?? null}
 
           {onSignOut ? (
-            <TextLink id="sign-out-button" role="button" onClick={onSignOut}>
+            <Link id="sign-out-button" role="button" onClick={onSignOut}>
               Sign out
-            </TextLink>
+            </Link>
           ) : null}
 
           {hasThemeSwitch ? (
@@ -146,31 +146,32 @@ const Footer: React.FC<FooterProps> = ({
         <div className="Layout__footer__content">
           {hideLegalLinks ? null : (
             <div className="Layout__footer__legal">
-              <TextLink
+              <Link
                 href="https://www.stellar.org/terms-of-service"
-                variant={TextLink.variant.secondary}
+                variant="secondary"
               >
                 Terms of Service
-              </TextLink>
+              </Link>
 
-              <TextLink
+              <Link
                 href="https://www.stellar.org/privacy-policy"
-                variant={TextLink.variant.secondary}
+                variant="secondary"
               >
                 Privacy Policy
-              </TextLink>
+              </Link>
             </div>
           )}
 
           <div className="Layout__rightSide--inline">
             {gitHubLink ? (
-              <TextLink
+              <Link
                 href={gitHubLink}
-                variant={TextLink.variant.secondary}
-                iconLeft={<Icon.Github />}
+                variant="secondary"
+                icon={<Icon.Github />}
+                iconPosition="left"
               >
                 {gitHubLabel ?? "GitHub"}
-              </TextLink>
+              </Link>
             ) : null}
             {children}
           </div>
