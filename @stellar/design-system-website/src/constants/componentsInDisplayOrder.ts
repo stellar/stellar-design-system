@@ -31,8 +31,8 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
     label: "Loaders",
   },
   {
-    id: ComponentDetailsId.infoBlocks,
-    label: "Info blocks",
+    id: ComponentDetailsId.notifications,
+    label: "Notifications",
   },
   {
     id: ComponentDetailsId.statusBars,
