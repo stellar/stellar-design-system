@@ -22,8 +22,9 @@
     gap: pxToRem(8px);
 
     &__icon {
-      width: pxToRem(22px);
-      height: pxToRem(22px);
+      width: pxToRem(16px);
+      height: pxToRem(16px);
+      margin-top: pxToRem(3px);
       flex-shrink: 0;
 
       svg {
