@@ -4,6 +4,8 @@
   font-family: var(--font-family-heading);
   font-weight: var(--font-weight-regular);
   letter-spacing: 0;
+  padding: 0;
+  margin: 0;
 
   &--xxl {
     font-size: pxToRem(40px);
@@ -59,6 +61,8 @@
   font-family: var(--font-family-base);
   font-weight: var(--font-weight-regular);
   letter-spacing: 0;
+  padding: 0;
+  margin: 0;
 
   &--lg {
     font-size: pxToRem(18px);
