@@ -35,7 +35,7 @@
   color: var(--Link-color-default);
   gap: var(--Link-gap);
 
-  transition: all var(--anim-transition-default);
+  transition: color var(--anim-transition-default);
 
   // Icon
   &__icon {

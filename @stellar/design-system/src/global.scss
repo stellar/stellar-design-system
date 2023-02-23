@@ -7,12 +7,11 @@
 .sds-theme-dark {
   font-family: var(--font-family-base);
   font-size: var(--font-size);
-  min-height: 100vh;
+  min-height: var(--layout-window-height-min);
   min-width: var(--layout-window-width-min);
   padding: 0;
   margin: 0;
   background-color: var(--color-gray-00);
-  transition: background-color ease-in-out 200ms;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 

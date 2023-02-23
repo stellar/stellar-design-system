@@ -59,7 +59,9 @@
   background-color: var(--Button-color-background-default);
   border-radius: pxToRem(4px);
   cursor: pointer;
-  transition: all var(--anim-transition-default);
+  transition: color var(--anim-transition-default),
+    background-color var(--anim-transition-default),
+    border-color var(--anim-transition-default);
 
   font-size: var(--Button-font-size);
   line-height: var(--Button-line-height);
