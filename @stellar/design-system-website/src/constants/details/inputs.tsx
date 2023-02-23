@@ -40,6 +40,13 @@ export const inputs: ComponentDetails = {
           placeholder="Placeholder"
           disabled
         />,
+        <Input
+          fieldSize="md"
+          id="input-25"
+          label="Label"
+          placeholder="Placeholder"
+          isPill
+        />,
       ],
     },
     {
@@ -59,6 +66,13 @@ export const inputs: ComponentDetails = {
           placeholder="Placeholder"
           disabled
         />,
+        <Input
+          fieldSize="sm"
+          id="input-26"
+          label="Label"
+          placeholder="Placeholder"
+          isPill
+        />,
       ],
     },
     {
@@ -77,6 +91,13 @@ export const inputs: ComponentDetails = {
           label="Label"
           placeholder="Placeholder"
           disabled
+        />,
+        <Input
+          fieldSize="xs"
+          id="input-27"
+          label="Label"
+          placeholder="Placeholder"
+          isPill
         />,
       ],
     },
@@ -190,6 +211,14 @@ export const inputs: ComponentDetails = {
           placeholder="Placeholder"
           rightElement={<Icon.Check />}
         />,
+        <Input
+          fieldSize="md"
+          id="input-28"
+          label="Label"
+          placeholder="Placeholder"
+          rightElement={<Icon.Check />}
+          isPill
+        />,
       ],
     },
     {
@@ -210,6 +239,14 @@ export const inputs: ComponentDetails = {
           placeholder="Placeholder"
           rightElement={<Icon.Check />}
         />,
+        <Input
+          fieldSize="sm"
+          id="input-29"
+          label="Label"
+          placeholder="Placeholder"
+          rightElement={<Icon.Check />}
+          isPill
+        />,
       ],
     },
     {
@@ -229,6 +266,14 @@ export const inputs: ComponentDetails = {
           label="Label"
           placeholder="Placeholder"
           rightElement={<Icon.Check />}
+        />,
+        <Input
+          fieldSize="xs"
+          id="input-30"
+          label="Label"
+          placeholder="Placeholder"
+          rightElement={<Icon.Check />}
+          isPill
         />,
       ],
     },
@@ -274,6 +319,13 @@ export const inputs: ComponentDetails = {
       default: null,
       optional: true,
       description: "Make label uppercase",
+    },
+    {
+      prop: "isPill",
+      type: ["boolean"],
+      default: null,
+      optional: true,
+      description: "Pill shaped input",
     },
     {
       prop: "rightElement",
