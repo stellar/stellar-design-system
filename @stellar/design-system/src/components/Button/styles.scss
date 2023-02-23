@@ -154,6 +154,10 @@
     --Button-gap: #{pxToRem(7px)};
     --Button-padding-vertical: #{pxToRem(8px)};
     --Button-padding-horizontal: #{pxToRem(12px)};
+
+    &.Button--pill {
+      --Button-padding-horizontal: #{pxToRem(14px)};
+    }
   }
 
   &--sm {
@@ -162,6 +166,10 @@
     --Button-gap: #{pxToRem(7px)};
     --Button-padding-vertical: #{pxToRem(6px)};
     --Button-padding-horizontal: #{pxToRem(10px)};
+
+    &.Button--pill {
+      --Button-padding-horizontal: #{pxToRem(12px)};
+    }
   }
 
   &--xs {
@@ -170,6 +178,10 @@
     --Button-gap: #{pxToRem(6px)};
     --Button-padding-vertical: #{pxToRem(4px)};
     --Button-padding-horizontal: #{pxToRem(8px)};
+
+    &.Button--pill {
+      --Button-padding-horizontal: #{pxToRem(10px)};
+    }
   }
 
   // Custom
@@ -179,6 +191,10 @@
 
   &--full-width {
     width: 100%;
+  }
+
+  &--pill {
+    border-radius: var(--Button-line-height);
   }
 
   // Loader

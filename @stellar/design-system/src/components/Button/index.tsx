@@ -11,6 +11,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;
   isUppercase?: boolean;
   isFullWidth?: boolean;
+  isPill?: boolean;
 }
 
 export const Button = ({
@@ -22,6 +23,7 @@ export const Button = ({
   isLoading,
   isUppercase,
   isFullWidth,
+  isPill,
   ...props
 }: ButtonProps): JSX.Element => {
   const additionalClasses = [
@@ -29,6 +31,7 @@ export const Button = ({
     `Button--${size}`,
     ...(isUppercase ? [`Button--uppercase`] : []),
     ...(isFullWidth ? [`Button--full-width`] : []),
+    ...(isPill ? [`Button--pill`] : []),
   ].join(" ");
 
   const renderIcon = (position: "left" | "right") => {

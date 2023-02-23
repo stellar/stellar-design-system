@@ -67,6 +67,9 @@ export const buttons: ComponentDetails = {
         <Button variant="primary" size="md" isFullWidth>
           Label
         </Button>,
+        <Button variant="primary" size="md" isPill>
+          Label
+        </Button>,
       ],
     },
     {
@@ -104,6 +107,9 @@ export const buttons: ComponentDetails = {
         <Button variant="primary" size="sm" isFullWidth>
           Label
         </Button>,
+        <Button variant="primary" size="sm" isPill>
+          Label
+        </Button>,
       ],
     },
     {
@@ -139,6 +145,9 @@ export const buttons: ComponentDetails = {
           Label
         </Button>,
         <Button variant="primary" size="xs" isFullWidth>
+          Label
+        </Button>,
+        <Button variant="primary" size="xs" isPill>
           Label
         </Button>,
       ],
@@ -179,6 +188,9 @@ export const buttons: ComponentDetails = {
         <Button variant="secondary" size="md" isFullWidth>
           Label
         </Button>,
+        <Button variant="secondary" size="md" isPill>
+          Label
+        </Button>,
       ],
     },
     {
@@ -216,6 +228,9 @@ export const buttons: ComponentDetails = {
         <Button variant="secondary" size="sm" isFullWidth>
           Label
         </Button>,
+        <Button variant="secondary" size="sm" isPill>
+          Label
+        </Button>,
       ],
     },
     {
@@ -251,6 +266,9 @@ export const buttons: ComponentDetails = {
           Label
         </Button>,
         <Button variant="secondary" size="xs" isFullWidth>
+          Label
+        </Button>,
+        <Button variant="secondary" size="xs" isPill>
           Label
         </Button>,
       ],
@@ -291,6 +309,9 @@ export const buttons: ComponentDetails = {
         <Button variant="tertiary" size="md" isFullWidth>
           Label
         </Button>,
+        <Button variant="tertiary" size="md" isPill>
+          Label
+        </Button>,
       ],
     },
     {
@@ -328,6 +349,9 @@ export const buttons: ComponentDetails = {
         <Button variant="tertiary" size="sm" isFullWidth>
           Label
         </Button>,
+        <Button variant="tertiary" size="sm" isPill>
+          Label
+        </Button>,
       ],
     },
     {
@@ -363,6 +387,9 @@ export const buttons: ComponentDetails = {
           Label
         </Button>,
         <Button variant="tertiary" size="xs" isFullWidth>
+          Label
+        </Button>,
+        <Button variant="tertiary" size="xs" isPill>
           Label
         </Button>,
       ],
@@ -424,6 +451,13 @@ export const buttons: ComponentDetails = {
       default: null,
       optional: true,
       description: "Sets width of the button to parent container",
+    },
+    {
+      prop: "isPill",
+      type: ["Boolean"],
+      default: null,
+      optional: true,
+      description: "Pill shaped button",
     },
   ],
   externalProps: {
