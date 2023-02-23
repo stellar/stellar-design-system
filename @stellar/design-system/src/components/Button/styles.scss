@@ -158,6 +158,10 @@
     &.Button--pill {
       --Button-padding-horizontal: #{pxToRem(14px)};
     }
+
+    &.Button--extra-padding {
+      --Button-padding-vertical: #{pxToRem(12px)};
+    }
   }
 
   &--sm {
@@ -170,6 +174,10 @@
     &.Button--pill {
       --Button-padding-horizontal: #{pxToRem(12px)};
     }
+
+    &.Button--extra-padding {
+      --Button-padding-vertical: #{pxToRem(10px)};
+    }
   }
 
   &--xs {
@@ -181,6 +189,10 @@
 
     &.Button--pill {
       --Button-padding-horizontal: #{pxToRem(10px)};
+    }
+
+    &.Button--extra-padding {
+      --Button-padding-vertical: #{pxToRem(8px)};
     }
   }
 

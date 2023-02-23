@@ -67,6 +67,9 @@ export const buttons: ComponentDetails = {
         <Button variant="primary" size="md" isFullWidth>
           Label
         </Button>,
+        <Button variant="primary" size="md" isExtraPadding>
+          Label
+        </Button>,
         <Button variant="primary" size="md" isPill>
           Label
         </Button>,
@@ -107,6 +110,9 @@ export const buttons: ComponentDetails = {
         <Button variant="primary" size="sm" isFullWidth>
           Label
         </Button>,
+        <Button variant="primary" size="sm" isExtraPadding>
+          Label
+        </Button>,
         <Button variant="primary" size="sm" isPill>
           Label
         </Button>,
@@ -145,6 +151,9 @@ export const buttons: ComponentDetails = {
           Label
         </Button>,
         <Button variant="primary" size="xs" isFullWidth>
+          Label
+        </Button>,
+        <Button variant="primary" size="xs" isExtraPadding>
           Label
         </Button>,
         <Button variant="primary" size="xs" isPill>
@@ -188,6 +197,9 @@ export const buttons: ComponentDetails = {
         <Button variant="secondary" size="md" isFullWidth>
           Label
         </Button>,
+        <Button variant="secondary" size="md" isExtraPadding>
+          Label
+        </Button>,
         <Button variant="secondary" size="md" isPill>
           Label
         </Button>,
@@ -228,6 +240,9 @@ export const buttons: ComponentDetails = {
         <Button variant="secondary" size="sm" isFullWidth>
           Label
         </Button>,
+        <Button variant="secondary" size="sm" isExtraPadding>
+          Label
+        </Button>,
         <Button variant="secondary" size="sm" isPill>
           Label
         </Button>,
@@ -266,6 +281,9 @@ export const buttons: ComponentDetails = {
           Label
         </Button>,
         <Button variant="secondary" size="xs" isFullWidth>
+          Label
+        </Button>,
+        <Button variant="secondary" size="xs" isExtraPadding>
           Label
         </Button>,
         <Button variant="secondary" size="xs" isPill>
@@ -309,6 +327,9 @@ export const buttons: ComponentDetails = {
         <Button variant="tertiary" size="md" isFullWidth>
           Label
         </Button>,
+        <Button variant="tertiary" size="md" isExtraPadding>
+          Label
+        </Button>,
         <Button variant="tertiary" size="md" isPill>
           Label
         </Button>,
@@ -349,6 +370,9 @@ export const buttons: ComponentDetails = {
         <Button variant="tertiary" size="sm" isFullWidth>
           Label
         </Button>,
+        <Button variant="tertiary" size="sm" isExtraPadding>
+          Label
+        </Button>,
         <Button variant="tertiary" size="sm" isPill>
           Label
         </Button>,
@@ -387,6 +411,9 @@ export const buttons: ComponentDetails = {
           Label
         </Button>,
         <Button variant="tertiary" size="xs" isFullWidth>
+          Label
+        </Button>,
+        <Button variant="tertiary" size="xs" isExtraPadding>
           Label
         </Button>,
         <Button variant="tertiary" size="xs" isPill>
@@ -458,6 +485,13 @@ export const buttons: ComponentDetails = {
       default: null,
       optional: true,
       description: "Pill shaped button",
+    },
+    {
+      prop: "isExtraPadding",
+      type: ["Boolean"],
+      default: null,
+      optional: true,
+      description: "Button with extra padding",
     },
   ],
   externalProps: {
