@@ -3,6 +3,8 @@ import "./styles.scss";
 import { FieldNote } from "../utils/FieldNote";
 import { Icon } from "../../icons";
 
+// TODO: add size variant?
+
 interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
   label: string | React.ReactNode;
@@ -27,12 +29,10 @@ export const Checkbox: React.FC<CheckboxProps> = ({
       <div className="Checkbox__container">
         <input type="checkbox" id={id} {...props} />
         <label htmlFor={id}>
-          {label}
-          <span className="Checkbox__icon" aria-hidden="true">
-            <span>
-              <Icon.Check />
-            </span>
+          <span aria-hidden="true">
+            <Icon.Check />
           </span>
+          {label}
         </label>
       </div>
 
