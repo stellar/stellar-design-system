@@ -14,8 +14,9 @@
   --Input-padding-vertical: #{pxToRem(8px)};
   --Input-padding-horizontal: #{pxToRem(12px)};
   --Input-gap: #{pxToRem(8px)};
+  --Input-border-radius: #{pxToRem(4px)};
   --Input-note-font-size: #{pxToRem(14px)};
-  --Input--note-line-height: #{pxToRem(22px)};
+  --Input-note-line-height: #{pxToRem(22px)};
 
   width: 100%;
   display: flex;
@@ -29,7 +30,11 @@
     --Input-padding-horizontal: #{pxToRem(12px)};
     --Input-gap: #{pxToRem(8px)};
     --Input-note-font-size: #{pxToRem(14px)};
-    --Input--note-line-height: #{pxToRem(22px)};
+    --Input-note-line-height: #{pxToRem(22px)};
+
+    &.Input--pill {
+      --Input-padding-horizontal: #{pxToRem(14px)};
+    }
   }
 
   &--sm {
@@ -39,7 +44,11 @@
     --Input-padding-horizontal: #{pxToRem(10px)};
     --Input-gap: #{pxToRem(6px)};
     --Input-note-font-size: #{pxToRem(14px)};
-    --Input--note-line-height: #{pxToRem(22px)};
+    --Input-note-line-height: #{pxToRem(22px)};
+
+    &.Input--pill {
+      --Input-padding-horizontal: #{pxToRem(12px)};
+    }
   }
 
   &--xs {
@@ -49,7 +58,11 @@
     --Input-padding-horizontal: #{pxToRem(8px)};
     --Input-gap: #{pxToRem(4px)};
     --Input-note-font-size: #{pxToRem(12px)};
-    --Input--note-line-height: #{pxToRem(20px)};
+    --Input-note-line-height: #{pxToRem(20px)};
+
+    &.Input--pill {
+      --Input-padding-horizontal: #{pxToRem(10px)};
+    }
   }
 
   &__container {
@@ -58,7 +71,7 @@
     background-color: var(--Input-color-background);
     border: 1px solid var(--Input-color-border);
     color: var(--Input-color-text);
-    border-radius: pxToRem(4px);
+    border-radius: var(--Input-border-radius);
     transition: border-color var(--anim-transition-default);
 
     input {
@@ -68,7 +81,7 @@
       border: none;
       background-color: transparent;
       overflow: hidden;
-      border-radius: pxToRem(4px);
+      border-radius: var(--Input-border-radius);
       padding: var(--Input-padding-vertical) var(--Input-padding-horizontal);
       font-size: var(--Input-font-size);
       line-height: var(--Input-line-height);
@@ -146,8 +159,12 @@
     }
   }
 
+  &--pill {
+    --Input-border-radius: var(--Input-line-height);
+  }
+
   .FieldNote {
     font-size: var(--Input-note-font-size);
-    line-height: var(--Input--note-line-height);
+    line-height: var(--Input-note-line-height);
   }
 }

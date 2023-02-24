@@ -1,6 +1,10 @@
 // Import global CSS from Stellar Design System
 @import "@stellar/design-system/build/styles.min.css";
 
+body {
+  color: var(--color-gray-90);
+}
+
 .Section {
   &:not(:last-of-type) {
     margin-bottom: 4.5rem;

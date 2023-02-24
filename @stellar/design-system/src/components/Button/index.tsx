@@ -11,6 +11,8 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;
   isUppercase?: boolean;
   isFullWidth?: boolean;
+  isPill?: boolean;
+  isExtraPadding?: boolean;
 }
 
 export const Button = ({
@@ -22,13 +24,18 @@ export const Button = ({
   isLoading,
   isUppercase,
   isFullWidth,
+  isPill,
+  isExtraPadding,
   ...props
 }: ButtonProps): JSX.Element => {
   const additionalClasses = [
     `Button--${variant}`,
     `Button--${size}`,
     ...(isUppercase ? [`Button--uppercase`] : []),
-    ...(isFullWidth ? [`Button--full-width`] : []),
+    // Button with extra padding will always be full width
+    ...(isFullWidth || isExtraPadding ? [`Button--full-width`] : []),
+    ...(isPill ? [`Button--pill`] : []),
+    ...(isExtraPadding ? [`Button--extra-padding`] : []),
   ].join(" ");
 
   const renderIcon = (position: "left" | "right") => {

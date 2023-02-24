@@ -59,7 +59,9 @@
   background-color: var(--Button-color-background-default);
   border-radius: pxToRem(4px);
   cursor: pointer;
-  transition: all var(--anim-transition-default);
+  transition: color var(--anim-transition-default),
+    background-color var(--anim-transition-default),
+    border-color var(--anim-transition-default);
 
   font-size: var(--Button-font-size);
   line-height: var(--Button-line-height);
@@ -152,6 +154,14 @@
     --Button-gap: #{pxToRem(7px)};
     --Button-padding-vertical: #{pxToRem(8px)};
     --Button-padding-horizontal: #{pxToRem(12px)};
+
+    &.Button--pill {
+      --Button-padding-horizontal: #{pxToRem(14px)};
+    }
+
+    &.Button--extra-padding {
+      --Button-padding-vertical: #{pxToRem(12px)};
+    }
   }
 
   &--sm {
@@ -160,6 +170,14 @@
     --Button-gap: #{pxToRem(7px)};
     --Button-padding-vertical: #{pxToRem(6px)};
     --Button-padding-horizontal: #{pxToRem(10px)};
+
+    &.Button--pill {
+      --Button-padding-horizontal: #{pxToRem(12px)};
+    }
+
+    &.Button--extra-padding {
+      --Button-padding-vertical: #{pxToRem(10px)};
+    }
   }
 
   &--xs {
@@ -168,6 +186,14 @@
     --Button-gap: #{pxToRem(6px)};
     --Button-padding-vertical: #{pxToRem(4px)};
     --Button-padding-horizontal: #{pxToRem(8px)};
+
+    &.Button--pill {
+      --Button-padding-horizontal: #{pxToRem(10px)};
+    }
+
+    &.Button--extra-padding {
+      --Button-padding-vertical: #{pxToRem(8px)};
+    }
   }
 
   // Custom
@@ -177,6 +203,10 @@
 
   &--full-width {
     width: 100%;
+  }
+
+  &--pill {
+    border-radius: var(--Button-line-height);
   }
 
   // Loader
