@@ -19,10 +19,8 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
     <div className={`RadioButton ${additionalClasses}`}>
       <input type="radio" id={id} {...props} />
       <label htmlFor={id}>
+        <span aria-hidden="true" />
         {label}
-        <span className="RadioButton__icon" aria-hidden="true">
-          <span />
-        </span>
       </label>
     </div>
   );

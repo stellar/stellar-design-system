@@ -8,7 +8,7 @@
   --Checkbox-color-text: var(--color-gray-80);
 
   // Size
-  --Checkbox-size: #{pxToRem(14px)};
+  --Checkbox-size: #{pxToRem(16px)};
   --Checkbox-icon-size: #{pxToRem(12px)};
   --Checkbox-vertical-gap: #{pxToRem(8px)};
   --Checkbox-horizontal-gap: #{pxToRem(8px)};
@@ -77,14 +77,12 @@
         justify-content: center;
         width: var(--Checkbox-size);
         height: var(--Checkbox-size);
+        flex-shrink: 0;
         border: 1px solid var(--Checkbox-color-border);
         background-color: var(--Checkbox-color-background);
         border-radius: pxToRem(4px);
         margin-top: calc(
-          (
-              var(--Checkbox-line-height) - var(--Checkbox-icon-size) -
-                pxToRem(2px)
-            ) / 2
+          (var(--Checkbox-line-height) - var(--Checkbox-size)) / 2
         );
         transition: background-color var(--anim-transition-default),
           border-color var(--anim-transition-default);

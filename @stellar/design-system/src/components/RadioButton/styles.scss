@@ -1,47 +1,96 @@
-@use "../../mixins.scss";
+@use "../../utils.scss" as *;
 
 .RadioButton {
+  // Color
+  --RadioButton-color-background: var(--color-gray-10);
+  --RadioButton-color-border: var(--color-gray-50);
+  --RadioButton-color-icon: var(--color-gray-00);
+  --RadioButton-color-text: var(--color-gray-80);
+
+  // Size
+  --RadioButton-size: #{pxToRem(16px)};
+  --RadioButton-icon-size: #{pxToRem(8px)};
+  --RadioButton-horizontal-gap: #{pxToRem(8px)};
+  --RadioButton-font-size: #{pxToRem(14px)};
+  --RadioButton-line-height: #{pxToRem(22px)};
+
   display: flex;
   align-items: center;
   position: relative;
+  gap: var(--RadioButton-horizontal-gap);
 
-  @include mixins.checkbox-radio-base-selectors("radio");
-
-  label {
-    @include mixins.checkbox-radio-label;
-
-    &::before,
-    &::after {
-      flex-shrink: 0;
-      flex-grow: 0;
-    }
-
-    &::before {
-      @include mixins.checkbox-radio-container;
-      border-radius: 1rem;
-    }
-  }
-
-  &__icon {
-    @include mixins.checkbox-radio-icon-container;
-
-    span {
-      --radio-button-selected-size: 0.4rem;
-      @include mixins.checkbox-radio-icon-wrapper;
-
-      &::after {
-        @include mixins.checkbox-radio-icon-centered;
-        content: "";
-        display: block;
-        width: var(--radio-button-selected-size);
-        height: var(--radio-button-selected-size);
-        border-radius: var(--radio-button-selected-size);
-        background-color: var(--color-white);
+  @media (hover: hover) {
+    &:hover {
+      input[type="radio"] {
+        & + label {
+          --RadioButton-color-border: var(--color-gray-60);
+        }
       }
     }
   }
 
-  &--disabled {
-    @include mixins.checkbox-radio-disabled;
+  input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+
+    &:checked + label {
+      --RadioButton-color-background: var(--color-purple-60);
+      --RadioButton-color-border: var(--color-purple-70);
+
+      span::before {
+        opacity: 1;
+      }
+    }
+
+    &:disabled + label {
+      --RadioButton-color-background: var(--color-gray-40);
+      --RadioButton-color-border: var(--color-gray-50);
+      cursor: not-allowed;
+    }
+
+    &:checked:disabled + label {
+      --RadioButton-color-background: var(--color-gray-40);
+      --RadioButton-color-border: var(--color-gray-50);
+      --RadioButton-color-icon: var(--color-gray-50);
+      cursor: not-allowed;
+    }
+  }
+
+  label {
+    font-size: var(--RadioButton-font-size);
+    line-height: var(--RadioButton-line-height);
+    font-weight: var(--font-weight-medium);
+    flex: 1;
+    position: relative;
+    display: flex;
+    gap: var(--RadioButton-horizontal-gap);
+
+    & > span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: var(--RadioButton-size);
+      height: var(--RadioButton-size);
+      flex-shrink: 0;
+      border: 1px solid var(--RadioButton-color-border);
+      background-color: var(--RadioButton-color-background);
+      border-radius: calc(var(--RadioButton-size) / 2);
+      margin-top: calc(
+        (var(--RadioButton-line-height) - var(--RadioButton-size)) / 2
+      );
+      transition: background-color var(--anim-transition-default),
+        border-color var(--anim-transition-default);
+
+      &::before {
+        display: block;
+        content: "";
+        opacity: 0;
+        width: var(--RadioButton-icon-size);
+        height: var(--RadioButton-icon-size);
+        border-radius: calc(var(--RadioButton-icon-size) / 2);
+        background-color: var(--RadioButton-color-icon);
+      }
+    }
   }
 }
