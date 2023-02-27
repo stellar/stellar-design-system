@@ -29,6 +29,27 @@
     }
   }
 
+  &--md {
+    --Checkbox-size: #{pxToRem(18px)};
+    --Checkbox-icon-size: #{pxToRem(14px)};
+    --Checkbox-font-size: #{pxToRem(16px)};
+    --Checkbox-line-height: #{pxToRem(24px)};
+  }
+
+  &--sm {
+    --Checkbox-size: #{pxToRem(16px)};
+    --Checkbox-icon-size: #{pxToRem(12px)};
+    --Checkbox-font-size: #{pxToRem(14px)};
+    --Checkbox-line-height: #{pxToRem(22px)};
+  }
+
+  &--xs {
+    --Checkbox-size: #{pxToRem(14px)};
+    --Checkbox-icon-size: #{pxToRem(10px)};
+    --Checkbox-font-size: #{pxToRem(12px)};
+    --Checkbox-line-height: #{pxToRem(20px)};
+  }
+
   &__container {
     display: flex;
     align-items: center;

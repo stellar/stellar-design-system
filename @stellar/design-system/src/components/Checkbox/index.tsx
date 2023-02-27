@@ -3,10 +3,10 @@ import "./styles.scss";
 import { FieldNote } from "../utils/FieldNote";
 import { Icon } from "../../icons";
 
-// TODO: add size variant?
-
 interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
+  // Note: cannot use "size" here because it's input's native property
+  fieldSize: "md" | "sm" | "xs";
   label: string | React.ReactNode;
   note?: string | React.ReactNode;
   error?: string | React.ReactNode;
@@ -14,12 +14,14 @@ interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 export const Checkbox: React.FC<CheckboxProps> = ({
   id,
+  fieldSize,
   label,
   note,
   error,
   ...props
 }: CheckboxProps) => {
   const additionalClasses = [
+    `Checkbox--${fieldSize}`,
     ...(props.disabled ? ["Checkbox--disabled"] : []),
     ...(error ? ["Checkbox--error"] : []),
   ].join(" ");

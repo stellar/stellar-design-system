@@ -81,6 +81,7 @@ const ModalExample = () => {
           </Notification>
 
           <Checkbox
+            fieldSize="sm"
             id="modal-checkbox-1"
             label="Pariatur
             eius beatae sint dolorem, excepturi quos enim, et ullam suscipit
@@ -202,6 +203,7 @@ export const modals: ComponentDetails = {
             </Notification>
 
             <Checkbox
+              fieldSize="sm"
               id="modal-checkbox-1"
               label="Pariatur
             eius beatae sint dolorem, excepturi quos enim, et ullam suscipit
