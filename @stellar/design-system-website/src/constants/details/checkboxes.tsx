@@ -225,6 +225,13 @@ export const checkboxes: ComponentDetails = {
       description: "ID of the checkbox should be unique",
     },
     {
+      prop: "fieldSize",
+      type: ["md", "sm", "xs"],
+      default: null,
+      optional: false,
+      description: "Size of the checkbox",
+    },
+    {
       prop: "label",
       type: ["string", "ReactNode"],
       default: null,
