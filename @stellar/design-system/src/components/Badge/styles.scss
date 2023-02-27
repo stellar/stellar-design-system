@@ -1,0 +1,42 @@
+@use "../../utils.scss" as *;
+
+.Badge {
+  // Color
+  --Badge-color-background: var(--color-purple-40);
+  --Badge-color-text: var(--color-purple-70);
+
+  font-size: pxToRem(12px);
+  line-height: pxToRem(20px);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-semi-bold);
+  text-transform: uppercase;
+  padding: pxToRem(2px) pxToRem(8px);
+  border-radius: pxToRem(2px);
+  background-color: var(--Badge-color-background);
+  color: var(--Badge-color-text);
+
+  &--default {
+    --Badge-color-background: var(--color-purple-40);
+    --Badge-color-text: var(--color-purple-70);
+  }
+
+  &--success {
+    --Badge-color-background: var(--color-green-40);
+    --Badge-color-text: var(--color-green-70);
+  }
+
+  &--warning {
+    --Badge-color-background: var(--color-yellow-40);
+    --Badge-color-text: var(--color-yellow-70);
+  }
+
+  &--pending {
+    --Badge-color-background: var(--color-gray-40);
+    --Badge-color-text: var(--color-gray-70);
+  }
+
+  &--error {
+    --Badge-color-background: var(--color-red-40);
+    --Badge-color-text: var(--color-red-70);
+  }
+}

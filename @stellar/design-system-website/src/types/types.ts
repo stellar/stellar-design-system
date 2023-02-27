@@ -7,6 +7,7 @@ export enum Routes {
 export enum ComponentDetailsId {
   assets = "assets",
   avatars = "avatars",
+  badges = "badges",
   branding = "branding",
   buttons = "buttons",
   cards = "cards",
@@ -28,7 +29,6 @@ export enum ComponentDetailsId {
   selects = "selects",
   statusBars = "statusBars",
   tables = "tables",
-  tags = "tags",
   textareas = "textareas",
   toggles = "toggles",
   tooltips = "tooltips",
@@ -38,6 +38,7 @@ export enum ComponentDetailsId {
 export interface ComponentDetailsList {
   assets: ComponentDetails;
   avatars: ComponentDetails;
+  badges: ComponentDetails;
   branding: ComponentDetails;
   buttons: ComponentDetails;
   cards: ComponentDetails;
@@ -59,7 +60,6 @@ export interface ComponentDetailsList {
   selects: ComponentDetails;
   statusBars: ComponentDetails;
   tables: ComponentDetails;
-  tags: ComponentDetails;
   textareas: ComponentDetails;
   toggles: ComponentDetails;
   tooltips: ComponentDetails;

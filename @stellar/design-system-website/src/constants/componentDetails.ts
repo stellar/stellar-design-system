@@ -1,6 +1,7 @@
 import { assets } from "constants/details/assets";
 import { avatars } from "constants/details/avatars";
 import { branding } from "constants/details/branding";
+import { badges } from "constants/details/badges";
 import { buttons } from "constants/details/buttons";
 import { cards } from "constants/details/cards";
 import { checkboxes } from "constants/details/checkboxes";
@@ -20,7 +21,6 @@ import { radioButtons } from "constants/details/radioButtons";
 import { selects } from "constants/details/selects";
 import { statusBars } from "constants/details/statusBars";
 import { tables } from "constants/details/tables";
-import { tags } from "constants/details/tags";
 import { textareas } from "constants/details/textareas";
 import { links } from "constants/details/links";
 import { toggles } from "constants/details/toggles";
@@ -31,6 +31,7 @@ import { ComponentDetailsList } from "types/types";
 export const componentDetails: ComponentDetailsList = {
   assets,
   avatars,
+  badges,
   branding,
   buttons,
   cards,
@@ -52,7 +53,6 @@ export const componentDetails: ComponentDetailsList = {
   selects,
   statusBars,
   tables,
-  tags,
   textareas,
   toggles,
   tooltips,
