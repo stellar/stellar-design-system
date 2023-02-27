@@ -1,4 +1,5 @@
 export * from "./Avatar";
+export * from "./Badge";
 export * from "./Button";
 export * from "./Card";
 export * from "./Checkbox";
@@ -19,7 +20,6 @@ export * from "./RadioButton";
 export * from "./Select";
 export * from "./StatusBar";
 export * from "./Table";
-export * from "./Tag";
 export * from "./Textarea";
 export * from "./Link";
 export * from "./Toggle";
