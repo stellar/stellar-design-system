@@ -5,6 +5,8 @@ import { Icon } from "../../icons";
 
 interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
+  // Note: cannot use "size" here because it's input's native property
+  fieldSize: "md" | "sm" | "xs";
   label: string | React.ReactNode;
   note?: string | React.ReactNode;
   error?: string | React.ReactNode;
@@ -12,12 +14,14 @@ interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 export const Checkbox: React.FC<CheckboxProps> = ({
   id,
+  fieldSize,
   label,
   note,
   error,
   ...props
 }: CheckboxProps) => {
   const additionalClasses = [
+    `Checkbox--${fieldSize}`,
     ...(props.disabled ? ["Checkbox--disabled"] : []),
     ...(error ? ["Checkbox--error"] : []),
   ].join(" ");
@@ -27,12 +31,10 @@ export const Checkbox: React.FC<CheckboxProps> = ({
       <div className="Checkbox__container">
         <input type="checkbox" id={id} {...props} />
         <label htmlFor={id}>
-          {label}
-          <span className="Checkbox__icon" aria-hidden="true">
-            <span>
-              <Icon.Check />
-            </span>
+          <span aria-hidden="true">
+            <Icon.Check />
           </span>
+          {label}
         </label>
       </div>
 

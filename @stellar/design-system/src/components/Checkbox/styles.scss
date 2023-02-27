@@ -1,46 +1,140 @@
-@use "../../mixins.scss";
+@use "../../utils.scss" as *;
 
 .Checkbox {
+  // Color
+  --Checkbox-color-background: var(--color-gray-10);
+  --Checkbox-color-border: var(--color-gray-50);
+  --Checkbox-color-icon: var(--color-gray-00);
+  --Checkbox-color-text: var(--color-gray-80);
+
+  // Size
+  --Checkbox-size: #{pxToRem(16px)};
+  --Checkbox-icon-size: #{pxToRem(12px)};
+  --Checkbox-vertical-gap: #{pxToRem(8px)};
+  --Checkbox-horizontal-gap: #{pxToRem(8px)};
+  --Checkbox-font-size: #{pxToRem(14px)};
+  --Checkbox-line-height: #{pxToRem(22px)};
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--Checkbox-vertical-gap);
+
+  @media (hover: hover) {
+    &:hover {
+      input[type="checkbox"] {
+        & + label {
+          --Checkbox-color-border: var(--color-gray-60);
+        }
+      }
+    }
+  }
+
+  &--md {
+    --Checkbox-size: #{pxToRem(18px)};
+    --Checkbox-icon-size: #{pxToRem(14px)};
+    --Checkbox-font-size: #{pxToRem(16px)};
+    --Checkbox-line-height: #{pxToRem(24px)};
+  }
+
+  &--sm {
+    --Checkbox-size: #{pxToRem(16px)};
+    --Checkbox-icon-size: #{pxToRem(12px)};
+    --Checkbox-font-size: #{pxToRem(14px)};
+    --Checkbox-line-height: #{pxToRem(22px)};
+  }
+
+  &--xs {
+    --Checkbox-size: #{pxToRem(14px)};
+    --Checkbox-icon-size: #{pxToRem(10px)};
+    --Checkbox-font-size: #{pxToRem(12px)};
+    --Checkbox-line-height: #{pxToRem(20px)};
+  }
+
   &__container {
     display: flex;
     align-items: center;
     position: relative;
 
-    @include mixins.checkbox-radio-base-selectors("checkbox");
+    input[type="checkbox"] {
+      opacity: 0;
+      position: absolute;
+      z-index: -1;
+
+      &:checked + label {
+        --Checkbox-color-background: var(--color-purple-60);
+        --Checkbox-color-border: var(--color-purple-70);
+
+        span svg {
+          opacity: 1;
+        }
+      }
+
+      &:disabled + label {
+        --Checkbox-color-background: var(--color-gray-40);
+        --Checkbox-color-border: var(--color-gray-50);
+        cursor: not-allowed;
+      }
+
+      &:checked:disabled + label {
+        --Checkbox-color-background: var(--color-gray-40);
+        --Checkbox-color-border: var(--color-gray-50);
+        --Checkbox-color-icon: var(--color-gray-50);
+        cursor: not-allowed;
+      }
+    }
 
     label {
-      @include mixins.checkbox-radio-label;
+      font-size: var(--Checkbox-font-size);
+      line-height: var(--Checkbox-line-height);
+      font-weight: var(--font-weight-medium);
+      flex: 1;
+      position: relative;
+      display: flex;
+      gap: var(--Checkbox-horizontal-gap);
 
-      &::before {
-        @include mixins.checkbox-radio-container;
-        border-radius: 0.25rem;
+      & > span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--Checkbox-size);
+        height: var(--Checkbox-size);
+        flex-shrink: 0;
+        border: 1px solid var(--Checkbox-color-border);
+        background-color: var(--Checkbox-color-background);
+        border-radius: pxToRem(4px);
+        margin-top: calc(
+          (var(--Checkbox-line-height) - var(--Checkbox-size)) / 2
+        );
+        transition: background-color var(--anim-transition-default),
+          border-color var(--anim-transition-default);
+
+        svg {
+          display: block;
+          opacity: 0;
+          width: var(--Checkbox-icon-size);
+          height: var(--Checkbox-icon-size);
+          fill: var(--Checkbox-color-icon);
+        }
       }
     }
   }
 
-  &__icon {
-    @include mixins.checkbox-radio-icon-container;
-
-    span {
-      @include mixins.checkbox-radio-icon-wrapper;
-    }
-
-    svg {
-      --checkbox-selected-size: 0.75rem;
-      @include mixins.checkbox-radio-icon-centered;
-      fill: var(--color-white);
-      width: var(--checkbox-selected-size);
-      height: var(--checkbox-selected-size);
-    }
-  }
-
   &--error {
-    label::before {
-      border-color: var(--color-red-60);
+    input[type="checkbox"] {
+      & + label {
+        --Checkbox-color-border: var(--color-red-50);
+        --Checkbox-color-background: var(--color-red-10);
+      }
     }
-  }
 
-  &--disabled {
-    @include mixins.checkbox-radio-disabled;
+    @media (hover: hover) {
+      &:hover {
+        input[type="checkbox"]:not(:checked) {
+          & + label {
+            --Checkbox-color-border: var(--color-red-60);
+          }
+        }
+      }
+    }
   }
 }

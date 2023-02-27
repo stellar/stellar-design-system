@@ -81,6 +81,7 @@ const ModalExample = () => {
           </Notification>
 
           <Checkbox
+            fieldSize="sm"
             id="modal-checkbox-1"
             label="Pariatur
             eius beatae sint dolorem, excepturi quos enim, et ullam suscipit
@@ -88,8 +89,14 @@ const ModalExample = () => {
             veritatis aperiam alias molestiae."
           />
 
-          <RadioButton id="modal-radio-1" name="modal-radio" label="Label 1" />
           <RadioButton
+            fieldSize="sm"
+            id="modal-radio-1"
+            name="modal-radio"
+            label="Label 1"
+          />
+          <RadioButton
+            fieldSize="sm"
             id="modal-radio-2"
             name="modal-radio"
             label="Pariatur
@@ -97,7 +104,12 @@ const ModalExample = () => {
             voluptates voluptas accusantium repellendus amet explicabo, iure
             veritatis aperiam alias molestiae."
           />
-          <RadioButton id="modal-radio-3" name="modal-radio" label="Label 3" />
+          <RadioButton
+            fieldSize="sm"
+            id="modal-radio-3"
+            name="modal-radio"
+            label="Label 3"
+          />
         </Modal.Body>
 
         <Modal.Footer>
@@ -202,6 +214,7 @@ export const modals: ComponentDetails = {
             </Notification>
 
             <Checkbox
+              fieldSize="sm"
               id="modal-checkbox-1"
               label="Pariatur
             eius beatae sint dolorem, excepturi quos enim, et ullam suscipit
@@ -210,11 +223,13 @@ export const modals: ComponentDetails = {
             />
 
             <RadioButton
+              fieldSize="sm"
               id="modal-radio-1"
               name="modal-radio"
               label="Label 1"
             />
             <RadioButton
+              fieldSize="sm"
               id="modal-radio-2"
               name="modal-radio"
               label="Pariatur
@@ -223,6 +238,7 @@ export const modals: ComponentDetails = {
             veritatis aperiam alias molestiae."
             />
             <RadioButton
+              fieldSize="sm"
               id="modal-radio-3"
               name="modal-radio"
               label="Label 3"
