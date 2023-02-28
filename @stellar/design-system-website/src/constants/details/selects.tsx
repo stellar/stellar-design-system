@@ -1,4 +1,4 @@
-import { Select, IconButton, Icon } from "@stellar/design-system";
+import { Select } from "@stellar/design-system";
 import { ComponentDetails, ComponentDetailsId } from "types/types";
 
 export const selects: ComponentDetails = {
@@ -17,60 +17,154 @@ export const selects: ComponentDetails = {
       title: "Default",
       description: "",
       component: [
-        <Select id="select-1">
+        <Select fieldSize="md" id="select-1">
           <option>Option 1</option>
           <option>Option 2</option>
         </Select>,
-        <Select id="select-2" disabled>
-          <option>Option 1</option>
-          <option>Option 2</option>
-        </Select>,
-      ],
-    },
-    {
-      title: "Select with label",
-      description: "",
-      component: [
-        <Select id="select-3" label="Label">
-          <option>Option 1</option>
-          <option>Option 2</option>
-        </Select>,
-        <Select id="select-4" label="Label" disabled>
+        <Select fieldSize="md" id="select-2" disabled>
           <option>Option 1</option>
           <option>Option 2</option>
         </Select>,
       ],
     },
     {
-      title: "Select with note / error",
+      title: "Select with label, medium",
       description: "",
       component: [
-        <Select id="select-5" label="Label" note="Note message">
+        <Select fieldSize="md" id="select-md-1" label="Label">
           <option>Option 1</option>
           <option>Option 2</option>
         </Select>,
-        <Select id="select-6" label="Label" error="Error message">
-          <option>Option 1</option>
-          <option>Option 2</option>
-        </Select>,
-      ],
-    },
-    {
-      title: "Input with elements",
-      description: "",
-      component: [
-        <Select id="select-7" label="Label" rightElement="text">
-          <option>Option 1</option>
-          <option>Option 2</option>
-        </Select>,
-        <Select id="select-8" label="Label" leftElement="text">
+        <Select fieldSize="md" id="select-md-2" label="Label" disabled>
           <option>Option 1</option>
           <option>Option 2</option>
         </Select>,
         <Select
-          id="select-9"
+          fieldSize="md"
+          id="select-md-3"
           label="Label"
-          rightElement={<IconButton icon={<Icon.Info />} altText="Info text" />}
+          isPill
+          isLabelUppercase
+        >
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </Select>,
+      ],
+    },
+    {
+      title: "Select with label, small",
+      description: "",
+      component: [
+        <Select fieldSize="sm" id="select-sm-1" label="Label">
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </Select>,
+        <Select fieldSize="sm" id="select-sm-2" label="Label" disabled>
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </Select>,
+        <Select
+          fieldSize="sm"
+          id="select-sm-3"
+          label="Label"
+          isPill
+          isLabelUppercase
+        >
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </Select>,
+      ],
+    },
+    {
+      title: "Select with label, extra-small",
+      description: "",
+      component: [
+        <Select fieldSize="xs" id="select-xs-1" label="Label">
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </Select>,
+        <Select fieldSize="xs" id="select-xs-2" label="Label" disabled>
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </Select>,
+        <Select
+          fieldSize="xs"
+          id="select-xs-3"
+          label="Label"
+          isPill
+          isLabelUppercase
+        >
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </Select>,
+      ],
+    },
+    {
+      title: "Select with note / error, medium",
+      description: "",
+      component: [
+        <Select
+          fieldSize="md"
+          id="select-md-n-1"
+          label="Label"
+          note="Note message"
+        >
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </Select>,
+        <Select
+          fieldSize="md"
+          id="select-md-n-2"
+          label="Label"
+          error="Error message"
+        >
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </Select>,
+      ],
+    },
+    {
+      title: "Select with note / error, small",
+      description: "",
+      component: [
+        <Select
+          fieldSize="sm"
+          id="select-sm-n-1"
+          label="Label"
+          note="Note message"
+        >
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </Select>,
+        <Select
+          fieldSize="sm"
+          id="select-sm-n-2"
+          label="Label"
+          error="Error message"
+        >
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </Select>,
+      ],
+    },
+    {
+      title: "Select with note / error, extra-small",
+      description: "",
+      component: [
+        <Select
+          fieldSize="xs"
+          id="select-xs-n-1"
+          label="Label"
+          note="Note message"
+        >
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </Select>,
+        <Select
+          fieldSize="xs"
+          id="select-xs-n-2"
+          label="Label"
+          error="Error message"
         >
           <option>Option 1</option>
           <option>Option 2</option>
@@ -87,6 +181,13 @@ export const selects: ComponentDetails = {
       description: "ID of the select should be unique",
     },
     {
+      prop: "fieldSize",
+      type: ["md", "sm", "xs"],
+      default: null,
+      optional: false,
+      description: "Size of the select",
+    },
+    {
       prop: "children",
       type: ["ReactNode"],
       default: null,
@@ -101,18 +202,18 @@ export const selects: ComponentDetails = {
       description: "Label of the select",
     },
     {
-      prop: "leftElement",
-      type: ["string", "ReactNode"],
+      prop: "isLabelUppercase",
+      type: ["boolean"],
       default: null,
       optional: true,
-      description: "Element on the left of the select",
+      description: "Make label uppercase",
     },
     {
-      prop: "rightElement",
-      type: ["string", "ReactNode"],
+      prop: "isPill",
+      type: ["boolean"],
       default: null,
       optional: true,
-      description: "Element on the right of the select",
+      description: "Pill shaped select",
     },
     {
       prop: "note",
@@ -127,6 +228,14 @@ export const selects: ComponentDetails = {
       default: null,
       optional: true,
       description: "Error message of the select",
+    },
+    {
+      prop: "customSelect",
+      type: ["React.ReactNode"],
+      default: null,
+      optional: true,
+      description:
+        "Use a specific select rather than a generic HTML select (useful for Formik or otherwise controlled selects)",
     },
   ],
   externalProps: {
