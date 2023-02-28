@@ -19,40 +19,123 @@ export const textareas: ComponentDetails = {
       title: "Default",
       description: "",
       component: [
-        <Textarea id="textarea-1">
+        <Textarea fieldSize="md" id="textarea-md-a-1">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti
           totam ut iure
         </Textarea>,
-        <Textarea id="textarea-2" disabled>
+        <Textarea fieldSize="md" id="textarea-md-a-2" disabled>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti
           totam ut iure
         </Textarea>,
       ],
     },
     {
-      title: "Textarea with label and placeholder",
+      title: "Textarea with label and placeholder, medium",
       description: "",
       component: [
-        <Textarea id="textarea-3" label="Label" placeholder="Placeholder" />,
         <Textarea
-          id="textarea-4"
+          fieldSize="md"
+          id="textarea-md-b-1"
+          label="Label"
+          placeholder="Placeholder"
+        />,
+        <Textarea
+          fieldSize="md"
+          id="textarea-md-b-2"
           label="Label"
           placeholder="Placeholder"
           disabled
         />,
+        <Textarea
+          fieldSize="md"
+          id="textarea-md-b-3"
+          label="Label"
+          placeholder="Placeholder"
+          isLabelUppercase
+        />,
       ],
     },
     {
-      title: "Textarea with label and long text",
+      title: "Textarea with label and placeholder, small",
       description: "",
       component: [
-        <Textarea id="textarea-5" label="Label" rows={5}>
+        <Textarea
+          fieldSize="sm"
+          id="textarea-sm-b-1"
+          label="Label"
+          placeholder="Placeholder"
+        />,
+        <Textarea
+          fieldSize="sm"
+          id="textarea-sm-b-2"
+          label="Label"
+          placeholder="Placeholder"
+          disabled
+        />,
+        <Textarea
+          fieldSize="sm"
+          id="textarea-sm-b-3"
+          label="Label"
+          placeholder="Placeholder"
+          isLabelUppercase
+        />,
+      ],
+    },
+    {
+      title: "Textarea with label and placeholder, extra-small",
+      description: "",
+      component: [
+        <Textarea
+          fieldSize="xs"
+          id="textarea-xs-b-1"
+          label="Label"
+          placeholder="Placeholder"
+        />,
+        <Textarea
+          fieldSize="xs"
+          id="textarea-xs-b-2"
+          label="Label"
+          placeholder="Placeholder"
+          disabled
+        />,
+        <Textarea
+          fieldSize="xs"
+          id="textarea-xs-b-3"
+          label="Label"
+          placeholder="Placeholder"
+          isLabelUppercase
+        />,
+      ],
+    },
+    {
+      title: "Textarea with label and long text, medium",
+      description: "",
+      component: [
+        <Textarea fieldSize="md" id="textarea-md-c-1" label="Label" rows={5}>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum
           neque veniam repudiandae fugit labore. Voluptatibus deserunt animi
           porro esse, dolor dolore quas fuga numquam. Quisquam aperiam earum
           suscipit nihil eaque!
         </Textarea>,
-        <Textarea id="textarea-6" label="Label" rows={5} disabled>
+        <Textarea
+          fieldSize="md"
+          id="textarea-md-c-2"
+          label="Label"
+          rows={5}
+          disabled
+        >
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum
+          neque veniam repudiandae fugit labore. Voluptatibus deserunt animi
+          porro esse, dolor dolore quas fuga numquam. Quisquam aperiam earum
+          suscipit nihil eaque!
+        </Textarea>,
+        <Textarea
+          fieldSize="md"
+          id="textarea-md-c-3"
+          label="Label"
+          rows={5}
+          isLabelUppercase
+        >
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum
           neque veniam repudiandae fugit labore. Voluptatibus deserunt animi
           porro esse, dolor dolore quas fuga numquam. Quisquam aperiam earum
@@ -61,13 +144,139 @@ export const textareas: ComponentDetails = {
       ],
     },
     {
-      title: "Textarea with label and note / error",
+      title: "Textarea with label and long text, small",
       description: "",
       component: [
-        <Textarea id="textarea-7" label="Label" note="Note message">
+        <Textarea fieldSize="sm" id="textarea-sm-c-1" label="Label" rows={5}>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum
+          neque veniam repudiandae fugit labore. Voluptatibus deserunt animi
+          porro esse, dolor dolore quas fuga numquam. Quisquam aperiam earum
+          suscipit nihil eaque!
+        </Textarea>,
+        <Textarea
+          fieldSize="sm"
+          id="textarea-sm-c-2"
+          label="Label"
+          rows={5}
+          disabled
+        >
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum
+          neque veniam repudiandae fugit labore. Voluptatibus deserunt animi
+          porro esse, dolor dolore quas fuga numquam. Quisquam aperiam earum
+          suscipit nihil eaque!
+        </Textarea>,
+        <Textarea
+          fieldSize="sm"
+          id="textarea-sm-c-3"
+          label="Label"
+          rows={5}
+          isLabelUppercase
+        >
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum
+          neque veniam repudiandae fugit labore. Voluptatibus deserunt animi
+          porro esse, dolor dolore quas fuga numquam. Quisquam aperiam earum
+          suscipit nihil eaque!
+        </Textarea>,
+      ],
+    },
+    {
+      title: "Textarea with label and long text, extra-small",
+      description: "",
+      component: [
+        <Textarea fieldSize="xs" id="textarea-xs-c-1" label="Label" rows={5}>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum
+          neque veniam repudiandae fugit labore. Voluptatibus deserunt animi
+          porro esse, dolor dolore quas fuga numquam. Quisquam aperiam earum
+          suscipit nihil eaque!
+        </Textarea>,
+        <Textarea
+          fieldSize="xs"
+          id="textarea-xs-c-2"
+          label="Label"
+          rows={5}
+          disabled
+        >
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum
+          neque veniam repudiandae fugit labore. Voluptatibus deserunt animi
+          porro esse, dolor dolore quas fuga numquam. Quisquam aperiam earum
+          suscipit nihil eaque!
+        </Textarea>,
+        <Textarea
+          fieldSize="xs"
+          id="textarea-xs-c-3"
+          label="Label"
+          rows={5}
+          isLabelUppercase
+        >
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum
+          neque veniam repudiandae fugit labore. Voluptatibus deserunt animi
+          porro esse, dolor dolore quas fuga numquam. Quisquam aperiam earum
+          suscipit nihil eaque!
+        </Textarea>,
+      ],
+    },
+    {
+      title: "Textarea with label and note / error, medium",
+      description: "",
+      component: [
+        <Textarea
+          fieldSize="md"
+          id="textarea-md-d-1"
+          label="Label"
+          note="Note message"
+        >
           Voluptatibus deserunt animi porro esse, dolor dolore quas fuga numquam
         </Textarea>,
-        <Textarea id="textarea-8" label="Label" error="Error message">
+        <Textarea
+          fieldSize="md"
+          id="textarea-md-d-2"
+          label="Label"
+          error="Error message"
+        >
+          Voluptatibus deserunt animi porro esse, dolor dolore quas fuga numquam
+        </Textarea>,
+      ],
+    },
+    {
+      title: "Textarea with label and note / error, small",
+      description: "",
+      component: [
+        <Textarea
+          fieldSize="sm"
+          id="textarea-sm-d-1"
+          label="Label"
+          note="Note message"
+        >
+          Voluptatibus deserunt animi porro esse, dolor dolore quas fuga numquam
+        </Textarea>,
+        <Textarea
+          fieldSize="sm"
+          id="textarea-sm-d-2"
+          label="Label"
+          error="Error message"
+        >
+          Voluptatibus deserunt animi porro esse, dolor dolore quas fuga numquam
+        </Textarea>,
+      ],
+    },
+    {
+      title: "Textarea with label and note / error, extra-small",
+      description: "",
+      component: [
+        <Textarea
+          fieldSize="xs"
+          id="textarea-xs-d-1"
+          label="Label"
+          note="Note message"
+        >
+          Voluptatibus deserunt animi porro esse, dolor dolore quas fuga numquam
+        </Textarea>,
+        <Textarea
+          fieldSize="xs"
+          id="textarea-xs-d-2"
+          label="Label"
+          error="Error message"
+        >
           Voluptatibus deserunt animi porro esse, dolor dolore quas fuga numquam
         </Textarea>,
       ],
@@ -77,8 +286,9 @@ export const textareas: ComponentDetails = {
       description: "",
       component: [
         <Textarea
+          fieldSize="md"
           customTextarea={<TextareaField />}
-          id="textarea-12"
+          id="textarea-md-e-1"
           label="Label"
           placeholder="Placeholder"
         />,
@@ -92,6 +302,13 @@ export const textareas: ComponentDetails = {
       default: null,
       optional: false,
       description: "ID of the textarea should be unique",
+    },
+    {
+      prop: "fieldSize",
+      type: ["md", "sm", "xs"],
+      default: null,
+      optional: false,
+      description: "Size of the textarea",
     },
     {
       prop: "children",
@@ -120,6 +337,13 @@ export const textareas: ComponentDetails = {
       default: null,
       optional: true,
       description: "Error message of the textarea",
+    },
+    {
+      prop: "isLabelUppercase",
+      type: ["boolean"],
+      default: null,
+      optional: true,
+      description: "Make label uppercase",
     },
     {
       prop: "customTextarea",
