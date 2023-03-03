@@ -7,8 +7,6 @@
 .sds-theme-dark {
   font-family: var(--font-family-base);
   font-size: var(--font-size);
-  min-height: var(--layout-window-height-min);
-  min-width: var(--layout-window-width-min);
   padding: 0;
   margin: 0;
   background-color: var(--color-gray-00);
@@ -23,63 +21,63 @@
   &.no-body-scroll {
     overflow: hidden;
   }
-}
 
-strong,
-b {
-  font-weight: var(--font-weight-medium);
-}
-
-// Text block elements
-p,
-ul,
-ol {
-  font-size: 1rem;
-  line-height: 1.75rem;
-  margin: 0;
-  color: var(--color-gray-80);
-
-  &:not(:last-child) {
-    margin-bottom: 1.5rem;
+  strong,
+  b {
+    font-weight: var(--font-weight-medium);
   }
-}
 
-p {
-  &.Paragraph--secondary {
-    font-size: 0.875rem;
-    line-height: 1.375rem;
+  // Text block elements
+  p,
+  ul,
+  ol {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    margin: 0;
+    color: var(--color-gray-80);
+
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
   }
-}
 
-ul {
-  padding: 0 0 0 1rem;
-  list-style-type: none;
-}
+  p {
+    &.Paragraph--secondary {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+  }
 
-li {
-  position: relative;
-}
+  ul {
+    padding: 0 0 0 1rem;
+    list-style-type: none;
+  }
 
-li::before {
-  content: "-";
-  position: absolute;
-  left: -1rem;
-}
+  li {
+    position: relative;
+  }
 
-code {
-  color: inherit;
-  font-family: var(--font-family-monospace);
-  border-radius: 0.1875rem;
-  border: 0.5px solid var(--color-gray-30);
-  background-color: var(--color-gray-10);
-  padding: 0.125em 0.25em;
-  font-size: 0.875em;
-  line-height: 1.5em;
-  font-weight: var(--font-weight-medium);
-  display: inline;
+  li::before {
+    content: "-";
+    position: absolute;
+    left: -1rem;
+  }
 
-  &[data-break] {
-    line-break: anywhere;
+  code {
+    color: inherit;
+    font-family: var(--font-family-monospace);
+    border-radius: 0.1875rem;
+    border: 0.5px solid var(--color-gray-30);
+    background-color: var(--color-gray-10);
+    padding: 0.125em 0.25em;
+    font-size: 0.875em;
+    line-height: 1.5em;
+    font-weight: var(--font-weight-medium);
+    display: inline;
+
+    &[data-break] {
+      line-break: anywhere;
+    }
   }
 }
 
@@ -87,18 +85,6 @@ code {
 div#root {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-}
-
-// Generic
-.error {
-  color: var(--color-red-60);
-}
-
-.success {
-  color: var(--color-green-60);
-}
-
-.warning {
-  color: var(--color-yellow-60);
+  min-height: var(--layout-window-height-min);
+  min-width: var(--layout-window-width-min);
 }
