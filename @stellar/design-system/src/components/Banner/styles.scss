@@ -1,29 +1,47 @@
-@mixin status-bar($bg, $border) {
-  background-color: $bg;
-  border-bottom: 1px solid $border;
-}
+@use "../../utils.scss" as *;
 
 .Banner {
-  width: 100%;
-  padding: 0.5rem 0;
-  text-align: center;
-  color: var(--color-gray-80);
-  font-size: 1rem;
-  line-height: 1.5rem;
+  // Color
+  --Banner-color-background: var(--color-gray-40);
+  --Banner-color-text: var(--color-gray-70);
 
-  &--info {
-    @include status-bar(var(--color-purple-40), var(--color-purple-50));
+  width: 100%;
+  padding: pxToRem(8px) pxToRem(16px);
+  font-size: pxToRem(12px);
+  line-height: pxToRem(20px);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-medium);
+  background-color: var(--Banner-color-background);
+  color: var(--Banner-color-text);
+  text-align: center;
+
+  &__content {
+    margin: 0 auto;
+    max-width: 75ch;
+  }
+
+  &--default {
+    --Banner-color-background: var(--color-gray-40);
+    --Banner-color-text: var(--color-gray-70);
   }
 
   &--success {
-    @include status-bar(var(--color-green-40), var(--color-green-50));
-  }
-
-  &--error {
-    @include status-bar(var(--color-red-40), var(--color-red-50));
+    --Banner-color-background: var(--color-green-40);
+    --Banner-color-text: var(--color-green-70);
   }
 
   &--warning {
-    @include status-bar(var(--color-yellow-40), var(--color-yellow-50));
+    --Banner-color-background: var(--color-yellow-40);
+    --Banner-color-text: var(--color-yellow-70);
+  }
+
+  &--primary {
+    --Banner-color-background: var(--color-purple-40);
+    --Banner-color-text: var(--color-purple-70);
+  }
+
+  &--error {
+    --Banner-color-background: var(--color-red-40);
+    --Banner-color-text: var(--color-red-70);
   }
 }

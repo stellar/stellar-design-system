@@ -7,37 +7,37 @@ export const banners: ComponentDetails = {
   description: (
     <>
       Use banner to display messages at the top of the page, stretching across
-      the whole width. There are four variants <code>info</code>,{" "}
-      <code>success</code>, <code>error</code>, and <code>warning</code>.
+      the whole width. There are five variants <code>default</code>,{" "}
+      <code>primary</code>,<code>success</code>, <code>error</code>, and{" "}
+      <code>warning</code>.
     </>
   ),
   shortDescription: "Use banners to display messages at the top of the page",
   examples: [
     {
-      title: "Info",
+      title: "Default",
       description: "",
-      component: [<Banner variant={Banner.variant.info}>Info message</Banner>],
+      component: [<Banner variant="default">Default message</Banner>],
+    },
+    {
+      title: "Primary",
+      description: "",
+      component: [<Banner variant="primary">Primary message</Banner>],
     },
     {
       title: "Success",
       description: "",
-      component: [
-        <Banner variant={Banner.variant.success}>Success message</Banner>,
-      ],
+      component: [<Banner variant="success">Success message</Banner>],
     },
     {
       title: "Error",
       description: "",
-      component: [
-        <Banner variant={Banner.variant.error}>Error message</Banner>,
-      ],
+      component: [<Banner variant="error">Error message</Banner>],
     },
     {
       title: "Warning",
       description: "",
-      component: [
-        <Banner variant={Banner.variant.warning}>Warning message</Banner>,
-      ],
+      component: [<Banner variant="warning">Warning message</Banner>],
     },
   ],
   props: [
@@ -50,7 +50,7 @@ export const banners: ComponentDetails = {
     },
     {
       prop: "variant",
-      type: ["info", "success", "error", "warning"],
+      type: ["default", "primary", "success", "error", "warning"],
       default: null,
       optional: false,
       description: "Variant of the banner",
