@@ -11,4 +11,4 @@ export const Badge: React.FC<BadgeProps> = ({
   children,
 }) => <div className={`Badge Badge--${variant}`}>{children}</div>;
 
-Badge.displayName = "Tag";
+Badge.displayName = "Badge";
