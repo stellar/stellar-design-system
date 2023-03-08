@@ -8,6 +8,7 @@ export enum ComponentDetailsId {
   assets = "assets",
   avatars = "avatars",
   badges = "badges",
+  banners = "banners",
   branding = "branding",
   buttons = "buttons",
   cards = "cards",
@@ -27,7 +28,6 @@ export enum ComponentDetailsId {
   pieProgress = "pieProgress",
   radioButtons = "radioButtons",
   selects = "selects",
-  statusBars = "statusBars",
   tables = "tables",
   textareas = "textareas",
   toggles = "toggles",
@@ -39,6 +39,7 @@ export interface ComponentDetailsList {
   assets: ComponentDetails;
   avatars: ComponentDetails;
   badges: ComponentDetails;
+  banners: ComponentDetails;
   branding: ComponentDetails;
   buttons: ComponentDetails;
   cards: ComponentDetails;
@@ -58,7 +59,6 @@ export interface ComponentDetailsList {
   pieProgress: ComponentDetails;
   radioButtons: ComponentDetails;
   selects: ComponentDetails;
-  statusBars: ComponentDetails;
   tables: ComponentDetails;
   textareas: ComponentDetails;
   toggles: ComponentDetails;
