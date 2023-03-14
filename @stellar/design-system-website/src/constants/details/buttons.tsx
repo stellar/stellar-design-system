@@ -441,7 +441,7 @@ export const buttons: ComponentDetails = {
       prop: "children",
       type: ["string", "ReactNode"],
       default: null,
-      optional: false,
+      optional: true,
       description: "Label of the button",
     },
     {
