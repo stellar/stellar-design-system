@@ -177,6 +177,12 @@ export const checkboxes: ComponentDetails = {
           label="Illum odio veritatis corporis nihil asperiores eum nam in error"
           error="Error message"
         />,
+        <Checkbox
+          fieldSize="md"
+          id="checkbox-md-9"
+          label="Illum odio veritatis corporis nihil asperiores eum nam in error"
+          isError={true}
+        />,
       ],
     },
     {
@@ -195,6 +201,12 @@ export const checkboxes: ComponentDetails = {
           label="Illum odio veritatis corporis nihil asperiores eum nam in error"
           error="Error message"
         />,
+        <Checkbox
+          fieldSize="sm"
+          id="checkbox-sm-9"
+          label="Illum odio veritatis corporis nihil asperiores eum nam in error"
+          isError={true}
+        />,
       ],
     },
     {
@@ -212,6 +224,12 @@ export const checkboxes: ComponentDetails = {
           id="checkbox-xs-8"
           label="Illum odio veritatis corporis nihil asperiores eum nam in error"
           error="Error message"
+        />,
+        <Checkbox
+          fieldSize="xs"
+          id="checkbox-xs-9"
+          label="Illum odio veritatis corporis nihil asperiores eum nam in error"
+          isError={true}
         />,
       ],
     },
@@ -256,6 +274,13 @@ export const checkboxes: ComponentDetails = {
       default: null,
       optional: true,
       description: "Error message of the checkbox",
+    },
+    {
+      prop: "isError",
+      type: ["boolean"],
+      default: null,
+      optional: true,
+      description: "Checkbox error without a message",
     },
   ],
   externalProps: {

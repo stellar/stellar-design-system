@@ -121,6 +121,10 @@ export const selects: ComponentDetails = {
           <option>Option 1</option>
           <option>Option 2</option>
         </Select>,
+        <Select fieldSize="md" id="select-md-n-3" label="Label" isError={true}>
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </Select>,
       ],
     },
     {
@@ -145,6 +149,10 @@ export const selects: ComponentDetails = {
           <option>Option 1</option>
           <option>Option 2</option>
         </Select>,
+        <Select fieldSize="sm" id="select-sm-n-3" label="Label" isError={true}>
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </Select>,
       ],
     },
     {
@@ -166,6 +174,10 @@ export const selects: ComponentDetails = {
           label="Label"
           error="Error message"
         >
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </Select>,
+        <Select fieldSize="xs" id="select-xs-n-3" label="Label" isError={true}>
           <option>Option 1</option>
           <option>Option 2</option>
         </Select>,
@@ -214,6 +226,13 @@ export const selects: ComponentDetails = {
       default: null,
       optional: true,
       description: "Pill shaped select",
+    },
+    {
+      prop: "isError",
+      type: ["boolean"],
+      default: null,
+      optional: true,
+      description: "Select error without a message",
     },
     {
       prop: "note",

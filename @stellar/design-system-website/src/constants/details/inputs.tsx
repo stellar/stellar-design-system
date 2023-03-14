@@ -149,6 +149,14 @@ export const inputs: ComponentDetails = {
           defaultValue="Value"
           error="Error message"
         />,
+        <Input
+          fieldSize="md"
+          id="input-20"
+          label="Label"
+          placeholder="Placeholder"
+          defaultValue="Value"
+          isError={true}
+        />,
       ],
     },
     {
@@ -170,6 +178,14 @@ export const inputs: ComponentDetails = {
           defaultValue="Value"
           error="Error message"
         />,
+        <Input
+          fieldSize="sm"
+          id="input-19"
+          label="Label"
+          placeholder="Placeholder"
+          defaultValue="Value"
+          isError={true}
+        />,
       ],
     },
     {
@@ -190,6 +206,14 @@ export const inputs: ComponentDetails = {
           placeholder="Placeholder"
           defaultValue="Value"
           error="Error message"
+        />,
+        <Input
+          fieldSize="xs"
+          id="input-18"
+          label="Label"
+          placeholder="Placeholder"
+          defaultValue="Value"
+          isError={true}
         />,
       ],
     },
@@ -326,6 +350,13 @@ export const inputs: ComponentDetails = {
       default: null,
       optional: true,
       description: "Pill shaped input",
+    },
+    {
+      prop: "isError",
+      type: ["boolean"],
+      default: null,
+      optional: true,
+      description: "Input error without a message",
     },
     {
       prop: "rightElement",
