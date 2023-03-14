@@ -1,5 +1,6 @@
 export * from "./Avatar";
 export * from "./Badge";
+export * from "./Banner";
 export * from "./Button";
 export * from "./Card";
 export * from "./Checkbox";
@@ -18,7 +19,6 @@ export * from "./PieProgress";
 export * from "./ProjectLogo";
 export * from "./RadioButton";
 export * from "./Select";
-export * from "./StatusBar";
 export * from "./Table";
 export * from "./Textarea";
 export * from "./Link";

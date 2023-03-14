@@ -2,6 +2,7 @@ import { assets } from "constants/details/assets";
 import { avatars } from "constants/details/avatars";
 import { branding } from "constants/details/branding";
 import { badges } from "constants/details/badges";
+import { banners } from "constants/details/banners";
 import { buttons } from "constants/details/buttons";
 import { cards } from "constants/details/cards";
 import { checkboxes } from "constants/details/checkboxes";
@@ -19,7 +20,6 @@ import { pagination } from "constants/details/pagination";
 import { pieProgress } from "constants/details/pieProgress";
 import { radioButtons } from "constants/details/radioButtons";
 import { selects } from "constants/details/selects";
-import { statusBars } from "constants/details/statusBars";
 import { tables } from "constants/details/tables";
 import { textareas } from "constants/details/textareas";
 import { links } from "constants/details/links";
@@ -32,6 +32,7 @@ export const componentDetails: ComponentDetailsList = {
   assets,
   avatars,
   badges,
+  banners,
   branding,
   buttons,
   cards,
@@ -51,7 +52,6 @@ export const componentDetails: ComponentDetailsList = {
   pieProgress,
   radioButtons,
   selects,
-  statusBars,
   tables,
   textareas,
   toggles,
