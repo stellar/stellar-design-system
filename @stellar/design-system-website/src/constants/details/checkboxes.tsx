@@ -215,6 +215,11 @@ export const checkboxes: ComponentDetails = {
         />,
       ],
     },
+    {
+      title: "Without label",
+      description: "",
+      component: [<Checkbox fieldSize="md" id="checkbox-nl-md-1" />],
+    },
   ],
   props: [
     {
