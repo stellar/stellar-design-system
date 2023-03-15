@@ -235,6 +235,14 @@ export const textareas: ComponentDetails = {
         >
           Voluptatibus deserunt animi porro esse, dolor dolore quas fuga numquam
         </Textarea>,
+        <Textarea
+          fieldSize="md"
+          id="textarea-md-d-3"
+          label="Label"
+          isError={true}
+        >
+          Voluptatibus deserunt animi porro esse, dolor dolore quas fuga numquam
+        </Textarea>,
       ],
     },
     {
@@ -257,6 +265,14 @@ export const textareas: ComponentDetails = {
         >
           Voluptatibus deserunt animi porro esse, dolor dolore quas fuga numquam
         </Textarea>,
+        <Textarea
+          fieldSize="sm"
+          id="textarea-sm-d-3"
+          label="Label"
+          isError={true}
+        >
+          Voluptatibus deserunt animi porro esse, dolor dolore quas fuga numquam
+        </Textarea>,
       ],
     },
     {
@@ -276,6 +292,14 @@ export const textareas: ComponentDetails = {
           id="textarea-xs-d-2"
           label="Label"
           error="Error message"
+        >
+          Voluptatibus deserunt animi porro esse, dolor dolore quas fuga numquam
+        </Textarea>,
+        <Textarea
+          fieldSize="xs"
+          id="textarea-xs-d-3"
+          label="Label"
+          isError={true}
         >
           Voluptatibus deserunt animi porro esse, dolor dolore quas fuga numquam
         </Textarea>,
@@ -337,6 +361,13 @@ export const textareas: ComponentDetails = {
       default: null,
       optional: true,
       description: "Error message of the textarea",
+    },
+    {
+      prop: "isError",
+      type: ["boolean"],
+      default: null,
+      optional: true,
+      description: "Textarea error without a message",
     },
     {
       prop: "isLabelUppercase",

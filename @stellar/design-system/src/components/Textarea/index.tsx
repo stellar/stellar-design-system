@@ -12,6 +12,7 @@ interface TextareaProps
   label?: string | React.ReactNode;
   note?: string | React.ReactNode;
   error?: string | React.ReactNode;
+  isError?: boolean;
   isLabelUppercase?: boolean;
   customTextarea?: React.ReactElement;
 }
@@ -23,6 +24,7 @@ export const Textarea: React.FC<TextareaProps> = ({
   label,
   note,
   error,
+  isError,
   isLabelUppercase,
   customTextarea,
   spellCheck = false,
@@ -32,12 +34,12 @@ export const Textarea: React.FC<TextareaProps> = ({
   const additionalClasses = [
     `Textarea--${fieldSize}`,
     ...(props.disabled ? ["Textarea--disabled"] : []),
-    ...(error ? ["Textarea--error"] : []),
+    ...(isError || error ? ["Textarea--error"] : []),
   ].join(" ");
 
   const baseTextareaProps = {
     id,
-    "aria-invalid": !!error,
+    "aria-invalid": !!(isError || error),
     spellCheck,
     autoComplete,
   };

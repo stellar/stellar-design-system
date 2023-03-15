@@ -10,6 +10,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string | React.ReactNode;
   isLabelUppercase?: boolean;
   isPill?: boolean;
+  isError?: boolean;
   rightElement?: string | React.ReactNode;
   note?: string | React.ReactNode;
   error?: string | React.ReactNode;
@@ -23,6 +24,7 @@ export const Input: React.FC<InputProps> = ({
   fieldSize,
   isLabelUppercase,
   isPill,
+  isError,
   rightElement,
   note,
   error,
@@ -45,7 +47,7 @@ export const Input: React.FC<InputProps> = ({
   const additionalClasses = [
     `Input--${fieldSize}`,
     ...(props.disabled ? ["Input--disabled"] : []),
-    ...(error ? ["Input--error"] : []),
+    ...(isError || error ? ["Input--error"] : []),
     ...(isPill ? ["Input--pill"] : []),
   ].join(" ");
 
@@ -56,7 +58,7 @@ export const Input: React.FC<InputProps> = ({
 
   const baseInputProps = {
     id,
-    "aria-invalid": !!error,
+    "aria-invalid": !!(isError || error),
     ...(inputPaddingRight
       ? { style: { paddingRight: inputPaddingRight } }
       : {}),

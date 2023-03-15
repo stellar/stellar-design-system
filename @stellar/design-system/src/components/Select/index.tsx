@@ -14,6 +14,7 @@ interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   error?: string | string;
   isLabelUppercase?: boolean;
   isPill?: boolean;
+  isError?: boolean;
   customSelect?: React.ReactElement;
 }
 
@@ -26,19 +27,20 @@ export const Select: React.FC<SelectProps> = ({
   error,
   isLabelUppercase,
   isPill,
+  isError,
   customSelect,
   ...props
 }: SelectProps) => {
   const additionalClasses = [
     `Select--${fieldSize}`,
     ...(props.disabled ? ["Select--disabled"] : []),
-    ...(error ? ["Select--error"] : []),
+    ...(isError || error ? ["Select--error"] : []),
     ...(isPill ? ["Select--pill"] : []),
   ].join(" ");
 
   const baseSelectProps = {
     id,
-    "aria-invalid": !!error,
+    "aria-invalid": !!(isError || error),
   };
 
   return (

@@ -5,7 +5,7 @@ import "./styles.scss";
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant: "primary" | "secondary" | "tertiary";
   size: "md" | "sm" | "xs";
-  children: string | React.ReactNode;
+  children?: string | React.ReactNode;
   icon?: React.ReactNode;
   iconPosition?: "left" | "right";
   isLoading?: boolean;
@@ -63,7 +63,7 @@ export const Button = ({
       {...(isLoading ? { disabled: true } : {})}
     >
       {renderIcon("left")}
-      {children}
+      {children ?? null}
       {renderIcon("right")}
     </button>
   );
