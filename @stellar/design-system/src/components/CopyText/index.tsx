@@ -1,26 +1,21 @@
 import React, { useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
-import { Tooltip, TooltipPosition } from "../Tooltip";
+import { Tooltip } from "../Tooltip";
+import { FloaterPlacement } from "../Floater";
 import "./styles.scss";
-
-interface CopyTextComponent {
-  tooltipPosition: typeof TooltipPosition;
-}
 
 interface CopyTextProps {
   textToCopy: string;
-  showTooltip?: boolean;
   doneLabel?: string;
-  tooltipPosition?: TooltipPosition;
+  tooltipPlacement?: FloaterPlacement;
   title?: string;
   children: React.ReactElement | string;
 }
 
-export const CopyText: React.FC<CopyTextProps> & CopyTextComponent = ({
+export const CopyText: React.FC<CopyTextProps> = ({
   textToCopy,
-  showTooltip,
   doneLabel = "Copied",
-  tooltipPosition = TooltipPosition.BOTTOM,
+  tooltipPlacement = "bottom",
   title = "Copy",
   children,
 }) => {
@@ -39,37 +34,23 @@ export const CopyText: React.FC<CopyTextProps> & CopyTextComponent = ({
     }, 1000);
   };
 
-  const renderElement = (element: React.ReactElement | string) => {
-    const label = !showTooltip && isTooltipVisible ? doneLabel : null;
-
-    if (typeof element === "string") {
-      return label ?? element;
-    }
-
-    return (
-      <element.type {...element.props}>
-        {label ?? element.props.children}
-      </element.type>
-    );
-  };
-
   return (
     <div className="CopyText">
       <Tooltip
-        content={doneLabel}
-        position={tooltipPosition}
-        isVisible={showTooltip && isTooltipVisible}
-        disableClick
+        isVisible={isTooltipVisible}
+        triggerEl={
+          <CopyToClipboard text={textToCopy} onCopy={handleCopyDone}>
+            <div title={title} role="button" className="CopyText__content">
+              {children}
+            </div>
+          </CopyToClipboard>
+        }
+        placement={tooltipPlacement}
       >
-        <CopyToClipboard text={textToCopy} onCopy={handleCopyDone}>
-          <div title={title} role="button" className="CopyText__content">
-            {renderElement(children)}
-          </div>
-        </CopyToClipboard>
+        {doneLabel}
       </Tooltip>
     </div>
   );
 };
 
 CopyText.displayName = "CopyText";
-CopyText.tooltipPosition = TooltipPosition;

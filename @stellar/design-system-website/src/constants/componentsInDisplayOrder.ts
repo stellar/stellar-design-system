@@ -111,10 +111,6 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
     label: "Tooltips",
   },
   {
-    id: ComponentDetailsId.detailsTooltips,
-    label: "Details tooltips",
-  },
-  {
     id: ComponentDetailsId.copyTexts,
     label: "Copy text",
   },

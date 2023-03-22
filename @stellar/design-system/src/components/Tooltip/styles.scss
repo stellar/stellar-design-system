@@ -1,97 +1,10 @@
+@use "../../utils.scss" as *;
+
 .Tooltip {
-  --Tooltip-arrow-size: 1rem;
-  --Tooltip-arrow-offset: calc(-1 * var(--Tooltip-arrow-size));
-
-  position: relative;
-  z-index: var(--z-index-tooltip);
-  display: inline-block;
-
-  &--opened {
-    z-index: calc(var(--z-index-tooltip) + 1);
-  }
-
-  &__content {
-    width: max-content;
-    max-width: 16.875rem;
-    border-radius: 0.25rem;
-    border: 1px solid var(--color-gray-80);
-    background-color: var(--color-gray-80);
-    cursor: default;
-
-    &__container {
-      padding: 1rem;
-      color: var(--color-gray-00);
-      font-size: var(--font-size-secondary);
-      line-height: 1.25rem;
-      font-weight: var(--font-weight-regular);
-      text-align: left;
-      text-transform: none;
-
-      a {
-        color: inherit;
-        white-space: nowrap;
-        text-decoration: underline;
-
-        &:hover {
-          text-decoration: none;
-        }
-      }
-    }
-
-    &__arrow {
-      position: absolute;
-      width: var(--Tooltip-arrow-size);
-      height: var(--Tooltip-arrow-size);
-
-      svg {
-        width: 100%;
-        height: 100%;
-        fill: var(--color-gray-80);
-      }
-    }
-
-    &[data-popper-placement="top"],
-    &[data-popper-placement="top-start"],
-    &[data-popper-placement="top-end"] {
-      .Tooltip__content__arrow {
-        bottom: var(--Tooltip-arrow-offset);
-
-        svg {
-          transform: rotate(270deg);
-        }
-      }
-    }
-
-    &[data-popper-placement="bottom"],
-    &[data-popper-placement="bottom-start"],
-    &[data-popper-placement="bottom-end"] {
-      .Tooltip__content__arrow {
-        top: var(--Tooltip-arrow-offset);
-
-        svg {
-          transform: rotate(90deg);
-        }
-      }
-    }
-
-    &[data-popper-placement="left"],
-    &[data-popper-placement="left-start"],
-    &[data-popper-placement="left-end"] {
-      .Tooltip__content__arrow {
-        right: var(--Tooltip-arrow-offset);
-
-        svg {
-          transform: rotate(180deg);
-        }
-      }
-    }
-
-    &[data-popper-placement="right"],
-    &[data-popper-placement="right-start"],
-    &[data-popper-placement="right-end"] {
-      .Tooltip__content__arrow {
-        left: var(--Tooltip-arrow-offset);
-      }
-    }
-  }
+  padding: pxToRem(12px);
+  width: max-content;
+  max-width: pxToRem(232px);
+  font-size: pxToRem(12px);
+  line-height: pxToRem(20px);
+  font-weight: var(--font-weight-medium);
 }

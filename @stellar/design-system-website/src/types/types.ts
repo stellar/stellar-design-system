@@ -14,7 +14,6 @@ export enum ComponentDetailsId {
   cards = "cards",
   checkboxes = "checkboxes",
   copyTexts = "copyTexts",
-  detailsTooltips = "detailsTooltips",
   iconButtons = "iconButtons",
   identicons = "identicons",
   inputs = "inputs",
@@ -45,7 +44,6 @@ export interface ComponentDetailsList {
   cards: ComponentDetails;
   checkboxes: ComponentDetails;
   copyTexts: ComponentDetails;
-  detailsTooltips: ComponentDetails;
   iconButtons: ComponentDetails;
   identicons: ComponentDetails;
   inputs: ComponentDetails;

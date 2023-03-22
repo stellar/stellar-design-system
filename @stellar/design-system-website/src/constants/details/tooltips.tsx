@@ -6,8 +6,9 @@ export const tooltips: ComponentDetails = {
   title: "Tooltips",
   description: (
     <>
-      Tooltip is used to display info in a bubble. We are using awesome{" "}
-      <Link href="https://popper.js.org/">Popper</Link> for tooltip positioning.
+      Tooltip is used to display info in a bubble. We are using{" "}
+      <Link href="https://floating-ui.com/">Floating UI</Link> for tooltip
+      positioning.
     </>
   ),
   shortDescription: "Tooltip is used to display info in a bubble",
@@ -16,29 +17,39 @@ export const tooltips: ComponentDetails = {
       title: "Tooltip",
       description: "Simple tooltip",
       component: [
-        <Tooltip isVisible={true} content="Tooltip content" disableClick>
-          Tooltip trigger
+        <Tooltip isVisible={true} triggerEl={<>Tooltip trigger</>}>
+          Lorem ipsum dolor sit
+        </Tooltip>,
+      ],
+    },
+    {
+      title: "Tooltip",
+      description: "Tooltip with long content",
+      component: [
+        <Tooltip isVisible={true} triggerEl={<>Tooltip trigger</>}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore,
+          in. Mollitia assumenda dolorem amet.
         </Tooltip>,
       ],
     },
   ],
   props: [
     {
-      prop: "content",
-      type: ["ReactNode"],
+      prop: "triggerEl",
+      type: ["JSX.Element"],
       default: null,
       optional: false,
-      description: "Content of tooltip bubble",
+      description: "Element that shows/hides tooltip",
     },
     {
       prop: "children",
       type: ["ReactNode"],
       default: null,
       optional: false,
-      description: "Tooltip trigger component",
+      description: "Content of the tooltip",
     },
     {
-      prop: "position",
+      prop: "placement",
       type: [
         "bottom",
         "bottom-start",
@@ -53,23 +64,16 @@ export const tooltips: ComponentDetails = {
         "top-start",
         "top-end",
       ],
-      default: "bottom",
+      default: "right",
       optional: true,
-      description: "Position of tooltip",
+      description: "Placement of tooltip relative to trigger element",
     },
     {
       prop: "isVisible",
       type: ["boolean"],
-      default: "false",
+      default: null,
       optional: true,
-      description: "Manually set tooltip visibility",
-    },
-    {
-      prop: "disableClick",
-      type: ["boolean"],
-      default: "false",
-      optional: true,
-      description: "Disabling clicks will not trigger tooltip",
+      description: "Manually show/hide tooltip",
     },
   ],
   externalProps: {

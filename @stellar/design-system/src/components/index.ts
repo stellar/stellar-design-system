@@ -5,7 +5,7 @@ export * from "./Button";
 export * from "./Card";
 export * from "./Checkbox";
 export * from "./CopyText";
-export * from "./DetailsTooltip";
+export * from "./Floater";
 export * from "./IconButton";
 export * from "./Identicon";
 export * from "./Input";
