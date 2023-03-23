@@ -8,7 +8,6 @@ import { cards } from "constants/details/cards";
 import { checkboxes } from "constants/details/checkboxes";
 import { copyTexts } from "constants/details/copyTexts";
 import { identicons } from "constants/details/identicons";
-import { detailsTooltips } from "constants/details/detailsTooltips";
 import { iconButtons } from "constants/details/iconButtons";
 import { inputs } from "constants/details/inputs";
 import { layout } from "constants/details/layout";
@@ -38,7 +37,6 @@ export const componentDetails: ComponentDetailsList = {
   cards,
   checkboxes,
   copyTexts,
-  detailsTooltips,
   iconButtons,
   identicons,
   inputs,

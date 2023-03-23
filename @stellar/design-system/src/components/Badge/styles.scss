@@ -8,10 +8,9 @@
   font-size: pxToRem(12px);
   line-height: pxToRem(20px);
   font-family: var(--font-family-base);
-  font-weight: var(--font-weight-semi-bold);
-  text-transform: uppercase;
-  padding: pxToRem(2px) pxToRem(8px);
-  border-radius: pxToRem(2px);
+  font-weight: var(--font-weight-medium);
+  padding: pxToRem(2px) pxToRem(6px);
+  border-radius: pxToRem(4px);
   background-color: var(--Badge-color-background);
   color: var(--Badge-color-text);
 
