@@ -35,6 +35,10 @@ export const selects: ComponentDetails = {
           <option>Option 1</option>
           <option>Option 2</option>
         </Select>,
+        <Select fieldSize="md" id="select-md-4" label="Label" isExtraPadding>
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </Select>,
         <Select fieldSize="md" id="select-md-2" label="Label" disabled>
           <option>Option 1</option>
           <option>Option 2</option>
@@ -59,6 +63,10 @@ export const selects: ComponentDetails = {
           <option>Option 1</option>
           <option>Option 2</option>
         </Select>,
+        <Select fieldSize="sm" id="select-sm-4" label="Label" isExtraPadding>
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </Select>,
         <Select fieldSize="sm" id="select-sm-2" label="Label" disabled>
           <option>Option 1</option>
           <option>Option 2</option>
@@ -80,6 +88,10 @@ export const selects: ComponentDetails = {
       description: "",
       component: [
         <Select fieldSize="xs" id="select-xs-1" label="Label">
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </Select>,
+        <Select fieldSize="xs" id="select-xs-4" label="Label" isExtraPadding>
           <option>Option 1</option>
           <option>Option 2</option>
         </Select>,
@@ -233,6 +245,13 @@ export const selects: ComponentDetails = {
       default: null,
       optional: true,
       description: "Select error without a message",
+    },
+    {
+      prop: "isExtraPadding",
+      type: ["Boolean"],
+      default: null,
+      optional: true,
+      description: "Select with extra padding",
     },
     {
       prop: "note",

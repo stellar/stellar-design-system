@@ -31,6 +31,11 @@
     --Textarea-gap: #{pxToRem(8px)};
     --Textarea-note-font-size: #{pxToRem(14px)};
     --Textarea-note-line-height: #{pxToRem(22px)};
+
+    &.Textarea--extra-padding {
+      --Textarea-padding-vertical: #{pxToRem(12px)};
+      --Textarea-padding-horizontal: #{pxToRem(16px)};
+    }
   }
 
   &--sm {
@@ -41,6 +46,11 @@
     --Textarea-gap: #{pxToRem(6px)};
     --Textarea-note-font-size: #{pxToRem(14px)};
     --Textarea-note-line-height: #{pxToRem(22px)};
+
+    &.Textarea--extra-padding {
+      --Textarea-padding-vertical: #{pxToRem(10px)};
+      --Textarea-padding-horizontal: #{pxToRem(14px)};
+    }
   }
 
   &--xs {
@@ -51,6 +61,11 @@
     --Textarea-gap: #{pxToRem(4px)};
     --Textarea-note-font-size: #{pxToRem(12px)};
     --Textarea-note-line-height: #{pxToRem(20px)};
+
+    &.Textarea--extra-padding {
+      --Textarea-padding-vertical: #{pxToRem(8px)};
+      --Textarea-padding-horizontal: #{pxToRem(12px)};
+    }
   }
 
   textarea {

@@ -41,6 +41,13 @@ export const textareas: ComponentDetails = {
         />,
         <Textarea
           fieldSize="md"
+          id="textarea-md-b-4"
+          label="Label"
+          placeholder="Placeholder"
+          isExtraPadding
+        />,
+        <Textarea
+          fieldSize="md"
           id="textarea-md-b-2"
           label="Label"
           placeholder="Placeholder"
@@ -67,6 +74,13 @@ export const textareas: ComponentDetails = {
         />,
         <Textarea
           fieldSize="sm"
+          id="textarea-sm-b-4"
+          label="Label"
+          placeholder="Placeholder"
+          isExtraPadding
+        />,
+        <Textarea
+          fieldSize="sm"
           id="textarea-sm-b-2"
           label="Label"
           placeholder="Placeholder"
@@ -90,6 +104,13 @@ export const textareas: ComponentDetails = {
           id="textarea-xs-b-1"
           label="Label"
           placeholder="Placeholder"
+        />,
+        <Textarea
+          fieldSize="xs"
+          id="textarea-xs-b-4"
+          label="Label"
+          placeholder="Placeholder"
+          isExtraPadding
         />,
         <Textarea
           fieldSize="xs"
@@ -375,6 +396,13 @@ export const textareas: ComponentDetails = {
       default: null,
       optional: true,
       description: "Make label uppercase",
+    },
+    {
+      prop: "isExtraPadding",
+      type: ["Boolean"],
+      default: null,
+      optional: true,
+      description: "Textarea with extra padding",
     },
     {
       prop: "customTextarea",

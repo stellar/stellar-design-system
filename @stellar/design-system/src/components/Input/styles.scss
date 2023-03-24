@@ -35,6 +35,11 @@
     &.Input--pill {
       --Input-padding-horizontal: #{pxToRem(14px)};
     }
+
+    &.Input--extra-padding {
+      --Input-padding-vertical: #{pxToRem(12px)};
+      --Input-padding-horizontal: #{pxToRem(16px)};
+    }
   }
 
   &--sm {
@@ -49,6 +54,11 @@
     &.Input--pill {
       --Input-padding-horizontal: #{pxToRem(12px)};
     }
+
+    &.Input--extra-padding {
+      --Input-padding-vertical: #{pxToRem(10px)};
+      --Input-padding-horizontal: #{pxToRem(14px)};
+    }
   }
 
   &--xs {
@@ -62,6 +72,11 @@
 
     &.Input--pill {
       --Input-padding-horizontal: #{pxToRem(10px)};
+    }
+
+    &.Input--extra-padding {
+      --Input-padding-vertical: #{pxToRem(8px)};
+      --Input-padding-horizontal: #{pxToRem(12px)};
     }
   }
 
