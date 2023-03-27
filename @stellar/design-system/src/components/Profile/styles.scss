@@ -78,6 +78,29 @@
     }
   }
 
+  &--copy {
+    transition: color var(--anim-transition-default),
+      background-color var(--anim-transition-default),
+      border-color var(--anim-transition-default);
+    text-decoration: none;
+    cursor: pointer;
+
+    &__icon {
+      svg {
+        display: block;
+        width: calc(var(--Profile-font-size) - 2px);
+        height: calc(var(--Profile-font-size) - 2px);
+        fill: var(--color-gray-50);
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-gray-70);
+      }
+    }
+  }
+
   // Size
   &--md {
     --Profile-font-size: #{pxToRem(16px)};

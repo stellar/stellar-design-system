@@ -1,4 +1,6 @@
 import { Avatar } from "../Avatar";
+import { CopyText } from "../CopyText";
+import { Icon } from "../../icons";
 import "./styles.scss";
 
 // TODO: add copy functionality
@@ -11,6 +13,7 @@ type ProfileProps = {
   onClick?: () => void;
   href?: string;
   hideAvatar?: boolean;
+  isCopy?: boolean;
 };
 
 export const Profile: React.FC<ProfileProps> = ({
@@ -21,12 +24,14 @@ export const Profile: React.FC<ProfileProps> = ({
   onClick,
   href,
   hideAvatar,
+  isCopy,
 }: ProfileProps) => {
   const address = federatedAddress ?? publicAddress;
   const additionalClasses = [
     `Profile--${size}`,
     ...(onClick ? [`Profile--button`] : []),
     ...(href ? [`Profile--link`] : []),
+    ...(isCopy ? [`Profile--copy`] : []),
   ].join(" ");
 
   const Component = ({ ...props }) => {
@@ -45,9 +50,22 @@ export const Profile: React.FC<ProfileProps> = ({
     } else if (href) {
       // eslint-disable-next-line jsx-a11y/anchor-has-content
       return <a {...componentProps} href={href} />;
-    } else {
-      return <div {...componentProps} />;
     }
+
+    if (isCopy) {
+      return (
+        <CopyText textToCopy={address} doneLabel="Copied address">
+          <div {...componentProps}>
+            {props.children}{" "}
+            <div className="Profile--copy__icon">
+              <Icon.ContentCopy />
+            </div>
+          </div>
+        </CopyText>
+      );
+    }
+
+    return <div {...componentProps} />;
   };
 
   return (

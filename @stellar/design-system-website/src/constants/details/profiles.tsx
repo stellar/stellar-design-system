@@ -115,6 +115,51 @@ export const profiles: ComponentDetails = {
         />,
       ],
     },
+    {
+      title: "Copy in all sizes",
+      description: "",
+      component: [
+        <Profile
+          publicAddress="GAVL6PM6TDJ7FBRCRL6GJ5WO2TWSH6ZRNU2HOARQ4RYMDUGSW7XWS57G"
+          size="md"
+          isShort
+          isCopy
+        />,
+        <Profile
+          publicAddress="GAVL6PM6TDJ7FBRCRL6GJ5WO2TWSH6ZRNU2HOARQ4RYMDUGSW7XWS57G"
+          size="sm"
+          isShort
+          isCopy
+        />,
+        <Profile
+          publicAddress="GAVL6PM6TDJ7FBRCRL6GJ5WO2TWSH6ZRNU2HOARQ4RYMDUGSW7XWS57G"
+          size="xs"
+          isShort
+          isCopy
+        />,
+        <Profile
+          publicAddress="GAVL6PM6TDJ7FBRCRL6GJ5WO2TWSH6ZRNU2HOARQ4RYMDUGSW7XWS57G"
+          size="md"
+          isShort
+          isCopy
+          hideAvatar
+        />,
+        <Profile
+          publicAddress="GAVL6PM6TDJ7FBRCRL6GJ5WO2TWSH6ZRNU2HOARQ4RYMDUGSW7XWS57G"
+          size="sm"
+          isShort
+          isCopy
+          hideAvatar
+        />,
+        <Profile
+          publicAddress="GAVL6PM6TDJ7FBRCRL6GJ5WO2TWSH6ZRNU2HOARQ4RYMDUGSW7XWS57G"
+          size="xs"
+          isShort
+          isCopy
+          hideAvatar
+        />,
+      ],
+    },
   ],
   props: [
     {
@@ -165,6 +210,13 @@ export const profiles: ComponentDetails = {
       default: null,
       optional: true,
       description: "Hide the avatar",
+    },
+    {
+      prop: "isCopy",
+      type: ["boolean"],
+      default: null,
+      optional: true,
+      description: "Add copy address functionality",
     },
   ],
   externalProps: {
