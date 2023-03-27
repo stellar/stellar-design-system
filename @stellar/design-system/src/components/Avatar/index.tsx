@@ -1,58 +1,51 @@
-import React from "react";
+import createStellarIdenticon from "stellar-identicon-js";
 import "./styles.scss";
 
-interface AvatarSource {
-  image: string | React.ReactNode | undefined;
-  altText: string;
-  backgroundColor?: string;
-  iconColor?: string;
-  isFullSizeImage?: boolean;
-}
+type AvatarProps = {
+  publicAddress: string;
+  federatedAddress?: string;
+  showAddress?: boolean;
+  isShort?: boolean;
+};
 
-interface AvatarProps {
-  source: AvatarSource[];
-  size?: string;
-  borderColor?: string;
-}
-
-export const Avatar = ({ source, size, borderColor }: AvatarProps) => {
-  const renderImage = (item: AvatarSource) => {
-    if (typeof item.image === "string") {
-      return <img alt={item.altText} src={item.image} />;
-    }
-
-    return (
-      <span className="Avatar__item__icon" title={item.altText}>
-        {item.image}
-      </span>
-    );
-  };
+export const Avatar: React.FC<AvatarProps> = ({
+  publicAddress,
+  federatedAddress,
+  showAddress,
+  isShort,
+}: AvatarProps) => {
+  const address = federatedAddress ?? publicAddress;
 
   return (
     <div className="Avatar">
-      {source.map((item) => {
-        const customStyle = {
-          ...(borderColor ? { "--Avatar-border-color": borderColor } : {}),
-          ...(size ? { "--Avatar-size": size } : {}),
-          ...(item.backgroundColor
-            ? { "--Avatar-background-color": item.backgroundColor }
-            : {}),
-          ...(item.iconColor ? { "--Avatar-icon-color": item.iconColor } : {}),
-          ...(item.isFullSizeImage ? { "--Avatar-image-size": "100%" } : {}),
-        } as React.CSSProperties;
+      <div className="Avatar__icon">
+        <img
+          src={createStellarIdenticon(publicAddress).toDataURL()}
+          alt="Stellar address identicon"
+        />
+      </div>
 
-        return (
-          <div key={item.altText} className="Avatar__item" style={customStyle}>
-            {item.image ? (
-              renderImage(item)
-            ) : (
-              <div className="Avatar__item__bullet" />
-            )}
-          </div>
-        );
-      })}
+      {showAddress ? (
+        <div className="Avatar__address" title={address}>
+          {isShort ? shortenAddress(address) : address}
+        </div>
+      ) : null}
     </div>
   );
+};
+
+const shortenAddress = (address: string) => {
+  if (!address) {
+    return "";
+  }
+
+  const isValidFederatedAddress = address.split("*").length > 1;
+
+  if (isValidFederatedAddress) {
+    return `${address.split("*")[0]}*${address.split("*")[1].slice(0, 3)}…`;
+  }
+
+  return `${address.slice(0, 5)}…${address.slice(-5)}`;
 };
 
 Avatar.displayName = "Avatar";

@@ -1,4 +1,4 @@
-import { Avatar, Icon } from "@stellar/design-system";
+import { Avatar } from "@stellar/design-system";
 import { ComponentDetails, ComponentDetailsId } from "types/types";
 
 export const avatars: ComponentDetails = {
@@ -8,54 +8,44 @@ export const avatars: ComponentDetails = {
   shortDescription: "Image displayed in a circle",
   examples: [
     {
-      title: "Avatar from URL, full size",
+      title: "Avatar for public Stellar address",
       description: "",
       component: [
+        <Avatar publicAddress="GAVL6PM6TDJ7FBRCRL6GJ5WO2TWSH6ZRNU2HOARQ4RYMDUGSW7XWS57G" />,
         <Avatar
-          source={[
-            {
-              image: "https://stellar.expert/img/vendor/stellar.svg",
-              altText: "Stellar logo",
-              isFullSizeImage: true,
-            },
-          ]}
+          publicAddress="GAVL6PM6TDJ7FBRCRL6GJ5WO2TWSH6ZRNU2HOARQ4RYMDUGSW7XWS57G"
+          showAddress
+        />,
+        <Avatar
+          publicAddress="GAVL6PM6TDJ7FBRCRL6GJ5WO2TWSH6ZRNU2HOARQ4RYMDUGSW7XWS57G"
+          showAddress
+          isShort
         />,
       ],
     },
     {
-      title: "Avatar from SVG",
+      title: "Avatar with federated address",
       description: "",
       component: [
         <Avatar
-          source={[
-            {
-              image: <Icon.User />,
-              altText: "Stellar logo",
-            },
-          ]}
+          publicAddress="GD4XW236EFCESNO4RKGG5PWML2WNQIJS335XECBW4GRARXKE64VIMOLZ"
+          federatedAddress="test*stellar.org"
         />,
-      ],
-    },
-    {
-      title: "Avatar pair",
-      description: "",
-      component: [
         <Avatar
-          source={[
-            {
-              image: "https://stellar.expert/img/vendor/stellar.svg",
-              altText: "Stellar logo",
-              isFullSizeImage: true,
-            },
-            {
-              image: <Icon.User />,
-              altText: "Stellar logo",
-            },
-          ]}
+          publicAddress="GD4XW236EFCESNO4RKGG5PWML2WNQIJS335XECBW4GRARXKE64VIMOLZ"
+          federatedAddress="test*stellar.org"
+          showAddress
+        />,
+        <Avatar
+          publicAddress="GD4XW236EFCESNO4RKGG5PWML2WNQIJS335XECBW4GRARXKE64VIMOLZ"
+          federatedAddress="test*stellar.org"
+          showAddress
+          isShort
         />,
       ],
     },
   ],
+  // TODO: update props
   props: [
     {
       prop: "source",

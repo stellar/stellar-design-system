@@ -5,6 +5,7 @@ export enum Routes {
 }
 
 export enum ComponentDetailsId {
+  assetIcons = "assetIcons",
   assets = "assets",
   avatars = "avatars",
   badges = "badges",
@@ -15,7 +16,6 @@ export enum ComponentDetailsId {
   checkboxes = "checkboxes",
   copyTexts = "copyTexts",
   iconButtons = "iconButtons",
-  identicons = "identicons",
   inputs = "inputs",
   layout = "layout",
   links = "links",
@@ -35,6 +35,7 @@ export enum ComponentDetailsId {
 }
 
 export interface ComponentDetailsList {
+  assetIcons: ComponentDetails;
   assets: ComponentDetails;
   avatars: ComponentDetails;
   badges: ComponentDetails;
@@ -45,7 +46,6 @@ export interface ComponentDetailsList {
   checkboxes: ComponentDetails;
   copyTexts: ComponentDetails;
   iconButtons: ComponentDetails;
-  identicons: ComponentDetails;
   inputs: ComponentDetails;
   layout: ComponentDetails;
   links: ComponentDetails;

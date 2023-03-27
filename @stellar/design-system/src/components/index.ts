@@ -1,3 +1,4 @@
+export * from "./AssetIcon";
 export * from "./Avatar";
 export * from "./Badge";
 export * from "./Banner";
@@ -7,7 +8,6 @@ export * from "./Checkbox";
 export * from "./CopyText";
 export * from "./Floater";
 export * from "./IconButton";
-export * from "./Identicon";
 export * from "./Input";
 export * from "./Layout";
 export * from "./Loader";
