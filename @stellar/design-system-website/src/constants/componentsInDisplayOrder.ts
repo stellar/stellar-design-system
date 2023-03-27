@@ -23,6 +23,10 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
     label: "Avatars",
   },
   {
+    id: ComponentDetailsId.profiles,
+    label: "Profiles",
+  },
+  {
     id: ComponentDetailsId.assetIcons,
     label: "Asset icons",
   },

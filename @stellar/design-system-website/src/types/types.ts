@@ -25,6 +25,7 @@ export enum ComponentDetailsId {
   notifications = "notifications",
   pagination = "pagination",
   pieProgress = "pieProgress",
+  profiles = "profiles",
   radioButtons = "radioButtons",
   selects = "selects",
   tables = "tables",
@@ -55,6 +56,7 @@ export interface ComponentDetailsList {
   notifications: ComponentDetails;
   pagination: ComponentDetails;
   pieProgress: ComponentDetails;
+  profiles: ComponentDetails;
   radioButtons: ComponentDetails;
   selects: ComponentDetails;
   tables: ComponentDetails;

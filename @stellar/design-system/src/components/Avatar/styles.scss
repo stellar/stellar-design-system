@@ -1,31 +1,23 @@
 @use "../../utils.scss" as *;
 
 .Avatar {
+  --Avatar-size: #{pxToRem(32px)};
+  --Avatar-size-image: calc(var(--Avatar-size) / 2);
+
   display: flex;
   align-items: center;
-  // TODO: confirm gap
-  gap: pxToRem(8px);
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--Avatar-size);
+  height: var(--Avatar-size);
+  border-radius: calc(var(--Avatar-size) / 2);
+  background-color: var(--color-gray-00);
+  border: 1px solid var(--color-gray-30);
+  overflow: hidden;
 
-  &__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    width: pxToRem(32px);
-    height: pxToRem(32px);
-    border-radius: pxToRem(16px);
-    background-color: var(--color-gray-00);
-    border: 1px solid var(--color-gray-30);
-    overflow: hidden;
-
-    img {
-      display: block;
-      width: pxToRem(16px);
-      height: pxToRem(16px);
-    }
-  }
-
-  &__address {
-    word-break: break-all;
+  img {
+    display: block;
+    width: var(--Avatar-size-image);
+    height: var(--Avatar-size-image);
   }
 }

@@ -16,6 +16,7 @@ export * from "./NavButton";
 export * from "./Notification";
 export * from "./Pagination";
 export * from "./PieProgress";
+export * from "./Profile";
 export * from "./ProjectLogo";
 export * from "./RadioButton";
 export * from "./Select";

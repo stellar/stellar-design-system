@@ -16,6 +16,7 @@ import { modals } from "constants/details/modals";
 import { navButtons } from "constants/details/navButtons";
 import { notifications } from "constants/details/notifications";
 import { pagination } from "constants/details/pagination";
+import { profiles } from "constants/details/profiles";
 import { pieProgress } from "constants/details/pieProgress";
 import { radioButtons } from "constants/details/radioButtons";
 import { selects } from "constants/details/selects";
@@ -47,6 +48,7 @@ export const componentDetails: ComponentDetailsList = {
   navButtons,
   notifications,
   pagination,
+  profiles,
   pieProgress,
   radioButtons,
   selects,

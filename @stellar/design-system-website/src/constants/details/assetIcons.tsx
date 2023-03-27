@@ -14,9 +14,9 @@ export const assetIcons: ComponentDetails = {
         <AssetIcon
           source={[
             {
-              image:
-                "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=024",
-              altText: "USDC",
+              image: "https://cryptologos.cc/logos/stellar-xlm-logo.svg?v=024",
+              altText: "XLM",
+              imageSize: "80%",
             },
           ]}
           borderColor="var(--color-gray-10)"
@@ -24,9 +24,9 @@ export const assetIcons: ComponentDetails = {
         <AssetIcon
           source={[
             {
-              image: "https://cryptologos.cc/logos/stellar-xlm-logo.svg?v=024",
-              altText: "XLM",
-              imageSize: "80%",
+              image:
+                "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=024",
+              altText: "USDC",
             },
           ]}
           borderColor="var(--color-gray-10)"
@@ -40,28 +40,14 @@ export const assetIcons: ComponentDetails = {
         <AssetIcon
           source={[
             {
-              image: "https://cryptologos.cc/logos/bitcoin-btc-logo.png?v=024",
-              altText: "BTC",
-            },
-            {
-              image: "https://cryptologos.cc/logos/ethereum-eth-logo.png?v=024",
-              altText: "ETH",
+              image: "https://cryptologos.cc/logos/stellar-xlm-logo.svg?v=024",
+              altText: "XLM",
               imageSize: "80%",
             },
-          ]}
-          borderColor="var(--color-gray-10)"
-        />,
-        <AssetIcon
-          source={[
             {
               image:
-                "https://cryptologos.cc/logos/basic-attention-token-bat-logo.png?v=024",
-              altText: "BAT",
-              imageSize: "70%",
-            },
-            {
-              image: "https://cryptologos.cc/logos/kusama-ksm-logo.png?v=024",
-              altText: "KSM",
+                "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=024",
+              altText: "USDC",
             },
           ]}
           borderColor="var(--color-gray-10)"
@@ -69,32 +55,24 @@ export const assetIcons: ComponentDetails = {
       ],
     },
   ],
-  // TODO: update props
   props: [
     {
       prop: "source",
-      type: ["AvatarSource[]"],
+      type: ["AssetIconSource[]"],
       default: null,
       optional: false,
-      description: "Image URL or SVG source",
-    },
-    {
-      prop: "size",
-      type: ["string"],
-      default: null,
-      optional: true,
-      description: "Size of the avatar",
+      description: "Asset source data",
     },
     {
       prop: "borderColor",
       type: ["string"],
       default: null,
       optional: true,
-      description: "Border color of the avatar",
+      description: "Asset border color",
     },
-    // Adding a sub-title to indicate AvatarSource types
+    // Adding a sub-title to indicate AssetIconSource types
     {
-      prop: "AvatarSource",
+      prop: "AssetIconSource",
       type: [],
       default: null,
       optional: false,
@@ -102,38 +80,31 @@ export const assetIcons: ComponentDetails = {
     },
     {
       prop: "image",
-      type: ["string", "React.ReactNode", "undefined"],
+      type: ["string"],
       default: null,
       optional: false,
-      description: "Image source",
+      description: "Image URL",
     },
     {
       prop: "altText",
       type: ["string"],
       default: null,
       optional: false,
-      description: "Image title",
+      description: "Image alt text",
+    },
+    {
+      prop: "imageSize",
+      type: ["string"],
+      default: null,
+      optional: true,
+      description: "Custom size of the image inside the circle",
     },
     {
       prop: "backgroundColor",
       type: ["string"],
       default: null,
       optional: true,
-      description: "Background color",
-    },
-    {
-      prop: "iconColor",
-      type: ["string"],
-      default: null,
-      optional: true,
-      description: "Icon color, applies only to SVG",
-    },
-    {
-      prop: "isFullSizeImage",
-      type: ["boolean"],
-      default: null,
-      optional: true,
-      description: "Stretch image, applies only to URL",
+      description: "Custom background color",
     },
   ],
   externalProps: {
