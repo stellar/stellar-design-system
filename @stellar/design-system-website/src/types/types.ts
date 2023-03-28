@@ -5,6 +5,7 @@ export enum Routes {
 }
 
 export enum ComponentDetailsId {
+  assetIcons = "assetIcons",
   assets = "assets",
   avatars = "avatars",
   badges = "badges",
@@ -15,7 +16,6 @@ export enum ComponentDetailsId {
   checkboxes = "checkboxes",
   copyTexts = "copyTexts",
   iconButtons = "iconButtons",
-  identicons = "identicons",
   inputs = "inputs",
   layout = "layout",
   links = "links",
@@ -25,6 +25,7 @@ export enum ComponentDetailsId {
   notifications = "notifications",
   pagination = "pagination",
   pieProgress = "pieProgress",
+  profiles = "profiles",
   radioButtons = "radioButtons",
   selects = "selects",
   tables = "tables",
@@ -35,6 +36,7 @@ export enum ComponentDetailsId {
 }
 
 export interface ComponentDetailsList {
+  assetIcons: ComponentDetails;
   assets: ComponentDetails;
   avatars: ComponentDetails;
   badges: ComponentDetails;
@@ -45,7 +47,6 @@ export interface ComponentDetailsList {
   checkboxes: ComponentDetails;
   copyTexts: ComponentDetails;
   iconButtons: ComponentDetails;
-  identicons: ComponentDetails;
   inputs: ComponentDetails;
   layout: ComponentDetails;
   links: ComponentDetails;
@@ -55,6 +56,7 @@ export interface ComponentDetailsList {
   notifications: ComponentDetails;
   pagination: ComponentDetails;
   pieProgress: ComponentDetails;
+  profiles: ComponentDetails;
   radioButtons: ComponentDetails;
   selects: ComponentDetails;
   tables: ComponentDetails;

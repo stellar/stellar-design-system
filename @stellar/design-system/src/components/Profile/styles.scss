@@ -1,0 +1,134 @@
+@use "../../utils.scss" as *;
+
+.Profile {
+  // Variables
+  --Profile-color-background-default: var(--color-gray-00);
+  --Profile-color-border-default: var(--color-gray-30);
+
+  --Profile-color-background-hover: var(--color-gray-10);
+  --Profile-color-border-hover: var(--color-gray-40);
+
+  --Profile-color-background-active: var(--color-gray-20);
+  --Profile-color-border-active: var(--color-gray-50);
+
+  --Profile-font-size: #{pxToRem(16px)};
+  --Profile-line-height: #{pxToRem(24px)};
+  --Profile-gap: #{pxToRem(8px)};
+  --Profile-padding-vertical: #{pxToRem(6px)};
+  --Profile-padding-horizontal: #{pxToRem(12px)};
+  --Profile-avatar: #{pxToRem(24px)};
+  --Profile-button-avatar: #{pxToRem(20px)};
+
+  display: flex;
+  align-items: center;
+  gap: var(--Profile-gap);
+  font-size: var(--Profile-font-size);
+  line-height: var(--Profile-line-height);
+  padding: 0;
+  color: var(--color-gray-80);
+
+  .Avatar {
+    --Avatar-size: var(--Profile-avatar);
+  }
+
+  &__address {
+    word-break: break-all;
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-family-monospace);
+  }
+
+  &--button {
+    transition: color var(--anim-transition-default),
+      background-color var(--anim-transition-default),
+      border-color var(--anim-transition-default);
+    padding: var(--Profile-padding-vertical) var(--Profile-padding-horizontal);
+    background-color: var(--Profile-color-background-default);
+    border: 1px solid var(--Profile-color-border-default);
+    border-radius: pxToRem(4px);
+    cursor: pointer;
+
+    .Avatar {
+      --Avatar-size: var(--Profile-button-avatar);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--Profile-color-background-hover);
+        border-color: var(--Profile-color-border-hover);
+      }
+    }
+
+    &:active {
+      background-color: var(--Profile-color-background-active);
+      border-color: var(--Profile-color-border-active);
+    }
+  }
+
+  &--link {
+    transition: color var(--anim-transition-default),
+      background-color var(--anim-transition-default),
+      border-color var(--anim-transition-default);
+    text-decoration: none;
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-gray-70);
+      }
+    }
+  }
+
+  &--copy {
+    transition: color var(--anim-transition-default),
+      background-color var(--anim-transition-default),
+      border-color var(--anim-transition-default);
+    text-decoration: none;
+    cursor: pointer;
+
+    &__icon {
+      svg {
+        display: block;
+        width: calc(var(--Profile-font-size) - 2px);
+        height: calc(var(--Profile-font-size) - 2px);
+        fill: var(--color-gray-50);
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-gray-70);
+      }
+    }
+  }
+
+  // Size
+  &--md {
+    --Profile-font-size: #{pxToRem(16px)};
+    --Profile-line-height: #{pxToRem(24px)};
+    --Profile-gap: #{pxToRem(8px)};
+    --Profile-padding-vertical: #{pxToRem(8px)};
+    --Profile-padding-horizontal: #{pxToRem(12px)};
+    --Profile-avatar: #{pxToRem(24px)};
+    --Profile-button-avatar: #{pxToRem(20px)};
+  }
+
+  &--sm {
+    --Profile-font-size: #{pxToRem(14px)};
+    --Profile-line-height: #{pxToRem(22px)};
+    --Profile-gap: #{pxToRem(6px)};
+    --Profile-padding-vertical: #{pxToRem(6px)};
+    --Profile-padding-horizontal: #{pxToRem(10px)};
+    --Profile-avatar: #{pxToRem(22px)};
+    --Profile-button-avatar: #{pxToRem(18px)};
+  }
+
+  &--xs {
+    --Profile-font-size: #{pxToRem(12px)};
+    --Profile-line-height: #{pxToRem(20px)};
+    --Profile-gap: #{pxToRem(4px)};
+    --Profile-padding-vertical: #{pxToRem(4px)};
+    --Profile-padding-horizontal: #{pxToRem(8px)};
+    --Profile-avatar: #{pxToRem(20px)};
+    --Profile-button-avatar: #{pxToRem(16px)};
+  }
+}

@@ -1,59 +1,23 @@
+@use "../../utils.scss" as *;
+
 .Avatar {
-  --Avatar-size: 3rem;
-  --Avatar-image-size: 70%;
-  --Avatar-border-color: var(--color-gray-50);
-  --Avatar-border-width: calc(var(--Avatar-size) / 12);
-  --Avatar-background-color: var(--color-gray-10);
-  --Avatar-icon-color: var(--color-gray-90);
+  --Avatar-size: #{pxToRem(32px)};
+  --Avatar-size-image: calc(var(--Avatar-size) / 2);
 
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--Avatar-size);
+  height: var(--Avatar-size);
+  border-radius: calc(var(--Avatar-size) / 2);
+  background-color: var(--color-gray-00);
+  border: 1px solid var(--color-gray-30);
+  overflow: hidden;
 
-  %borderRadius {
-    border-radius: calc(var(--Avatar-size) / 2);
-  }
-
-  %avatarDimensions {
-    width: var(--Avatar-image-size);
-    height: var(--Avatar-image-size);
-  }
-
-  &__item {
-    @extend %borderRadius;
-    width: var(--Avatar-size);
-    height: var(--Avatar-size);
-    background-color: var(--Avatar-background-color);
-    border: var(--Avatar-border-width) solid var(--Avatar-border-color);
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    img {
-      @extend %avatarDimensions;
-      // add white background to all icons regardless of dark mode
-      background-color: var(--color-white);
-      display: block;
-    }
-
-    &__icon {
-      @extend %avatarDimensions;
-      svg {
-        width: 100%;
-        height: 100%;
-        fill: var(--Avatar-icon-color);
-      }
-    }
-
-    &__bullet {
-      @extend %avatarDimensions;
-      @extend %borderRadius;
-      background-color: var(--color-purple-60);
-    }
-
-    &:not(:first-child) {
-      margin-left: calc(-1 * calc(var(--Avatar-size) / 2));
-    }
+  img {
+    display: block;
+    width: var(--Avatar-size-image);
+    height: var(--Avatar-size-image);
   }
 }

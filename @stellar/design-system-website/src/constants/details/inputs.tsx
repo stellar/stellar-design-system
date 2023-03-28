@@ -19,8 +19,8 @@ export const inputs: ComponentDetails = {
       title: "Default",
       description: "",
       component: [
-        <Input fieldSize="md" id="input-1" />,
-        <Input fieldSize="md" id="input-2" disabled />,
+        <Input fieldSize="md" id="input-d-1" />,
+        <Input fieldSize="md" id="input-d-2" disabled />,
       ],
     },
     {
@@ -29,20 +29,27 @@ export const inputs: ComponentDetails = {
       component: [
         <Input
           fieldSize="md"
-          id="input-3"
+          id="input-md-1"
           label="Label"
           placeholder="Placeholder"
         />,
         <Input
           fieldSize="md"
-          id="input-4"
+          id="input-md-2"
+          label="Label"
+          placeholder="Placeholder"
+          isExtraPadding
+        />,
+        <Input
+          fieldSize="md"
+          id="input-md-3"
           label="Label"
           placeholder="Placeholder"
           disabled
         />,
         <Input
           fieldSize="md"
-          id="input-25"
+          id="input-md-4"
           label="Label"
           placeholder="Placeholder"
           isPill
@@ -55,20 +62,27 @@ export const inputs: ComponentDetails = {
       component: [
         <Input
           fieldSize="sm"
-          id="input-5"
+          id="input-sm-1"
           label="Label"
           placeholder="Placeholder"
         />,
         <Input
           fieldSize="sm"
-          id="input-6"
+          id="input-sm-2"
+          label="Label"
+          placeholder="Placeholder"
+          isExtraPadding
+        />,
+        <Input
+          fieldSize="sm"
+          id="input-sm-3"
           label="Label"
           placeholder="Placeholder"
           disabled
         />,
         <Input
           fieldSize="sm"
-          id="input-26"
+          id="input-sm-4"
           label="Label"
           placeholder="Placeholder"
           isPill
@@ -81,20 +95,27 @@ export const inputs: ComponentDetails = {
       component: [
         <Input
           fieldSize="xs"
-          id="input-7"
+          id="input-xs-1"
           label="Label"
           placeholder="Placeholder"
         />,
         <Input
           fieldSize="xs"
-          id="input-8"
+          id="input-xs-2"
+          label="Label"
+          placeholder="Placeholder"
+          isExtraPadding
+        />,
+        <Input
+          fieldSize="xs"
+          id="input-xs-3"
           label="Label"
           placeholder="Placeholder"
           disabled
         />,
         <Input
           fieldSize="xs"
-          id="input-27"
+          id="input-xs-4"
           label="Label"
           placeholder="Placeholder"
           isPill
@@ -107,14 +128,14 @@ export const inputs: ComponentDetails = {
       component: [
         <Input
           fieldSize="md"
-          id="input-9"
+          id="input-md-v-1"
           label="Label"
           placeholder="Placeholder"
           defaultValue="Value"
         />,
         <Input
           fieldSize="md"
-          id="input-10"
+          id="input-md-v-2"
           label="Label"
           placeholder="Placeholder"
           defaultValue="Value"
@@ -122,7 +143,7 @@ export const inputs: ComponentDetails = {
         />,
         <Input
           fieldSize="md"
-          id="input-11"
+          id="input-md-v-3"
           label="Label"
           placeholder="Placeholder"
           defaultValue="Value"
@@ -136,14 +157,14 @@ export const inputs: ComponentDetails = {
       component: [
         <Input
           fieldSize="md"
-          id="input-12"
+          id="input-md-ln-1"
           label="Label"
           placeholder="Placeholder"
           note="Note message"
         />,
         <Input
           fieldSize="md"
-          id="input-13"
+          id="input-md-ln-2"
           label="Label"
           placeholder="Placeholder"
           defaultValue="Value"
@@ -151,7 +172,7 @@ export const inputs: ComponentDetails = {
         />,
         <Input
           fieldSize="md"
-          id="input-20"
+          id="input-md-ln-3"
           label="Label"
           placeholder="Placeholder"
           defaultValue="Value"
@@ -165,14 +186,14 @@ export const inputs: ComponentDetails = {
       component: [
         <Input
           fieldSize="sm"
-          id="input-14"
+          id="input-sm-ln-1"
           label="Label"
           placeholder="Placeholder"
           note="Note message"
         />,
         <Input
           fieldSize="sm"
-          id="input-15"
+          id="input-sm-ln-2"
           label="Label"
           placeholder="Placeholder"
           defaultValue="Value"
@@ -180,7 +201,7 @@ export const inputs: ComponentDetails = {
         />,
         <Input
           fieldSize="sm"
-          id="input-19"
+          id="input-sm-ln-3"
           label="Label"
           placeholder="Placeholder"
           defaultValue="Value"
@@ -194,14 +215,14 @@ export const inputs: ComponentDetails = {
       component: [
         <Input
           fieldSize="xs"
-          id="input-16"
+          id="input-xs-ln-1"
           label="Label"
           placeholder="Placeholder"
           note="Note message"
         />,
         <Input
           fieldSize="xs"
-          id="input-17"
+          id="input-xs-ln-2"
           label="Label"
           placeholder="Placeholder"
           defaultValue="Value"
@@ -209,7 +230,7 @@ export const inputs: ComponentDetails = {
         />,
         <Input
           fieldSize="xs"
-          id="input-18"
+          id="input-xs-ln-3"
           label="Label"
           placeholder="Placeholder"
           defaultValue="Value"
@@ -223,21 +244,21 @@ export const inputs: ComponentDetails = {
       component: [
         <Input
           fieldSize="md"
-          id="input-18"
+          id="input-md-e-1"
           label="Label"
           placeholder="Placeholder"
           rightElement="USDC"
         />,
         <Input
           fieldSize="md"
-          id="input-19"
+          id="input-md-e-2"
           label="Label"
           placeholder="Placeholder"
           rightElement={<Icon.Check />}
         />,
         <Input
           fieldSize="md"
-          id="input-28"
+          id="input-md-e-3"
           label="Label"
           placeholder="Placeholder"
           rightElement={<Icon.Check />}
@@ -251,21 +272,21 @@ export const inputs: ComponentDetails = {
       component: [
         <Input
           fieldSize="sm"
-          id="input-20"
+          id="input-sm-e-1"
           label="Label"
           placeholder="Placeholder"
           rightElement="USDC"
         />,
         <Input
           fieldSize="sm"
-          id="input-21"
+          id="input-sm-e-2"
           label="Label"
           placeholder="Placeholder"
           rightElement={<Icon.Check />}
         />,
         <Input
           fieldSize="sm"
-          id="input-29"
+          id="input-sm-e-3"
           label="Label"
           placeholder="Placeholder"
           rightElement={<Icon.Check />}
@@ -279,21 +300,21 @@ export const inputs: ComponentDetails = {
       component: [
         <Input
           fieldSize="xs"
-          id="input-22"
+          id="input-xs-e-1"
           label="Label"
           placeholder="Placeholder"
           rightElement="USDC"
         />,
         <Input
           fieldSize="xs"
-          id="input-23"
+          id="input-xs-e-2"
           label="Label"
           placeholder="Placeholder"
           rightElement={<Icon.Check />}
         />,
         <Input
           fieldSize="xs"
-          id="input-30"
+          id="input-xs-e-3"
           label="Label"
           placeholder="Placeholder"
           rightElement={<Icon.Check />}
@@ -308,7 +329,7 @@ export const inputs: ComponentDetails = {
         <Input
           fieldSize="md"
           customInput={<Field />}
-          id="input-24"
+          id="input-c-1"
           label="Label"
           placeholder="Placeholder"
         />,
@@ -357,6 +378,13 @@ export const inputs: ComponentDetails = {
       default: null,
       optional: true,
       description: "Input error without a message",
+    },
+    {
+      prop: "isExtraPadding",
+      type: ["Boolean"],
+      default: null,
+      optional: true,
+      description: "Input with extra padding",
     },
     {
       prop: "rightElement",

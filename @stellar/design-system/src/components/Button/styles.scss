@@ -161,6 +161,7 @@
 
     &.Button--extra-padding {
       --Button-padding-vertical: #{pxToRem(12px)};
+      --Button-padding-horizontal: #{pxToRem(16px)};
     }
   }
 
@@ -177,6 +178,7 @@
 
     &.Button--extra-padding {
       --Button-padding-vertical: #{pxToRem(10px)};
+      --Button-padding-horizontal: #{pxToRem(14px)};
     }
   }
 
@@ -193,6 +195,7 @@
 
     &.Button--extra-padding {
       --Button-padding-vertical: #{pxToRem(8px)};
+      --Button-padding-horizontal: #{pxToRem(12px)};
     }
   }
 

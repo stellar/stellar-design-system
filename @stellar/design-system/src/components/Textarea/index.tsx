@@ -14,6 +14,7 @@ interface TextareaProps
   error?: string | React.ReactNode;
   isError?: boolean;
   isLabelUppercase?: boolean;
+  isExtraPadding?: boolean;
   customTextarea?: React.ReactElement;
 }
 
@@ -26,6 +27,7 @@ export const Textarea: React.FC<TextareaProps> = ({
   error,
   isError,
   isLabelUppercase,
+  isExtraPadding,
   customTextarea,
   spellCheck = false,
   autoComplete = "off",
@@ -35,6 +37,7 @@ export const Textarea: React.FC<TextareaProps> = ({
     `Textarea--${fieldSize}`,
     ...(props.disabled ? ["Textarea--disabled"] : []),
     ...(isError || error ? ["Textarea--error"] : []),
+    ...(isExtraPadding ? ["Textarea--extra-padding"] : []),
   ].join(" ");
 
   const baseTextareaProps = {

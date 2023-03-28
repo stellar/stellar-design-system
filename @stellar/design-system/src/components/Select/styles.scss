@@ -36,6 +36,11 @@
     &.Select--pill {
       --Select-padding-horizontal: #{pxToRem(14px)};
     }
+
+    &.Select--extra-padding {
+      --Select-padding-vertical: #{pxToRem(12px)};
+      --Select-padding-horizontal: #{pxToRem(16px)};
+    }
   }
 
   &--sm {
@@ -50,6 +55,11 @@
     &.Select--pill {
       --Select-padding-horizontal: #{pxToRem(12px)};
     }
+
+    &.Select--extra-padding {
+      --Select-padding-vertical: #{pxToRem(10px)};
+      --Select-padding-horizontal: #{pxToRem(14px)};
+    }
   }
 
   &--xs {
@@ -63,6 +73,11 @@
 
     &.Select--pill {
       --Select-padding-horizontal: #{pxToRem(10px)};
+    }
+
+    &.Select--extra-padding {
+      --Select-padding-vertical: #{pxToRem(8px)};
+      --Select-padding-horizontal: #{pxToRem(12px)};
     }
   }
 

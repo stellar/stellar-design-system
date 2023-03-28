@@ -15,6 +15,7 @@ interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   isLabelUppercase?: boolean;
   isPill?: boolean;
   isError?: boolean;
+  isExtraPadding?: boolean;
   customSelect?: React.ReactElement;
 }
 
@@ -28,6 +29,7 @@ export const Select: React.FC<SelectProps> = ({
   isLabelUppercase,
   isPill,
   isError,
+  isExtraPadding,
   customSelect,
   ...props
 }: SelectProps) => {
@@ -36,6 +38,7 @@ export const Select: React.FC<SelectProps> = ({
     ...(props.disabled ? ["Select--disabled"] : []),
     ...(isError || error ? ["Select--error"] : []),
     ...(isPill ? ["Select--pill"] : []),
+    ...(isExtraPadding ? ["Select--extra-padding"] : []),
   ].join(" ");
 
   const baseSelectProps = {
