@@ -23,6 +23,7 @@ interface FloaterProps {
   isVisible?: boolean;
   offset?: number;
   padding?: number;
+  hasActiveInsideClick?: boolean;
 }
 
 export const Floater: React.FC<FloaterProps> = ({
@@ -32,6 +33,7 @@ export const Floater: React.FC<FloaterProps> = ({
   isVisible,
   offset = 8,
   padding = 24,
+  hasActiveInsideClick,
 }: FloaterProps) => {
   const parentRef = useRef<HTMLDivElement | null>(null);
   const floaterRef = useRef<HTMLDivElement | null>(null);
@@ -101,13 +103,17 @@ export const Floater: React.FC<FloaterProps> = ({
   const handleClickOutside = useCallback(
     (event: MouseEvent) => {
       // Do nothing if component is static or floater element is clicked
-      if (isStatic || floaterRef?.current?.contains(event.target as Node)) {
+      if (
+        !hasActiveInsideClick ||
+        isStatic ||
+        floaterRef?.current?.contains(event.target as Node)
+      ) {
         return;
       }
 
       toggleFloater(false);
     },
-    [toggleFloater, isStatic],
+    [hasActiveInsideClick, isStatic, toggleFloater],
   );
 
   useLayoutEffect(() => {
