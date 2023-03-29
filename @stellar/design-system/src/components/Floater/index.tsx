@@ -102,11 +102,12 @@ export const Floater: React.FC<FloaterProps> = ({
 
   const handleClickOutside = useCallback(
     (event: MouseEvent) => {
-      // Do nothing if component is static or floater element is clicked
+      // Do nothing if component is static or floater element is clicked, unless
+      // hasActiveInsideClick prop is set
       if (
-        !hasActiveInsideClick ||
         isStatic ||
-        floaterRef?.current?.contains(event.target as Node)
+        (floaterRef?.current?.contains(event.target as Node) &&
+          !hasActiveInsideClick)
       ) {
         return;
       }
