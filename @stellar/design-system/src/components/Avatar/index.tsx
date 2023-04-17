@@ -1,4 +1,4 @@
-import createStellarIdenticon from "stellar-identicon-js";
+import { createStellarIdenticon } from "../../helpers/createStellarIdenticon";
 import "./styles.scss";
 
 type AvatarProps = {
