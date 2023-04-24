@@ -20,6 +20,13 @@ export const tooltips: ComponentDetails = {
         <Tooltip isVisible={true} triggerEl={<>Tooltip trigger</>}>
           Lorem ipsum dolor sit
         </Tooltip>,
+        <Tooltip
+          isVisible={true}
+          triggerEl={<>Tooltip trigger no contrast</>}
+          isContrast={false}
+        >
+          Lorem ipsum dolor sit
+        </Tooltip>,
       ],
     },
     {
@@ -74,6 +81,13 @@ export const tooltips: ComponentDetails = {
       default: null,
       optional: true,
       description: "Manually show/hide tooltip",
+    },
+    {
+      prop: "isContrast",
+      type: ["boolean"],
+      default: "true",
+      optional: true,
+      description: "Use contrast theme color",
     },
   ],
   externalProps: {

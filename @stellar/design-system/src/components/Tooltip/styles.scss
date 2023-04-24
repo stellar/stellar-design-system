@@ -1,7 +1,7 @@
 @use "../../utils.scss" as *;
 
 .Tooltip {
-  padding: pxToRem(12px);
+  padding: pxToRem(8px) pxToRem(12px);
   width: max-content;
   max-width: pxToRem(232px);
   font-size: pxToRem(12px);

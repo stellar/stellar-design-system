@@ -24,6 +24,7 @@ interface FloaterProps {
   offset?: number;
   padding?: number;
   hasActiveInsideClick?: boolean;
+  isContrast?: boolean;
 }
 
 export const Floater: React.FC<FloaterProps> = ({
@@ -34,13 +35,14 @@ export const Floater: React.FC<FloaterProps> = ({
   offset = 8,
   padding = 24,
   hasActiveInsideClick,
+  isContrast = true,
 }: FloaterProps) => {
   const parentRef = useRef<HTMLDivElement | null>(null);
   const floaterRef = useRef<HTMLDivElement | null>(null);
 
   const [isFloaterOpen, setIsFloaterOpen] = useState(Boolean(isVisible));
   // If components has manual visibility control, we don't want to add clicks
-  const isStatic = Boolean(isVisible);
+  const isStatic = isVisible !== undefined;
 
   const triggerClass = "trigger";
   const triggerActiveClass = "trigger--active";
@@ -136,6 +138,10 @@ export const Floater: React.FC<FloaterProps> = ({
     };
   }, [isFloaterOpen, handleClickOutside]);
 
+  const additionalClasses = [
+    ...(isContrast ? [] : [`Floater__content--light`]),
+  ].join(" ");
+
   return (
     <div className="Floater" ref={parentRef}>
       {isStatic
@@ -144,7 +150,7 @@ export const Floater: React.FC<FloaterProps> = ({
             // Add floater click action
             onClick: toggleFloater,
           })}
-      <div ref={floaterRef} className="Floater__content">
+      <div ref={floaterRef} className={`Floater__content ${additionalClasses}`}>
         {children}
       </div>
     </div>

@@ -6,6 +6,7 @@ interface TooltipProps {
   children: React.ReactNode;
   placement?: FloaterPlacement;
   isVisible?: boolean;
+  isContrast?: boolean;
 }
 
 export const Tooltip: React.FC<TooltipProps> = ({
@@ -13,9 +14,15 @@ export const Tooltip: React.FC<TooltipProps> = ({
   children,
   placement = "right",
   isVisible,
+  isContrast = true,
 }: TooltipProps) => {
   return (
-    <Floater placement={placement} triggerEl={triggerEl} isVisible={isVisible}>
+    <Floater
+      placement={placement}
+      triggerEl={triggerEl}
+      isVisible={isVisible}
+      isContrast={isContrast}
+    >
       <div className="Tooltip">{children}</div>
     </Floater>
   );
