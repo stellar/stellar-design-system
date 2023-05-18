@@ -81,6 +81,7 @@ export const App = () => {
   return (
     <SideNavContext.Provider value={sideNavStateValue}>
       <Layout.Header
+        projectId="Design System"
         projectTitle="Design System"
         hasThemeSwitch
         menu={{

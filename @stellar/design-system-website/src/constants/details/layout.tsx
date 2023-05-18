@@ -17,7 +17,11 @@ export const layout: ComponentDetails = {
       title: "Default header",
       description: "",
       component: [
-        <Layout.Header projectTitle="Design System" hasThemeSwitch />,
+        <Layout.Header
+          projectId="Design System"
+          projectTitle="Design System"
+          hasThemeSwitch
+        />,
       ],
     },
     {
