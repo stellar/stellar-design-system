@@ -34,7 +34,8 @@ const Content: React.FC<ContentProps> = ({ children }: ContentProps) => (
 );
 
 interface HeaderProps {
-  projectTitle: string;
+  projectId: string;
+  projectTitle?: string;
   projectLink?: string;
   hasThemeSwitch?: boolean;
   onThemeSwitchActionEnd?: (isDarkMode: boolean) => void;
@@ -56,6 +57,7 @@ const stringToCamelcase = (str: string) =>
     .replace(/\s+/g, "");
 
 const Header: React.FC<HeaderProps> = ({
+  projectId,
   projectTitle,
   projectLink,
   hasThemeSwitch,
@@ -98,7 +100,7 @@ const Header: React.FC<HeaderProps> = ({
 
           {hasThemeSwitch ? (
             <ThemeSwitch
-              storageKeyId={`stellarTheme:${stringToCamelcase(projectTitle)}`}
+              storageKeyId={`stellarTheme:${stringToCamelcase(projectId)}`}
               onActionEnd={onThemeSwitchActionEnd}
             />
           ) : null}

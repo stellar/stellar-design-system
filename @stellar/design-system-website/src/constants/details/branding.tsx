@@ -18,7 +18,7 @@ export const branding: ComponentDetails = {
       prop: "title",
       type: ["string"],
       default: null,
-      optional: false,
+      optional: true,
       description: "Project name",
     },
     {

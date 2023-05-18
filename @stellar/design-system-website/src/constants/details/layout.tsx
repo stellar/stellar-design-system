@@ -17,7 +17,11 @@ export const layout: ComponentDetails = {
       title: "Default header",
       description: "",
       component: [
-        <Layout.Header projectTitle="Design System" hasThemeSwitch />,
+        <Layout.Header
+          projectId="Design System"
+          projectTitle="Design System"
+          hasThemeSwitch
+        />,
       ],
     },
     {
@@ -72,10 +76,17 @@ export const layout: ComponentDetails = {
         description: "Header of the website.",
         props: [
           {
-            prop: "projectTitle",
+            prop: "projectId",
             type: ["string"],
             default: null,
             optional: false,
+            description: "ID of the project",
+          },
+          {
+            prop: "projectTitle",
+            type: ["string"],
+            default: null,
+            optional: true,
             description: "Name of the project",
           },
           {
