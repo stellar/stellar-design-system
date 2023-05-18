@@ -46,6 +46,7 @@ interface HeaderProps {
   };
   contentCenter?: React.ReactElement;
   contentRight?: React.ReactElement;
+  showTitle?: boolean;
 }
 
 const stringToCamelcase = (str: string) =>
@@ -65,7 +66,12 @@ const Header: React.FC<HeaderProps> = ({
   menu,
   contentCenter,
   contentRight,
+  showTitle,
 }: HeaderProps) => {
+  // In order to be able to save unique settings per project in ToggleDarkMode,
+  // we need to require a projectTitle but in some cases we don't need to display it.
+  const _projectTitle = showTitle === true ? projectTitle : undefined;
+
   // Set default mode to light, if there is no theme toggle
   useEffect(() => {
     if (!hasDarkModeToggle) {
@@ -78,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({
       <Layout.Inset>
         {/* Left */}
         <div className="Layout__header--left">
-          <ProjectLogo title={projectTitle} link={projectLink} />
+          <ProjectLogo title={_projectTitle} link={projectLink} />
         </div>
 
         {/* Center */}
