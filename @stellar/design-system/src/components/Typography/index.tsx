@@ -5,6 +5,7 @@ import "./styles.scss";
 // =============================================================================
 interface HeadingProps extends React.HtmlHTMLAttributes<HTMLHeadingElement> {
   as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  addlClassName?: string;
   size: "xxl" | "xl" | "lg" | "md" | "sm" | "xs";
   children: string | React.ReactNode;
 }
@@ -16,7 +17,7 @@ export const Heading = ({
   ...props
 }: HeadingProps): JSX.Element => (
   <HtmlTag
-    className={`Heading Heading--${size} ${props.className || ""}`}
+    className={`Heading Heading--${size} ${props.addlClassName || ""}`}
     {...props}
   >
     {children}
@@ -30,6 +31,7 @@ Heading.displayName = "Heading";
 // =============================================================================
 interface CaptionProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
   size: "lg" | "md" | "sm" | "xs";
+  addlClassName?: string;
   children: string | React.ReactNode;
 }
 
@@ -39,7 +41,7 @@ export const Caption = ({
   ...props
 }: CaptionProps): JSX.Element => (
   <div
-    className={`Caption Caption--${size} ${props.className || ""}`}
+    className={`Caption Caption--${size} ${props.addlClassName || ""}`}
     {...props}
   >
     {children}
@@ -53,6 +55,7 @@ Caption.displayName = "Caption";
 // =============================================================================
 interface ParagraphProps
   extends React.HtmlHTMLAttributes<HTMLParagraphElement | HTMLDivElement> {
+  addlClassName?: string;
   size: "lg" | "md" | "sm" | "xs";
   children: string | React.ReactNode;
   asDiv?: boolean;
@@ -68,7 +71,7 @@ export const Paragraph = ({
 
   return (
     <HtmlTag
-      className={`Paragraph Paragraph--${size} ${props.className || ""}`}
+      className={`Paragraph Paragraph--${size} ${props.addlClassName || ""}`}
       {...props}
     >
       {children}
@@ -82,6 +85,7 @@ Paragraph.displayName = "Paragraph";
 // Title
 // =============================================================================
 interface TitleProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
+  addlClassName?: string;
   size: "lg" | "md" | "sm" | "xs";
   children: string | React.ReactNode;
 }
@@ -91,7 +95,10 @@ export const Title = ({
   children,
   ...props
 }: TitleProps): JSX.Element => (
-  <div className={`Title Title--${size} ${props.className || ""}`} {...props}>
+  <div
+    className={`Title Title--${size} ${props.addlClassName || ""}`}
+    {...props}
+  >
     {children}
   </div>
 );
