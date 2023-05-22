@@ -11,13 +11,14 @@ interface HeadingProps extends React.HtmlHTMLAttributes<HTMLHeadingElement> {
 }
 
 export const Heading = ({
+  addlClassName,
   as: HtmlTag,
   size,
   children,
   ...props
 }: HeadingProps): JSX.Element => (
   <HtmlTag
-    className={`Heading Heading--${size} ${props.addlClassName || ""}`}
+    className={`Heading Heading--${size} ${addlClassName || ""}`}
     {...props}
   >
     {children}
@@ -36,14 +37,12 @@ interface CaptionProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
 }
 
 export const Caption = ({
+  addlClassName,
   size,
   children,
   ...props
 }: CaptionProps): JSX.Element => (
-  <div
-    className={`Caption Caption--${size} ${props.addlClassName || ""}`}
-    {...props}
-  >
+  <div className={`Caption Caption--${size} ${addlClassName || ""}`} {...props}>
     {children}
   </div>
 );
@@ -62,6 +61,7 @@ interface ParagraphProps
 }
 
 export const Paragraph = ({
+  addlClassName,
   size,
   children,
   asDiv,
@@ -71,7 +71,7 @@ export const Paragraph = ({
 
   return (
     <HtmlTag
-      className={`Paragraph Paragraph--${size} ${props.addlClassName || ""}`}
+      className={`Paragraph Paragraph--${size} ${addlClassName || ""}`}
       {...props}
     >
       {children}
@@ -91,14 +91,12 @@ interface TitleProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
 }
 
 export const Title = ({
+  addlClassName,
   size,
   children,
   ...props
 }: TitleProps): JSX.Element => (
-  <div
-    className={`Title Title--${size} ${props.addlClassName || ""}`}
-    {...props}
-  >
+  <div className={`Title Title--${size} ${addlClassName || ""}`} {...props}>
     {children}
   </div>
 );

@@ -110,6 +110,13 @@ export const typography: ComponentDetails = {
       description: "",
     },
     {
+      prop: "addlClassName",
+      type: ["string"],
+      default: null,
+      optional: true,
+      description: "Additional classes",
+    },
+    {
       prop: "as",
       type: ["h1", "h2", "h3", "h4", "h5", "h6"],
       default: null,
@@ -140,6 +147,13 @@ export const typography: ComponentDetails = {
       description: "",
     },
     {
+      prop: "addlClassName",
+      type: ["string"],
+      default: null,
+      optional: true,
+      description: "Additional classes",
+    },
+    {
       prop: "size",
       type: ["lg", "md", "sm", "xs"],
       default: null,
@@ -161,6 +175,13 @@ export const typography: ComponentDetails = {
       default: "",
       optional: false,
       description: "",
+    },
+    {
+      prop: "addlClassName",
+      type: ["string"],
+      default: null,
+      optional: true,
+      description: "Additional classes",
     },
     {
       prop: "size",
@@ -191,6 +212,13 @@ export const typography: ComponentDetails = {
       default: "",
       optional: false,
       description: "",
+    },
+    {
+      prop: "addlClassName",
+      type: ["string"],
+      default: null,
+      optional: true,
+      description: "Additional classes",
     },
     {
       prop: "size",
