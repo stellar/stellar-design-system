@@ -128,21 +128,21 @@
   }
 
   &--tertiary {
-    --Button-color-text-default: var(--color-gray-80);
-    --Button-color-background-default: var(--color-gray-00);
-    --Button-color-border-default: var(--color-gray-30);
+    --Button-color-text-default: var(--color-gray-00);
+    --Button-color-background-default: var(--color-gray-90);
+    --Button-color-border-default: var(--color-gray-80);
 
-    --Button-color-text-hover: var(--color-gray-80);
-    --Button-color-background-hover: var(--color-gray-10);
-    --Button-color-border-hover: var(--color-gray-40);
+    --Button-color-text-hover: var(--color-gray-00);
+    --Button-color-background-hover: var(--color-gray-80);
+    --Button-color-border-hover: var(--color-gray-70);
 
-    --Button-color-text-active: var(--color-gray-80);
-    --Button-color-background-active: var(--color-gray-20);
-    --Button-color-border-active: var(--color-gray-50);
+    --Button-color-text-active: var(--color-gray-30);
+    --Button-color-background-active: var(--color-gray-80);
+    --Button-color-border-active: var(--color-gray-60);
 
-    --Button-color-text-disabled: var(--color-gray-70);
-    --Button-color-background-disabled: var(--color-gray-50);
-    --Button-color-border-disabled: var(--color-gray-50);
+    --Button-color-text-disabled: var(--color-gray-50);
+    --Button-color-background-disabled: var(--color-gray-70);
+    --Button-color-border-disabled: var(--color-gray-70);
 
     @include buttonState();
   }
