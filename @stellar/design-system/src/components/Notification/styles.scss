@@ -47,6 +47,13 @@
     font-size: pxToRem(14px);
     line-height: pxToRem(22px);
     font-weight: var(--font-weight-regular);
+
+    ul {
+      font-size: pxToRem(14px);
+      line-height: pxToRem(22px);
+      color: var(--color-gray-70);
+      list-style-type: disc;
+    }
   }
 
   // Variant

@@ -32,6 +32,8 @@
     }
 
     &--active {
+      z-index: var(--z-index-tooltip);
+
       .Floater__content {
         opacity: 1;
       }
