@@ -147,6 +147,66 @@
     @include buttonState();
   }
 
+  &--destructive {
+    --Button-color-text-default: var(--color-white);
+    --Button-color-background-default: var(--color-red-60);
+    --Button-color-border-default: var(--color-red-50);
+
+    --Button-color-text-hover: var(--color-white);
+    --Button-color-background-hover: var(--color-red-70);
+    --Button-color-border-hover: var(--color-red-50);
+
+    --Button-color-text-active: var(--color-gray-00);
+    --Button-color-background-active: var(--color-red-80);
+    --Button-color-border-active: var(--color-red-50);
+
+    --Button-color-text-disabled: var(--color-red-70);
+    --Button-color-background-disabled: var(--color-red-50);
+    --Button-color-border-disabled: var(--color-red-50);
+
+    @include buttonState();
+  }
+
+  &--error {
+    --Button-color-text-default: var(--color-red-60);
+    --Button-color-background-default: var(--color-red-10);
+    --Button-color-border-default: var(--color-red-30);
+
+    --Button-color-text-hover: var(--color-red-60);
+    --Button-color-background-hover: var(--color-red-20);
+    --Button-color-border-hover: var(--color-red-40);
+
+    --Button-color-text-active: var(--color-red-60);
+    --Button-color-background-active: var(--color-red-30);
+    --Button-color-border-active: var(--color-red-50);
+
+    --Button-color-text-disabled: var(--color-red-40);
+    --Button-color-background-disabled: var(--color-red-10);
+    --Button-color-border-disabled: var(--color-red-30);
+
+    @include buttonState();
+  }
+
+  &--success {
+    --Button-color-text-default: var(--color-green-60);
+    --Button-color-background-default: var(--color-green-10);
+    --Button-color-border-default: var(--color-green-30);
+
+    --Button-color-text-hover: var(--color-green-60);
+    --Button-color-background-hover: var(--color-green-20);
+    --Button-color-border-hover: var(--color-green-40);
+
+    --Button-color-text-active: var(--color-green-60);
+    --Button-color-background-active: var(--color-green-30);
+    --Button-color-border-active: var(--color-green-50);
+
+    --Button-color-text-disabled: var(--color-green-40);
+    --Button-color-background-disabled: var(--color-green-10);
+    --Button-color-border-disabled: var(--color-green-30);
+
+    @include buttonState();
+  }
+
   // Size
   &--md {
     --Button-font-size: #{pxToRem(16px)};

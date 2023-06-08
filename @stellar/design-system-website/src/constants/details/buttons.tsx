@@ -291,7 +291,6 @@ export const buttons: ComponentDetails = {
         </Button>,
       ],
     },
-
     {
       title: "Tertiary, medium",
       description: "",
@@ -421,11 +420,147 @@ export const buttons: ComponentDetails = {
         </Button>,
       ],
     },
+    {
+      title: "Destructive, medium",
+      description: "",
+      component: [
+        <Button variant="destructive" size="md">
+          Label
+        </Button>,
+        <Button
+          variant="destructive"
+          size="md"
+          icon={<Icon.Check />}
+          iconPosition="left"
+        >
+          Label
+        </Button>,
+        <Button
+          variant="destructive"
+          size="md"
+          icon={<Icon.Check />}
+          iconPosition="right"
+        >
+          Label
+        </Button>,
+        <Button variant="destructive" size="md" disabled>
+          Label
+        </Button>,
+        <Button variant="destructive" size="md" isLoading>
+          Label
+        </Button>,
+        <Button variant="destructive" size="md" isUppercase>
+          Label
+        </Button>,
+        <Button variant="destructive" size="md" isFullWidth>
+          Label
+        </Button>,
+        <Button variant="destructive" size="md" isExtraPadding>
+          Label
+        </Button>,
+        <Button variant="destructive" size="md" isPill>
+          Label
+        </Button>,
+      ],
+    },
+    {
+      title: "Error, medium",
+      description: "",
+      component: [
+        <Button variant="error" size="md">
+          Label
+        </Button>,
+        <Button
+          variant="error"
+          size="md"
+          icon={<Icon.Check />}
+          iconPosition="left"
+        >
+          Label
+        </Button>,
+        <Button
+          variant="error"
+          size="md"
+          icon={<Icon.Check />}
+          iconPosition="right"
+        >
+          Label
+        </Button>,
+        <Button variant="error" size="md" disabled>
+          Label
+        </Button>,
+        <Button variant="error" size="md" isLoading>
+          Label
+        </Button>,
+        <Button variant="error" size="md" isUppercase>
+          Label
+        </Button>,
+        <Button variant="error" size="md" isFullWidth>
+          Label
+        </Button>,
+        <Button variant="error" size="md" isExtraPadding>
+          Label
+        </Button>,
+        <Button variant="error" size="md" isPill>
+          Label
+        </Button>,
+      ],
+    },
+    {
+      title: "Success, medium",
+      description: "",
+      component: [
+        <Button variant="success" size="md">
+          Label
+        </Button>,
+        <Button
+          variant="success"
+          size="md"
+          icon={<Icon.Check />}
+          iconPosition="left"
+        >
+          Label
+        </Button>,
+        <Button
+          variant="success"
+          size="md"
+          icon={<Icon.Check />}
+          iconPosition="right"
+        >
+          Label
+        </Button>,
+        <Button variant="success" size="md" disabled>
+          Label
+        </Button>,
+        <Button variant="success" size="md" isLoading>
+          Label
+        </Button>,
+        <Button variant="success" size="md" isUppercase>
+          Label
+        </Button>,
+        <Button variant="success" size="md" isFullWidth>
+          Label
+        </Button>,
+        <Button variant="success" size="md" isExtraPadding>
+          Label
+        </Button>,
+        <Button variant="success" size="md" isPill>
+          Label
+        </Button>,
+      ],
+    },
   ],
   props: [
     {
       prop: "variant",
-      type: ["primary", "secondary", "tertiary"],
+      type: [
+        "primary",
+        "secondary",
+        "tertiary",
+        "destructive",
+        "error",
+        "success",
+      ],
       default: null,
       optional: false,
       description: "Variant of the button",
