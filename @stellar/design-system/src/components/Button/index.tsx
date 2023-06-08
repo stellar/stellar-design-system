@@ -3,7 +3,13 @@ import { Loader } from "../Loader";
 import "./styles.scss";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant: "primary" | "secondary" | "tertiary";
+  variant:
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "destructive"
+    | "error"
+    | "success";
   size: "md" | "sm" | "xs";
   children?: string | React.ReactNode;
   icon?: React.ReactNode;
