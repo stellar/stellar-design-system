@@ -38,7 +38,11 @@ const ModalExample = () => {
         Show modal
       </Button>
 
-      <Modal visible={modalVisible} onClose={() => setModalVisible(false)}>
+      <Modal
+        visible={modalVisible}
+        onClose={() => setModalVisible(false)}
+        alignToBottom={true}
+      >
         <Modal.Heading>Modal heading</Modal.Heading>
 
         <Modal.Body>
@@ -113,12 +117,12 @@ const ModalExample = () => {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="primary" size="md">
+          <Button variant="primary" size="sm">
             Submit
           </Button>
           <Button
             variant="secondary"
-            size="md"
+            size="sm"
             onClick={() => setModalVisible(false)}
           >
             Cancel
@@ -171,6 +175,7 @@ export const modals: ComponentDetails = {
           onClose={() => {
             // do nothing
           }}
+          alignToBottom={true}
         >
           <Modal.Heading>Modal heading</Modal.Heading>
 
@@ -246,10 +251,10 @@ export const modals: ComponentDetails = {
           </Modal.Body>
 
           <Modal.Footer>
-            <Button variant="primary" size="md">
+            <Button variant="primary" size="sm">
               Submit
             </Button>
-            <Button variant="secondary" size="md">
+            <Button variant="secondary" size="sm">
               Cancel
             </Button>
           </Modal.Footer>
@@ -299,6 +304,13 @@ export const modals: ComponentDetails = {
       default: null,
       optional: true,
       description: "Offset top position of the modal",
+    },
+    {
+      prop: "alignToBottom",
+      type: ["boolean"],
+      default: null,
+      optional: true,
+      description: "Align modal to the bottom on smaller screens",
     },
   ],
   externalProps: {

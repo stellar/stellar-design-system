@@ -43,12 +43,13 @@ const ModalFooter: React.FC<ModalFooterProps> = ({
 }: ModalHeadingProps) => <div className="ModalFooter">{children}</div>;
 
 interface ModalProps {
+  parentId?: string;
   visible: boolean;
   onClose: () => void;
-  children: React.ReactNode;
-  parentId?: string;
   disableWindowScrollWhenOpened?: boolean;
   offsetTop?: string;
+  alignToBottom?: boolean;
+  children: React.ReactNode;
 }
 
 export const Modal: React.FC<ModalProps> & ModalComponent = ({
@@ -57,6 +58,7 @@ export const Modal: React.FC<ModalProps> & ModalComponent = ({
   onClose,
   disableWindowScrollWhenOpened = true,
   offsetTop,
+  alignToBottom,
   children,
 }: ModalProps) => {
   const parent = document.getElementById(parentId);
@@ -95,7 +97,11 @@ export const Modal: React.FC<ModalProps> & ModalComponent = ({
   }
 
   return ReactDOM.createPortal(
-    <div className="Modal" style={customStyle}>
+    <div
+      className="Modal"
+      style={customStyle}
+      {...(alignToBottom ? { "data-modal-align": "bottom" } : {})}
+    >
       <div className="Modal__container">
         <div className="Modal__content">{children}</div>
         <div className="Modal__close">
