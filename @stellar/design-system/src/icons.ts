@@ -21,12 +21,14 @@ import { ReactComponent as ArrowTopLeft } from "./assets/icons/arrow-top-left.sv
 import { ReactComponent as ArrowTopRight } from "./assets/icons/arrow-top-right.svg";
 import { ReactComponent as ArrowUp } from "./assets/icons/arrow-up.svg";
 import { ReactComponent as Article } from "./assets/icons/article.svg";
+import { ReactComponent as Assets } from "./assets/icons/assets.svg";
 import { ReactComponent as AttachFile } from "./assets/icons/attach-file.svg";
 import { ReactComponent as Attachment } from "./assets/icons/attachment.svg";
 import { ReactComponent as Backspace } from "./assets/icons/backspace.svg";
 import { ReactComponent as Backup } from "./assets/icons/backup.svg";
 import { ReactComponent as BarChart } from "./assets/icons/bar-chart.svg";
 import { ReactComponent as Block } from "./assets/icons/block.svg";
+import { ReactComponent as Burn } from "./assets/icons/burn.svg";
 import { ReactComponent as CalendarMonth } from "./assets/icons/calendar-month.svg";
 import { ReactComponent as CalendarToday } from "./assets/icons/calendar-today.svg";
 import { ReactComponent as ChatBubble } from "./assets/icons/chat-bubble.svg";
@@ -58,9 +60,13 @@ import { ReactComponent as DataObject } from "./assets/icons/data-object.svg";
 import { ReactComponent as Database } from "./assets/icons/database.svg";
 import { ReactComponent as DeleteForever } from "./assets/icons/delete-forever.svg";
 import { ReactComponent as Delete } from "./assets/icons/delete.svg";
+import { ReactComponent as DeployedCode } from "./assets/icons/deployed-code.svg";
 import { ReactComponent as Done } from "./assets/icons/done.svg";
+import { ReactComponent as Dot } from "./assets/icons/dot.svg";
 import { ReactComponent as Download } from "./assets/icons/download.svg";
 import { ReactComponent as Draft } from "./assets/icons/draft.svg";
+import { ReactComponent as DragIndicator } from "./assets/icons/drag-indicator.svg";
+import { ReactComponent as DragPan } from "./assets/icons/drag-pan.svg";
 import { ReactComponent as Edit } from "./assets/icons/edit.svg";
 import { ReactComponent as Error } from "./assets/icons/error.svg";
 import { ReactComponent as ExternalLink } from "./assets/icons/external-link.svg";
@@ -68,9 +74,13 @@ import { ReactComponent as Favorite } from "./assets/icons/favorite.svg";
 import { ReactComponent as Filter } from "./assets/icons/filter.svg";
 import { ReactComponent as Flag } from "./assets/icons/flag.svg";
 import { ReactComponent as FolderCopy } from "./assets/icons/folder-copy.svg";
+import { ReactComponent as Free } from "./assets/icons/free.svg";
+import { ReactComponent as FrontHand } from "./assets/icons/front-hand.svg";
 import { ReactComponent as Github } from "./assets/icons/github.svg";
 import { ReactComponent as Grade } from "./assets/icons/grade.svg";
+import { ReactComponent as GroupAdd } from "./assets/icons/group-add.svg";
 import { ReactComponent as Help } from "./assets/icons/help.svg";
+import { ReactComponent as Hide } from "./assets/icons/hide.svg";
 import { ReactComponent as History } from "./assets/icons/history.svg";
 import { ReactComponent as Home } from "./assets/icons/home.svg";
 import { ReactComponent as HourglassBottom } from "./assets/icons/hourglass-bottom.svg";
@@ -80,6 +90,8 @@ import { ReactComponent as HourglassTop } from "./assets/icons/hourglass-top.svg
 import { ReactComponent as Info } from "./assets/icons/info.svg";
 import { ReactComponent as Insights } from "./assets/icons/insights.svg";
 import { ReactComponent as IosShare } from "./assets/icons/ios-share.svg";
+import { ReactComponent as Join } from "./assets/icons/join.svg";
+import { ReactComponent as KeyVisualizer } from "./assets/icons/key-visualizer.svg";
 import { ReactComponent as Key } from "./assets/icons/key.svg";
 import { ReactComponent as Layers } from "./assets/icons/layers.svg";
 import { ReactComponent as Link } from "./assets/icons/link.svg";
@@ -96,9 +108,11 @@ import { ReactComponent as ModeLight } from "./assets/icons/mode-light.svg";
 import { ReactComponent as MonetizationOn } from "./assets/icons/monetization-on.svg";
 import { ReactComponent as MoreHoriz } from "./assets/icons/more-horiz.svg";
 import { ReactComponent as MoreVert } from "./assets/icons/more-vert.svg";
+import { ReactComponent as MoveDown } from "./assets/icons/move-down.svg";
 import { ReactComponent as Notifications } from "./assets/icons/notifications.svg";
 import { ReactComponent as Password } from "./assets/icons/password.svg";
 import { ReactComponent as Payments } from "./assets/icons/payments.svg";
+import { ReactComponent as PersonAdd } from "./assets/icons/person-add.svg";
 import { ReactComponent as Public } from "./assets/icons/public.svg";
 import { ReactComponent as QrCode2 } from "./assets/icons/qr-code-2.svg";
 import { ReactComponent as QrCodeScanner } from "./assets/icons/qr-code-scanner.svg";
@@ -110,13 +124,18 @@ import { ReactComponent as Replay } from "./assets/icons/replay.svg";
 import { ReactComponent as Search } from "./assets/icons/search.svg";
 import { ReactComponent as Send } from "./assets/icons/send.svg";
 import { ReactComponent as Settings } from "./assets/icons/settings.svg";
+import { ReactComponent as Shield } from "./assets/icons/shield.svg";
 import { ReactComponent as ShowChart } from "./assets/icons/show-chart.svg";
+import { ReactComponent as Show } from "./assets/icons/show.svg";
 import { ReactComponent as SignalCellularAlt } from "./assets/icons/signal-cellular-alt.svg";
+import { ReactComponent as Smile } from "./assets/icons/smile.svg";
 import { ReactComponent as SortByAlpha } from "./assets/icons/sort-by-alpha.svg";
 import { ReactComponent as SpaceDashboard } from "./assets/icons/space-dashboard.svg";
 import { ReactComponent as StackedLineChart } from "./assets/icons/stacked-line-chart.svg";
+import { ReactComponent as Status } from "./assets/icons/status.svg";
 import { ReactComponent as Store } from "./assets/icons/store.svg";
 import { ReactComponent as Toll } from "./assets/icons/toll.svg";
+import { ReactComponent as TravelExplore } from "./assets/icons/travel-explore.svg";
 import { ReactComponent as Tune } from "./assets/icons/tune.svg";
 import { ReactComponent as UnfoldLess } from "./assets/icons/unfold-less.svg";
 import { ReactComponent as UnfoldMore } from "./assets/icons/unfold-more.svg";
@@ -153,12 +172,14 @@ export const Icon = {
   ArrowTopRight,
   ArrowUp,
   Article,
+  Assets,
   AttachFile,
   Attachment,
   Backspace,
   Backup,
   BarChart,
   Block,
+  Burn,
   CalendarMonth,
   CalendarToday,
   ChatBubble,
@@ -190,9 +211,13 @@ export const Icon = {
   Database,
   DeleteForever,
   Delete,
+  DeployedCode,
   Done,
+  Dot,
   Download,
   Draft,
+  DragIndicator,
+  DragPan,
   Edit,
   Error,
   ExternalLink,
@@ -200,9 +225,13 @@ export const Icon = {
   Filter,
   Flag,
   FolderCopy,
+  Free,
+  FrontHand,
   Github,
   Grade,
+  GroupAdd,
   Help,
+  Hide,
   History,
   Home,
   HourglassBottom,
@@ -212,6 +241,8 @@ export const Icon = {
   Info,
   Insights,
   IosShare,
+  Join,
+  KeyVisualizer,
   Key,
   Layers,
   Link,
@@ -228,9 +259,11 @@ export const Icon = {
   MonetizationOn,
   MoreHoriz,
   MoreVert,
+  MoveDown,
   Notifications,
   Password,
   Payments,
+  PersonAdd,
   Public,
   QrCode2,
   QrCodeScanner,
@@ -242,13 +275,18 @@ export const Icon = {
   Search,
   Send,
   Settings,
+  Shield,
   ShowChart,
+  Show,
   SignalCellularAlt,
+  Smile,
   SortByAlpha,
   SpaceDashboard,
   StackedLineChart,
+  Status,
   Store,
   Toll,
+  TravelExplore,
   Tune,
   UnfoldLess,
   UnfoldMore,
