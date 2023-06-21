@@ -16,7 +16,7 @@
     "lint-tsc": "tsc --noEmit"
   },
   "dependencies": {
-    "@stellar/design-system": "^1.0.0-beta.12",
+    "@stellar/design-system": "^1.0.0-beta.13",
     "@svgr/webpack": "^6.5.1",
     "assert": "^2.0.0",
     "buffer": "^6.0.3",
