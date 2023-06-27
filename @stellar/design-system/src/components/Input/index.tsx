@@ -1,5 +1,6 @@
 import React, { cloneElement, useLayoutEffect, useRef, useState } from "react";
 import { Label } from "../Label";
+import { Icon } from "../../icons";
 import { FieldNote } from "../utils/FieldNote";
 import "./styles.scss";
 
@@ -12,6 +13,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   isPill?: boolean;
   isError?: boolean;
   isExtraPadding?: boolean;
+  isPassword?: boolean;
   rightElement?: string | React.ReactNode;
   note?: string | React.ReactNode;
   error?: string | React.ReactNode;
@@ -27,12 +29,14 @@ export const Input: React.FC<InputProps> = ({
   isPill,
   isError,
   isExtraPadding,
+  isPassword,
   rightElement,
   note,
   error,
   ...props
 }: InputProps) => {
   const [sideElWidthRem, setSideElWidthRem] = useState(0);
+  const [isPasswordMasked, setIsPasswordMasked] = useState(true);
   const sideEl = useRef<HTMLDivElement | null>(null);
 
   const getRightSideElWidth = () => {
@@ -83,12 +87,32 @@ export const Input: React.FC<InputProps> = ({
         {customInput ? (
           cloneElement(customInput, { ...baseInputProps, ...props })
         ) : (
-          <input {...baseInputProps} {...props} />
+          <input
+            {...baseInputProps}
+            {...props}
+            {...(isPassword
+              ? { type: isPasswordMasked ? "password" : "text" }
+              : {})}
+          />
         )}
 
         {rightElement && (
           <div ref={sideEl} className="Input__side-element">
             {rightElement}
+          </div>
+        )}
+
+        {isPassword && (
+          <div className="Input__side-element">
+            <button
+              className="PasswordMaskToggle"
+              onClick={(event) => {
+                event?.preventDefault();
+                setIsPasswordMasked(!isPasswordMasked);
+              }}
+            >
+              {isPasswordMasked ? <Icon.Hide /> : <Icon.Show />}
+            </button>
           </div>
         )}
       </div>

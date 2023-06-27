@@ -142,6 +142,20 @@
       width: var(--Input-font-size);
       height: var(--Input-font-size);
     }
+
+    .PasswordMaskToggle {
+      width: var(--Input-font-size);
+      height: var(--Input-font-size);
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin: 0;
+      padding: 0;
+
+      svg {
+        fill: var(--color-gray-60);
+      }
+    }
   }
 
   &--error {

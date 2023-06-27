@@ -323,6 +323,33 @@ export const inputs: ComponentDetails = {
       ],
     },
     {
+      title: "Password input",
+      description: "",
+      component: [
+        <Input
+          fieldSize="md"
+          id="input-p-1"
+          label="Password"
+          value="MySecretPassword"
+          isPassword
+        />,
+        <Input
+          fieldSize="sm"
+          id="input-p-2"
+          label="Password"
+          value="MySecretPassword"
+          isPassword
+        />,
+        <Input
+          fieldSize="xs"
+          id="input-p-3"
+          label="Password"
+          value="MySecretPassword"
+          isPassword
+        />,
+      ],
+    },
+    {
       title: "Input with custom input",
       description: "",
       component: [
@@ -385,6 +412,13 @@ export const inputs: ComponentDetails = {
       default: null,
       optional: true,
       description: "Input with extra padding",
+    },
+    {
+      prop: "isPassword",
+      type: ["Boolean"],
+      default: null,
+      optional: true,
+      description: "Password input preset with show/hide button",
     },
     {
       prop: "rightElement",
