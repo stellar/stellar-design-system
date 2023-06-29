@@ -134,6 +134,7 @@ export const assets: ComponentDetails = {
         <Icon.Redeem />,
         <Icon.RefreshHoriz />,
         <Icon.RefreshVert />,
+        <Icon.Remove />,
         <Icon.Replay />,
         <Icon.Search />,
         <Icon.Send />,
