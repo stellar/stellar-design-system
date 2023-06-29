@@ -120,6 +120,7 @@ import { ReactComponent as QrCode } from "./assets/icons/qr-code.svg";
 import { ReactComponent as Redeem } from "./assets/icons/redeem.svg";
 import { ReactComponent as RefreshHoriz } from "./assets/icons/refresh-horiz.svg";
 import { ReactComponent as RefreshVert } from "./assets/icons/refresh-vert.svg";
+import { ReactComponent as Remove } from "./assets/icons/remove.svg";
 import { ReactComponent as Replay } from "./assets/icons/replay.svg";
 import { ReactComponent as Search } from "./assets/icons/search.svg";
 import { ReactComponent as Send } from "./assets/icons/send.svg";
@@ -271,6 +272,7 @@ export const Icon = {
   Redeem,
   RefreshHoriz,
   RefreshVert,
+  Remove,
   Replay,
   Search,
   Send,
