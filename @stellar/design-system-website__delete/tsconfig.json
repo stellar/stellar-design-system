@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./build/",
+    "sourceRoot": "./src",
+    "baseUrl": "./src",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "types": ["node"]
+  },
+  "include": ["src"],
+  "exclude": ["build", "node_modules"]
+}
