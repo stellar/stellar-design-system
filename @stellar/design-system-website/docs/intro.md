@@ -4,6 +4,14 @@ sidebar_position: 1
 
 # Tutorial Intro
 
+```tsx live
+<PreviewBlock>
+  <Button variant="primary" size="md">
+    Test button
+  </Button>
+</PreviewBlock>
+```
+
 Let's discover **Docusaurus in less than 5 minutes**.
 
 ## Getting Started
