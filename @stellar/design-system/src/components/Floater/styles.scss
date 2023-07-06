@@ -1,0 +1,42 @@
+@use "../../utils.scss" as *;
+
+.Floater {
+  position: relative;
+  z-index: 1;
+
+  &__content {
+    position: absolute;
+    display: none;
+    transition: all var(--anim-transition-default);
+    opacity: 0;
+    top: calc(100% + pxToRem(8px));
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--color-gray-00);
+    background-color: var(--color-gray-90);
+    border: 1px solid var(--color-gray-90);
+    border-radius: pxToRem(6px);
+    box-shadow: 0px pxToRem(2px) pxToRem(4px) rgba(0, 0, 0, 0.08);
+
+    &--light {
+      color: var(--color-gray-80);
+      background-color: var(--color-gray-00);
+      border-color: var(--color-gray-30);
+    }
+  }
+
+  // Floater open/close
+  &.trigger {
+    .Floater__content {
+      display: block;
+    }
+
+    &--active {
+      z-index: var(--z-index-tooltip);
+
+      .Floater__content {
+        opacity: 1;
+      }
+    }
+  }
+}

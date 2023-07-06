@@ -50,7 +50,7 @@ export const ElementCode = ({
 // TODO: update theme to match
 const customTheme: PrismTheme = {
   plain: {
-    backgroundColor: "var(--pal-example-code)",
+    backgroundColor: "#292d3e",
     color: "#9a86fd",
   },
   styles: [

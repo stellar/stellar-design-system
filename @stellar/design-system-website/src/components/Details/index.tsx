@@ -1,10 +1,4 @@
-import {
-  Heading1,
-  Heading2,
-  Heading4,
-  Heading5,
-  TextLink,
-} from "@stellar/design-system";
+import { Heading, Link, Title } from "@stellar/design-system";
 import React from "react";
 import { ElementCode } from "components/ElementCode";
 import { componentDetails } from "constants/componentDetails";
@@ -63,33 +57,45 @@ export const Details = ({
             </tr>
           </thead>
           <tbody>
-            {renderProps.map((componentProp, index) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <tr key={`${componentProp.prop}-${index}`}>
-                <td>
-                  <code>{componentProp.prop}</code>
-                </td>
-                <td className="Table__props">
-                  {renderPropType(componentProp.type)}
-                </td>
-                <td>
-                  {componentProp.default ? (
-                    <code>{componentProp.default}</code>
-                  ) : null}
-                </td>
-                <td>{componentProp.optional ? "Yes" : null}</td>
-                <td>{componentProp.description ?? null}</td>
-              </tr>
-            ))}
+            {renderProps.map((componentProp, index) => {
+              if (componentProp.heading) {
+                return (
+                  <tr>
+                    <td colSpan={5}>
+                      <Title size="md">{componentProp.heading}</Title>
+                    </td>
+                  </tr>
+                );
+              }
+
+              return (
+                // eslint-disable-next-line react/no-array-index-key
+                <tr key={`${componentProp.prop}-${index}`}>
+                  <td>
+                    <code>{componentProp.prop}</code>
+                  </td>
+                  <td className="Table__props">
+                    {renderPropType(componentProp.type)}
+                  </td>
+                  <td>
+                    {componentProp.default ? (
+                      <code>{componentProp.default}</code>
+                    ) : null}
+                  </td>
+                  <td>{componentProp.optional ? "Yes" : null}</td>
+                  <td>{componentProp.description ?? null}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
       {renderExternalProps?.link ? (
         <div className="TableNoteContainer">
           Including all valid{" "}
-          <TextLink href={renderExternalProps.link}>
+          <Link href={renderExternalProps.link}>
             {renderExternalProps.label || "attributes"}
-          </TextLink>
+          </Link>
         </div>
       ) : null}
     </>
@@ -98,7 +104,7 @@ export const Details = ({
   const renderExample = (
     components: React.ReactNode[],
     options?: {
-      previewExampleOverride?: React.Component[];
+      previewExampleOverride?: React.ReactNode[];
       useGridLayout?: boolean;
     },
   ) => {
@@ -148,7 +154,9 @@ export const Details = ({
     <>
       {/* heading */}
       <div className="Section">
-        <Heading1>{title}</Heading1>
+        <Heading as="h1" size="md">
+          {title}
+        </Heading>
 
         {/* description */}
         <p>{description}</p>
@@ -156,7 +164,9 @@ export const Details = ({
 
       {/* examples */}
       <div className="Section">
-        <Heading2>Examples</Heading2>
+        <Heading as="h2" size="md">
+          Examples
+        </Heading>
 
         {examples.map((example: ComponentExample, index) => {
           const {
@@ -170,7 +180,11 @@ export const Details = ({
           return (
             // eslint-disable-next-line react/no-array-index-key
             <div className="Section Details__example" key={`example-${index}`}>
-              {exampleTitle ? <Heading4>{exampleTitle}</Heading4> : null}
+              {exampleTitle ? (
+                <Heading as="h4" size="md">
+                  {exampleTitle}
+                </Heading>
+              ) : null}
               {exampleDescription ? <p>{exampleDescription}</p> : null}
 
               {renderExample(component, {
@@ -185,7 +199,9 @@ export const Details = ({
       {/* props */}
       {props.length ? (
         <div className="Section">
-          <Heading2>Props</Heading2>
+          <Heading as="h2" size="md">
+            Props
+          </Heading>
           {renderPropsTable(props, externalProps)}
         </div>
       ) : null}
@@ -193,14 +209,18 @@ export const Details = ({
       {/* sub-components */}
       {subComponents?.components.length ? (
         <div className="Section">
-          <Heading2>Sub-components</Heading2>
+          <Heading as="h2" size="md">
+            Sub-components
+          </Heading>
 
           <p>{subComponents.description}</p>
 
           {subComponents.components.map((sub, index) => (
             // eslint-disable-next-line react/no-array-index-key
             <div className="Section" key={`subcomponent-${index}`}>
-              <Heading4>{sub.component}</Heading4>
+              <Heading as="h4" size="md">
+                {sub.component}
+              </Heading>
 
               <p>{sub.description}</p>
 
@@ -208,7 +228,9 @@ export const Details = ({
 
               {sub.notes ? (
                 <div className="SubSection">
-                  <Heading5>Notes</Heading5>
+                  <Heading as="h5" size="md">
+                    Notes
+                  </Heading>
 
                   {sub.notes.map((note, idx) => (
                     // eslint-disable-next-line react/no-array-index-key
@@ -226,7 +248,9 @@ export const Details = ({
       {/* notes */}
       {notes?.length ? (
         <div className="Section">
-          <Heading2>Notes</Heading2>
+          <Heading as="h2" size="md">
+            Notes
+          </Heading>
 
           {notes.map((note: React.ReactNode, index) => (
             // eslint-disable-next-line react/no-array-index-key

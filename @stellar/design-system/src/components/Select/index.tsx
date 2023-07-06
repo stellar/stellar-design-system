@@ -1,65 +1,80 @@
-import React from "react";
-import { FieldElement } from "../utils/FieldElement";
+import React, { cloneElement } from "react";
+import { Label } from "../Label";
 import { FieldNote } from "../utils/FieldNote";
 import { Icon } from "../../icons";
 import "./styles.scss";
 
 interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   id: string;
+  // Note: cannot use "size" here because it's input's native property
+  fieldSize: "md" | "sm" | "xs";
+  children: React.ReactNode;
   label?: string | React.ReactNode;
-  leftElement?: string | React.ReactNode;
-  rightElement?: string | React.ReactNode;
   note?: string | React.ReactNode;
   error?: string | string;
-  children: React.ReactNode;
+  isLabelUppercase?: boolean;
+  isPill?: boolean;
+  isError?: boolean;
+  isExtraPadding?: boolean;
+  customSelect?: React.ReactElement;
 }
 
 export const Select: React.FC<SelectProps> = ({
   id,
+  fieldSize,
+  children,
   label,
-  leftElement,
-  rightElement,
   note,
   error,
-  children,
+  isLabelUppercase,
+  isPill,
+  isError,
+  isExtraPadding,
+  customSelect,
   ...props
 }: SelectProps) => {
   const additionalClasses = [
+    `Select--${fieldSize}`,
     ...(props.disabled ? ["Select--disabled"] : []),
-    ...(error ? ["Select--error"] : []),
+    ...(isError || error ? ["Select--error"] : []),
+    ...(isPill ? ["Select--pill"] : []),
+    ...(isExtraPadding ? ["Select--extra-padding"] : []),
   ].join(" ");
+
+  const baseSelectProps = {
+    id,
+    "aria-invalid": !!(isError || error),
+  };
 
   return (
     <div className={`Select ${additionalClasses}`}>
-      {label && <label htmlFor={id}>{label}</label>}
+      {label && (
+        <Label
+          htmlFor={id}
+          isUppercase={isLabelUppercase}
+          size={fieldSize === "xs" ? "xs" : "sm"}
+        >
+          {label}
+        </Label>
+      )}
 
       <div className="Select__container">
-        {leftElement && (
-          <FieldElement position={FieldElement.position.left}>
-            {leftElement}
-          </FieldElement>
-        )}
-
-        <div className="Select__wrapper">
-          <select id={id} {...props}>
-            {children}
-          </select>
-          <span className="Select__icon" aria-hidden="true">
-            <Icon.ChevronDown />
-          </span>
-        </div>
-
-        {rightElement && (
-          <FieldElement position={FieldElement.position.right}>
-            {rightElement}
-          </FieldElement>
+        {customSelect ? (
+          cloneElement(customSelect, { ...baseSelectProps, ...props })
+        ) : (
+          <>
+            <select {...baseSelectProps} {...props}>
+              {children}
+            </select>
+            <span className="Select__icon" aria-hidden="true">
+              <Icon.ChevronDown />
+            </span>
+          </>
         )}
       </div>
 
       {note && <FieldNote>{note}</FieldNote>}
-      {error && (
-        <FieldNote variant={FieldNote.variant.error}>{error}</FieldNote>
-      )}
+      {error && <FieldNote variant="error">{error}</FieldNote>}
     </div>
   );
 };

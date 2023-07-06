@@ -38,7 +38,7 @@ export const Pagination = ({
 
   const customProps = {
     customSize: "1rem",
-    customColor: "var(--pal-text-link)",
+    customColor: "var(--color-purple-70)",
   };
 
   if (pageCount === 1) {

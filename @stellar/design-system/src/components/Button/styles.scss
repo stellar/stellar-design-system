@@ -1,107 +1,276 @@
-@use "../../mixins.scss";
+@use "../../utils.scss" as *;
 
-@mixin SvgIcon($color) {
-  .ButtonIcon {
-    svg {
-      @include mixins.svg-color($color);
+// State
+@mixin buttonState() {
+  @media (hover: hover) {
+    &:hover {
+      color: var(--Button-color-text-hover);
+      background-color: var(--Button-color-background-hover);
+      border-color: var(--Button-color-border-hover);
     }
+  }
+
+  &:active {
+    color: var(--Button-color-text-active);
+    background-color: var(--Button-color-background-active);
+    border-color: var(--Button-color-border-active);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    color: var(--Button-color-text-disabled);
+    background-color: var(--Button-color-background-disabled);
+    border-color: var(--Button-color-border-disabled);
   }
 }
 
 .Button {
-  --Button-color-text: transparent;
-  --Button-color-background: transparent;
-  --Button-color-border: transparent;
+  // Variables
+  --Button-color-text-default: var(--color-white);
+  --Button-color-background-default: var(--color-purple-50);
+  --Button-color-border-default: var(--color-purple-50);
 
-  font-size: var(--font-size);
-  line-height: 1.56rem;
-  padding: 0.6rem 1.5rem;
-  font-weight: var(--font-weight-medium);
-  border-radius: 0.125rem;
-  border: 1px solid var(--Button-color-border);
-  cursor: pointer;
+  --Button-color-text-hover: var(--color-white);
+  --Button-color-background-hover: var(--color-purple-50);
+  --Button-color-border-hover: var(--color-purple-50);
+
+  --Button-color-text-active: var(--color-white);
+  --Button-color-background-active: var(--color-purple-50);
+  --Button-color-border-active: var(--color-purple-50);
+
+  --Button-color-text-disabled: var(--color-white);
+  --Button-color-background-disabled: var(--color-purple-50);
+  --Button-color-border-disabled: var(--color-purple-50);
+
+  --Button-font-size: #{pxToRem(16px)};
+  --Button-line-height: #{pxToRem(24px)};
+  --Button-gap: #{pxToRem(4px)};
+  --Button-padding-vertical: #{pxToRem(6px)};
+  --Button-padding-horizontal: #{pxToRem(12px)};
+
+  // Base
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: center;
-  background-color: var(--Button-color-background);
-  color: var(--Button-color-text);
-  transition: background-color var(--anim-transition-default);
+  align-items: center;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-medium);
+  border: 1px solid var(--Button-color-border-default);
+  color: var(--Button-color-text-default);
+  background-color: var(--Button-color-background-default);
+  border-radius: pxToRem(4px);
+  cursor: pointer;
+  transition: color var(--anim-transition-default),
+    background-color var(--anim-transition-default),
+    border-color var(--anim-transition-default);
 
-  &--small {
-    font-size: var(--font-size-secondary);
-    line-height: 1.5rem;
-    padding: 0.25rem 0.75rem;
-    font-weight: var(--font-weight-medium);
+  font-size: var(--Button-font-size);
+  line-height: var(--Button-line-height);
+  gap: var(--Button-gap);
+  padding: var(--Button-padding-vertical) var(--Button-padding-horizontal);
+
+  // Icon
+  &__icon {
+    width: var(--Button-font-size);
+    height: var(--Button-font-size);
+    display: block;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+    }
   }
 
+  .Loader {
+    --Loader-size: var(--Button-font-size);
+  }
+
+  // Variant
   &--primary {
-    --Button-color-background: var(--pal-brand-primary);
-    --Button-color-text: var(--pal-brand-primary-on);
-    --Button-color-border: var(--pal-brand-primary);
+    --Button-color-text-default: var(--color-white);
+    --Button-color-background-default: var(--color-purple-60);
+    --Button-color-border-default: var(--color-purple-60);
 
-    box-shadow: 0 0.5rem 1rem -0.5rem rgba(var(--pal-shadow-rbg), 0.48);
+    --Button-color-text-hover: var(--color-white);
+    --Button-color-background-hover: var(--color-purple-70);
+    --Button-color-border-hover: var(--color-purple-70);
 
-    @media (hover: hover) {
-      &:hover {
-        background-color: var(--pal-brand-primary-hover);
-      }
-    }
+    --Button-color-text-active: var(--color-gray-00);
+    --Button-color-background-active: var(--color-purple-80);
+    --Button-color-border-active: var(--color-purple-80);
+
+    --Button-color-text-disabled: var(--color-purple-70);
+    --Button-color-background-disabled: var(--color-purple-50);
+    --Button-color-border-disabled: var(--color-purple-50);
+
+    @include buttonState();
   }
 
   &--secondary {
-    --Button-color-background: var(--pal-background-primary);
-    --Button-color-text: var(--pal-text-link);
-    --Button-color-border: var(--pal-text-link);
+    --Button-color-text-default: var(--color-gray-90);
+    --Button-color-background-default: var(--color-gray-20);
+    --Button-color-border-default: var(--color-gray-30);
 
-    box-shadow: none;
+    --Button-color-text-hover: var(--color-gray-90);
+    --Button-color-background-hover: var(--color-gray-30);
+    --Button-color-border-hover: var(--color-gray-40);
 
-    @media (hover: hover) {
-      &:hover {
-        background-color: var(--pal-brand-primary);
-        color: var(--pal-brand-primary-on);
+    --Button-color-text-active: var(--color-gray-90);
+    --Button-color-background-active: var(--color-gray-40);
+    --Button-color-border-active: var(--color-gray-50);
 
-        @include SvgIcon(var(--pal-brand-primary-on));
-      }
-    }
+    --Button-color-text-disabled: var(--color-gray-70);
+    --Button-color-background-disabled: var(--color-gray-50);
+    --Button-color-border-disabled: var(--color-gray-50);
+
+    @include buttonState();
   }
 
   &--tertiary {
-    --Button-color-background: var(--pal-background-primary);
-    --Button-color-text: var(--pal-text-primary);
-    --Button-color-border: var(--pal-border-primary);
+    --Button-color-text-default: var(--color-gray-00);
+    --Button-color-background-default: var(--color-gray-90);
+    --Button-color-border-default: var(--color-gray-80);
 
-    box-shadow: none;
+    --Button-color-text-hover: var(--color-gray-00);
+    --Button-color-background-hover: var(--color-gray-80);
+    --Button-color-border-hover: var(--color-gray-70);
 
-    @media (hover: hover) {
-      &:hover {
-        background-color: var(--pal-background-tertiary);
-      }
+    --Button-color-text-active: var(--color-gray-30);
+    --Button-color-background-active: var(--color-gray-80);
+    --Button-color-border-active: var(--color-gray-60);
+
+    --Button-color-text-disabled: var(--color-gray-50);
+    --Button-color-background-disabled: var(--color-gray-70);
+    --Button-color-border-disabled: var(--color-gray-70);
+
+    @include buttonState();
+  }
+
+  &--destructive {
+    --Button-color-text-default: var(--color-white);
+    --Button-color-background-default: var(--color-red-60);
+    --Button-color-border-default: var(--color-red-50);
+
+    --Button-color-text-hover: var(--color-white);
+    --Button-color-background-hover: var(--color-red-70);
+    --Button-color-border-hover: var(--color-red-50);
+
+    --Button-color-text-active: var(--color-gray-00);
+    --Button-color-background-active: var(--color-red-80);
+    --Button-color-border-active: var(--color-red-50);
+
+    --Button-color-text-disabled: var(--color-red-70);
+    --Button-color-background-disabled: var(--color-red-50);
+    --Button-color-border-disabled: var(--color-red-50);
+
+    @include buttonState();
+  }
+
+  &--error {
+    --Button-color-text-default: var(--color-red-60);
+    --Button-color-background-default: var(--color-red-10);
+    --Button-color-border-default: var(--color-red-30);
+
+    --Button-color-text-hover: var(--color-red-60);
+    --Button-color-background-hover: var(--color-red-20);
+    --Button-color-border-hover: var(--color-red-40);
+
+    --Button-color-text-active: var(--color-red-60);
+    --Button-color-background-active: var(--color-red-30);
+    --Button-color-border-active: var(--color-red-50);
+
+    --Button-color-text-disabled: var(--color-red-40);
+    --Button-color-background-disabled: var(--color-red-10);
+    --Button-color-border-disabled: var(--color-red-30);
+
+    @include buttonState();
+  }
+
+  &--success {
+    --Button-color-text-default: var(--color-green-60);
+    --Button-color-background-default: var(--color-green-10);
+    --Button-color-border-default: var(--color-green-30);
+
+    --Button-color-text-hover: var(--color-green-60);
+    --Button-color-background-hover: var(--color-green-20);
+    --Button-color-border-hover: var(--color-green-40);
+
+    --Button-color-text-active: var(--color-green-60);
+    --Button-color-background-active: var(--color-green-30);
+    --Button-color-border-active: var(--color-green-50);
+
+    --Button-color-text-disabled: var(--color-green-40);
+    --Button-color-background-disabled: var(--color-green-10);
+    --Button-color-border-disabled: var(--color-green-30);
+
+    @include buttonState();
+  }
+
+  // Size
+  &--md {
+    --Button-font-size: #{pxToRem(16px)};
+    --Button-line-height: #{pxToRem(24px)};
+    --Button-padding-vertical: #{pxToRem(8px)};
+    --Button-padding-horizontal: #{pxToRem(12px)};
+
+    &.Button--pill {
+      --Button-padding-horizontal: #{pxToRem(14px)};
     }
+
+    &.Button--extra-padding {
+      --Button-padding-vertical: #{pxToRem(12px)};
+      --Button-padding-horizontal: #{pxToRem(16px)};
+    }
+  }
+
+  &--sm {
+    --Button-font-size: #{pxToRem(14px)};
+    --Button-line-height: #{pxToRem(22px)};
+    --Button-padding-vertical: #{pxToRem(6px)};
+    --Button-padding-horizontal: #{pxToRem(10px)};
+
+    &.Button--pill {
+      --Button-padding-horizontal: #{pxToRem(12px)};
+    }
+
+    &.Button--extra-padding {
+      --Button-padding-vertical: #{pxToRem(10px)};
+      --Button-padding-horizontal: #{pxToRem(14px)};
+    }
+  }
+
+  &--xs {
+    --Button-font-size: #{pxToRem(12px)};
+    --Button-line-height: #{pxToRem(20px)};
+    --Button-padding-vertical: #{pxToRem(4px)};
+    --Button-padding-horizontal: #{pxToRem(8px)};
+
+    &.Button--pill {
+      --Button-padding-horizontal: #{pxToRem(10px)};
+    }
+
+    &.Button--extra-padding {
+      --Button-padding-vertical: #{pxToRem(8px)};
+      --Button-padding-horizontal: #{pxToRem(12px)};
+    }
+  }
+
+  // Custom
+  &--uppercase {
+    text-transform: uppercase;
   }
 
   &--full-width {
     width: 100%;
   }
 
-  &:disabled {
-    cursor: not-allowed;
-    opacity: var(--opacity-disabled-button);
-
-    @media (hover: hover) {
-      &:hover {
-        background-color: var(--Button-color-background);
-        color: var(--Button-color-text);
-
-        @include SvgIcon(var(--Button-color-text));
-      }
-    }
+  &--pill {
+    border-radius: var(--Button-line-height);
   }
 
-  @include SvgIcon(var(--Button-color-text));
-
+  // Loader
   .Loader {
-    --Loader-color: var(--Button-color-text);
-    margin-left: 0.5rem;
+    --Loader-color: currentColor;
   }
 }

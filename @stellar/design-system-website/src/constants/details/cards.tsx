@@ -8,23 +8,24 @@ export const cards: ComponentDetails = {
   shortDescription: "Container for any type of content",
   examples: [
     {
-      title: "Default card",
+      title: "Default/primary card",
       description: "",
       component: [<Card>Content</Card>],
     },
     {
-      title: "Card without padding and shadow",
+      title: "Small border radius",
       description: "",
-      component: [
-        <Card noPadding noShadow>
-          Content
-        </Card>,
-      ],
+      component: [<Card borderRadiusSize="sm">Content</Card>],
     },
     {
-      title: "Card with highlight",
+      title: "Card without padding and shadow",
       description: "",
-      component: [<Card variant={Card.variant.highlight}>Content</Card>],
+      component: [<Card noPadding>Content</Card>],
+    },
+    {
+      title: "Highlighted card",
+      description: "",
+      component: [<Card variant="secondary">Content</Card>],
     },
   ],
   props: [
@@ -36,6 +37,13 @@ export const cards: ComponentDetails = {
       description: "Card content",
     },
     {
+      prop: "variant",
+      type: ["primary", "secondary"],
+      default: "primary",
+      optional: true,
+      description: "Variant of the card",
+    },
+    {
       prop: "noPadding",
       type: ["boolean"],
       default: null,
@@ -43,18 +51,11 @@ export const cards: ComponentDetails = {
       description: "Remove card padding",
     },
     {
-      prop: "noShadow",
-      type: ["boolean"],
-      default: null,
+      prop: "borderRadiusSize",
+      type: ["sm", "md"],
+      default: "md",
       optional: true,
-      description: "Remove card shadow",
-    },
-    {
-      prop: "variant",
-      type: ["default", "highlight"],
-      default: "default",
-      optional: true,
-      description: "Variant of the card",
+      description: "Card border radius",
     },
   ],
   externalProps: {

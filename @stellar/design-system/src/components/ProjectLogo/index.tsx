@@ -3,7 +3,7 @@ import "./styles.scss";
 import { Logo } from "../../logos";
 
 interface ProjectLogoProps {
-  title: string;
+  title?: string;
   link?: string;
 }
 
@@ -15,7 +15,7 @@ export const ProjectLogo: React.FC<ProjectLogoProps> = ({
     <a href={link} rel="noreferrer noopener">
       <Logo.Stellar />
     </a>
-    <div className="ProjectLogo__title">{title}</div>
+    {title ? <div className="ProjectLogo__title">{title}</div> : null}
   </div>
 );
 

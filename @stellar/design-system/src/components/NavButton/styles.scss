@@ -1,5 +1,3 @@
-@use "../../mixins.scss";
-
 .NavButton {
   --NavButton-size: 3rem;
   --NavButton-icon-size: 1.2rem;
@@ -21,14 +19,13 @@
   transition: opacity var(--anim-transition-default);
 
   &--border {
-    border-color: var(--pal-border-primary);
+    border-color: var(--color-gray-30);
   }
 
   svg {
     width: var(--NavButton-icon-size);
     height: var(--NavButton-icon-size);
-
-    @include mixins.svg-color(var(--pal-text-secondary));
+    fill: var(--color-gray-80);
   }
 
   @media (hover: hover) {

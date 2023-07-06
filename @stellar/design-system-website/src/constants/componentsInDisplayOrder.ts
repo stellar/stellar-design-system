@@ -23,20 +23,24 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
     label: "Avatars",
   },
   {
-    id: ComponentDetailsId.identicons,
-    label: "Identicons",
+    id: ComponentDetailsId.profiles,
+    label: "Profiles",
+  },
+  {
+    id: ComponentDetailsId.assetIcons,
+    label: "Asset icons",
   },
   {
     id: ComponentDetailsId.loaders,
     label: "Loaders",
   },
   {
-    id: ComponentDetailsId.infoBlocks,
-    label: "Info blocks",
+    id: ComponentDetailsId.notifications,
+    label: "Notifications",
   },
   {
-    id: ComponentDetailsId.statusBars,
-    label: "Status bars",
+    id: ComponentDetailsId.banners,
+    label: "Banners",
   },
   {
     id: ComponentDetailsId.buttons,
@@ -51,8 +55,8 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
     label: "Navigation buttons",
   },
   {
-    id: ComponentDetailsId.textLinks,
-    label: "Text links",
+    id: ComponentDetailsId.links,
+    label: "Links",
   },
   {
     id: ComponentDetailsId.inputs,
@@ -79,8 +83,8 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
     label: "Toggles",
   },
   {
-    id: ComponentDetailsId.tags,
-    label: "Tags",
+    id: ComponentDetailsId.badges,
+    label: "Badges",
   },
   {
     id: ComponentDetailsId.modals,
@@ -109,10 +113,6 @@ export const componentsInDisplayOrder: ComponentsInDisplayOrder[] = [
   {
     id: ComponentDetailsId.tooltips,
     label: "Tooltips",
-  },
-  {
-    id: ComponentDetailsId.detailsTooltips,
-    label: "Details tooltips",
   },
   {
     id: ComponentDetailsId.copyTexts,

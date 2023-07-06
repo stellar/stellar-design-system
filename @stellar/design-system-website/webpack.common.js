@@ -41,6 +41,9 @@ module.exports = {
   output: {
     filename: "static/[name].[contenthash].js",
     path: path.resolve(__dirname, "build"),
+    // This is needed to set correct path when refreshing on sub-pages (where
+    // path is not root)
+    publicPath: "/",
   },
   module: {
     rules: [
@@ -89,9 +92,12 @@ module.exports = {
             loader: "@svgr/webpack",
             options: {
               svgoConfig: {
-                plugins: {
-                  removeViewBox: false,
-                },
+                plugins: [
+                  {
+                    name: "removeViewBox",
+                    active: false,
+                  },
+                ],
               },
             },
           },
@@ -103,13 +109,6 @@ module.exports = {
             },
           },
         ],
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: "asset/resource",
-        generator: {
-          filename: "assets/fonts/[name].[ext]",
-        },
       },
     ],
   },

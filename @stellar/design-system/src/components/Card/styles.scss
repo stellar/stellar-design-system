@@ -1,22 +1,29 @@
-.Card {
-  --Card-padding: 1.5rem;
-  --Card-shadow: 0 0.5rem 1rem -0.5rem rgba(var(--pal-shadow-rbg), 0.08);
+@use "../../utils.scss" as *;
 
-  background-color: var(--pal-background-primary);
-  border: 1px solid var(--pal-border-primary);
-  border-radius: 0.5rem;
-  box-shadow: var(--Card-shadow);
+.Card {
+  --Card-color-background: var(--color-gray-00);
+  --Card-color-border: var(--color-gray-40);
+  --Card-padding: #{pxToRem(24px)};
+  --Card-radius: #{pxToRem(8px)};
+
+  background-color: var(--Card-color-background);
+  border: 1px solid var(--Card-color-border);
+  border-radius: var(--Card-radius);
   height: 100%;
   padding: var(--Card-padding);
   width: 100%;
 
-  &--default {
-    background-color: var(--pal-background-primary);
-    border-color: var(--pal-border-primary);
+  &--radius-sm {
+    --Card-radius: #{pxToRem(4px)};
   }
 
-  &--highlight {
-    background-color: var(--pal-background-secondary);
-    border-color: var(--pal-background-secondary);
+  &--primary {
+    --Card-color-background: var(--color-gray-00);
+    --Card-color-border: var(--color-gray-40);
+  }
+
+  &--secondary {
+    --Card-color-background: var(--color-gray-10);
+    --Card-color-border: var(--color-gray-40);
   }
 }

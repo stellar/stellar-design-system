@@ -57,130 +57,10 @@ export const toggles: ComponentDetails = {
       ],
     },
     {
-      title: "Toggle with labels",
-      description: "",
-      component: [
-        <Toggle
-          id="toggle-5"
-          checked={false}
-          onChange={() => {
-            // do nothing
-          }}
-          labelOff="Off"
-          labelOn="On"
-        />,
-        <Toggle
-          id="toggle-6"
-          checked={false}
-          onChange={() => {
-            // do nothing
-          }}
-          labelOff="Off"
-          labelOn="On"
-          disabled
-        />,
-      ],
-    },
-    {
-      title: "Toggle on with labels",
-      description: "",
-      component: [
-        <Toggle
-          id="toggle-7"
-          checked={true}
-          onChange={() => {
-            // do nothing
-          }}
-          labelOff="Off"
-          labelOn="On"
-        />,
-        <Toggle
-          id="toggle-8"
-          checked={true}
-          onChange={() => {
-            // do nothing
-          }}
-          labelOff="Off"
-          labelOn="On"
-          disabled
-        />,
-      ],
-    },
-    {
-      title: "Toggle with labels on the right",
-      description: "",
-      component: [
-        <Toggle
-          id="toggle-9"
-          checked={false}
-          onChange={() => {
-            // do nothing
-          }}
-          labelOff="Off"
-          labelOn="On"
-          labelPosition={Toggle.labelPosition.right}
-        />,
-        <Toggle
-          id="toggle-10"
-          checked={false}
-          onChange={() => {
-            // do nothing
-          }}
-          labelOff="Off"
-          labelOn="On"
-          labelPosition={Toggle.labelPosition.right}
-          disabled
-        />,
-      ],
-    },
-    {
-      title: "Toggle on with labels on the right",
-      description: "",
-      component: [
-        <Toggle
-          id="toggle-11"
-          checked={true}
-          onChange={() => {
-            // do nothing
-          }}
-          labelOff="Off"
-          labelOn="On"
-          labelPosition={Toggle.labelPosition.right}
-        />,
-        <Toggle
-          id="toggle-12"
-          checked={true}
-          onChange={() => {
-            // do nothing
-          }}
-          labelOff="Off"
-          labelOn="On"
-          labelPosition={Toggle.labelPosition.right}
-          disabled
-        />,
-      ],
-    },
-    {
       title: "Toggle with custom input",
       description: "",
       component: [
-        <Toggle customInput={<Field />} checked={true} id="toggle-13" />,
-      ],
-    },
-    {
-      title: "Toggle in settings",
-      description: "",
-      component: [
-        <div>
-          <label htmlFor="toggle-14">Setting label</label>
-          <Toggle
-            id="toggle-14"
-            checked={false}
-            onChange={() => {
-              // change state
-            }}
-          />
-        </div>,
+        <Toggle customInput={<Field />} checked={true} id="toggle-5" />,
       ],
     },
   ],
@@ -212,27 +92,6 @@ export const toggles: ComponentDetails = {
       default: null,
       optional: true,
       description: "Disable the toggle",
-    },
-    {
-      prop: "labelOn",
-      type: ["string"],
-      default: null,
-      optional: true,
-      description: "On label of the toggle",
-    },
-    {
-      prop: "labelOff",
-      type: ["string"],
-      default: null,
-      optional: true,
-      description: "Off label of the toggle",
-    },
-    {
-      prop: "labelPosition",
-      type: ["left", "right"],
-      default: "left",
-      optional: true,
-      description: "Position of the label",
     },
     {
       prop: "customInput",

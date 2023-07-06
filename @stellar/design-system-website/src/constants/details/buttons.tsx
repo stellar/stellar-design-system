@@ -7,7 +7,7 @@ export const buttons: ComponentDetails = {
   description: (
     <>
       <code>Button</code> is used to trigger an action that is not opening a
-      link (use <code>TextLink</code> instead). There are three variants of the{" "}
+      link (use <code>Link</code> instead). There are three variants of the{" "}
       <code>Button</code>: <code>primary</code>, <code>secondary</code>, and{" "}
       <code>tertiary</code>.
     </>
@@ -15,236 +15,536 @@ export const buttons: ComponentDetails = {
   shortDescription: "Used to trigger an action that is not opening a link",
   examples: [
     {
-      title: "Primary (default)",
+      title: "Primary, medium",
       description: "",
       component: [
-        <Button>Label</Button>,
-        <Button disabled>Label</Button>,
-        <Button isLoading>Label</Button>,
-        <Button size={Button.size.small}>Label</Button>,
-        <Button fullWidth>Label</Button>,
-      ],
-    },
-    {
-      title: "Primary with icon on the left",
-      description: "",
-      component: [
-        <Button iconLeft={<Icon.Check />}>Label</Button>,
-        <Button iconLeft={<Icon.Check />} disabled>
-          Label
-        </Button>,
-        <Button iconLeft={<Icon.Check />} isLoading>
-          Label
-        </Button>,
-        <Button iconLeft={<Icon.Check />} size={Button.size.small}>
-          Label
-        </Button>,
-        <Button iconLeft={<Icon.Check />} fullWidth>
-          Label
-        </Button>,
-      ],
-    },
-    {
-      title: "Primary with icon on the right",
-      description: "",
-      component: [
-        <Button iconRight={<Icon.Check />}>Label</Button>,
-        <Button iconRight={<Icon.Check />} disabled>
-          Label
-        </Button>,
-        <Button iconRight={<Icon.Check />} isLoading>
-          Label
-        </Button>,
-        <Button iconRight={<Icon.Check />} size={Button.size.small}>
-          Label
-        </Button>,
-        <Button iconRight={<Icon.Check />} fullWidth>
-          Label
-        </Button>,
-      ],
-    },
-    {
-      title: "Secondary",
-      description: "",
-      component: [
-        <Button variant={Button.variant.secondary}>Label</Button>,
-        <Button variant={Button.variant.secondary} disabled>
-          Label
-        </Button>,
-        <Button variant={Button.variant.secondary} isLoading>
-          Label
-        </Button>,
-        <Button variant={Button.variant.secondary} size={Button.size.small}>
-          Label
-        </Button>,
-        <Button variant={Button.variant.secondary} fullWidth>
-          Label
-        </Button>,
-      ],
-    },
-    {
-      title: "Secondary with icon on the left",
-      description: "",
-      component: [
-        <Button variant={Button.variant.secondary} iconLeft={<Icon.Check />}>
+        <Button variant="primary" size="md">
           Label
         </Button>,
         <Button
-          variant={Button.variant.secondary}
-          iconLeft={<Icon.Check />}
-          disabled
+          variant="primary"
+          size="md"
+          icon={<Icon.Check />}
+          iconPosition="left"
         >
           Label
         </Button>,
         <Button
-          variant={Button.variant.secondary}
-          iconLeft={<Icon.Check />}
+          variant="primary"
+          size="md"
+          icon={<Icon.Check />}
+          iconPosition="right"
+        >
+          Label
+        </Button>,
+        <Button variant="primary" size="md" disabled>
+          Label
+        </Button>,
+        <Button variant="primary" size="md" isLoading>
+          Label
+        </Button>,
+        <Button
+          variant="primary"
+          size="md"
+          icon={<Icon.Check />}
+          iconPosition="left"
           isLoading
         >
           Label
         </Button>,
         <Button
-          variant={Button.variant.secondary}
-          iconLeft={<Icon.Check />}
-          size={Button.size.small}
-        >
-          Label
-        </Button>,
-        <Button
-          variant={Button.variant.secondary}
-          iconLeft={<Icon.Check />}
-          fullWidth
-        >
-          Label
-        </Button>,
-      ],
-    },
-    {
-      title: "Secondary with icon on the right",
-      description: "",
-      component: [
-        <Button variant={Button.variant.secondary} iconRight={<Icon.Check />}>
-          Label
-        </Button>,
-        <Button
-          variant={Button.variant.secondary}
-          iconRight={<Icon.Check />}
-          disabled
-        >
-          Label
-        </Button>,
-        <Button
-          variant={Button.variant.secondary}
-          iconRight={<Icon.Check />}
+          variant="primary"
+          size="md"
+          icon={<Icon.Check />}
+          iconPosition="right"
           isLoading
         >
           Label
         </Button>,
-        <Button
-          variant={Button.variant.secondary}
-          iconRight={<Icon.Check />}
-          size={Button.size.small}
-        >
+        <Button variant="primary" size="md" isUppercase>
           Label
         </Button>,
-        <Button
-          variant={Button.variant.secondary}
-          iconRight={<Icon.Check />}
-          fullWidth
-        >
+        <Button variant="primary" size="md" isFullWidth>
           Label
         </Button>,
-      ],
-    },
-    {
-      title: "Tertiary",
-      description: "",
-      component: [
-        <Button variant={Button.variant.tertiary}>Label</Button>,
-        <Button variant={Button.variant.tertiary} disabled>
+        <Button variant="primary" size="md" isExtraPadding>
           Label
         </Button>,
-        <Button variant={Button.variant.tertiary} isLoading>
-          Label
-        </Button>,
-        <Button variant={Button.variant.tertiary} size={Button.size.small}>
-          Label
-        </Button>,
-        <Button variant={Button.variant.tertiary} fullWidth>
+        <Button variant="primary" size="md" isPill>
           Label
         </Button>,
       ],
     },
     {
-      title: "Tertiary with icon on the left",
+      title: "Primary, small",
       description: "",
       component: [
-        <Button variant={Button.variant.tertiary} iconLeft={<Icon.Check />}>
+        <Button variant="primary" size="sm">
           Label
         </Button>,
         <Button
-          variant={Button.variant.tertiary}
-          iconLeft={<Icon.Check />}
-          disabled
+          variant="primary"
+          size="sm"
+          icon={<Icon.Check />}
+          iconPosition="left"
         >
           Label
         </Button>,
         <Button
-          variant={Button.variant.tertiary}
-          iconLeft={<Icon.Check />}
-          isLoading
+          variant="primary"
+          size="sm"
+          icon={<Icon.Check />}
+          iconPosition="right"
         >
           Label
         </Button>,
-        <Button
-          variant={Button.variant.tertiary}
-          iconLeft={<Icon.Check />}
-          size={Button.size.small}
-        >
+        <Button variant="primary" size="sm" disabled>
           Label
         </Button>,
-        <Button
-          variant={Button.variant.tertiary}
-          iconLeft={<Icon.Check />}
-          fullWidth
-        >
+        <Button variant="primary" size="sm" isLoading>
+          Label
+        </Button>,
+        <Button variant="primary" size="sm" isUppercase>
+          Label
+        </Button>,
+        <Button variant="primary" size="sm" isFullWidth>
+          Label
+        </Button>,
+        <Button variant="primary" size="sm" isExtraPadding>
+          Label
+        </Button>,
+        <Button variant="primary" size="sm" isPill>
           Label
         </Button>,
       ],
     },
     {
-      title: "Tertiary with icon on the right",
+      title: "Primary, extra-small",
       description: "",
       component: [
-        <Button variant={Button.variant.tertiary} iconRight={<Icon.Check />}>
+        <Button variant="primary" size="xs">
           Label
         </Button>,
         <Button
-          variant={Button.variant.tertiary}
-          iconRight={<Icon.Check />}
-          disabled
+          variant="primary"
+          size="xs"
+          icon={<Icon.Check />}
+          iconPosition="left"
         >
           Label
         </Button>,
         <Button
-          variant={Button.variant.tertiary}
-          iconRight={<Icon.Check />}
-          isLoading
+          variant="primary"
+          size="xs"
+          icon={<Icon.Check />}
+          iconPosition="right"
+        >
+          Label
+        </Button>,
+        <Button variant="primary" size="xs" disabled>
+          Label
+        </Button>,
+        <Button variant="primary" size="xs" isLoading>
+          Label
+        </Button>,
+        <Button variant="primary" size="xs" isUppercase>
+          Label
+        </Button>,
+        <Button variant="primary" size="xs" isFullWidth>
+          Label
+        </Button>,
+        <Button variant="primary" size="xs" isExtraPadding>
+          Label
+        </Button>,
+        <Button variant="primary" size="xs" isPill>
+          Label
+        </Button>,
+      ],
+    },
+
+    {
+      title: "Secondary, medium",
+      description: "",
+      component: [
+        <Button variant="secondary" size="md">
+          Label
+        </Button>,
+        <Button
+          variant="secondary"
+          size="md"
+          icon={<Icon.Check />}
+          iconPosition="left"
         >
           Label
         </Button>,
         <Button
-          variant={Button.variant.tertiary}
-          iconRight={<Icon.Check />}
-          size={Button.size.small}
+          variant="secondary"
+          size="md"
+          icon={<Icon.Check />}
+          iconPosition="right"
+        >
+          Label
+        </Button>,
+        <Button variant="secondary" size="md" disabled>
+          Label
+        </Button>,
+        <Button variant="secondary" size="md" isLoading>
+          Label
+        </Button>,
+        <Button variant="secondary" size="md" isUppercase>
+          Label
+        </Button>,
+        <Button variant="secondary" size="md" isFullWidth>
+          Label
+        </Button>,
+        <Button variant="secondary" size="md" isExtraPadding>
+          Label
+        </Button>,
+        <Button variant="secondary" size="md" isPill>
+          Label
+        </Button>,
+      ],
+    },
+    {
+      title: "Secondary, small",
+      description: "",
+      component: [
+        <Button variant="secondary" size="sm">
+          Label
+        </Button>,
+        <Button
+          variant="secondary"
+          size="sm"
+          icon={<Icon.Check />}
+          iconPosition="left"
         >
           Label
         </Button>,
         <Button
-          variant={Button.variant.tertiary}
-          iconRight={<Icon.Check />}
-          fullWidth
+          variant="secondary"
+          size="sm"
+          icon={<Icon.Check />}
+          iconPosition="right"
         >
+          Label
+        </Button>,
+        <Button variant="secondary" size="sm" disabled>
+          Label
+        </Button>,
+        <Button variant="secondary" size="sm" isLoading>
+          Label
+        </Button>,
+        <Button variant="secondary" size="sm" isUppercase>
+          Label
+        </Button>,
+        <Button variant="secondary" size="sm" isFullWidth>
+          Label
+        </Button>,
+        <Button variant="secondary" size="sm" isExtraPadding>
+          Label
+        </Button>,
+        <Button variant="secondary" size="sm" isPill>
+          Label
+        </Button>,
+      ],
+    },
+    {
+      title: "Secondary, extra-small",
+      description: "",
+      component: [
+        <Button variant="secondary" size="xs">
+          Label
+        </Button>,
+        <Button
+          variant="secondary"
+          size="xs"
+          icon={<Icon.Check />}
+          iconPosition="left"
+        >
+          Label
+        </Button>,
+        <Button
+          variant="secondary"
+          size="xs"
+          icon={<Icon.Check />}
+          iconPosition="right"
+        >
+          Label
+        </Button>,
+        <Button variant="secondary" size="xs" disabled>
+          Label
+        </Button>,
+        <Button variant="secondary" size="xs" isLoading>
+          Label
+        </Button>,
+        <Button variant="secondary" size="xs" isUppercase>
+          Label
+        </Button>,
+        <Button variant="secondary" size="xs" isFullWidth>
+          Label
+        </Button>,
+        <Button variant="secondary" size="xs" isExtraPadding>
+          Label
+        </Button>,
+        <Button variant="secondary" size="xs" isPill>
+          Label
+        </Button>,
+      ],
+    },
+    {
+      title: "Tertiary, medium",
+      description: "",
+      component: [
+        <Button variant="tertiary" size="md">
+          Label
+        </Button>,
+        <Button
+          variant="tertiary"
+          size="md"
+          icon={<Icon.Check />}
+          iconPosition="left"
+        >
+          Label
+        </Button>,
+        <Button
+          variant="tertiary"
+          size="md"
+          icon={<Icon.Check />}
+          iconPosition="right"
+        >
+          Label
+        </Button>,
+        <Button variant="tertiary" size="md" disabled>
+          Label
+        </Button>,
+        <Button variant="tertiary" size="md" isLoading>
+          Label
+        </Button>,
+        <Button variant="tertiary" size="md" isUppercase>
+          Label
+        </Button>,
+        <Button variant="tertiary" size="md" isFullWidth>
+          Label
+        </Button>,
+        <Button variant="tertiary" size="md" isExtraPadding>
+          Label
+        </Button>,
+        <Button variant="tertiary" size="md" isPill>
+          Label
+        </Button>,
+      ],
+    },
+    {
+      title: "Tertiary, small",
+      description: "",
+      component: [
+        <Button variant="tertiary" size="sm">
+          Label
+        </Button>,
+        <Button
+          variant="tertiary"
+          size="sm"
+          icon={<Icon.Check />}
+          iconPosition="left"
+        >
+          Label
+        </Button>,
+        <Button
+          variant="tertiary"
+          size="sm"
+          icon={<Icon.Check />}
+          iconPosition="right"
+        >
+          Label
+        </Button>,
+        <Button variant="tertiary" size="sm" disabled>
+          Label
+        </Button>,
+        <Button variant="tertiary" size="sm" isLoading>
+          Label
+        </Button>,
+        <Button variant="tertiary" size="sm" isUppercase>
+          Label
+        </Button>,
+        <Button variant="tertiary" size="sm" isFullWidth>
+          Label
+        </Button>,
+        <Button variant="tertiary" size="sm" isExtraPadding>
+          Label
+        </Button>,
+        <Button variant="tertiary" size="sm" isPill>
+          Label
+        </Button>,
+      ],
+    },
+    {
+      title: "Tertiary, extra-small",
+      description: "",
+      component: [
+        <Button variant="tertiary" size="xs">
+          Label
+        </Button>,
+        <Button
+          variant="tertiary"
+          size="xs"
+          icon={<Icon.Check />}
+          iconPosition="left"
+        >
+          Label
+        </Button>,
+        <Button
+          variant="tertiary"
+          size="xs"
+          icon={<Icon.Check />}
+          iconPosition="right"
+        >
+          Label
+        </Button>,
+        <Button variant="tertiary" size="xs" disabled>
+          Label
+        </Button>,
+        <Button variant="tertiary" size="xs" isLoading>
+          Label
+        </Button>,
+        <Button variant="tertiary" size="xs" isUppercase>
+          Label
+        </Button>,
+        <Button variant="tertiary" size="xs" isFullWidth>
+          Label
+        </Button>,
+        <Button variant="tertiary" size="xs" isExtraPadding>
+          Label
+        </Button>,
+        <Button variant="tertiary" size="xs" isPill>
+          Label
+        </Button>,
+      ],
+    },
+    {
+      title: "Destructive, medium",
+      description: "",
+      component: [
+        <Button variant="destructive" size="md">
+          Label
+        </Button>,
+        <Button
+          variant="destructive"
+          size="md"
+          icon={<Icon.Check />}
+          iconPosition="left"
+        >
+          Label
+        </Button>,
+        <Button
+          variant="destructive"
+          size="md"
+          icon={<Icon.Check />}
+          iconPosition="right"
+        >
+          Label
+        </Button>,
+        <Button variant="destructive" size="md" disabled>
+          Label
+        </Button>,
+        <Button variant="destructive" size="md" isLoading>
+          Label
+        </Button>,
+        <Button variant="destructive" size="md" isUppercase>
+          Label
+        </Button>,
+        <Button variant="destructive" size="md" isFullWidth>
+          Label
+        </Button>,
+        <Button variant="destructive" size="md" isExtraPadding>
+          Label
+        </Button>,
+        <Button variant="destructive" size="md" isPill>
+          Label
+        </Button>,
+      ],
+    },
+    {
+      title: "Error, medium",
+      description: "",
+      component: [
+        <Button variant="error" size="md">
+          Label
+        </Button>,
+        <Button
+          variant="error"
+          size="md"
+          icon={<Icon.Check />}
+          iconPosition="left"
+        >
+          Label
+        </Button>,
+        <Button
+          variant="error"
+          size="md"
+          icon={<Icon.Check />}
+          iconPosition="right"
+        >
+          Label
+        </Button>,
+        <Button variant="error" size="md" disabled>
+          Label
+        </Button>,
+        <Button variant="error" size="md" isLoading>
+          Label
+        </Button>,
+        <Button variant="error" size="md" isUppercase>
+          Label
+        </Button>,
+        <Button variant="error" size="md" isFullWidth>
+          Label
+        </Button>,
+        <Button variant="error" size="md" isExtraPadding>
+          Label
+        </Button>,
+        <Button variant="error" size="md" isPill>
+          Label
+        </Button>,
+      ],
+    },
+    {
+      title: "Success, medium",
+      description: "",
+      component: [
+        <Button variant="success" size="md">
+          Label
+        </Button>,
+        <Button
+          variant="success"
+          size="md"
+          icon={<Icon.Check />}
+          iconPosition="left"
+        >
+          Label
+        </Button>,
+        <Button
+          variant="success"
+          size="md"
+          icon={<Icon.Check />}
+          iconPosition="right"
+        >
+          Label
+        </Button>,
+        <Button variant="success" size="md" disabled>
+          Label
+        </Button>,
+        <Button variant="success" size="md" isLoading>
+          Label
+        </Button>,
+        <Button variant="success" size="md" isUppercase>
+          Label
+        </Button>,
+        <Button variant="success" size="md" isFullWidth>
+          Label
+        </Button>,
+        <Button variant="success" size="md" isExtraPadding>
+          Label
+        </Button>,
+        <Button variant="success" size="md" isPill>
           Label
         </Button>,
       ],
@@ -252,25 +552,46 @@ export const buttons: ComponentDetails = {
   ],
   props: [
     {
+      prop: "variant",
+      type: [
+        "primary",
+        "secondary",
+        "tertiary",
+        "destructive",
+        "error",
+        "success",
+      ],
+      default: null,
+      optional: false,
+      description: "Variant of the button",
+    },
+    {
+      prop: "size",
+      type: ["md", "sm", "xs"],
+      default: null,
+      optional: false,
+      description: "Size of the button",
+    },
+    {
       prop: "children",
       type: ["string", "ReactNode"],
       default: null,
-      optional: false,
+      optional: true,
       description: "Label of the button",
     },
     {
-      prop: "iconLeft",
+      prop: "icon",
       type: ["ReactNode"],
       default: null,
       optional: true,
-      description: "Icon element on the left of the label",
+      description: "Icon element",
     },
     {
-      prop: "iconRight",
-      type: ["ReactNode"],
-      default: null,
+      prop: "iconPosition",
+      type: ["left", "right"],
+      default: "right",
       optional: true,
-      description: "Icon element on the right of the label",
+      description: "Position of the icon",
     },
     {
       prop: "isLoading",
@@ -280,25 +601,32 @@ export const buttons: ComponentDetails = {
       description: "Loading state indicator",
     },
     {
-      prop: "variant",
-      type: ["primary", "secondary", "tertiary"],
-      default: "primary",
-      optional: true,
-      description: "Variant of the button",
-    },
-    {
-      prop: "size",
-      type: ["default", "small"],
-      default: "default",
-      optional: true,
-      description: "Size of the button",
-    },
-    {
-      prop: "fullWidth",
+      prop: "isUppercase",
       type: ["Boolean"],
-      default: "false",
+      default: null,
+      optional: true,
+      description: "Uppercase label",
+    },
+    {
+      prop: "isFullWidth",
+      type: ["Boolean"],
+      default: null,
       optional: true,
       description: "Sets width of the button to parent container",
+    },
+    {
+      prop: "isPill",
+      type: ["Boolean"],
+      default: null,
+      optional: true,
+      description: "Pill shaped button",
+    },
+    {
+      prop: "isExtraPadding",
+      type: ["Boolean"],
+      default: null,
+      optional: true,
+      description: "Button with extra padding",
     },
   ],
   externalProps: {

@@ -1,10 +1,4 @@
-import {
-  Layout,
-  Heading2,
-  Heading1,
-  InfoBlock,
-  TextLink,
-} from "@stellar/design-system";
+import { Layout, Heading, Notification, Link } from "@stellar/design-system";
 import { ComponentsList } from "components/ComponentsList";
 import GitHub from "generated/gitInfo";
 import { useSideNavEnabled } from "hooks/useSideNavEnabled";
@@ -14,7 +8,9 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
 
   return (
     <Layout.Inset>
-      <Heading1>Stellar Design System</Heading1>
+      <Heading as="h1" size="md">
+        Stellar Design System
+      </Heading>
 
       <div className="Section">
         <div className="Section__content">
@@ -24,16 +20,18 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
             the future) used in Stellar Development Foundation’s Web projects.
           </p>
 
-          <InfoBlock variant={InfoBlock.variant.warning}>
+          <Notification variant="warning" title="Attention">
             This project is at an early development stage. It is very likely the
             API will have many breaking changes.
-          </InfoBlock>
+          </Notification>
         </div>
       </div>
 
       <div className="Section">
         <div className="Section__content">
-          <Heading2>Tech stack</Heading2>
+          <Heading as="h2" size="md">
+            Tech stack
+          </Heading>
 
           <ul>
             <li>TypeScript</li>
@@ -47,15 +45,17 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
 
       <div className="Section">
         <div className="Section__content">
-          <Heading2>Current version</Heading2>
+          <Heading as="h2" size="md">
+            Current version
+          </Heading>
 
           <p>
-            <TextLink href="https://www.npmjs.com/package/@stellar/design-system">
+            <Link href="https://www.npmjs.com/package/@stellar/design-system">
               <img
                 src="https://img.shields.io/npm/v/@stellar/design-system.svg?style=flat-square"
                 alt="npm version"
               />
-            </TextLink>
+            </Link>
           </p>
           <p>
             Website: <code>{GitHub.commitHash}</code>
@@ -65,7 +65,9 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
 
       <div className="Section">
         <div className="Section__content">
-          <Heading2>Usage</Heading2>
+          <Heading as="h2" size="md">
+            Usage
+          </Heading>
 
           <p>
             Install using <code>npm</code> or <code>yarn</code>.
@@ -77,6 +79,23 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
 
           <p>
             <code>yarn add @stellar/design-system</code>
+          </p>
+
+          <p>
+            Add Google Fonts (Inter Tight, Inter, and Roboto Mono){" "}
+            <code>index.html</code> file.
+          </p>
+
+          <p className="FontImports">
+            <code>
+              {`<link rel="preconnect" href="https://fonts.googleapis.com" />`}
+            </code>
+            <code>
+              {`<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />`}
+            </code>
+            <code>
+              {`<link href="https://fonts.googleapis.com/css2?family=Inter+Tight&family=Inter:wght@400;500;600&family=Roboto+Mono&display=swap" rel="stylesheet" />`}
+            </code>
           </p>
 
           <p>
@@ -98,7 +117,9 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
 
       <div className="Section">
         <div className="Section__content">
-          <Heading2>Local development</Heading2>
+          <Heading as="h2" size="md">
+            Local development
+          </Heading>
 
           <p>The design system repo has two parts:</p>
 
@@ -106,17 +127,17 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
             <li>
               <code>@stellar/design-system</code> - everything for the design
               system (
-              <TextLink href="https://github.com/stellar/stellar-design-system/tree/main/%40stellar/design-system">
+              <Link href="https://github.com/stellar/stellar-design-system/tree/main/%40stellar/design-system">
                 repo
-              </TextLink>
+              </Link>
               )
             </li>
             <li>
               <code>@stellar/design-system-website</code> - website for the
               design system (what you are looking at now) (
-              <TextLink href="https://github.com/stellar/stellar-design-system/tree/main/%40stellar/design-system-website">
+              <Link href="https://github.com/stellar/stellar-design-system/tree/main/%40stellar/design-system-website">
                 repo
-              </TextLink>
+              </Link>
               )
             </li>
           </ul>
@@ -167,16 +188,18 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
             </li>
           </ul>
 
-          <InfoBlock>
+          <Notification variant="primary" title="Note">
             You need to run each <code>start</code> command in its own window or
             tab.
-          </InfoBlock>
+          </Notification>
         </div>
       </div>
 
       <div className="Section">
         <div className="Section__content">
-          <Heading2>Developer notes</Heading2>
+          <Heading as="h2" size="md">
+            Developer notes
+          </Heading>
 
           <ul>
             <li>
@@ -197,19 +220,15 @@ export const Landing = ({ sideNavEnabled }: { sideNavEnabled?: boolean }) => {
               <code>styled-components</code> are not currently supported, but
               you can use them as wrappers/containers for SDS components.
             </li>
-            <li>
-              SVG icons are styled using <code>stroke</code> property. To change
-              the <code>fill</code> color instead, we need to use{" "}
-              <code>{`svg[data-color="fill"] { fill: ...; }`}</code> (icon and
-              logo assets in SDS have this attribute added).
-            </li>
           </ul>
         </div>
       </div>
 
       <div className="Section">
         <div className="Section__content">
-          <Heading2>Components</Heading2>
+          <Heading as="h2" size="md">
+            Components
+          </Heading>
           <p>
             Below is a list of all components and assets. Click on the links to
             view details of the component.

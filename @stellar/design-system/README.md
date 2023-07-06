@@ -30,7 +30,6 @@ root/@stellar/design-system
     |-- icons.ts
     |-- index.ts
     |-- logos.ts
-    |-- mixins.scss
     |-- normalize.scss
   |-- ...config files and docs
 ```
@@ -268,10 +267,6 @@ All SVG logo files are listed here. The exported logo components should be named
 ```javascript
 export { ReactComponent as LogoStellar } from "./assets/logos/stellar.svg";
 ```
-
-## `mixins.scss`
-
-Sass mixins to share among components.
 
 ## `normalize.scss`
 

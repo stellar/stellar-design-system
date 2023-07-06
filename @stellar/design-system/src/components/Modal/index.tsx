@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback } from "react";
 import ReactDOM from "react-dom";
-import { Heading2 } from "../Heading";
 import { NavButton } from "../NavButton";
+import { Heading } from "../Typography";
 import { Icon } from "../../icons";
 
 import "./styles.scss";
@@ -21,7 +21,9 @@ interface ModalHeadingProps {
 const ModalHeading: React.FC<ModalHeadingProps> = ({
   children,
 }: ModalHeadingProps) => (
-  <Heading2 className="ModalHeading">{children}</Heading2>
+  <Heading as="h2" size="md" className="ModalHeading">
+    {children}
+  </Heading>
 );
 
 interface ModalBodyProps {
@@ -41,12 +43,13 @@ const ModalFooter: React.FC<ModalFooterProps> = ({
 }: ModalHeadingProps) => <div className="ModalFooter">{children}</div>;
 
 interface ModalProps {
+  parentId?: string;
   visible: boolean;
   onClose: () => void;
-  children: React.ReactNode;
-  parentId?: string;
   disableWindowScrollWhenOpened?: boolean;
   offsetTop?: string;
+  alignToBottom?: boolean;
+  children: React.ReactNode;
 }
 
 export const Modal: React.FC<ModalProps> & ModalComponent = ({
@@ -55,6 +58,7 @@ export const Modal: React.FC<ModalProps> & ModalComponent = ({
   onClose,
   disableWindowScrollWhenOpened = true,
   offsetTop,
+  alignToBottom,
   children,
 }: ModalProps) => {
   const parent = document.getElementById(parentId);
@@ -93,7 +97,11 @@ export const Modal: React.FC<ModalProps> & ModalComponent = ({
   }
 
   return ReactDOM.createPortal(
-    <div className="Modal" style={customStyle}>
+    <div
+      className="Modal"
+      style={customStyle}
+      {...(alignToBottom ? { "data-modal-align": "bottom" } : {})}
+    >
       <div className="Modal__container">
         <div className="Modal__content">{children}</div>
         <div className="Modal__close">
@@ -101,11 +109,11 @@ export const Modal: React.FC<ModalProps> & ModalComponent = ({
             id="modal-close-button"
             title="Close modal"
             onClick={onClose}
-            icon={<Icon.X />}
+            icon={<Icon.Close />}
           />
         </div>
       </div>
-      <div className="Modal__background" onClick={onClose} />
+      <div className="Modal__background" role="button" onClick={onClose} />
     </div>,
     parent,
   );

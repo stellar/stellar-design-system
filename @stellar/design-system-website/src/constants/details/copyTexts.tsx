@@ -1,4 +1,4 @@
-import { CopyText, TextLink, IconButton } from "@stellar/design-system";
+import { CopyText, Link, IconButton } from "@stellar/design-system";
 import { ComponentDetails, ComponentDetailsId } from "types/types";
 
 export const copyTexts: ComponentDetails = {
@@ -9,24 +9,19 @@ export const copyTexts: ComponentDetails = {
       Use <code>CopyText</code> component to copy a string. Done action label
       can be displayed in a tooltip, by default it will replace component’s
       label inline. We’re using{" "}
-      <TextLink href="https://github.com/nkbt/react-copy-to-clipboard">
+      <Link href="https://github.com/nkbt/react-copy-to-clipboard">
         react-copy-to-clipboard
-      </TextLink>{" "}
+      </Link>{" "}
       to do the copy magic.
     </>
   ),
   shortDescription: "Copy text component with optional tooltip",
   examples: [
     {
-      title: "Default",
-      description: "Very simple example",
-      component: [<CopyText textToCopy="Test copy">Copy</CopyText>],
-    },
-    {
       title: "With tooltip",
       description: "Done label is shown in the tooltip instead of inline",
       component: [
-        <CopyText textToCopy="Test copy" showTooltip>
+        <CopyText textToCopy="Test copy with tooltip">
           Copy with tooltip
         </CopyText>,
       ],
@@ -35,11 +30,7 @@ export const copyTexts: ComponentDetails = {
       title: "Using Icon button copy preset",
       description: "Text link with copy icon and tooltip",
       component: [
-        <CopyText
-          textToCopy="Test copy"
-          showTooltip
-          tooltipPosition={CopyText.tooltipPosition.RIGHT}
-        >
+        <CopyText textToCopy="Test copy preset" tooltipPlacement="right">
           <IconButton
             preset={IconButton.preset.copy}
             variant={IconButton.variant.highlight}
@@ -57,13 +48,6 @@ export const copyTexts: ComponentDetails = {
       description: "Text to copy",
     },
     {
-      prop: "showTooltip",
-      type: ["boolean"],
-      default: null,
-      optional: true,
-      description: "Flag to enable tooltip",
-    },
-    {
       prop: "doneLabel",
       type: ["string"],
       default: "Copied",
@@ -71,7 +55,7 @@ export const copyTexts: ComponentDetails = {
       description: "Label/text to display when copy action is done",
     },
     {
-      prop: "tooltipPosition",
+      prop: "tooltipPlacement",
       type: [
         "bottom",
         "bottom-start",

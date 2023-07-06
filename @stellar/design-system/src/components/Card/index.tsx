@@ -1,39 +1,33 @@
 import React from "react";
 import "./styles.scss";
 
-enum CardVariant {
-  default = "default",
-  highlight = "highlight",
-}
-
-interface CardComponent {
-  variant: typeof CardVariant;
-}
-
 interface CardProps {
-  variant?: CardVariant;
   children: React.ReactNode;
+  variant?: "primary" | "secondary";
   noPadding?: boolean;
-  noShadow?: boolean;
+  borderRadiusSize?: "sm" | "md";
 }
 
-export const Card: React.FC<CardProps> & CardComponent = ({
-  variant = CardVariant.default,
+export const Card: React.FC<CardProps> = ({
   children,
+  variant = "primary",
   noPadding,
-  noShadow,
+  borderRadiusSize = "md",
 }: CardProps) => {
+  const additionalClasses = [
+    `Card--${variant}`,
+    ...(borderRadiusSize !== "md" ? [`Card--radius-${borderRadiusSize}`] : []),
+  ].join(" ");
+
   const customStyle = {
     ...(noPadding ? { "--Card-padding": 0 } : {}),
-    ...(noShadow ? { "--Card-shadow": "none" } : {}),
   } as React.CSSProperties;
 
   return (
-    <div className={`Card Card--${variant}`} style={customStyle}>
+    <div className={`Card ${additionalClasses}`} style={customStyle}>
       {children}
     </div>
   );
 };
 
 Card.displayName = "Card";
-Card.variant = CardVariant;

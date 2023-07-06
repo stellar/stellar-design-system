@@ -81,8 +81,8 @@
       margin-left: 0.5rem;
     }
 
-    // Text links need a bit more spacing
-    .TextLink:not(:last-child) {
+    // Links need a bit more spacing
+    .Link:not(:last-child) {
       margin-right: 1rem;
     }
   }
@@ -91,7 +91,7 @@
     --Layout-footer-padding-top: 1rem;
     --Layout-footer-padding-bottom: 1rem;
     --Layout-footer-margin-top: 3rem;
-    --Layout-footer-border-color: var(--pal-border-primary);
+    --Layout-footer-border-color: var(--color-gray-30);
 
     margin-top: var(--Layout-footer-margin-top);
 

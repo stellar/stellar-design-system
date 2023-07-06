@@ -1,7 +1,7 @@
 import {
   Modal,
   Button,
-  InfoBlock,
+  Notification,
   Checkbox,
   RadioButton,
 } from "@stellar/design-system";
@@ -13,7 +13,9 @@ const SimpleModalExample = () => {
 
   return (
     <div>
-      <Button onClick={() => setModalVisible(true)}>Show simple modal</Button>
+      <Button variant="primary" size="md" onClick={() => setModalVisible(true)}>
+        Show simple modal
+      </Button>
 
       <Modal visible={modalVisible} onClose={() => setModalVisible(false)}>
         <p>
@@ -32,9 +34,15 @@ const ModalExample = () => {
 
   return (
     <div>
-      <Button onClick={() => setModalVisible(true)}>Show modal</Button>
+      <Button variant="primary" size="md" onClick={() => setModalVisible(true)}>
+        Show modal
+      </Button>
 
-      <Modal visible={modalVisible} onClose={() => setModalVisible(false)}>
+      <Modal
+        visible={modalVisible}
+        onClose={() => setModalVisible(false)}
+        alignToBottom={true}
+      >
         <Modal.Heading>Modal heading</Modal.Heading>
 
         <Modal.Body>
@@ -69,16 +77,15 @@ const ModalExample = () => {
             veritatis aperiam alias molestiae.
           </p>
 
-          <InfoBlock variant={InfoBlock.variant.warning}>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ipsa
-              corrupti voluptatum molestias nesciunt ad sapiente placeat maxime
-              ullam saepe ab temporibus ratione at eos sed, voluptatem laborum
-              provident! Aperiam.
-            </p>
-          </InfoBlock>
+          <Notification variant="warning" title="Attention">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ipsa
+            corrupti voluptatum molestias nesciunt ad sapiente placeat maxime
+            ullam saepe ab temporibus ratione at eos sed, voluptatem laborum
+            provident! Aperiam.
+          </Notification>
 
           <Checkbox
+            fieldSize="sm"
             id="modal-checkbox-1"
             label="Pariatur
             eius beatae sint dolorem, excepturi quos enim, et ullam suscipit
@@ -86,8 +93,14 @@ const ModalExample = () => {
             veritatis aperiam alias molestiae."
           />
 
-          <RadioButton id="modal-radio-1" name="modal-radio" label="Label 1" />
           <RadioButton
+            fieldSize="sm"
+            id="modal-radio-1"
+            name="modal-radio"
+            label="Label 1"
+          />
+          <RadioButton
+            fieldSize="sm"
             id="modal-radio-2"
             name="modal-radio"
             label="Pariatur
@@ -95,13 +108,21 @@ const ModalExample = () => {
             voluptates voluptas accusantium repellendus amet explicabo, iure
             veritatis aperiam alias molestiae."
           />
-          <RadioButton id="modal-radio-3" name="modal-radio" label="Label 3" />
+          <RadioButton
+            fieldSize="sm"
+            id="modal-radio-3"
+            name="modal-radio"
+            label="Label 3"
+          />
         </Modal.Body>
 
         <Modal.Footer>
-          <Button>Submit</Button>
+          <Button variant="primary" size="sm">
+            Submit
+          </Button>
           <Button
-            variant={Button.variant.secondary}
+            variant="secondary"
+            size="sm"
             onClick={() => setModalVisible(false)}
           >
             Cancel
@@ -154,6 +175,7 @@ export const modals: ComponentDetails = {
           onClose={() => {
             // do nothing
           }}
+          alignToBottom={true}
         >
           <Modal.Heading>Modal heading</Modal.Heading>
 
@@ -189,16 +211,15 @@ export const modals: ComponentDetails = {
               veritatis aperiam alias molestiae.
             </p>
 
-            <InfoBlock variant={InfoBlock.variant.warning}>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
-                ipsa corrupti voluptatum molestias nesciunt ad sapiente placeat
-                maxime ullam saepe ab temporibus ratione at eos sed, voluptatem
-                laborum provident! Aperiam.
-              </p>
-            </InfoBlock>
+            <Notification variant="warning" title="Attention">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ipsa
+              corrupti voluptatum molestias nesciunt ad sapiente placeat maxime
+              ullam saepe ab temporibus ratione at eos sed, voluptatem laborum
+              provident! Aperiam.
+            </Notification>
 
             <Checkbox
+              fieldSize="sm"
               id="modal-checkbox-1"
               label="Pariatur
             eius beatae sint dolorem, excepturi quos enim, et ullam suscipit
@@ -207,11 +228,13 @@ export const modals: ComponentDetails = {
             />
 
             <RadioButton
+              fieldSize="sm"
               id="modal-radio-1"
               name="modal-radio"
               label="Label 1"
             />
             <RadioButton
+              fieldSize="sm"
               id="modal-radio-2"
               name="modal-radio"
               label="Pariatur
@@ -220,6 +243,7 @@ export const modals: ComponentDetails = {
             veritatis aperiam alias molestiae."
             />
             <RadioButton
+              fieldSize="sm"
               id="modal-radio-3"
               name="modal-radio"
               label="Label 3"
@@ -227,8 +251,12 @@ export const modals: ComponentDetails = {
           </Modal.Body>
 
           <Modal.Footer>
-            <Button>Submit</Button>
-            <Button variant={Button.variant.secondary}>Cancel</Button>
+            <Button variant="primary" size="sm">
+              Submit
+            </Button>
+            <Button variant="secondary" size="sm">
+              Cancel
+            </Button>
           </Modal.Footer>
         </Modal>,
       ],
@@ -276,6 +304,13 @@ export const modals: ComponentDetails = {
       default: null,
       optional: true,
       description: "Offset top position of the modal",
+    },
+    {
+      prop: "alignToBottom",
+      type: ["boolean"],
+      default: null,
+      optional: true,
+      description: "Align modal to the bottom on smaller screens",
     },
   ],
   externalProps: {

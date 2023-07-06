@@ -1,0 +1,175 @@
+// =============================================================================
+// Color palette
+// =============================================================================
+@mixin theme-light {
+  color-scheme: light;
+
+  // Purple
+  --color-purple-10: #fbfaff;
+  --color-purple-20: #f5f2ff;
+  --color-purple-30: #ede9fe;
+  --color-purple-40: #e4defc;
+  --color-purple-50: #aa99ec;
+  --color-purple-60: #6e56cf;
+  --color-purple-70: #5746af;
+  --color-purple-80: #20134b;
+
+  // White
+  --color-white: #ffffff;
+
+  // Grayscale
+  --color-gray-00: #ffffff;
+  --color-gray-10: #f9f8f9;
+  --color-gray-20: #f4f2f4;
+  --color-gray-30: #eeedef;
+  --color-gray-40: #e9e8ea;
+  --color-gray-50: #c8c7cb;
+  --color-gray-60: #908e96;
+  --color-gray-70: #6f6e77;
+  --color-gray-80: #1a1523;
+  --color-gray-90: #000000;
+
+  // Green
+  --color-green-10: #f2fcf5;
+  --color-green-20: #e9f9ee;
+  --color-green-30: #ddf3e4;
+  --color-green-40: #ccebd7;
+  --color-green-50: #5bb98c;
+  --color-green-60: #30a46c;
+  --color-green-70: #18794e;
+  --color-green-80: #153226;
+
+  // Yellow
+  --color-yellow-10: #fff9ed;
+  --color-yellow-20: #fff4d5;
+  --color-yellow-30: #ffecbc;
+  --color-yellow-40: #ffe3a2;
+  --color-yellow-50: #ffb224;
+  --color-yellow-60: #ee9d2b;
+  --color-yellow-70: #ad5700;
+  --color-yellow-80: #4e2009;
+
+  // Red
+  --color-red-10: #fff8f8;
+  --color-red-20: #ffefef;
+  --color-red-30: #ffe5e5;
+  --color-red-40: #fdd8d8;
+  --color-red-50: #eb9091;
+  --color-red-60: #e5484d;
+  --color-red-70: #cd2b31;
+  --color-red-80: #381316;
+}
+
+@mixin theme-dark {
+  color-scheme: dark;
+
+  // Purple
+  --color-purple-10: #17151f;
+  --color-purple-20: #1c172b;
+  --color-purple-30: #2c2250;
+  --color-purple-40: #32275f;
+  --color-purple-50: #634cc9;
+  --color-purple-60: #7c66dc;
+  --color-purple-70: #9e8cfc;
+  --color-purple-80: #f1eefe;
+
+  // White
+  --color-white: #ffffff;
+
+  // Grayscale
+  --color-gray-00: #000000;
+  --color-gray-10: #161618;
+  --color-gray-20: #1c1c1f;
+  --color-gray-30: #28282c;
+  --color-gray-40: #2e2e32;
+  --color-gray-50: #706f78;
+  --color-gray-60: #7e7d86;
+  --color-gray-70: #a09fa6;
+  --color-gray-80: #ededef;
+  --color-gray-90: #ffffff;
+
+  // Green
+  --color-green-10: #0d1912;
+  --color-green-20: #0c1f17;
+  --color-green-30: #113123;
+  --color-green-40: #133929;
+  --color-green-50: #30a46c;
+  --color-green-60: #3cb179;
+  --color-green-70: #4cc38a;
+  --color-green-80: #e5fbeb;
+
+  // Yellow
+  --color-yellow-10: #1f1300;
+  --color-yellow-20: #271700;
+  --color-yellow-30: #3f2200;
+  --color-yellow-40: #4a2900;
+  --color-yellow-50: #f1a10d;
+  --color-yellow-60: #ffb224;
+  --color-yellow-70: #ffcb47;
+  --color-yellow-80: #fef3dd;
+
+  // Red
+  --color-red-10: #1f1315;
+  --color-red-20: #291415;
+  --color-red-30: #481a1d;
+  --color-red-40: #541b1f;
+  --color-red-50: #e5484d;
+  --color-red-60: #f2555a;
+  --color-red-70: #ff6369;
+  --color-red-80: #feecee;
+}
+
+// =============================================================================
+// Setting themes
+// =============================================================================
+:root {
+  // Palette
+  @include theme-dark;
+
+  // Font size
+  --font-size: 16px;
+  --font-size-secondary: 14px;
+
+  // Font weight
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+
+  // Font family
+  --font-family-heading: "Inter Tight", sans-serif;
+  --font-family-base: "Inter", sans-serif;
+  --font-family-monospace: "Roboto Mono", monospace;
+
+  // Z-index
+  --z-index-tooltip: 20;
+  --z-index-modal: 30;
+
+  // Opacity
+  --opacity-disabled-button: 0.6;
+
+  // Layout
+  --layout-window-width-min: 360px;
+  --layout-window-width-max: 1296px;
+  --layout-window-height-min: 100vh;
+
+  // Animations
+  --anim-transition-default: cubic-bezier(0.65, 0.05, 0.36, 1) 200ms;
+
+  // Avatar
+  --Avatar-image-size: 100%;
+}
+
+.sds-theme-light {
+  @include theme-light;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    @include theme-light;
+  }
+
+  .sds-theme-dark {
+    @include theme-dark;
+  }
+}

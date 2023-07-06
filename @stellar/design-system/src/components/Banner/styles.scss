@@ -1,0 +1,47 @@
+@use "../../utils.scss" as *;
+
+.Banner {
+  // Color
+  --Banner-color-background: var(--color-gray-40);
+  --Banner-color-text: var(--color-gray-70);
+
+  width: 100%;
+  padding: pxToRem(8px) pxToRem(16px);
+  font-size: pxToRem(12px);
+  line-height: pxToRem(20px);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-medium);
+  background-color: var(--Banner-color-background);
+  color: var(--Banner-color-text);
+  text-align: center;
+
+  &__content {
+    margin: 0 auto;
+    max-width: 75ch;
+  }
+
+  &--default {
+    --Banner-color-background: var(--color-gray-40);
+    --Banner-color-text: var(--color-gray-70);
+  }
+
+  &--success {
+    --Banner-color-background: var(--color-green-40);
+    --Banner-color-text: var(--color-green-70);
+  }
+
+  &--warning {
+    --Banner-color-background: var(--color-yellow-40);
+    --Banner-color-text: var(--color-yellow-70);
+  }
+
+  &--primary {
+    --Banner-color-background: var(--color-purple-40);
+    --Banner-color-text: var(--color-purple-70);
+  }
+
+  &--error {
+    --Banner-color-background: var(--color-red-40);
+    --Banner-color-text: var(--color-red-70);
+  }
+}

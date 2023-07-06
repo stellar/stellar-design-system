@@ -1,4 +1,4 @@
-import { Input, IconButton, Icon } from "@stellar/design-system";
+import { Input, Icon } from "@stellar/design-system";
 import { ComponentDetails, ComponentDetailsId } from "types/types";
 
 import { Field } from "./mocks";
@@ -18,14 +18,108 @@ export const inputs: ComponentDetails = {
     {
       title: "Default",
       description: "",
-      component: [<Input id="input-1" />, <Input id="input-2" disabled />],
+      component: [
+        <Input fieldSize="md" id="input-d-1" />,
+        <Input fieldSize="md" id="input-d-2" disabled />,
+      ],
     },
     {
-      title: "Input with label and placeholder",
+      title: "Input with label and placeholder, medium",
       description: "",
       component: [
-        <Input id="input-3" label="Label" placeholder="Placeholder" />,
-        <Input id="input-4" label="Label" placeholder="Placeholder" disabled />,
+        <Input
+          fieldSize="md"
+          id="input-md-1"
+          label="Label"
+          placeholder="Placeholder"
+        />,
+        <Input
+          fieldSize="md"
+          id="input-md-2"
+          label="Label"
+          placeholder="Placeholder"
+          isExtraPadding
+        />,
+        <Input
+          fieldSize="md"
+          id="input-md-3"
+          label="Label"
+          placeholder="Placeholder"
+          disabled
+        />,
+        <Input
+          fieldSize="md"
+          id="input-md-4"
+          label="Label"
+          placeholder="Placeholder"
+          isPill
+        />,
+      ],
+    },
+    {
+      title: "Input with label and placeholder, small",
+      description: "",
+      component: [
+        <Input
+          fieldSize="sm"
+          id="input-sm-1"
+          label="Label"
+          placeholder="Placeholder"
+        />,
+        <Input
+          fieldSize="sm"
+          id="input-sm-2"
+          label="Label"
+          placeholder="Placeholder"
+          isExtraPadding
+        />,
+        <Input
+          fieldSize="sm"
+          id="input-sm-3"
+          label="Label"
+          placeholder="Placeholder"
+          disabled
+        />,
+        <Input
+          fieldSize="sm"
+          id="input-sm-4"
+          label="Label"
+          placeholder="Placeholder"
+          isPill
+        />,
+      ],
+    },
+    {
+      title: "Input with label and placeholder, extra-small",
+      description: "",
+      component: [
+        <Input
+          fieldSize="xs"
+          id="input-xs-1"
+          label="Label"
+          placeholder="Placeholder"
+        />,
+        <Input
+          fieldSize="xs"
+          id="input-xs-2"
+          label="Label"
+          placeholder="Placeholder"
+          isExtraPadding
+        />,
+        <Input
+          fieldSize="xs"
+          id="input-xs-3"
+          label="Label"
+          placeholder="Placeholder"
+          disabled
+        />,
+        <Input
+          fieldSize="xs"
+          id="input-xs-4"
+          label="Label"
+          placeholder="Placeholder"
+          isPill
+        />,
       ],
     },
     {
@@ -33,13 +127,23 @@ export const inputs: ComponentDetails = {
       description: "",
       component: [
         <Input
-          id="input-5"
+          fieldSize="md"
+          id="input-md-v-1"
           label="Label"
           placeholder="Placeholder"
           defaultValue="Value"
         />,
         <Input
-          id="input-6"
+          fieldSize="md"
+          id="input-md-v-2"
+          label="Label"
+          placeholder="Placeholder"
+          defaultValue="Value"
+          isLabelUppercase
+        />,
+        <Input
+          fieldSize="md"
+          id="input-md-v-3"
           label="Label"
           placeholder="Placeholder"
           defaultValue="Value"
@@ -48,45 +152,200 @@ export const inputs: ComponentDetails = {
       ],
     },
     {
-      title: "Input with label and note / error",
+      title: "Input with label and note / error, medium",
       description: "",
       component: [
         <Input
-          id="input-7"
+          fieldSize="md"
+          id="input-md-ln-1"
           label="Label"
           placeholder="Placeholder"
           note="Note message"
         />,
         <Input
-          id="input-8"
+          fieldSize="md"
+          id="input-md-ln-2"
           label="Label"
           placeholder="Placeholder"
           defaultValue="Value"
           error="Error message"
         />,
+        <Input
+          fieldSize="md"
+          id="input-md-ln-3"
+          label="Label"
+          placeholder="Placeholder"
+          defaultValue="Value"
+          isError={true}
+        />,
       ],
     },
     {
-      title: "Input with elements",
+      title: "Input with label and note / error, small",
       description: "",
       component: [
         <Input
-          id="input-9"
+          fieldSize="sm"
+          id="input-sm-ln-1"
           label="Label"
           placeholder="Placeholder"
-          rightElement="text"
+          note="Note message"
         />,
         <Input
-          id="input-10"
+          fieldSize="sm"
+          id="input-sm-ln-2"
           label="Label"
           placeholder="Placeholder"
-          leftElement="text"
+          defaultValue="Value"
+          error="Error message"
         />,
         <Input
-          id="input-11"
+          fieldSize="sm"
+          id="input-sm-ln-3"
           label="Label"
           placeholder="Placeholder"
-          rightElement={<IconButton icon={<Icon.Info />} altText="Info text" />}
+          defaultValue="Value"
+          isError={true}
+        />,
+      ],
+    },
+    {
+      title: "Input with label and note / error, extra-small",
+      description: "",
+      component: [
+        <Input
+          fieldSize="xs"
+          id="input-xs-ln-1"
+          label="Label"
+          placeholder="Placeholder"
+          note="Note message"
+        />,
+        <Input
+          fieldSize="xs"
+          id="input-xs-ln-2"
+          label="Label"
+          placeholder="Placeholder"
+          defaultValue="Value"
+          error="Error message"
+        />,
+        <Input
+          fieldSize="xs"
+          id="input-xs-ln-3"
+          label="Label"
+          placeholder="Placeholder"
+          defaultValue="Value"
+          isError={true}
+        />,
+      ],
+    },
+    {
+      title: "Input with elements, medium",
+      description: "",
+      component: [
+        <Input
+          fieldSize="md"
+          id="input-md-e-1"
+          label="Label"
+          placeholder="Placeholder"
+          rightElement="USDC"
+        />,
+        <Input
+          fieldSize="md"
+          id="input-md-e-2"
+          label="Label"
+          placeholder="Placeholder"
+          rightElement={<Icon.Check />}
+        />,
+        <Input
+          fieldSize="md"
+          id="input-md-e-3"
+          label="Label"
+          placeholder="Placeholder"
+          rightElement={<Icon.Check />}
+          isPill
+        />,
+      ],
+    },
+    {
+      title: "Input with elements, small",
+      description: "",
+      component: [
+        <Input
+          fieldSize="sm"
+          id="input-sm-e-1"
+          label="Label"
+          placeholder="Placeholder"
+          rightElement="USDC"
+        />,
+        <Input
+          fieldSize="sm"
+          id="input-sm-e-2"
+          label="Label"
+          placeholder="Placeholder"
+          rightElement={<Icon.Check />}
+        />,
+        <Input
+          fieldSize="sm"
+          id="input-sm-e-3"
+          label="Label"
+          placeholder="Placeholder"
+          rightElement={<Icon.Check />}
+          isPill
+        />,
+      ],
+    },
+    {
+      title: "Input with elements, extra-small",
+      description: "",
+      component: [
+        <Input
+          fieldSize="xs"
+          id="input-xs-e-1"
+          label="Label"
+          placeholder="Placeholder"
+          rightElement="USDC"
+        />,
+        <Input
+          fieldSize="xs"
+          id="input-xs-e-2"
+          label="Label"
+          placeholder="Placeholder"
+          rightElement={<Icon.Check />}
+        />,
+        <Input
+          fieldSize="xs"
+          id="input-xs-e-3"
+          label="Label"
+          placeholder="Placeholder"
+          rightElement={<Icon.Check />}
+          isPill
+        />,
+      ],
+    },
+    {
+      title: "Password input",
+      description: "",
+      component: [
+        <Input
+          fieldSize="md"
+          id="input-p-1"
+          label="Password"
+          value="MySecretPassword"
+          isPassword
+        />,
+        <Input
+          fieldSize="sm"
+          id="input-p-2"
+          label="Password"
+          value="MySecretPassword"
+          isPassword
+        />,
+        <Input
+          fieldSize="xs"
+          id="input-p-3"
+          label="Password"
+          value="MySecretPassword"
+          isPassword
         />,
       ],
     },
@@ -95,8 +354,9 @@ export const inputs: ComponentDetails = {
       description: "",
       component: [
         <Input
+          fieldSize="md"
           customInput={<Field />}
-          id="input-12"
+          id="input-c-1"
           label="Label"
           placeholder="Placeholder"
         />,
@@ -112,6 +372,13 @@ export const inputs: ComponentDetails = {
       description: "ID of the input should be unique",
     },
     {
+      prop: "fieldSize",
+      type: ["md", "sm", "xs"],
+      default: null,
+      optional: false,
+      description: "Size of the input",
+    },
+    {
       prop: "label",
       type: ["string", "ReactNode"],
       default: null,
@@ -119,18 +386,46 @@ export const inputs: ComponentDetails = {
       description: "Label of the input",
     },
     {
-      prop: "leftElement",
-      type: ["string", "ReactNode"],
+      prop: "isLabelUppercase",
+      type: ["boolean"],
       default: null,
       optional: true,
-      description: "Element on the left of the input",
+      description: "Make label uppercase",
+    },
+    {
+      prop: "isPill",
+      type: ["boolean"],
+      default: null,
+      optional: true,
+      description: "Pill shaped input",
+    },
+    {
+      prop: "isError",
+      type: ["boolean"],
+      default: null,
+      optional: true,
+      description: "Input error without a message",
+    },
+    {
+      prop: "isExtraPadding",
+      type: ["Boolean"],
+      default: null,
+      optional: true,
+      description: "Input with extra padding",
+    },
+    {
+      prop: "isPassword",
+      type: ["Boolean"],
+      default: null,
+      optional: true,
+      description: "Password input preset with show/hide button",
     },
     {
       prop: "rightElement",
       type: ["string", "ReactNode"],
       default: null,
       optional: true,
-      description: "Element on the right of the input",
+      description: "Right side element of the input",
     },
     {
       prop: "note",

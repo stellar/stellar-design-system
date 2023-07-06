@@ -1,38 +1,132 @@
-@use "../../mixins.scss";
+@use "../../utils.scss" as *;
 
 .Textarea {
-  width: 100%;
+  // Color
+  --Textarea-color-background: var(--color-gray-00);
+  --Textarea-color-border: var(--color-gray-30);
+  --Textarea-color-border-hover: var(--color-gray-40);
+  --Textarea-color-border-focus: var(--color-gray-50);
+  --Textarea-color-text: var(--color-gray-80);
 
-  &__wrapper {
-    @include mixins.form-field-container;
-    @include mixins.form-field-wrapper;
-    flex: 1;
-    height: 100%;
+  // Size
+  --Textarea-font-size: #{pxToRem(16px)};
+  --Textarea-line-height: #{pxToRem(24px)};
+  --Textarea-padding-vertical: #{pxToRem(8px)};
+  --Textarea-padding-horizontal: #{pxToRem(12px)};
+  --Textarea-gap: #{pxToRem(8px)};
+  --Textarea-border-radius: #{pxToRem(4px)};
+  --Textarea-note-font-size: #{pxToRem(14px)};
+  --Textarea-note-line-height: #{pxToRem(22px)};
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--Textarea-gap);
+
+  &--md {
+    --Textarea-font-size: #{pxToRem(16px)};
+    --Textarea-line-height: #{pxToRem(24px)};
+    --Textarea-padding-vertical: #{pxToRem(8px)};
+    --Textarea-padding-horizontal: #{pxToRem(12px)};
+    --Textarea-gap: #{pxToRem(8px)};
+    --Textarea-note-font-size: #{pxToRem(14px)};
+    --Textarea-note-line-height: #{pxToRem(22px)};
+
+    &.Textarea--extra-padding {
+      --Textarea-padding-vertical: #{pxToRem(12px)};
+      --Textarea-padding-horizontal: #{pxToRem(16px)};
+    }
+  }
+
+  &--sm {
+    --Textarea-font-size: #{pxToRem(14px)};
+    --Textarea-line-height: #{pxToRem(22px)};
+    --Textarea-padding-vertical: #{pxToRem(6px)};
+    --Textarea-padding-horizontal: #{pxToRem(10px)};
+    --Textarea-gap: #{pxToRem(6px)};
+    --Textarea-note-font-size: #{pxToRem(14px)};
+    --Textarea-note-line-height: #{pxToRem(22px)};
+
+    &.Textarea--extra-padding {
+      --Textarea-padding-vertical: #{pxToRem(10px)};
+      --Textarea-padding-horizontal: #{pxToRem(14px)};
+    }
+  }
+
+  &--xs {
+    --Textarea-font-size: #{pxToRem(12px)};
+    --Textarea-line-height: #{pxToRem(20px)};
+    --Textarea-padding-vertical: #{pxToRem(4px)};
+    --Textarea-padding-horizontal: #{pxToRem(8px)};
+    --Textarea-gap: #{pxToRem(4px)};
+    --Textarea-note-font-size: #{pxToRem(12px)};
+    --Textarea-note-line-height: #{pxToRem(20px)};
+
+    &.Textarea--extra-padding {
+      --Textarea-padding-vertical: #{pxToRem(8px)};
+      --Textarea-padding-horizontal: #{pxToRem(12px)};
+    }
+  }
+
+  textarea {
+    display: block;
+    width: 100%;
+    font-family: var(--font-family-base);
+    background-color: var(--Textarea-color-background);
+    border: 1px solid var(--Textarea-color-border);
+    color: var(--Textarea-color-text);
+    border-radius: var(--Textarea-border-radius);
+    transition: border-color var(--anim-transition-default);
+    padding: var(--Textarea-padding-vertical) var(--Textarea-padding-horizontal);
+    font-size: var(--Textarea-font-size);
+    line-height: var(--Textarea-line-height);
 
     @media (hover: hover) {
       &:hover {
-        @include mixins.form-field-wrapper-hover;
+        border-color: var(--Textarea-color-border-hover);
       }
     }
 
-    textarea {
-      @include mixins.form-field-base;
-      @include mixins.form-field-focus;
-      resize: none;
+    &:focus-visible {
+      outline: 1px solid transparent;
+      border-color: var(--Textarea-color-border-focus);
+    }
 
-      &::placeholder {
-        color: var(--pal-text-tertiary);
-      }
-
-      @include mixins.form-field-disabled;
+    &::placeholder {
+      color: var(--color-gray-60);
     }
   }
 
   &--error {
-    @include mixins.form-field-wrapper-error(".Textarea__wrapper");
+    --Textarea-color-background: var(--color-red-20);
+    --Textarea-color-border: var(--color-red-60);
+    --Textarea-color-text: var(--color-gray-80);
+
+    textarea {
+      &:focus-visible {
+        --Textarea-color-border-focus: var(--color-red-70);
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        --Textarea-color-border-hover: var(--color-red-50);
+      }
+    }
   }
 
   &--disabled {
-    @include mixins.form-field-wrapper-disabled(".Textarea__wrapper");
+    --Textarea-color-background: var(--color-gray-40);
+    --Textarea-color-border: var(--color-gray-40);
+    --Textarea-color-text: var(--color-gray-60);
+
+    textarea {
+      cursor: not-allowed;
+    }
+  }
+
+  .FieldNote {
+    font-size: var(--Textarea-note-font-size);
+    line-height: var(--Textarea-note-line-height);
   }
 }

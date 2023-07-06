@@ -1,49 +1,66 @@
 import React from "react";
 import { Loader } from "../Loader";
-import { ButtonIcon } from "../utils/ButtonIcon";
 import "./styles.scss";
 
-enum ButtonVariant {
-  primary = "primary",
-  secondary = "secondary",
-  tertiary = "tertiary",
-}
-
-enum ButtonSize {
-  default = "default",
-  small = "small",
-}
-
-interface ButtonComponent {
-  variant: typeof ButtonVariant;
-  size: typeof ButtonSize;
-}
-
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  iconLeft?: React.ReactNode;
-  iconRight?: React.ReactNode;
-  variant?: ButtonVariant;
+  variant:
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "destructive"
+    | "error"
+    | "success";
+  size: "md" | "sm" | "xs";
+  children?: string | React.ReactNode;
+  icon?: React.ReactNode;
+  iconPosition?: "left" | "right";
   isLoading?: boolean;
-  size?: ButtonSize;
-  fullWidth?: boolean;
-  children: string | React.ReactNode;
+  isUppercase?: boolean;
+  isFullWidth?: boolean;
+  isPill?: boolean;
+  isExtraPadding?: boolean;
 }
 
-export const Button: React.FC<ButtonProps> & ButtonComponent = ({
-  iconLeft,
-  iconRight,
-  variant = ButtonVariant.primary,
-  isLoading,
-  size = ButtonSize.default,
-  fullWidth,
+export const Button = ({
+  variant,
+  size,
   children,
+  icon,
+  iconPosition = "right",
+  isLoading,
+  isUppercase,
+  isFullWidth,
+  isPill,
+  isExtraPadding,
   ...props
-}) => {
+}: ButtonProps): JSX.Element => {
   const additionalClasses = [
     `Button--${variant}`,
-    ...(size !== ButtonSize.default ? [`Button--${size}`] : []),
-    ...(fullWidth ? [`Button--full-width`] : []),
+    `Button--${size}`,
+    ...(isUppercase ? [`Button--uppercase`] : []),
+    // Button with extra padding will always be full width
+    ...(isFullWidth || isExtraPadding ? [`Button--full-width`] : []),
+    ...(isPill ? [`Button--pill`] : []),
+    ...(isExtraPadding ? [`Button--extra-padding`] : []),
   ].join(" ");
+
+  const renderIcon = (position: "left" | "right") => {
+    // By default, show loader on the right side
+    if (!icon && isLoading && position === "right") {
+      return <Loader />;
+    }
+
+    // If there is icon, replace icon with loader
+    if (icon && iconPosition === position) {
+      if (isLoading) {
+        return <Loader />;
+      }
+
+      return <span className="Button__icon">{icon}</span>;
+    }
+
+    return null;
+  };
 
   return (
     <button
@@ -51,20 +68,11 @@ export const Button: React.FC<ButtonProps> & ButtonComponent = ({
       {...props}
       {...(isLoading ? { disabled: true } : {})}
     >
-      {iconLeft ? (
-        <ButtonIcon position={ButtonIcon.position.left}>{iconLeft}</ButtonIcon>
-      ) : null}
-      {children}
-      {iconRight ? (
-        <ButtonIcon position={ButtonIcon.position.right}>
-          {iconRight}
-        </ButtonIcon>
-      ) : null}
-      {isLoading ? <Loader /> : null}
+      {renderIcon("left")}
+      {children ?? null}
+      {renderIcon("right")}
     </button>
   );
 };
 
 Button.displayName = "Button";
-Button.variant = ButtonVariant;
-Button.size = ButtonSize;

@@ -5,41 +5,48 @@ import { Icon } from "../../icons";
 
 interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
-  label: string | React.ReactNode;
+  // Note: cannot use "size" here because it's input's native property
+  fieldSize: "md" | "sm" | "xs";
+  label?: string | React.ReactNode;
   note?: string | React.ReactNode;
   error?: string | React.ReactNode;
+  isError?: boolean;
 }
 
 export const Checkbox: React.FC<CheckboxProps> = ({
   id,
+  fieldSize,
   label,
   note,
   error,
+  isError,
   ...props
 }: CheckboxProps) => {
   const additionalClasses = [
+    `Checkbox--${fieldSize}`,
     ...(props.disabled ? ["Checkbox--disabled"] : []),
-    ...(error ? ["Checkbox--error"] : []),
+    ...(isError || error ? ["Checkbox--error"] : []),
   ].join(" ");
+
+  const baseCheckboxProps = {
+    id,
+    "aria-invalid": !!(isError || error),
+  };
 
   return (
     <div className={`Checkbox ${additionalClasses}`}>
       <div className="Checkbox__container">
-        <input type="checkbox" id={id} {...props} />
+        <input type="checkbox" {...baseCheckboxProps} {...props} />
         <label htmlFor={id}>
-          {label}
-          <span className="Checkbox__icon" aria-hidden="true">
-            <span>
-              <Icon.Check />
-            </span>
+          <span aria-hidden="true" data-has-label={!!label}>
+            <Icon.Check />
           </span>
+          {label ? label : null}
         </label>
       </div>
 
       {note && <FieldNote>{note}</FieldNote>}
-      {error && (
-        <FieldNote variant={FieldNote.variant.error}>{error}</FieldNote>
-      )}
+      {error && <FieldNote variant="error">{error}</FieldNote>}
     </div>
   );
 };

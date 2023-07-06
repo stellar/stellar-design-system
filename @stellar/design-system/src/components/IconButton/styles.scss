@@ -1,5 +1,3 @@
-@use "../../mixins.scss";
-
 .IconButton {
   --IconButton-size: 1.25rem;
 
@@ -19,7 +17,7 @@
   svg {
     width: var(--IconButton-size);
     height: var(--IconButton-size);
-    @include mixins.svg-color(var(--IconButton-color));
+    fill: var(--IconButton-color);
   }
 
   &__label {
@@ -30,23 +28,23 @@
   }
 
   &--default {
-    --IconButton-color: var(--pal-text-secondary);
+    --IconButton-color: var(--color-gray-80);
   }
 
   &--error {
-    --IconButton-color: var(--pal-error);
+    --IconButton-color: var(--color-red-60);
   }
 
   &--success {
-    --IconButton-color: var(--pal-success);
+    --IconButton-color: var(--color-green-60);
   }
 
   &--warning {
-    --IconButton-color: var(--pal-warning);
+    --IconButton-color: var(--color-yellow-60);
   }
 
   &--highlight {
-    --IconButton-color: var(--pal-brand-primary);
+    --IconButton-color: var(--color-purple-60);
   }
 
   @media (hover: hover) {
