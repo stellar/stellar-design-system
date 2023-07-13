@@ -7,7 +7,7 @@ export const ComponentDescription = ({
 }: {
   componentName: string;
 }) => {
-  const component = SdsDocs.children.find(
+  const component = SdsDocs?.children?.find(
     (c) => c.name === componentName && c.variant === "declaration",
   );
 
