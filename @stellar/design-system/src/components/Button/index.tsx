@@ -2,7 +2,11 @@ import React from "react";
 import { Loader } from "../Loader";
 import "./styles.scss";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+/**
+ * Including all valid [button attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attributes)
+ */
+export interface ButtonProps {
+  /** Variant of the button */
   variant:
     | "primary"
     | "secondary"
@@ -10,18 +14,35 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     | "destructive"
     | "error"
     | "success";
+  /** Size of the button */
   size: "md" | "sm" | "xs";
+  /** Label of the button */
   children?: string | React.ReactNode;
+  /** Icon element */
   icon?: React.ReactNode;
+  /** Position of the icon @defaultValue `right` */
   iconPosition?: "left" | "right";
+  /** Loading state indicator */
   isLoading?: boolean;
+  /** Make label uppercase */
   isUppercase?: boolean;
+  /** Sets width of the button to match the parent container */
   isFullWidth?: boolean;
+  /** Pill shaped button */
   isPill?: boolean;
+  /** Button with extra padding */
   isExtraPadding?: boolean;
 }
 
-export const Button = ({
+interface Props
+  extends ButtonProps,
+    React.ButtonHTMLAttributes<HTMLButtonElement> {}
+
+/**
+ * `Button` is used to trigger an action that is not opening a link (use {@link Link}
+ * instead).
+ */
+export const Button: React.FC<Props> = ({
   variant,
   size,
   children,
@@ -33,7 +54,7 @@ export const Button = ({
   isPill,
   isExtraPadding,
   ...props
-}: ButtonProps): JSX.Element => {
+}) => {
   const additionalClasses = [
     `Button--${variant}`,
     `Button--${size}`,
