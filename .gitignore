@@ -13,8 +13,8 @@ node_modules
 */**/dist
 */**/build
 
-# docs
-*/**/docs
+# SDS docs
+@stellar/design-system/docs
 
 # misc
 .DS_Store

@@ -10,15 +10,15 @@
     ]
   },
   "scripts": {
-    "docs:sds": "yarn workspace @stellar/design-system typedoc",
     "build:sds": "yarn workspace @stellar/design-system build",
     "build:sds-web": "yarn workspace @stellar/design-system-website build",
-    "build": "run-s docs:sds build:sds build:sds-web",
+    "build": "run-s build:sds docs:sds build:sds-web",
     "start:sds": "yarn workspace @stellar/design-system start",
     "start:sds-web": "yarn workspace @stellar/design-system-website start",
+    "docs:sds": "yarn workspace @stellar/design-system typedoc",
     "tsc:sds": "yarn workspace @stellar/design-system lint-tsc",
     "tsc:sds-web": "yarn workspace @stellar/design-system-website lint-tsc",
-    "clean": "rm -rf node_modules && rm -rf */**/node_modules && rm -rf */**/build && rm -rf */**/docs",
+    "clean": "rm -rf node_modules && rm -rf */**/node_modules && rm -rf */**/build",
     "prepare": "husky install",
     "install-if-package-changed": "git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD | grep --quiet yarn.lock && yarn install || exit 0",
     "pre-commit": "concurrently 'pretty-quick --staged' 'lint-staged' 'yarn tsc:sds' 'yarn tsc:sds-web'"
