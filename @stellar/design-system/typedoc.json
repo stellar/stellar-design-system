@@ -1,0 +1,6 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["src"],
+  "json": "./docs/components.json",
+  "excludeNotDocumented": true
+}
