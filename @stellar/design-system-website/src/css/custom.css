@@ -9,25 +9,97 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* --color-purple-60 */
+  --ifm-color-primary: #6e56cf;
+  /* --color-purple-70 */
+  --ifm-color-primary-dark: #5746af;
+  /* --color-purple-80 */
+  --ifm-color-primary-darker: #20134b;
+  /* --color-purple-80 */
+  --ifm-color-primary-darkest: #20134b;
+  /* --color-purple-50 */
+  --ifm-color-primary-light: #aa99ec;
+  /* --color-purple-50 */
+  --ifm-color-primary-lighter: #aa99ec;
+  /* --color-purple-40 */
+  --ifm-color-primary-lightest: #e4defc;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* --color-gray-00 */
+  --ifm-background-color: #ffffff;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-footer-background-color: #ffffff;
+  /* --color-gray-30 */
+  --ifm-hr-background-color: #eeedef;
+  --ifm-toc-border-color: #eeedef;
+
+  --ifm-font-family-base: "Inter", sans-serif;
+  --ifm-font-family-monospace: "Roboto Mono", monospace;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme="dark"] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+[data-theme="dark"]:root {
+  /* --color-purple-60 */
+  --ifm-color-primary: #7c66dc;
+  /* --color-purple-70 */
+  --ifm-color-primary-dark: #9e8cfc;
+  /* --color-purple-80 */
+  --ifm-color-primary-darker: #f1eefe;
+  /* --color-purple-80 */
+  --ifm-color-primary-darkest: #f1eefe;
+  /* --color-purple-50 */
+  --ifm-color-primary-light: #634cc9;
+  /* --color-purple-50 */
+  --ifm-color-primary-lighter: #634cc9;
+  /* --color-purple-40 */
+  --ifm-color-primary-lightest: #32275f;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* --color-gray-00 */
+  --ifm-background-color: #000000;
+  --ifm-navbar-background-color: #000000;
+  --ifm-footer-background-color: #000000;
+  /* --color-gray-30 */
+  --ifm-hr-background-color: #28282c;
+  --ifm-toc-border-color: #28282c;
+}
+
+/* Header */
+.navbar {
+  border-bottom: 1px solid var(--ifm-hr-background-color);
+  box-shadow: none;
+}
+
+.navbar__brand {
+  gap: 0.75rem;
+}
+
+.navbar__logo {
+  margin: 0;
+  height: 1.5rem;
+}
+
+.navbar__title {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.625rem;
+  line-height: 1rem;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary);
+  border: 1px solid var(--ifm-color-primary);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
+[data-theme="dark"] .navbar__logo {
+  filter: invert(100%);
+}
+
+.navbar-sidebar__brand {
+  box-shadow: none;
+}
+
+.table-of-contents {
+  font-weight: 500;
 }

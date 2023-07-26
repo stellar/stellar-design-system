@@ -64,8 +64,7 @@ const config = {
         title: "Design System",
         logo: {
           alt: "Stellar logo",
-          // TODO: replace logo
-          src: "img/logo.svg",
+          src: "img/stellar.svg",
         },
         items: [
           {
@@ -74,21 +73,6 @@ const config = {
             position: "right",
           },
         ],
-      },
-      footer: {
-        style: "dark",
-        links: [
-          {
-            title: "More",
-            items: [
-              {
-                label: "GitHub",
-                href: "https://github.com/stellar/stellar-design-system",
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Stellar Design System. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
