@@ -36,6 +36,16 @@
 
   --ifm-font-family-base: "Inter", sans-serif;
   --ifm-font-family-monospace: "Roboto Mono", monospace;
+
+  /* --color-gray-70 */
+  --ifm-menu-color: #6f6e77;
+  /* --color-gray-90 */
+  --ifm-menu-color-active: #000000;
+  --ifm-menu-color-background-active: transparent;
+  --ifm-menu-color-background-hover: transparent;
+
+  /* --color-gray-70 */
+  --ifm-font-color-base: #6f6e77;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -63,6 +73,71 @@
   /* --color-gray-30 */
   --ifm-hr-background-color: #28282c;
   --ifm-toc-border-color: #28282c;
+
+  /* --color-gray-70 */
+  --ifm-menu-color: #a09fa6;
+  /* --color-gray-90 */
+  --ifm-menu-color-active: #ffffff;
+
+  /* --color-gray-70 */
+  --ifm-font-color-base: #a09fa6;
+}
+
+/* Typography */
+h1 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  line-height: 1.625rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+h5 {
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+}
+
+h6 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  color: var(--ifm-menu-color-active);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+  color: var(--ifm-menu-color-active);
+}
+
+b,
+strong {
+  font-weight: 600;
+}
+
+p {
+  font-size: 1rem;
+}
+
+p,
+ul,
+ol {
+  line-height: 1.6;
 }
 
 /* Header */
@@ -100,6 +175,38 @@
   box-shadow: none;
 }
 
+/* Menu (left side) */
+.menu__link {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.menu__link:hover {
+  color: var(--ifm-menu-color-active);
+}
+
+.menu__link--sublist-caret:after,
+.menu__caret:before {
+  background-size: 1.2rem 1.2rem;
+}
+
+nav > .menu__list > li > .menu__list-item-collapsible .menu__link {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* TOC (right side) */
 .table-of-contents {
   font-weight: 500;
+}
+
+.table-of-contents__link {
+  color: var(--ifm-menu-color);
+}
+
+.table-of-contents__link--active,
+.table-of-contents__link:hover {
+  color: var(--ifm-menu-color-active);
 }
