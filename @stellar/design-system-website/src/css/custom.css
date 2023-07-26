@@ -36,6 +36,13 @@
 
   --ifm-font-family-base: "Inter", sans-serif;
   --ifm-font-family-monospace: "Roboto Mono", monospace;
+
+  /* --color-gray-70 */
+  --ifm-menu-color: #6f6e77;
+  /* --color-gray-90 */
+  --ifm-menu-color-active: #000000;
+  --ifm-menu-color-background-active: transparent;
+  --ifm-menu-color-background-hover: transparent;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -63,6 +70,11 @@
   /* --color-gray-30 */
   --ifm-hr-background-color: #28282c;
   --ifm-toc-border-color: #28282c;
+
+  /* --color-gray-70 */
+  --ifm-menu-color: #a09fa6;
+  /* --color-gray-90 */
+  --ifm-menu-color-active: #ffffff;
 }
 
 /* Header */
@@ -100,6 +112,38 @@
   box-shadow: none;
 }
 
+/* Menu (left side) */
+.menu__link {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.menu__link:hover {
+  color: var(--ifm-menu-color-active);
+}
+
+.menu__link--sublist-caret:after,
+.menu__caret:before {
+  background-size: 1.2rem 1.2rem;
+}
+
+nav > .menu__list > li > .menu__list-item-collapsible .menu__link {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* TOC (right side) */
 .table-of-contents {
   font-weight: 500;
+}
+
+.table-of-contents__link {
+  color: var(--ifm-menu-color);
+}
+
+.table-of-contents__link--active,
+.table-of-contents__link:hover {
+  color: var(--ifm-menu-color-active);
 }
