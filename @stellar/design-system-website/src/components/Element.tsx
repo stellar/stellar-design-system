@@ -1,14 +1,9 @@
 import React, { Fragment, createElement } from "react";
 import Link from "@docusaurus/Link";
-// import rehypeParse from "rehype-parse";
-// import rehypeReact from "rehype-react";
-// import rehypeSanitize from "rehype-sanitize";
-// import { unified } from "unified";
-
-const rehypeParse = require("rehype-parse");
-const rehypeReact = require("rehype-react");
-const rehypeSanitize = require("rehype-sanitize");
-const { unified } = require("unified");
+import rehypeParse from "rehype-parse";
+import rehypeReact from "rehype-react";
+import rehypeSanitize from "rehype-sanitize";
+import { unified } from "unified";
 
 export type ElementKind = "text" | "code" | "inline-tag";
 
