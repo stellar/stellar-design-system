@@ -1,6 +1,8 @@
 import React from "react";
 import SdsDocs from "@stellar/design-system/docs/components.json";
 import { Element } from "@site/src/components/Element";
+import { ParseSummary } from "@site/src/components/ParseSummary";
+import { ElementPropType } from "@site/src/components/ElementPropType";
 
 export const ComponentProps = ({
   componentName,
@@ -15,14 +17,7 @@ export const ComponentProps = ({
     throw Error(`Component "${componentName}" props not found.`);
   }
 
-  // TODO: reusable component
-  // TODO: split paragraphs /n/n
-  const description = component.comment.summary.map((s) => (
-    <Element text={s.text} kind={s.kind} key={s.id} />
-  ));
-
   const props = component.children.map((p) => {
-    // TODO: handle this properly
     const defaultVal = p.comment?.blockTags?.[0]?.content?.[0];
 
     return (
@@ -31,7 +26,7 @@ export const ComponentProps = ({
           <code>{p.name}</code>
         </td>
         <td>
-          <PropType type={p.type} />
+          <ElementPropType type={p.type} />
         </td>
         <td>
           {defaultVal ? (
@@ -39,8 +34,9 @@ export const ComponentProps = ({
           ) : null}
         </td>
         <td>{p?.flags?.isOptional ? "Yes" : ""}</td>
-        {/* TODO: render summary properly */}
-        <td>{p.comment.summary[0].text}</td>
+        <td>
+          <ParseSummary summary={p.comment?.summary} />
+        </td>
       </tr>
     );
   });
@@ -59,24 +55,9 @@ export const ComponentProps = ({
         </thead>
         <tbody>{props}</tbody>
       </table>
-      <p>{description}</p>
+      <p>
+        <ParseSummary summary={component.comment?.summary} />
+      </p>
     </div>
   );
-};
-
-// TODO: move to its own file
-// TODO: might be combined with Element?
-const PropType = ({ type }: { type: any }) => {
-  // TODO: handle all types
-  switch (type.type) {
-    case "union":
-      return type.types.map((t) => (
-        <>
-          <code>{t.value}</code>{" "}
-        </>
-      ));
-    default:
-      // reference
-      return <code>{type.name || ""}</code>;
-  }
 };

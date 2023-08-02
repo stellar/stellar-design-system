@@ -1,9 +1,6 @@
 import React from "react";
 import "./styles.scss";
 
-/**
- * Including all valid [anchor element attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attributes)
- */
 export interface LinkProps {
   /** Content of the link */
   children?: string | React.ReactNode;
@@ -22,6 +19,9 @@ export interface LinkProps {
   /** Make the link uppercase */
   isUppercase?: boolean;
 }
+/**
+ * Including all valid [anchor element attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attributes)
+ */
 
 interface Props
   extends LinkProps,

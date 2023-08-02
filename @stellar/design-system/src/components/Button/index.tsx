@@ -2,9 +2,6 @@ import React from "react";
 import { Loader } from "../Loader";
 import "./styles.scss";
 
-/**
- * Including all valid [button attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attributes)
- */
 export interface ButtonProps {
   /** Variant of the button */
   variant:
@@ -33,6 +30,9 @@ export interface ButtonProps {
   /** Button with extra padding */
   isExtraPadding?: boolean;
 }
+/**
+ * Including all valid [button attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attributes)
+ */
 
 interface Props
   extends ButtonProps,

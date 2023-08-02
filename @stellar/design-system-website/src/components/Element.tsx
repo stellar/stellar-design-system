@@ -1,24 +1,71 @@
-import React from "react";
+import React, { Fragment, createElement } from "react";
+import Link from "@docusaurus/Link";
+// import rehypeParse from "rehype-parse";
+// import rehypeReact from "rehype-react";
+// import rehypeSanitize from "rehype-sanitize";
+// import { unified } from "unified";
+
+const rehypeParse = require("rehype-parse");
+const rehypeReact = require("rehype-react");
+const rehypeSanitize = require("rehype-sanitize");
+const { unified } = require("unified");
 
 export type ElementKind = "text" | "code" | "inline-tag";
 
-export const Element = ({
-  text,
-  kind,
-}: {
+export interface ElementProps {
   text: string;
-  kind: ElementKind;
-}) => {
+  kind: ElementKind | string;
+  tag?: string;
+}
+
+export const Element = ({ text, kind, tag }: ElementProps) => {
   switch (kind) {
     case "code":
       // Remove ``
       return <code>{text.slice(1, -1)}</code>;
     case "inline-tag":
-      // TODO: link to inner component
-      return <a href="#">{text}</a>;
+      // Remove @ from tag to use as a slug for relative link
+      return <Link to={`/${tag?.replace("@", "")}`}>{text}</Link>;
     // text is default
     default:
-      // TODO: how to handle md links
-      return <>{text}</>;
+      return parseMarkdownString(text);
   }
+};
+
+const parseMarkdownString = (text: string): React.ReactElement => {
+  const matches = text.match(/\[.*?\)/g);
+
+  if (matches) {
+    for (const m of matches) {
+      const linkText = m.match(/\[(.*?)\]/)[1];
+      const linkUrl = m.match(/\((.*?)\)/)[1];
+
+      // TODO: can check if it's relative link
+      text = text.replace(
+        m,
+        `<a href="${linkUrl}" target="_blank" rel="noreferrer noopener">${linkText}</a>`,
+      );
+    }
+  }
+
+  text = parseLineBreak(text);
+
+  const file = unified()
+    .use(rehypeSanitize)
+    .use(rehypeParse, { fragment: true })
+    .use(rehypeReact, { createElement, Fragment })
+    .processSync(text);
+
+  return file.result;
+};
+
+const parseLineBreak = (text: string) => {
+  const lineBreakPattern = /\n\n$/i;
+  const matches = text.match(lineBreakPattern);
+
+  if (matches) {
+    return `${text.replace(lineBreakPattern, "")}<br><br>`;
+  }
+
+  return text;
 };
