@@ -1,6 +1,6 @@
 import React from "react";
 import SdsDocs from "@stellar/design-system/docs/components.json";
-import { Element } from "@site/src/components/Element";
+import { ParseSummary } from "@site/src/components/ParseSummary";
 
 export const ComponentDescription = ({
   componentName,
@@ -15,10 +15,9 @@ export const ComponentDescription = ({
     throw Error(`Component "${componentName}" description not found.`);
   }
 
-  // TODO: split paragraphs /n/n
-  const description = component.comment.summary.map((s) => (
-    <Element text={s.text} kind={s.kind} />
-  ));
-
-  return <p>{description}</p>;
+  return (
+    <p>
+      <ParseSummary summary={component.comment?.summary} />
+    </p>
+  );
 };
