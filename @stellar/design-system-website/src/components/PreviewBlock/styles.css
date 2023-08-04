@@ -1,0 +1,34 @@
+.PreviewBlock {
+  background-color: var(--color-gray-00);
+  background-image: radial-gradient(var(--color-gray-40) 10%, transparent 11%),
+    radial-gradient(var(--color-gray-40) 10%, transparent 11%);
+  background-size: 12px 12px;
+  background-position: 0 0, 12px 12px;
+  background-repeat: repeat;
+  padding: 1.5rem 1rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border: 1px solid var(--color-gray-40);
+}
+
+.PreviewBlock__controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem 0.5rem;
+  flex-wrap: wrap;
+}
+
+.PreviewBlock__controls > * {
+  flex-shrink: 0;
+}
+
+.PreviewBlock__controls .Select {
+  width: 7.5rem;
+}
+
+.PreviewBlock__component {
+  min-height: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

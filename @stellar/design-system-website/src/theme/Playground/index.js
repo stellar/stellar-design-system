@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import clsx from "clsx";
+// eslint-disable-next-line import/no-unresolved
 import useIsBrowser from "@docusaurus/useIsBrowser";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
-import Translate from "@docusaurus/Translate";
+// eslint-disable-next-line import/no-unresolved
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import { usePrismTheme } from "@docusaurus/theme-common";
 import { PreviewBlock } from "@site/src/components/PreviewBlock";
+import EditorIconSvg from "@site/static/img/editor-icon.svg";
+
 import styles from "./styles.module.css";
 
 function Header({ children }) {
   return <div className={clsx(styles.playgroundHeader)}>{children}</div>;
 }
 function LivePreviewLoader() {
-  // Is it worth improving/translating?
-  // eslint-disable-next-line @docusaurus/no-untranslated-text
   return <div>Loading...</div>;
 }
 function ResultWithHeader() {
@@ -49,14 +50,20 @@ function EditorWithHeader() {
 
   return (
     <>
+      {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
       <div onClick={() => setIsEditorVisible(!isEditorVisible)}>
-        <Header>{`${isEditorVisible ? "Hide" : "Show"} Live Editor`}</Header>
+        <Header>
+          <EditorIconSvg />
+          {`${isEditorVisible ? "Hide" : "Show"} Live Editor`}
+        </Header>
       </div>
       {isEditorVisible ? <ThemedLiveEditor /> : null}
     </>
   );
 }
-export default function Playground({ children, transformCode, ...props }) {
+
+// Playground is used only to show the result
+export default function Playground({ children, ...props }) {
   const [sds, setSds] = useState({});
 
   // Importing SDS here because we need it async for server-side-rendering
@@ -67,22 +74,26 @@ export default function Playground({ children, transformCode, ...props }) {
     initSds();
   }, []);
 
-  const prismTheme = usePrismTheme();
-  const noInline = props.metastring?.includes("noInline") ?? false;
   const scope = { ...props.scope, PreviewBlock, ...sds };
 
   return (
     <div className={styles.playgroundContainer}>
       {/* @ts-expect-error: type incompatibility with refs */}
-      <LiveProvider
-        code={children.replace(/\n$/, "")}
-        noInline={noInline}
-        transformCode={transformCode ?? ((code) => `${code};`)}
-        theme={prismTheme}
-        {...props}
-        scope={scope}
-      >
+      <LiveProvider code={children.replace(/\n$/, "")} {...props} scope={scope}>
         <ResultWithHeader />
+      </LiveProvider>
+    </div>
+  );
+}
+
+// PlaygroundEditor is used only to show the editor
+export function PlaygroundEditor({ children }) {
+  const prismTheme = usePrismTheme();
+
+  return (
+    <div className={styles.playgroundContainer}>
+      {/* @ts-expect-error: type incompatibility with refs */}
+      <LiveProvider code={children.replace(/\n$/, "")} theme={prismTheme}>
         <EditorWithHeader />
       </LiveProvider>
     </div>

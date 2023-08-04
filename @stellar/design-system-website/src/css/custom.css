@@ -46,6 +46,16 @@
 
   /* --color-gray-70 */
   --ifm-font-color-base: #6f6e77;
+
+  /* Playground */
+  /* --color-gray-00 */
+  --ifm-pg-background: #ffffff;
+  /* --color-gray-30 */
+  --ifm-pg-background-dot: #eeedef;
+  /* --color-gray-30 */
+  --ifm-pg-cta-background: #eeedef;
+  /* --color-gray-90 */
+  --ifm-pg-cta-color: #000000;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -81,6 +91,16 @@
 
   /* --color-gray-70 */
   --ifm-font-color-base: #a09fa6;
+
+  /* Playground */
+  /* --color-gray-00 */
+  --ifm-pg-background: #000000;
+  /* --color-gray-30 */
+  --ifm-pg-background-dot: #28282c;
+  /* --color-gray-30 */
+  --ifm-pg-cta-background: #28282c;
+  /* --color-gray-90 */
+  --ifm-pg-cta-color: #ffffff;
 }
 
 /* Typography */
