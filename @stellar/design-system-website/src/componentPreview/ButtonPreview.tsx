@@ -1,13 +1,8 @@
 import React from "react";
-import { Button, Icon } from "@stellar/design-system";
-import { ComponentPreview } from "@site/src/hooks/useComponentPreview";
+import { ComponentPreview } from "@site/src/components/PreviewBlock";
+import CheckIconSvg from "@site/static/img/check-icon.svg";
 
 export const ButtonPreview: ComponentPreview = {
-  defaultComponent: (
-    <Button variant="primary" size="md">
-      Button
-    </Button>
-  ),
   options: [
     {
       type: "select",
@@ -86,7 +81,7 @@ export const ButtonPreview: ComponentPreview = {
       type: "checkbox",
       prop: "icon",
       label: "With icon",
-      customValue: <Icon.Check />,
+      customValue: <CheckIconSvg />,
       clearProp: "iconPosition",
     },
     {
