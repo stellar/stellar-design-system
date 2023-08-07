@@ -122,72 +122,92 @@ export const PreviewBlock = ({
     });
   };
 
-  const renderOption = (option: any) => {
-    if (option.type === "select") {
-      return Select ? (
-        <Select
-          id={option.prop}
-          fieldSize="sm"
-          onChange={(e) =>
-            handleSelectChange(e, option.customValue, option.clearProp)
-          }
-          key={option.prop}
-        >
-          <>
-            {option.options.map((o) => (
-              <option value={o.value} key={o.value}>
-                {o.label}
-              </option>
-            ))}
-          </>
-        </Select>
-      ) : null;
-    } else if (option.type === "checkbox") {
-      return Checkbox ? (
-        <Checkbox
-          id={option.prop}
-          fieldSize="sm"
-          label={option.label}
-          onChange={(e) =>
-            handleCheckboxChange(e, option.customValue, option.clearProp)
-          }
-          key={option.prop}
-        />
-      ) : null;
-    }
+  const renderSelect = (option: PreviewOptionSelect) => {
+    return Select ? (
+      <Select
+        id={option.prop}
+        fieldSize="sm"
+        onChange={(e) =>
+          handleSelectChange(e, option.customValue, option.clearProp)
+        }
+        key={option.prop}
+      >
+        <>
+          {option.options.map((o) => (
+            <option value={o.value} key={o.value}>
+              {o.label}
+            </option>
+          ))}
+        </>
+      </Select>
+    ) : null;
+  };
 
-    return null;
+  const renderCheckbox = (option: PreviewOptionCheckbox) => {
+    return Checkbox ? (
+      <Checkbox
+        id={option.prop}
+        fieldSize="sm"
+        label={option.label}
+        onChange={(e) =>
+          handleCheckboxChange(e, option.customValue, option.clearProp)
+        }
+        key={option.prop}
+      />
+    ) : null;
   };
 
   // Default component with props
   const component = cloneElement(children, { ...props });
 
+  const options = compPreview.options.reduce(
+    (res, cur) => {
+      if (cur.type === "checkbox") {
+        res.checkbox.push(cur);
+      }
+
+      if (cur.type === "select") {
+        res.select.push(cur);
+      }
+
+      return res;
+    },
+    { checkbox: [], select: [] },
+  );
+
   return (
     <>
       <div className={`PreviewBlock ${theme}`}>
-        <div className="PreviewBlock__controls">
-          {Select ? (
-            <Select
-              id="theme"
-              fieldSize="sm"
-              onChange={(e) => {
-                setTheme(
-                  e.target.value === "light"
-                    ? "sds-theme-light"
-                    : "sds-theme-dark",
-                );
-              }}
-            >
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-            </Select>
-          ) : null}
+        <div className="PreviewBlock__selects">
+          <div className="PreviewBlock__selects__content">
+            {Select ? (
+              <Select
+                id="theme"
+                fieldSize="sm"
+                onChange={(e) => {
+                  setTheme(
+                    e.target.value === "light"
+                      ? "sds-theme-light"
+                      : "sds-theme-dark",
+                  );
+                }}
+              >
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+              </Select>
+            ) : null}
 
-          {/* Component options */}
-          <>{compPreview.options.map((o) => renderOption(o))}</>
+            {options.select.map((o) => renderSelect(o))}
+          </div>
         </div>
 
         <div className="PreviewBlock__component">{component}</div>
+
+        <div className="PreviewBlock__checkboxes">
+          <div className="PreviewBlock__checkboxes__content">
+            {options.checkbox.map((o) => renderCheckbox(o))}
+          </div>
+        </div>
       </div>
 
       <PlaygroundEditor>{reactElementToJSXString(component)}</PlaygroundEditor>
