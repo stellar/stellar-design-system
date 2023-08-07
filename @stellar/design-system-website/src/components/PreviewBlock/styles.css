@@ -9,12 +9,9 @@
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
   border: 1px solid var(--color-gray-40);
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
-
-  display: grid;
-  grid-template-columns: 5fr 2fr;
-  grid-template-rows: auto 2fr;
-  grid-auto-flow: column;
 }
 
 /* Selects */
@@ -36,18 +33,15 @@
 }
 
 /* Checkboxes */
-.PreviewBlock__checkboxes {
-  grid-row: 1 / 3;
-}
-
 .PreviewBlock__checkboxes__content {
   border: 1px solid var(--color-gray-40);
   background-color: var(--color-gray-00);
   border-radius: 0.25rem;
   padding: 0.75rem;
-  display: grid;
-  gap: 0.5rem;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  width: fit-content;
 }
 
 .PreviewBlock__component {
@@ -58,26 +52,17 @@
 }
 
 @media (max-width: 600px) {
-  .PreviewBlock {
-    display: flex;
-    flex-direction: column;
-  }
-
+  .PreviewBlock__checkboxes__content,
   .PreviewBlock__selects__content {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
-  .PreviewBlock__selects__content .Select {
+  .PreviewBlock__checkboxes__content {
     width: auto;
   }
 
-  .PreviewBlock__checkboxes__content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .PreviewBlock__component {
-    order: 3;
+  .PreviewBlock__selects__content .Select {
+    width: auto;
   }
 }
