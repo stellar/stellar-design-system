@@ -14,8 +14,8 @@ export type PreviewOptionType = "select" | "checkbox";
 interface PreviewOptionBase {
   type: PreviewOptionType;
   prop: string;
-  enabledByProp?: string;
   clearProp?: string;
+  customValue?: any;
 }
 
 interface PreviewOptionSelect extends PreviewOptionBase {
@@ -27,7 +27,6 @@ interface PreviewOptionSelect extends PreviewOptionBase {
 
 interface PreviewOptionCheckbox extends PreviewOptionBase {
   label: string;
-  customValue?: any;
 }
 
 export type ComponentPreview = {
@@ -74,9 +73,35 @@ export const PreviewBlock = ({
 
   const [props, setProps] = useState({});
 
-  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleSelectChange = (
+    event: React.ChangeEvent<HTMLSelectElement>,
+    customValue: any,
+    clearProp: string,
+  ) => {
     const { id, value } = event.target;
-    setProps({ ...props, [id]: value });
+    const _props = props;
+
+    let valObj = {};
+
+    // If the value is object, assuming it's setting another prop. For example,
+    // icon dropdown is setting icon and icon position
+    try {
+      valObj = JSON.parse(value);
+    } catch (error) {
+      // do nothing
+    }
+
+    if (value) {
+      setProps({ ..._props, [id]: customValue ?? value, ...valObj });
+    } else {
+      delete _props[id];
+
+      if (clearProp) {
+        delete _props[clearProp];
+      }
+
+      setProps({ ..._props });
+    }
   };
 
   const handleCheckboxChange = (
@@ -103,8 +128,9 @@ export const PreviewBlock = ({
         <Select
           id={option.prop}
           fieldSize="sm"
-          onChange={handleSelectChange}
-          disabled={option.enabledByProp && !props[option.enabledByProp]}
+          onChange={(e) =>
+            handleSelectChange(e, option.customValue, option.clearProp)
+          }
           key={option.prop}
         >
           <>
@@ -125,7 +151,6 @@ export const PreviewBlock = ({
           onChange={(e) =>
             handleCheckboxChange(e, option.customValue, option.clearProp)
           }
-          disabled={option.enabledByProp && !props[option.enabledByProp]}
           key={option.prop}
         />
       ) : null;

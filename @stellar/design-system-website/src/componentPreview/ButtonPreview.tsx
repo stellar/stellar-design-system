@@ -78,24 +78,22 @@ export const ButtonPreview: ComponentPreview = {
       label: "Uppercase",
     },
     {
-      type: "checkbox",
+      type: "select",
       prop: "icon",
-      label: "With icon",
       customValue: <CheckIconSvg />,
       clearProp: "iconPosition",
-    },
-    {
-      type: "select",
-      prop: "iconPosition",
-      enabledByProp: "icon",
       options: [
         {
-          value: "right",
-          label: "Right",
+          value: "",
+          label: "No icon",
         },
         {
-          value: "left",
-          label: "Left",
+          value: '{"iconPosition": "right"}',
+          label: "Icon right",
+        },
+        {
+          value: '{"iconPosition": "left"}',
+          label: "Icon left",
         },
       ],
     },
