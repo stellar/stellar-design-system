@@ -4,7 +4,8 @@ import { PlaygroundEditor } from "@site/src/theme/Playground";
 import "./styles.css";
 
 // Previews
-import { ButtonPreview } from "@site/src/componentPreview/ButtonPreview";
+import { buttonPreview } from "@site/src/componentPreview/buttonPreview";
+import { linkPreview } from "@site/src/componentPreview/linkPreview";
 
 type Theme = "sds-theme-light" | "sds-theme-dark";
 
@@ -62,7 +63,8 @@ export const PreviewBlock = ({
 
   // All component previews
   const previews: { [key: string]: ComponentPreview } = {
-    Button: ButtonPreview,
+    Button: buttonPreview,
+    Link: linkPreview,
   };
 
   const compPreview = previews[componentName];
@@ -203,11 +205,13 @@ export const PreviewBlock = ({
 
         <div className="PreviewBlock__component">{component}</div>
 
-        <div className="PreviewBlock__checkboxes">
-          <div className="PreviewBlock__checkboxes__content">
-            {options.checkbox.map((o) => renderCheckbox(o))}
+        {options.checkbox.length > 0 ? (
+          <div className="PreviewBlock__checkboxes">
+            <div className="PreviewBlock__checkboxes__content">
+              {options.checkbox.map((o) => renderCheckbox(o))}
+            </div>
           </div>
-        </div>
+        ) : null}
       </div>
 
       <PlaygroundEditor>{reactElementToJSXString(component)}</PlaygroundEditor>

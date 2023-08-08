@@ -66,3 +66,8 @@
     width: auto;
   }
 }
+
+/* Overrides */
+.PreviewBlock .Link--underline {
+  text-decoration: underline !important;
+}

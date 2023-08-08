@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentPreview } from "@site/src/components/PreviewBlock";
 import CheckIconSvg from "@site/static/img/check-icon.svg";
 
-export const ButtonPreview: ComponentPreview = {
+export const buttonPreview: ComponentPreview = {
   options: [
     {
       type: "select",
