@@ -42,6 +42,7 @@ function ThemedLiveEditor() {
       // otherwise dark prism theme is not applied
       key={String(isBrowser)}
       className={styles.playgroundEditor}
+      disabled
     />
   );
 }
@@ -54,7 +55,7 @@ function EditorWithHeader() {
       <div onClick={() => setIsEditorVisible(!isEditorVisible)}>
         <Header>
           <EditorIconSvg />
-          {`${isEditorVisible ? "Hide" : "Show"} Live Editor`}
+          {`${isEditorVisible ? "Hide" : "Show"} Code`}
         </Header>
       </div>
       {isEditorVisible ? <ThemedLiveEditor /> : null}

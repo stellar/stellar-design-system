@@ -54,6 +54,11 @@ export const buttonPreview: ComponentPreview = {
     },
     {
       type: "checkbox",
+      prop: "disabled",
+      label: "Disabled",
+    },
+    {
+      type: "checkbox",
       prop: "isExtraPadding",
       label: "Extra padding",
     },
