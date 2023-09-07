@@ -160,6 +160,12 @@ ol {
   line-height: 1.6;
 }
 
+/* Table */
+table {
+  display: table;
+  min-width: 100%;
+}
+
 /* Header */
 .navbar {
   border-bottom: 1px solid var(--ifm-hr-background-color);

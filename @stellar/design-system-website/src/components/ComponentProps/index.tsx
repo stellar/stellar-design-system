@@ -55,9 +55,11 @@ export const ComponentProps = ({
         </thead>
         <tbody>{props}</tbody>
       </table>
-      <p>
-        <ParseSummary summary={component.comment?.summary} />
-      </p>
+      {component.comment?.summary ? (
+        <p>
+          <ParseSummary summary={component.comment.summary} />
+        </p>
+      ) : null}
     </div>
   );
 };

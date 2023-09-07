@@ -6,6 +6,7 @@ import "./styles.css";
 // Previews
 import { buttonPreview } from "@site/src/componentPreview/buttonPreview";
 import { linkPreview } from "@site/src/componentPreview/linkPreview";
+import { projectLogoPreview } from "@site/src/componentPreview/projectLogoPreview";
 
 type Theme = "sds-theme-light" | "sds-theme-dark";
 
@@ -65,6 +66,7 @@ export const PreviewBlock = ({
   const previews: { [key: string]: ComponentPreview } = {
     Button: buttonPreview,
     Link: linkPreview,
+    ProjectLogo: projectLogoPreview,
   };
 
   const compPreview = previews[componentName];
