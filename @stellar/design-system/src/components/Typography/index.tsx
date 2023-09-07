@@ -3,20 +3,34 @@ import "./styles.scss";
 // =============================================================================
 // Heading
 // =============================================================================
-interface HeadingProps extends React.HtmlHTMLAttributes<HTMLHeadingElement> {
+/** */
+export interface HeadingProps {
+  /** Heading level h1-h6 */
   as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  /** Additional classes */
   addlClassName?: string;
+  /** Heading size */
   size: "xxl" | "xl" | "lg" | "md" | "sm" | "xs";
+  /** Heading text */
   children: string | React.ReactNode;
 }
 
-export const Heading = ({
+interface HProps
+  extends HeadingProps,
+    React.HtmlHTMLAttributes<HTMLHeadingElement> {
+  children: string | React.ReactNode;
+}
+
+/**
+ * HTML headings `h1` through `h6`.
+ */
+export const Heading: React.FC<HProps> = ({
   addlClassName,
   as: HtmlTag,
   size,
   children,
   ...props
-}: HeadingProps): JSX.Element => (
+}): JSX.Element => (
   <HtmlTag
     className={`Heading Heading--${size} ${addlClassName || ""}`}
     {...props}
