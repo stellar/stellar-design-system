@@ -44,18 +44,32 @@ Heading.displayName = "Heading";
 // =============================================================================
 // Caption
 // =============================================================================
-interface CaptionProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
+/** */
+export interface CaptionProps {
+  /** Caption size */
   size: "lg" | "md" | "sm" | "xs";
+  /** Additional classes */
   addlClassName?: string;
+  /** Caption text */
   children: string | React.ReactNode;
 }
 
-export const Caption = ({
+interface CProps
+  extends CaptionProps,
+    React.HtmlHTMLAttributes<HTMLDivElement> {
+  children: string | React.ReactNode;
+}
+
+/**
+ * Use `Caption` component for eyebrow subtitles paired with a title, and
+ * secondary accent text in elements like badges and network status.
+ */
+export const Caption: React.FC<CProps> = ({
   addlClassName,
   size,
   children,
   ...props
-}: CaptionProps): JSX.Element => (
+}: CaptionProps) => (
   <div className={`Caption Caption--${size} ${addlClassName || ""}`} {...props}>
     {children}
   </div>
