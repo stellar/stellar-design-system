@@ -125,18 +125,30 @@ Paragraph.displayName = "Paragraph";
 // =============================================================================
 // Title
 // =============================================================================
-interface TitleProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
+/** */
+export interface TitleProps {
+  /** Additional classes */
   addlClassName?: string;
+  /** Title size */
   size: "lg" | "md" | "sm" | "xs";
+  /** Title text */
   children: string | React.ReactNode;
 }
 
-export const Title = ({
+interface TProps extends TitleProps, React.HtmlHTMLAttributes<HTMLDivElement> {
+  children: string | React.ReactNode;
+}
+
+/**
+ * Use `Title` component when a semantic heading is not needed. For example,
+ * banner title, navigation item, label, etc.
+ */
+export const Title: React.FC<TProps> = ({
   addlClassName,
   size,
   children,
   ...props
-}: TitleProps): JSX.Element => (
+}) => (
   <div className={`Title Title--${size} ${addlClassName || ""}`} {...props}>
     {children}
   </div>

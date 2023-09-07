@@ -76,7 +76,8 @@
 
 .PreviewBlock .Heading,
 .PreviewBlock .Caption,
-.PreviewBlock .Paragraph {
+.PreviewBlock .Paragraph,
+.PreviewBlock .Title {
   color: var(--color-gray-90);
 }
 
