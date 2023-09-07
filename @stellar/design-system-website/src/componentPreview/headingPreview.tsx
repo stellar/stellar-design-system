@@ -38,27 +38,27 @@ export const headingPreview: ComponentPreview = {
       options: [
         {
           value: "xs",
-          label: "xs",
+          label: "XS",
         },
         {
           value: "sm",
-          label: "sm",
+          label: "SM",
         },
         {
           value: "md",
-          label: "md",
+          label: "MD",
         },
         {
           value: "lg",
-          label: "lg",
+          label: "LG",
         },
         {
           value: "xl",
-          label: "xl",
+          label: "XL",
         },
         {
           value: "xxl",
-          label: "xxl",
+          label: "XXL",
         },
       ],
     },

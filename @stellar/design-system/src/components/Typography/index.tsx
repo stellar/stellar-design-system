@@ -80,21 +80,34 @@ Caption.displayName = "Caption";
 // =============================================================================
 // Paragraph
 // =============================================================================
-interface ParagraphProps
-  extends React.HtmlHTMLAttributes<HTMLParagraphElement | HTMLDivElement> {
+/** */
+export interface ParagraphProps {
+  /** Additional classes */
   addlClassName?: string;
+  /** Paragraph size */
   size: "lg" | "md" | "sm" | "xs";
-  children: string | React.ReactNode;
+  /** Render paragraph as div */
   asDiv?: boolean;
+  /** Paragraph text */
+  children: string | React.ReactNode;
 }
 
-export const Paragraph = ({
+interface PProps
+  extends ParagraphProps,
+    React.HtmlHTMLAttributes<HTMLParagraphElement | HTMLDivElement> {
+  children: string | React.ReactNode;
+}
+
+/**
+ * Text paragraph is an HTML `p` (or `div`) tag, not a custom component.
+ */
+export const Paragraph: React.FC<PProps> = ({
   addlClassName,
   size,
   children,
   asDiv,
   ...props
-}: ParagraphProps): JSX.Element => {
+}: ParagraphProps) => {
   const HtmlTag = asDiv ? "div" : "p";
 
   return (

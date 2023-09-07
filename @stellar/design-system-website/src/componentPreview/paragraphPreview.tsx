@@ -1,6 +1,6 @@
 import { ComponentPreview } from "@site/src/components/PreviewBlock";
 
-export const captionPreview: ComponentPreview = {
+export const paragraphPreview: ComponentPreview = {
   options: [
     {
       type: "select",
@@ -23,6 +23,11 @@ export const captionPreview: ComponentPreview = {
           label: "LG",
         },
       ],
+    },
+    {
+      type: "checkbox",
+      prop: "asDiv",
+      label: "As div",
     },
   ],
 };

@@ -74,7 +74,12 @@
   text-decoration: underline !important;
 }
 
-.PreviewBlock .Heading {
+.PreviewBlock .Heading,
+.PreviewBlock .Caption,
+.PreviewBlock .Paragraph {
   color: var(--color-gray-90);
+}
+
+.PreviewBlock .Heading {
   margin: 0 !important;
 }

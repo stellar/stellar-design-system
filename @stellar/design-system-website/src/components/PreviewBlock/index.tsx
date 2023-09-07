@@ -11,6 +11,7 @@ import { linkPreview } from "@site/src/componentPreview/linkPreview";
 import { projectLogoPreview } from "@site/src/componentPreview/projectLogoPreview";
 import { headingPreview } from "@site/src/componentPreview/headingPreview";
 import { captionPreview } from "@site/src/componentPreview/captionPreview";
+import { paragraphPreview } from "@site/src/componentPreview/paragraphPreview";
 
 // =============================================================================
 // Component previews
@@ -21,6 +22,7 @@ const previews: { [key: string]: ComponentPreview } = {
   ProjectLogo: projectLogoPreview,
   Heading: headingPreview,
   Caption: captionPreview,
+  Paragraph: paragraphPreview,
 };
 
 type Theme = "sds-theme-light" | "sds-theme-dark";
