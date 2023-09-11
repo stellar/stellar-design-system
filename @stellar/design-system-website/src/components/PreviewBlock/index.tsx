@@ -3,10 +3,29 @@ import reactElementToJSXString from "react-element-to-jsx-string";
 import { PlaygroundEditor } from "@site/src/theme/Playground";
 import "./styles.css";
 
-// Previews
+// =============================================================================
+// Preview imports
+// =============================================================================
 import { buttonPreview } from "@site/src/componentPreview/buttonPreview";
 import { linkPreview } from "@site/src/componentPreview/linkPreview";
 import { projectLogoPreview } from "@site/src/componentPreview/projectLogoPreview";
+import { headingPreview } from "@site/src/componentPreview/headingPreview";
+import { captionPreview } from "@site/src/componentPreview/captionPreview";
+import { paragraphPreview } from "@site/src/componentPreview/paragraphPreview";
+import { titlePreview } from "@site/src/componentPreview/titlePreview";
+
+// =============================================================================
+// Component previews
+// =============================================================================
+const previews: { [key: string]: ComponentPreview } = {
+  Button: buttonPreview,
+  Link: linkPreview,
+  ProjectLogo: projectLogoPreview,
+  Heading: headingPreview,
+  Caption: captionPreview,
+  Paragraph: paragraphPreview,
+  Title: titlePreview,
+};
 
 type Theme = "sds-theme-light" | "sds-theme-dark";
 
@@ -61,13 +80,6 @@ export const PreviewBlock = ({
   }, []);
 
   const [theme, setTheme] = useState<Theme>("sds-theme-light");
-
-  // All component previews
-  const previews: { [key: string]: ComponentPreview } = {
-    Button: buttonPreview,
-    Link: linkPreview,
-    ProjectLogo: projectLogoPreview,
-  };
 
   const compPreview = previews[componentName];
 

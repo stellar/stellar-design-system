@@ -67,7 +67,20 @@
   }
 }
 
-/* Overrides */
+/* ========================================================================== */
+/* SDS overrides
+/* ========================================================================== */
 .PreviewBlock .Link--underline {
   text-decoration: underline !important;
+}
+
+.PreviewBlock .Heading,
+.PreviewBlock .Caption,
+.PreviewBlock .Paragraph,
+.PreviewBlock .Title {
+  color: var(--color-gray-90);
+}
+
+.PreviewBlock .Heading {
+  margin: 0 !important;
 }
