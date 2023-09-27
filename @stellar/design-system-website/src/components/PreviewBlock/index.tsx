@@ -1,4 +1,4 @@
-import React, { cloneElement, useEffect, useState, ReactElement } from "react";
+import React, { cloneElement, useEffect, useState } from "react";
 import reactElementToJSXString from "react-element-to-jsx-string";
 import { PlaygroundEditor } from "@site/src/theme/Playground";
 import "./styles.css";
