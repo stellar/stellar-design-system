@@ -10,6 +10,7 @@
   font-family: var(--font-family-base);
   background-color: var(--Notification-color-background);
   border: 1px solid var(--Notification-color-border);
+  border-radius: pxToRem(4px);
   display: flex;
   flex-direction: column;
   gap: pxToRem(8px);
