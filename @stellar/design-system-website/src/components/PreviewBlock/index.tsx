@@ -13,6 +13,7 @@ import { headingPreview } from "@site/src/componentPreview/headingPreview";
 import { captionPreview } from "@site/src/componentPreview/captionPreview";
 import { paragraphPreview } from "@site/src/componentPreview/paragraphPreview";
 import { titlePreview } from "@site/src/componentPreview/titlePreview";
+import { notificationPreview } from "@site/src/componentPreview/notificationPreview ";
 
 // =============================================================================
 // Component previews
@@ -25,6 +26,7 @@ const previews: { [key: string]: ComponentPreview } = {
   Caption: captionPreview,
   Paragraph: paragraphPreview,
   Title: titlePreview,
+  Notification: notificationPreview,
 };
 
 type Theme = "sds-theme-light" | "sds-theme-dark";
@@ -69,7 +71,7 @@ export const PreviewBlock = ({
   children: React.ReactElement;
 }) => {
   const [sds, setSds] = useState<any>({});
-  const { Checkbox, Select } = sds;
+  const { Checkbox, Select, Notification } = sds;
 
   // Importing SDS here because we need it async for server-side-rendering
   useEffect(() => {
@@ -191,6 +193,18 @@ export const PreviewBlock = ({
     { checkbox: [], select: [] },
   );
 
+  const renderPreview = () => {
+    // Need to handle Notification manually because of name collision that
+    // breaks rendering
+    if (componentName === "Notification") {
+      return Notification ? (
+        <Notification title="Notification title" variant="primary" {...props} />
+      ) : null;
+    }
+
+    return component;
+  };
+
   return (
     <>
       <div className={`PreviewBlock ${theme}`}>
@@ -217,7 +231,7 @@ export const PreviewBlock = ({
           </div>
         </div>
 
-        <div className="PreviewBlock__component">{component}</div>
+        <div className="PreviewBlock__component">{renderPreview()}</div>
 
         {options.checkbox.length > 0 ? (
           <div className="PreviewBlock__checkboxes">
