@@ -35,7 +35,12 @@ export const ComponentProps = ({
         </td>
         <td>{p?.flags?.isOptional ? "Yes" : ""}</td>
         <td>
-          <ParseSummary summary={p.comment?.summary} />
+          <ParseSummary
+            summary={
+              p?.type?.declaration?.signatures?.[0]?.comment?.summary ||
+              p.comment?.summary
+            }
+          />
         </td>
       </tr>
     );

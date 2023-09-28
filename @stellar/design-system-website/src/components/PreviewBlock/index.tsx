@@ -6,33 +6,35 @@ import "./styles.css";
 // =============================================================================
 // Preview imports
 // =============================================================================
-import { buttonPreview } from "@site/src/componentPreview/buttonPreview";
-import { linkPreview } from "@site/src/componentPreview/linkPreview";
-import { projectLogoPreview } from "@site/src/componentPreview/projectLogoPreview";
-import { headingPreview } from "@site/src/componentPreview/headingPreview";
-import { captionPreview } from "@site/src/componentPreview/captionPreview";
-import { paragraphPreview } from "@site/src/componentPreview/paragraphPreview";
-import { titlePreview } from "@site/src/componentPreview/titlePreview";
-import { bannerPreview } from "@site/src/componentPreview/bannerPreview";
-import { notificationPreview } from "@site/src/componentPreview/notificationPreview ";
-import { badgePreview } from "@site/src/componentPreview/badgePreview";
 import { avatarPreview } from "@site/src/componentPreview/avatarPreview";
+import { badgePreview } from "@site/src/componentPreview/badgePreview";
+import { bannerPreview } from "@site/src/componentPreview/bannerPreview";
+import { buttonPreview } from "@site/src/componentPreview/buttonPreview";
+import { captionPreview } from "@site/src/componentPreview/captionPreview";
+import { headingPreview } from "@site/src/componentPreview/headingPreview";
+import { linkPreview } from "@site/src/componentPreview/linkPreview";
+import { notificationPreview } from "@site/src/componentPreview/notificationPreview ";
+import { paragraphPreview } from "@site/src/componentPreview/paragraphPreview";
+import { profilePreview } from "@site/src/componentPreview/profilePreview";
+import { projectLogoPreview } from "@site/src/componentPreview/projectLogoPreview";
+import { titlePreview } from "@site/src/componentPreview/titlePreview";
 
 // =============================================================================
 // Component previews
 // =============================================================================
 const previews: { [key: string]: ComponentPreview } = {
-  Button: buttonPreview,
-  Link: linkPreview,
-  ProjectLogo: projectLogoPreview,
-  Heading: headingPreview,
-  Caption: captionPreview,
-  Paragraph: paragraphPreview,
-  Title: titlePreview,
-  Banner: bannerPreview,
-  Notification: notificationPreview,
-  Badge: badgePreview,
   Avatar: avatarPreview,
+  Badge: badgePreview,
+  Banner: bannerPreview,
+  Button: buttonPreview,
+  Caption: captionPreview,
+  Heading: headingPreview,
+  Link: linkPreview,
+  Notification: notificationPreview,
+  Paragraph: paragraphPreview,
+  Profile: profilePreview,
+  ProjectLogo: projectLogoPreview,
+  Title: titlePreview,
 };
 
 type Theme = "sds-theme-light" | "sds-theme-dark";

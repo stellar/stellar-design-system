@@ -8,6 +8,10 @@ export const ElementPropType = ({ type }: { type: any }) => {
           <code>{t.value}</code>{" "}
         </Fragment>
       ));
+    case "reflection":
+      // TODO: we currently have only this type for functions, but it would be
+      // nice to parse it properly
+      return <code>{`() => void`}</code>;
     case "intrinsic":
     case "reference":
       return <code>{type.name}</code>;
