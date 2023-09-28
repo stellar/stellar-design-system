@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import SdsDocs from "@stellar/design-system/docs/components.json";
 import { Element } from "@site/src/components/Element";
 import { ParseSummary } from "@site/src/components/ParseSummary";
@@ -6,8 +6,12 @@ import { ElementPropType } from "@site/src/components/ElementPropType";
 
 export const ComponentProps = ({
   componentName,
+  relatedType,
 }: {
   componentName: string;
+  // To associate a custom types that are used in the component. For example,
+  // AssetIconSource in AssetIcon.
+  relatedType?: string[];
 }) => {
   const component = SdsDocs?.children?.find(
     (c) => c.name === `${componentName}Props` && c.variant === "declaration",
@@ -17,7 +21,11 @@ export const ComponentProps = ({
     throw Error(`Component "${componentName}" props not found.`);
   }
 
-  const props = component.children.map((p) => {
+  const relatedTypes = relatedType?.map((t) =>
+    SdsDocs?.children?.find((c) => c.name === t && c.variant === "declaration"),
+  );
+
+  const PropRow = ({ p }: { p: any }) => {
     const defaultVal = p.comment?.blockTags?.[0]?.content?.[0];
 
     return (
@@ -44,6 +52,23 @@ export const ComponentProps = ({
         </td>
       </tr>
     );
+  };
+
+  const props = component.children.map((p) => <PropRow p={p} />);
+
+  const relatedTypeProps = relatedTypes?.map((t) => {
+    return (
+      <Fragment key={`t-${t.id}`}>
+        <tr>
+          <td colSpan={5}>
+            <code>{t.name}</code>
+          </td>
+        </tr>
+        {t?.type?.declaration?.children?.map((t) => (
+          <PropRow p={t} />
+        ))}
+      </Fragment>
+    );
   });
 
   return (
@@ -58,8 +83,12 @@ export const ComponentProps = ({
             <th>Description</th>
           </tr>
         </thead>
-        <tbody>{props}</tbody>
+        <tbody>
+          {props}
+          {relatedTypeProps}
+        </tbody>
       </table>
+
       {component.comment?.summary ? (
         <p>
           <ParseSummary summary={component.comment.summary} />
