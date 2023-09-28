@@ -13,8 +13,10 @@ import { headingPreview } from "@site/src/componentPreview/headingPreview";
 import { captionPreview } from "@site/src/componentPreview/captionPreview";
 import { paragraphPreview } from "@site/src/componentPreview/paragraphPreview";
 import { titlePreview } from "@site/src/componentPreview/titlePreview";
+import { bannerPreview } from "@site/src/componentPreview/bannerPreview";
 import { notificationPreview } from "@site/src/componentPreview/notificationPreview ";
 import { badgePreview } from "@site/src/componentPreview/badgePreview";
+import { avatarPreview } from "@site/src/componentPreview/avatarPreview";
 
 // =============================================================================
 // Component previews
@@ -27,8 +29,10 @@ const previews: { [key: string]: ComponentPreview } = {
   Caption: captionPreview,
   Paragraph: paragraphPreview,
   Title: titlePreview,
+  Banner: bannerPreview,
   Notification: notificationPreview,
   Badge: badgePreview,
+  Avatar: avatarPreview,
 };
 
 type Theme = "sds-theme-light" | "sds-theme-dark";
