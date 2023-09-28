@@ -9,7 +9,7 @@ export const ComponentProps = ({
   relatedType,
 }: {
   componentName: string;
-  // To associate a custom types that are used in the component. For example,
+  // To associate custom types that are used in the component. For example,
   // AssetIconSource in AssetIcon.
   relatedType?: string[];
 }) => {
