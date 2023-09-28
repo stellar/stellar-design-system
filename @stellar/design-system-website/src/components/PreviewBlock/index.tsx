@@ -19,6 +19,7 @@ import { paragraphPreview } from "@site/src/componentPreview/paragraphPreview";
 import { profilePreview } from "@site/src/componentPreview/profilePreview";
 import { projectLogoPreview } from "@site/src/componentPreview/projectLogoPreview";
 import { titlePreview } from "@site/src/componentPreview/titlePreview";
+import { tooltipPreview } from "@site/src/componentPreview/tooltipPreview";
 
 // =============================================================================
 // Component previews
@@ -37,6 +38,7 @@ const previews: { [key: string]: ComponentPreview } = {
   Profile: profilePreview,
   ProjectLogo: projectLogoPreview,
   Title: titlePreview,
+  Tooltip: tooltipPreview,
 };
 
 type Theme = "sds-theme-light" | "sds-theme-dark";
