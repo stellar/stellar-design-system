@@ -4,23 +4,45 @@ import { Icon } from "../../icons";
 import { FieldNote } from "../utils/FieldNote";
 import "./styles.scss";
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+/** Including all valid [input attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes) */
+export interface InputProps {
+  /** ID of the input should be unique */
   id: string;
   // Note: cannot use "size" here because it's input's native property
+  /** Size of the input */
   fieldSize: "md" | "sm" | "xs";
+  /** Label of the input */
   label?: string | React.ReactNode;
+  /** Make label uppercase */
   isLabelUppercase?: boolean;
+  /** Pill shaped input */
   isPill?: boolean;
+  /** Input error without a message */
   isError?: boolean;
+  /** Input with extra padding */
   isExtraPadding?: boolean;
+  /** Password input preset with show/hide button */
   isPassword?: boolean;
+  /** Right side element of the input */
   rightElement?: string | React.ReactNode;
+  /** Note message of the input */
   note?: string | React.ReactNode;
+  /** Error message of the input */
   error?: string | React.ReactNode;
+  /** Use a specific input rather than a generic HTML input (useful for Formik or otherwise controlled inputs) */
   customInput?: React.ReactElement;
 }
 
-export const Input: React.FC<InputProps> = ({
+interface Props
+  extends InputProps,
+    React.InputHTMLAttributes<HTMLInputElement> {
+  id: string;
+}
+
+/**
+ * `Input` component is a form input element, which inherits all native HTML `input` element attributes.
+ */
+export const Input: React.FC<Props> = ({
   customInput,
   id,
   label,
@@ -34,7 +56,7 @@ export const Input: React.FC<InputProps> = ({
   note,
   error,
   ...props
-}: InputProps) => {
+}: Props) => {
   const [sideElWidthRem, setSideElWidthRem] = useState(0);
   const [isPasswordMasked, setIsPasswordMasked] = useState(true);
   const sideEl = useRef<HTMLDivElement | null>(null);

@@ -13,14 +13,17 @@ import { bannerPreview } from "@site/src/componentPreview/bannerPreview";
 import { buttonPreview } from "@site/src/componentPreview/buttonPreview";
 import { captionPreview } from "@site/src/componentPreview/captionPreview";
 import { headingPreview } from "@site/src/componentPreview/headingPreview";
+import { inputPreview } from "@site/src/componentPreview/inputPreview";
 import { linkPreview } from "@site/src/componentPreview/linkPreview";
 import { loaderPreview } from "@site/src/componentPreview/loaderPreview";
 import { notificationPreview } from "@site/src/componentPreview/notificationPreview ";
 import { paragraphPreview } from "@site/src/componentPreview/paragraphPreview";
 import { profilePreview } from "@site/src/componentPreview/profilePreview";
 import { projectLogoPreview } from "@site/src/componentPreview/projectLogoPreview";
+import { selectPreview } from "@site/src/componentPreview/selectPreview";
 import { textareaPreview } from "@site/src/componentPreview/textareaPreview";
 import { titlePreview } from "@site/src/componentPreview/titlePreview";
+import { tooltipPreview } from "@site/src/componentPreview/tooltipPreview";
 
 // =============================================================================
 // Component previews
@@ -33,14 +36,17 @@ const previews: { [key: string]: ComponentPreview } = {
   Button: buttonPreview,
   Caption: captionPreview,
   Heading: headingPreview,
+  Input: inputPreview,
   Link: linkPreview,
   Loader: loaderPreview,
   Notification: notificationPreview,
   Paragraph: paragraphPreview,
   Profile: profilePreview,
   ProjectLogo: projectLogoPreview,
+  Select: selectPreview,
   Textarea: textareaPreview,
   Title: titlePreview,
+  Tooltip: tooltipPreview,
 };
 
 type Theme = "sds-theme-light" | "sds-theme-dark";

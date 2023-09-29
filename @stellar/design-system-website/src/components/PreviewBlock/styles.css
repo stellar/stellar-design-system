@@ -85,6 +85,7 @@
   margin: 0 !important;
 }
 
+.PreviewBlock .Input .PreviewBlock .Select,
 .PreviewBlock .Textarea {
   max-width: 24rem;
 }
