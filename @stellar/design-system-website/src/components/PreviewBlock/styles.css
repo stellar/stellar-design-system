@@ -85,6 +85,7 @@
   margin: 0 !important;
 }
 
+.PreviewBlock .Select,
 .PreviewBlock .Input {
   max-width: 24rem;
 }

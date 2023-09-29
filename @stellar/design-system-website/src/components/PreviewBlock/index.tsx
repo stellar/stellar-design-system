@@ -20,6 +20,7 @@ import { notificationPreview } from "@site/src/componentPreview/notificationPrev
 import { paragraphPreview } from "@site/src/componentPreview/paragraphPreview";
 import { profilePreview } from "@site/src/componentPreview/profilePreview";
 import { projectLogoPreview } from "@site/src/componentPreview/projectLogoPreview";
+import { selectPreview } from "@site/src/componentPreview/selectPreview";
 import { titlePreview } from "@site/src/componentPreview/titlePreview";
 import { tooltipPreview } from "@site/src/componentPreview/tooltipPreview";
 
@@ -41,6 +42,7 @@ const previews: { [key: string]: ComponentPreview } = {
   Paragraph: paragraphPreview,
   Profile: profilePreview,
   ProjectLogo: projectLogoPreview,
+  Select: selectPreview,
   Title: titlePreview,
   Tooltip: tooltipPreview,
 };
