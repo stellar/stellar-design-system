@@ -7,7 +7,7 @@ export interface TooltipProps {
   triggerEl: JSX.Element;
   /** Content of the tooltip */
   children: React.ReactNode;
-  /** Placement of tooltip relative to trigger element @defaultValue `right` */
+  /** Placement of tooltip relative to the trigger element @defaultValue `right` */
   placement?:
     | "top"
     | "right"
