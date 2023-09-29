@@ -1,17 +1,28 @@
 import "./styles.scss";
 
-type AssetIconSource = {
+/** */
+export type AssetIconSource = {
+  /** Image URL */
   image: string;
+  /** Image alt text */
   altText: string;
+  /** Custom size of the image inside the circle */
   imageSize?: string;
+  /** Custom background color */
   backgroundColor?: string;
 };
 
-type AssetIconProps = {
+/** */
+export interface AssetIconProps {
+  /** Asset source data */
   source: AssetIconSource[];
+  /** Asset border color */
   borderColor?: string;
-};
+}
 
+/**
+ * Asset image displayed in a circle from a URL source. The component accepts multiple sources to show currency pair, for example.
+ */
 export const AssetIcon: React.FC<AssetIconProps> = ({
   source,
   borderColor,
