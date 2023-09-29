@@ -37,6 +37,11 @@ export const selectPreview: ComponentPreview = {
     },
     {
       type: "checkbox",
+      prop: "disabled",
+      label: "Disabled",
+    },
+    {
+      type: "checkbox",
       prop: "isLabelUppercase",
       label: "Uppercase label",
     },
