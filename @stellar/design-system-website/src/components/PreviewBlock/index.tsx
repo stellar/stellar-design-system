@@ -23,6 +23,7 @@ import { projectLogoPreview } from "@site/src/componentPreview/projectLogoPrevie
 import { selectPreview } from "@site/src/componentPreview/selectPreview";
 import { textareaPreview } from "@site/src/componentPreview/textareaPreview";
 import { titlePreview } from "@site/src/componentPreview/titlePreview";
+import { togglePreview } from "@site/src/componentPreview/togglePreview";
 import { tooltipPreview } from "@site/src/componentPreview/tooltipPreview";
 
 // =============================================================================
@@ -46,6 +47,7 @@ const previews: { [key: string]: ComponentPreview } = {
   Select: selectPreview,
   Textarea: textareaPreview,
   Title: titlePreview,
+  Toggle: togglePreview,
   Tooltip: tooltipPreview,
 };
 
