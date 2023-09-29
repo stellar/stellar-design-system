@@ -29,7 +29,7 @@
 }
 
 .PreviewBlock__selects__content .Select {
-  width: 8rem;
+  width: 9rem;
 }
 
 /* Checkboxes */
@@ -83,4 +83,8 @@
 
 .PreviewBlock .Heading {
   margin: 0 !important;
+}
+
+.PreviewBlock .Input {
+  max-width: 24rem;
 }
