@@ -11,6 +11,7 @@ import { avatarPreview } from "@site/src/componentPreview/avatarPreview";
 import { badgePreview } from "@site/src/componentPreview/badgePreview";
 import { bannerPreview } from "@site/src/componentPreview/bannerPreview";
 import { buttonPreview } from "@site/src/componentPreview/buttonPreview";
+import { buttonPresetPreview } from "@site/src/componentPreview/buttonPresetPreview";
 import { captionPreview } from "@site/src/componentPreview/captionPreview";
 import { headingPreview } from "@site/src/componentPreview/headingPreview";
 import { iconButtonPreview } from "@site/src/componentPreview/iconButtonPreview";
@@ -35,6 +36,7 @@ const previews: { [key: string]: ComponentPreview } = {
   Badge: badgePreview,
   Banner: bannerPreview,
   Button: buttonPreview,
+  ButtonPreset: buttonPresetPreview,
   Caption: captionPreview,
   Heading: headingPreview,
   IconButton: iconButtonPreview,

@@ -22,7 +22,7 @@ interface Props
     React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 /**
- * `IconButton` is similar to the {@link Button} component, and is used to trigger an action. There are five variants (color is the only difference): `default`, `error`, `success`, `warning`, and `highlight`.
+ * `IconButton` is similar to the {@button Button} component, and is used to trigger an action. There are five variants (color is the only difference): `default`, `error`, `success`, `warning`, and `highlight`.
  */
 export const IconButton: React.FC<Props> = ({
   icon,
