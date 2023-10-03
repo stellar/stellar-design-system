@@ -12,6 +12,7 @@ import { badgePreview } from "@site/src/componentPreview/badgePreview";
 import { bannerPreview } from "@site/src/componentPreview/bannerPreview";
 import { buttonPreview } from "@site/src/componentPreview/buttonPreview";
 import { captionPreview } from "@site/src/componentPreview/captionPreview";
+import { checkboxPreview } from "@site/src/componentPreview/checkboxPreview";
 import { headingPreview } from "@site/src/componentPreview/headingPreview";
 import { inputPreview } from "@site/src/componentPreview/inputPreview";
 import { linkPreview } from "@site/src/componentPreview/linkPreview";
@@ -35,6 +36,7 @@ const previews: { [key: string]: ComponentPreview } = {
   Banner: bannerPreview,
   Button: buttonPreview,
   Caption: captionPreview,
+  Checkbox: checkboxPreview,
   Heading: headingPreview,
   Input: inputPreview,
   Link: linkPreview,
