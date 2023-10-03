@@ -1,19 +1,32 @@
 import React from "react";
 import "./styles.scss";
 
-interface RadioButtonProps extends React.InputHTMLAttributes<HTMLInputElement> {
+/** Including all valid [input attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes) */
+export interface RadioButtonProps {
+  /** ID of the radio button should be unique */
   id: string;
+  /** Label of the radio button */
   label: string | React.ReactNode;
   // Note: cannot use "size" here because it's input's native property
+  /** Size of the radio button */
   fieldSize: "md" | "sm" | "xs";
 }
 
-export const RadioButton: React.FC<RadioButtonProps> = ({
+interface Props
+  extends RadioButtonProps,
+    React.InputHTMLAttributes<HTMLInputElement> {
+  id: string;
+}
+
+/**
+ * `RadioButton` component is a form input element, which allows you to select a single value from a group of options for submission. All native HTML `radio` input attributes apply.
+ */
+export const RadioButton: React.FC<Props> = ({
   id,
   label,
   fieldSize,
   ...props
-}: RadioButtonProps) => {
+}: Props) => {
   const additionalClasses = [
     `RadioButton--${fieldSize}`,
     ...(props.disabled ? ["RadioButton--disabled"] : []),
