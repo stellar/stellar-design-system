@@ -2,19 +2,22 @@ import { IconButton } from "../IconButton";
 import { Icon } from "../../icons";
 import "./styles.scss";
 
-enum NavigationDirection {
-  PREV = "previous",
-  NEXT = "next",
-}
-
-interface PaginationProps {
+/** */
+export interface PaginationProps {
+  /** How many items per page */
   pageSize: number;
+  /** Total count of all items */
   itemCount: number;
+  /** Current page */
   currentPage: number;
+  /** Function to set current page */
   setCurrentPage: (currentPage: number) => void;
 }
 
-export const Pagination = ({
+/**
+ * Pagination provides a range of pages to display long lists of data.
+ */
+export const Pagination: React.FC<PaginationProps> = ({
   pageSize,
   itemCount,
   currentPage,
@@ -28,11 +31,8 @@ export const Pagination = ({
   const isFirstPage = currentPage === 1;
   const isLastPage = currentPage === pageCount;
 
-  const handlePageNavigation = (direction: NavigationDirection) => {
-    const newPage =
-      direction === NavigationDirection.PREV
-        ? currentPage - 1
-        : currentPage + 1;
+  const handlePageNavigation = (direction: "prev" | "next") => {
+    const newPage = direction === "prev" ? currentPage - 1 : currentPage + 1;
     setCurrentPage(newPage);
   };
 
@@ -51,7 +51,7 @@ export const Pagination = ({
         icon={<Icon.ChevronLeft />}
         altText="Previous page"
         disabled={isFirstPage}
-        onClick={() => handlePageNavigation(NavigationDirection.PREV)}
+        onClick={() => handlePageNavigation("prev")}
         {...customProps}
       />
       {`${currentPage} of ${pageCount}`}
@@ -59,9 +59,11 @@ export const Pagination = ({
         icon={<Icon.ChevronRight />}
         altText="Next page"
         disabled={isLastPage}
-        onClick={() => handlePageNavigation(NavigationDirection.NEXT)}
+        onClick={() => handlePageNavigation("next")}
         {...customProps}
       />
     </div>
   );
 };
+
+Pagination.displayName = "Pagination";
