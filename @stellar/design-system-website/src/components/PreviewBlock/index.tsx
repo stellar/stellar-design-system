@@ -11,9 +11,11 @@ import { avatarPreview } from "@site/src/componentPreview/avatarPreview";
 import { badgePreview } from "@site/src/componentPreview/badgePreview";
 import { bannerPreview } from "@site/src/componentPreview/bannerPreview";
 import { buttonPreview } from "@site/src/componentPreview/buttonPreview";
+import { buttonPresetPreview } from "@site/src/componentPreview/buttonPresetPreview";
 import { captionPreview } from "@site/src/componentPreview/captionPreview";
 import { checkboxPreview } from "@site/src/componentPreview/checkboxPreview";
 import { headingPreview } from "@site/src/componentPreview/headingPreview";
+import { iconButtonPreview } from "@site/src/componentPreview/iconButtonPreview";
 import { inputPreview } from "@site/src/componentPreview/inputPreview";
 import { linkPreview } from "@site/src/componentPreview/linkPreview";
 import { loaderPreview } from "@site/src/componentPreview/loaderPreview";
@@ -37,9 +39,11 @@ const previews: { [key: string]: ComponentPreview } = {
   Badge: badgePreview,
   Banner: bannerPreview,
   Button: buttonPreview,
+  ButtonPreset: buttonPresetPreview,
   Caption: captionPreview,
   Checkbox: checkboxPreview,
   Heading: headingPreview,
+  IconButton: iconButtonPreview,
   Input: inputPreview,
   Link: linkPreview,
   Loader: loaderPreview,

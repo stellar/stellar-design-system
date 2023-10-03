@@ -1,107 +1,56 @@
 import React from "react";
-import { Icon } from "../../icons";
 import "./styles.scss";
 
-enum IconButtonVariant {
-  default = "default",
-  error = "error",
-  success = "success",
-  warning = "warning",
-  highlight = "highlight",
-}
-
-enum IconButtonPreset {
-  copy = "copy",
-  download = "download",
-}
-
-interface IconButtonComponent {
-  variant: typeof IconButtonVariant;
-  preset: typeof IconButtonPreset;
-}
-
-interface IconButtonBaseProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: IconButtonVariant;
+/** Including all valid [button attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attributes) */
+export interface IconButtonProps {
+  /** Icon element */
+  icon: React.ReactNode;
+  /** Alternative text to show on hover */
+  altText: string;
+  /** Variant of the button */
+  variant?: "default" | "error" | "success" | "warning" | "highlight";
+  /** Button label */
   label?: string;
+  /** Set custom color */
   customColor?: string;
+  /** Set custom size */
   customSize?: string;
 }
 
-interface IconButtonDefaultProps extends IconButtonBaseProps {
-  icon: React.ReactNode;
-  altText: string;
-  preset?: IconButtonPreset;
-}
+interface Props
+  extends IconButtonProps,
+    React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
-interface IconButtonPresetProps extends IconButtonBaseProps {
-  preset: IconButtonPreset;
-  icon?: React.ReactNode;
-  altText?: string;
-}
-
-type IconButtonProps = IconButtonDefaultProps | IconButtonPresetProps;
-
-const presetDetails = {
-  [IconButtonPreset.copy]: {
-    label: "Copy",
-    altText: "Copy",
-    icon: <Icon.ContentCopy />,
-  },
-  [IconButtonPreset.download]: {
-    label: "Download",
-    altText: "Download",
-    icon: <Icon.Download />,
-  },
-};
-
-export const IconButton: React.FC<IconButtonProps> & IconButtonComponent = ({
+/**
+ * `IconButton` is similar to the {@button Button} component, and is used to trigger an action. There are five variants (color is the only difference): `default`, `error`, `success`, `warning`, and `highlight`.
+ */
+export const IconButton: React.FC<Props> = ({
   icon,
   altText,
   label,
-  variant = IconButtonVariant.default,
-  preset,
+  variant = "default",
   customColor,
   customSize,
   ...props
-}: IconButtonProps) => {
+}: Props) => {
   const customStyle = {
     ...(customColor ? { "--IconButton-color": customColor } : {}),
     ...(customSize ? { "--IconButton-size": customSize } : {}),
   } as React.CSSProperties;
 
-  const renderContent = () => {
-    if (preset) {
-      return (
-        <>
-          <span className="IconButton__label">
-            {label ?? presetDetails[preset].label}
-          </span>
-          {presetDetails[preset].icon}
-        </>
-      );
-    }
-
-    return (
+  return (
+    <button
+      className={`IconButton IconButton--${variant}`}
+      title={altText}
+      {...props}
+      style={customStyle}
+    >
       <>
         {label ? <span className="IconButton__label">{label}</span> : null}
         {icon}
       </>
-    );
-  };
-
-  return (
-    <button
-      className={`IconButton IconButton--${variant}`}
-      title={preset ? presetDetails[preset].altText : altText}
-      {...props}
-      style={customStyle}
-    >
-      {renderContent()}
     </button>
   );
 };
 
 IconButton.displayName = "IconButton";
-IconButton.variant = IconButtonVariant;
-IconButton.preset = IconButtonPreset;
