@@ -19,6 +19,7 @@ import { iconButtonPreview } from "@site/src/componentPreview/iconButtonPreview"
 import { inputPreview } from "@site/src/componentPreview/inputPreview";
 import { linkPreview } from "@site/src/componentPreview/linkPreview";
 import { loaderPreview } from "@site/src/componentPreview/loaderPreview";
+import { navButtonPreview } from "@site/src/componentPreview/navButtonPreview";
 import { notificationPreview } from "@site/src/componentPreview/notificationPreview ";
 import { paragraphPreview } from "@site/src/componentPreview/paragraphPreview";
 import { profilePreview } from "@site/src/componentPreview/profilePreview";
@@ -47,6 +48,7 @@ const previews: { [key: string]: ComponentPreview } = {
   Input: inputPreview,
   Link: linkPreview,
   Loader: loaderPreview,
+  NavButton: navButtonPreview,
   Notification: notificationPreview,
   Paragraph: paragraphPreview,
   Profile: profilePreview,
