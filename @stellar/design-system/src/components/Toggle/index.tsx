@@ -1,21 +1,38 @@
 import React, { cloneElement, useEffect, useState } from "react";
 import "./styles.scss";
 
-interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
+/** */
+export interface ToggleProps {
+  /** ID of the toggle should be unique */
   id: string;
+  /** If `true` the toggle state is "on" */
   checked: boolean;
+  /** Use a specific input rather than a generic HTML input (useful for Formik or otherwise controlled inputs) */
   customInput?: React.ReactElement;
+  /** Function to handle the toggle state change */
   onChange?: () => void;
+  /** Disable the toggle */
   disabled?: boolean;
 }
 
-export const Toggle: React.FC<ToggleProps> = ({
+interface Props
+  extends ToggleProps,
+    React.InputHTMLAttributes<HTMLInputElement> {
+  id: string;
+  onChange?: () => void;
+  checked: boolean;
+}
+
+/**
+ * `Toggle` component is similar to `Checkbox` component, which allows to toggle/switch between on and off states.
+ */
+export const Toggle: React.FC<Props> = ({
   id,
   checked,
   customInput,
   onChange,
   disabled,
-}: ToggleProps) => {
+}: Props) => {
   const [checkedValue, setCheckedValue] = useState(checked);
 
   useEffect(() => {
