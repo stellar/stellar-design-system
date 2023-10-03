@@ -7,7 +7,7 @@ export interface IconButtonProps {
   icon: React.ReactNode;
   /** Alternative text to show on hover */
   altText: string;
-  /** Variant of the button */
+  /** Variant of the button @defaultValue `default` */
   variant?: "default" | "error" | "success" | "warning" | "highlight";
   /** Button label */
   label?: string;
