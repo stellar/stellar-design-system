@@ -14,6 +14,7 @@ import { buttonPreview } from "@site/src/componentPreview/buttonPreview";
 import { buttonPresetPreview } from "@site/src/componentPreview/buttonPresetPreview";
 import { captionPreview } from "@site/src/componentPreview/captionPreview";
 import { checkboxPreview } from "@site/src/componentPreview/checkboxPreview";
+import { copyTextPreview } from "@site/src/componentPreview/copyTextPreview";
 import { headingPreview } from "@site/src/componentPreview/headingPreview";
 import { iconButtonPreview } from "@site/src/componentPreview/iconButtonPreview";
 import { inputPreview } from "@site/src/componentPreview/inputPreview";
@@ -43,6 +44,7 @@ const previews: { [key: string]: ComponentPreview } = {
   ButtonPreset: buttonPresetPreview,
   Caption: captionPreview,
   Checkbox: checkboxPreview,
+  CopyText: copyTextPreview,
   Heading: headingPreview,
   IconButton: iconButtonPreview,
   Input: inputPreview,

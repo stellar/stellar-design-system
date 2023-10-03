@@ -5,7 +5,7 @@ import { Icon } from "../../icons";
 export interface ButtonPresetProps {
   /** Button preset */
   preset: "copy" | "download";
-  /** Button variant */
+  /** Button variant @defaultValue `default` */
   variant?: "default" | "highlight";
   /** Button label */
   label?: string;

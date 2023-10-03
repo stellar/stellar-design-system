@@ -1,24 +1,44 @@
 import React, { useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { Tooltip } from "../Tooltip";
-import { FloaterPlacement } from "../Floater";
 import "./styles.scss";
 
-interface CopyTextProps {
+/** */
+export interface CopyTextProps {
+  /** Text to copy */
   textToCopy: string;
+  /** Label/text to display when copy action is done @defaultValue Copied */
   doneLabel?: string;
-  tooltipPlacement?: FloaterPlacement;
+  /** Position of the tooltip @defaultValue `bottom` */
+  tooltipPlacement?:
+    | "top"
+    | "right"
+    | "bottom"
+    | "left"
+    | "top-start"
+    | "top-end"
+    | "right-start"
+    | "right-end"
+    | "bottom-start"
+    | "bottom-end"
+    | "left-start"
+    | "left-end";
+  /** Title text to show on hover @defaultValue Copy */
   title?: string;
-  children: React.ReactElement | string;
+  /** Copy click element */
+  children: React.ReactElement;
 }
 
+/**
+ * Use `CopyText` component to copy a string. Done action label can be displayed in a tooltip, by default it will replace component’s label inline. We’re using [react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard) to handle the copy part.
+ */
 export const CopyText: React.FC<CopyTextProps> = ({
   textToCopy,
   doneLabel = "Copied",
   tooltipPlacement = "bottom",
   title = "Copy",
   children,
-}) => {
+}: CopyTextProps) => {
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
 
   const handleCopyDone = () => {
