@@ -21,6 +21,7 @@ import { iconButtonPreview } from "@site/src/componentPreview/iconButtonPreview"
 import { inputPreview } from "@site/src/componentPreview/inputPreview";
 import { linkPreview } from "@site/src/componentPreview/linkPreview";
 import { loaderPreview } from "@site/src/componentPreview/loaderPreview";
+import { modalPreview } from "@site/src/componentPreview/modalPreview";
 import { navButtonPreview } from "@site/src/componentPreview/navButtonPreview";
 import { notificationPreview } from "@site/src/componentPreview/notificationPreview ";
 import { paginationPreview } from "@site/src/componentPreview/paginationPreview";
@@ -53,6 +54,7 @@ const previews: { [key: string]: ComponentPreview } = {
   Input: inputPreview,
   Link: linkPreview,
   Loader: loaderPreview,
+  Modal: modalPreview,
   NavButton: navButtonPreview,
   Notification: notificationPreview,
   Pagination: paginationPreview,
@@ -109,7 +111,7 @@ export const PreviewBlock = ({
   children: React.ReactElement;
 }) => {
   const [sds, setSds] = useState<any>({});
-  const { Checkbox, Select, Notification } = sds;
+  const { Checkbox, Select, Notification, Button, Modal } = sds;
 
   // Importing SDS here because we need it async for server-side-rendering
   useEffect(() => {
@@ -128,6 +130,8 @@ export const PreviewBlock = ({
   }
 
   const [props, setProps] = useState({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isBasicModalOpen, setIsBasicModalOpen] = useState(false);
 
   const handleSelectChange = (
     event: React.ChangeEvent<HTMLSelectElement>,
@@ -240,12 +244,87 @@ export const PreviewBlock = ({
       ) : null;
     }
 
+    // Need to handle Modal manually because of button on click trigger to show
+    // or hide
+    if (componentName === "Modal") {
+      return Button && Modal ? (
+        <div className="PreviewBlock__block">
+          <Button
+            variant="primary"
+            size="md"
+            onClick={() => setIsBasicModalOpen(true)}
+          >
+            Open basic modal
+          </Button>
+
+          <Button
+            variant="primary"
+            size="md"
+            onClick={() => setIsModalOpen(true)}
+          >
+            Open modal
+          </Button>
+
+          <Modal
+            onClose={() => setIsBasicModalOpen(false)}
+            parentId="preview-block"
+            visible={isBasicModalOpen}
+          >
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+              eius beatae sint dolorem, excepturi quos enim, et ullam suscipit
+              voluptates voluptas accusantium repellendus amet explicabo, iure
+              veritatis aperiam alias molestiae.
+            </p>
+          </Modal>
+
+          <Modal
+            onClose={() => setIsModalOpen(false)}
+            parentId="preview-block"
+            visible={isModalOpen}
+          >
+            <Modal.Heading>Modal heading</Modal.Heading>
+            <Modal.Body>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur eius beatae sint dolorem, excepturi quos enim, et ullam
+                suscipit voluptates voluptas accusantium repellendus amet
+                explicabo, iure veritatis aperiam alias molestiae.
+              </p>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur eius beatae sint dolorem, excepturi quos enim, et ullam
+                suscipit voluptates voluptas accusantium repellendus amet
+                explicabo, iure veritatis aperiam alias molestiae.
+              </p>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur eius beatae sint dolorem, excepturi quos enim, et ullam
+                suscipit voluptates voluptas accusantium repellendus amet
+                explicabo, iure veritatis aperiam alias molestiae.
+              </p>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button size="sm" variant="primary">
+                Submit
+              </Button>
+              <Button size="sm" variant="secondary">
+                Cancel
+              </Button>
+            </Modal.Footer>
+          </Modal>
+        </div>
+      ) : null;
+    }
+
     return component;
   };
 
   return (
     <>
-      <div className={`PreviewBlock ${theme}`}>
+      <div id="preview-block" className={`PreviewBlock ${theme}`}>
         <div className="PreviewBlock__selects">
           <div className="PreviewBlock__selects__content">
             {Select ? (

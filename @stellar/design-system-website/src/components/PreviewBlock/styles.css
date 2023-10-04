@@ -14,6 +14,13 @@
   gap: 0.5rem;
 }
 
+.PreviewBlock__block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
 /* Selects */
 .PreviewBlock__selects__content {
   display: flex;
@@ -95,4 +102,8 @@
 
 .PreviewBlock .Checkbox__container label {
   font-weight: var(--font-weight-regular);
+}
+
+.PreviewBlock .Modal {
+  z-index: 1000;
 }

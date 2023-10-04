@@ -55,11 +55,11 @@ const parseMarkdownString = (text: string): React.ReactElement => {
 };
 
 const parseLineBreak = (text: string) => {
-  const lineBreakPattern = /\n\n$/i;
+  const lineBreakPattern = /\n\n/i;
   const matches = text.match(lineBreakPattern);
 
   if (matches) {
-    return `${text.replace(lineBreakPattern, "")}<br><br>`;
+    return `${text.replace(lineBreakPattern, `<br><br>`)}`;
   }
 
   return text;

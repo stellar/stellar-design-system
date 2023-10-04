@@ -57,6 +57,8 @@ export const ComponentProps = ({
   const props = component.children.map((p) => <PropRow p={p} />);
 
   const relatedTypeProps = relatedTypes?.map((t) => {
+    const props = t.children || t?.type?.declaration?.children;
+
     return (
       <Fragment key={`t-${t.id}`}>
         <tr>
@@ -64,7 +66,7 @@ export const ComponentProps = ({
             <code>{t.name}</code>
           </td>
         </tr>
-        {t?.type?.declaration?.children?.map((t) => (
+        {props?.map((t) => (
           <PropRow p={t} />
         ))}
       </Fragment>
