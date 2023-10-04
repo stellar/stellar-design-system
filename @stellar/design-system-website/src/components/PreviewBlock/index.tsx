@@ -22,6 +22,7 @@ import { linkPreview } from "@site/src/componentPreview/linkPreview";
 import { loaderPreview } from "@site/src/componentPreview/loaderPreview";
 import { navButtonPreview } from "@site/src/componentPreview/navButtonPreview";
 import { notificationPreview } from "@site/src/componentPreview/notificationPreview ";
+import { paginationPreview } from "@site/src/componentPreview/paginationPreview";
 import { paragraphPreview } from "@site/src/componentPreview/paragraphPreview";
 import { profilePreview } from "@site/src/componentPreview/profilePreview";
 import { projectLogoPreview } from "@site/src/componentPreview/projectLogoPreview";
@@ -52,6 +53,7 @@ const previews: { [key: string]: ComponentPreview } = {
   Loader: loaderPreview,
   NavButton: navButtonPreview,
   Notification: notificationPreview,
+  Pagination: paginationPreview,
   Paragraph: paragraphPreview,
   Profile: profilePreview,
   ProjectLogo: projectLogoPreview,
