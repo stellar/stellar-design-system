@@ -107,3 +107,8 @@
 .PreviewBlock .Modal {
   z-index: 1000;
 }
+
+.PreviewBlock .Layout__header,
+.PreviewBlock .Layout__footer {
+  width: 100%;
+}

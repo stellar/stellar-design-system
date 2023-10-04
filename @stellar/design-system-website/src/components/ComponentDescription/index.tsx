@@ -17,7 +17,9 @@ export const ComponentDescription = ({
 
   return (
     <p>
-      <ParseSummary summary={component.comment?.summary} />
+      <ParseSummary
+        summary={(component.signatures?.[0] || component)?.comment?.summary}
+      />
     </p>
   );
 };

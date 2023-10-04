@@ -19,6 +19,7 @@ import { copyTextPreview } from "@site/src/componentPreview/copyTextPreview";
 import { headingPreview } from "@site/src/componentPreview/headingPreview";
 import { iconButtonPreview } from "@site/src/componentPreview/iconButtonPreview";
 import { inputPreview } from "@site/src/componentPreview/inputPreview";
+import { layoutPreview } from "@site/src/componentPreview/layoutPreview";
 import { linkPreview } from "@site/src/componentPreview/linkPreview";
 import { loaderPreview } from "@site/src/componentPreview/loaderPreview";
 import { modalPreview } from "@site/src/componentPreview/modalPreview";
@@ -48,10 +49,15 @@ const previews: { [key: string]: ComponentPreview } = {
   Caption: captionPreview,
   Card: cardPreview,
   Checkbox: checkboxPreview,
+  Content: layoutPreview,
   CopyText: copyTextPreview,
+  Footer: layoutPreview,
   Heading: headingPreview,
+  Header: layoutPreview,
   IconButton: iconButtonPreview,
   Input: inputPreview,
+  Inset: layoutPreview,
+  Layout: layoutPreview,
   Link: linkPreview,
   Loader: loaderPreview,
   Modal: modalPreview,
