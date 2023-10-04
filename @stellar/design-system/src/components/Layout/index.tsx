@@ -13,40 +13,66 @@ interface LayoutComponent {
   Footer: React.FC<FooterProps>;
 }
 
+/**
+ * Use `Layout` component’s sub-components, such as `Content`, `Inset`, `Header`, and `Footer`, to build page layouts.
+ */
 export const Layout: LayoutComponent = () => {
   // do nothing
 };
 
-interface InsetProps {
+/** */
+export interface InsetProps {
+  /** Content of the component */
   children: React.ReactNode;
 }
 
-const Inset: React.FC<InsetProps> = ({ children }: InsetProps) => (
+/**
+ * Inset defines width/max-width and horizontal margins. It is used in upper level block/section components to have consistent horizontal styling.
+ */
+export const Inset: React.FC<InsetProps> = ({ children }: InsetProps) => (
   <div className="Layout__inset">{children}</div>
 );
 
-interface ContentProps {
+/** */
+export interface ContentProps {
+  /** Content of the component */
   children: React.ReactNode;
 }
 
-const Content: React.FC<ContentProps> = ({ children }: ContentProps) => (
+/**
+ * Page level content of the website (all other content goes in here). It is on the same level as header and footer.
+ */
+export const Content: React.FC<ContentProps> = ({ children }: ContentProps) => (
   <div className="Layout__content">{children}</div>
 );
 
-interface HeaderProps {
+/** */
+export interface HeaderProps {
+  /** ID of the project */
   projectId: string;
+  /** Name of the project */
   projectTitle?: string;
+  /** Link of the project */
   projectLink?: string;
+  /** Show theme switch */
   hasThemeSwitch?: boolean;
+  /** Function to call at the end of the switch event */
   onThemeSwitchActionEnd?: (isDarkMode: boolean) => void;
+  /** Show sign out link if function is provided */
   onSignOut?: () => void;
+  /** Show border around navigation buttons */
   showButtonBorder?: boolean;
+  /** Show burger menu icon */
   menu?: {
     isEnabled: boolean;
     onOpen: () => void;
   };
+  /** Custom content in the middle */
   contentCenter?: React.ReactElement;
+  /** Custom content on the right */
   contentRight?: React.ReactElement;
+  /** Do not set theme when page loads */
+  disableSetThemeOnLoad?: boolean;
 }
 
 const stringToCamelcase = (str: string) =>
@@ -56,7 +82,10 @@ const stringToCamelcase = (str: string) =>
     )
     .replace(/\s+/g, "");
 
-const Header: React.FC<HeaderProps> = ({
+/**
+ * Header of the website with Stellar logo, project name, and theme switch.
+ */
+export const Header: React.FC<HeaderProps> = ({
   projectId,
   projectTitle,
   projectLink,
@@ -67,13 +96,18 @@ const Header: React.FC<HeaderProps> = ({
   menu,
   contentCenter,
   contentRight,
+  disableSetThemeOnLoad,
 }: HeaderProps) => {
   // Set default mode to light, if there is no theme toggle
   useEffect(() => {
+    if (disableSetThemeOnLoad) {
+      return;
+    }
+
     if (!hasThemeSwitch) {
       document.body.classList.add(ThemeMode.LIGHT);
     }
-  }, [hasThemeSwitch]);
+  }, [disableSetThemeOnLoad, hasThemeSwitch]);
 
   return (
     <div className="Layout__header">
@@ -102,6 +136,7 @@ const Header: React.FC<HeaderProps> = ({
             <ThemeSwitch
               storageKeyId={`stellarTheme:${stringToCamelcase(projectId)}`}
               onActionEnd={onThemeSwitchActionEnd}
+              disableSetThemeOnLoad={disableSetThemeOnLoad}
             />
           ) : null}
 
@@ -120,16 +155,26 @@ const Header: React.FC<HeaderProps> = ({
   );
 };
 
-interface FooterProps {
+/** */
+export interface FooterProps {
+  /** Set custom margin top */
   marginTop?: string;
+  /** Hide legal links */
   hideLegalLinks?: boolean;
+  /** Hide top border */
   hideTopBorder?: boolean;
+  /** Link to GitHub repo */
   gitHubLink?: string;
+  /** Title/label of GitHub link (visible on hover) */
   gitHubLabel?: string;
+  /** Custom content in the footer */
   children?: React.ReactNode;
 }
 
-const Footer: React.FC<FooterProps> = ({
+/**
+ * Footer of the website with GitHub, Terms of Service, and Privacy Policy links.
+ */
+export const Footer: React.FC<FooterProps> = ({
   marginTop,
   hideLegalLinks,
   hideTopBorder,
