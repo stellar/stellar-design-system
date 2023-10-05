@@ -27,8 +27,9 @@ export const ElementPropType = ({ type }: { type: any }) => {
         const params = type.declaration?.signatures?.[0]?.parameters
           .map((p) => `${p.name}: ${p.type.name}`)
           .join(", ");
+        const returnType = type.declaration?.signatures?.[0].type.name;
 
-        return <code>{`(${params}) => void`}</code>;
+        return <code>{`(${params}) => ${returnType}`}</code>;
       }
 
       return <code>{`() => void`}</code>;

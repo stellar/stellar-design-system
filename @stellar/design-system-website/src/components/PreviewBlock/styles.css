@@ -112,3 +112,26 @@
 .PreviewBlock .Layout__footer {
   width: 100%;
 }
+
+.PreviewBlock .Table thead {
+  background-color: transparent;
+}
+
+.PreviewBlock .Table thead tr {
+  border-bottom: none;
+}
+
+.PreviewBlock .Table tr {
+  background: none;
+  border-top: none;
+}
+
+.PreviewBlock .Table th {
+  background: none;
+  border: none;
+}
+
+.PreviewBlock .Table td {
+  color: var(--color-gray-80);
+  border: none;
+}

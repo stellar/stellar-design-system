@@ -7,24 +7,41 @@ import { sortList } from "../../helpers/sortList";
 import { SortOrder } from "../../types/types";
 import "./styles.scss";
 
-interface TableColumnLabel {
+/** */
+export interface TableColumnLabel {
+  /** Path to data property in object, it is used in sorting */
   id: string;
+  /** Column label */
   label: string | React.ReactNode;
+  /** Enable sorting for this column using ID */
   sortBy?: boolean;
 }
 
-interface TableProps<T> {
+/** */
+export interface TableProps<T> {
+  /** Optional ID used for row keys @defaultValue table */
   id?: string;
+  /** Data to display in table */
   data: T[];
+  /** Column label data */
   columnLabels: TableColumnLabel[];
+  /** Function to render table rows */
   renderItemRow: (item: T) => React.ReactElement;
+  /** Media query breakpoint to show sticky column layout */
   breakpoint: 300 | 400 | 500 | 600 | 700 | 800 | 900;
+  /** Hide number column */
   hideNumberColumn?: boolean;
+  /** Set table in loading state */
   isLoading?: boolean;
+  /** Table empty message @defaultValue No data to show */
   emptyMessage?: string;
+  /** Page size for pagination */
   pageSize?: number;
 }
 
+/**
+ * Display sets of data in a table. Table data can be sorted and with pagination. If any of the table labels have `sortBy` flag enabled, the table becomes sortable.
+ */
 export const Table = <T extends Record<string, any>>({
   id = "table",
   data,
