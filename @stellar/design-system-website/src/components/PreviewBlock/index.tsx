@@ -31,6 +31,7 @@ import { profilePreview } from "@site/src/componentPreview/profilePreview";
 import { projectLogoPreview } from "@site/src/componentPreview/projectLogoPreview";
 import { radioButtonPreview } from "@site/src/componentPreview/radioButtonPreview";
 import { selectPreview } from "@site/src/componentPreview/selectPreview";
+import { tablePreview } from "@site/src/componentPreview/tablePreview";
 import { textareaPreview } from "@site/src/componentPreview/textareaPreview";
 import { titlePreview } from "@site/src/componentPreview/titlePreview";
 import { togglePreview } from "@site/src/componentPreview/togglePreview";
@@ -69,6 +70,7 @@ const previews: { [key: string]: ComponentPreview } = {
   ProjectLogo: projectLogoPreview,
   RadioButton: radioButtonPreview,
   Select: selectPreview,
+  Table: tablePreview,
   Textarea: textareaPreview,
   Title: titlePreview,
   Toggle: togglePreview,
