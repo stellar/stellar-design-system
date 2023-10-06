@@ -56,6 +56,14 @@
   --ifm-pg-cta-background: #eeedef;
   /* --color-gray-90 */
   --ifm-pg-cta-color: #000000;
+
+  /* Icons and logos */
+  /* --color-gray-20 */
+  --ifm-sds-icon-bg: #f4f2f4;
+  /* --color-gray-80 */
+  --ifm-sds-icon-fill: #1a1523;
+  /* --color-gray-70 */
+  --ifm-sds-icon-text: #6f6e77;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -101,6 +109,14 @@
   --ifm-pg-cta-background: #28282c;
   /* --color-gray-90 */
   --ifm-pg-cta-color: #ffffff;
+
+  /* Icons and logos */
+  /* --color-gray-20 */
+  --ifm-sds-icon-bg: #1c1c1f;
+  /* --color-gray-80 */
+  --ifm-sds-icon-fill: #ededef;
+  /* --color-gray-70 */
+  --ifm-sds-icon-text: #a09fa6;
 }
 
 /* Typography */
