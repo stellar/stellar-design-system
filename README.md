@@ -52,4 +52,4 @@ This project is tested with
 
 `clean` delete `node_modules` and `build` directories in the whole repo
 
-[!NOTE]\ You need to run each `start` command in its own window or tab.
+**Note** You need to run each `start` command in its own window or tab.
