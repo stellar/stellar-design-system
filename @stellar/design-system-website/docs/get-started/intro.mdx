@@ -5,52 +5,108 @@ sidebar_position: 1
 
 # Intro
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Stellar Design System (SDS) is an opinionated React component library (we hope
+it will grow into a full-featured design system in the future) used in Stellar
+Development Foundation’s Web projects. It's meant to be used internally to keep
+our Web products consistent.
 
-## Getting Started
+## Current version
 
-Get started by **creating a new site**.
+<a href="https://www.npmjs.com/package/@stellar/design-system">
+  <img
+    src="https://img.shields.io/npm/v/@stellar/design-system.svg?style=flat-square"
+    alt="npm version"
+  />
+</a>
 
-Or **try Docusaurus immediately** with
-**[docusaurus.new](https://docusaurus.new)**.
+## Tech stack
 
-### What you'll need
+- TypeScript
+- React for UI
+- Sass for CSS styling
+- Yarn
+- Webpack
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related
-    to dependencies.
+## Usage
 
-## Generate a new site
+Install using package manager of your choice.
 
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run
-the command:
-
-```bash
-npm init docusaurus@latest my-website classic
+```bash npm2yarn
+npm install @stellar/design-system
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any
-other integrated terminal of your code editor.
+Add Google Fonts (`Inter Tight`, `Inter`, and `Roboto Mono`) to `index.html`
+file.
 
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter+Tight&family=Inter:wght@400;500;600&family=Roboto+Mono&display=swap"
+  rel="stylesheet"
+/>
 ```
 
-The `cd` command changes the directory you're working with. In order to work
-with your newly created Docusaurus site, you'll need to navigate the terminal
-there.
+Add the main CSS file to your project (for example, the main `index` file of
+your React project).
 
-The `npm run start` command builds your website locally and serves it through a
-development server, ready for you to view at http://localhost:3000/.
+```javascript
+import "@stellar/design-system/build/styles.min.css";
+```
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads
-automatically** and displays your changes.
+Import components in your project.
+
+```javascript
+import { Button, Input } from "@stellar/design-system";
+```
+
+## Local development
+
+The design system repo has two parts:
+
+- `@stellar/design-system` - everything for the design system
+  ([repo](https://github.com/stellar/stellar-design-system/tree/main/%40stellar/design-system))
+- `@stellar/design-system-website` - website for the design system (what you are
+  looking at now)
+  ([repo](https://github.com/stellar/stellar-design-system/tree/main/%40stellar/design-system-website))
+
+To run Stellar Design System locally:
+
+- Clone the repo
+
+```bash
+git clone git@github.com:stellar/stellar-design-system.git
+```
+
+- Install dependencies
+
+```bash npm2yarn
+npm install
+```
+
+### Scripts to develop and build locally
+
+- `build:sds` - build Stellar Design System (sds) project only
+- `build:sds-web` - build Stellar Design System Website (sds-web) project only
+- `build` - build both projects
+- `start:sds` - start sds project for local development
+- `start:sds-web` - start sds-web project for local development
+- `clean` - delete node_modules and build directories in the whole repo
+
+:::info
+
+You need to run each `start` command in its own window or tab.
+
+:::
+
+## Developer notes
+
+- Use the Design System components "as is", don’t modify existing ones to fit
+  your needs if the component doesn’t allow it.
+- If a component doesn’t exist, it’s OK to create it locally for your project
+  (we’ll keep adding more components to SDS as we go).
+- If you are creating a component locally, use only color variables available in
+  the SDS palette (in `theme.scss`). This is very important for the light and
+  dark modes to work. When in doubt, please check with the Design team.
+- `styled-components` are not currently supported, but you can use them as
+  wrappers/containers for SDS components.

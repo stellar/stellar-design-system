@@ -9,9 +9,9 @@ everything as consistent as possible.
 ```javascript
 root/@stellar/design-system
   |-- build/
+  |-- docs/
   |-- src/
     |-- assets/
-      |-- fonts/
       |-- icons/
       |-- logos/
     |-- components/
@@ -23,14 +23,16 @@ root/@stellar/design-system
           |-- index.tsx
           |-- styles.scss
       |-- index.ts
+    |-- helpers/
     |-- types/
     |-- entry.ts
-    |-- fonts.scss
     |-- global.scss
     |-- icons.ts
     |-- index.ts
     |-- logos.ts
     |-- normalize.scss
+    |-- theme.scss
+    |-- utils.scss
   |-- ...config files and docs
 ```
 
@@ -38,14 +40,13 @@ root/@stellar/design-system
 
 Optimized, production ready output of the design system.
 
+## `docs/`
+
+Generated documentation from [TypeDoc](https://typedoc.org/) comments.
+
 ## `assets/`
 
 Assets used in the project.
-
-### `fonts/`
-
-All font files we use in the Stellar Design System are in this folder. They need
-to be imported in `/fonts.scss`.
 
 ### `icons/`
 
@@ -80,29 +81,18 @@ import React from "react";
 import "./styles.scss";
 ```
 
-#### Variant
-
-Export `enum` named `[Component]Variant` (`ButtonVariant`). Use variant names
-that are based on functionality and not appearance.
-
-```javascript
-export enum ButtonVariant {
-  primary = "primary",
-  secondary = "secondary",
-}
-```
-
 #### Types
 
-Interface named `[Component]Props` (`InputProps`).
+Interface named `[Component]Props` (`InputProps`). Use TypeScript string union
+type to define values for props with multiple options
+(`"primary" | "secondary"`).
 
 ```javascript
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
+  fieldSize: "md" | "sm" | "xs";
   label?: string;
-  rightElement?: string;
-  note?: React.ReactNode;
-  error?: string;
+  ...
 }
 ```
 
@@ -139,6 +129,27 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 </div>
 ```
 
+#### Comments for documentation
+
+Add comments to the component file using the JsDoc convention.
+
+##### Props
+
+- Component props interface must be named [ComponenName]Props and must be
+  exported (otherwise, they are not generated in the docs).
+- Export only the props we want to display. If extending another interface, make
+  a local (not exported) interface to use with the component.
+- There must be an empty `/** */` comment above the interface declaration.
+  Without it, the props are not added to the docs.
+  - This comment displays text below the props table on the website. It can be
+    used to add notes.
+
+Use [Button](./src/components/Button/index.tsx) as an example.
+
+##### Component
+
+Add a comment above the component definition.
+
 ### Component’s `styles.scss` structure
 
 - Root element is the component class.
@@ -165,7 +176,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 ```
 
-- Always use colors defined in `global.scss` (to make sure themes will always
+- Always use colors defined in `theme.scss` (to make sure themes will always
   look good), and other variables as much as possible.
 
 - For consistency, use `__container` for the outermost container, and
@@ -190,6 +201,10 @@ export * from "./Checkbox";
 ...
 ```
 
+## `/helpers`
+
+Helper methods go here.
+
 ## `/types`
 
 Global types go here.
@@ -208,37 +223,9 @@ import "./fonts.scss";
 export * from "./index";
 ```
 
-## `fonts.scss`
-
-CSS file that contains all font files.
-
-```scss
-// Basic Latin chars
-@font-face {
-  font-family: "IBM Plex Sans";
-  src: url("./assets/fonts/IBMPlexSans-Regular-Latin1.woff") format("woff"),
-    url("./assets/fonts/IBMPlexSans-Regular-Latin1.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 400;
-  unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131,
-    U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E,
-    U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122,
-    U+2212, U+FB01-FB02;
-  font-display: block;
-}
-...
-```
-
 ## `global.scss`
 
 Main CSS file that has all the global styles shared among all components.
-
-```scss
-:root {
-  // Colors and other variables
-}
-...
-```
 
 ## `icons.ts`
 
@@ -271,3 +258,11 @@ export { ReactComponent as LogoStellar } from "./assets/logos/stellar.svg";
 ## `normalize.scss`
 
 Normalize CSS to make UI more consistent in all browsers.
+
+## `theme.scss`
+
+Color variables for light and dark theme.
+
+## `utils.scss`
+
+Sass helper functions.
