@@ -21,7 +21,7 @@ interface Props
 }
 
 /**
- * Use notification to draw user attention. There are five variants `primary`, `secondary`, `success`, `error`, and `warning`.
+ * Use `notification` to draw a user's attention. There are five variants `primary`, `secondary`, `success`, `error`, and `warning`.
  */
 export const Notification: React.FC<Props> = ({
   variant,
