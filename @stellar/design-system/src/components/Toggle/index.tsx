@@ -3,7 +3,7 @@ import "./styles.scss";
 
 /** */
 export interface ToggleProps {
-  /** ID of the toggle should be unique */
+  /** ID of the toggle (should be unique) */
   id: string;
   /** If `true` the toggle state is "on" */
   checked: boolean;
@@ -24,7 +24,7 @@ interface Props
 }
 
 /**
- * `Toggle` component is similar to `Checkbox` component, which allows to toggle/switch between on and off states.
+ * The `Toggle` component is similar to `Checkbox` component, which allows you to toggle/switch between on and off states.
  */
 export const Toggle: React.FC<Props> = ({
   id,
