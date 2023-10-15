@@ -3,7 +3,7 @@ import "./styles.scss";
 
 /** */
 export interface NavButtonProps {
-  /** ID of the component should be unique */
+  /** ID of the component (should be unique) */
   id: string;
   /** Title or label to show on hover */
   title: string;
@@ -18,7 +18,7 @@ export interface NavButtonProps {
 }
 
 /**
- * `NavButton` is used to trigger actions like toggle dark and light mode, close a modal, and toggle side navigation.
+ * `NavButton` triggers actions like toggling dark and light mode, closing a modal, and toggling side navigation.
  */
 export const NavButton: React.FC<NavButtonProps> = ({
   id,
