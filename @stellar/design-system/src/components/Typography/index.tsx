@@ -22,7 +22,7 @@ interface HProps
 }
 
 /**
- * HTML headings `h1` through `h6`.
+ * Use `Heading` for HTML headings `h1` through `h6`.
  */
 export const Heading: React.FC<HProps> = ({
   addlClassName,
@@ -61,7 +61,7 @@ interface CProps
 }
 
 /**
- * Use `Caption` component for eyebrow subtitles paired with a title, and
+ * Use the `Caption` component for eyebrow subtitles paired with a title and
  * secondary accent text in elements like badges and network status.
  */
 export const Caption: React.FC<CProps> = ({
@@ -99,7 +99,7 @@ interface PProps
 }
 
 /**
- * Text paragraph is an HTML `p` (or `div`) tag, not a custom component.
+ * The text paragraph is an HTML `p` (or `div`) tag, not a custom component.
  */
 export const Paragraph: React.FC<PProps> = ({
   addlClassName,
@@ -140,7 +140,7 @@ interface TProps extends TitleProps, React.HtmlHTMLAttributes<HTMLDivElement> {
 }
 
 /**
- * Use `Title` component when a semantic heading is not needed. For example,
+ * Use the `Title` component when a semantic heading is not needed. For example, in a
  * banner title, navigation item, label, etc.
  */
 export const Title: React.FC<TProps> = ({
