@@ -21,7 +21,7 @@ export interface AssetIconProps {
 }
 
 /**
- * Asset image displayed in a circle from a URL source. The component accepts multiple sources to show currency pair, for example.
+ * An asset image displayed in a circle from a URL source. The component can accept multiple sources to show a currency pair, for example.
  */
 export const AssetIcon: React.FC<AssetIconProps> = ({
   source,

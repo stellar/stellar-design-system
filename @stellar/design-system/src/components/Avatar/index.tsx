@@ -8,7 +8,7 @@ export interface AvatarProps {
 }
 
 /**
- * Unique identicon of public Stellar address. [We’re using stellar-identicon-js](https://github.com/Lobstrco/stellar-identicon-js).
+ * A unique identicon of a public Stellar address. [We’re using stellar-identicon-js](https://github.com/Lobstrco/stellar-identicon-js).
  */
 export const Avatar: React.FC<AvatarProps> = ({
   publicAddress,
