@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.scss";
 
-/** Including all valid [button attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attributes) */
+/** Including all valid [button attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attributes). */
 export interface IconButtonProps {
   /** Icon element */
   icon: React.ReactNode;
@@ -22,7 +22,7 @@ interface Props
     React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 /**
- * `IconButton` is similar to the {@button Button} component, and is used to trigger an action. There are five variants (color is the only difference): `default`, `error`, `success`, `warning`, and `highlight`.
+ * `IconButton` is similar to the {@button Button} component and is used to trigger an action. There are five variants (color is the only difference): `default`, `error`, `success`, `warning`, and `highlight`.
  */
 export const IconButton: React.FC<Props> = ({
   icon,

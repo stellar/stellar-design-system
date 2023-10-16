@@ -40,7 +40,7 @@ export interface TableProps<T> {
 }
 
 /**
- * Display sets of data in a table. Table data can be sorted and with pagination. If any of the table labels have `sortBy` flag enabled, the table becomes sortable.
+ * Display sets of data in a table. Table data can be sorted with pagination. If any of the table labels have the `sortBy` flag enabled, the table becomes sortable.
  */
 export const Table = <T extends Record<string, any>>({
   id = "table",

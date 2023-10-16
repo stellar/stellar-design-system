@@ -24,7 +24,7 @@ export interface ProfileProps {
 }
 
 /**
- * Profile showing avatar with Stellar address.
+ * The `Profile` component shows an avatar with a Stellar address.
  */
 export const Profile: React.FC<ProfileProps> = ({
   publicAddress,

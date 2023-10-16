@@ -8,7 +8,7 @@ export interface LoaderProps {
 }
 
 /**
- * Loader component color is set in CSS, and the size can also be set in CSS or through the `size` prop.
+ * The loader component color is set in CSS, and the size can also be set in CSS or through the `size` prop.
  */
 export const Loader: React.FC<LoaderProps> = ({ size }: LoaderProps) => {
   const customStyle = {

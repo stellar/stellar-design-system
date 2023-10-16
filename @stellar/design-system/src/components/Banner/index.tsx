@@ -10,7 +10,7 @@ export interface BannerProps {
 }
 
 /**
- * Use banner to display messages at the top of the page, stretching across the whole width. There are five variants `default`, `primary`, `success`, `error`, and `warning`.
+ * Use `banner` to display messages at the top of the page, stretching across the whole width. There are five variants `default`, `primary`, `success`, `error`, and `warning`.
  */
 export const Banner: React.FC<BannerProps> = ({ variant, children }) => (
   <div className={`Banner Banner--${variant}`}>

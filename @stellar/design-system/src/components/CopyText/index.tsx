@@ -30,7 +30,7 @@ export interface CopyTextProps {
 }
 
 /**
- * Use `CopyText` component to copy a string. Done action label can be displayed in a tooltip, by default it will replace component’s label inline. We’re using [react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard) to handle the copy part.
+ * Use the `CopyText` component to copy a string. Done action label can be displayed in a tooltip, by default it will replace the component’s label inline. We’re using [react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard) to handle the copy part.
  */
 export const CopyText: React.FC<CopyTextProps> = ({
   textToCopy,

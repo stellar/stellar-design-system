@@ -1,9 +1,9 @@
 import React from "react";
 import "./styles.scss";
 
-/** Including all valid [input attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes) */
+/** Including all valid [input attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes). */
 export interface RadioButtonProps {
-  /** ID of the radio button should be unique */
+  /** ID of the radio button (should be unique) */
   id: string;
   /** Label of the radio button */
   label: string | React.ReactNode;
@@ -19,7 +19,7 @@ interface Props
 }
 
 /**
- * `RadioButton` component is a form input element, which allows you to select a single value from a group of options for submission. All native HTML `radio` input attributes apply.
+ * The `RadioButton` component is a form input element that allows you to select a single value from a group of options for submission. All native HTML `radio` input attributes apply.
  */
 export const RadioButton: React.FC<Props> = ({
   id,

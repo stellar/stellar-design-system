@@ -14,7 +14,7 @@ interface LayoutComponent {
 }
 
 /**
- * Use `Layout` component’s sub-components, such as `Content`, `Inset`, `Header`, and `Footer`, to build page layouts.
+ * Use the `Layout` component’s sub-components, such as `Content`, `Inset`, `Header`, and `Footer`, to build page layouts.
  */
 export const Layout: LayoutComponent = () => {
   // do nothing
@@ -40,7 +40,7 @@ export interface ContentProps {
 }
 
 /**
- * Page level content of the website (all other content goes in here). It is on the same level as header and footer.
+ * The page level content of the website (all other content goes in here). This content is on the same level as the header and footer.
  */
 export const Content: React.FC<ContentProps> = ({ children }: ContentProps) => (
   <div className="Layout__content">{children}</div>
@@ -83,7 +83,7 @@ const stringToCamelcase = (str: string) =>
     .replace(/\s+/g, "");
 
 /**
- * Header of the website with Stellar logo, project name, and theme switch.
+ * The header of the website with the Stellar logo, project name, and theme switch.
  */
 export const Header: React.FC<HeaderProps> = ({
   projectId,

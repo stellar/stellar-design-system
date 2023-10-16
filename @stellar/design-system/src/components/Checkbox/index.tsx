@@ -3,9 +3,9 @@ import { FieldNote } from "../utils/FieldNote";
 import { Icon } from "../../icons";
 import "./styles.scss";
 
-/** Including all valid [input attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes) */
+/** Including all valid [input attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes). */
 export interface CheckboxProps {
-  /** ID of the checkbox should be unique */
+  /** ID of the checkbox (should be unique) */
   id: string;
   // Note: cannot use "size" here because it's input's native property
   /** Size of the checkbox */
@@ -27,7 +27,7 @@ interface Props
 }
 
 /**
- * `Checkbox` component is a form input element, which allows you to select single values for submission. All native HTML `checkbox` input attributes apply.
+ * The `checkbox` component is a form input element that allows you to select single values for submission. All native HTML `checkbox` input attributes apply.
  */
 export const Checkbox: React.FC<Props> = ({
   id,

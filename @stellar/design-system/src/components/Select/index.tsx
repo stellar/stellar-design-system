@@ -4,9 +4,9 @@ import { FieldNote } from "../utils/FieldNote";
 import { Icon } from "../../icons";
 import "./styles.scss";
 
-/** Including all valid [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attributes) */
+/** Including all valid [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attributes). */
 export interface SelectProps {
-  /** ID of the select should be unique */
+  /** ID of the select (should be unique) */
   id: string;
   // Note: cannot use "size" here because it's input's native property
   /** Size of the select */
@@ -39,7 +39,7 @@ interface Props
 }
 
 /**
- * `Select` component is a form `select` element, which inherits all native HTML `select` element attributes.
+ * The `Select` component is a form `select` element that inherits all native HTML `select` element attributes.
  */
 export const Select: React.FC<Props> = ({
   id,

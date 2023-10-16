@@ -4,7 +4,7 @@ import { Icon } from "../../icons";
 import { FieldNote } from "../utils/FieldNote";
 import "./styles.scss";
 
-/** Including all valid [input attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes) */
+/** Including all valid [input attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes). */
 export interface InputProps {
   /** ID of the input should be unique */
   id: string;
@@ -40,7 +40,7 @@ interface Props
 }
 
 /**
- * `Input` component is a form input element, which inherits all native HTML `input` element attributes.
+ * The `input` component is a form input element that inherits all native HTML `input` element attributes.
  */
 export const Input: React.FC<Props> = ({
   customInput,

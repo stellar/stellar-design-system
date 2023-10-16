@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.scss";
 
 /**
- * Including all valid [anchor element attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attributes)
+ * Including all valid [anchor element attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attributes).
  */
 export interface LinkProps {
   /** Content of the link */
@@ -28,7 +28,7 @@ interface Props
     React.AnchorHTMLAttributes<HTMLAnchorElement> {}
 
 /**
- * `Link` component is a styled HTML anchor (`a`) element. Use `Link` to open links or to navigate to other pages.
+ * The `Link` component is a styled HTML anchor (`a`) element. Use `Link` to open links or to navigate to other pages.
  *
  * `Link` with external `href` (starting with `http(s)` or `//`) will have attributes `rel="noreferrer noopener"` and `target="_blank"` automatically added.
  */

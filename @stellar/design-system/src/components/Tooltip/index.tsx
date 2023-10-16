@@ -3,7 +3,7 @@ import "./styles.scss";
 
 /** */
 export interface TooltipProps {
-  /** Element that shows/hides tooltip */
+  /** Element that shows or hides tooltip */
   triggerEl: JSX.Element;
   /** Content of the tooltip */
   children: React.ReactNode;
@@ -21,14 +21,14 @@ export interface TooltipProps {
     | "bottom-end"
     | "left-start"
     | "left-end";
-  /** Manually show/hide tooltip */
+  /** Manually show or hide tooltip */
   isVisible?: boolean;
   /** Use contrast theme color @defaultValue `true` */
   isContrast?: boolean;
 }
 
 /**
- * Tooltip is used to display info in a bubble. We are using [Floating UI](https://floating-ui.com/) for tooltip positioning.
+ * `Tooltip` is used to display info in a bubble. We are using [Floating UI](https://floating-ui.com/) for tooltip positioning.
  */
 export const Tooltip: React.FC<TooltipProps> = ({
   triggerEl,

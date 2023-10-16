@@ -1,7 +1,7 @@
 import React from "react";
 import { Icon } from "../../icons";
 
-/** Including all valid [button attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attributes) */
+/** Including all valid [button attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attributes). */
 export interface ButtonPresetProps {
   /** Button preset */
   preset: "copy" | "download";
@@ -35,7 +35,8 @@ const presetDetails = {
 };
 
 /**
- * `ButtonPreset` is similar to the {@button Button} component, and is used to trigger an action. There are two presets `copy` and `download`, and two variants for color: `default` and `highlight`.
+ * `ButtonPreset` is similar to the {@button Button} component, and is used to trigger an action. There are two presets: `copy` and `download` and two variants 
+ * for color: `default` and `highlight`.
  */
 export const ButtonPreset: React.FC<Props> = ({
   altText,

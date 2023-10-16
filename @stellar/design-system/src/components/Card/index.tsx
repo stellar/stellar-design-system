@@ -14,7 +14,7 @@ export interface CardProps {
 }
 
 /**
- * Container with flexible dimensions for any type of content.
+ * The `card` container has flexible dimensions for any type of content.
  */
 export const Card: React.FC<CardProps> = ({
   children,

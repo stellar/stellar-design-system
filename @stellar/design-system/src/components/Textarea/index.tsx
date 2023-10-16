@@ -5,7 +5,7 @@ import "./styles.scss";
 
 /** Including all valid [textarea attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attributes) */
 export interface TextareaProps {
-  /** ID of the textarea should be unique */
+  /** ID of the textarea (should be unique) */
   id: string;
   // Note: cannot use "size" here because it's input's native property
   /** Size of the textarea */
@@ -36,7 +36,7 @@ interface Props
 }
 
 /**
- * `Textarea` component is a multi-line text input element, which inherits all native HTML `textarea` element attributes.
+ * The `textarea` component is a multi-line text input element that inherits all native HTML `textarea` element attributes.
  */
 export const Textarea: React.FC<Props> = ({
   id,

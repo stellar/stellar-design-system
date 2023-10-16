@@ -67,7 +67,7 @@ export interface ModalProps {
 }
 
 /**
- * Modal is a dialog window with an overlay background, which is rendered on top of the rest of the website.
+ * `Modal` is a dialog window with an overlay background that is rendered on top of the rest of the website.
  *
  * Modal sub-components `Modal.Heading`, `Modal.Body`, and `Modal.Footer` help structure the modal content.
  */

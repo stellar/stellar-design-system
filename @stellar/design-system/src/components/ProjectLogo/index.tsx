@@ -11,7 +11,7 @@ export interface ProjectLogoProps {
 }
 
 /**
- * `ProjectLogo` with name and link is used in page header.
+ * `ProjectLogo` contains the name of the project and its link and are displayed in the page header.
  */
 export const ProjectLogo: React.FC<ProjectLogoProps> = ({
   title,

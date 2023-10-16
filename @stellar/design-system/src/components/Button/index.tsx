@@ -3,7 +3,7 @@ import { Loader } from "../Loader";
 import "./styles.scss";
 
 /**
- * Including all valid [button attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attributes)
+ * Including all valid [button attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attributes).
  */
 export interface ButtonProps {
   /** Variant of the button */
@@ -39,7 +39,7 @@ interface Props
     React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 /**
- * `Button` is used to trigger an action that is not opening a link (use {@link Link}
+ * `Button` is used to trigger an action that is not opening a link (to trigger an action that opens a link, use {@link Link}
  * instead).
  */
 export const Button: React.FC<Props> = ({
