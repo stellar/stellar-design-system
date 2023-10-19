@@ -166,14 +166,14 @@ strong {
   font-weight: 600;
 }
 
-p {
-  font-size: 1rem;
-}
-
 p,
 ul,
 ol {
   line-height: 1.6;
+}
+
+.container {
+  font-size: 14px;
 }
 
 /* Table */
@@ -251,4 +251,14 @@ nav > .menu__list > li > .menu__list-item-collapsible .menu__link {
 .table-of-contents__link--active,
 .table-of-contents__link:hover {
   color: var(--ifm-menu-color-active);
+}
+
+/* Cards */
+
+.card.padding--lg {
+  padding: 1rem !important;
+}
+
+.card h2 {
+  margin-bottom: 0.75rem;
 }
