@@ -1,10 +1,15 @@
 import { createStellarIdenticon } from "../../helpers/createStellarIdenticon";
 import "./styles.scss";
 
-type AvatarProps = {
+/** */
+export interface AvatarProps {
+  /** Public Stellar address */
   publicAddress: string;
-};
+}
 
+/**
+ * A unique identicon of a public Stellar address. [We’re using stellar-identicon-js](https://github.com/Lobstrco/stellar-identicon-js).
+ */
 export const Avatar: React.FC<AvatarProps> = ({
   publicAddress,
 }: AvatarProps) => {

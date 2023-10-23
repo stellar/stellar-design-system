@@ -1,0 +1,66 @@
+---
+slug: /modal
+description: "A dialog window with an overlay background."
+---
+
+# Modal
+
+<ComponentDescription componentName="Modal" />
+
+## Example
+
+```tsx live
+<PreviewBlock componentName="Modal">
+  <>
+    <Modal onClose={() => {}} parentId="preview-block">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur eius
+        beatae sint dolorem, excepturi quos enim, et ullam suscipit voluptates
+        voluptas accusantium repellendus amet explicabo, iure veritatis aperiam
+        alias molestiae.
+      </p>
+    </Modal>
+
+    <Modal onClose={() => {}} parentId="preview-block">
+      <Modal.Heading>Modal heading</Modal.Heading>
+      <Modal.Body>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur eius
+          beatae sint dolorem, excepturi quos enim, et ullam suscipit voluptates
+          voluptas accusantium repellendus amet explicabo, iure veritatis
+          aperiam alias molestiae.
+        </p>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur eius
+          beatae sint dolorem, excepturi quos enim, et ullam suscipit voluptates
+          voluptas accusantium repellendus amet explicabo, iure veritatis
+          aperiam alias molestiae.
+        </p>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur eius
+          beatae sint dolorem, excepturi quos enim, et ullam suscipit voluptates
+          voluptas accusantium repellendus amet explicabo, iure veritatis
+          aperiam alias molestiae.
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button size="sm" variant="primary">
+          Submit
+        </Button>
+        <Button size="sm" variant="secondary">
+          Cancel
+        </Button>
+      </Modal.Footer>
+    </Modal>
+  </>
+</PreviewBlock>
+```
+
+## Props
+
+<ComponentProps
+  componentName="Modal"
+  relatedType={["ModalHeadingProps", "ModalBodyProps", "ModalFooterProps"]}
+/>

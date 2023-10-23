@@ -14,7 +14,9 @@ interface ModalComponent {
   Footer: React.FC<ModalFooterProps>;
 }
 
-interface ModalHeadingProps {
+/** */
+export interface ModalHeadingProps {
+  /** Content of the modal heading */
   children: string | React.ReactNode;
 }
 
@@ -26,7 +28,9 @@ const ModalHeading: React.FC<ModalHeadingProps> = ({
   </Heading>
 );
 
-interface ModalBodyProps {
+/** */
+export interface ModalBodyProps {
+  /** Content of the modal body */
   children: React.ReactNode;
 }
 
@@ -34,7 +38,9 @@ const ModalBody: React.FC<ModalBodyProps> = ({
   children,
 }: ModalHeadingProps) => <div className="ModalBody">{children}</div>;
 
-interface ModalFooterProps {
+/** */
+export interface ModalFooterProps {
+  /** Content of the modal footer */
   children: React.ReactNode;
 }
 
@@ -42,16 +48,29 @@ const ModalFooter: React.FC<ModalFooterProps> = ({
   children,
 }: ModalHeadingProps) => <div className="ModalFooter">{children}</div>;
 
-interface ModalProps {
+/** */
+export interface ModalProps {
+  /** ID of the modal parent (affects the position of the modal) @defaultValue root */
   parentId?: string;
+  /** State to show or hide the modal */
   visible: boolean;
+  /** Function to handle modal closed action */
   onClose: () => void;
+  /** Don’t allow window scrolling when modal is visible @defaultValue `true` */
   disableWindowScrollWhenOpened?: boolean;
+  /** Offset top position of the modal */
   offsetTop?: string;
+  /** Align modal to the bottom on small screens */
   alignToBottom?: boolean;
+  /** Content of the modal */
   children: React.ReactNode;
 }
 
+/**
+ * `Modal` is a dialog window with an overlay background that is rendered on top of the rest of the website.
+ *
+ * Modal sub-components `Modal.Heading`, `Modal.Body`, and `Modal.Footer` help structure the modal content.
+ */
 export const Modal: React.FC<ModalProps> & ModalComponent = ({
   parentId = "root",
   visible,

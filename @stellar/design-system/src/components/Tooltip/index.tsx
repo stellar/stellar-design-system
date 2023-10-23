@@ -1,14 +1,35 @@
-import { Floater, FloaterPlacement } from "../Floater";
+import { Floater } from "../Floater";
 import "./styles.scss";
 
-interface TooltipProps {
+/** */
+export interface TooltipProps {
+  /** Element that shows or hides tooltip */
   triggerEl: JSX.Element;
+  /** Content of the tooltip */
   children: React.ReactNode;
-  placement?: FloaterPlacement;
+  /** Placement of tooltip relative to the trigger element @defaultValue `right` */
+  placement?:
+    | "top"
+    | "right"
+    | "bottom"
+    | "left"
+    | "top-start"
+    | "top-end"
+    | "right-start"
+    | "right-end"
+    | "bottom-start"
+    | "bottom-end"
+    | "left-start"
+    | "left-end";
+  /** Manually show or hide tooltip */
   isVisible?: boolean;
+  /** Use contrast theme color @defaultValue `true` */
   isContrast?: boolean;
 }
 
+/**
+ * `Tooltip` is used to display info in a bubble. We are using [Floating UI](https://floating-ui.com/) for tooltip positioning.
+ */
 export const Tooltip: React.FC<TooltipProps> = ({
   triggerEl,
   children,

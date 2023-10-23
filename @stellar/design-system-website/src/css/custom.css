@@ -1,0 +1,264 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* Adding Stellar Design System styles */
+@import "@stellar/design-system/build/styles.min.css";
+
+/* You can override the default Infima variables here. */
+:root {
+  /* --color-purple-60 */
+  --ifm-color-primary: #6e56cf;
+  /* --color-purple-70 */
+  --ifm-color-primary-dark: #5746af;
+  /* --color-purple-80 */
+  --ifm-color-primary-darker: #20134b;
+  /* --color-purple-80 */
+  --ifm-color-primary-darkest: #20134b;
+  /* --color-purple-50 */
+  --ifm-color-primary-light: #aa99ec;
+  /* --color-purple-50 */
+  --ifm-color-primary-lighter: #aa99ec;
+  /* --color-purple-40 */
+  --ifm-color-primary-lightest: #e4defc;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* --color-gray-00 */
+  --ifm-background-color: #ffffff;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-footer-background-color: #ffffff;
+  /* --color-gray-30 */
+  --ifm-hr-background-color: #eeedef;
+  --ifm-toc-border-color: #eeedef;
+
+  --ifm-font-family-base: "Inter", sans-serif;
+  --ifm-font-family-monospace: "Roboto Mono", monospace;
+
+  /* --color-gray-70 */
+  --ifm-menu-color: #6f6e77;
+  /* --color-gray-90 */
+  --ifm-menu-color-active: #000000;
+  --ifm-menu-color-background-active: transparent;
+  --ifm-menu-color-background-hover: transparent;
+
+  /* --color-gray-70 */
+  --ifm-font-color-base: #6f6e77;
+
+  /* Playground */
+  /* --color-gray-00 */
+  --ifm-pg-background: #ffffff;
+  /* --color-gray-30 */
+  --ifm-pg-background-dot: #eeedef;
+  /* --color-gray-30 */
+  --ifm-pg-cta-background: #eeedef;
+  /* --color-gray-90 */
+  --ifm-pg-cta-color: #000000;
+
+  /* Icons and logos */
+  /* --color-gray-20 */
+  --ifm-sds-icon-bg: #f4f2f4;
+  /* --color-gray-80 */
+  --ifm-sds-icon-fill: #1a1523;
+  /* --color-gray-70 */
+  --ifm-sds-icon-text: #6f6e77;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"]:root {
+  /* --color-purple-60 */
+  --ifm-color-primary: #7c66dc;
+  /* --color-purple-70 */
+  --ifm-color-primary-dark: #9e8cfc;
+  /* --color-purple-80 */
+  --ifm-color-primary-darker: #f1eefe;
+  /* --color-purple-80 */
+  --ifm-color-primary-darkest: #f1eefe;
+  /* --color-purple-50 */
+  --ifm-color-primary-light: #634cc9;
+  /* --color-purple-50 */
+  --ifm-color-primary-lighter: #634cc9;
+  /* --color-purple-40 */
+  --ifm-color-primary-lightest: #32275f;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* --color-gray-00 */
+  --ifm-background-color: #000000;
+  --ifm-navbar-background-color: #000000;
+  --ifm-footer-background-color: #000000;
+  /* --color-gray-30 */
+  --ifm-hr-background-color: #28282c;
+  --ifm-toc-border-color: #28282c;
+
+  /* --color-gray-70 */
+  --ifm-menu-color: #a09fa6;
+  /* --color-gray-90 */
+  --ifm-menu-color-active: #ffffff;
+
+  /* --color-gray-70 */
+  --ifm-font-color-base: #a09fa6;
+
+  /* Playground */
+  /* --color-gray-00 */
+  --ifm-pg-background: #000000;
+  /* --color-gray-30 */
+  --ifm-pg-background-dot: #28282c;
+  /* --color-gray-30 */
+  --ifm-pg-cta-background: #28282c;
+  /* --color-gray-90 */
+  --ifm-pg-cta-color: #ffffff;
+
+  /* Icons and logos */
+  /* --color-gray-20 */
+  --ifm-sds-icon-bg: #1c1c1f;
+  /* --color-gray-80 */
+  --ifm-sds-icon-fill: #ededef;
+  /* --color-gray-70 */
+  --ifm-sds-icon-text: #a09fa6;
+}
+
+/* Typography */
+h1 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  line-height: 1.625rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+h5 {
+  font-size: 1.125rem;
+  line-height: 1.625rem;
+}
+
+h6 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  color: var(--ifm-menu-color-active);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+  color: var(--ifm-menu-color-active);
+}
+
+b,
+strong {
+  font-weight: 600;
+}
+
+p,
+ul,
+ol {
+  line-height: 1.6;
+}
+
+.container {
+  font-size: 14px;
+}
+
+/* Table */
+table {
+  display: table;
+  min-width: 100%;
+}
+
+/* Header */
+.navbar {
+  border-bottom: 1px solid var(--ifm-hr-background-color);
+  box-shadow: none;
+}
+
+.navbar__brand {
+  gap: 0.75rem;
+}
+
+.navbar__logo {
+  margin: 0;
+  height: 1.5rem;
+}
+
+.navbar__title {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.625rem;
+  line-height: 1rem;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary);
+  border: 1px solid var(--ifm-color-primary);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
+[data-theme="dark"] .navbar__logo {
+  filter: invert(100%);
+}
+
+.navbar-sidebar__brand {
+  box-shadow: none;
+}
+
+/* Menu (left side) */
+.menu__link {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.menu__link:hover {
+  color: var(--ifm-menu-color-active);
+}
+
+.menu__link--sublist-caret:after,
+.menu__caret:before {
+  background-size: 1.2rem 1.2rem;
+}
+
+nav > .menu__list > li > .menu__list-item-collapsible .menu__link {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* TOC (right side) */
+.table-of-contents {
+  font-weight: 500;
+}
+
+.table-of-contents__link {
+  color: var(--ifm-menu-color);
+}
+
+.table-of-contents__link--active,
+.table-of-contents__link:hover {
+  color: var(--ifm-menu-color-active);
+}
+
+/* Cards */
+
+.card.padding--lg {
+  padding: 1rem !important;
+}
+
+.card h2 {
+  margin-bottom: 0.75rem;
+}

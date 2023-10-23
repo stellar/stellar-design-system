@@ -1,0 +1,28 @@
+---
+slug: /asset-icon
+description: "Asset image displayed in a circle."
+---
+
+# Asset icon
+
+<ComponentDescription componentName="AssetIcon" />
+
+## Example
+
+```tsx live
+<PreviewBlock componentName="AssetIcon">
+  <AssetIcon
+    source={[
+      {
+        altText: "XLM",
+        image: "https://cryptologos.cc/logos/stellar-xlm-logo.svg?v=024",
+        imageSize: "80%",
+      },
+    ]}
+  />
+</PreviewBlock>
+```
+
+## Props
+
+<ComponentProps componentName="AssetIcon" relatedType={["AssetIconSource"]} />

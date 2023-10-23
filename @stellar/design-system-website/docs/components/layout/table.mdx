@@ -1,0 +1,70 @@
+---
+slug: /table
+description: "Display data in a table."
+---
+
+# Table
+
+<ComponentDescription componentName="Table" />
+
+## Example
+
+```tsx live
+<PreviewBlock componentName="Table">
+  <Table
+    columnLabels={[
+      {
+        id: "field1",
+        label: "Col 1",
+      },
+      {
+        id: "field2",
+        label: "Col 2",
+      },
+      {
+        id: "field3",
+        label: "Col 3",
+      },
+    ]}
+    data={[
+      {
+        id: "a",
+        field1: "FGI74TFO2MJ",
+        field2: "$90.28",
+        field3: "193350",
+      },
+      {
+        id: "b",
+        field1: "DFR18CMY3BS",
+        field2: "$50.52",
+        field3: "7724",
+      },
+      {
+        id: "c",
+        field1: "MVX93TWV8HZ",
+        field2: "$51.43",
+        field3: "3685",
+      },
+      {
+        id: "d",
+        field1: "NQD83XCT1PE",
+        field2: "$84.28",
+        field3: "27-392",
+      },
+    ]}
+    renderItemRow={(item) => (
+      <>
+        <td>{item.field1}</td>
+        <td>{item.field2}</td>
+        <td>{item.field3}</td>
+      </>
+    )}
+    breakpoint={400}
+    pageSize={2}
+  />
+</PreviewBlock>
+```
+
+## Props
+
+<ComponentProps componentName="Table" relatedType={["TableColumnLabel"]} />

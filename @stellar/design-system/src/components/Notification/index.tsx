@@ -2,14 +2,28 @@ import React from "react";
 import { Icon } from "../../icons";
 import "./styles.scss";
 
-interface NotificationProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
+/** */
+export interface NotificationProps {
+  /** Variant of the notification */
   variant: "primary" | "secondary" | "success" | "error" | "warning";
+  /** Notification title */
   title: string;
+  /** Notification icon @defaultValue `<Icon.Info />` */
   icon?: React.ReactNode;
+  /** Notification message */
   children?: string | React.ReactNode;
 }
 
-export const Notification: React.FC<NotificationProps> = ({
+interface Props
+  extends NotificationProps,
+    React.HtmlHTMLAttributes<HTMLDivElement> {
+  title: string;
+}
+
+/**
+ * Use `notification` to draw a user's attention. There are five variants `primary`, `secondary`, `success`, `error`, and `warning`.
+ */
+export const Notification: React.FC<Props> = ({
   variant,
   title,
   icon,

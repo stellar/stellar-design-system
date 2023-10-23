@@ -56,7 +56,8 @@
   }
 }
 
-.Paragraph {
+p.Paragraph,
+div.Paragraph {
   font-family: var(--font-family-base);
   font-weight: var(--font-weight-regular);
   letter-spacing: 0;

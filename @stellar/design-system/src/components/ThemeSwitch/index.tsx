@@ -11,11 +11,13 @@ export enum ThemeMode {
 interface ThemeSwitchProps {
   storageKeyId?: string;
   onActionEnd?: (isDarkMode: boolean) => void;
+  disableSetThemeOnLoad?: boolean;
 }
 
 export const ThemeSwitch = ({
   storageKeyId,
   onActionEnd,
+  disableSetThemeOnLoad,
 }: ThemeSwitchProps) => {
   const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -35,14 +37,22 @@ export const ThemeSwitch = ({
 
   // Set theme on page load
   useEffect(() => {
+    if (disableSetThemeOnLoad) {
+      return;
+    }
+
     const currentMode = getCurrentMode();
     const _isDarkMode = Boolean(currentMode === ThemeMode.DARK);
 
     setIsDarkMode(_isDarkMode);
-  }, [getCurrentMode]);
+  }, [disableSetThemeOnLoad, getCurrentMode]);
 
   // Set body class when value changes
   useEffect(() => {
+    if (disableSetThemeOnLoad) {
+      return;
+    }
+
     if (isDarkMode) {
       document.body.classList.remove(ThemeMode.LIGHT);
       document.body.classList.add(ThemeMode.DARK);
@@ -50,7 +60,7 @@ export const ThemeSwitch = ({
       document.body.classList.remove(ThemeMode.DARK);
       document.body.classList.add(ThemeMode.LIGHT);
     }
-  }, [isDarkMode]);
+  }, [disableSetThemeOnLoad, isDarkMode]);
 
   const handleSwitch = () => {
     const _isDarkMode = !isDarkMode;

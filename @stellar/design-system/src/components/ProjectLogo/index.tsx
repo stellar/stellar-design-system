@@ -2,11 +2,17 @@ import React from "react";
 import "./styles.scss";
 import { Logo } from "../../logos";
 
-interface ProjectLogoProps {
+/** */
+export interface ProjectLogoProps {
+  /** Project’s name */
   title?: string;
+  /** Project’s website link @defaultValue `/` */
   link?: string;
 }
 
+/**
+ * `ProjectLogo` contains the name of the project and its link and are displayed in the page header.
+ */
 export const ProjectLogo: React.FC<ProjectLogoProps> = ({
   title,
   link = "/",

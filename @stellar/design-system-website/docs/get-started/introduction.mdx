@@ -1,0 +1,112 @@
+---
+slug: /
+sidebar_position: 1
+---
+
+# Introduction
+
+Stellar Design System (SDS) is an opinionated React component library (we hope
+it will grow into a full-featured design system in the future) used in the Stellar
+Development Foundation’s web projects. It's meant to be used internally to keep
+our web products consistent.
+
+## Current version
+
+<a href="https://www.npmjs.com/package/@stellar/design-system">
+  <img
+    src="https://img.shields.io/npm/v/@stellar/design-system.svg?style=flat-square"
+    alt="npm version"
+  />
+</a>
+
+## Tech stack
+
+- TypeScript
+- React for UI
+- Sass for CSS styling
+- Yarn
+- Webpack
+
+## Get started
+
+Install SDS by using the package manager of your choice.
+
+```bash npm2yarn
+npm install @stellar/design-system
+```
+
+Add Google Fonts (`Inter Tight`, `Inter`, and `Roboto Mono`) to the `index.html`
+file.
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter+Tight&family=Inter:wght@400;500;600&family=Roboto+Mono&display=swap"
+  rel="stylesheet"
+/>
+```
+
+Add the main CSS file to your project (for example, the main `index` file of
+your React project).
+
+```javascript
+import "@stellar/design-system/build/styles.min.css";
+```
+
+Import components in your project.
+
+```javascript
+import { Button, Input } from "@stellar/design-system";
+```
+
+## Local development
+
+The design system repo has two parts:
+
+- `@stellar/design-system` - everything for the design system
+  ([repo](https://github.com/stellar/stellar-design-system/tree/main/%40stellar/design-system))
+- `@stellar/design-system-website` - website for the design system (what you are
+  looking at now)
+  ([repo](https://github.com/stellar/stellar-design-system/tree/main/%40stellar/design-system-website))
+
+To run Stellar Design System locally:
+
+- Clone the repo
+
+```bash
+git clone git@github.com:stellar/stellar-design-system.git
+```
+
+- Install dependencies
+
+```bash npm2yarn
+npm install
+```
+
+### Scripts to develop and build locally
+
+- `build:sds` - build Stellar Design System (sds) project only
+- `build:sds-web` - build Stellar Design System website (sds-web) project only
+- `build` - build both projects
+- `start:sds` - start sds project for local development
+- `start:sds-web` - start sds-web project for local development
+- `clean` - delete node_modules and build directories in the whole repo
+
+:::info
+
+You need to run each `start` command in its own window or tab.
+
+:::
+
+## Developer notes
+
+- Use the Stellar Design System components "as is", don’t modify existing ones to fit
+  your needs if the component doesn’t allow it.
+- If a component doesn’t exist, it’s okay to create it locally for your project
+  (we’ll keep adding more components to SDS as we go).
+- If you are creating a component locally, use only color variables available in
+  the SDS palette (in `theme.scss`). This is very important for the light and
+  dark modes to work. When in doubt, please check with the Design team.
+- `styled-components` are not currently supported, but you can use them as
+  wrappers/containers for SDS components.

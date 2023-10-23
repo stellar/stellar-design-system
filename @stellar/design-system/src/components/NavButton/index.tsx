@@ -1,15 +1,25 @@
 import React from "react";
 import "./styles.scss";
 
-interface NavButtonProps {
+/** */
+export interface NavButtonProps {
+  /** ID of the component (should be unique) */
   id: string;
+  /** Title or label to show on hover */
   title: string;
+  /** Action to trigger on click */
   onClick: () => void;
+  /** Icon of the component */
   icon: React.ReactNode;
+  /** Disable the component */
   disabled?: boolean;
+  /** Show border around the component */
   showBorder?: boolean;
 }
 
+/**
+ * `NavButton` triggers actions like toggling dark and light mode, closing a modal, and toggling side navigation.
+ */
 export const NavButton: React.FC<NavButtonProps> = ({
   id,
   title,
@@ -17,7 +27,7 @@ export const NavButton: React.FC<NavButtonProps> = ({
   icon,
   disabled,
   showBorder,
-}) => (
+}: NavButtonProps) => (
   <button
     id={id}
     className={`NavButton ${showBorder ? "NavButton--border" : ""}`}

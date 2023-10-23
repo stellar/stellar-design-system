@@ -1,18 +1,38 @@
 import React from "react";
 import "./styles.scss";
 
-interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  children: string | React.ReactNode;
+/**
+ * Including all valid [anchor element attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attributes).
+ */
+export interface LinkProps {
+  /** Content of the link */
+  children?: string | React.ReactNode;
+  /** Variant of the link @defaultValue `primary` */
   variant?: "primary" | "secondary";
+  /** Size of the link, will inherit parent size if not set */
   size?: "md" | "sm" | "xs";
+  /** Icon element */
   icon?: React.ReactNode;
+  /** Position of the icon @defaultValue `right` */
   iconPosition?: "left" | "right";
+  /** Disable the link */
   isDisabled?: boolean;
+  /** Underline the link */
   isUnderline?: boolean;
+  /** Make the link uppercase */
   isUppercase?: boolean;
 }
 
-export const Link: React.FC<LinkProps> = ({
+interface Props
+  extends LinkProps,
+    React.AnchorHTMLAttributes<HTMLAnchorElement> {}
+
+/**
+ * The `Link` component is a styled HTML anchor (`a`) element. Use `Link` to open links or to navigate to other pages.
+ *
+ * `Link` with external `href` (starting with `http(s)` or `//`) will have attributes `rel="noreferrer noopener"` and `target="_blank"` automatically added.
+ */
+export const Link: React.FC<Props> = ({
   children,
   variant = "primary",
   size,

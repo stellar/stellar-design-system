@@ -1,13 +1,21 @@
 import React from "react";
 import "./styles.scss";
 
-interface CardProps {
+/** */
+export interface CardProps {
+  /** Card content */
   children: React.ReactNode;
+  /** Variant of the card @defaultValue `primary` */
   variant?: "primary" | "secondary";
+  /** Remove card padding */
   noPadding?: boolean;
+  /** Card border radius @defaultValue `md` */
   borderRadiusSize?: "sm" | "md";
 }
 
+/**
+ * The `card` container has flexible dimensions for any type of content.
+ */
 export const Card: React.FC<CardProps> = ({
   children,
   variant = "primary",

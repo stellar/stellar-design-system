@@ -119,13 +119,7 @@
   --color-red-80: #feecee;
 }
 
-// =============================================================================
-// Setting themes
-// =============================================================================
-:root {
-  // Palette
-  @include theme-dark;
-
+@mixin theme-common {
   // Font size
   --font-size: 16px;
   --font-size-secondary: 14px;
@@ -160,16 +154,17 @@
   --Avatar-image-size: 100%;
 }
 
+// =============================================================================
+// Setting themes
+// =============================================================================
+:root {
+  @include theme-common;
+}
+
 .sds-theme-light {
   @include theme-light;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    @include theme-light;
-  }
-
-  .sds-theme-dark {
-    @include theme-dark;
-  }
+.sds-theme-dark {
+  @include theme-dark;
 }

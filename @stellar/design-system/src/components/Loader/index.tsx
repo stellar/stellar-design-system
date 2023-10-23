@@ -1,10 +1,15 @@
 import React from "react";
 import "./styles.scss";
 
-interface LoaderProps {
+/** */
+export interface LoaderProps {
+  /** Set custom size of the component */
   size?: string;
 }
 
+/**
+ * The loader component color is set in CSS, and the size can also be set in CSS or through the `size` prop.
+ */
 export const Loader: React.FC<LoaderProps> = ({ size }: LoaderProps) => {
   const customStyle = {
     ...(size ? { "--Loader-size": size } : {}),

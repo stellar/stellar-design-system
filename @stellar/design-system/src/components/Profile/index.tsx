@@ -3,19 +3,29 @@ import { CopyText } from "../CopyText";
 import { Icon } from "../../icons";
 import "./styles.scss";
 
-// TODO: add copy functionality
-
-type ProfileProps = {
+/** */
+export interface ProfileProps {
+  /** Public Stellar address */
   publicAddress: string;
+  /** Size of the component */
   size: "md" | "sm" | "xs";
+  /** Federated address to show in place of Stellar address */
   federatedAddress?: string;
+  /** Shorten Stellar or federated address */
   isShort?: boolean;
+  /** Adding `onClick` prop will turn component into a button */
   onClick?: () => void;
+  /** Adding href prop will turn component into a link */
   href?: string;
+  /** Hide the avatar */
   hideAvatar?: boolean;
+  /** Add copy address functionality */
   isCopy?: boolean;
-};
+}
 
+/**
+ * The `Profile` component shows an avatar with a Stellar address.
+ */
 export const Profile: React.FC<ProfileProps> = ({
   publicAddress,
   size,
