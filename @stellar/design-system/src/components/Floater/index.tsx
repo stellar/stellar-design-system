@@ -12,6 +12,7 @@ import {
   shift,
   Placement,
 } from "@floating-ui/dom";
+
 import "./styles.scss";
 
 export type FloaterPlacement = Placement;
