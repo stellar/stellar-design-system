@@ -144,12 +144,14 @@ export const Floater: React.FC<FloaterProps> = ({
 
   return (
     <div className="Floater" ref={parentRef}>
-      {isStatic
-        ? triggerEl
-        : cloneElement(triggerEl, {
-            // Add floater click action
-            onClick: toggleFloater,
-          })}
+      <>
+        {isStatic
+          ? triggerEl
+          : cloneElement(triggerEl, {
+              // Add floater click action
+              onClick: toggleFloater,
+            })}
+      </>
       <div ref={floaterRef} className={`Floater__content ${additionalClasses}`}>
         {children}
       </div>
