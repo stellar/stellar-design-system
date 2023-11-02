@@ -61,6 +61,7 @@ import { ReactComponent as Database } from "./assets/icons/database.svg";
 import { ReactComponent as DeleteForever } from "./assets/icons/delete-forever.svg";
 import { ReactComponent as Delete } from "./assets/icons/delete.svg";
 import { ReactComponent as DeployedCode } from "./assets/icons/deployed-code.svg";
+import { ReactComponent as Discord } from "./assets/icons/discord.svg";
 import { ReactComponent as Done } from "./assets/icons/done.svg";
 import { ReactComponent as Dot } from "./assets/icons/dot.svg";
 import { ReactComponent as Download } from "./assets/icons/download.svg";
@@ -213,6 +214,7 @@ export const Icon = {
   DeleteForever,
   Delete,
   DeployedCode,
+  Discord,
   Done,
   Dot,
   Download,

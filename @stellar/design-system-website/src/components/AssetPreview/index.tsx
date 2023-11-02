@@ -78,6 +78,7 @@ export const AssetPreview = ({ type }: { type: "icon" | "logo" }) => {
         <Icon.DeleteForever />,
         <Icon.Delete />,
         <Icon.DeployedCode />,
+        <Icon.Discord />,
         <Icon.Done />,
         <Icon.Dot />,
         <Icon.Download />,
