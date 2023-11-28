@@ -19,17 +19,22 @@ export const ThemeSwitch = ({
   onActionEnd,
   disableSetThemeOnLoad,
 }: ThemeSwitchProps) => {
-  const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
+  const isBrowser =
+    typeof window !== "undefined" && typeof localStorage !== "undefined";
+  const prefersDarkMode = isBrowser
+    ? window.matchMedia("(prefers-color-scheme: dark)")
+    : undefined;
 
   const getCurrentMode = useCallback(() => {
-    const modeSaved = storageKeyId ? localStorage.getItem(storageKeyId) : null;
+    const modeSaved =
+      isBrowser && storageKeyId ? localStorage.getItem(storageKeyId) : null;
 
     if (modeSaved) {
       return modeSaved;
     }
 
-    return prefersDarkMode.matches ? ThemeMode.DARK : ThemeMode.LIGHT;
-  }, [storageKeyId, prefersDarkMode.matches]);
+    return prefersDarkMode?.matches ? ThemeMode.DARK : ThemeMode.LIGHT;
+  }, [storageKeyId, prefersDarkMode?.matches, isBrowser]);
 
   const [isDarkMode, setIsDarkMode] = useState(
     Boolean(getCurrentMode() === ThemeMode.DARK),
@@ -67,7 +72,7 @@ export const ThemeSwitch = ({
 
     setIsDarkMode(_isDarkMode);
 
-    if (storageKeyId) {
+    if (isBrowser && storageKeyId) {
       if (_isDarkMode) {
         localStorage.setItem(storageKeyId, ThemeMode.DARK);
       } else {
