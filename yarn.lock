@@ -4745,11 +4745,6 @@ configstore@^5.0.1:
     write-file-atomic "^3.0.0"
     xdg-basedir "^4.0.0"
 
-configurable-date-input-polyfill@^3.1.5:
-  version "3.1.5"
-  resolved "https://registry.yarnpkg.com/configurable-date-input-polyfill/-/configurable-date-input-polyfill-3.1.5.tgz#97b03a20862e8222272c1572df9593748b3bb288"
-  integrity sha512-N077aVhmGm6naVPdSyOes+YrFds4CBrCBcWN4zq52Fz7vzQB62iGdkHRNSQE3KFjtMbSMoUrWzbh2oWHXf39og==
-
 confusing-browser-globals@^1.0.11:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/confusing-browser-globals/-/confusing-browser-globals-1.0.11.tgz#ae40e9b57cdd3915408a2805ebd3a5585608dc81"
