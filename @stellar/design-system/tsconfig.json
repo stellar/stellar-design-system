@@ -12,5 +12,5 @@
     "jsx": "react-jsx"
   },
   "include": ["src"],
-  "exclude": ["node_modules", "build", "src/entry.ts"]
+  "exclude": ["node_modules", "build", "src/entry.ts", "rollup.config.js"]
 }
