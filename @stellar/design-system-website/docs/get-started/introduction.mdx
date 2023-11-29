@@ -6,9 +6,9 @@ sidebar_position: 1
 # Introduction
 
 Stellar Design System (SDS) is an opinionated React component library (we hope
-it will grow into a full-featured design system in the future) used in the Stellar
-Development Foundation’s web projects. It's meant to be used internally to keep
-our web products consistent.
+it will grow into a full-featured design system in the future) used in the
+Stellar Development Foundation’s web projects. It's meant to be used internally
+to keep our web products consistent.
 
 ## Current version
 
@@ -25,7 +25,7 @@ our web products consistent.
 - React for UI
 - Sass for CSS styling
 - Yarn
-- Webpack
+- Rollup
 
 ## Get started
 
@@ -36,7 +36,7 @@ npm install @stellar/design-system
 ```
 
 Add Google Fonts (`Inter Tight`, `Inter`, and `Roboto Mono`) to the `index.html`
-file.
+file or CSS/styles file.
 
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,6 +45,10 @@ file.
   href="https://fonts.googleapis.com/css2?family=Inter+Tight&family=Inter:wght@400;500;600&family=Roboto+Mono&display=swap"
   rel="stylesheet"
 />
+```
+
+```css
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight&family=Inter:wght@400;500;600&family=Roboto+Mono&display=swap");
 ```
 
 Add the main CSS file to your project (for example, the main `index` file of
@@ -101,8 +105,8 @@ You need to run each `start` command in its own window or tab.
 
 ## Developer notes
 
-- Use the Stellar Design System components "as is", don’t modify existing ones to fit
-  your needs if the component doesn’t allow it.
+- Use the Stellar Design System components "as is", don’t modify existing ones
+  to fit your needs if the component doesn’t allow it.
 - If a component doesn’t exist, it’s okay to create it locally for your project
   (we’ll keep adding more components to SDS as we go).
 - If you are creating a component locally, use only color variables available in

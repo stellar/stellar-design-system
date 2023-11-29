@@ -1,7 +1,7 @@
 # Stellar Design System Guide
 
 This document highlights the overall file structure of the Stellar Design System
-project, along with some guidelines of creating components and naming to keep
+project, along with some guidelines for creating components and naming to keep
 everything as consistent as possible.
 
 ## File structure overview
@@ -211,14 +211,15 @@ Global types go here.
 
 ## `entry.ts`
 
-Main project file used to generate distribution file in Webpack. It is separated
-from `index.ts` file because we don’t want to validate or compile `entry.ts` (it
-can include external files).
+Main project file used to generate distribution files in Rollup (we generate
+separate ESM `build/index.esm.js` and CJS `build/index.js` modules to support
+server-side rendering). It is separated from `index.ts` file because we don’t
+want to validate or compile `entry.ts` (it can include external files).
 
 ```javascript
-import "configurable-date-input-polyfill";
+import "./normalize.scss";
 import "./global.scss";
-import "./fonts.scss";
+import "./theme.scss";
 
 export * from "./index";
 ```
