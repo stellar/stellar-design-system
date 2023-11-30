@@ -1,17 +1,25 @@
 import React, { useState } from "react";
-import "./styles.css";
 import { Select } from "@stellar/design-system";
+import "./styles.css";
 
 export const LOCAL_STORAGE_COLOR_PALETTE_THEME = "sdsColorPaletteTheme";
 export const COLOR_PALETTE_THEME_CHANGE_EVENT =
   "sdsColorPaletteThemeChangeEvent";
+export const isBrowser =
+  typeof localStorage !== "undefined" && typeof document !== "undefined";
 
 export const ColorPaletteThemeSwitcher = () => {
   const [currentTheme, setCurrentTheme] = useState(
-    localStorage.getItem(LOCAL_STORAGE_COLOR_PALETTE_THEME) || "light",
+    isBrowser
+      ? localStorage.getItem(LOCAL_STORAGE_COLOR_PALETTE_THEME) || "light"
+      : null,
   );
 
   const handleThemeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    if (!isBrowser) {
+      return;
+    }
+
     const newTheme = event.target.value;
 
     localStorage.setItem(LOCAL_STORAGE_COLOR_PALETTE_THEME, newTheme);

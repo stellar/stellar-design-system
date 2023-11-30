@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   COLOR_PALETTE_THEME_CHANGE_EVENT,
   LOCAL_STORAGE_COLOR_PALETTE_THEME,
+  isBrowser,
 } from "../ColorPaletteThemeSwitcher";
 import "./styles.css";
 
@@ -15,7 +16,9 @@ export const ColorPalette = ({
   }[];
 }) => {
   const [theme, setTheme] = useState<string>(
-    localStorage.getItem(LOCAL_STORAGE_COLOR_PALETTE_THEME) || "light",
+    isBrowser
+      ? localStorage.getItem(LOCAL_STORAGE_COLOR_PALETTE_THEME) || "light"
+      : null,
   );
 
   useEffect(() => {
