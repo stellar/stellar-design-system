@@ -1,0 +1,14 @@
+.ColorPaletteThemeSwitcher {
+  background-color: transparent !important;
+}
+
+.ColorPaletteThemeSwitcher .Select {
+  --Select-color-background: var(--sds-select-color-background);
+  --Select-color-background-option: var(--sds-select-color-background-option);
+  --Select-color-border: var(--sds-select-color-border);
+  --Select-color-border-hover: var(--sds-select-color-border-hover);
+  --Select-color-border-focus: var(--sds-select-color-border-focus);
+  --Select-color-text: var(--sds-select-color-text);
+
+  max-width: 10rem;
+}

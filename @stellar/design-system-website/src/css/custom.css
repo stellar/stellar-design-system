@@ -64,6 +64,18 @@
   --ifm-sds-icon-fill: #1a1523;
   /* --color-gray-70 */
   --ifm-sds-icon-text: #6f6e77;
+
+  /* Text colors */
+  --clr-heading: #6f6f6f;
+  --clr-text-secondary: #8f8f8f;
+
+  /* Select */
+  --sds-select-color-background: #ffffff;
+  --sds-select-color-background-option: #ffffff;
+  --sds-select-color-border: #eeedef;
+  --sds-select-color-border-hover: #e9e8ea;
+  --sds-select-color-border-focus: #c8c7cb;
+  --sds-select-color-text: #1a1523;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -117,9 +129,30 @@
   --ifm-sds-icon-fill: #ededef;
   /* --color-gray-70 */
   --ifm-sds-icon-text: #a09fa6;
+
+  /* Text colors */
+  --clr-heading: #a0a0a0;
+  --clr-text-secondary: #707070;
+
+  /* Select */
+  --sds-select-color-background: #000000;
+  --sds-select-color-background-option: #000000;
+  --sds-select-color-border: #28282c;
+  --sds-select-color-border-hover: #2e2e32;
+  --sds-select-color-border-focus: #706f78;
+  --sds-select-color-text: #ededef;
 }
 
 /* Typography */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+  color: var(--ifm-menu-color-active);
+}
+
 h1 {
   font-size: 2rem;
   line-height: 2.5rem;
@@ -133,31 +166,25 @@ h2 {
 h3 {
   font-size: 1.5rem;
   line-height: 2rem;
+  color: var(--clr-heading);
 }
 
 h4 {
   font-size: 1.25rem;
   line-height: 1.75rem;
+  color: var(--clr-heading);
 }
 
 h5 {
   font-size: 1.125rem;
   line-height: 1.625rem;
+  color: var(--clr-heading);
 }
 
 h6 {
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 600;
-  color: var(--ifm-menu-color-active);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-weight: 500;
   color: var(--ifm-menu-color-active);
 }
 

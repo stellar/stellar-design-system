@@ -23,7 +23,7 @@
 }
 
 .AssetPreview__item__icon svg {
-  width: auto;
+  width: 100%;
   height: 1.5rem;
 }
 

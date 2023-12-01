@@ -1,0 +1,33 @@
+.ColorPalette {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5.75rem, 1fr));
+  gap: 0.5rem;
+}
+
+.ColorPalette__color {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.625rem;
+  font-weight: 600;
+  line-height: 1rem;
+  text-transform: uppercase;
+
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+}
+
+.ColorPalette__color__box {
+  height: 3rem;
+  background-color: var(--ColorPalette-color);
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.ColorPalette__color__name {
+  color: var(--clr-heading);
+}
+
+.ColorPalette__color__hex {
+  color: var(--clr-text-secondary);
+}
