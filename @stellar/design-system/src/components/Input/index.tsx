@@ -128,6 +128,7 @@ export const Input: React.FC<Props> = ({
           <div className="Input__side-element">
             <button
               className="PasswordMaskToggle"
+              type="button"
               onClick={(event) => {
                 event?.preventDefault();
                 setIsPasswordMasked(!isPasswordMasked);
