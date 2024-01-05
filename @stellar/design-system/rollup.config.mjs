@@ -45,7 +45,12 @@ export default {
       plugins: [postcssPresetEnv()],
       minimize: true,
     }),
-    url(),
+    url({
+      destDir: "build/assets/",
+      limit: 0,
+      fileName: "[dirname][name][extname]",
+      include: ["**/*.svg", "**/*.png", "**/*.gif", "**/*.jpg", "**/*.jpeg"],
+    }),
     // options are in svgr.config.js
     svgr(),
   ],
