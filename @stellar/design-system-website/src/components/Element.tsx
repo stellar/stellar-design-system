@@ -1,9 +1,10 @@
-import React, { Fragment, createElement } from "react";
+import React from "react";
 import Link from "@docusaurus/Link";
 import rehypeParse from "rehype-parse";
 import rehypeReact from "rehype-react";
 import rehypeSanitize from "rehype-sanitize";
 import { unified } from "unified";
+import * as prod from "react/jsx-runtime";
 
 export type ElementKind = "text" | "code" | "inline-tag";
 
@@ -12,6 +13,9 @@ export interface ElementProps {
   kind: ElementKind | string;
   tag?: string;
 }
+
+// @ts-expect-error: the react types are missing.
+const production = { Fragment: prod.Fragment, jsx: prod.jsx, jsxs: prod.jsxs };
 
 export const Element = ({ text, kind, tag }: ElementProps) => {
   switch (kind) {
@@ -48,7 +52,7 @@ const parseMarkdownString = (text: string): React.ReactElement => {
   const file = unified()
     .use(rehypeSanitize)
     .use(rehypeParse, { fragment: true })
-    .use(rehypeReact, { createElement, Fragment })
+    .use(rehypeReact, production)
     .processSync(text);
 
   return file.result;
