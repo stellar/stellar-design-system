@@ -33,6 +33,20 @@ export const ColorPalette = ({
     };
   }, []);
 
+  const renderColor = (color: string) => {
+    if (color.startsWith("rgba")) {
+      // Turn RGBA opacity into %
+      const opacity = color
+        .match(/\((.*?)\)/)[1]
+        .split(",")[3]
+        .trim();
+
+      return `${Number(opacity) * 100}%`;
+    }
+
+    return color;
+  };
+
   if (!theme) {
     return null;
   }
@@ -50,7 +64,9 @@ export const ColorPalette = ({
             }
           ></div>
           <div className="ColorPalette__color__name">{c.name}</div>
-          <div className="ColorPalette__color__hex">{c.hex[theme]}</div>
+          <div className="ColorPalette__color__hex">
+            {renderColor(c.hex[theme])}
+          </div>
         </div>
       ))}
     </div>
