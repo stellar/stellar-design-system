@@ -2,6 +2,6 @@
   "label": "Typography",
   "link": {
     "type": "generated-index",
-    "description": "Typography (including headings, paragraph, and other text types) examples and documentation. These components don’t have any special props, and inherit their native HTML attributes."
+    "description": "Typography (including headings, paragraph, and other text types) examples and documentation."
   }
 }

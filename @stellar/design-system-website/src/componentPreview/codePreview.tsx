@@ -1,6 +1,6 @@
 import { ComponentPreview } from "@site/src/components/PreviewBlock";
 
-export const captionPreview: ComponentPreview = {
+export const codePreview: ComponentPreview = {
   options: [
     {
       type: "select",
@@ -17,10 +17,6 @@ export const captionPreview: ComponentPreview = {
         {
           value: "md",
           label: "MD",
-        },
-        {
-          value: "lg",
-          label: "LG",
         },
       ],
     },
