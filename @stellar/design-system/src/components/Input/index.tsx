@@ -134,7 +134,7 @@ export const Input: React.FC<Props> = ({
                 setIsPasswordMasked(!isPasswordMasked);
               }}
             >
-              {isPasswordMasked ? <Icon.Hide /> : <Icon.Show />}
+              {isPasswordMasked ? <Icon.EyeOff /> : <Icon.Eye />}
             </button>
           </div>
         )}
