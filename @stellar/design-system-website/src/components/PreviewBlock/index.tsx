@@ -12,10 +12,11 @@ import { badgePreview } from "@site/src/componentPreview/badgePreview";
 import { bannerPreview } from "@site/src/componentPreview/bannerPreview";
 import { buttonPreview } from "@site/src/componentPreview/buttonPreview";
 import { buttonPresetPreview } from "@site/src/componentPreview/buttonPresetPreview";
-import { captionPreview } from "@site/src/componentPreview/captionPreview";
 import { cardPreview } from "@site/src/componentPreview/cardPreview";
 import { checkboxPreview } from "@site/src/componentPreview/checkboxPreview";
+import { codePreview } from "@site/src/componentPreview/codePreview";
 import { copyTextPreview } from "@site/src/componentPreview/copyTextPreview";
+import { displayPreview } from "@site/src/componentPreview/displayPreview";
 import { headingPreview } from "@site/src/componentPreview/headingPreview";
 import { iconButtonPreview } from "@site/src/componentPreview/iconButtonPreview";
 import { inputPreview } from "@site/src/componentPreview/inputPreview";
@@ -26,14 +27,13 @@ import { modalPreview } from "@site/src/componentPreview/modalPreview";
 import { navButtonPreview } from "@site/src/componentPreview/navButtonPreview";
 import { notificationPreview } from "@site/src/componentPreview/notificationPreview ";
 import { paginationPreview } from "@site/src/componentPreview/paginationPreview";
-import { paragraphPreview } from "@site/src/componentPreview/paragraphPreview";
 import { profilePreview } from "@site/src/componentPreview/profilePreview";
 import { projectLogoPreview } from "@site/src/componentPreview/projectLogoPreview";
 import { radioButtonPreview } from "@site/src/componentPreview/radioButtonPreview";
 import { selectPreview } from "@site/src/componentPreview/selectPreview";
 import { tablePreview } from "@site/src/componentPreview/tablePreview";
 import { textareaPreview } from "@site/src/componentPreview/textareaPreview";
-import { titlePreview } from "@site/src/componentPreview/titlePreview";
+import { textPreview } from "@site/src/componentPreview/textPreview";
 import { togglePreview } from "@site/src/componentPreview/togglePreview";
 import { tooltipPreview } from "@site/src/componentPreview/tooltipPreview";
 
@@ -47,12 +47,13 @@ const previews: { [key: string]: ComponentPreview } = {
   Banner: bannerPreview,
   Button: buttonPreview,
   ButtonPreset: buttonPresetPreview,
-  Caption: captionPreview,
   Card: cardPreview,
   Checkbox: checkboxPreview,
+  Code: codePreview,
   Content: layoutPreview,
   CopyText: copyTextPreview,
   Footer: layoutPreview,
+  Display: displayPreview,
   Heading: headingPreview,
   Header: layoutPreview,
   IconButton: iconButtonPreview,
@@ -65,14 +66,13 @@ const previews: { [key: string]: ComponentPreview } = {
   NavButton: navButtonPreview,
   Notification: notificationPreview,
   Pagination: paginationPreview,
-  Paragraph: paragraphPreview,
   Profile: profilePreview,
   ProjectLogo: projectLogoPreview,
   RadioButton: radioButtonPreview,
   Select: selectPreview,
   Table: tablePreview,
   Textarea: textareaPreview,
-  Title: titlePreview,
+  Text: textPreview,
   Toggle: togglePreview,
   Tooltip: tooltipPreview,
 };
@@ -119,7 +119,7 @@ export const PreviewBlock = ({
   children: React.ReactElement;
 }) => {
   const [sds, setSds] = useState<any>({});
-  const { Checkbox, Select, Notification, Button, Modal } = sds;
+  const { Checkbox, Select, Notification, Text, Button, Modal } = sds;
 
   // Importing SDS here because we need it async for server-side-rendering
   useEffect(() => {
@@ -244,11 +244,19 @@ export const PreviewBlock = ({
   );
 
   const renderPreview = () => {
-    // Need to handle Notification manually because of name collision that
+    // Need to handle these manually because of name collision that
     // breaks rendering
     if (componentName === "Notification") {
       return Notification ? (
         <Notification title="Notification title" variant="primary" {...props} />
+      ) : null;
+    }
+
+    if (componentName === "Text") {
+      return Text ? (
+        <Text as="p" size="xs" {...props}>
+          Text
+        </Text>
       ) : null;
     }
 
