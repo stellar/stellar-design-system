@@ -1,7 +1,7 @@
 .PreviewBlock {
-  background-color: var(--sds-clr-gray-01);
-  background-image: radial-gradient(var(--sds-clr-gray-05) 10%, transparent 11%),
-    radial-gradient(var(--sds-clr-gray-05) 10%, transparent 11%);
+  background-color: var(--sds-clr-base-00);
+  background-image: radial-gradient(var(--sds-clr-gray-02) 10%, transparent 11%),
+    radial-gradient(var(--sds-clr-gray-02) 10%, transparent 11%);
   background-size: 12px 12px;
   background-position: 0 0, 12px 12px;
   background-repeat: repeat;
