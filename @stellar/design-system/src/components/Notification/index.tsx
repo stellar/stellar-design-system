@@ -33,7 +33,7 @@ export const Notification: React.FC<Props> = ({
     <div className={`Notification Notification--${variant}`}>
       <div className="Notification__title">
         <div className="Notification__title__icon">
-          {icon ? icon : <Icon.Info />}
+          {icon ? icon : <Icon.InfoCircle />}
         </div>
         <div className="Notification__title__text">{title}</div>
       </div>

@@ -68,7 +68,7 @@ export const Profile: React.FC<ProfileProps> = ({
           <div {...componentProps}>
             {props.children}{" "}
             <div className="Profile--copy__icon">
-              <Icon.ContentCopy />
+              <Icon.Copy01 />
             </div>
           </div>
         </CopyText>

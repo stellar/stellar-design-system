@@ -128,7 +128,7 @@ export const Modal: React.FC<ModalProps> & ModalComponent = ({
             id="modal-close-button"
             title="Close modal"
             onClick={onClose}
-            icon={<Icon.Close />}
+            icon={<Icon.XClose />}
           />
         </div>
       </div>

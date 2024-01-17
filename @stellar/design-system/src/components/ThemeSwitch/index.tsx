@@ -101,10 +101,10 @@ export const ThemeSwitch = ({
       <div aria-hidden="true" className="ThemeSwitch__track" />
       <div aria-hidden="true" className="ThemeSwitch__thumb">
         <div className="ThemeSwitch__thumb__icon" data-mode={ThemeMode.DARK}>
-          <Icon.ModeDark />
+          <Icon.Moon01 />
         </div>
         <div className="ThemeSwitch__thumb__icon" data-mode={ThemeMode.LIGHT}>
-          <Icon.ModeLight />
+          <Icon.Sun />
         </div>
       </div>
     </label>
