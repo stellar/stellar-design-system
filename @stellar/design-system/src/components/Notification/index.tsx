@@ -8,7 +8,7 @@ export interface NotificationProps {
   variant: "primary" | "secondary" | "success" | "error" | "warning";
   /** Notification title */
   title: string;
-  /** Notification icon @defaultValue `<Icon.Info />` */
+  /** Notification icon @defaultValue `<Icon.InfoCircle />` */
   icon?: React.ReactNode;
   /** Notification message */
   children?: string | React.ReactNode;

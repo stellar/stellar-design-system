@@ -138,7 +138,7 @@
     justify-content: flex-end;
 
     svg {
-      fill: currentColor;
+      stroke: currentColor;
       width: var(--Input-font-size);
       height: var(--Input-font-size);
     }
@@ -153,7 +153,7 @@
       padding: 0;
 
       svg {
-        fill: var(--color-gray-60);
+        stroke: var(--color-gray-60);
       }
     }
   }
