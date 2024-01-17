@@ -15,7 +15,7 @@ export interface ButtonProps {
     | "error"
     | "success";
   /** Size of the button */
-  size: "md" | "sm" | "xs";
+  size: "sm" | "md" | "lg";
   /** Label of the button */
   children?: string | React.ReactNode;
   /** Icon element */
@@ -24,14 +24,8 @@ export interface ButtonProps {
   iconPosition?: "left" | "right";
   /** Loading state indicator */
   isLoading?: boolean;
-  /** Make label uppercase */
-  isUppercase?: boolean;
   /** Sets width of the button to match the parent container */
   isFullWidth?: boolean;
-  /** Pill shaped button */
-  isPill?: boolean;
-  /** Button with extra padding */
-  isExtraPadding?: boolean;
 }
 
 interface Props
@@ -49,20 +43,13 @@ export const Button: React.FC<Props> = ({
   icon,
   iconPosition = "right",
   isLoading,
-  isUppercase,
   isFullWidth,
-  isPill,
-  isExtraPadding,
   ...props
 }) => {
   const additionalClasses = [
     `Button--${variant}`,
     `Button--${size}`,
-    ...(isUppercase ? [`Button--uppercase`] : []),
-    // Button with extra padding will always be full width
-    ...(isFullWidth || isExtraPadding ? [`Button--full-width`] : []),
-    ...(isPill ? [`Button--pill`] : []),
-    ...(isExtraPadding ? [`Button--extra-padding`] : []),
+    ...(isFullWidth ? [`Button--full-width`] : []),
   ].join(" ");
 
   const renderIcon = (position: "left" | "right") => {
