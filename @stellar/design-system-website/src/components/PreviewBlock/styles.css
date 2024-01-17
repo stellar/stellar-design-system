@@ -1,14 +1,14 @@
 .PreviewBlock {
-  background-color: var(--color-gray-00);
-  background-image: radial-gradient(var(--color-gray-40) 10%, transparent 11%),
-    radial-gradient(var(--color-gray-40) 10%, transparent 11%);
+  background-color: var(--sds-clr-gray-01);
+  background-image: radial-gradient(var(--sds-clr-gray-05) 10%, transparent 11%),
+    radial-gradient(var(--sds-clr-gray-05) 10%, transparent 11%);
   background-size: 12px 12px;
   background-position: 0 0, 12px 12px;
   background-repeat: repeat;
   padding: 1.5rem 1rem;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
-  border: 1px solid var(--color-gray-40);
+  border: 1px solid var(--sds-clr-gray-05);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -41,15 +41,15 @@
 
 /* Checkboxes */
 .PreviewBlock__checkboxes__content {
-  border: 1px solid var(--color-gray-40);
-  background-color: var(--color-gray-00);
+  border: 1px solid var(--sds-clr-gray-05);
+  background-color: var(--sds-clr-base-00);
   border-radius: 0.25rem;
   padding: 0.75rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1.5rem;
   width: fit-content;
-  color: var(--color-gray-80);
+  color: var(--sds-clr-gray-11);
 }
 
 .PreviewBlock__component {
@@ -57,7 +57,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-gray-70);
+  color: var(--sds-clr-gray-11);
 }
 
 @media (max-width: 600px) {
@@ -87,7 +87,7 @@
 .PreviewBlock .Caption,
 .PreviewBlock .Paragraph,
 .PreviewBlock .Title {
-  color: var(--color-gray-90);
+  color: var(--sds-clr-gray-12);
 }
 
 .PreviewBlock .Heading {
@@ -132,6 +132,6 @@
 }
 
 .PreviewBlock .Table td {
-  color: var(--color-gray-80);
+  color: var(--sds-clr-gray-11);
   border: none;
 }

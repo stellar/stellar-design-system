@@ -104,7 +104,7 @@
       --NavButton-icon-size: #{pxToRem(24px)};
 
       svg {
-        fill: var(--color-gray-90);
+        stroke: var(--color-gray-90);
       }
     }
   }
