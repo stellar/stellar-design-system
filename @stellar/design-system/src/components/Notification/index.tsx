@@ -20,6 +20,9 @@ interface Props
   title: string;
 }
 
+// TODO: Notification: add action buttons
+// TODO: Notification: floating with max width
+
 /**
  * Use `notification` to draw a user's attention. There are five variants `primary`, `secondary`, `success`, `error`, and `warning`.
  */
