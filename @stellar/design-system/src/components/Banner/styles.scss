@@ -17,14 +17,13 @@
 
   &__icon {
     display: inline-block;
-    width: pxToRem(20px);
-    height: pxToRem(20px);
-    line-height: pxToRem(20px);
+    width: pxToRem(16px);
+    height: pxToRem(16px);
     margin-right: pxToRem(6px);
 
     svg {
       display: block;
-      margin-top: pxToRem(4px);
+      margin-top: pxToRem(2px);
       width: 100%;
       height: 100%;
       stroke: var(--Banner-color-icon);
