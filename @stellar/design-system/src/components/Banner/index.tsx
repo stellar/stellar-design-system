@@ -1,20 +1,30 @@
 import React from "react";
+import { Icon } from "../../icons";
 import "./styles.scss";
 
 /** */
 export interface BannerProps {
   /** Variant of the banner */
-  variant: "default" | "success" | "warning" | "primary" | "error";
+  variant: "primary" | "secondary" | "success" | "warning" | "error";
+  /** Notification icon @defaultValue `<Icon.InfoCircle />` */
+  icon?: React.ReactNode;
   /** Message to display in the banner */
   children: string | React.ReactNode;
 }
 
 /**
- * Use `banner` to display messages at the top of the page, stretching across the whole width. There are five variants `default`, `primary`, `success`, `error`, and `warning`.
+ * Use `Banner` to display messages at the top of the page, stretching across the whole width. There are five variants `primary`, `secondary`, `success`, `warning`, and `error`.
  */
-export const Banner: React.FC<BannerProps> = ({ variant, children }) => (
+export const Banner: React.FC<BannerProps> = ({
+  variant,
+  icon = <Icon.InfoCircle />,
+  children,
+}) => (
   <div className={`Banner Banner--${variant}`}>
-    <div className="Banner__content">{children}</div>
+    <div className="Banner__message Banner__content">
+      <div className="Banner__icon">{icon}</div>
+      {children}
+    </div>
   </div>
 );
 
