@@ -12,16 +12,38 @@
     top: calc(100% + pxToRem(8px));
     left: 50%;
     transform: translateX(-50%);
-    color: var(--color-gray-00);
-    background-color: var(--color-gray-90);
-    border: 1px solid var(--color-gray-90);
     border-radius: pxToRem(6px);
-    box-shadow: 0px pxToRem(2px) pxToRem(4px) rgba(0, 0, 0, 0.08);
+    z-index: 1;
+
+    color: var(--sds-clr-gray-01);
+    background-color: var(--sds-clr-gray-12);
+    border: 1px solid var(--sds-clr-gray-12);
+    box-shadow: 0 pxToRem(12px) pxToRem(12px) pxToRem(-6px) rgba(0, 0, 0, 0.06);
 
     &--light {
       color: var(--color-gray-80);
-      background-color: var(--color-gray-00);
-      border-color: var(--color-gray-30);
+      background-color: var(--sds-clr-gray-01);
+      border-color: var(--sds-clr-gray-06);
+      box-shadow: 0 pxToRem(10px) pxToRem(20px) pxToRem(-6px)
+        var(--sds-overlay-01);
+
+      .Floater__arrow svg {
+        fill: var(--sds-clr-gray-06);
+      }
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    width: pxToRem(40px);
+    height: pxToRem(13px);
+    pointer-events: none;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      fill: var(--sds-clr-gray-12);
     }
   }
 
