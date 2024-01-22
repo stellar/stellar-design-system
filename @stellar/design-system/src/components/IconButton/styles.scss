@@ -12,7 +12,7 @@
   justify-content: center;
   align-items: center;
   opacity: 1;
-  transition: opacity var(--anim-transition-default);
+  transition: opacity var(--sds-anim-transition-default);
 
   svg {
     width: var(--IconButton-size);
@@ -23,7 +23,7 @@
   &__label {
     color: var(--IconButton-color);
     margin-right: 0.5rem;
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--sds-fw-medium);
     font-size: max(1rem, calc(var(--IconButton-size) * 0.75));
   }
 
@@ -55,6 +55,6 @@
 
   &:disabled {
     cursor: not-allowed;
-    opacity: var(--opacity-disabled-button);
+    opacity: var(--sds-opacity-disabled-button);
   }
 }

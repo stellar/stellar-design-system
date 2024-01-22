@@ -16,7 +16,7 @@
   justify-content: center;
   align-items: center;
   opacity: 1;
-  transition: opacity var(--anim-transition-default);
+  transition: opacity var(--sds-anim-transition-default);
 
   &--border {
     border-color: var(--color-gray-30);
@@ -36,6 +36,6 @@
 
   &:disabled {
     cursor: not-allowed;
-    opacity: var(--opacity-disabled-button);
+    opacity: var(--sds-opacity-disabled-button);
   }
 }

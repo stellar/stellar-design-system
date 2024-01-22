@@ -216,40 +216,36 @@
 }
 
 @mixin theme-common {
-  // TODO: update var names using --sds- prefix
   // Font size
-  --font-size: 16px;
-  --font-size-secondary: 14px;
+  --sds-fs-primary: 16px;
+  --sds-fs-secondary: 14px;
 
   // Font weight
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semi-bold: 600;
-  --font-weight-bold: 700;
+  --sds-fw-light: 300;
+  --sds-fw-regular: 400;
+  --sds-fw-medium: 500;
+  --sds-fw-semi-bold: 600;
+  --sds-fw-bold: 700;
 
   // Font family
-  --font-family-heading: "Inter", sans-serif;
-  --font-family-base: "Inter", sans-serif;
-  --font-family-monospace: "Inconsolata", monospace;
+  --sds-ff-heading: "Inter", sans-serif;
+  --sds-ff-base: "Inter", sans-serif;
+  --sds-ff-monospace: "Inconsolata", monospace;
 
   // Z-index
-  --z-index-tooltip: 20;
-  --z-index-modal: 30;
+  --sds-z-index-tooltip: 20;
+  --sds-z-index-modal: 30;
 
   // Opacity
-  --opacity-disabled-button: 0.6;
+  --sds-opacity-disabled-button: 0.6;
 
   // Layout
-  --layout-window-width-min: 360px;
-  --layout-window-width-max: 1296px;
-  --layout-window-height-min: 100vh;
+  --sds-window-width-min: 360px;
+  --sds-window-width-max: 1296px;
+  --sds-window-height-min: 100vh;
 
   // Animations
-  --anim-transition-default: cubic-bezier(0.65, 0.05, 0.36, 1) 200ms;
-
-  // Avatar
-  --Avatar-image-size: 100%;
+  --sds-anim-transition-default: cubic-bezier(0.65, 0.05, 0.36, 1) 200ms;
 }
 
 // =============================================================================

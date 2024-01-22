@@ -3,7 +3,7 @@
   position: relative;
 
   &--loading {
-    opacity: var(--opacity-disabled-button);
+    opacity: var(--sds-opacity-disabled-button);
     pointer-events: none;
     overflow-y: hidden;
 
@@ -51,14 +51,14 @@
 table.Table {
   width: 100%;
   border-collapse: collapse;
-  font-size: var(--font-size-secondary);
+  font-size: var(--sds-fs-secondary);
   line-height: 1.5rem;
   color: var(--color-gray-80);
 
   th {
     line-height: 1.125rem;
     color: var(--color-gray-90);
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--sds-fw-medium);
     text-transform: uppercase;
     text-align: left;
     padding-top: 1.0625rem;

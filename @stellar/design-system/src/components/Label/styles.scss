@@ -1,8 +1,8 @@
 @use "../../utils.scss" as *;
 
 .Label {
-  font-family: var(--font-family-base);
-  font-weight: var(--font-weight-medium);
+  font-family: var(--sds-ff-base);
+  font-weight: var(--sds-fw-medium);
   color: var(--color-gray-60);
 
   &--sm {

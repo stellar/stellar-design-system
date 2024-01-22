@@ -33,14 +33,14 @@
 
   &__address {
     word-break: break-all;
-    font-weight: var(--font-weight-regular);
-    font-family: var(--font-family-monospace);
+    font-weight: var(--sds-fw-regular);
+    font-family: var(--sds-ff-monospace);
   }
 
   &--button {
-    transition: color var(--anim-transition-default),
-      background-color var(--anim-transition-default),
-      border-color var(--anim-transition-default);
+    transition: color var(--sds-anim-transition-default),
+      background-color var(--sds-anim-transition-default),
+      border-color var(--sds-anim-transition-default);
     padding: var(--Profile-padding-vertical) var(--Profile-padding-horizontal);
     background-color: var(--Profile-color-background-default);
     border: 1px solid var(--Profile-color-border-default);
@@ -65,9 +65,9 @@
   }
 
   &--link {
-    transition: color var(--anim-transition-default),
-      background-color var(--anim-transition-default),
-      border-color var(--anim-transition-default);
+    transition: color var(--sds-anim-transition-default),
+      background-color var(--sds-anim-transition-default),
+      border-color var(--sds-anim-transition-default);
     text-decoration: none;
     cursor: pointer;
 
@@ -79,9 +79,9 @@
   }
 
   &--copy {
-    transition: color var(--anim-transition-default),
-      background-color var(--anim-transition-default),
-      border-color var(--anim-transition-default);
+    transition: color var(--sds-anim-transition-default),
+      background-color var(--sds-anim-transition-default),
+      border-color var(--sds-anim-transition-default);
     text-decoration: none;
     cursor: pointer;
 

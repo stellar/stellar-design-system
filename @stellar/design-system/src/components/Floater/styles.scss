@@ -7,7 +7,7 @@
   &__content {
     position: absolute;
     display: none;
-    transition: all var(--anim-transition-default);
+    transition: all var(--sds-anim-transition-default);
     opacity: 0;
     top: calc(100% + pxToRem(8px));
     left: 50%;
@@ -54,7 +54,7 @@
     }
 
     &--active {
-      z-index: var(--z-index-tooltip);
+      z-index: var(--sds-z-index-tooltip);
 
       .Floater__content {
         opacity: 1;

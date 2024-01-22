@@ -101,7 +101,7 @@
 }
 
 .PreviewBlock .Checkbox__container label {
-  font-weight: var(--font-weight-regular);
+  font-weight: var(--sds-fw-regular);
 }
 
 .PreviewBlock .Modal {

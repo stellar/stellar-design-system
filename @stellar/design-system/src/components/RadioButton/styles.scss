@@ -81,7 +81,7 @@
   label {
     font-size: var(--RadioButton-font-size);
     line-height: var(--RadioButton-line-height);
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--sds-fw-medium);
     flex: 1;
     position: relative;
     display: flex;
@@ -100,8 +100,8 @@
       margin-top: calc(
         (var(--RadioButton-line-height) - var(--RadioButton-size)) / 2
       );
-      transition: background-color var(--anim-transition-default),
-        border-color var(--anim-transition-default);
+      transition: background-color var(--sds-anim-transition-default),
+        border-color var(--sds-anim-transition-default);
 
       &::before {
         display: block;

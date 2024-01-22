@@ -2,8 +2,8 @@
 
 .Display,
 .Heading {
-  font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-regular);
+  font-family: var(--sds-ff-heading);
+  font-weight: var(--sds-fw-regular);
   letter-spacing: -4%;
   padding: 0;
   margin: 0;
@@ -32,21 +32,21 @@
 
   // Font weight
   &--bold {
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--sds-fw-bold);
   }
   &--semi-bold {
-    font-weight: var(--font-weight-semi-bold);
+    font-weight: var(--sds-fw-semi-bold);
   }
   &--medium {
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--sds-fw-medium);
   }
 }
 
 p.Text,
 div.Text,
 span.Text {
-  font-family: var(--font-family-base);
-  font-weight: var(--font-weight-regular);
+  font-family: var(--sds-ff-base);
+  font-weight: var(--sds-fw-regular);
   letter-spacing: 0;
   padding: 0;
   margin: 0;
@@ -74,19 +74,19 @@ span.Text {
 
   // Font weight
   &--bold {
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--sds-fw-bold);
   }
   &--semi-bold {
-    font-weight: var(--font-weight-semi-bold);
+    font-weight: var(--sds-fw-semi-bold);
   }
   &--medium {
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--sds-fw-medium);
   }
 }
 
 code.Code {
-  font-family: var(--font-family-monospace);
-  font-weight: var(--font-weight-medium);
+  font-family: var(--sds-ff-monospace);
+  font-weight: var(--sds-fw-medium);
   letter-spacing: 0;
 
   &--md {

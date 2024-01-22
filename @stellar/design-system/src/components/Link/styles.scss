@@ -27,15 +27,15 @@
   align-items: center;
   vertical-align: bottom;
   text-decoration: none;
-  font-family: var(--font-family-base);
-  font-weight: var(--font-weight-medium);
+  font-family: var(--sds-ff-base);
+  font-weight: var(--sds-fw-medium);
 
   font-size: var(--Link-font-size);
   line-height: var(--Link-line-height);
   color: var(--Link-color-default);
   gap: var(--Link-gap);
 
-  transition: color var(--anim-transition-default);
+  transition: color var(--sds-anim-transition-default);
 
   // Icon
   &__icon {

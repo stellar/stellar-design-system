@@ -71,12 +71,12 @@
   textarea {
     display: block;
     width: 100%;
-    font-family: var(--font-family-base);
+    font-family: var(--sds-ff-base);
     background-color: var(--Textarea-color-background);
     border: 1px solid var(--Textarea-color-border);
     color: var(--Textarea-color-text);
     border-radius: var(--Textarea-border-radius);
-    transition: border-color var(--anim-transition-default);
+    transition: border-color var(--sds-anim-transition-default);
     padding: var(--Textarea-padding-vertical) var(--Textarea-padding-horizontal);
     font-size: var(--Textarea-font-size);
     line-height: var(--Textarea-line-height);

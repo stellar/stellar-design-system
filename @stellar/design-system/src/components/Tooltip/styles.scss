@@ -11,13 +11,13 @@
   &__title {
     font-size: pxToRem(12px);
     line-height: pxToRem(18px);
-    font-weight: var(--font-weight-semi-bold);
+    font-weight: var(--sds-fw-semi-bold);
   }
 
   &__message {
     font-size: pxToRem(12px);
     line-height: pxToRem(18px);
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--sds-fw-medium);
     color: var(--sds-clr-gray-08);
   }
 }

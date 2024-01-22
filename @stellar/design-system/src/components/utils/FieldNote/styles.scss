@@ -1,11 +1,11 @@
 @use "../../../utils.scss" as *;
 
 .FieldNote {
-  font-family: var(--font-family-base);
+  font-family: var(--sds-ff-base);
   font-size: pxToRem(12px);
   line-height: pxToRem(20px);
   color: var(--color-gray-60);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--sds-fw-medium);
 
   &--error {
     color: var(--color-red-60);
