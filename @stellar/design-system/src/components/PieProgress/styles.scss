@@ -3,7 +3,7 @@
   --PieProgress-inner-size: calc(
     var(--PieProgress-size) - (var(--PieProgress-size) * 0.3)
   );
-  --PieProgress-background-color: var(--color-gray-20);
+  --PieProgress-background-color: var(--sds-clr-gray-04);
 
   width: var(--PieProgress-size);
   height: var(--PieProgress-size);

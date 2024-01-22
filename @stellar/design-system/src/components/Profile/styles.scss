@@ -2,14 +2,14 @@
 
 .Profile {
   // Variables
-  --Profile-color-background-default: var(--color-gray-00);
-  --Profile-color-border-default: var(--color-gray-30);
+  --Profile-color-background-default: var(--sds-clr-gray-01);
+  --Profile-color-border-default: var(--sds-clr-gray-06);
 
-  --Profile-color-background-hover: var(--color-gray-10);
-  --Profile-color-border-hover: var(--color-gray-40);
+  --Profile-color-background-hover: var(--sds-clr-gray-01);
+  --Profile-color-border-hover: var(--sds-clr-gray-06);
 
-  --Profile-color-background-active: var(--color-gray-20);
-  --Profile-color-border-active: var(--color-gray-50);
+  --Profile-color-background-active: var(--sds-clr-gray-01);
+  --Profile-color-border-active: var(--sds-clr-gray-06);
 
   --Profile-font-size: #{pxToRem(16px)};
   --Profile-line-height: #{pxToRem(24px)};
@@ -25,7 +25,7 @@
   font-size: var(--Profile-font-size);
   line-height: var(--Profile-line-height);
   padding: 0;
-  color: var(--color-gray-80);
+  color: var(--sds-clr-gray-12);
 
   .Avatar {
     --Avatar-size: var(--Profile-avatar);
@@ -73,7 +73,7 @@
 
     @media (hover: hover) {
       &:hover {
-        color: var(--color-gray-70);
+        color: var(--sds-clr-gray-11);
       }
     }
   }
@@ -90,13 +90,13 @@
         display: block;
         width: calc(var(--Profile-font-size) - 2px);
         height: calc(var(--Profile-font-size) - 2px);
-        stroke: var(--color-gray-50);
+        stroke: var(--sds-clr-gray-10);
       }
     }
 
     @media (hover: hover) {
       &:hover {
-        color: var(--color-gray-70);
+        color: var(--sds-clr-gray-11);
       }
     }
   }

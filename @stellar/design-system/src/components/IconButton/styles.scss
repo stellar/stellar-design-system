@@ -28,23 +28,23 @@
   }
 
   &--default {
-    --IconButton-color: var(--color-gray-80);
+    --IconButton-color: var(--sds-clr-gray-11);
   }
 
   &--error {
-    --IconButton-color: var(--color-red-60);
+    --IconButton-color: var(--sds-clr-red-11);
   }
 
   &--success {
-    --IconButton-color: var(--color-green-60);
+    --IconButton-color: var(--sds-clr-green-11);
   }
 
   &--warning {
-    --IconButton-color: var(--color-yellow-60);
+    --IconButton-color: var(--sds-clr-amber-11);
   }
 
   &--highlight {
-    --IconButton-color: var(--color-purple-60);
+    --IconButton-color: var(--sds-clr-lilac-11);
   }
 
   @media (hover: hover) {

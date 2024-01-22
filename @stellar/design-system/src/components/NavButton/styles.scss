@@ -19,13 +19,13 @@
   transition: opacity var(--sds-anim-transition-default);
 
   &--border {
-    border-color: var(--color-gray-30);
+    border-color: var(--sds-clr-gray-06);
   }
 
   svg {
     width: var(--NavButton-icon-size);
     height: var(--NavButton-icon-size);
-    stroke: var(--color-gray-80);
+    stroke: var(--sds-clr-gray-09);
   }
 
   @media (hover: hover) {

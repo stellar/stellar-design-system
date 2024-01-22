@@ -2,11 +2,11 @@
 
 .Textarea {
   // Color
-  --Textarea-color-background: var(--color-gray-00);
-  --Textarea-color-border: var(--color-gray-30);
-  --Textarea-color-border-hover: var(--color-gray-40);
-  --Textarea-color-border-focus: var(--color-gray-50);
-  --Textarea-color-text: var(--color-gray-80);
+  --Textarea-color-background: var(--sds-clr-gray-01);
+  --Textarea-color-border: var(--sds-clr-gray-06);
+  --Textarea-color-border-hover: var(--sds-clr-gray-06);
+  --Textarea-color-border-focus: var(--sds-clr-gray-06);
+  --Textarea-color-text: var(--sds-clr-gray-12);
 
   // Size
   --Textarea-font-size: #{pxToRem(16px)};
@@ -93,32 +93,32 @@
     }
 
     &::placeholder {
-      color: var(--color-gray-60);
+      color: var(--sds-clr-gray-11);
     }
   }
 
   &--error {
-    --Textarea-color-background: var(--color-red-20);
-    --Textarea-color-border: var(--color-red-60);
-    --Textarea-color-text: var(--color-gray-80);
+    --Textarea-color-background: var(--sds-clr-gray-01);
+    --Textarea-color-border: var(--sds-clr-red-06);
+    --Textarea-color-text: var(--sds-clr-gray-11);
 
     textarea {
       &:focus-visible {
-        --Textarea-color-border-focus: var(--color-red-70);
+        --Textarea-color-border-focus: var(--sds-clr-red-06);
       }
     }
 
     @media (hover: hover) {
       &:hover {
-        --Textarea-color-border-hover: var(--color-red-50);
+        --Textarea-color-border-hover: var(--sds-clr-red-06);
       }
     }
   }
 
   &--disabled {
-    --Textarea-color-background: var(--color-gray-40);
-    --Textarea-color-border: var(--color-gray-40);
-    --Textarea-color-text: var(--color-gray-60);
+    --Textarea-color-background: var(--sds-clr-gray-02);
+    --Textarea-color-border: var(--sds-clr-gray-07);
+    --Textarea-color-text: var(--sds-clr-gray-11);
 
     textarea {
       cursor: not-allowed;

@@ -2,12 +2,12 @@
 
 .Select {
   // Color
-  --Select-color-background: var(--color-gray-00);
-  --Select-color-background-option: var(--color-gray-00);
-  --Select-color-border: var(--color-gray-30);
-  --Select-color-border-hover: var(--color-gray-40);
-  --Select-color-border-focus: var(--color-gray-50);
-  --Select-color-text: var(--color-gray-80);
+  --Select-color-background: var(--sds-clr-gray-01);
+  --Select-color-background-option: var(--sds-clr-gray-01);
+  --Select-color-border: var(--sds-clr-gray-06);
+  --Select-color-border-hover: var(--sds-clr-gray-06);
+  --Select-color-border-focus: var(--sds-clr-gray-06);
+  --Select-color-text: var(--sds-clr-gray-12);
 
   // Size
   --Select-font-size: #{pxToRem(16px)};
@@ -140,29 +140,29 @@
   }
 
   &--error {
-    --Select-color-background: var(--color-red-20);
-    --Select-color-border: var(--color-red-60);
-    --Select-color-text: var(--color-gray-80);
+    --Select-color-background: var(--sds-clr-gray-01);
+    --Select-color-border: var(--sds-clr-red-06);
+    --Select-color-text: var(--sds-clr-gray-11);
 
     .Select__container {
       select {
         &:focus-visible {
-          --Select-color-border-focus: var(--color-red-70);
+          --Select-color-border-focus: var(--sds-clr-red-06);
         }
       }
 
       @media (hover: hover) {
         &:hover {
-          --Select-color-border-hover: var(--color-red-50);
+          --Select-color-border-hover: var(--sds-clr-red-06);
         }
       }
     }
   }
 
   &--disabled {
-    --Select-color-background: var(--color-gray-40);
-    --Select-color-border: var(--color-gray-40);
-    --Select-color-text: var(--color-gray-60);
+    --Select-color-background: var(--sds-clr-gray-02);
+    --Select-color-border: var(--sds-clr-gray-07);
+    --Select-color-text: var(--sds-clr-gray-11);
 
     select {
       cursor: not-allowed;
