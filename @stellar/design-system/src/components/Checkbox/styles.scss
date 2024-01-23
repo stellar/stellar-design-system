@@ -2,10 +2,9 @@
 
 .Checkbox {
   // Color
-  --Checkbox-color-background: var(--color-gray-10);
-  --Checkbox-color-border: var(--color-gray-50);
-  --Checkbox-color-icon: var(--color-gray-00);
-  --Checkbox-color-text: var(--color-gray-80);
+  --Checkbox-color-background: var(--sds-clr-gray-01);
+  --Checkbox-color-border: var(--sds-clr-gray-06);
+  --Checkbox-color-icon: var(--sds-clr-base-00);
 
   // Size
   --Checkbox-size: #{pxToRem(16px)};
@@ -23,7 +22,7 @@
     &:hover {
       input[type="checkbox"] {
         & + label {
-          --Checkbox-color-border: var(--color-gray-60);
+          --Checkbox-color-border: var(--sds-clr-gray-06);
         }
       }
     }
@@ -61,8 +60,8 @@
       z-index: -1;
 
       &:checked + label {
-        --Checkbox-color-background: var(--color-purple-60);
-        --Checkbox-color-border: var(--color-purple-70);
+        --Checkbox-color-background: var(--sds-clr-lilac-09);
+        --Checkbox-color-border: var(--sds-clr-lilac-09);
 
         span svg {
           opacity: 1;
@@ -70,15 +69,15 @@
       }
 
       &:disabled + label {
-        --Checkbox-color-background: var(--color-gray-40);
-        --Checkbox-color-border: var(--color-gray-50);
+        --Checkbox-color-background: var(--sds-clr-gray-01);
+        --Checkbox-color-border: var(--sds-clr-gray-06);
         cursor: not-allowed;
       }
 
       &:checked:disabled + label {
-        --Checkbox-color-background: var(--color-gray-40);
-        --Checkbox-color-border: var(--color-gray-50);
-        --Checkbox-color-icon: var(--color-gray-50);
+        --Checkbox-color-background: var(--sds-clr-gray-04);
+        --Checkbox-color-border: var(--sds-clr-gray-06);
+        --Checkbox-color-icon: var(--sds-clr-gray-09);
         cursor: not-allowed;
       }
     }
@@ -86,7 +85,7 @@
     label {
       font-size: var(--Checkbox-font-size);
       line-height: var(--Checkbox-line-height);
-      font-weight: var(--font-weight-medium);
+      font-weight: var(--sds-fw-medium);
       flex: 1;
       position: relative;
       display: flex;
@@ -102,8 +101,8 @@
         border: 1px solid var(--Checkbox-color-border);
         background-color: var(--Checkbox-color-background);
         border-radius: pxToRem(4px);
-        transition: background-color var(--anim-transition-default),
-          border-color var(--anim-transition-default);
+        transition: background-color var(--sds-anim-transition-default),
+          border-color var(--sds-anim-transition-default);
 
         &[data-has-label="true"] {
           margin-top: calc(
@@ -125,8 +124,8 @@
   &--error {
     input[type="checkbox"] {
       & + label {
-        --Checkbox-color-border: var(--color-red-50);
-        --Checkbox-color-background: var(--color-red-10);
+        --Checkbox-color-background: var(--sds-clr-red-09);
+        --Checkbox-color-border: var(--sds-clr-red-09);
       }
     }
 
@@ -134,7 +133,7 @@
       &:hover {
         input[type="checkbox"]:not(:checked) {
           & + label {
-            --Checkbox-color-border: var(--color-red-60);
+            --Checkbox-color-border: var(--sds-clr-gray-06);
           }
         }
       }

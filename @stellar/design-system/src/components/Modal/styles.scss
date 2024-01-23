@@ -8,8 +8,8 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: var(--z-index-modal);
-  min-width: var(--layout-window-width-min);
+  z-index: var(--sds-z-index-modal);
+  min-width: var(--sds-window-width-min);
   min-height: 100vh;
   overflow: hidden;
 
@@ -32,10 +32,10 @@
     position: absolute;
     width: 96%;
     max-width: 600px;
-    background-color: var(--color-gray-00);
-    border: 1px solid var(--color-gray-40);
+    background-color: var(--sds-clr-gray-01);
+    border: 1px solid var(--sds-clr-gray-06);
     border-radius: pxToRem(8px);
-    z-index: calc(var(--z-index-modal) + 1);
+    z-index: calc(var(--sds-z-index-modal) + 1);
     padding: pxToRem(24px);
     padding-right: 0;
     margin-top: var(--Modal-offset-top);
@@ -55,24 +55,24 @@
     }
 
     .ModalHeading {
-      color: var(--color-gray-80);
+      color: var(--sds-clr-gray-12);
       font-size: pxToRem(18px);
       line-height: pxToRem(26px);
-      font-weight: var(--font-weight-medium);
+      font-weight: var(--sds-fw-medium);
       margin: 0;
       margin-bottom: pxToRem(16px);
       width: calc(100% - 2rem);
     }
 
     .ModalBody {
-      color: var(--color-gray-60);
+      color: var(--sds-clr-gray-11);
       font-size: pxToRem(14px);
       line-height: pxToRem(22px);
 
       p,
       ul,
       ol {
-        color: var(--color-gray-60);
+        color: var(--sds-clr-gray-11);
         font-size: pxToRem(14px);
         line-height: pxToRem(22px);
       }
@@ -104,15 +104,14 @@
       --NavButton-icon-size: #{pxToRem(24px)};
 
       svg {
-        stroke: var(--color-gray-90);
+        stroke: var(--sds-clr-gray-09);
       }
     }
   }
 
   &__background {
     position: absolute;
-    background-color: #000;
-    opacity: 0.8;
+    background-color: var(--sds-overlay-08);
     top: 0;
     bottom: 0;
     left: 0;

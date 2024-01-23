@@ -7,7 +7,7 @@
   &__content {
     position: absolute;
     display: none;
-    transition: all var(--anim-transition-default);
+    transition: all var(--sds-anim-transition-default);
     opacity: 0;
     top: calc(100% + pxToRem(8px));
     left: 50%;
@@ -21,7 +21,7 @@
     box-shadow: 0 pxToRem(12px) pxToRem(12px) pxToRem(-6px) rgba(0, 0, 0, 0.06);
 
     &--light {
-      color: var(--color-gray-80);
+      color: var(--sds-clr-gray-11);
       background-color: var(--sds-clr-gray-01);
       border-color: var(--sds-clr-gray-06);
       box-shadow: 0 pxToRem(10px) pxToRem(20px) pxToRem(-6px)
@@ -54,7 +54,7 @@
     }
 
     &--active {
-      z-index: var(--z-index-tooltip);
+      z-index: var(--sds-z-index-tooltip);
 
       .Floater__content {
         opacity: 1;

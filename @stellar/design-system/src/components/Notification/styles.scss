@@ -8,7 +8,7 @@
   --Notification-color-action: var(--sds-clr-lilac-11);
 
   // Base
-  font-family: var(--font-family-base);
+  font-family: var(--sds-ff-base);
   background-color: var(--Notification-color-background);
   border: 1px solid var(--Notification-color-border);
   border-radius: pxToRem(8px);
@@ -40,7 +40,7 @@
       color: var(--sds-clr-gray-12);
       font-size: pxToRem(14px);
       line-height: pxToRem(20px);
-      font-weight: var(--font-weight-semi-bold);
+      font-weight: var(--sds-fw-semi-bold);
     }
   }
 
@@ -48,7 +48,7 @@
     color: var(--sds-clr-gray-11);
     font-size: pxToRem(14px);
     line-height: pxToRem(20px);
-    font-weight: var(--font-weight-regular);
+    font-weight: var(--sds-fw-regular);
     display: flex;
     flex-direction: column;
     gap: pxToRem(4px);

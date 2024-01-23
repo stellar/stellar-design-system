@@ -33,8 +33,8 @@
   &__message {
     font-size: pxToRem(14px);
     line-height: pxToRem(20px);
-    font-family: var(--font-family-base);
-    font-weight: var(--font-weight-medium);
+    font-family: var(--sds-ff-base);
+    font-weight: var(--sds-fw-medium);
     color: var(--Banner-color-text);
     text-align: center;
     max-width: 75ch;

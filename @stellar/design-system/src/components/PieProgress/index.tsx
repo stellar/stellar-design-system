@@ -1,5 +1,7 @@
 import "./styles.scss";
 
+// TODO: remove component?
+
 interface PieProgressProps {
   total: number;
   passed: number;
@@ -22,9 +24,9 @@ export const PieProgress = ({
   const passedPercentage = Math.round((passed / total) * 100);
   const failedPercentage = Math.round((failed / total) * 100);
   const backgroundPieces = `conic-gradient(
-    var(--color-green-60) ${passedPercentage}%,
-    var(--color-red-60) 0 ${passedPercentage + failedPercentage}%,
-    var(--color-gray-20) 0
+    var(--sds-clr-green-08) ${passedPercentage}%,
+    var(--sds-clr-red-08) 0 ${passedPercentage + failedPercentage}%,
+    var(--sds-clr-gray-04) 0
   )`;
 
   const customStyle = {

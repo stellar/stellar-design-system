@@ -93,8 +93,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: var(--font-family-base);
-  font-weight: var(--font-weight-semi-bold);
+  font-family: var(--sds-ff-base);
+  font-weight: var(--sds-fw-semi-bold);
   border: 1px solid var(--Button-color-border-default);
   border-radius: var(--Button-border-radius);
   color: var(--Button-color-text-default);
@@ -102,10 +102,10 @@
   background-color: var(--Button-color-background-default);
   cursor: pointer;
 
-  transition: color var(--anim-transition-default),
-    background-color var(--anim-transition-default),
-    border-color var(--anim-transition-default),
-    box-shadow var(--anim-transition-default);
+  transition: color var(--sds-anim-transition-default),
+    background-color var(--sds-anim-transition-default),
+    border-color var(--sds-anim-transition-default),
+    box-shadow var(--sds-anim-transition-default);
 
   height: var(--Button-height);
   font-size: var(--Button-font-size);

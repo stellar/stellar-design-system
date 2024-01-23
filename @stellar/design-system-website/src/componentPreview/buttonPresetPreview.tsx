@@ -76,11 +76,11 @@ export const buttonPresetPreview: ComponentPreview = {
           label: "Default color",
         },
         {
-          value: "var(--color-green-50)",
+          value: "var(--sds-clr-green-09)",
           label: "Green",
         },
         {
-          value: "var(--color-yellow-50)",
+          value: "var(--sds-clr-amber-09)",
           label: "Yellow",
         },
       ],

@@ -1,6 +1,7 @@
 import React from "react";
-import "./styles.scss";
+import { Badge } from "../Badge";
 import { Logo } from "../../logos";
+import "./styles.scss";
 
 /** */
 export interface ProjectLogoProps {
@@ -21,7 +22,11 @@ export const ProjectLogo: React.FC<ProjectLogoProps> = ({
     <a href={link} rel="noreferrer noopener">
       <Logo.Stellar />
     </a>
-    {title ? <div className="ProjectLogo__title">{title}</div> : null}
+    {title ? (
+      <Badge variant="secondary" size="md">
+        {title}
+      </Badge>
+    ) : null}
   </div>
 );
 

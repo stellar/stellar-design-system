@@ -1,14 +1,14 @@
 @use "../../utils.scss" as *;
 
 .AssetIcon {
-  --AssetIcon-color-border: var(--color-gray-30);
+  --AssetIcon-color-border: var(--sds-clr-gray-06);
 
   display: flex;
   align-items: center;
 
   &__image {
     --AssetIcon-image-size: 100%;
-    --AssetIcon-color-image-background: var(--color-white);
+    --AssetIcon-color-image-background: var(--sds-clr-white);
 
     display: flex;
     align-items: center;

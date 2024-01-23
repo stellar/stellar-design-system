@@ -38,7 +38,7 @@ export const Pagination: React.FC<PaginationProps> = ({
 
   const customProps = {
     customSize: "1rem",
-    customColor: "var(--color-purple-70)",
+    customColor: "var(--sds-clr-lilac-09)",
   };
 
   if (pageCount === 1) {
