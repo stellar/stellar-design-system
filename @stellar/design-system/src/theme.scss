@@ -246,12 +246,39 @@
 
   // Animations
   --sds-anim-transition-default: cubic-bezier(0.65, 0.05, 0.36, 1) 200ms;
+
+  // Form element / input colors
+  --sds-input-color-border-default: var(--sds-clr-gray-06);
+  --sds-input-color-border-default-hover: var(--sds-clr-gray-06);
+  --sds-input-color-border-default-focus: var(--sds-clr-gray-06);
+
+  --sds-input-color-border-error: var(--sds-clr-red-06);
+  --sds-input-color-border-error-hover: var(--sds-clr-red-06);
+  --sds-input-color-border-error-focus: var(--sds-clr-red-06);
+
+  --sds-input-color-border-disabled: var(--sds-clr-gray-07);
+  --sds-input-color-border-disabled-hover: var(--sds-clr-gray-07);
+  --sds-input-color-border-disabled-focus: var(--sds-clr-gray-07);
+
+  --sds-input-color-background-default: var(--sds-clr-gray-01);
+  --sds-input-color-background-error: var(--sds-clr-gray-01);
+  --sds-input-color-background-disabled: var(--sds-clr-gray-02);
+
+  --sds-input-color-text-default: var(--sds-clr-gray-12);
+  --sds-input-color-text-placeholder: var(--sds-clr-gray-11);
+  --sds-input-color-text-disabled: var(--sds-clr-gray-11);
+  --sds-input-color-icon: var(--sds-clr-gray-11);
+
+  --sds-input-box-shadow-color-default: var(--sds-clr-gray-04);
+  --sds-input-box-shadow-color-error: var(--sds-clr-red-04);
 }
 
 // =============================================================================
 // Setting themes
 // =============================================================================
-:root {
+:root,
+.sds-theme-light,
+.sds-theme-dark {
   @include theme-common;
 }
 

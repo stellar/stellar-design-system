@@ -1,18 +1,19 @@
 @use "../../utils.scss" as *;
 
 .Checkbox {
-  // Color
-  --Checkbox-color-background: var(--sds-clr-gray-01);
-  --Checkbox-color-border: var(--sds-clr-gray-06);
+  --Checkbox-color-background: var(--sds-input-color-background-default);
+  --Checkbox-color-border: var(--sds-input-color-border-default);
   --Checkbox-color-icon: var(--sds-clr-base-00);
 
-  // Size
-  --Checkbox-size: #{pxToRem(16px)};
-  --Checkbox-icon-size: #{pxToRem(12px)};
-  --Checkbox-vertical-gap: #{pxToRem(8px)};
+  --Checkbox-size: #{pxToRem(14px)};
+  --Checkbox-icon-size: #{pxToRem(10px)};
+  --Checkbox-vertical-gap: #{pxToRem(2px)};
   --Checkbox-horizontal-gap: #{pxToRem(8px)};
-  --Checkbox-font-size: #{pxToRem(14px)};
-  --Checkbox-line-height: #{pxToRem(22px)};
+  --Checkbox-font-size: #{pxToRem(12px)};
+  --Checkbox-line-height: #{pxToRem(18px)};
+
+  --Checkbox-box-shadow-size: 0;
+  --Checkbox-box-shadow-color: var(--sds-input-box-shadow-color-default);
 
   display: flex;
   flex-direction: column;
@@ -22,30 +23,30 @@
     &:hover {
       input[type="checkbox"] {
         & + label {
-          --Checkbox-color-border: var(--sds-clr-gray-06);
+          --Checkbox-color-border: var(--sds-input-color-border-default);
         }
       }
     }
   }
 
-  &--md {
-    --Checkbox-size: #{pxToRem(18px)};
-    --Checkbox-icon-size: #{pxToRem(14px)};
-    --Checkbox-font-size: #{pxToRem(16px)};
-    --Checkbox-line-height: #{pxToRem(24px)};
-  }
-
   &--sm {
-    --Checkbox-size: #{pxToRem(16px)};
-    --Checkbox-icon-size: #{pxToRem(12px)};
-    --Checkbox-font-size: #{pxToRem(14px)};
-    --Checkbox-line-height: #{pxToRem(22px)};
-  }
-
-  &--xs {
     --Checkbox-size: #{pxToRem(14px)};
     --Checkbox-icon-size: #{pxToRem(10px)};
     --Checkbox-font-size: #{pxToRem(12px)};
+    --Checkbox-line-height: #{pxToRem(18px)};
+  }
+
+  &--md {
+    --Checkbox-size: #{pxToRem(16px)};
+    --Checkbox-icon-size: #{pxToRem(12px)};
+    --Checkbox-font-size: #{pxToRem(12px)};
+    --Checkbox-line-height: #{pxToRem(18px)};
+  }
+
+  &--lg {
+    --Checkbox-size: #{pxToRem(18px)};
+    --Checkbox-icon-size: #{pxToRem(14px)};
+    --Checkbox-font-size: #{pxToRem(14px)};
     --Checkbox-line-height: #{pxToRem(20px)};
   }
 
@@ -68,15 +69,19 @@
         }
       }
 
+      &:focus + label {
+        --Checkbox-box-shadow-size: #{pxToRem(2px)};
+      }
+
       &:disabled + label {
-        --Checkbox-color-background: var(--sds-clr-gray-01);
-        --Checkbox-color-border: var(--sds-clr-gray-06);
+        --Checkbox-color-background: var(--sds-clr-gray-02);
+        --Checkbox-color-border: var(--sds-input-color-border-disabled);
         cursor: not-allowed;
       }
 
       &:checked:disabled + label {
         --Checkbox-color-background: var(--sds-clr-gray-04);
-        --Checkbox-color-border: var(--sds-clr-gray-06);
+        --Checkbox-color-border: var(--sds-input-color-border-disabled);
         --Checkbox-color-icon: var(--sds-clr-gray-09);
         cursor: not-allowed;
       }
@@ -101,8 +106,11 @@
         border: 1px solid var(--Checkbox-color-border);
         background-color: var(--Checkbox-color-background);
         border-radius: pxToRem(4px);
+        box-shadow: 0 0 0 var(--Checkbox-box-shadow-size)
+          var(--Checkbox-box-shadow-color);
         transition: background-color var(--sds-anim-transition-default),
-          border-color var(--sds-anim-transition-default);
+          border-color var(--sds-anim-transition-default),
+          box-shadow var(--sds-anim-transition-default);
 
         &[data-has-label="true"] {
           margin-top: calc(
@@ -124,8 +132,12 @@
   &--error {
     input[type="checkbox"] {
       & + label {
-        --Checkbox-color-background: var(--sds-clr-red-09);
-        --Checkbox-color-border: var(--sds-clr-red-09);
+        --Checkbox-color-background: var(--sds-input-color-background-error);
+        --Checkbox-color-border: var(--sds-input-color-border-error);
+      }
+
+      &:focus + label {
+        --Checkbox-box-shadow-color: var(--sds-input-box-shadow-color-error);
       }
     }
 
@@ -133,10 +145,14 @@
       &:hover {
         input[type="checkbox"]:not(:checked) {
           & + label {
-            --Checkbox-color-border: var(--sds-clr-gray-06);
+            --Checkbox-color-border: var(--sds-input-color-border-error-hover);
           }
         }
       }
     }
+  }
+
+  .FieldNote {
+    margin-left: calc(var(--Checkbox-size) + var(--Checkbox-horizontal-gap));
   }
 }
