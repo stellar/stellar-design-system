@@ -110,6 +110,12 @@
 
     textarea {
       cursor: not-allowed;
+
+      @media (hover: hover) {
+        &:hover {
+          border-color: var(--sds-input-color-border-disabled);
+        }
+      }
     }
   }
 }
