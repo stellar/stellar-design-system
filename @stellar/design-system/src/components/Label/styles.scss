@@ -6,12 +6,17 @@
   color: var(--sds-clr-gray-12);
 
   &--sm {
-    font-size: pxToRem(14px);
-    line-height: pxToRem(22px);
+    font-size: pxToRem(12px);
+    line-height: pxToRem(18px);
   }
 
-  &--xs {
+  &--md {
     font-size: pxToRem(12px);
+    line-height: pxToRem(18px);
+  }
+
+  &--lg {
+    font-size: pxToRem(14px);
     line-height: pxToRem(20px);
   }
 
