@@ -4,7 +4,7 @@ import "./styles.scss";
 interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
   children: string | React.ReactNode;
   htmlFor: string;
-  size?: "sm" | "xs";
+  size: "sm" | "md" | "lg";
   isUppercase?: boolean;
 }
 

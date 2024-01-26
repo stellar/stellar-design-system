@@ -9,7 +9,7 @@ export interface TextareaProps {
   id: string;
   // Note: cannot use "size" here because it's input's native property
   /** Size of the textarea */
-  fieldSize: "md" | "sm" | "xs";
+  fieldSize: "sm" | "md" | "lg";
   /** Content of the textarea */
   children?: string;
   /** Label of the textarea */
@@ -22,8 +22,6 @@ export interface TextareaProps {
   isError?: boolean;
   /** Make label uppercase */
   isLabelUppercase?: boolean;
-  /** Textarea with extra padding */
-  isExtraPadding?: boolean;
   /** Use a specific textarea rather than a generic HTML textarea (useful for Formik or otherwise controlled inputs) */
   customTextarea?: React.ReactElement;
 }
@@ -47,7 +45,6 @@ export const Textarea: React.FC<Props> = ({
   error,
   isError,
   isLabelUppercase,
-  isExtraPadding,
   customTextarea,
   spellCheck = false,
   autoComplete = "off",
@@ -57,7 +54,6 @@ export const Textarea: React.FC<Props> = ({
     `Textarea--${fieldSize}`,
     ...(props.disabled ? ["Textarea--disabled"] : []),
     ...(isError || error ? ["Textarea--error"] : []),
-    ...(isExtraPadding ? ["Textarea--extra-padding"] : []),
   ].join(" ");
 
   const baseTextareaProps = {
@@ -70,11 +66,7 @@ export const Textarea: React.FC<Props> = ({
   return (
     <div className={`Textarea ${additionalClasses}`}>
       {label && (
-        <Label
-          htmlFor={id}
-          isUppercase={isLabelUppercase}
-          size={fieldSize === "xs" ? "xs" : "sm"}
-        >
+        <Label htmlFor={id} isUppercase={isLabelUppercase} size={fieldSize}>
           {label}
         </Label>
       )}

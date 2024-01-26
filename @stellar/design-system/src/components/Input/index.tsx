@@ -99,7 +99,7 @@ export const Input: React.FC<Props> = ({
         <Label
           htmlFor={id}
           isUppercase={isLabelUppercase}
-          size={fieldSize === "xs" ? "xs" : "sm"}
+          size={fieldSize === "xs" ? "sm" : fieldSize}
         >
           {label}
         </Label>

@@ -10,6 +10,7 @@ export * from "./CopyText";
 export * from "./Floater";
 export * from "./IconButton";
 export * from "./Input";
+export * from "./Label";
 export * from "./Layout";
 export * from "./Loader";
 export * from "./Modal";
