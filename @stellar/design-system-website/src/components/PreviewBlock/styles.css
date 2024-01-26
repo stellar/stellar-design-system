@@ -100,7 +100,7 @@
   max-width: 24rem;
 }
 
-.PreviewBlock .Checkbox__container label {
+.PreviewBlock .PreviewBlock__checkboxes label {
   font-weight: var(--sds-fw-regular);
 }
 

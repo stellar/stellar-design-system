@@ -87,8 +87,12 @@ export const Textarea: React.FC<Props> = ({
         </textarea>
       )}
 
-      {note && <FieldNote>{note}</FieldNote>}
-      {error && <FieldNote variant="error">{error}</FieldNote>}
+      {note && <FieldNote size={fieldSize}>{note}</FieldNote>}
+      {error && (
+        <FieldNote size={fieldSize} variant="error">
+          {error}
+        </FieldNote>
+      )}
     </div>
   );
 };

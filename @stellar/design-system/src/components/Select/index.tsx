@@ -95,8 +95,12 @@ export const Select: React.FC<Props> = ({
         )}
       </div>
 
-      {note && <FieldNote>{note}</FieldNote>}
-      {error && <FieldNote variant="error">{error}</FieldNote>}
+      {note && <FieldNote size={fieldSize}>{note}</FieldNote>}
+      {error && (
+        <FieldNote size={fieldSize} variant="error">
+          {error}
+        </FieldNote>
+      )}
     </div>
   );
 };
