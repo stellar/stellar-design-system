@@ -1,4 +1,4 @@
-export * from "./AssetIcon";
+export * from "./Asset";
 export * from "./Avatar";
 export * from "./Badge";
 export * from "./Banner";

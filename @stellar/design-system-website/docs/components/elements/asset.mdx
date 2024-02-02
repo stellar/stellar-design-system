@@ -1,0 +1,35 @@
+---
+slug: /asset
+description: "Asset or asset pair displayed in a circle."
+---
+
+# Asset
+
+<ComponentDescription componentName="Asset" />
+
+## Example
+
+```tsx live
+<PreviewBlock componentName="Asset">
+  <Asset
+    variant="single"
+    size="sm"
+    sourceOne={{
+      image: "https://cryptologos.cc/logos/stellar-xlm-logo.svg?v=024",
+      altText: "XLM",
+    }}
+  />
+</PreviewBlock>
+```
+
+## Props
+
+<ComponentProps
+  componentName="Asset"
+  relatedType={[
+    "AssetBaseProps",
+    "SingleAssetProps",
+    "MultiAssetProps",
+    "AssetSource",
+  ]}
+/>
