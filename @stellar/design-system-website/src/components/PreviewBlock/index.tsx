@@ -93,6 +93,10 @@ interface PreviewOptionSelect extends PreviewOptionBase {
   options: {
     value: string;
     label: string;
+    updateRelated?: {
+      prop: string;
+      value: any;
+    };
   }[];
 }
 
@@ -160,7 +164,30 @@ export const PreviewBlock = ({
     }
 
     if (value) {
-      setProps({ ..._props, [id]: customValue ?? value, ...valObj });
+      // Get data-update-related attribute from option
+      const updateRelatedString = event.target.options[
+        event.target.selectedIndex
+      ].getAttribute("data-update-related");
+
+      const updateRelated = updateRelatedString
+        ? JSON.parse(updateRelatedString)
+        : undefined;
+
+      const updatedProps = {
+        ..._props,
+        [id]: customValue ?? value,
+        ...valObj,
+      };
+
+      if (updateRelated) {
+        if (updateRelated.value) {
+          updatedProps[updateRelated.prop] = updateRelated.value;
+        } else {
+          delete updatedProps[updateRelated.prop];
+        }
+      }
+
+      setProps(updatedProps);
     } else {
       delete _props[id];
 
@@ -202,7 +229,13 @@ export const PreviewBlock = ({
       >
         <>
           {option.options.map((o) => (
-            <option value={o.value} key={o.value}>
+            <option
+              value={o.value}
+              key={o.value}
+              data-update-related={
+                o.updateRelated ? JSON.stringify(o.updateRelated) : undefined
+              }
+            >
               {o.label}
             </option>
           ))}

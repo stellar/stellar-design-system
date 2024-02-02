@@ -1,5 +1,13 @@
 import { ComponentPreview } from "@site/src/components/PreviewBlock";
 
+const updateSourceTwo = {
+  prop: "sourceTwo",
+  value: {
+    altText: "USDC",
+    image: "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=024",
+  },
+};
+
 export const assetPreview: ComponentPreview = {
   options: [
     {
@@ -27,29 +35,27 @@ export const assetPreview: ComponentPreview = {
         {
           value: "single",
           label: "Single",
+          updateRelated: {
+            prop: "sourceTwo",
+            value: undefined,
+          },
         },
         {
           value: "swap",
           label: "Swap",
+          updateRelated: updateSourceTwo,
         },
         {
           value: "pair",
           label: "Pair",
+          updateRelated: updateSourceTwo,
         },
         {
           value: "platform",
           label: "Platform",
+          updateRelated: updateSourceTwo,
         },
       ],
-    },
-    {
-      type: "checkbox",
-      prop: "sourceTwo",
-      label: "Add second asset",
-      customValue: {
-        altText: "USDC",
-        image: "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg?v=024",
-      },
     },
   ],
 };

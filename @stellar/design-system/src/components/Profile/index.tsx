@@ -80,7 +80,7 @@ export const Profile: React.FC<ProfileProps> = ({
 
   return (
     <Component>
-      {hideAvatar ? null : <Avatar publicAddress={publicAddress} />}
+      {hideAvatar ? null : <Avatar size="sm" publicAddress={publicAddress} />}
 
       <div className="Profile__address" title={address}>
         {isShort ? shortenAddress(address) : address}
