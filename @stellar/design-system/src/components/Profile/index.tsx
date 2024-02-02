@@ -8,7 +8,7 @@ export interface ProfileProps {
   /** Public Stellar address */
   publicAddress: string;
   /** Size of the component */
-  size: "md" | "sm" | "xs";
+  size: "sm" | "md" | "lg";
   /** Federated address to show in place of Stellar address */
   federatedAddress?: string;
   /** Shorten Stellar or federated address */
@@ -80,7 +80,7 @@ export const Profile: React.FC<ProfileProps> = ({
 
   return (
     <Component>
-      {hideAvatar ? null : <Avatar size="sm" publicAddress={publicAddress} />}
+      {hideAvatar ? null : <Avatar size={size} publicAddress={publicAddress} />}
 
       <div className="Profile__address" title={address}>
         {isShort ? shortenAddress(address) : address}
