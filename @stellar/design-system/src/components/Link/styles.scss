@@ -73,6 +73,30 @@
     @include linkState();
   }
 
+  &--success {
+    --Link-color-default: var(--sds-clr-green-11);
+    --Link-color-hover: var(--sds-clr-green-12);
+    --Link-color-disabled: var(--sds-clr-green-08);
+
+    @include linkState();
+  }
+
+  &--warning {
+    --Link-color-default: var(--sds-clr-amber-11);
+    --Link-color-hover: var(--sds-clr-amber-12);
+    --Link-color-disabled: var(--sds-clr-amber-08);
+
+    @include linkState();
+  }
+
+  &--error {
+    --Link-color-default: var(--sds-clr-red-11);
+    --Link-color-hover: var(--sds-clr-red-12);
+    --Link-color-disabled: var(--sds-clr-red-08);
+
+    @include linkState();
+  }
+
   // Size
   &--md {
     --Link-font-size: #{pxToRem(16px)};
