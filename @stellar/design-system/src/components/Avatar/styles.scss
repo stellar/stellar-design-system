@@ -1,8 +1,9 @@
 @use "../../utils.scss" as *;
 
 .Avatar {
-  --Avatar-size: #{pxToRem(32px)};
+  --Avatar-size: #{pxToRem(16px)};
   --Avatar-size-image: calc(var(--Avatar-size) / 2);
+  --Avatar-font-size: #{pxToRem(8px)};
 
   display: flex;
   align-items: center;
@@ -19,5 +20,35 @@
     display: block;
     width: var(--Avatar-size-image);
     height: var(--Avatar-size-image);
+  }
+
+  svg {
+    display: block;
+    width: var(--Avatar-size-image);
+    height: var(--Avatar-size-image);
+    stroke: var(--sds-clr-gray-11);
+  }
+
+  &__initials {
+    font-family: var(--sds-ff-base);
+    font-size: var(--Avatar-font-size);
+    line-height: 1;
+    font-weight: var(--sds-fw-semi-bold);
+    color: var(--sds-clr-gray-11);
+  }
+
+  &--sm {
+    --Avatar-size: #{pxToRem(16px)};
+    --Avatar-font-size: #{pxToRem(7px)};
+  }
+
+  &--md {
+    --Avatar-size: #{pxToRem(24px)};
+    --Avatar-font-size: #{pxToRem(11px)};
+  }
+
+  &--lg {
+    --Avatar-size: #{pxToRem(32px)};
+    --Avatar-font-size: #{pxToRem(14px)};
   }
 }

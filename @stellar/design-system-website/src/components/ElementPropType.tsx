@@ -35,6 +35,8 @@ export const ElementPropType = ({ type }: { type: any }) => {
       return <code>{`() => void`}</code>;
     case "array":
       return <code>{`${type?.elementType?.name || ""}[]`}</code>;
+    case "literal":
+      return <code>{type.value}</code>;
     case "intrinsic":
     case "reference":
       return <code>{type.name}</code>;
