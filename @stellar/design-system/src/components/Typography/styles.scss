@@ -2,31 +2,33 @@
 
 .Display,
 .Heading {
+  --Heading-font-size: #{pxToRem(56px)};
+
   font-family: var(--sds-ff-heading);
   font-weight: var(--sds-fw-regular);
-  letter-spacing: -4%;
+  letter-spacing: calc(var(--Heading-font-size) * 0.04 * -1);
   padding: 0;
   margin: 0;
 
   // Size
   &--xl {
-    font-size: pxToRem(56px);
+    --Heading-font-size: #{pxToRem(56px)};
     line-height: pxToRem(64px);
   }
   &--lg {
-    font-size: pxToRem(48px);
+    --Heading-font-size: #{pxToRem(48px)};
     line-height: pxToRem(56px);
   }
   &--md {
-    font-size: pxToRem(40px);
+    --Heading-font-size: #{pxToRem(40px)};
     line-height: pxToRem(48px);
   }
   &--sm {
-    font-size: pxToRem(32px);
+    --Heading-font-size: #{pxToRem(32px)};
     line-height: pxToRem(40px);
   }
   &--xs {
-    font-size: pxToRem(24px);
+    --Heading-font-size: #{pxToRem(24px)};
     line-height: pxToRem(32px);
   }
 

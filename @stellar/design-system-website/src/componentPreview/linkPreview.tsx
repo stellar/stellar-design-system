@@ -16,6 +16,18 @@ export const linkPreview: ComponentPreview = {
           value: "secondary",
           label: "Secondary",
         },
+        {
+          value: "success",
+          label: "Success",
+        },
+        {
+          value: "warning",
+          label: "Warning",
+        },
+        {
+          value: "error",
+          label: "Error",
+        },
       ],
     },
     {

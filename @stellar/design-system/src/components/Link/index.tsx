@@ -8,7 +8,7 @@ export interface LinkProps {
   /** Content of the link */
   children?: string | React.ReactNode;
   /** Variant of the link @defaultValue `primary` */
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "success" | "warning" | "error";
   /** Size of the link, will inherit parent size if not set */
   size?: "md" | "sm" | "xs";
   /** Icon element */

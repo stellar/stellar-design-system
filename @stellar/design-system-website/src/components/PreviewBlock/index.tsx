@@ -6,6 +6,7 @@ import "./styles.css";
 // =============================================================================
 // Preview imports
 // =============================================================================
+import { alertPreview } from "@site/src/componentPreview/alertPreview";
 import { assetPreview } from "@site/src/componentPreview/assetPreview";
 import { avatarPreview } from "@site/src/componentPreview/avatarPreview";
 import { badgePreview } from "@site/src/componentPreview/badgePreview";
@@ -41,6 +42,7 @@ import { tooltipPreview } from "@site/src/componentPreview/tooltipPreview";
 // Component previews
 // =============================================================================
 const previews: { [key: string]: ComponentPreview } = {
+  Alert: alertPreview,
   Asset: assetPreview,
   Avatar: avatarPreview,
   Badge: badgePreview,
