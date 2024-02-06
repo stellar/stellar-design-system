@@ -125,7 +125,7 @@ export const PreviewBlock = ({
   children: React.ReactElement;
 }) => {
   const [sds, setSds] = useState<any>({});
-  const { Checkbox, Select, Notification, Text, Button, Modal, Alert } = sds;
+  const { Checkbox, Select, Notification, Text, Button, Modal } = sds;
 
   // Importing SDS here because we need it async for server-side-rendering
   useEffect(() => {
