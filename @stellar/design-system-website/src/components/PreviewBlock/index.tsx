@@ -144,8 +144,11 @@ export const PreviewBlock = ({
   }
 
   const [props, setProps] = useState({});
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isBasicModalOpen, setIsBasicModalOpen] = useState(false);
+  const [isModalWithButtonsOpen, setIsModalWithButtonsOpen] = useState(false);
+  const [isModalButtonsStretchOpen, setIsModalButtonsStretchOpen] =
+    useState(false);
+  const [isModalButtonsStackOpen, setIsModalButtonsStackOpen] = useState(false);
 
   const handleSelectChange = (
     event: React.ChangeEvent<HTMLSelectElement>,
@@ -300,27 +303,46 @@ export const PreviewBlock = ({
     if (componentName === "Modal") {
       return Button && Modal ? (
         <div className="PreviewBlock__block">
+          {/* Buttons */}
           <Button
             variant="primary"
             size="md"
             onClick={() => setIsBasicModalOpen(true)}
           >
-            Open basic modal
+            Basic modal
           </Button>
 
           <Button
             variant="primary"
             size="md"
-            onClick={() => setIsModalOpen(true)}
+            onClick={() => setIsModalWithButtonsOpen(true)}
           >
-            Open modal
+            Modal with buttons
           </Button>
 
+          <Button
+            variant="primary"
+            size="md"
+            onClick={() => setIsModalButtonsStretchOpen(true)}
+          >
+            Modal with stretched buttons
+          </Button>
+
+          <Button
+            variant="primary"
+            size="md"
+            onClick={() => setIsModalButtonsStackOpen(true)}
+          >
+            Modal with stacked buttons
+          </Button>
+
+          {/* Basic modal */}
           <Modal
             onClose={() => setIsBasicModalOpen(false)}
             parentId="preview-block"
             visible={isBasicModalOpen}
           >
+            <Modal.Heading>Modal heading</Modal.Heading>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
               eius beatae sint dolorem, excepturi quos enim, et ullam suscipit
@@ -329,10 +351,11 @@ export const PreviewBlock = ({
             </p>
           </Modal>
 
+          {/* Modal with buttons */}
           <Modal
-            onClose={() => setIsModalOpen(false)}
+            onClose={() => setIsModalWithButtonsOpen(false)}
             parentId="preview-block"
-            visible={isModalOpen}
+            visible={isModalWithButtonsOpen}
           >
             <Modal.Heading>Modal heading</Modal.Heading>
             <Modal.Body>
@@ -358,10 +381,88 @@ export const PreviewBlock = ({
               </p>
             </Modal.Body>
             <Modal.Footer>
-              <Button size="sm" variant="primary">
+              <Button size="md" variant="secondary">
+                Cancel
+              </Button>
+              <Button size="md" variant="primary">
                 Submit
               </Button>
-              <Button size="sm" variant="secondary">
+            </Modal.Footer>
+          </Modal>
+
+          {/* Modal with stretched buttons */}
+          <Modal
+            onClose={() => setIsModalButtonsStretchOpen(false)}
+            parentId="preview-block"
+            visible={isModalButtonsStretchOpen}
+          >
+            <Modal.Heading>Modal heading</Modal.Heading>
+            <Modal.Body>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur eius beatae sint dolorem, excepturi quos enim, et ullam
+                suscipit voluptates voluptas accusantium repellendus amet
+                explicabo, iure veritatis aperiam alias molestiae.
+              </p>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur eius beatae sint dolorem, excepturi quos enim, et ullam
+                suscipit voluptates voluptas accusantium repellendus amet
+                explicabo, iure veritatis aperiam alias molestiae.
+              </p>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur eius beatae sint dolorem, excepturi quos enim, et ullam
+                suscipit voluptates voluptas accusantium repellendus amet
+                explicabo, iure veritatis aperiam alias molestiae.
+              </p>
+            </Modal.Body>
+            <Modal.Footer itemAlignment="stretch">
+              <Button size="md" variant="secondary">
+                Cancel
+              </Button>
+              <Button size="md" variant="primary">
+                Submit
+              </Button>
+            </Modal.Footer>
+          </Modal>
+
+          {/* Modal with stacked buttons */}
+          <Modal
+            onClose={() => setIsModalButtonsStackOpen(false)}
+            parentId="preview-block"
+            visible={isModalButtonsStackOpen}
+          >
+            <Modal.Heading>Modal heading</Modal.Heading>
+            <Modal.Body>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur eius beatae sint dolorem, excepturi quos enim, et ullam
+                suscipit voluptates voluptas accusantium repellendus amet
+                explicabo, iure veritatis aperiam alias molestiae.
+              </p>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur eius beatae sint dolorem, excepturi quos enim, et ullam
+                suscipit voluptates voluptas accusantium repellendus amet
+                explicabo, iure veritatis aperiam alias molestiae.
+              </p>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur eius beatae sint dolorem, excepturi quos enim, et ullam
+                suscipit voluptates voluptas accusantium repellendus amet
+                explicabo, iure veritatis aperiam alias molestiae.
+              </p>
+            </Modal.Body>
+            <Modal.Footer itemAlignment="stack">
+              <Button size="md" variant="primary">
+                Submit
+              </Button>
+              <Button size="md" variant="secondary">
                 Cancel
               </Button>
             </Modal.Footer>

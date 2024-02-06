@@ -34,19 +34,24 @@ export interface ModalBodyProps {
   children: React.ReactNode;
 }
 
-const ModalBody: React.FC<ModalBodyProps> = ({
-  children,
-}: ModalHeadingProps) => <div className="ModalBody">{children}</div>;
+const ModalBody: React.FC<ModalBodyProps> = ({ children }: ModalBodyProps) => (
+  <div className="ModalBody">{children}</div>
+);
 
 /** */
 export interface ModalFooterProps {
   /** Content of the modal footer */
   children: React.ReactNode;
+  /** Item alignment in the footer @defaultValue `right` */
+  itemAlignment?: "right" | "stretch" | "stack";
 }
 
 const ModalFooter: React.FC<ModalFooterProps> = ({
   children,
-}: ModalHeadingProps) => <div className="ModalFooter">{children}</div>;
+  itemAlignment = "right",
+}: ModalFooterProps) => (
+  <div className={`ModalFooter ModalFooter--${itemAlignment}`}>{children}</div>
+);
 
 /** */
 export interface ModalProps {
