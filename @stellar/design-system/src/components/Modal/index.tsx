@@ -50,7 +50,7 @@ const ModalFooter: React.FC<ModalFooterProps> = ({
 
 /** */
 export interface ModalProps {
-  /** ID of the modal parent (affects the position of the modal) @defaultValue root */
+  /** ID of the modal parent (affects the position of the modal) @defaultValue `root` */
   parentId?: string;
   /** State to show or hide the modal */
   visible: boolean;

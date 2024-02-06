@@ -6,6 +6,7 @@ import "./styles.css";
 // =============================================================================
 // Preview imports
 // =============================================================================
+import { alertPreview } from "@site/src/componentPreview/alertPreview";
 import { assetPreview } from "@site/src/componentPreview/assetPreview";
 import { avatarPreview } from "@site/src/componentPreview/avatarPreview";
 import { badgePreview } from "@site/src/componentPreview/badgePreview";
@@ -41,6 +42,7 @@ import { tooltipPreview } from "@site/src/componentPreview/tooltipPreview";
 // Component previews
 // =============================================================================
 const previews: { [key: string]: ComponentPreview } = {
+  Alert: alertPreview,
   Asset: assetPreview,
   Avatar: avatarPreview,
   Badge: badgePreview,
@@ -123,7 +125,7 @@ export const PreviewBlock = ({
   children: React.ReactElement;
 }) => {
   const [sds, setSds] = useState<any>({});
-  const { Checkbox, Select, Notification, Text, Button, Modal } = sds;
+  const { Checkbox, Select, Notification, Text, Button, Modal, Alert } = sds;
 
   // Importing SDS here because we need it async for server-side-rendering
   useEffect(() => {

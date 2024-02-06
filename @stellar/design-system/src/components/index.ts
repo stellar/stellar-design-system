@@ -1,3 +1,4 @@
+export * from "./Alert";
 export * from "./Asset";
 export * from "./Avatar";
 export * from "./Badge";
