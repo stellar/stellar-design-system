@@ -4,6 +4,8 @@ import { Element } from "@site/src/components/Element";
 import { ParseSummary } from "@site/src/components/ParseSummary";
 import { ElementPropType } from "@site/src/components/ElementPropType";
 
+import "./styles.css";
+
 export const ComponentProps = ({
   componentName,
   relatedType,
@@ -71,7 +73,7 @@ export const ComponentProps = ({
 
     return (
       <Fragment key={`t-${t.id}`}>
-        <tr>
+        <tr className="PropsTable__subtitle">
           <td colSpan={5}>
             <code>{t.name}</code>
           </td>
@@ -85,7 +87,7 @@ export const ComponentProps = ({
 
   return (
     <div>
-      <table>
+      <table className="PropsTable">
         <thead>
           <tr>
             <th>Prop</th>
