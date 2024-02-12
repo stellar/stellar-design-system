@@ -103,15 +103,14 @@ export const Link: React.FC<Props> = ({
     className: `Link ${additionalClasses}`,
     ...props,
     ...customProps,
+    children: renderAnchorContent(),
   };
 
   return customAnchor ? (
-    cloneElement(customAnchor, {
-      ...anchorProps,
-      children: renderAnchorContent(),
-    })
+    cloneElement(customAnchor, anchorProps)
   ) : (
-    <a {...anchorProps}>{renderAnchorContent()}</a>
+    // eslint-disable-next-line jsx-a11y/anchor-has-content
+    <a {...anchorProps} />
   );
 };
 
