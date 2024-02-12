@@ -1,4 +1,4 @@
-import React from "react";
+import React, { cloneElement } from "react";
 import "./styles.scss";
 
 /**
@@ -21,9 +21,13 @@ export interface LinkProps {
   isUnderline?: boolean;
   /** Make the link uppercase */
   isUppercase?: boolean;
+  /** Provide a custom anchor element, for example, `Link` from Next.js */
+  customAnchor?: React.ReactElement;
+  /** Additional classes */
+  addlClassName?: string;
 }
 
-interface Props
+export interface Props
   extends LinkProps,
     React.AnchorHTMLAttributes<HTMLAnchorElement> {}
 
@@ -41,6 +45,8 @@ export const Link: React.FC<Props> = ({
   isDisabled,
   isUnderline,
   isUppercase,
+  customAnchor,
+  addlClassName,
   ...props
 }) => {
   const { href, onClick } = props;
@@ -74,6 +80,7 @@ export const Link: React.FC<Props> = ({
     ...(isDisabled ? ["Link--disabled"] : []),
     ...(isUnderline ? ["Link--underline"] : []),
     ...(isUppercase ? ["Link--uppercase"] : []),
+    ...(addlClassName ? addlClassName.split(" ") : []),
   ].join(" ");
 
   const renderIcon = (position: "left" | "right") => {
@@ -84,12 +91,26 @@ export const Link: React.FC<Props> = ({
     return null;
   };
 
-  return (
-    <a className={`Link ${additionalClasses}`} {...props} {...customProps}>
+  const renderAnchorContent = () => (
+    <>
       {renderIcon("left")}
       {children}
       {renderIcon("right")}
-    </a>
+    </>
+  );
+
+  const anchorProps = {
+    className: `Link ${additionalClasses}`,
+    ...props,
+    ...customProps,
+    children: renderAnchorContent(),
+  };
+
+  return customAnchor ? (
+    cloneElement(customAnchor, anchorProps)
+  ) : (
+    // eslint-disable-next-line jsx-a11y/anchor-has-content
+    <a {...anchorProps} />
   );
 };
 
