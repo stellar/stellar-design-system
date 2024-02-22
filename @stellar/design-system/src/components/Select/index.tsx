@@ -10,7 +10,7 @@ export interface SelectProps {
   id: string;
   // Note: cannot use "size" here because it's input's native property
   /** Size of the select */
-  fieldSize: "md" | "sm" | "xs";
+  fieldSize: "sm" | "md" | "lg";
   /** Select options or optgroup with options */
   children: React.ReactNode;
   /** Label of the select */
@@ -21,12 +21,8 @@ export interface SelectProps {
   error?: string | string;
   /** Make label uppercase */
   isLabelUppercase?: boolean;
-  /** Pill shaped select */
-  isPill?: boolean;
   /** Select error without a message */
   isError?: boolean;
-  /** Select with extra padding */
-  isExtraPadding?: boolean;
   /** Use a specific select rather than a generic HTML select (useful for Formik or otherwise controlled selects) */
   customSelect?: React.ReactElement;
 }
@@ -49,9 +45,7 @@ export const Select: React.FC<Props> = ({
   note,
   error,
   isLabelUppercase,
-  isPill,
   isError,
-  isExtraPadding,
   customSelect,
   ...props
 }: Props) => {
@@ -59,8 +53,6 @@ export const Select: React.FC<Props> = ({
     `Select--${fieldSize}`,
     ...(props.disabled ? ["Select--disabled"] : []),
     ...(isError || error ? ["Select--error"] : []),
-    ...(isPill ? ["Select--pill"] : []),
-    ...(isExtraPadding ? ["Select--extra-padding"] : []),
   ].join(" ");
 
   const baseSelectProps = {
@@ -71,11 +63,7 @@ export const Select: React.FC<Props> = ({
   return (
     <div className={`Select ${additionalClasses}`}>
       {label && (
-        <Label
-          htmlFor={id}
-          isUppercase={isLabelUppercase}
-          size={fieldSize === "xs" ? "sm" : fieldSize}
-        >
+        <Label htmlFor={id} isUppercase={isLabelUppercase} size={fieldSize}>
           {label}
         </Label>
       )}

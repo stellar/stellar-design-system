@@ -22,16 +22,16 @@ export const selectPreview: ComponentPreview = {
       prop: "fieldSize",
       options: [
         {
-          value: "md",
-          label: "MD",
-        },
-        {
           value: "sm",
           label: "SM",
         },
         {
-          value: "xs",
-          label: "XS",
+          value: "md",
+          label: "MD",
+        },
+        {
+          value: "lg",
+          label: "LG",
         },
       ],
     },
@@ -47,18 +47,8 @@ export const selectPreview: ComponentPreview = {
     },
     {
       type: "checkbox",
-      prop: "isPill",
-      label: "Pill",
-    },
-    {
-      type: "checkbox",
       prop: "isError",
       label: "Error",
-    },
-    {
-      type: "checkbox",
-      prop: "isExtraPadding",
-      label: "Extra padding",
     },
     {
       type: "select",
