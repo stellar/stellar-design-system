@@ -39,16 +39,16 @@ export const inputPreview: ComponentPreview = {
       prop: "fieldSize",
       options: [
         {
-          value: "md",
-          label: "MD",
-        },
-        {
           value: "sm",
           label: "SM",
         },
         {
-          value: "xs",
-          label: "XS",
+          value: "md",
+          label: "MD",
+        },
+        {
+          value: "lg",
+          label: "LG",
         },
       ],
     },
@@ -64,18 +64,8 @@ export const inputPreview: ComponentPreview = {
     },
     {
       type: "checkbox",
-      prop: "isPill",
-      label: "Pill",
-    },
-    {
-      type: "checkbox",
       prop: "isError",
       label: "Error",
-    },
-    {
-      type: "checkbox",
-      prop: "isExtraPadding",
-      label: "Extra padding",
     },
     {
       type: "checkbox",
@@ -84,16 +74,30 @@ export const inputPreview: ComponentPreview = {
     },
     {
       type: "select",
+      prop: "leftElement",
+      options: [
+        {
+          value: "",
+          label: "No left element",
+        },
+        {
+          value: "$",
+          label: "Left element",
+        },
+      ],
+    },
+    {
+      type: "select",
       prop: "rightElement",
       customValue: <CheckIconSvg />,
       options: [
         {
           value: "",
-          label: "No element",
+          label: "No right element",
         },
         {
           value: "element",
-          label: "Element",
+          label: "Right element",
         },
       ],
     },
@@ -124,6 +128,21 @@ export const inputPreview: ComponentPreview = {
         {
           value: "error",
           label: "Error",
+        },
+      ],
+    },
+    {
+      type: "select",
+      prop: "copyButton",
+      customValue: { position: "right", showLabel: true },
+      options: [
+        {
+          value: "",
+          label: "No copy button",
+        },
+        {
+          value: "copyButton",
+          label: "Copy button",
         },
       ],
     },

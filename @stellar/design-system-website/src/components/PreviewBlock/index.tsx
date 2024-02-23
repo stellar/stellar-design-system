@@ -125,7 +125,7 @@ export const PreviewBlock = ({
   children: React.ReactElement;
 }) => {
   const [sds, setSds] = useState<any>({});
-  const { Checkbox, Select, Notification, Text, Button, Modal } = sds;
+  const { Checkbox, Select, Notification, Text, Button, Modal, Input } = sds;
 
   // Importing SDS here because we need it async for server-side-rendering
   useEffect(() => {
@@ -149,6 +149,7 @@ export const PreviewBlock = ({
   const [isModalButtonsStretchOpen, setIsModalButtonsStretchOpen] =
     useState(false);
   const [isModalButtonsStackOpen, setIsModalButtonsStackOpen] = useState(false);
+  const [inputValue, setInputValue] = useState("");
 
   const handleSelectChange = (
     event: React.ChangeEvent<HTMLSelectElement>,
@@ -468,6 +469,18 @@ export const PreviewBlock = ({
             </Modal.Footer>
           </Modal>
         </div>
+      ) : null;
+    }
+
+    if (componentName === "Input") {
+      return Input ? (
+        <Input
+          fieldSize="sm"
+          id="input"
+          onChange={(e) => setInputValue(e.target.value)}
+          value={inputValue}
+          {...props}
+        />
       ) : null;
     }
 

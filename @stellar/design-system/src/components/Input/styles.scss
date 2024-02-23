@@ -7,99 +7,81 @@
   --Input-color-border-hover: var(--sds-clr-gray-06);
   --Input-color-border-focus: var(--sds-clr-gray-06);
   --Input-color-text: var(--sds-clr-gray-12);
+  --Input-color-side-element: var(--sds-clr-gray-09);
 
   // Size
-  --Input-font-size: #{pxToRem(16px)};
-  --Input-line-height: #{pxToRem(24px)};
-  --Input-padding-vertical: #{pxToRem(8px)};
-  --Input-padding-horizontal: #{pxToRem(12px)};
-  --Input-gap: #{pxToRem(8px)};
+  --Input-font-size: #{pxToRem(12px)};
+  --Input-line-height: #{pxToRem(18px)};
+  --Input-padding-vertical: #{pxToRem(4px)};
+  --Input-padding-horizontal: #{pxToRem(10px)};
+  --Input-gap: #{pxToRem(6px)};
   --Input-border-radius: #{pxToRem(4px)};
-  --Input-note-font-size: #{pxToRem(14px)};
-  --Input-note-line-height: #{pxToRem(22px)};
+
+  --Input-box-shadow-size: 0;
+  --Input-box-shadow-color: var(--sds-input-box-shadow-color-default);
 
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: var(--Input-gap);
 
+  &--sm {
+    --Input-font-size: #{pxToRem(12px)};
+    --Input-line-height: #{pxToRem(18px)};
+    --Input-padding-vertical: #{pxToRem(4px)};
+    --Input-padding-horizontal: #{pxToRem(10px)};
+    --Input-gap: #{pxToRem(6px)};
+    --Input-border-radius: #{pxToRem(4px)};
+  }
+
   &--md {
+    --Input-font-size: #{pxToRem(14px)};
+    --Input-line-height: #{pxToRem(20px)};
+    --Input-padding-vertical: #{pxToRem(6px)};
+    --Input-padding-horizontal: #{pxToRem(12px)};
+    --Input-gap: #{pxToRem(6px)};
+    --Input-border-radius: #{pxToRem(6px)};
+  }
+
+  &--lg {
     --Input-font-size: #{pxToRem(16px)};
     --Input-line-height: #{pxToRem(24px)};
     --Input-padding-vertical: #{pxToRem(8px)};
-    --Input-padding-horizontal: #{pxToRem(12px)};
+    --Input-padding-horizontal: #{pxToRem(14px)};
     --Input-gap: #{pxToRem(8px)};
-    --Input-note-font-size: #{pxToRem(14px)};
-    --Input-note-line-height: #{pxToRem(22px)};
-
-    &.Input--pill {
-      --Input-padding-horizontal: #{pxToRem(14px)};
-    }
-
-    &.Input--extra-padding {
-      --Input-padding-vertical: #{pxToRem(12px)};
-      --Input-padding-horizontal: #{pxToRem(16px)};
-    }
-  }
-
-  &--sm {
-    --Input-font-size: #{pxToRem(14px)};
-    --Input-line-height: #{pxToRem(22px)};
-    --Input-padding-vertical: #{pxToRem(6px)};
-    --Input-padding-horizontal: #{pxToRem(10px)};
-    --Input-gap: #{pxToRem(6px)};
-    --Input-note-font-size: #{pxToRem(14px)};
-    --Input-note-line-height: #{pxToRem(22px)};
-
-    &.Input--pill {
-      --Input-padding-horizontal: #{pxToRem(12px)};
-    }
-
-    &.Input--extra-padding {
-      --Input-padding-vertical: #{pxToRem(10px)};
-      --Input-padding-horizontal: #{pxToRem(14px)};
-    }
-  }
-
-  &--xs {
-    --Input-font-size: #{pxToRem(12px)};
-    --Input-line-height: #{pxToRem(20px)};
-    --Input-padding-vertical: #{pxToRem(4px)};
-    --Input-padding-horizontal: #{pxToRem(8px)};
-    --Input-gap: #{pxToRem(4px)};
-    --Input-note-font-size: #{pxToRem(12px)};
-    --Input-note-line-height: #{pxToRem(20px)};
-
-    &.Input--pill {
-      --Input-padding-horizontal: #{pxToRem(10px)};
-    }
-
-    &.Input--extra-padding {
-      --Input-padding-vertical: #{pxToRem(8px)};
-      --Input-padding-horizontal: #{pxToRem(12px)};
-    }
+    --Input-border-radius: #{pxToRem(8px)};
   }
 
   &__container {
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--Input-padding-horizontal);
+
     font-family: var(--sds-ff-base);
     background-color: var(--Input-color-background);
     border: 1px solid var(--Input-color-border);
     color: var(--Input-color-text);
     border-radius: var(--Input-border-radius);
-    transition: border-color var(--sds-anim-transition-default);
+    box-shadow: 0 0 0 var(--Input-box-shadow-size) var(--Input-box-shadow-color);
+    transition: border-color var(--sds-anim-transition-default),
+      box-shadow var(--sds-anim-transition-default);
+
+    padding-left: var(--Input-padding-horizontal);
+    padding-right: var(--Input-padding-horizontal);
 
     input {
       display: block;
-      width: 100%;
+      flex: 1;
       color: currentColor;
       border: none;
       background-color: transparent;
-      overflow: hidden;
-      border-radius: var(--Input-border-radius);
-      padding: var(--Input-padding-vertical) var(--Input-padding-horizontal);
+      padding-top: var(--Input-padding-vertical);
+      padding-bottom: var(--Input-padding-vertical);
       font-size: var(--Input-font-size);
       line-height: var(--Input-line-height);
+      outline: none;
+      overflow: hidden;
 
       // Remove spinners (up and down arrows) from number inputs
       &[type="number"]::-webkit-inner-spin-button,
@@ -108,14 +90,13 @@
         margin: 0;
       }
 
-      &:focus-visible {
-        outline: 1px solid var(--Input-color-border-focus);
-        border-color: transparent;
-      }
-
       &::placeholder {
         color: var(--sds-clr-gray-11);
       }
+    }
+
+    &:has(input:focus-visible) {
+      --Input-box-shadow-size: #{pxToRem(4px)};
     }
 
     @media (hover: hover) {
@@ -126,21 +107,21 @@
   }
 
   &__side-element {
-    color: currentColor;
-    position: absolute;
-    top: var(--Input-padding-vertical);
-    bottom: var(--Input-padding-vertical);
-    right: var(--Input-padding-horizontal);
-    font-size: var(--Input-font-size);
-    line-height: var(--Input-line-height);
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+
+    color: var(--Input-color-side-element);
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    position: relative;
+    font-size: var(--Input-font-size);
+    line-height: var(--Input-line-height);
 
     svg {
-      stroke: currentColor;
-      width: var(--Input-font-size);
-      height: var(--Input-font-size);
+      stroke: var(--Input-color-side-element);
+      width: auto;
+      height: auto;
     }
 
     .PasswordMaskToggle {
@@ -153,47 +134,80 @@
       padding: 0;
 
       svg {
-        stroke: var(--sds-clr-gray-09);
+        stroke: var(--Input-color-side-element);
       }
     }
   }
 
+  &__copyButton {
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    &--left {
+      border-right: 1px solid var(--Input-color-border);
+      margin-left: calc(var(--Input-padding-horizontal) * -1);
+      border-top-left-radius: var(--Input-border-radius);
+      border-bottom-left-radius: var(--Input-border-radius);
+
+      .Button {
+        border-top-left-radius: var(--Input-border-radius);
+        border-bottom-left-radius: var(--Input-border-radius);
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+
+    &--right {
+      border-left: 1px solid var(--Input-color-border);
+      margin-right: calc(var(--Input-padding-horizontal) * -1);
+      border-top-right-radius: var(--Input-border-radius);
+      border-bottom-right-radius: var(--Input-border-radius);
+
+      .Button {
+        border-top-right-radius: var(--Input-border-radius);
+        border-bottom-right-radius: var(--Input-border-radius);
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+
+    .Button {
+      border: none;
+    }
+  }
+
   &--error {
-    --Input-color-background: var(--sds-clr-gray-01);
-    --Input-color-border: var(--sds-clr-red-06);
-    --Input-color-text: var(--sds-clr-gray-11);
+    --Input-color-background: var(--sds-input-color-background-error);
+    --Input-color-border: var(--sds-input-color-border-error);
+    --Input-color-text: var(--sds-input-color-text-default);
 
     .Input__container {
-      input {
-        &:focus-visible {
-          --Input-color-border-focus: var(--sds-clr-red-06);
-        }
+      &:has(input:focus-visible) {
+        --Input-color-border-focus: var(--sds-input-color-border-error-focus);
+        --Input-box-shadow-color: var(--sds-input-box-shadow-color-error);
       }
 
       @media (hover: hover) {
         &:hover {
-          --Input-color-border-hover: var(--sds-clr-red-06);
+          --Input-color-border-hover: var(--sds-input-color-border-error-hover);
         }
       }
     }
   }
 
   &--disabled {
-    --Input-color-background: var(--sds-clr-gray-02);
-    --Input-color-border: var(--sds-clr-gray-07);
-    --Input-color-text: var(--sds-clr-gray-11);
+    --Input-color-background: var(--sds-input-color-background-disabled);
+    --Input-color-border: var(--sds-input-color-border-disabled);
+    --Input-color-text: var(--sds-input-color-text-disabled);
 
     input {
       cursor: not-allowed;
+
+      @media (hover: hover) {
+        &:hover {
+          border-color: var(--sds-input-color-border-disabled);
+        }
+      }
     }
-  }
-
-  &--pill {
-    --Input-border-radius: var(--Input-line-height);
-  }
-
-  .FieldNote {
-    font-size: var(--Input-note-font-size);
-    line-height: var(--Input-note-line-height);
   }
 }
