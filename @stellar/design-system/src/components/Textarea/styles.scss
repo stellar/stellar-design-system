@@ -72,7 +72,7 @@
     }
 
     &:focus-visible {
-      --Textarea-box-shadow-size: #{pxToRem(2px)};
+      --Textarea-box-shadow-size: #{pxToRem(4px)};
     }
 
     &::placeholder {
