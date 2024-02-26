@@ -88,6 +88,10 @@ export const Input: React.FC<Props> = ({
         icon={<Icon.Copy01 />}
         iconPosition="left"
         disabled={!props.value}
+        type="button"
+        onClick={(e) => {
+          e.preventDefault();
+        }}
       >
         {copyButton?.showLabel ? "Copy" : ""}
       </Button>
