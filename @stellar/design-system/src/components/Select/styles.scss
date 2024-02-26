@@ -32,6 +32,7 @@
     --Select-padding-vertical: #{pxToRem(4px)};
     --Select-padding-horizontal: #{pxToRem(10px)};
     --Select-gap: #{pxToRem(6px)};
+    --Select-border-radius: #{pxToRem(4px)};
   }
 
   &--md {
@@ -40,6 +41,7 @@
     --Select-padding-vertical: #{pxToRem(6px)};
     --Select-padding-horizontal: #{pxToRem(12px)};
     --Select-gap: #{pxToRem(6px)};
+    --Select-border-radius: #{pxToRem(6px)};
   }
 
   &--lg {
@@ -48,6 +50,7 @@
     --Select-padding-vertical: #{pxToRem(8px)};
     --Select-padding-horizontal: #{pxToRem(14px)};
     --Select-gap: #{pxToRem(8px)};
+    --Select-border-radius: #{pxToRem(8px)};
   }
 
   &__container {

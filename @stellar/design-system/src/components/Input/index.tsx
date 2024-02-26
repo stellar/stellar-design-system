@@ -1,4 +1,6 @@
-import React, { cloneElement, useLayoutEffect, useRef, useState } from "react";
+import React, { cloneElement, useState } from "react";
+import CopyToClipboard from "react-copy-to-clipboard";
+import { Button } from "../Button";
 import { Label } from "../Label";
 import { Icon } from "../../icons";
 import { FieldNote } from "../utils/FieldNote";
@@ -10,20 +12,18 @@ export interface InputProps {
   id: string;
   // Note: cannot use "size" here because it's input's native property
   /** Size of the input */
-  fieldSize: "md" | "sm" | "xs";
+  fieldSize: "sm" | "md" | "lg";
   /** Label of the input */
   label?: string | React.ReactNode;
   /** Make label uppercase */
   isLabelUppercase?: boolean;
-  /** Pill shaped input */
-  isPill?: boolean;
   /** Input error without a message */
   isError?: boolean;
-  /** Input with extra padding */
-  isExtraPadding?: boolean;
   /** Password input preset with show/hide button */
   isPassword?: boolean;
-  /** Right side element of the input */
+  /** Left side element of the input. */
+  leftElement?: string | React.ReactNode;
+  /** Right side element of the input. */
   rightElement?: string | React.ReactNode;
   /** Note message of the input */
   note?: string | React.ReactNode;
@@ -31,7 +31,17 @@ export interface InputProps {
   error?: string | React.ReactNode;
   /** Use a specific input rather than a generic HTML input (useful for Formik or otherwise controlled inputs) */
   customInput?: React.ReactElement;
+  /** Copy button options */
+  copyButton?: InputCopyButton;
 }
+
+/** */
+export type InputCopyButton = {
+  /** Copy button placement */
+  position: "left" | "right";
+  /** Show "Copy" label */
+  showLabel?: boolean;
+};
 
 interface Props
   extends InputProps,
@@ -40,7 +50,7 @@ interface Props
 }
 
 /**
- * The `input` component is a form input element that inherits all native HTML `input` element attributes.
+ * The `Input` component is a form input element that inherits all native HTML `input` element attributes.
  */
 export const Input: React.FC<Props> = ({
   customInput,
@@ -48,64 +58,63 @@ export const Input: React.FC<Props> = ({
   label,
   fieldSize,
   isLabelUppercase,
-  isPill,
   isError,
-  isExtraPadding,
   isPassword,
   rightElement,
+  leftElement,
   note,
   error,
+  copyButton,
   ...props
 }: Props) => {
-  const [sideElWidthRem, setSideElWidthRem] = useState(0);
   const [isPasswordMasked, setIsPasswordMasked] = useState(true);
-  const sideEl = useRef<HTMLDivElement | null>(null);
-
-  const getRightSideElWidth = () => {
-    if (sideEl?.current) {
-      // Dividing by 16 base font size to get em
-      setSideElWidthRem(sideEl.current.getBoundingClientRect().width / 16);
-    }
-  };
-
-  useLayoutEffect(() => {
-    getRightSideElWidth();
-  }, []);
 
   const additionalClasses = [
     `Input--${fieldSize}`,
     ...(props.disabled ? ["Input--disabled"] : []),
     ...(isError || error ? ["Input--error"] : []),
-    ...(isPill ? ["Input--pill"] : []),
-    ...(isExtraPadding ? ["Input--extra-padding"] : []),
   ].join(" ");
-
-  const inputPaddingRight =
-    sideElWidthRem !== 0
-      ? `calc(var(--Input-padding-horizontal) * 2 + ${sideElWidthRem}rem)`
-      : "";
 
   const baseInputProps = {
     id,
     "aria-invalid": !!(isError || error),
-    ...(inputPaddingRight
-      ? { style: { paddingRight: inputPaddingRight } }
-      : {}),
   };
+
+  const renderCopyButton = () => (
+    <CopyToClipboard text={props.value ? props.value.toString() : ""}>
+      <Button
+        variant="tertiary"
+        size={fieldSize}
+        icon={<Icon.Copy01 />}
+        iconPosition="left"
+        disabled={!props.value}
+      >
+        {copyButton?.showLabel ? "Copy" : ""}
+      </Button>
+    </CopyToClipboard>
+  );
 
   return (
     <div className={`Input ${additionalClasses}`}>
       {label && (
-        <Label
-          htmlFor={id}
-          isUppercase={isLabelUppercase}
-          size={fieldSize === "xs" ? "sm" : fieldSize}
-        >
+        <Label htmlFor={id} isUppercase={isLabelUppercase} size={fieldSize}>
           {label}
         </Label>
       )}
 
       <div className="Input__container">
+        {copyButton?.position === "left" ? (
+          <div className="Input__copyButton Input__copyButton--left">
+            {renderCopyButton()}
+          </div>
+        ) : null}
+
+        {leftElement && (
+          <div className="Input__side-element Input__side-element--left">
+            {leftElement}
+          </div>
+        )}
+
         {customInput ? (
           cloneElement(customInput, { ...baseInputProps, ...props })
         ) : (
@@ -118,14 +127,8 @@ export const Input: React.FC<Props> = ({
           />
         )}
 
-        {rightElement && (
-          <div ref={sideEl} className="Input__side-element">
-            {rightElement}
-          </div>
-        )}
-
         {isPassword && (
-          <div className="Input__side-element">
+          <div className="Input__side-element Input__side-element--left">
             <button
               className="PasswordMaskToggle"
               type="button"
@@ -138,6 +141,18 @@ export const Input: React.FC<Props> = ({
             </button>
           </div>
         )}
+
+        {rightElement && (
+          <div className="Input__side-element Input__side-element--right">
+            {rightElement}
+          </div>
+        )}
+
+        {copyButton?.position === "right" ? (
+          <div className="Input__copyButton Input__copyButton--right">
+            {renderCopyButton()}
+          </div>
+        ) : null}
       </div>
 
       {note && <FieldNote size={fieldSize}>{note}</FieldNote>}
