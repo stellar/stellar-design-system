@@ -33,56 +33,64 @@
   }
 
   // Font weight
-  &--bold {
+  &--w-bold {
     font-weight: var(--sds-fw-bold);
   }
-  &--semi-bold {
+  &--w-semi-bold {
     font-weight: var(--sds-fw-semi-bold);
   }
-  &--medium {
+  &--w-medium {
     font-weight: var(--sds-fw-medium);
   }
 }
 
-p.Text,
-div.Text,
-span.Text {
-  font-family: var(--sds-ff-base);
-  font-weight: var(--sds-fw-regular);
-  letter-spacing: 0;
-  padding: 0;
-  margin: 0;
+p,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &.Text {
+    font-family: var(--sds-ff-base);
+    font-weight: var(--sds-fw-regular);
+    letter-spacing: 0;
+    padding: 0;
+    margin: 0;
 
-  &--xl {
-    font-size: pxToRem(20px);
-    line-height: pxToRem(28px);
-  }
-  &--lg {
-    font-size: pxToRem(18px);
-    line-height: pxToRem(26px);
-  }
-  &--md {
-    font-size: pxToRem(16px);
-    line-height: pxToRem(24px);
-  }
-  &--sm {
-    font-size: pxToRem(14px);
-    line-height: pxToRem(22px);
-  }
-  &--xs {
-    font-size: pxToRem(12px);
-    line-height: pxToRem(20px);
-  }
+    &--xl {
+      font-size: pxToRem(20px);
+      line-height: pxToRem(28px);
+    }
+    &--lg {
+      font-size: pxToRem(18px);
+      line-height: pxToRem(26px);
+    }
+    &--md {
+      font-size: pxToRem(16px);
+      line-height: pxToRem(24px);
+    }
+    &--sm {
+      font-size: pxToRem(14px);
+      line-height: pxToRem(22px);
+    }
+    &--xs {
+      font-size: pxToRem(12px);
+      line-height: pxToRem(20px);
+    }
 
-  // Font weight
-  &--bold {
-    font-weight: var(--sds-fw-bold);
-  }
-  &--semi-bold {
-    font-weight: var(--sds-fw-semi-bold);
-  }
-  &--medium {
-    font-weight: var(--sds-fw-medium);
+    // Font weight
+    &--w-bold {
+      font-weight: var(--sds-fw-bold);
+    }
+    &--w-semi-bold {
+      font-weight: var(--sds-fw-semi-bold);
+    }
+    &--w-medium {
+      font-weight: var(--sds-fw-medium);
+    }
   }
 }
 

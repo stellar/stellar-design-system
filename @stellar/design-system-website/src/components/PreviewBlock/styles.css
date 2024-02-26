@@ -90,7 +90,8 @@
   color: var(--sds-clr-gray-12);
 }
 
-.PreviewBlock .Heading {
+.PreviewBlock .Heading,
+.Text {
   margin: 0 !important;
 }
 
