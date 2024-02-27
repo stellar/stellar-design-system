@@ -36,7 +36,7 @@ export const Display: React.FC<DProps> = ({
 }) => (
   <HtmlTag
     className={`Display Display--${size} ${
-      weight !== "regular" ? `Display--${weight}` : ""
+      weight !== "regular" ? `Display--w-${weight}` : ""
     } ${addlClassName || ""}`}
     {...props}
   >
@@ -82,7 +82,7 @@ export const Heading: React.FC<HProps> = ({
 }) => (
   <HtmlTag
     className={`Heading Heading--${size} ${
-      weight !== "regular" ? `Heading--${weight}` : ""
+      weight !== "regular" ? `Heading--w-${weight}` : ""
     } ${addlClassName || ""}`}
     {...props}
   >
@@ -97,8 +97,8 @@ Heading.displayName = "Heading";
 // =============================================================================
 /** */
 export interface TextProps {
-  /** Text as `p`, `div`, or `span` */
-  as: "p" | "div" | "span";
+  /** Text as `p`, `div`, `span`, or `h1` through `h6` */
+  as: "p" | "div" | "span" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   /** Additional classes */
   addlClassName?: string;
   /** Text size */
@@ -118,7 +118,7 @@ interface TProps
 }
 
 /**
- * `Text` is an HTML `p`, `div`, or `span` tag used to display text.
+ * `Text` is an HTML `p`, `div`, `span`, or heading `h1` through `h6` element tag used to display text.
  */
 export const Text: React.FC<TProps> = ({
   as: HtmlTag,
@@ -130,7 +130,7 @@ export const Text: React.FC<TProps> = ({
 }) => (
   <HtmlTag
     className={`Text Text--${size} ${
-      weight !== "regular" ? `Text--${weight}` : ""
+      weight !== "regular" ? `Text--w-${weight}` : ""
     } ${addlClassName || ""}`}
     {...props}
   >
