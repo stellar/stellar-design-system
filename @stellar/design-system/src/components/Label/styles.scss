@@ -4,6 +4,8 @@
   font-family: var(--sds-ff-base);
   font-weight: var(--sds-fw-medium);
   color: var(--sds-clr-gray-12);
+  display: flex;
+  gap: pxToRem(2px);
 
   &--sm {
     font-size: pxToRem(12px);
@@ -22,5 +24,9 @@
 
   &--uppercase {
     text-transform: uppercase;
+  }
+
+  &__suffix {
+    color: var(--sds-clr-gray-11);
   }
 }

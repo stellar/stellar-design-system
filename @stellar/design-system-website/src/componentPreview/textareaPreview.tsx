@@ -19,6 +19,21 @@ export const textareaPreview: ComponentPreview = {
     },
     {
       type: "select",
+      prop: "labelSuffix",
+      customValue: "optional",
+      options: [
+        {
+          value: "",
+          label: "No suffix",
+        },
+        {
+          value: "optional",
+          label: "Optional",
+        },
+      ],
+    },
+    {
+      type: "select",
       prop: "placeholder",
       customValue: "Placeholder",
       options: [
