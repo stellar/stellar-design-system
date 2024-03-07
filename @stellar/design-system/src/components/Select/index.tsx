@@ -15,6 +15,8 @@ export interface SelectProps {
   children: React.ReactNode;
   /** Label of the select */
   label?: string | React.ReactNode;
+  /** Adds suffix to the label */
+  labelSuffix?: string | React.ReactNode;
   /** Note message of the select */
   note?: string | React.ReactNode;
   /** Error message of the select */
@@ -42,6 +44,7 @@ export const Select: React.FC<Props> = ({
   fieldSize,
   children,
   label,
+  labelSuffix,
   note,
   error,
   isLabelUppercase,
@@ -63,7 +66,12 @@ export const Select: React.FC<Props> = ({
   return (
     <div className={`Select ${additionalClasses}`}>
       {label && (
-        <Label htmlFor={id} isUppercase={isLabelUppercase} size={fieldSize}>
+        <Label
+          htmlFor={id}
+          isUppercase={isLabelUppercase}
+          size={fieldSize}
+          labelSuffix={labelSuffix}
+        >
           {label}
         </Label>
       )}

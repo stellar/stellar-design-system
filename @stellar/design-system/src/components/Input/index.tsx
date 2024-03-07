@@ -15,6 +15,8 @@ export interface InputProps {
   fieldSize: "sm" | "md" | "lg";
   /** Label of the input */
   label?: string | React.ReactNode;
+  /** Adds suffix to the label */
+  labelSuffix?: string | React.ReactNode;
   /** Make label uppercase */
   isLabelUppercase?: boolean;
   /** Input error without a message */
@@ -56,6 +58,7 @@ export const Input: React.FC<Props> = ({
   customInput,
   id,
   label,
+  labelSuffix,
   fieldSize,
   isLabelUppercase,
   isError,
@@ -101,7 +104,12 @@ export const Input: React.FC<Props> = ({
   return (
     <div className={`Input ${additionalClasses}`}>
       {label && (
-        <Label htmlFor={id} isUppercase={isLabelUppercase} size={fieldSize}>
+        <Label
+          htmlFor={id}
+          isUppercase={isLabelUppercase}
+          size={fieldSize}
+          labelSuffix={labelSuffix}
+        >
           {label}
         </Label>
       )}

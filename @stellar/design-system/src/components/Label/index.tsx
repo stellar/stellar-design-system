@@ -6,6 +6,7 @@ interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
   htmlFor: string;
   size: "sm" | "md" | "lg";
   isUppercase?: boolean;
+  labelSuffix?: string | React.ReactNode;
 }
 
 export const Label: React.FC<LabelProps> = ({
@@ -13,6 +14,7 @@ export const Label: React.FC<LabelProps> = ({
   htmlFor,
   size = "sm",
   isUppercase,
+  labelSuffix,
   ...props
 }: LabelProps) => {
   const additionalClasses = [
@@ -27,6 +29,9 @@ export const Label: React.FC<LabelProps> = ({
       {...props}
     >
       {children}
+      {labelSuffix ? (
+        <span className="Label__suffix">({labelSuffix})</span>
+      ) : null}
     </label>
   );
 };

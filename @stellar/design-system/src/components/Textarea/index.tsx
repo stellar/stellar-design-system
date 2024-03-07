@@ -14,6 +14,8 @@ export interface TextareaProps {
   children?: string;
   /** Label of the textarea */
   label?: string | React.ReactNode;
+  /** Adds suffix to the label */
+  labelSuffix?: string | React.ReactNode;
   /** Note message of the textarea */
   note?: string | React.ReactNode;
   /** Error message of the textarea */
@@ -41,6 +43,7 @@ export const Textarea: React.FC<Props> = ({
   fieldSize,
   children = "",
   label,
+  labelSuffix,
   note,
   error,
   isError,
@@ -66,7 +69,12 @@ export const Textarea: React.FC<Props> = ({
   return (
     <div className={`Textarea ${additionalClasses}`}>
       {label && (
-        <Label htmlFor={id} isUppercase={isLabelUppercase} size={fieldSize}>
+        <Label
+          htmlFor={id}
+          isUppercase={isLabelUppercase}
+          size={fieldSize}
+          labelSuffix={labelSuffix}
+        >
           {label}
         </Label>
       )}
