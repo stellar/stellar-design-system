@@ -32,20 +32,6 @@
   --sds-clr-lilac-11: #5746af;
   --sds-clr-lilac-12: #20134b;
 
-  // Gold
-  --sds-clr-gold-01: #fdfdf9;
-  --sds-clr-gold-02: #fffce8;
-  --sds-clr-gold-03: #fffbd1;
-  --sds-clr-gold-04: #fff8bb;
-  --sds-clr-gold-05: #fef2a4;
-  --sds-clr-gold-06: #f9e68c;
-  --sds-clr-gold-07: #efd36c;
-  --sds-clr-gold-08: #ebbc00;
-  --sds-clr-gold-09: #fdda24;
-  --sds-clr-gold-10: #f7ce00;
-  --sds-clr-gold-11: #946800;
-  --sds-clr-gold-12: #35290f;
-
   // Base
   --sds-clr-base-00: #ffffff;
   --sds-clr-base-01: #000000;
@@ -106,6 +92,48 @@
 
   // White
   --sds-clr-white: #ffffff;
+
+  // Gold
+  --sds-clr-gold-01: #fdfdf9;
+  --sds-clr-gold-02: #fffce8;
+  --sds-clr-gold-03: #fffbd1;
+  --sds-clr-gold-04: #fff8bb;
+  --sds-clr-gold-05: #fef2a4;
+  --sds-clr-gold-06: #f9e68c;
+  --sds-clr-gold-07: #efd36c;
+  --sds-clr-gold-08: #ebbc00;
+  --sds-clr-gold-09: #fdda24;
+  --sds-clr-gold-10: #f7ce00;
+  --sds-clr-gold-11: #946800;
+  --sds-clr-gold-12: #35290f;
+
+  // Lime
+  --sds-clr-lime-01: #fcfdfa;
+  --sds-clr-lime-02: #f7fcf0;
+  --sds-clr-lime-03: #eefadc;
+  --sds-clr-lime-04: #e4f7c7;
+  --sds-clr-lime-05: #d7f2b0;
+  --sds-clr-lime-06: #c9e894;
+  --sds-clr-lime-07: #b1d16a;
+  --sds-clr-lime-08: #94ba2c;
+  --sds-clr-lime-09: #99d52a;
+  --sds-clr-lime-10: #93c926;
+  --sds-clr-lime-11: #5d770d;
+  --sds-clr-lime-12: #263209;
+
+  // Sky
+  --sds-clr-sky-01: #f9feff;
+  --sds-clr-sky-02: #f1fcff;
+  --sds-clr-sky-03: #e4f9ff;
+  --sds-clr-sky-04: #d5f4fd;
+  --sds-clr-sky-05: #c1ecf9;
+  --sds-clr-sky-06: #a4dff1;
+  --sds-clr-sky-07: #79cfea;
+  --sds-clr-sky-08: #2ebde5;
+  --sds-clr-sky-09: #68ddfd;
+  --sds-clr-sky-10: #5fd4f4;
+  --sds-clr-sky-11: #0078a1;
+  --sds-clr-sky-12: #003242;
 }
 
 @mixin theme-dark {
@@ -138,20 +166,6 @@
   --sds-clr-lilac-10: #7c66dc;
   --sds-clr-lilac-11: #9e8cfc;
   --sds-clr-lilac-12: #f1eefe;
-
-  // Gold
-  --sds-clr-gold-01: #1c1500;
-  --sds-clr-gold-02: #221a00;
-  --sds-clr-gold-03: #2c2100;
-  --sds-clr-gold-04: #352800;
-  --sds-clr-gold-05: #3e3000;
-  --sds-clr-gold-06: #493c00;
-  --sds-clr-gold-07: #594a05;
-  --sds-clr-gold-08: #705e00;
-  --sds-clr-gold-09: #fdda24;
-  --sds-clr-gold-10: #ffef5c;
-  --sds-clr-gold-11: #f0c000;
-  --sds-clr-gold-12: #fffad1;
 
   // Base
   --sds-clr-base-00: #000000;
@@ -213,6 +227,48 @@
 
   // White
   --sds-clr-white: #ffffff;
+
+  // Gold
+  --sds-clr-gold-01: #1c1500;
+  --sds-clr-gold-02: #221a00;
+  --sds-clr-gold-03: #2c2100;
+  --sds-clr-gold-04: #352800;
+  --sds-clr-gold-05: #3e3000;
+  --sds-clr-gold-06: #493c00;
+  --sds-clr-gold-07: #594a05;
+  --sds-clr-gold-08: #705e00;
+  --sds-clr-gold-09: #fdda24;
+  --sds-clr-gold-10: #ffef5c;
+  --sds-clr-gold-11: #f0c000;
+  --sds-clr-gold-12: #fffad1;
+
+  // Lime
+  --sds-clr-lime-01: #141807;
+  --sds-clr-lime-02: #181d08;
+  --sds-clr-lime-03: #1e260d;
+  --sds-clr-lime-04: #252e0f;
+  --sds-clr-lime-05: #2b3711;
+  --sds-clr-lime-06: #344213;
+  --sds-clr-lime-07: #415215;
+  --sds-clr-lime-08: #536716;
+  --sds-clr-lime-09: #99d52a;
+  --sds-clr-lime-10: #c4f042;
+  --sds-clr-lime-11: #87be22;
+  --sds-clr-lime-12: #effbdd;
+
+  // Sky
+  --sds-clr-sky-01: #0c1820;
+  --sds-clr-sky-02: #071d2a;
+  --sds-clr-sky-03: #082636;
+  --sds-clr-sky-04: #082d41;
+  --sds-clr-sky-05: #08354c;
+  --sds-clr-sky-06: #083e59;
+  --sds-clr-sky-07: #064b6b;
+  --sds-clr-sky-08: #005d85;
+  --sds-clr-sky-09: #68ddfd;
+  --sds-clr-sky-10: #8ae8ff;
+  --sds-clr-sky-11: #2ec8ee;
+  --sds-clr-sky-12: #eaf8ff;
 }
 
 @mixin theme-common {
