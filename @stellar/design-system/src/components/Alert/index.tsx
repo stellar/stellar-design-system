@@ -163,7 +163,7 @@ export const Alert: React.FC<AlertProps> = ({
   };
 
   return placement === "inline" ? (
-    <Card noPadding variant={variant === "primary" ? "primary" : "secondary"}>
+    <Card noPadding variant={variant === "secondary" ? "secondary" : "primary"}>
       {renderAlert()}
     </Card>
   ) : (
