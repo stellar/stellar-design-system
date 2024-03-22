@@ -20,7 +20,7 @@
   &__content {
     cursor: pointer;
     opacity: 1;
-    transition: opacity var(--sds-anim-transition-default);
+    transition: opacity var(--anim-transition-default);
     display: inline-flex;
     align-items: center;
   }
