@@ -12,39 +12,39 @@
   justify-content: center;
   align-items: center;
   opacity: 1;
-  transition: opacity var(--anim-transition-default);
+  transition: opacity var(--sds-anim-transition-default);
 
   svg {
     width: var(--IconButton-size);
     height: var(--IconButton-size);
-    fill: var(--IconButton-color);
+    stroke: var(--IconButton-color);
   }
 
   &__label {
     color: var(--IconButton-color);
     margin-right: 0.5rem;
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--sds-fw-medium);
     font-size: max(1rem, calc(var(--IconButton-size) * 0.75));
   }
 
   &--default {
-    --IconButton-color: var(--color-gray-80);
+    --IconButton-color: var(--sds-clr-gray-11);
   }
 
   &--error {
-    --IconButton-color: var(--color-red-60);
+    --IconButton-color: var(--sds-clr-red-11);
   }
 
   &--success {
-    --IconButton-color: var(--color-green-60);
+    --IconButton-color: var(--sds-clr-green-11);
   }
 
   &--warning {
-    --IconButton-color: var(--color-yellow-60);
+    --IconButton-color: var(--sds-clr-amber-11);
   }
 
   &--highlight {
-    --IconButton-color: var(--color-purple-60);
+    --IconButton-color: var(--sds-clr-lilac-11);
   }
 
   @media (hover: hover) {
@@ -55,6 +55,6 @@
 
   &:disabled {
     cursor: not-allowed;
-    opacity: var(--opacity-disabled-button);
+    opacity: var(--sds-opacity-disabled-button);
   }
 }

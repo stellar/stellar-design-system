@@ -39,16 +39,16 @@ export const buttonPreview: ComponentPreview = {
       prop: "size",
       options: [
         {
-          value: "md",
-          label: "MD",
-        },
-        {
           value: "sm",
           label: "SM",
         },
         {
-          value: "xs",
-          label: "XS",
+          value: "md",
+          label: "MD",
+        },
+        {
+          value: "lg",
+          label: "LG",
         },
       ],
     },
@@ -59,11 +59,6 @@ export const buttonPreview: ComponentPreview = {
     },
     {
       type: "checkbox",
-      prop: "isExtraPadding",
-      label: "Extra padding",
-    },
-    {
-      type: "checkbox",
       prop: "isFullWidth",
       label: "Full width",
     },
@@ -71,16 +66,6 @@ export const buttonPreview: ComponentPreview = {
       type: "checkbox",
       prop: "isLoading",
       label: "Loading",
-    },
-    {
-      type: "checkbox",
-      prop: "isPill",
-      label: "Pill",
-    },
-    {
-      type: "checkbox",
-      prop: "isUppercase",
-      label: "Uppercase",
     },
     {
       type: "select",

@@ -5,11 +5,11 @@
 // global styles on every website.
 .sds-theme-light,
 .sds-theme-dark {
-  font-family: var(--font-family-base);
-  font-size: var(--font-size);
+  font-family: var(--sds-ff-base);
+  font-size: var(--sds-fs-primary);
   padding: 0;
   margin: 0;
-  background-color: var(--color-gray-00);
+  background-color: var(--sds-clr-gray-01);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -24,7 +24,7 @@
 
   strong,
   b {
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--sds-fw-medium);
   }
 
   // Text block elements
@@ -34,17 +34,10 @@
     font-size: 1rem;
     line-height: 1.75rem;
     margin: 0;
-    color: var(--color-gray-80);
+    color: inherit;
 
     &:not(:last-child) {
       margin-bottom: 1.5rem;
-    }
-  }
-
-  p {
-    &.Paragraph--secondary {
-      font-size: 0.875rem;
-      line-height: 1.375rem;
     }
   }
 
@@ -64,15 +57,15 @@
   }
 
   code {
-    color: inherit;
-    font-family: var(--font-family-monospace);
-    border-radius: 0.1875rem;
-    border: 0.5px solid var(--color-gray-30);
-    background-color: var(--color-gray-10);
-    padding: 0.125em 0.25em;
+    color: var(--sds-clr-gray-11);
+    font-family: var(--sds-ff-monospace);
+    font-weight: var(--sds-fw-medium);
     font-size: 0.875em;
-    line-height: 1.5em;
-    font-weight: var(--font-weight-medium);
+    line-height: inherit;
+    border-radius: 0.375rem;
+    border: 1px solid var(--sds-clr-gray-06);
+    background-color: var(--sds-clr-gray-03);
+    padding: 0.125rem 0.625rem;
     display: inline;
 
     &[data-break] {
@@ -85,6 +78,6 @@
 div#root {
   display: flex;
   flex-direction: column;
-  min-height: var(--layout-window-height-min);
-  min-width: var(--layout-window-width-min);
+  min-height: var(--sds-window-height-min);
+  min-width: var(--sds-window-width-min);
 }

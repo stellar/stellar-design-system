@@ -1,6 +1,6 @@
 ---
 slug: /avatar
-description: "Identicon as an avatar."
+description: "Avatar as an identicon, user initials, or a profile icon."
 ---
 
 # Avatar
@@ -11,10 +11,17 @@ description: "Identicon as an avatar."
 
 ```tsx live
 <PreviewBlock componentName="Avatar">
-  <Avatar publicAddress="GD4XW236EFCESNO4RKGG5PWML2WNQIJS335XECBW4GRARXKE64VIMOLZ" />
+  <Avatar size="sm" />
 </PreviewBlock>
 ```
 
 ## Props
 
-<ComponentProps componentName="Avatar" />
+<ComponentProps
+  componentName="Avatar"
+  relatedType={[
+    "AvatarBaseProps",
+    "AvatarStellarAddressProps",
+    "AvatarUserNameProps",
+  ]}
+/>

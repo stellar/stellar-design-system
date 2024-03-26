@@ -4,7 +4,7 @@ import "./styles.scss";
 /** */
 export interface NavButtonProps {
   /** ID of the component (should be unique) */
-  id: string;
+  id?: string;
   /** Title or label to show on hover */
   title: string;
   /** Action to trigger on click */

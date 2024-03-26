@@ -1,41 +1,161 @@
 @use "../../utils.scss" as *;
 
 .Badge {
-  // Color
-  --Badge-color-background: var(--color-purple-40);
-  --Badge-color-text: var(--color-purple-70);
+  --Badge-font-size: #{pxToRem(16px)};
+  --Badge-line-height: #{pxToRem(24px)};
+  --Badge-padding-vertical: #{pxToRem(6px)};
+  --Badge-padding-horizontal: #{pxToRem(12px)};
+  --Badge-gap: #{pxToRem(2px)};
+  --Badge-border-radius: #{pxToRem(100px)};
 
-  font-size: pxToRem(12px);
-  line-height: pxToRem(20px);
-  font-family: var(--font-family-base);
-  font-weight: var(--font-weight-medium);
-  padding: pxToRem(2px) pxToRem(6px);
-  border-radius: pxToRem(4px);
+  --Badge-color-text: var(--sds-clr-gray-12);
+  --Badge-color-icon: var(--sds-clr-gray-09);
+  --Badge-color-background: var(--sds-clr-gray-01);
+  --Badge-color-border: var(--sds-clr-gray-06);
+  --Badge-color-dot: var(--sds-clr-green-09);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--Badge-gap);
+
+  font-size: var(--Badge-font-size);
+  line-height: var(--Badge-line-height);
+  font-family: var(--sds-ff-base);
+  font-weight: var(--sds-fw-medium);
+  padding: var(--Badge-padding-vertical) var(--Badge-padding-horizontal);
+  border-radius: var(--Badge-border-radius);
+  border: 1px solid var(--Badge-color-border);
+
   background-color: var(--Badge-color-background);
   color: var(--Badge-color-text);
 
-  &--default {
-    --Badge-color-background: var(--color-purple-40);
-    --Badge-color-text: var(--color-purple-70);
+  // Icon
+  &__icon {
+    width: var(--Badge-font-size);
+    height: var(--Badge-font-size);
+    display: block;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      stroke: var(--Badge-color-icon);
+    }
+  }
+
+  &__dot {
+    display: block;
+    width: pxToRem(6px);
+    height: pxToRem(6px);
+    border-radius: pxToRem(6px);
+    margin-right: pxToRem(4px);
+    background-color: var(--Badge-color-dot);
+  }
+
+  // Variant
+  &--primary {
+    --Badge-color-text: var(--sds-clr-gray-12);
+    --Badge-color-icon: var(--sds-clr-gray-09);
+    --Badge-color-background: var(--sds-clr-gray-01);
+    --Badge-color-border: var(--sds-clr-gray-06);
+    --Badge-color-dot: var(--sds-clr-green-09);
+
+    &.Badge--outlined {
+      --Badge-color-background: transparent;
+      --Badge-color-border: var(--sds-clr-gray-08);
+    }
+  }
+
+  &--secondary {
+    --Badge-color-text: var(--sds-clr-lilac-11);
+    --Badge-color-icon: var(--sds-clr-lilac-09);
+    --Badge-color-background: var(--sds-clr-lilac-02);
+    --Badge-color-border: var(--sds-clr-lilac-06);
+    --Badge-color-dot: var(--sds-clr-lilac-09);
+
+    &.Badge--outlined {
+      --Badge-color-background: transparent;
+      --Badge-color-border: var(--sds-clr-lilac-08);
+    }
+  }
+
+  &--tertiary {
+    --Badge-color-text: var(--sds-clr-gray-11);
+    --Badge-color-icon: var(--sds-clr-gray-09);
+    --Badge-color-background: var(--sds-clr-gray-03);
+    --Badge-color-border: var(--sds-clr-gray-06);
+    --Badge-color-dot: var(--sds-clr-gray-09);
+
+    &.Badge--outlined {
+      --Badge-color-background: transparent;
+      --Badge-color-border: var(--sds-clr-gray-08);
+    }
   }
 
   &--success {
-    --Badge-color-background: var(--color-green-40);
-    --Badge-color-text: var(--color-green-70);
+    --Badge-color-text: var(--sds-clr-green-11);
+    --Badge-color-icon: var(--sds-clr-green-09);
+    --Badge-color-background: var(--sds-clr-green-02);
+    --Badge-color-border: var(--sds-clr-green-06);
+    --Badge-color-dot: var(--sds-clr-green-09);
+
+    &.Badge--outlined {
+      --Badge-color-background: transparent;
+      --Badge-color-border: var(--sds-clr-green-08);
+    }
   }
 
   &--warning {
-    --Badge-color-background: var(--color-yellow-40);
-    --Badge-color-text: var(--color-yellow-70);
-  }
+    --Badge-color-text: var(--sds-clr-amber-11);
+    --Badge-color-icon: var(--sds-clr-amber-09);
+    --Badge-color-background: var(--sds-clr-amber-02);
+    --Badge-color-border: var(--sds-clr-amber-06);
+    --Badge-color-dot: var(--sds-clr-amber-09);
 
-  &--pending {
-    --Badge-color-background: var(--color-gray-40);
-    --Badge-color-text: var(--color-gray-70);
+    &.Badge--outlined {
+      --Badge-color-background: transparent;
+      --Badge-color-border: var(--sds-clr-amber-08);
+    }
   }
 
   &--error {
-    --Badge-color-background: var(--color-red-40);
-    --Badge-color-text: var(--color-red-70);
+    --Badge-color-text: var(--sds-clr-red-11);
+    --Badge-color-icon: var(--sds-clr-red-09);
+    --Badge-color-background: var(--sds-clr-red-02);
+    --Badge-color-border: var(--sds-clr-red-06);
+    --Badge-color-dot: var(--sds-clr-red-09);
+
+    &.Badge--outlined {
+      --Badge-color-background: transparent;
+      --Badge-color-border: var(--sds-clr-red-08);
+    }
+  }
+
+  // Size
+  &--sm {
+    --Badge-font-size: #{pxToRem(12px)};
+    --Badge-line-height: #{pxToRem(18px)};
+    --Badge-padding-vertical: #{pxToRem(2px)};
+    --Badge-padding-horizontal: #{pxToRem(6px)};
+  }
+
+  &--md {
+    --Badge-font-size: #{pxToRem(14px)};
+    --Badge-line-height: #{pxToRem(20px)};
+    --Badge-padding-vertical: #{pxToRem(2px)};
+    --Badge-padding-horizontal: #{pxToRem(8px)};
+  }
+
+  &--lg {
+    --Badge-font-size: #{pxToRem(16px)};
+    --Badge-line-height: #{pxToRem(24px)};
+    --Badge-padding-vertical: #{pxToRem(2px)};
+    --Badge-padding-horizontal: #{pxToRem(10px)};
+  }
+
+  // Custom
+  &--square {
+    --Badge-border-radius: #{pxToRem(6px)};
   }
 }

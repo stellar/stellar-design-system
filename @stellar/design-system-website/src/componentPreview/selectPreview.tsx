@@ -19,19 +19,34 @@ export const selectPreview: ComponentPreview = {
     },
     {
       type: "select",
-      prop: "fieldSize",
+      prop: "labelSuffix",
+      customValue: "optional",
       options: [
         {
-          value: "md",
-          label: "MD",
+          value: "",
+          label: "No suffix",
         },
+        {
+          value: "optional",
+          label: "Optional",
+        },
+      ],
+    },
+    {
+      type: "select",
+      prop: "fieldSize",
+      options: [
         {
           value: "sm",
           label: "SM",
         },
         {
-          value: "xs",
-          label: "XS",
+          value: "md",
+          label: "MD",
+        },
+        {
+          value: "lg",
+          label: "LG",
         },
       ],
     },
@@ -47,18 +62,8 @@ export const selectPreview: ComponentPreview = {
     },
     {
       type: "checkbox",
-      prop: "isPill",
-      label: "Pill",
-    },
-    {
-      type: "checkbox",
       prop: "isError",
       label: "Error",
-    },
-    {
-      type: "checkbox",
-      prop: "isExtraPadding",
-      label: "Extra padding",
     },
     {
       type: "select",

@@ -8,7 +8,7 @@ export interface NotificationProps {
   variant: "primary" | "secondary" | "success" | "error" | "warning";
   /** Notification title */
   title: string;
-  /** Notification icon @defaultValue `<Icon.Info />` */
+  /** Notification icon @defaultValue `<Icon.InfoCircle />` */
   icon?: React.ReactNode;
   /** Notification message */
   children?: string | React.ReactNode;
@@ -19,6 +19,9 @@ interface Props
     React.HtmlHTMLAttributes<HTMLDivElement> {
   title: string;
 }
+
+// TODO: Notification: add action buttons
+// TODO: Notification: floating with max width
 
 /**
  * Use `notification` to draw a user's attention. There are five variants `primary`, `secondary`, `success`, `error`, and `warning`.
@@ -33,7 +36,7 @@ export const Notification: React.FC<Props> = ({
     <div className={`Notification Notification--${variant}`}>
       <div className="Notification__title">
         <div className="Notification__title__icon">
-          {icon ? icon : <Icon.Info />}
+          {icon ? icon : <Icon.InfoCircle />}
         </div>
         <div className="Notification__title__text">{title}</div>
       </div>

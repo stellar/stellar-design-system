@@ -7,7 +7,7 @@ import "./styles.scss";
 export interface CopyTextProps {
   /** Text to copy */
   textToCopy: string;
-  /** Label/text to display when copy action is done @defaultValue Copied */
+  /** Label/text to display when copy action is done @defaultValue `Copied` */
   doneLabel?: string;
   /** Position of the tooltip @defaultValue `bottom` */
   tooltipPlacement?:
@@ -23,7 +23,7 @@ export interface CopyTextProps {
     | "bottom-end"
     | "left-start"
     | "left-end";
-  /** Title text to show on hover @defaultValue Copy */
+  /** Title text to show on hover @defaultValue `Copy` */
   title?: string;
   /** Copy click element */
   children: React.ReactElement;

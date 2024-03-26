@@ -1,18 +1,18 @@
 @use "../../utils.scss" as *;
 
 .RadioButton {
-  // Color
-  --RadioButton-color-background: var(--color-gray-10);
-  --RadioButton-color-border: var(--color-gray-50);
-  --RadioButton-color-icon: var(--color-gray-00);
-  --RadioButton-color-text: var(--color-gray-80);
+  --RadioButton-color-background: var(--sds-input-color-background-default);
+  --RadioButton-color-border: var(--sds-input-color-border-default);
+  --RadioButton-color-icon: var(--sds-input-color-background-default);
 
-  // Size
-  --RadioButton-size: #{pxToRem(16px)};
-  --RadioButton-icon-size: #{pxToRem(8px)};
+  --RadioButton-size: #{pxToRem(14px)};
+  --RadioButton-icon-size: #{pxToRem(6px)};
   --RadioButton-horizontal-gap: #{pxToRem(8px)};
-  --RadioButton-font-size: #{pxToRem(14px)};
-  --RadioButton-line-height: #{pxToRem(22px)};
+  --RadioButton-font-size: #{pxToRem(12px)};
+  --RadioButton-line-height: #{pxToRem(18px)};
+
+  --RadioButton-box-shadow-size: 0;
+  --RadioButton-box-shadow-color: var(--sds-input-box-shadow-color-default);
 
   display: flex;
   align-items: center;
@@ -23,30 +23,32 @@
     &:hover {
       input[type="radio"] {
         & + label {
-          --RadioButton-color-border: var(--color-gray-60);
+          --RadioButton-color-border: var(
+            --sds-input-color-border-default-hover
+          );
         }
       }
     }
   }
 
-  &--md {
-    --RadioButton-size: #{pxToRem(18px)};
-    --RadioButton-icon-size: #{pxToRem(10px)};
-    --RadioButton-font-size: #{pxToRem(16px)};
-    --RadioButton-line-height: #{pxToRem(24px)};
-  }
-
   &--sm {
-    --RadioButton-size: #{pxToRem(16px)};
-    --RadioButton-icon-size: #{pxToRem(8px)};
-    --RadioButton-font-size: #{pxToRem(14px)};
-    --RadioButton-line-height: #{pxToRem(22px)};
-  }
-
-  &--xs {
     --RadioButton-size: #{pxToRem(14px)};
     --RadioButton-icon-size: #{pxToRem(6px)};
     --RadioButton-font-size: #{pxToRem(12px)};
+    --RadioButton-line-height: #{pxToRem(18px)};
+  }
+
+  &--md {
+    --RadioButton-size: #{pxToRem(16px)};
+    --RadioButton-icon-size: #{pxToRem(8px)};
+    --RadioButton-font-size: #{pxToRem(12px)};
+    --RadioButton-line-height: #{pxToRem(18px)};
+  }
+
+  &--lg {
+    --RadioButton-size: #{pxToRem(18px)};
+    --RadioButton-icon-size: #{pxToRem(10px)};
+    --RadioButton-font-size: #{pxToRem(14px)};
     --RadioButton-line-height: #{pxToRem(20px)};
   }
 
@@ -56,24 +58,30 @@
     z-index: -1;
 
     &:checked + label {
-      --RadioButton-color-background: var(--color-purple-60);
-      --RadioButton-color-border: var(--color-purple-70);
+      --RadioButton-color-background: var(--sds-clr-lilac-09);
+      --RadioButton-color-border: var(--sds-clr-lilac-09);
 
       span::before {
         opacity: 1;
       }
     }
 
+    &:focus + label {
+      --RadioButton-box-shadow-size: #{pxToRem(2px)};
+    }
+
     &:disabled + label {
-      --RadioButton-color-background: var(--color-gray-40);
-      --RadioButton-color-border: var(--color-gray-50);
+      --RadioButton-color-background: var(
+        --sds-input-color-background-disabled
+      );
+      --RadioButton-color-border: var(--sds-input-color-border-disabled);
       cursor: not-allowed;
     }
 
     &:checked:disabled + label {
-      --RadioButton-color-background: var(--color-gray-40);
-      --RadioButton-color-border: var(--color-gray-50);
-      --RadioButton-color-icon: var(--color-gray-50);
+      --RadioButton-color-background: var(--sds-clr-gray-04);
+      --RadioButton-color-border: var(--sds-input-color-border-disabled);
+      --RadioButton-color-icon: var(--sds-clr-gray-09);
       cursor: not-allowed;
     }
   }
@@ -81,11 +89,12 @@
   label {
     font-size: var(--RadioButton-font-size);
     line-height: var(--RadioButton-line-height);
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--sds-fw-medium);
     flex: 1;
     position: relative;
     display: flex;
     gap: var(--RadioButton-horizontal-gap);
+    color: var(--sds-clr-gray-12);
 
     & > span {
       display: flex;
@@ -97,11 +106,14 @@
       border: 1px solid var(--RadioButton-color-border);
       background-color: var(--RadioButton-color-background);
       border-radius: calc(var(--RadioButton-size) / 2);
+      box-shadow: 0 0 0 var(--RadioButton-box-shadow-size)
+        var(--RadioButton-box-shadow-color);
       margin-top: calc(
         (var(--RadioButton-line-height) - var(--RadioButton-size)) / 2
       );
-      transition: background-color var(--anim-transition-default),
-        border-color var(--anim-transition-default);
+      transition: background-color var(--sds-anim-transition-default),
+        border-color var(--sds-anim-transition-default),
+        box-shadow var(--sds-anim-transition-default);
 
       &::before {
         display: block;

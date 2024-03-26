@@ -10,23 +10,21 @@ export interface SelectProps {
   id: string;
   // Note: cannot use "size" here because it's input's native property
   /** Size of the select */
-  fieldSize: "md" | "sm" | "xs";
+  fieldSize: "sm" | "md" | "lg";
   /** Select options or optgroup with options */
   children: React.ReactNode;
   /** Label of the select */
   label?: string | React.ReactNode;
+  /** Adds suffix to the label */
+  labelSuffix?: string | React.ReactNode;
   /** Note message of the select */
   note?: string | React.ReactNode;
   /** Error message of the select */
   error?: string | string;
   /** Make label uppercase */
   isLabelUppercase?: boolean;
-  /** Pill shaped select */
-  isPill?: boolean;
   /** Select error without a message */
   isError?: boolean;
-  /** Select with extra padding */
-  isExtraPadding?: boolean;
   /** Use a specific select rather than a generic HTML select (useful for Formik or otherwise controlled selects) */
   customSelect?: React.ReactElement;
 }
@@ -46,12 +44,11 @@ export const Select: React.FC<Props> = ({
   fieldSize,
   children,
   label,
+  labelSuffix,
   note,
   error,
   isLabelUppercase,
-  isPill,
   isError,
-  isExtraPadding,
   customSelect,
   ...props
 }: Props) => {
@@ -59,8 +56,6 @@ export const Select: React.FC<Props> = ({
     `Select--${fieldSize}`,
     ...(props.disabled ? ["Select--disabled"] : []),
     ...(isError || error ? ["Select--error"] : []),
-    ...(isPill ? ["Select--pill"] : []),
-    ...(isExtraPadding ? ["Select--extra-padding"] : []),
   ].join(" ");
 
   const baseSelectProps = {
@@ -74,7 +69,8 @@ export const Select: React.FC<Props> = ({
         <Label
           htmlFor={id}
           isUppercase={isLabelUppercase}
-          size={fieldSize === "xs" ? "xs" : "sm"}
+          size={fieldSize}
+          labelSuffix={labelSuffix}
         >
           {label}
         </Label>
@@ -95,8 +91,12 @@ export const Select: React.FC<Props> = ({
         )}
       </div>
 
-      {note && <FieldNote>{note}</FieldNote>}
-      {error && <FieldNote variant="error">{error}</FieldNote>}
+      {note && <FieldNote size={fieldSize}>{note}</FieldNote>}
+      {error && (
+        <FieldNote size={fieldSize} variant="error">
+          {error}
+        </FieldNote>
+      )}
     </div>
   );
 };

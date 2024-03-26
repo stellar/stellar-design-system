@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Icon } from "../../icons";
+import { Logo } from "../../logos";
 import { ProjectLogo } from "../ProjectLogo";
 import { Link } from "../Link";
 import { ThemeMode, ThemeSwitch } from "../ThemeSwitch";
@@ -145,7 +146,7 @@ export const Header: React.FC<HeaderProps> = ({
               id="open-side-nav-button"
               title="Open side navigation"
               onClick={menu.onOpen}
-              icon={<Icon.Menu />}
+              icon={<Icon.Menu01 />}
               showBorder={showButtonBorder}
             />
           ) : null}
@@ -214,7 +215,7 @@ export const Footer: React.FC<FooterProps> = ({
               <Link
                 href={gitHubLink}
                 variant="secondary"
-                icon={<Icon.Github />}
+                icon={<Logo.Github />}
                 iconPosition="left"
               >
                 {gitHubLabel ?? "GitHub"}

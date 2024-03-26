@@ -4,13 +4,15 @@ import { Element } from "@site/src/components/Element";
 import { ParseSummary } from "@site/src/components/ParseSummary";
 import { ElementPropType } from "@site/src/components/ElementPropType";
 
+import "./styles.css";
+
 export const ComponentProps = ({
   componentName,
   relatedType,
 }: {
   componentName: string;
   // To associate custom types that are used in the component. For example,
-  // AssetIconSource in AssetIcon.
+  // AssetSource in Asset.
   relatedType?: string[];
 }) => {
   const component = SdsDocs?.children?.find(
@@ -27,6 +29,16 @@ export const ComponentProps = ({
 
   const PropRow = ({ p }: { p: any }) => {
     const defaultVal = p.comment?.blockTags?.[0]?.content?.[0];
+
+    // Don't show row that is optional and undefined
+    // (used in discriminated union types)
+    if (
+      p?.flags?.isOptional &&
+      p.type.type === "intrinsic" &&
+      p.type.name === "undefined"
+    ) {
+      return null;
+    }
 
     return (
       <tr key={p.id}>
@@ -54,14 +66,14 @@ export const ComponentProps = ({
     );
   };
 
-  const props = component.children.map((p) => <PropRow p={p} />);
+  const props = component?.children?.map((p) => <PropRow p={p} />);
 
   const relatedTypeProps = relatedTypes?.map((t) => {
     const props = t.children || t?.type?.declaration?.children;
 
     return (
       <Fragment key={`t-${t.id}`}>
-        <tr>
+        <tr className="PropsTable__subtitle">
           <td colSpan={5}>
             <code>{t.name}</code>
           </td>
@@ -75,7 +87,7 @@ export const ComponentProps = ({
 
   return (
     <div>
-      <table>
+      <table className="PropsTable">
         <thead>
           <tr>
             <th>Prop</th>

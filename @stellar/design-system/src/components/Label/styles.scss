@@ -1,21 +1,32 @@
 @use "../../utils.scss" as *;
 
 .Label {
-  font-family: var(--font-family-base);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-gray-60);
+  font-family: var(--sds-ff-base);
+  font-weight: var(--sds-fw-medium);
+  color: var(--sds-clr-gray-11);
+  display: flex;
+  gap: pxToRem(2px);
 
   &--sm {
-    font-size: pxToRem(14px);
-    line-height: pxToRem(22px);
+    font-size: pxToRem(12px);
+    line-height: pxToRem(18px);
   }
 
-  &--xs {
+  &--md {
     font-size: pxToRem(12px);
+    line-height: pxToRem(18px);
+  }
+
+  &--lg {
+    font-size: pxToRem(14px);
     line-height: pxToRem(20px);
   }
 
   &--uppercase {
     text-transform: uppercase;
+  }
+
+  &__suffix {
+    color: var(--sds-clr-gray-11);
   }
 }

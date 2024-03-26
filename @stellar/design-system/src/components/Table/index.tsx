@@ -19,7 +19,7 @@ export interface TableColumnLabel {
 
 /** */
 export interface TableProps<T> {
-  /** Optional ID used for row keys @defaultValue table */
+  /** Optional ID used for row keys @defaultValue `table` */
   id?: string;
   /** Data to display in table */
   data: T[];
@@ -33,7 +33,7 @@ export interface TableProps<T> {
   hideNumberColumn?: boolean;
   /** Set table in loading state */
   isLoading?: boolean;
-  /** Table empty message @defaultValue No data to show */
+  /** Table empty message @defaultValue `No data to show` */
   emptyMessage?: string;
   /** Page size for pagination */
   pageSize?: number;
