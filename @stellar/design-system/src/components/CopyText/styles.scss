@@ -1,5 +1,21 @@
 .CopyText {
-  display: inline-block;
+  &--inline {
+    display: inline-block;
+  }
+
+  &--ellipsis {
+    display: block;
+    position: absolute;
+    width: 100%;
+
+    .CopyText__content {
+      display: block;
+      max-width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
 
   &__content {
     cursor: pointer;

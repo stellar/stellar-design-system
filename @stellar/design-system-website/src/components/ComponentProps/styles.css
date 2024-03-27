@@ -1,0 +1,8 @@
+tr.PropsTable__subtitle {
+  font-weight: 600;
+}
+
+tr.PropsTable__subtitle td {
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+}
