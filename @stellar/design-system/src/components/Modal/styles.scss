@@ -37,7 +37,7 @@
       var(--sds-overlay-01);
     border-radius: pxToRem(8px);
     z-index: calc(var(--sds-z-index-modal) + 1);
-    padding: pxToRem(24px);
+    padding: pxToRem(16px);
     margin-top: var(--Modal-offset-top);
     top: 35%;
     left: 50%;
@@ -55,11 +55,11 @@
 
     .ModalHeading {
       color: var(--sds-clr-gray-12);
-      font-size: pxToRem(18px);
-      line-height: pxToRem(26px);
+      font-size: pxToRem(16px);
+      line-height: pxToRem(24px);
       font-weight: var(--sds-fw-medium);
       margin: 0;
-      margin-bottom: pxToRem(12px);
+      margin-bottom: pxToRem(8px);
       width: calc(100% - 2rem);
     }
 
@@ -89,7 +89,7 @@
     .ModalFooter {
       display: flex;
       width: 100%;
-      margin-top: pxToRem(24px);
+      margin-top: pxToRem(16px);
       gap: pxToRem(8px);
 
       &--right {
@@ -126,8 +126,8 @@
 
   &__close {
     position: absolute;
-    top: pxToRem(18px);
-    right: pxToRem(16px);
+    top: pxToRem(12px);
+    right: pxToRem(8px);
     cursor: pointer;
 
     .NavButton {

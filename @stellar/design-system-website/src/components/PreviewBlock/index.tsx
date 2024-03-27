@@ -382,7 +382,7 @@ export const PreviewBlock = ({
               </p>
             </Modal.Body>
             <Modal.Footer>
-              <Button size="md" variant="secondary">
+              <Button size="md" variant="tertiary">
                 Cancel
               </Button>
               <Button size="md" variant="primary">
@@ -421,7 +421,7 @@ export const PreviewBlock = ({
               </p>
             </Modal.Body>
             <Modal.Footer itemAlignment="stretch">
-              <Button size="md" variant="secondary">
+              <Button size="md" variant="tertiary">
                 Cancel
               </Button>
               <Button size="md" variant="primary">
@@ -463,7 +463,7 @@ export const PreviewBlock = ({
               <Button size="md" variant="primary">
                 Submit
               </Button>
-              <Button size="md" variant="secondary">
+              <Button size="md" variant="tertiary">
                 Cancel
               </Button>
             </Modal.Footer>
