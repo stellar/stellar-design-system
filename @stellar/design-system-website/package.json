@@ -4,6 +4,9 @@
   "author": "Stellar Development Foundation <hello@stellar.org>",
   "description": "Stellar Development Foundation’s design system website",
   "license": "Apache-2.0",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
@@ -58,8 +61,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "engines": {
-    "node": ">=18.0.0"
   }
 }
