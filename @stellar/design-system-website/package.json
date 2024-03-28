@@ -18,11 +18,11 @@
     "git-info": "rm -rf src/generated/ && mkdir src/generated/ && echo export default \"{\\\"commitHash\\\": \\\"$(git rev-parse --short HEAD)\\\"};\" > src/generated/gitInfo.ts"
   },
   "dependencies": {
-    "@docusaurus/core": "3.1.0",
-    "@docusaurus/preset-classic": "3.1.0",
-    "@docusaurus/remark-plugin-npm2yarn": "^3.1.0",
-    "@docusaurus/theme-live-codeblock": "^3.1.0",
-    "@mdx-js/react": "^3.0.0",
+    "@docusaurus/core": "3.1.1",
+    "@docusaurus/preset-classic": "3.1.1",
+    "@docusaurus/remark-plugin-npm2yarn": "^3.1.1",
+    "@docusaurus/theme-live-codeblock": "^3.1.1",
+    "@mdx-js/react": "^3.0.1",
     "@stellar/design-system": "^2.0.0-beta.8",
     "clsx": "^2.1.0",
     "prism-react-renderer": "^2.3.1",
@@ -35,8 +35,8 @@
     "unified": "^11.0.4"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.1.0",
-    "@tsconfig/docusaurus": "^2.0.2",
+    "@docusaurus/module-type-aliases": "3.1.1",
+    "@tsconfig/docusaurus": "^2.0.3",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
@@ -45,7 +45,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-webpack-plugin": "^4.0.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.3"
   },
   "browserslist": {
     "production": [
