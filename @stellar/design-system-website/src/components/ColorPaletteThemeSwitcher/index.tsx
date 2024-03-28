@@ -33,15 +33,6 @@ export const ColorPaletteThemeSwitcher = () => {
     );
   };
 
-  // Getting a weird TS lint error for option type related to ReactPortal, but
-  // this component and options have nothing to do with ReactPortal.
-  const renderOptions = (): any => (
-    <>
-      <option value="light">Light</option>
-      <option value="dark">Dark</option>
-    </>
-  );
-
   return (
     <>
       <p>Selec the color theme below to view color palette for that theme.</p>
@@ -53,7 +44,8 @@ export const ColorPaletteThemeSwitcher = () => {
           onChange={handleThemeChange}
           value={currentTheme}
         >
-          {renderOptions()}
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
         </Select>
       </div>
     </>
