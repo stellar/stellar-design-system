@@ -140,7 +140,7 @@ export const Modal: React.FC<ModalProps> & ModalComponent = ({
       <div className="Modal__background" role="button" onClick={onClose} />
     </div>,
     parent,
-  );
+  ) as React.JSX.Element;
 };
 
 Modal.displayName = "Modal";

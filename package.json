@@ -19,7 +19,7 @@
     "tsc:sds": "yarn workspace @stellar/design-system lint-tsc",
     "tsc:sds-web": "yarn workspace @stellar/design-system-website lint-tsc",
     "clean": "rm -rf node_modules && rm -rf */**/node_modules && rm -rf */**/build",
-    "prepare": "husky install",
+    "prepare": "husky",
     "install-if-package-changed": "git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD | grep --quiet yarn.lock && yarn install || exit 0",
     "pre-commit": "concurrently 'pretty-quick --staged' 'lint-staged' 'yarn tsc:sds' 'yarn tsc:sds-web'"
   },
