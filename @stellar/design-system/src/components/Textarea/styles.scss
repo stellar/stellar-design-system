@@ -62,7 +62,9 @@
     padding: var(--Textarea-padding-vertical) var(--Textarea-padding-horizontal);
     font-size: var(--Textarea-font-size);
     line-height: var(--Textarea-line-height);
-    transition: border-color var(--sds-anim-transition-default),
+    outline: none;
+    transition:
+      border-color var(--sds-anim-transition-default),
       box-shadow var(--sds-anim-transition-default);
 
     @media (hover: hover) {
