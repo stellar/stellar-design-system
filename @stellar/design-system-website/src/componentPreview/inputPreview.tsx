@@ -148,6 +148,21 @@ export const inputPreview: ComponentPreview = {
     },
     {
       type: "select",
+      prop: "success",
+      customValue: "Success message",
+      options: [
+        {
+          value: "",
+          label: "No success",
+        },
+        {
+          value: "success",
+          label: "Success",
+        },
+      ],
+    },
+    {
+      type: "select",
       prop: "copyButton",
       customValue: { position: "right", showLabel: true },
       options: [

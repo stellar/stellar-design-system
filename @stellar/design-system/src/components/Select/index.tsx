@@ -21,6 +21,8 @@ export interface SelectProps {
   note?: string | React.ReactNode;
   /** Error message of the select */
   error?: string | string;
+  /** Success message of the input */
+  success?: string | React.ReactNode;
   /** Make label uppercase */
   isLabelUppercase?: boolean;
   /** Select error without a message */
@@ -47,6 +49,7 @@ export const Select: React.FC<Props> = ({
   labelSuffix,
   note,
   error,
+  success,
   isLabelUppercase,
   isError,
   customSelect,
@@ -95,6 +98,11 @@ export const Select: React.FC<Props> = ({
       {error && (
         <FieldNote size={fieldSize} variant="error">
           {error}
+        </FieldNote>
+      )}
+      {success && (
+        <FieldNote size={fieldSize} variant="success">
+          {success}
         </FieldNote>
       )}
     </div>

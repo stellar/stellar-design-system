@@ -16,6 +16,8 @@ export interface CheckboxProps {
   note?: string | React.ReactNode;
   /** Error message of the checkbox */
   error?: string | React.ReactNode;
+  /** Success message of the input */
+  success?: string | React.ReactNode;
   /** Checkbox error without a message */
   isError?: boolean;
 }
@@ -35,6 +37,7 @@ export const Checkbox: React.FC<Props> = ({
   label,
   note,
   error,
+  success,
   isError,
   ...props
 }: Props) => {
@@ -65,6 +68,11 @@ export const Checkbox: React.FC<Props> = ({
       {error && (
         <FieldNote size={fieldSize} variant="error">
           {error}
+        </FieldNote>
+      )}
+      {success && (
+        <FieldNote size={fieldSize} variant="success">
+          {success}
         </FieldNote>
       )}
     </div>

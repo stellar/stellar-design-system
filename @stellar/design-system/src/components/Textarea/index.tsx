@@ -20,6 +20,8 @@ export interface TextareaProps {
   note?: string | React.ReactNode;
   /** Error message of the textarea */
   error?: string | React.ReactNode;
+  /** Success message of the input */
+  success?: string | React.ReactNode;
   /** Textarea error without a message */
   isError?: boolean;
   /** Make label uppercase */
@@ -46,6 +48,7 @@ export const Textarea: React.FC<Props> = ({
   labelSuffix,
   note,
   error,
+  success,
   isError,
   isLabelUppercase,
   customTextarea,
@@ -91,6 +94,11 @@ export const Textarea: React.FC<Props> = ({
       {error && (
         <FieldNote size={fieldSize} variant="error">
           {error}
+        </FieldNote>
+      )}
+      {success && (
+        <FieldNote size={fieldSize} variant="success">
+          {success}
         </FieldNote>
       )}
     </div>
