@@ -75,5 +75,20 @@ export const checkboxPreview: ComponentPreview = {
         },
       ],
     },
+    {
+      type: "select",
+      prop: "success",
+      customValue: "Success message",
+      options: [
+        {
+          value: "",
+          label: "No success",
+        },
+        {
+          value: "success",
+          label: "Success",
+        },
+      ],
+    },
   ],
 };

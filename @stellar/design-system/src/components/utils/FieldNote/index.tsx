@@ -2,9 +2,8 @@ import React from "react";
 import "./styles.scss";
 
 interface FieldNoteProps {
-  variant?: "note" | "error";
-  // TODO: remove "xs" once all form fields are updated
-  size: "sm" | "md" | "lg" | "xs";
+  variant?: "note" | "error" | "success";
+  size: "sm" | "md" | "lg";
   children: string | React.ReactNode;
 }
 

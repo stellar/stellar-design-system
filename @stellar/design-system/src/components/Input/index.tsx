@@ -31,6 +31,8 @@ export interface InputProps {
   note?: string | React.ReactNode;
   /** Error message of the input */
   error?: string | React.ReactNode;
+  /** Success message of the input */
+  success?: string | React.ReactNode;
   /** Use a specific input rather than a generic HTML input (useful for Formik or otherwise controlled inputs) */
   customInput?: React.ReactElement;
   /** Copy button options */
@@ -67,6 +69,7 @@ export const Input: React.FC<Props> = ({
   leftElement,
   note,
   error,
+  success,
   copyButton,
   ...props
 }: Props) => {
@@ -171,6 +174,11 @@ export const Input: React.FC<Props> = ({
       {error && (
         <FieldNote size={fieldSize} variant="error">
           {error}
+        </FieldNote>
+      )}
+      {success && (
+        <FieldNote size={fieldSize} variant="success">
+          {success}
         </FieldNote>
       )}
     </div>

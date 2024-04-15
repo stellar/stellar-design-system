@@ -110,5 +110,20 @@ export const textareaPreview: ComponentPreview = {
         },
       ],
     },
+    {
+      type: "select",
+      prop: "success",
+      customValue: "Success message",
+      options: [
+        {
+          value: "",
+          label: "No success",
+        },
+        {
+          value: "success",
+          label: "Success",
+        },
+      ],
+    },
   ],
 };
