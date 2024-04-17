@@ -125,5 +125,20 @@ export const textareaPreview: ComponentPreview = {
         },
       ],
     },
+    {
+      type: "select",
+      prop: "hasCopyButton",
+      customValue: true,
+      options: [
+        {
+          value: "",
+          label: "No copy button",
+        },
+        {
+          value: "copy",
+          label: "Copy button",
+        },
+      ],
+    },
   ],
 };
