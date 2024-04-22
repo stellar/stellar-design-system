@@ -1,6 +1,7 @@
 import React, { cloneElement } from "react";
 import { Label } from "../Label";
 import { FieldNote } from "../utils/FieldNote";
+import { InputCopyButton } from "../utils/InputCopyButton";
 import "./styles.scss";
 
 /** Including all valid [textarea attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attributes) */
@@ -26,6 +27,8 @@ export interface TextareaProps {
   isError?: boolean;
   /** Make label uppercase */
   isLabelUppercase?: boolean;
+  /** Show copy text button */
+  hasCopyButton?: boolean;
   /** Use a specific textarea rather than a generic HTML textarea (useful for Formik or otherwise controlled inputs) */
   customTextarea?: React.ReactElement;
 }
@@ -51,6 +54,7 @@ export const Textarea: React.FC<Props> = ({
   success,
   isError,
   isLabelUppercase,
+  hasCopyButton,
   customTextarea,
   spellCheck = false,
   autoComplete = "off",
@@ -90,17 +94,24 @@ export const Textarea: React.FC<Props> = ({
         </textarea>
       )}
 
-      {note && <FieldNote size={fieldSize}>{note}</FieldNote>}
-      {error && (
-        <FieldNote size={fieldSize} variant="error">
-          {error}
-        </FieldNote>
-      )}
-      {success && (
-        <FieldNote size={fieldSize} variant="success">
-          {success}
-        </FieldNote>
-      )}
+      <div className="Textarea__footer">
+        <div className="Textarea__footer__notes">
+          {note && <FieldNote size={fieldSize}>{note}</FieldNote>}
+          {error && (
+            <FieldNote size={fieldSize} variant="error">
+              {error}
+            </FieldNote>
+          )}
+          {success && (
+            <FieldNote size={fieldSize} variant="success">
+              {success}
+            </FieldNote>
+          )}
+        </div>
+        {hasCopyButton ? (
+          <InputCopyButton fieldSize={fieldSize} textToCopy={children} />
+        ) : null}
+      </div>
     </div>
   );
 };

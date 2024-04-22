@@ -82,6 +82,18 @@
     }
   }
 
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--Textarea-gap);
+
+    &__notes {
+      display: flex;
+      flex-direction: column;
+      gap: var(--Textarea-gap);
+    }
+  }
+
   &--error {
     --Textarea-color-background: var(--sds-input-color-background-error);
     --Textarea-color-border: var(--sds-input-color-border-error);

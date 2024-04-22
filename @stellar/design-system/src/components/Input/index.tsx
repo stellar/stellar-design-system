@@ -1,9 +1,8 @@
 import React, { cloneElement, useState } from "react";
-import CopyToClipboard from "react-copy-to-clipboard";
-import { Button } from "../Button";
 import { Label } from "../Label";
 import { Icon } from "../../icons";
 import { FieldNote } from "../utils/FieldNote";
+import { InputCopyButton } from "../utils/InputCopyButton";
 import "./styles.scss";
 
 /** Including all valid [input attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attributes). */
@@ -87,21 +86,11 @@ export const Input: React.FC<Props> = ({
   };
 
   const renderCopyButton = () => (
-    <CopyToClipboard text={props.value ? props.value.toString() : ""}>
-      <Button
-        variant="tertiary"
-        size={fieldSize}
-        icon={<Icon.Copy01 />}
-        iconPosition="left"
-        disabled={!props.value}
-        type="button"
-        onClick={(e) => {
-          e.preventDefault();
-        }}
-      >
-        {copyButton?.showLabel ? "Copy" : ""}
-      </Button>
-    </CopyToClipboard>
+    <InputCopyButton
+      fieldSize={fieldSize}
+      textToCopy={props.value ? props.value.toString() : ""}
+      showLabel={copyButton?.showLabel}
+    />
   );
 
   return (
