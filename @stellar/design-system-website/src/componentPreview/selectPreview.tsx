@@ -110,5 +110,19 @@ export const selectPreview: ComponentPreview = {
         },
       ],
     },
+    {
+      type: "select",
+      prop: "infoText",
+      options: [
+        {
+          value: "",
+          label: "No info text",
+        },
+        {
+          value: "Info text message",
+          label: "Info text",
+        },
+      ],
+    },
   ],
 };

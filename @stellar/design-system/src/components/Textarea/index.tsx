@@ -23,6 +23,10 @@ export interface TextareaProps {
   error?: string | React.ReactNode;
   /** Success message of the input */
   success?: string | React.ReactNode;
+  /** Info text tooltip */
+  infoText?: string | React.ReactNode;
+  /** Custom info text icon @defaultValue `<Icon.InfoCircle />` */
+  infoTextIcon?: React.ReactNode;
   /** Textarea error without a message */
   isError?: boolean;
   /** Make label uppercase */
@@ -52,6 +56,8 @@ export const Textarea: React.FC<Props> = ({
   note,
   error,
   success,
+  infoText,
+  infoTextIcon,
   isError,
   isLabelUppercase,
   hasCopyButton,
@@ -81,6 +87,8 @@ export const Textarea: React.FC<Props> = ({
           isUppercase={isLabelUppercase}
           size={fieldSize}
           labelSuffix={labelSuffix}
+          infoText={infoText}
+          infoTextIcon={infoTextIcon}
         >
           {label}
         </Label>
