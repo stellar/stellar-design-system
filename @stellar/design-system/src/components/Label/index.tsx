@@ -10,7 +10,7 @@ interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
   isUppercase?: boolean;
   labelSuffix?: string | React.ReactNode;
   infoText?: string | React.ReactNode;
-  infoTextIcon?: React.ReactNode;
+  infoLink?: string;
 }
 
 export const Label: React.FC<LabelProps> = ({
@@ -20,7 +20,7 @@ export const Label: React.FC<LabelProps> = ({
   isUppercase,
   labelSuffix,
   infoText,
-  infoTextIcon = <Icon.InfoCircle />,
+  infoLink,
   ...props
 }: LabelProps) => {
   const additionalClasses = [
@@ -41,11 +41,22 @@ export const Label: React.FC<LabelProps> = ({
         ) : null}
       </label>
 
+      {infoLink ? (
+        <a
+          href={infoLink}
+          className="Label__infoButton"
+          rel="noreferrer noopener"
+          target="_blank"
+        >
+          <Icon.BookOpen01 />
+        </a>
+      ) : null}
+
       {infoText ? (
         <Tooltip
           triggerEl={
             <div className="Label__infoButton" role="button">
-              {infoTextIcon}
+              <Icon.InfoCircle />
             </div>
           }
         >

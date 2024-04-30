@@ -124,5 +124,19 @@ export const selectPreview: ComponentPreview = {
         },
       ],
     },
+    {
+      type: "select",
+      prop: "infoLink",
+      options: [
+        {
+          value: "",
+          label: "No info link",
+        },
+        {
+          value: "https://stellar.org",
+          label: "Info link",
+        },
+      ],
+    },
   ],
 };

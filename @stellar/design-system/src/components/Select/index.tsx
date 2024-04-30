@@ -25,8 +25,8 @@ export interface SelectProps {
   success?: string | React.ReactNode;
   /** Info text tooltip */
   infoText?: string | React.ReactNode;
-  /** Custom info text icon @defaultValue `<Icon.InfoCircle />` */
-  infoTextIcon?: React.ReactNode;
+  /** External link to open in new window */
+  infoLink?: string;
   /** Make label uppercase */
   isLabelUppercase?: boolean;
   /** Select error without a message */
@@ -55,7 +55,7 @@ export const Select: React.FC<Props> = ({
   error,
   success,
   infoText,
-  infoTextIcon,
+  infoLink,
   isLabelUppercase,
   isError,
   customSelect,
@@ -81,7 +81,7 @@ export const Select: React.FC<Props> = ({
           size={fieldSize}
           labelSuffix={labelSuffix}
           infoText={infoText}
-          infoTextIcon={infoTextIcon}
+          infoLink={infoLink}
         >
           {label}
         </Label>

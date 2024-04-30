@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Floater } from "../Floater";
 import "./styles.scss";
 
@@ -43,16 +43,6 @@ export const Tooltip: React.FC<TooltipProps> = ({
 }: TooltipProps) => {
   const [theme, setTheme] = useState("sds-theme-dark");
 
-  useEffect(() => {
-    document.addEventListener("SDS_ThemeSwitchEvent", ((
-      event: CustomEvent<{ theme: string }>,
-    ) => {
-      if (event.detail?.theme) {
-        setTheme(event.detail.theme);
-      }
-    }) as EventListener);
-  }, []);
-
   const getContrastMode = () =>
     theme === "sds-theme-dark" ? "sds-theme-light" : "sds-theme-dark";
 
@@ -63,6 +53,15 @@ export const Tooltip: React.FC<TooltipProps> = ({
       isVisible={isVisible}
       isContrast={isContrast}
       showArrow={true}
+      callback={(isOpen) => {
+        if (isOpen) {
+          const theme = document.body.getAttribute("data-sds-theme");
+
+          if (theme) {
+            setTheme(theme);
+          }
+        }
+      }}
     >
       <div className={`Tooltip ${isContrast ? getContrastMode() : ""}`}>
         {title ? <div className="Tooltip__title">{title}</div> : null}

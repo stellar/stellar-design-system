@@ -60,21 +60,13 @@ export const ThemeSwitch = ({
     if (isDarkMode) {
       document.body.classList.remove(ThemeMode.LIGHT);
       document.body.classList.add(ThemeMode.DARK);
+      document.body.setAttribute("data-sds-theme", ThemeMode.DARK);
     } else {
       document.body.classList.remove(ThemeMode.DARK);
       document.body.classList.add(ThemeMode.LIGHT);
+      document.body.setAttribute("data-sds-theme", ThemeMode.LIGHT);
     }
   }, [disableSetThemeOnLoad, isDarkMode]);
-
-  // Trigger custom event to get the current theme
-  useEffect(() => {
-    document.dispatchEvent(
-      new CustomEvent<{ theme: string }>("SDS_ThemeSwitchEvent", {
-        bubbles: true,
-        detail: { theme: isDarkMode ? ThemeMode.DARK : ThemeMode.LIGHT },
-      }),
-    );
-  }, [isDarkMode]);
 
   const handleSwitch = () => {
     const _isDarkMode = !isDarkMode;
