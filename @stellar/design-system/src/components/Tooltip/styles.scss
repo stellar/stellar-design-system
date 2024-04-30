@@ -12,12 +12,13 @@
     font-size: pxToRem(12px);
     line-height: pxToRem(18px);
     font-weight: var(--sds-fw-semi-bold);
+    color: var(--sds-clr-gray-12);
   }
 
   &__message {
     font-size: pxToRem(12px);
     line-height: pxToRem(18px);
     font-weight: var(--sds-fw-medium);
-    color: var(--sds-clr-gray-08);
+    color: var(--sds-clr-gray-11);
   }
 }

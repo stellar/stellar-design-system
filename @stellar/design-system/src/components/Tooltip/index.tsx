@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Floater } from "../Floater";
 import "./styles.scss";
 
@@ -40,6 +41,21 @@ export const Tooltip: React.FC<TooltipProps> = ({
   isVisible,
   isContrast = true,
 }: TooltipProps) => {
+  const [theme, setTheme] = useState("sds-theme-dark");
+
+  useEffect(() => {
+    document.addEventListener("SDS_ThemeSwitchEvent", ((
+      event: CustomEvent<{ theme: string }>,
+    ) => {
+      if (event.detail?.theme) {
+        setTheme(event.detail.theme);
+      }
+    }) as EventListener);
+  }, []);
+
+  const getContrastMode = () =>
+    theme === "sds-theme-dark" ? "sds-theme-light" : "sds-theme-dark";
+
   return (
     <Floater
       placement={placement}
@@ -48,7 +64,7 @@ export const Tooltip: React.FC<TooltipProps> = ({
       isContrast={isContrast}
       showArrow={true}
     >
-      <div className="Tooltip">
+      <div className={`Tooltip ${isContrast ? getContrastMode() : ""}`}>
         {title ? <div className="Tooltip__title">{title}</div> : null}
         {children ? <div className="Tooltip__message">{children}</div> : null}
       </div>

@@ -66,6 +66,16 @@ export const ThemeSwitch = ({
     }
   }, [disableSetThemeOnLoad, isDarkMode]);
 
+  // Trigger custom event to get the current theme
+  useEffect(() => {
+    document.dispatchEvent(
+      new CustomEvent<{ theme: string }>("SDS_ThemeSwitchEvent", {
+        bubbles: true,
+        detail: { theme: isDarkMode ? ThemeMode.DARK : ThemeMode.LIGHT },
+      }),
+    );
+  }, [isDarkMode]);
+
   const handleSwitch = () => {
     const _isDarkMode = !isDarkMode;
 
