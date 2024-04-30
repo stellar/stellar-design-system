@@ -38,8 +38,8 @@ export interface InputProps {
   copyButton?: InputCopyButton;
   /** Info text tooltip */
   infoText?: string | React.ReactNode;
-  /** Custom info text icon @defaultValue `<Icon.InfoCircle />` */
-  infoTextIcon?: React.ReactNode;
+  /** External link to open in new window */
+  infoLink?: string;
 }
 
 /** */
@@ -75,7 +75,7 @@ export const Input: React.FC<Props> = ({
   success,
   copyButton,
   infoText,
-  infoTextIcon,
+  infoLink,
   ...props
 }: Props) => {
   const [isPasswordMasked, setIsPasswordMasked] = useState(true);
@@ -108,7 +108,7 @@ export const Input: React.FC<Props> = ({
           size={fieldSize}
           labelSuffix={labelSuffix}
           infoText={infoText}
-          infoTextIcon={infoTextIcon}
+          infoLink={infoLink}
         >
           {label}
         </Label>

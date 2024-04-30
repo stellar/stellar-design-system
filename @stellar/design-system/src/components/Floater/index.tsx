@@ -29,6 +29,7 @@ interface FloaterProps {
   hasActiveInsideClick?: boolean;
   isContrast?: boolean;
   showArrow?: boolean;
+  callback?: (isOpen: boolean) => void;
 }
 
 const getArrowStyle = ({
@@ -118,6 +119,7 @@ export const Floater: React.FC<FloaterProps> = ({
   hasActiveInsideClick,
   isContrast = true,
   showArrow = false,
+  callback,
 }: FloaterProps) => {
   const parentRef = useRef<HTMLDivElement | null>(null);
   const floaterRef = useRef<HTMLDivElement | null>(null);
@@ -197,8 +199,12 @@ export const Floater: React.FC<FloaterProps> = ({
       } else {
         closeFloater();
       }
+
+      if (callback) {
+        callback(isOpen);
+      }
     },
-    [openFloater, closeFloater],
+    [callback, openFloater, closeFloater],
   );
 
   const handleClickOutside = useCallback(
