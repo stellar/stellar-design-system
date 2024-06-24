@@ -102,24 +102,26 @@ export const Textarea: React.FC<Props> = ({
         </textarea>
       )}
 
-      <div className="Textarea__footer">
-        <div className="Textarea__footer__notes">
-          {note && <FieldNote size={fieldSize}>{note}</FieldNote>}
-          {error && (
-            <FieldNote size={fieldSize} variant="error">
-              {error}
-            </FieldNote>
-          )}
-          {success && (
-            <FieldNote size={fieldSize} variant="success">
-              {success}
-            </FieldNote>
-          )}
+      {(note || error || success || hasCopyButton) && (
+        <div className="Textarea__footer">
+          <div className="Textarea__footer__notes">
+            {note && <FieldNote size={fieldSize}>{note}</FieldNote>}
+            {error && (
+              <FieldNote size={fieldSize} variant="error">
+                {error}
+              </FieldNote>
+            )}
+            {success && (
+              <FieldNote size={fieldSize} variant="success">
+                {success}
+              </FieldNote>
+            )}
+          </div>
+          {hasCopyButton ? (
+            <InputCopyButton fieldSize={fieldSize} textToCopy={children} />
+          ) : null}
         </div>
-        {hasCopyButton ? (
-          <InputCopyButton fieldSize={fieldSize} textToCopy={children} />
-        ) : null}
-      </div>
+      )}
     </div>
   );
 };
