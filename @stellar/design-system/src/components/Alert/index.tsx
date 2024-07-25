@@ -19,6 +19,8 @@ export type AlertBaseProps = {
   onClose?: () => void;
   /** Alert action label @defaultValue `Action` */
   actionLabel?: string;
+  /** Alert icon @defaultValue `<Icon.InfoCircle />` */
+  icon?: React.ReactNode;
   /** Alet message */
   children: React.ReactNode;
 };
@@ -49,6 +51,7 @@ export const Alert: React.FC<AlertProps> = ({
   onAction,
   actionLink,
   actionLabel = "Action",
+  icon = <Icon.InfoCircle />,
   children,
 }: AlertProps) => {
   if (placement === "bottom" && actionLink) {
@@ -126,9 +129,7 @@ export const Alert: React.FC<AlertProps> = ({
       >
         <div className="Alert__content">
           <div className="Alert__content__iconContainer">
-            <div className="Alert__icon">
-              <Icon.InfoCircle />
-            </div>
+            <div className="Alert__icon">{icon}</div>
           </div>
           <div className="Alert__content__contentContainer">
             <div className="Alert__content__textContainer">
