@@ -32,14 +32,43 @@ interface FloaterProps {
   callback?: (isOpen: boolean) => void;
 }
 
+// Might need to flip the placement to get the correct arrow style
+const getActualTooltipPlacement = (
+  placement: Placement,
+  floaterX: number,
+  floaterY: number,
+) => {
+  if (placement.includes("bottom") && floaterY < 0) {
+    return placement.replace("bottom", "top") as Placement;
+  }
+
+  if (placement.includes("top") && floaterY > 0) {
+    return placement.replace("top", "bottom") as Placement;
+  }
+
+  if (placement.includes("left") && floaterX > 0) {
+    return placement.replace("left", "right") as Placement;
+  }
+
+  if (placement.includes("right") && floaterX < 0) {
+    return placement.replace("right", "left") as Placement;
+  }
+
+  return placement;
+};
+
 const getArrowStyle = ({
   x,
   y,
   placement,
+  floaterX,
+  floaterY,
 }: {
   x?: number;
   y?: number;
   placement: FloaterPlacement;
+  floaterX?: number;
+  floaterY?: number;
 }) => {
   const basePos = {
     top: "auto",
@@ -48,7 +77,13 @@ const getArrowStyle = ({
     right: "auto",
   };
 
-  switch (placement) {
+  const actualPlacement = getActualTooltipPlacement(
+    placement,
+    floaterX || 0,
+    floaterY || 0,
+  );
+
+  switch (actualPlacement) {
     case "top":
       return {
         ...basePos,
@@ -163,7 +198,13 @@ export const Floater: React.FC<FloaterProps> = ({
 
           Object.assign(
             arrowEl.style,
-            getArrowStyle({ x: arrowX, y: arrowY, placement }),
+            getArrowStyle({
+              x: arrowX,
+              y: arrowY,
+              placement,
+              floaterX: x,
+              floaterY: y,
+            }),
           );
         }
       }
