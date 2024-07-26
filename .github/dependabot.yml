@@ -5,6 +5,7 @@ updates:
       - "/"
       - "/@stellar/design-system"
       - "/@stellar/design-system-website"
+    schedule:
       interval: "weekly"
       day: "sunday"
       time: "02:00"
