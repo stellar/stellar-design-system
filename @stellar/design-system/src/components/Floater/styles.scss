@@ -27,7 +27,8 @@
       box-shadow: 0 pxToRem(10px) pxToRem(20px) pxToRem(-6px)
         var(--sds-overlay-01);
 
-      .Floater__arrow svg {
+      // Target only direct child, not everything nested
+      & > .Floater__arrow svg {
         fill: var(--sds-clr-gray-06);
       }
     }

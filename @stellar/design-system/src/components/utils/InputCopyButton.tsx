@@ -1,5 +1,5 @@
-import CopyToClipboard from "react-copy-to-clipboard";
 import { Button } from "../Button";
+import { CopyText } from "../CopyText";
 import { Icon } from "../../icons";
 
 export type InputCopyButtonProps = {
@@ -16,7 +16,7 @@ export const InputCopyButton = ({
   fieldSize,
   showLabel,
 }: InputCopyButtonProps) => (
-  <CopyToClipboard text={textToCopy}>
+  <CopyText textToCopy={textToCopy} doneLabel="Copied">
     <Button
       variant="tertiary"
       size={fieldSize}
@@ -30,5 +30,5 @@ export const InputCopyButton = ({
     >
       {showLabel ? "Copy" : ""}
     </Button>
-  </CopyToClipboard>
+  </CopyText>
 );
