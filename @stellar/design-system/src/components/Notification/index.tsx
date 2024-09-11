@@ -10,6 +10,8 @@ export interface NotificationProps {
   title: string;
   /** Notification icon @defaultValue `<Icon.InfoCircle />` */
   icon?: React.ReactNode;
+  /** Notification background */
+  isFilled?: boolean;
   /** Notification message */
   children?: string | React.ReactNode;
 }
@@ -30,10 +32,16 @@ export const Notification: React.FC<Props> = ({
   variant,
   title,
   icon,
+  isFilled,
   children,
 }: NotificationProps) => {
+  const additionalClasses = [
+    `Notification--${variant}`,
+    ...(isFilled ? [`Notification--filled`] : []),
+  ].join(" ");
+
   return (
-    <div className={`Notification Notification--${variant}`}>
+    <div className={`Notification ${additionalClasses}`}>
       <div className="Notification__title">
         <div className="Notification__title__icon">
           {icon ? icon : <Icon.InfoCircle />}
