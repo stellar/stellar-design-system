@@ -46,6 +46,11 @@ export const notificationPreview: ComponentPreview = {
       ],
     },
     {
+      type: "checkbox",
+      prop: "isFilled",
+      label: "Filled",
+    },
+    {
       type: "select",
       prop: "children",
       customValue:

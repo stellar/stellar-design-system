@@ -26,7 +26,7 @@ import { linkPreview } from "@site/src/componentPreview/linkPreview";
 import { loaderPreview } from "@site/src/componentPreview/loaderPreview";
 import { modalPreview } from "@site/src/componentPreview/modalPreview";
 import { navButtonPreview } from "@site/src/componentPreview/navButtonPreview";
-import { notificationPreview } from "@site/src/componentPreview/notificationPreview ";
+import { notificationPreview } from "@site/src/componentPreview/notificationPreview";
 import { paginationPreview } from "@site/src/componentPreview/paginationPreview";
 import { profilePreview } from "@site/src/componentPreview/profilePreview";
 import { projectLogoPreview } from "@site/src/componentPreview/projectLogoPreview";
