@@ -71,7 +71,7 @@ function CardCategory({ item }) {
   return (
     <CardLayout
       href={href}
-      icon="null"
+      icon={null}
       title={item.label}
       description={item.description ?? categoryItemsPlural(item.items.length)}
     />
