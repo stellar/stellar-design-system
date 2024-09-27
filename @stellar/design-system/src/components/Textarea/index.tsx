@@ -79,6 +79,8 @@ export const Textarea: React.FC<Props> = ({
     autoComplete,
   };
 
+  const val = (props.value || children) as string;
+
   return (
     <div className={`Textarea ${additionalClasses}`}>
       {label && (
@@ -98,7 +100,7 @@ export const Textarea: React.FC<Props> = ({
         cloneElement(customTextarea, { ...baseTextareaProps, ...props })
       ) : (
         <textarea {...baseTextareaProps} {...props}>
-          {children}
+          {val}
         </textarea>
       )}
 
@@ -118,7 +120,7 @@ export const Textarea: React.FC<Props> = ({
             )}
           </div>
           {hasCopyButton ? (
-            <InputCopyButton fieldSize={fieldSize} textToCopy={children} />
+            <InputCopyButton fieldSize={fieldSize} textToCopy={val} />
           ) : null}
         </div>
       )}

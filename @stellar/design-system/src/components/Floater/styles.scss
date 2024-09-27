@@ -50,6 +50,8 @@
 
   // Floater open/close
   &.trigger {
+    z-index: 2;
+
     .Floater__content {
       display: block;
     }

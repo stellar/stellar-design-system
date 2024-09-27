@@ -64,7 +64,8 @@
     color: var(--Input-color-text);
     border-radius: var(--Input-border-radius);
     box-shadow: 0 0 0 var(--Input-box-shadow-size) var(--Input-box-shadow-color);
-    transition: border-color var(--sds-anim-transition-default),
+    transition:
+      border-color var(--sds-anim-transition-default),
       box-shadow var(--sds-anim-transition-default);
 
     padding-left: var(--Input-padding-horizontal);
@@ -103,6 +104,10 @@
       &:hover {
         border-color: var(--Input-color-border-hover);
       }
+    }
+
+    & > * {
+      min-width: 0;
     }
   }
 
