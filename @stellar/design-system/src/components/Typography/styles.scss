@@ -101,14 +101,14 @@ code.Code {
 
   &--md {
     font-size: pxToRem(16px);
-    line-height: pxToRem(24px);
+    line-height: pxToRem(20px);
   }
   &--sm {
     font-size: pxToRem(14px);
-    line-height: pxToRem(22px);
+    line-height: pxToRem(18px);
   }
   &--xs {
     font-size: pxToRem(12px);
-    line-height: pxToRem(18px);
+    line-height: pxToRem(16px);
   }
 }
