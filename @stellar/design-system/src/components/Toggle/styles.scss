@@ -68,7 +68,12 @@
   }
 
   &__input {
-    display: none;
+    height: 0;
+    width: 0;
+
+    &:focus-visible ~ .Toggle__track {
+      box-shadow: 0 0 0 pxToRem(2px) var(--sds-input-color-border-default-focus);
+    }
 
     &:checked ~ .Toggle__track {
       background-color: var(--sds-clr-lilac-09);
