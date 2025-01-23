@@ -6,7 +6,7 @@
     margin: 0 auto;
     padding-left: var(--Layout-inset-padding-horizontal);
     padding-right: var(--Layout-inset-padding-horizontal);
-    max-width: var(--layout-window-width-max);
+    max-width: var(--sds-window-width-max);
     width: 100%;
 
     @media (min-width: 600px) {
@@ -91,7 +91,7 @@
     --Layout-footer-padding-top: 1rem;
     --Layout-footer-padding-bottom: 1rem;
     --Layout-footer-margin-top: 3rem;
-    --Layout-footer-border-color: var(--color-gray-30);
+    --Layout-footer-border-color: var(--sds-clr-gray-06);
 
     margin-top: var(--Layout-footer-margin-top);
 

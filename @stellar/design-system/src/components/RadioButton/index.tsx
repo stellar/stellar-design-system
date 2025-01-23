@@ -9,7 +9,7 @@ export interface RadioButtonProps {
   label: string | React.ReactNode;
   // Note: cannot use "size" here because it's input's native property
   /** Size of the radio button */
-  fieldSize: "md" | "sm" | "xs";
+  fieldSize: "sm" | "md" | "lg";
 }
 
 interface Props

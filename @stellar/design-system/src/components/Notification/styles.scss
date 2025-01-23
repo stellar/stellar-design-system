@@ -2,19 +2,20 @@
 
 .Notification {
   // Variables
-  --Notification-color-background: var(--color-purple-20);
-  --Notification-color-border: var(--color-purple-30);
-  --Notification-color-icon: var(--color-purple-50);
+  --Notification-color-background: var(--sds-clr-gray-01);
+  --Notification-color-border: var(--sds-clr-gray-06);
+  --Notification-color-icon: var(--sds-clr-lilac-09);
+  --Notification-color-action: var(--sds-clr-lilac-11);
 
   // Base
-  font-family: var(--font-family-base);
+  font-family: var(--sds-ff-base);
   background-color: var(--Notification-color-background);
   border: 1px solid var(--Notification-color-border);
-  border-radius: pxToRem(4px);
+  border-radius: pxToRem(8px);
   display: flex;
   flex-direction: column;
   gap: pxToRem(8px);
-  padding: pxToRem(16px);
+  padding: pxToRem(12px);
   width: 100%;
 
   &__title {
@@ -25,66 +26,90 @@
     &__icon {
       width: pxToRem(16px);
       height: pxToRem(16px);
-      margin-top: pxToRem(3px);
+      margin-top: pxToRem(2px);
       flex-shrink: 0;
 
       svg {
         width: 100%;
         height: 100%;
-        fill: var(--Notification-color-icon);
+        stroke: var(--Notification-color-icon);
       }
     }
 
     &__text {
-      color: var(--color-gray-90);
+      color: var(--sds-clr-gray-12);
       font-size: pxToRem(14px);
-      line-height: pxToRem(22px);
-      font-weight: var(--font-weight-medium);
+      line-height: pxToRem(20px);
+      font-weight: var(--sds-fw-semi-bold);
     }
   }
 
   &__message {
-    color: var(--color-gray-70);
+    color: var(--sds-clr-gray-11);
     font-size: pxToRem(14px);
-    line-height: pxToRem(22px);
-    font-weight: var(--font-weight-regular);
+    line-height: pxToRem(20px);
+    font-weight: var(--sds-fw-regular);
+    display: flex;
+    flex-direction: column;
+    gap: pxToRem(4px);
+
+    p {
+      margin-bottom: 0 !important;
+    }
 
     ul {
-      font-size: pxToRem(14px);
-      line-height: pxToRem(22px);
-      color: var(--color-gray-70);
+      font-size: inherit;
+      line-height: inherit;
+      color: inherit;
       list-style-type: disc;
     }
   }
 
   // Variant
   &--primary {
-    --Notification-color-background: var(--color-purple-20);
-    --Notification-color-border: var(--color-purple-30);
-    --Notification-color-icon: var(--color-purple-50);
+    --Notification-color-background: var(--sds-clr-gray-01);
+    --Notification-color-border: var(--sds-clr-gray-06);
+    --Notification-color-icon: var(--sds-clr-lilac-09);
+    --Notification-color-action: var(--sds-clr-lilac-11);
   }
 
   &--secondary {
-    --Notification-color-background: var(--color-gray-20);
-    --Notification-color-border: var(--color-gray-30);
-    --Notification-color-icon: var(--color-gray-50);
+    --Notification-color-background: var(--sds-clr-gray-03);
+    --Notification-color-border: var(--sds-clr-gray-06);
+    --Notification-color-icon: var(--sds-clr-lilac-09);
+    --Notification-color-action: var(--sds-clr-lilac-11);
   }
 
   &--success {
-    --Notification-color-background: var(--color-green-20);
-    --Notification-color-border: var(--color-green-30);
-    --Notification-color-icon: var(--color-green-50);
+    --Notification-color-background: var(--sds-clr-gray-01);
+    --Notification-color-border: var(--sds-clr-gray-06);
+    --Notification-color-icon: var(--sds-clr-green-09);
+    --Notification-color-action: var(--sds-clr-green-11);
+
+    &.Notification--filled {
+      --Notification-color-background: var(--sds-clr-green-03);
+    }
   }
 
   &--error {
-    --Notification-color-background: var(--color-red-20);
-    --Notification-color-border: var(--color-red-30);
-    --Notification-color-icon: var(--color-red-50);
+    --Notification-color-background: var(--sds-clr-gray-01);
+    --Notification-color-border: var(--sds-clr-gray-06);
+    --Notification-color-icon: var(--sds-clr-red-09);
+    --Notification-color-action: var(--sds-clr-red-11);
+
+    &.Notification--filled {
+      --Notification-color-background: var(--sds-clr-red-02);
+    }
   }
 
   &--warning {
-    --Notification-color-background: var(--color-yellow-20);
-    --Notification-color-border: var(--color-yellow-30);
-    --Notification-color-icon: var(--color-yellow-50);
+    --Notification-color-background: var(--sds-clr-gray-01);
+    --Notification-color-border: var(--sds-clr-gray-06);
+    --Notification-color-icon: var(--sds-clr-amber-09);
+    --Notification-color-action: var(--sds-clr-amber-11);
+
+    &.Notification--filled {
+      --Notification-color-background: var(--sds-clr-amber-03);
+    }
   }
 }

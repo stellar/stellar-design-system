@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import MDXComponents from "@theme-original/MDXComponents";
 import { ComponentDescription } from "@site/src/components/ComponentDescription";
 import { ComponentProps } from "@site/src/components/ComponentProps";

@@ -10,9 +10,11 @@ import {
   flip,
   offset as floatingOffset,
   shift,
+  arrow,
   Placement,
 } from "@floating-ui/dom";
 
+import { ReactComponent as ArrowIcon } from "./arrow.svg";
 import "./styles.scss";
 
 export type FloaterPlacement = Placement;
@@ -26,7 +28,121 @@ interface FloaterProps {
   padding?: number;
   hasActiveInsideClick?: boolean;
   isContrast?: boolean;
+  showArrow?: boolean;
+  callback?: (isOpen: boolean) => void;
 }
+
+// Might need to flip the placement to get the correct arrow style
+const getActualTooltipPlacement = (
+  placement: Placement,
+  floaterX: number,
+  floaterY: number,
+) => {
+  if (placement.includes("bottom") && floaterY < 0) {
+    return placement.replace("bottom", "top") as Placement;
+  }
+
+  if (placement.includes("top") && floaterY > 0) {
+    return placement.replace("top", "bottom") as Placement;
+  }
+
+  if (placement.includes("left") && floaterX > 0) {
+    return placement.replace("left", "right") as Placement;
+  }
+
+  if (placement.includes("right") && floaterX < 0) {
+    return placement.replace("right", "left") as Placement;
+  }
+
+  return placement;
+};
+
+const getArrowStyle = ({
+  x,
+  y,
+  placement,
+  floaterX,
+  floaterY,
+}: {
+  x?: number;
+  y?: number;
+  placement: FloaterPlacement;
+  floaterX?: number;
+  floaterY?: number;
+}) => {
+  const basePos = {
+    top: "auto",
+    bottom: "auto",
+    left: "auto",
+    right: "auto",
+  };
+
+  const actualPlacement = getActualTooltipPlacement(
+    placement,
+    floaterX || 0,
+    floaterY || 0,
+  );
+
+  switch (actualPlacement) {
+    case "top":
+      return {
+        ...basePos,
+        right: `${x}px`,
+        transform: "rotate(180deg)",
+      };
+    case "top-start":
+      return {
+        ...basePos,
+        transform: "rotate(180deg)",
+      };
+    case "top-end":
+      return {
+        ...basePos,
+        right: "0px",
+        transform: "rotate(180deg)",
+      };
+    case "bottom":
+      return {
+        ...basePos,
+        top: "-12px",
+        right: `${x}px`,
+        transform: "rotate(0deg)",
+      };
+    case "bottom-start":
+      return {
+        ...basePos,
+        top: "-12px",
+        transform: "rotate(0deg)",
+      };
+    case "bottom-end":
+      return {
+        ...basePos,
+        top: "-12px",
+        right: `0px`,
+        transform: "rotate(0deg)",
+      };
+    case "left":
+    case "left-start":
+    case "left-end":
+      return {
+        ...basePos,
+        right: `-26px`,
+        top: `${y}px`,
+        transform: "rotate(90deg)",
+      };
+    case "right":
+    case "right-start":
+    case "right-end":
+      return {
+        ...basePos,
+        left: `-26px`,
+        top: `${y}px`,
+        transform: "rotate(270deg)",
+      };
+    default:
+      return basePos;
+  }
+};
 
 export const Floater: React.FC<FloaterProps> = ({
   triggerEl,
@@ -37,9 +153,12 @@ export const Floater: React.FC<FloaterProps> = ({
   padding = 24,
   hasActiveInsideClick,
   isContrast = true,
+  showArrow = false,
+  callback,
 }: FloaterProps) => {
   const parentRef = useRef<HTMLDivElement | null>(null);
   const floaterRef = useRef<HTMLDivElement | null>(null);
+  const floaterArrowRef = useRef<HTMLDivElement | null>(null);
 
   const [isFloaterOpen, setIsFloaterOpen] = useState(Boolean(isVisible));
   // If components has manual visibility control, we don't want to add clicks
@@ -51,13 +170,20 @@ export const Floater: React.FC<FloaterProps> = ({
 
   const openFloater = useCallback(() => {
     const computeFloaterPosition = async () => {
+      const arrowEl = showArrow && floaterArrowRef?.current;
+
       if (parentRef?.current && floaterRef?.current) {
-        const { x, y } = await computePosition(
+        const { x, y, middlewareData } = await computePosition(
           parentRef.current,
           floaterRef.current,
           {
             placement,
-            middleware: [floatingOffset(offset), flip(), shift({ padding })],
+            middleware: [
+              floatingOffset(arrowEl ? Number(offset + 6) : offset),
+              flip(),
+              shift({ padding }),
+              arrowEl && arrow({ element: arrowEl, padding: 5 }),
+            ],
           },
         );
 
@@ -66,6 +192,21 @@ export const Floater: React.FC<FloaterProps> = ({
           top: `${y}px`,
           transform: "translateX(0)",
         });
+
+        if (arrowEl && middlewareData.arrow) {
+          const { x: arrowX, y: arrowY } = middlewareData.arrow;
+
+          Object.assign(
+            arrowEl.style,
+            getArrowStyle({
+              x: arrowX,
+              y: arrowY,
+              placement,
+              floaterX: x,
+              floaterY: y,
+            }),
+          );
+        }
       }
     };
 
@@ -80,7 +221,7 @@ export const Floater: React.FC<FloaterProps> = ({
         setIsFloaterOpen(true);
       }
     }, delay);
-  }, [offset, padding, placement]);
+  }, [offset, padding, placement, showArrow]);
 
   const closeFloater = useCallback(() => {
     parentRef.current?.classList.remove(triggerActiveClass);
@@ -99,8 +240,12 @@ export const Floater: React.FC<FloaterProps> = ({
       } else {
         closeFloater();
       }
+
+      if (callback) {
+        callback(isOpen);
+      }
     },
-    [openFloater, closeFloater],
+    [callback, openFloater, closeFloater],
   );
 
   const handleClickOutside = useCallback(
@@ -155,6 +300,11 @@ export const Floater: React.FC<FloaterProps> = ({
       </>
       <div ref={floaterRef} className={`Floater__content ${additionalClasses}`}>
         {children}
+        {showArrow ? (
+          <div className="Floater__arrow" ref={floaterArrowRef}>
+            <ArrowIcon />
+          </div>
+        ) : null}
       </div>
     </div>
   );

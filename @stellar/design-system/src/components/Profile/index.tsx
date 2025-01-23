@@ -1,3 +1,4 @@
+import { cloneElement } from "react";
 import { Avatar } from "../Avatar";
 import { CopyText } from "../CopyText";
 import { Icon } from "../../icons";
@@ -8,7 +9,7 @@ export interface ProfileProps {
   /** Public Stellar address */
   publicAddress: string;
   /** Size of the component */
-  size: "md" | "sm" | "xs";
+  size: "sm" | "md" | "lg";
   /** Federated address to show in place of Stellar address */
   federatedAddress?: string;
   /** Shorten Stellar or federated address */
@@ -21,6 +22,8 @@ export interface ProfileProps {
   hideAvatar?: boolean;
   /** Add copy address functionality */
   isCopy?: boolean;
+  /** Provide a custom anchor element, for example, `Link` from Next.js */
+  customAnchor?: React.ReactElement;
 }
 
 /**
@@ -35,6 +38,7 @@ export const Profile: React.FC<ProfileProps> = ({
   href,
   hideAvatar,
   isCopy,
+  customAnchor,
 }: ProfileProps) => {
   const address = federatedAddress ?? publicAddress;
   const additionalClasses = [
@@ -58,6 +62,9 @@ export const Profile: React.FC<ProfileProps> = ({
     if (onClick) {
       return <button {...componentProps} onClick={onClick} />;
     } else if (href) {
+      if (customAnchor) {
+        return cloneElement(customAnchor, { ...componentProps, href });
+      }
       // eslint-disable-next-line jsx-a11y/anchor-has-content
       return <a {...componentProps} href={href} />;
     }
@@ -68,7 +75,7 @@ export const Profile: React.FC<ProfileProps> = ({
           <div {...componentProps}>
             {props.children}{" "}
             <div className="Profile--copy__icon">
-              <Icon.ContentCopy />
+              <Icon.Copy01 />
             </div>
           </div>
         </CopyText>
@@ -80,7 +87,7 @@ export const Profile: React.FC<ProfileProps> = ({
 
   return (
     <Component>
-      {hideAvatar ? null : <Avatar publicAddress={publicAddress} />}
+      {hideAvatar ? null : <Avatar size={size} publicAddress={publicAddress} />}
 
       <div className="Profile__address" title={address}>
         {isShort ? shortenAddress(address) : address}

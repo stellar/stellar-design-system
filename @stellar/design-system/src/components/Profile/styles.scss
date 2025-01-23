@@ -2,22 +2,24 @@
 
 .Profile {
   // Variables
-  --Profile-color-background-default: var(--color-gray-00);
-  --Profile-color-border-default: var(--color-gray-30);
+  --Profile-color-background-default: var(--sds-clr-gray-01);
+  --Profile-color-border-default: var(--sds-clr-gray-06);
 
-  --Profile-color-background-hover: var(--color-gray-10);
-  --Profile-color-border-hover: var(--color-gray-40);
+  --Profile-color-background-hover: var(--sds-clr-gray-04);
+  --Profile-color-border-hover: var(--sds-clr-gray-06);
 
-  --Profile-color-background-active: var(--color-gray-20);
-  --Profile-color-border-active: var(--color-gray-50);
+  --Profile-color-background-active: var(--sds-clr-gray-04);
+  --Profile-color-border-active: var(--sds-clr-gray-06);
 
-  --Profile-font-size: #{pxToRem(16px)};
-  --Profile-line-height: #{pxToRem(24px)};
-  --Profile-gap: #{pxToRem(8px)};
-  --Profile-padding-vertical: #{pxToRem(6px)};
-  --Profile-padding-horizontal: #{pxToRem(12px)};
-  --Profile-avatar: #{pxToRem(24px)};
-  --Profile-button-avatar: #{pxToRem(20px)};
+  --Profile-box-shadow-color: var(--sds-clr-gray-05);
+
+  --Profile-font-size: #{pxToRem(12px)};
+  --Profile-line-height: #{pxToRem(16px)};
+  --Profile-border-radius: #{pxToRem(4px)};
+  --Profile-gap: #{pxToRem(4px)};
+  --Profile-padding-vertical: #{pxToRem(4px)};
+  --Profile-padding-horizontal: #{pxToRem(8px)};
+  --Profile-box-shadow-size: 0;
 
   display: flex;
   align-items: center;
@@ -25,31 +27,26 @@
   font-size: var(--Profile-font-size);
   line-height: var(--Profile-line-height);
   padding: 0;
-  color: var(--color-gray-80);
-
-  .Avatar {
-    --Avatar-size: var(--Profile-avatar);
-  }
+  color: var(--sds-clr-gray-12);
 
   &__address {
     word-break: break-all;
-    font-weight: var(--font-weight-regular);
-    font-family: var(--font-family-monospace);
+    font-weight: var(--sds-fw-regular);
+    font-family: var(--sds-ff-monospace);
   }
 
   &--button {
-    transition: color var(--anim-transition-default),
-      background-color var(--anim-transition-default),
-      border-color var(--anim-transition-default);
+    transition: color var(--sds-anim-transition-default),
+      background-color var(--sds-anim-transition-default),
+      border-color var(--sds-anim-transition-default),
+      box-shadow var(--sds-anim-transition-default);
     padding: var(--Profile-padding-vertical) var(--Profile-padding-horizontal);
     background-color: var(--Profile-color-background-default);
     border: 1px solid var(--Profile-color-border-default);
-    border-radius: pxToRem(4px);
+    border-radius: var(--Profile-border-radius);
+    box-shadow: 0 0 0 var(--Profile-box-shadow-size)
+      var(--Profile-box-shadow-color);
     cursor: pointer;
-
-    .Avatar {
-      --Avatar-size: var(--Profile-button-avatar);
-    }
 
     @media (hover: hover) {
       &:hover {
@@ -58,30 +55,31 @@
       }
     }
 
-    &:active {
+    &:focus {
+      --Profile-box-shadow-size: #{pxToRem(4px)};
       background-color: var(--Profile-color-background-active);
       border-color: var(--Profile-color-border-active);
     }
   }
 
   &--link {
-    transition: color var(--anim-transition-default),
-      background-color var(--anim-transition-default),
-      border-color var(--anim-transition-default);
+    transition: color var(--sds-anim-transition-default),
+      background-color var(--sds-anim-transition-default),
+      border-color var(--sds-anim-transition-default);
     text-decoration: none;
     cursor: pointer;
 
     @media (hover: hover) {
       &:hover {
-        color: var(--color-gray-70);
+        color: var(--sds-clr-gray-11);
       }
     }
   }
 
   &--copy {
-    transition: color var(--anim-transition-default),
-      background-color var(--anim-transition-default),
-      border-color var(--anim-transition-default);
+    transition: color var(--sds-anim-transition-default),
+      background-color var(--sds-anim-transition-default),
+      border-color var(--sds-anim-transition-default);
     text-decoration: none;
     cursor: pointer;
 
@@ -90,45 +88,42 @@
         display: block;
         width: calc(var(--Profile-font-size) - 2px);
         height: calc(var(--Profile-font-size) - 2px);
-        fill: var(--color-gray-50);
+        stroke: var(--sds-clr-gray-10);
       }
     }
 
     @media (hover: hover) {
       &:hover {
-        color: var(--color-gray-70);
+        color: var(--sds-clr-gray-11);
       }
     }
   }
 
   // Size
-  &--md {
-    --Profile-font-size: #{pxToRem(16px)};
-    --Profile-line-height: #{pxToRem(24px)};
-    --Profile-gap: #{pxToRem(8px)};
-    --Profile-padding-vertical: #{pxToRem(8px)};
-    --Profile-padding-horizontal: #{pxToRem(12px)};
-    --Profile-avatar: #{pxToRem(24px)};
-    --Profile-button-avatar: #{pxToRem(20px)};
-  }
-
   &--sm {
-    --Profile-font-size: #{pxToRem(14px)};
-    --Profile-line-height: #{pxToRem(22px)};
-    --Profile-gap: #{pxToRem(6px)};
-    --Profile-padding-vertical: #{pxToRem(6px)};
-    --Profile-padding-horizontal: #{pxToRem(10px)};
-    --Profile-avatar: #{pxToRem(22px)};
-    --Profile-button-avatar: #{pxToRem(18px)};
-  }
-
-  &--xs {
     --Profile-font-size: #{pxToRem(12px)};
-    --Profile-line-height: #{pxToRem(20px)};
+    --Profile-line-height: #{pxToRem(16px)};
+    --Profile-border-radius: #{pxToRem(4px)};
     --Profile-gap: #{pxToRem(4px)};
     --Profile-padding-vertical: #{pxToRem(4px)};
     --Profile-padding-horizontal: #{pxToRem(8px)};
-    --Profile-avatar: #{pxToRem(20px)};
-    --Profile-button-avatar: #{pxToRem(16px)};
+  }
+
+  &--md {
+    --Profile-font-size: #{pxToRem(14px)};
+    --Profile-line-height: #{pxToRem(20px)};
+    --Profile-border-radius: #{pxToRem(6px)};
+    --Profile-gap: #{pxToRem(6px)};
+    --Profile-padding-vertical: #{pxToRem(6px)};
+    --Profile-padding-horizontal: #{pxToRem(10px)};
+  }
+
+  &--lg {
+    --Profile-font-size: #{pxToRem(16px)};
+    --Profile-line-height: #{pxToRem(24px)};
+    --Profile-border-radius: #{pxToRem(8px)};
+    --Profile-gap: #{pxToRem(8px)};
+    --Profile-padding-vertical: #{pxToRem(8px)};
+    --Profile-padding-horizontal: #{pxToRem(12px)};
   }
 }

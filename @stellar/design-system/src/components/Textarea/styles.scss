@@ -1,85 +1,71 @@
 @use "../../utils.scss" as *;
 
 .Textarea {
-  // Color
-  --Textarea-color-background: var(--color-gray-00);
-  --Textarea-color-border: var(--color-gray-30);
-  --Textarea-color-border-hover: var(--color-gray-40);
-  --Textarea-color-border-focus: var(--color-gray-50);
-  --Textarea-color-text: var(--color-gray-80);
+  --Textarea-color-background: var(--sds-input-color-background-default);
+  --Textarea-color-border: var(--sds-input-color-border-default);
+  --Textarea-color-border-hover: var(--sds-input-color-border-default-hover);
+  --Textarea-color-border-focus: var(--sds-input-color-border-default-focus);
+  --Textarea-color-text: var(--sds-input-color-text-default);
 
-  // Size
-  --Textarea-font-size: #{pxToRem(16px)};
-  --Textarea-line-height: #{pxToRem(24px)};
-  --Textarea-padding-vertical: #{pxToRem(8px)};
-  --Textarea-padding-horizontal: #{pxToRem(12px)};
-  --Textarea-gap: #{pxToRem(8px)};
+  --Textarea-font-size: #{pxToRem(12px)};
+  --Textarea-line-height: #{pxToRem(18px)};
+  --Textarea-padding-vertical: #{pxToRem(6px)};
+  --Textarea-padding-horizontal: #{pxToRem(10px)};
   --Textarea-border-radius: #{pxToRem(4px)};
-  --Textarea-note-font-size: #{pxToRem(14px)};
-  --Textarea-note-line-height: #{pxToRem(22px)};
+  --Textarea-gap: #{pxToRem(8px)};
+
+  --Textarea-box-shadow-size: 0;
+  --Textarea-box-shadow-color: var(--sds-input-box-shadow-color-default);
 
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: var(--Textarea-gap);
 
-  &--md {
-    --Textarea-font-size: #{pxToRem(16px)};
-    --Textarea-line-height: #{pxToRem(24px)};
-    --Textarea-padding-vertical: #{pxToRem(8px)};
-    --Textarea-padding-horizontal: #{pxToRem(12px)};
-    --Textarea-gap: #{pxToRem(8px)};
-    --Textarea-note-font-size: #{pxToRem(14px)};
-    --Textarea-note-line-height: #{pxToRem(22px)};
-
-    &.Textarea--extra-padding {
-      --Textarea-padding-vertical: #{pxToRem(12px)};
-      --Textarea-padding-horizontal: #{pxToRem(16px)};
-    }
-  }
-
   &--sm {
-    --Textarea-font-size: #{pxToRem(14px)};
-    --Textarea-line-height: #{pxToRem(22px)};
+    --Textarea-font-size: #{pxToRem(12px)};
+    --Textarea-line-height: #{pxToRem(18px)};
     --Textarea-padding-vertical: #{pxToRem(6px)};
     --Textarea-padding-horizontal: #{pxToRem(10px)};
+    --Textarea-border-radius: #{pxToRem(4px)};
     --Textarea-gap: #{pxToRem(6px)};
-    --Textarea-note-font-size: #{pxToRem(14px)};
-    --Textarea-note-line-height: #{pxToRem(22px)};
-
-    &.Textarea--extra-padding {
-      --Textarea-padding-vertical: #{pxToRem(10px)};
-      --Textarea-padding-horizontal: #{pxToRem(14px)};
-    }
   }
 
-  &--xs {
-    --Textarea-font-size: #{pxToRem(12px)};
+  &--md {
+    --Textarea-font-size: #{pxToRem(14px)};
     --Textarea-line-height: #{pxToRem(20px)};
-    --Textarea-padding-vertical: #{pxToRem(4px)};
-    --Textarea-padding-horizontal: #{pxToRem(8px)};
-    --Textarea-gap: #{pxToRem(4px)};
-    --Textarea-note-font-size: #{pxToRem(12px)};
-    --Textarea-note-line-height: #{pxToRem(20px)};
+    --Textarea-padding-vertical: #{pxToRem(8px)};
+    --Textarea-padding-horizontal: #{pxToRem(12px)};
+    --Textarea-border-radius: #{pxToRem(6px)};
+    --Textarea-gap: #{pxToRem(8px)};
+  }
 
-    &.Textarea--extra-padding {
-      --Textarea-padding-vertical: #{pxToRem(8px)};
-      --Textarea-padding-horizontal: #{pxToRem(12px)};
-    }
+  &--lg {
+    --Textarea-font-size: #{pxToRem(16px)};
+    --Textarea-line-height: #{pxToRem(24px)};
+    --Textarea-padding-vertical: #{pxToRem(10px)};
+    --Textarea-padding-horizontal: #{pxToRem(14px)};
+    --Textarea-border-radius: #{pxToRem(8px)};
+    --Textarea-gap: #{pxToRem(8px)};
   }
 
   textarea {
     display: block;
     width: 100%;
-    font-family: var(--font-family-base);
+    font-family: var(--sds-ff-base);
     background-color: var(--Textarea-color-background);
     border: 1px solid var(--Textarea-color-border);
     color: var(--Textarea-color-text);
     border-radius: var(--Textarea-border-radius);
-    transition: border-color var(--anim-transition-default);
+    box-shadow: 0 0 0 var(--Textarea-box-shadow-size)
+      var(--Textarea-box-shadow-color);
     padding: var(--Textarea-padding-vertical) var(--Textarea-padding-horizontal);
     font-size: var(--Textarea-font-size);
     line-height: var(--Textarea-line-height);
+    outline: none;
+    transition:
+      border-color var(--sds-anim-transition-default),
+      box-shadow var(--sds-anim-transition-default);
 
     @media (hover: hover) {
       &:hover {
@@ -88,45 +74,62 @@
     }
 
     &:focus-visible {
-      outline: 1px solid transparent;
-      border-color: var(--Textarea-color-border-focus);
+      --Textarea-box-shadow-size: #{pxToRem(4px)};
     }
 
     &::placeholder {
-      color: var(--color-gray-60);
+      color: var(--sds-input-color-text-placeholder);
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--Textarea-gap);
+
+    &__notes {
+      display: flex;
+      flex-direction: column;
+      gap: var(--Textarea-gap);
     }
   }
 
   &--error {
-    --Textarea-color-background: var(--color-red-20);
-    --Textarea-color-border: var(--color-red-60);
-    --Textarea-color-text: var(--color-gray-80);
+    --Textarea-color-background: var(--sds-input-color-background-error);
+    --Textarea-color-border: var(--sds-input-color-border-error);
+    --Textarea-color-text: var(--sds-input-color-text-default);
 
     textarea {
       &:focus-visible {
-        --Textarea-color-border-focus: var(--color-red-70);
+        --Textarea-color-border-focus: var(
+          --sds-input-color-border-error-focus
+        );
+        --Textarea-box-shadow-color: var(--sds-input-box-shadow-color-error);
       }
     }
 
     @media (hover: hover) {
       &:hover {
-        --Textarea-color-border-hover: var(--color-red-50);
+        --Textarea-color-border-hover: var(
+          --sds-input-color-border-error-hover
+        );
       }
     }
   }
 
   &--disabled {
-    --Textarea-color-background: var(--color-gray-40);
-    --Textarea-color-border: var(--color-gray-40);
-    --Textarea-color-text: var(--color-gray-60);
+    --Textarea-color-background: var(--sds-input-color-background-disabled);
+    --Textarea-color-border: var(--sds-input-color-border-disabled);
+    --Textarea-color-text: var(--sds-input-color-text-disabled);
 
     textarea {
       cursor: not-allowed;
-    }
-  }
 
-  .FieldNote {
-    font-size: var(--Textarea-note-font-size);
-    line-height: var(--Textarea-note-line-height);
+      @media (hover: hover) {
+        &:hover {
+          border-color: var(--sds-input-color-border-disabled);
+        }
+      }
+    }
   }
 }

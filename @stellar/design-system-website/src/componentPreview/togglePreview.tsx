@@ -22,5 +22,23 @@ export const togglePreview: ComponentPreview = {
         },
       ],
     },
+    {
+      type: "select",
+      prop: "fieldSize",
+      options: [
+        {
+          value: "sm",
+          label: "SM",
+        },
+        {
+          value: "md",
+          label: "MD",
+        },
+        {
+          value: "lg",
+          label: "LG",
+        },
+      ],
+    },
   ],
 };

@@ -14,7 +14,6 @@ export interface ElementProps {
   tag?: string;
 }
 
-// @ts-expect-error: the react types are missing.
 const production = { Fragment: prod.Fragment, jsx: prod.jsx, jsxs: prod.jsxs };
 
 export const Element = ({ text, kind, tag }: ElementProps) => {
@@ -51,11 +50,11 @@ const parseMarkdownString = (text: string): React.ReactElement => {
 
   const file = unified()
     .use(rehypeSanitize)
-    .use(rehypeParse, { fragment: true })
-    .use(rehypeReact, production)
+    .use(rehypeParse as any, { fragment: true })
+    .use(rehypeReact as any, production)
     .processSync(text);
 
-  return file.result;
+  return file.result as any;
 };
 
 const parseLineBreak = (text: string) => {

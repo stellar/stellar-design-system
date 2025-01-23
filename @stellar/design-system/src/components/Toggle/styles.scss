@@ -1,47 +1,97 @@
 @use "../../utils.scss" as *;
 
 .Toggle {
+  --Toggle-track-width: #{pxToRem(28px)};
+  --Toggle-track-height: #{pxToRem(16px)};
+  --Toggle-track-padding: #{pxToRem(2px)};
   --Toggle-circle-size: #{pxToRem(12px)};
-  --Toggle-circle-offset: #{pxToRem(1px)};
+  --Toggle-circle-offset: #{pxToRem(0)};
 
   display: flex;
   align-items: center;
 
   &__track {
-    width: pxToRem(28px);
-    height: pxToRem(16px);
-    border-radius: var(--Toggle-circle-size);
-    background-color: var(--color-gray-40);
-    border: 1px solid var(--color-gray-40);
+    width: var(--Toggle-track-width);
+    height: var(--Toggle-track-height);
+    border-radius: pxToRem(100px);
+    background-color: var(--sds-clr-gray-04);
     cursor: pointer;
     display: flex;
     align-items: center;
     transition: background 0.5s;
+    padding: var(--Toggle-track-padding);
 
-    &::after {
-      display: block;
-      content: "";
+    &__thumb {
+      position: relative;
       width: var(--Toggle-circle-size);
       height: var(--Toggle-circle-size);
       border-radius: var(--Toggle-circle-size);
-      background-color: var(--color-gray-00);
-      border: 1px solid var(--color-gray-50);
+      background-color: var(--sds-clr-base-00);
       transition: all 0.4s;
       transform: translateX(var(--Toggle-circle-offset));
+      box-shadow: 0 pxToRem(1px) pxToRem(2px) pxToRem(0.5px) rgba(0, 0, 0, 0.08);
+    }
+
+    &__icon {
+      transition: opacity 0.5s;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      border-radius: var(--Toggle-circle-size);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        display: block;
+        width: 80%;
+        height: 80%;
+      }
+
+      &--checked {
+        opacity: 0;
+
+        svg {
+          stroke: var(--sds-clr-lilac-09);
+        }
+      }
+
+      &--unchecked {
+        opacity: 1;
+
+        svg {
+          stroke: var(--sds-clr-gray-09);
+        }
+      }
     }
   }
 
   &__input {
-    display: none;
+    height: 0;
+    width: 0;
+
+    &:focus-visible ~ .Toggle__track {
+      box-shadow: 0 0 0 pxToRem(2px) var(--sds-input-color-border-default-focus);
+    }
 
     &:checked ~ .Toggle__track {
-      background-color: var(--color-purple-60);
-      border-color: var(--color-purple-60);
+      background-color: var(--sds-clr-lilac-09);
+    }
 
-      &::after {
-        // 12 = 28 (track width) - 16 (circle size)
-        --Toggle-circle-offset: #{pxToRem(12px)};
-        border-color: var(--color-purple-60);
+    &:checked ~ .Toggle__track .Toggle__track__thumb {
+      // 12 = 24 (track width without padding) - 12 (circle size)
+      --Toggle-circle-offset: #{pxToRem(12px)};
+      border-color: var(--sds-clr-lilac-09);
+    }
+
+    &:checked ~ .Toggle__track .Toggle__track__icon {
+      &--checked {
+        opacity: 1;
+      }
+
+      &--unchecked {
+        opacity: 0;
       }
     }
   }
@@ -49,12 +99,56 @@
   &--disabled .Toggle__track,
   &--disabled .Toggle__input:checked ~ .Toggle__track {
     cursor: not-allowed;
-    background-color: var(--color-gray-50);
-    border-color: var(--color-gray-50);
+    background-color: var(--sds-clr-gray-05);
 
-    &::after {
-      background-color: var(--color-gray-40);
-      border-color: var(--color-gray-50);
+    &__thumb {
+      background-color: var(--sds-clr-gray-08);
+    }
+
+    &__icon {
+      svg {
+        stroke: var(--sds-clr-gray-09) !important;
+      }
+    }
+  }
+
+  // Size
+  &--sm {
+    --Toggle-track-width: #{pxToRem(28px)};
+    --Toggle-track-height: #{pxToRem(16px)};
+    --Toggle-circle-size: #{pxToRem(12px)};
+
+    .Toggle__input {
+      &:checked ~ .Toggle__track .Toggle__track__thumb {
+        // 12 = 24 (track width without padding) - 12 (circle size)
+        --Toggle-circle-offset: #{pxToRem(12px)};
+      }
+    }
+  }
+
+  &--md {
+    --Toggle-track-width: #{pxToRem(48px)};
+    --Toggle-track-height: #{pxToRem(26px)};
+    --Toggle-circle-size: #{pxToRem(22px)};
+
+    .Toggle__input {
+      &:checked ~ .Toggle__track .Toggle__track__thumb {
+        // 22 = 44 (track width without padding) - 22 (circle size)
+        --Toggle-circle-offset: #{pxToRem(22px)};
+      }
+    }
+  }
+
+  &--lg {
+    --Toggle-track-width: #{pxToRem(60px)};
+    --Toggle-track-height: #{pxToRem(32px)};
+    --Toggle-circle-size: #{pxToRem(28px)};
+
+    .Toggle__input {
+      &:checked ~ .Toggle__track .Toggle__track__thumb {
+        // 28 = 56 (track width without padding) - 28 (circle size)
+        --Toggle-circle-offset: #{pxToRem(28px)};
+      }
     }
   }
 }

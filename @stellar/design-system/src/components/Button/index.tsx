@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { FloaterPlacement } from "../Floater";
 import { Loader } from "../Loader";
+import { Tooltip } from "../Tooltip";
 import "./styles.scss";
 
 /**
@@ -15,7 +17,7 @@ export interface ButtonProps {
     | "error"
     | "success";
   /** Size of the button */
-  size: "md" | "sm" | "xs";
+  size: "sm" | "md" | "lg";
   /** Label of the button */
   children?: string | React.ReactNode;
   /** Icon element */
@@ -24,14 +26,14 @@ export interface ButtonProps {
   iconPosition?: "left" | "right";
   /** Loading state indicator */
   isLoading?: boolean;
-  /** Make label uppercase */
-  isUppercase?: boolean;
   /** Sets width of the button to match the parent container */
   isFullWidth?: boolean;
-  /** Pill shaped button */
-  isPill?: boolean;
-  /** Button with extra padding */
-  isExtraPadding?: boolean;
+  /** Show onClick action tooltip @defaultValue `false` */
+  showActionTooltip?: boolean;
+  /** Action tooltip text @defaultValue `Done` */
+  actionTooltipText?: string;
+  /** Action tooltip placement @defaultValue `bottom` */
+  actionTooltipPlacement?: FloaterPlacement;
 }
 
 interface Props
@@ -49,20 +51,27 @@ export const Button: React.FC<Props> = ({
   icon,
   iconPosition = "right",
   isLoading,
-  isUppercase,
   isFullWidth,
-  isPill,
-  isExtraPadding,
+  showActionTooltip = false,
+  actionTooltipText = "Done",
+  actionTooltipPlacement = "bottom",
   ...props
 }) => {
+  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
+
+  useEffect(() => {
+    if (isTooltipVisible) {
+      const t = setTimeout(() => {
+        setIsTooltipVisible(false);
+        clearTimeout(t);
+      }, 1000);
+    }
+  }, [isTooltipVisible]);
+
   const additionalClasses = [
     `Button--${variant}`,
     `Button--${size}`,
-    ...(isUppercase ? [`Button--uppercase`] : []),
-    // Button with extra padding will always be full width
-    ...(isFullWidth || isExtraPadding ? [`Button--full-width`] : []),
-    ...(isPill ? [`Button--pill`] : []),
-    ...(isExtraPadding ? [`Button--extra-padding`] : []),
+    ...(isFullWidth ? [`Button--full-width`] : []),
   ].join(" ");
 
   const renderIcon = (position: "left" | "right") => {
@@ -83,17 +92,46 @@ export const Button: React.FC<Props> = ({
     return null;
   };
 
-  return (
-    <button
-      className={`Button ${additionalClasses}`}
-      {...props}
-      {...(isLoading ? { disabled: true } : {})}
-    >
-      {renderIcon("left")}
-      {children ?? null}
-      {renderIcon("right")}
-    </button>
-  );
+  const renderButton = () => {
+    return (
+      <button
+        className={`Button ${additionalClasses}`}
+        {...props}
+        {...(isLoading ? { disabled: true } : {})}
+        {...(props.onClick
+          ? {
+              onClick: (event) => {
+                if (props.onClick) {
+                  props.onClick(event);
+
+                  if (showActionTooltip) {
+                    setIsTooltipVisible(true);
+                  }
+                }
+              },
+            }
+          : {})}
+      >
+        {renderIcon("left")}
+        {children ?? null}
+        {renderIcon("right")}
+      </button>
+    );
+  };
+
+  if (showActionTooltip) {
+    return (
+      <Tooltip
+        triggerEl={renderButton()}
+        isVisible={isTooltipVisible}
+        placement={actionTooltipPlacement}
+      >
+        {actionTooltipText}
+      </Tooltip>
+    );
+  }
+
+  return renderButton();
 };
 
 Button.displayName = "Button";

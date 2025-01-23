@@ -1,106 +1,114 @@
 @use "../../utils.scss" as *;
 
+.Display,
 .Heading {
-  font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-regular);
-  letter-spacing: 0;
-  padding: 0;
+  --Heading-font-size: #{pxToRem(56px)};
 
-  &--xxl {
-    font-size: pxToRem(40px);
-    line-height: pxToRem(48px);
-  }
-  &--xl {
-    font-size: pxToRem(36px);
-    line-height: pxToRem(44px);
-  }
-  &--lg {
-    font-size: pxToRem(32px);
-    line-height: pxToRem(40px);
-  }
-  &--md {
-    font-size: pxToRem(28px);
-    line-height: pxToRem(36px);
-  }
-  &--sm {
-    font-size: pxToRem(24px);
-    line-height: pxToRem(32px);
-  }
-  &--xs {
-    font-size: pxToRem(20px);
-    line-height: pxToRem(28px);
-  }
-}
-
-.Caption {
-  font-family: var(--font-family-base);
-  font-weight: var(--font-weight-semi-bold);
-  text-transform: uppercase;
-  letter-spacing: 0;
-
-  &--lg {
-    font-size: pxToRem(16px);
-    line-height: pxToRem(24px);
-  }
-  &--md {
-    font-size: pxToRem(14px);
-    line-height: pxToRem(22px);
-  }
-  &--sm {
-    font-size: pxToRem(12px);
-    line-height: pxToRem(20px);
-  }
-  &--xs {
-    font-size: pxToRem(10px);
-    line-height: pxToRem(16px);
-  }
-}
-
-p.Paragraph,
-div.Paragraph {
-  font-family: var(--font-family-base);
-  font-weight: var(--font-weight-regular);
-  letter-spacing: 0;
+  font-family: var(--sds-ff-heading);
+  font-weight: var(--sds-fw-regular);
+  letter-spacing: calc(var(--Heading-font-size) * 0.04 * -1);
   padding: 0;
   margin: 0;
 
+  // Size
+  &--xl {
+    --Heading-font-size: #{pxToRem(56px)};
+    line-height: pxToRem(64px);
+  }
   &--lg {
-    font-size: pxToRem(18px);
-    line-height: pxToRem(26px);
+    --Heading-font-size: #{pxToRem(48px)};
+    line-height: pxToRem(56px);
   }
   &--md {
-    font-size: pxToRem(16px);
-    line-height: pxToRem(24px);
+    --Heading-font-size: #{pxToRem(40px)};
+    line-height: pxToRem(48px);
   }
   &--sm {
-    font-size: pxToRem(14px);
-    line-height: pxToRem(22px);
+    --Heading-font-size: #{pxToRem(32px)};
+    line-height: pxToRem(40px);
   }
   &--xs {
-    font-size: pxToRem(12px);
-    line-height: pxToRem(20px);
+    --Heading-font-size: #{pxToRem(24px)};
+    line-height: pxToRem(32px);
+  }
+
+  // Font weight
+  &--w-bold {
+    font-weight: var(--sds-fw-bold);
+  }
+  &--w-semi-bold {
+    font-weight: var(--sds-fw-semi-bold);
+  }
+  &--w-medium {
+    font-weight: var(--sds-fw-medium);
   }
 }
 
-.Title {
-  font-family: var(--font-family-base);
-  font-weight: var(--font-weight-medium);
+p,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &.Text {
+    font-family: var(--sds-ff-base);
+    font-weight: var(--sds-fw-regular);
+    letter-spacing: 0;
+    padding: 0;
+    margin: 0;
+
+    &--xl {
+      font-size: pxToRem(20px);
+      line-height: pxToRem(28px);
+    }
+    &--lg {
+      font-size: pxToRem(18px);
+      line-height: pxToRem(26px);
+    }
+    &--md {
+      font-size: pxToRem(16px);
+      line-height: pxToRem(24px);
+    }
+    &--sm {
+      font-size: pxToRem(14px);
+      line-height: pxToRem(22px);
+    }
+    &--xs {
+      font-size: pxToRem(12px);
+      line-height: pxToRem(20px);
+    }
+
+    // Font weight
+    &--w-bold {
+      font-weight: var(--sds-fw-bold);
+    }
+    &--w-semi-bold {
+      font-weight: var(--sds-fw-semi-bold);
+    }
+    &--w-medium {
+      font-weight: var(--sds-fw-medium);
+    }
+  }
+}
+
+code.Code {
+  font-family: var(--sds-ff-monospace);
+  font-weight: var(--sds-fw-medium);
   letter-spacing: 0;
 
-  &--lg {
-    font-size: pxToRem(18px);
-    line-height: pxToRem(26px);
-  }
   &--md {
     font-size: pxToRem(16px);
-    line-height: pxToRem(24px);
+    line-height: pxToRem(20px);
   }
   &--sm {
     font-size: pxToRem(14px);
-    line-height: pxToRem(22px);
+    line-height: pxToRem(18px);
   }
   &--xs {
     font-size: pxToRem(12px);
-    line-height: pxToRem(20px);
+    line-height: pxToRem(16px);
   }
 }

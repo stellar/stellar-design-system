@@ -56,9 +56,27 @@ export const headingPreview: ComponentPreview = {
           value: "xl",
           label: "XL",
         },
+      ],
+    },
+    {
+      type: "select",
+      prop: "weight",
+      options: [
         {
-          value: "xxl",
-          label: "XXL",
+          value: "regular",
+          label: "Regular",
+        },
+        {
+          value: "medium",
+          label: "Medium",
+        },
+        {
+          value: "semi-bold",
+          label: "Semi-Bold",
+        },
+        {
+          value: "bold",
+          label: "Bold",
         },
       ],
     },

@@ -7,12 +7,21 @@ export interface ToggleProps {
   id: string;
   /** If `true` the toggle state is "on" */
   checked: boolean;
+  // Note: cannot use "size" here because it's input's native property
+  /** Size of the toggle */
+  fieldSize: "sm" | "md" | "lg";
   /** Use a specific input rather than a generic HTML input (useful for Formik or otherwise controlled inputs) */
   customInput?: React.ReactElement;
   /** Function to handle the toggle state change */
   onChange?: () => void;
   /** Disable the toggle */
   disabled?: boolean;
+  /** Icon to show when unchecked */
+  iconUnchecked?: React.ReactNode;
+  /** Icon to show when checked */
+  iconChecked?: React.ReactNode;
+  /** Title text */
+  title?: string;
 }
 
 interface Props
@@ -29,9 +38,13 @@ interface Props
 export const Toggle: React.FC<Props> = ({
   id,
   checked,
+  fieldSize,
   customInput,
   onChange,
   disabled,
+  iconChecked,
+  iconUnchecked,
+  title,
 }: Props) => {
   const [checkedValue, setCheckedValue] = useState(checked);
 
@@ -39,9 +52,10 @@ export const Toggle: React.FC<Props> = ({
     setCheckedValue(checked);
   }, [checked]);
 
-  const additionalClasses = [...(disabled ? ["Toggle--disabled"] : [])].join(
-    " ",
-  );
+  const additionalClasses = [
+    `Toggle--${fieldSize}`,
+    ...(disabled ? ["Toggle--disabled"] : []),
+  ].join(" ");
 
   const baseInputProps = {
     className: "Toggle__input",
@@ -52,14 +66,27 @@ export const Toggle: React.FC<Props> = ({
   };
 
   return (
-    <label className={`Toggle ${additionalClasses}`} htmlFor={id}>
+    <label className={`Toggle ${additionalClasses}`} htmlFor={id} title={title}>
       {customInput ? (
         cloneElement(customInput, { ...baseInputProps })
       ) : (
         <input checked={checkedValue} onChange={onChange} {...baseInputProps} />
       )}
 
-      <div className="Toggle__track" />
+      <div className="Toggle__track">
+        <div className="Toggle__track__thumb">
+          {iconChecked ? (
+            <div className="Toggle__track__icon Toggle__track__icon--checked">
+              {iconChecked}
+            </div>
+          ) : null}
+          {iconUnchecked ? (
+            <div className="Toggle__track__icon Toggle__track__icon--unchecked">
+              {iconUnchecked}
+            </div>
+          ) : null}
+        </div>
+      </div>
     </label>
   );
 };

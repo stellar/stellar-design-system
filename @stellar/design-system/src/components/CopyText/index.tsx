@@ -27,6 +27,7 @@ export type CopyTextBaseProps = {
   title?: string;
 };
 
+/** */
 export type CopyTextEllipsisProps = {
   /** Component display variant. `ellipsis` parent must have position relative. */
   variant?: "ellipsis";
@@ -34,6 +35,7 @@ export type CopyTextEllipsisProps = {
   children: string;
 };
 
+/** */
 export type CopyTextVariantProps = {
   /** Component display variant. `headless` parent must have position relative. @defaultValue `inline` */
   variant?: "inline" | "headless";

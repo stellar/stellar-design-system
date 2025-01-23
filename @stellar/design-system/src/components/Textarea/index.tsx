@@ -1,6 +1,7 @@
 import React, { cloneElement } from "react";
 import { Label } from "../Label";
 import { FieldNote } from "../utils/FieldNote";
+import { InputCopyButton } from "../utils/InputCopyButton";
 import "./styles.scss";
 
 /** Including all valid [textarea attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attributes) */
@@ -9,21 +10,29 @@ export interface TextareaProps {
   id: string;
   // Note: cannot use "size" here because it's input's native property
   /** Size of the textarea */
-  fieldSize: "md" | "sm" | "xs";
+  fieldSize: "sm" | "md" | "lg";
   /** Content of the textarea */
   children?: string;
   /** Label of the textarea */
   label?: string | React.ReactNode;
+  /** Adds suffix to the label */
+  labelSuffix?: string | React.ReactNode;
   /** Note message of the textarea */
   note?: string | React.ReactNode;
   /** Error message of the textarea */
   error?: string | React.ReactNode;
+  /** Success message of the input */
+  success?: string | React.ReactNode;
+  /** Info text tooltip */
+  infoText?: string | React.ReactNode;
+  /** External link to open in new window */
+  infoLink?: string;
   /** Textarea error without a message */
   isError?: boolean;
   /** Make label uppercase */
   isLabelUppercase?: boolean;
-  /** Textarea with extra padding */
-  isExtraPadding?: boolean;
+  /** Show copy text button */
+  hasCopyButton?: boolean;
   /** Use a specific textarea rather than a generic HTML textarea (useful for Formik or otherwise controlled inputs) */
   customTextarea?: React.ReactElement;
 }
@@ -43,11 +52,15 @@ export const Textarea: React.FC<Props> = ({
   fieldSize,
   children = "",
   label,
+  labelSuffix,
   note,
   error,
+  success,
+  infoText,
+  infoLink,
   isError,
   isLabelUppercase,
-  isExtraPadding,
+  hasCopyButton,
   customTextarea,
   spellCheck = false,
   autoComplete = "off",
@@ -57,7 +70,6 @@ export const Textarea: React.FC<Props> = ({
     `Textarea--${fieldSize}`,
     ...(props.disabled ? ["Textarea--disabled"] : []),
     ...(isError || error ? ["Textarea--error"] : []),
-    ...(isExtraPadding ? ["Textarea--extra-padding"] : []),
   ].join(" ");
 
   const baseTextareaProps = {
@@ -67,13 +79,18 @@ export const Textarea: React.FC<Props> = ({
     autoComplete,
   };
 
+  const val = (props.value || children) as string;
+
   return (
     <div className={`Textarea ${additionalClasses}`}>
       {label && (
         <Label
           htmlFor={id}
           isUppercase={isLabelUppercase}
-          size={fieldSize === "xs" ? "xs" : "sm"}
+          size={fieldSize}
+          labelSuffix={labelSuffix}
+          infoText={infoText}
+          infoLink={infoLink}
         >
           {label}
         </Label>
@@ -83,12 +100,30 @@ export const Textarea: React.FC<Props> = ({
         cloneElement(customTextarea, { ...baseTextareaProps, ...props })
       ) : (
         <textarea {...baseTextareaProps} {...props}>
-          {children}
+          {val}
         </textarea>
       )}
 
-      {note && <FieldNote>{note}</FieldNote>}
-      {error && <FieldNote variant="error">{error}</FieldNote>}
+      {(note || error || success || hasCopyButton) && (
+        <div className="Textarea__footer">
+          <div className="Textarea__footer__notes">
+            {note && <FieldNote size={fieldSize}>{note}</FieldNote>}
+            {error && (
+              <FieldNote size={fieldSize} variant="error">
+                {error}
+              </FieldNote>
+            )}
+            {success && (
+              <FieldNote size={fieldSize} variant="success">
+                {success}
+              </FieldNote>
+            )}
+          </div>
+          {hasCopyButton ? (
+            <InputCopyButton fieldSize={fieldSize} textToCopy={val} />
+          ) : null}
+        </div>
+      )}
     </div>
   );
 };

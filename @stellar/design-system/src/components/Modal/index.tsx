@@ -34,23 +34,28 @@ export interface ModalBodyProps {
   children: React.ReactNode;
 }
 
-const ModalBody: React.FC<ModalBodyProps> = ({
-  children,
-}: ModalHeadingProps) => <div className="ModalBody">{children}</div>;
+const ModalBody: React.FC<ModalBodyProps> = ({ children }: ModalBodyProps) => (
+  <div className="ModalBody">{children}</div>
+);
 
 /** */
 export interface ModalFooterProps {
   /** Content of the modal footer */
   children: React.ReactNode;
+  /** Item alignment in the footer @defaultValue `right` */
+  itemAlignment?: "right" | "stretch" | "stack";
 }
 
 const ModalFooter: React.FC<ModalFooterProps> = ({
   children,
-}: ModalHeadingProps) => <div className="ModalFooter">{children}</div>;
+  itemAlignment = "right",
+}: ModalFooterProps) => (
+  <div className={`ModalFooter ModalFooter--${itemAlignment}`}>{children}</div>
+);
 
 /** */
 export interface ModalProps {
-  /** ID of the modal parent (affects the position of the modal) @defaultValue root */
+  /** ID of the modal parent (affects the position of the modal) @defaultValue `root` */
   parentId?: string;
   /** State to show or hide the modal */
   visible: boolean;
@@ -128,14 +133,14 @@ export const Modal: React.FC<ModalProps> & ModalComponent = ({
             id="modal-close-button"
             title="Close modal"
             onClick={onClose}
-            icon={<Icon.Close />}
+            icon={<Icon.XClose />}
           />
         </div>
       </div>
       <div className="Modal__background" role="button" onClick={onClose} />
     </div>,
     parent,
-  );
+  ) as React.JSX.Element;
 };
 
 Modal.displayName = "Modal";

@@ -7,13 +7,35 @@
       color: var(--Button-color-text-hover);
       background-color: var(--Button-color-background-hover);
       border-color: var(--Button-color-border-hover);
+
+      .Button__icon {
+        svg {
+          stroke: var(--Button-color-icon-hover);
+        }
+      }
+
+      .Loader {
+        --Loader-color: var(--Button-color-icon-hover);
+      }
     }
   }
 
-  &:active {
+  &:focus {
+    --Button-box-shadow-size: #{pxToRem(4px)};
+
     color: var(--Button-color-text-active);
     background-color: var(--Button-color-background-active);
     border-color: var(--Button-color-border-active);
+
+    .Button__icon {
+      svg {
+        stroke: var(--Button-color-icon-active);
+      }
+    }
+
+    .Loader {
+      --Loader-color: var(--Button-color-icon-active);
+    }
   }
 
   &:disabled {
@@ -21,48 +43,72 @@
     color: var(--Button-color-text-disabled);
     background-color: var(--Button-color-background-disabled);
     border-color: var(--Button-color-border-disabled);
+
+    .Button__icon {
+      svg {
+        stroke: var(--Button-color-icon-disabled);
+      }
+    }
+
+    .Loader {
+      --Loader-color: var(--Button-color-icon-disabled);
+    }
   }
 }
 
 .Button {
   // Variables
-  --Button-color-text-default: var(--color-white);
-  --Button-color-background-default: var(--color-purple-50);
-  --Button-color-border-default: var(--color-purple-50);
+  --Button-color-text-default: var(--sds-clr-white);
+  --Button-color-icon-default: var(--sds-clr-white);
+  --Button-color-background-default: var(--sds-clr-lilac-09);
+  --Button-color-border-default: var(--sds-clr-lilac-09);
 
-  --Button-color-text-hover: var(--color-white);
-  --Button-color-background-hover: var(--color-purple-50);
-  --Button-color-border-hover: var(--color-purple-50);
+  --Button-color-text-hover: var(--sds-clr-white);
+  --Button-color-icon-hover: var(--sds-clr-white);
+  --Button-color-background-hover: var(--sds-clr-lilac-09);
+  --Button-color-border-hover: var(--sds-clr-lilac-09);
 
-  --Button-color-text-active: var(--color-white);
-  --Button-color-background-active: var(--color-purple-50);
-  --Button-color-border-active: var(--color-purple-50);
+  --Button-color-text-active: var(--sds-clr-white);
+  --Button-color-icon-active: var(--sds-clr-white);
+  --Button-color-background-active: var(--sds-clr-lilac-09);
+  --Button-color-border-active: var(--sds-clr-lilac-09);
 
-  --Button-color-text-disabled: var(--color-white);
-  --Button-color-background-disabled: var(--color-purple-50);
-  --Button-color-border-disabled: var(--color-purple-50);
+  --Button-color-text-disabled: var(--sds-clr-white);
+  --Button-color-icon-disabled: var(--sds-clr-white);
+  --Button-color-background-disabled: var(--sds-clr-lilac-09);
+  --Button-color-border-disabled: var(--sds-clr-lilac-09);
 
+  --Button-height: #{pxToRem(26px)};
   --Button-font-size: #{pxToRem(16px)};
   --Button-line-height: #{pxToRem(24px)};
   --Button-gap: #{pxToRem(4px)};
+  --Button-border-radius: #{pxToRem(4px)};
   --Button-padding-vertical: #{pxToRem(6px)};
   --Button-padding-horizontal: #{pxToRem(12px)};
+
+  --Button-box-shadow-size: 0;
+  --Button-box-shadow-color: var(--sds-clr-lilac-06);
 
   // Base
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: var(--font-family-base);
-  font-weight: var(--font-weight-medium);
+  font-family: var(--sds-ff-base);
+  font-weight: var(--sds-fw-semi-bold);
   border: 1px solid var(--Button-color-border-default);
+  border-radius: var(--Button-border-radius);
   color: var(--Button-color-text-default);
+  box-shadow: 0 0 0 var(--Button-box-shadow-size) var(--Button-box-shadow-color);
   background-color: var(--Button-color-background-default);
-  border-radius: pxToRem(4px);
   cursor: pointer;
-  transition: color var(--anim-transition-default),
-    background-color var(--anim-transition-default),
-    border-color var(--anim-transition-default);
 
+  transition:
+    color var(--sds-anim-transition-default),
+    background-color var(--sds-anim-transition-default),
+    border-color var(--sds-anim-transition-default),
+    box-shadow var(--sds-anim-transition-default);
+
+  height: var(--Button-height);
   font-size: var(--Button-font-size);
   line-height: var(--Button-line-height);
   gap: var(--Button-gap);
@@ -78,199 +124,203 @@
       display: block;
       width: 100%;
       height: 100%;
-      fill: currentColor;
+      stroke: var(--Button-color-icon-default);
     }
-  }
-
-  .Loader {
-    --Loader-size: var(--Button-font-size);
   }
 
   // Variant
   &--primary {
-    --Button-color-text-default: var(--color-white);
-    --Button-color-background-default: var(--color-purple-60);
-    --Button-color-border-default: var(--color-purple-60);
+    --Button-color-text-default: var(--sds-clr-white);
+    --Button-color-icon-default: var(--sds-clr-white);
+    --Button-color-background-default: var(--sds-clr-lilac-09);
+    --Button-color-border-default: var(--sds-clr-lilac-09);
 
-    --Button-color-text-hover: var(--color-white);
-    --Button-color-background-hover: var(--color-purple-70);
-    --Button-color-border-hover: var(--color-purple-70);
+    --Button-color-text-hover: var(--sds-clr-white);
+    --Button-color-icon-hover: var(--sds-clr-white);
+    --Button-color-background-hover: var(--sds-clr-lilac-10);
+    --Button-color-border-hover: var(--sds-clr-lilac-10);
 
-    --Button-color-text-active: var(--color-gray-00);
-    --Button-color-background-active: var(--color-purple-80);
-    --Button-color-border-active: var(--color-purple-80);
+    --Button-color-text-active: var(--sds-clr-white);
+    --Button-color-icon-active: var(--sds-clr-white);
+    --Button-color-background-active: var(--sds-clr-lilac-10);
+    --Button-color-border-active: var(--sds-clr-lilac-10);
+    // TODO:
+    --Button-box-shadow-color: var(--sds-clr-lilac-06);
 
-    --Button-color-text-disabled: var(--color-purple-70);
-    --Button-color-background-disabled: var(--color-purple-50);
-    --Button-color-border-disabled: var(--color-purple-50);
+    --Button-color-text-disabled: var(--sds-clr-gray-09);
+    --Button-color-icon-disabled: var(--sds-clr-gray-09);
+    --Button-color-background-disabled: var(--sds-clr-gray-03);
+    --Button-color-border-disabled: var(--sds-clr-gray-06);
 
     @include buttonState();
   }
 
   &--secondary {
-    --Button-color-text-default: var(--color-gray-90);
-    --Button-color-background-default: var(--color-gray-20);
-    --Button-color-border-default: var(--color-gray-30);
+    --Button-color-text-default: var(--sds-clr-base-00);
+    --Button-color-icon-default: var(--sds-clr-base-00);
+    --Button-color-background-default: var(--sds-clr-gray-12);
+    --Button-color-border-default: var(--sds-clr-gray-12);
 
-    --Button-color-text-hover: var(--color-gray-90);
-    --Button-color-background-hover: var(--color-gray-30);
-    --Button-color-border-hover: var(--color-gray-40);
+    --Button-color-text-hover: var(--sds-clr-base-00);
+    --Button-color-icon-hover: var(--sds-clr-base-00);
+    --Button-color-background-hover: var(--sds-clr-gray-10);
+    --Button-color-border-hover: var(--sds-clr-gray-10);
 
-    --Button-color-text-active: var(--color-gray-90);
-    --Button-color-background-active: var(--color-gray-40);
-    --Button-color-border-active: var(--color-gray-50);
+    --Button-color-text-active: var(--sds-clr-base-00);
+    --Button-color-icon-active: var(--sds-clr-base-00);
+    --Button-color-background-active: var(--sds-clr-gray-10);
+    --Button-color-border-active: var(--sds-clr-gray-10);
+    // TODO:
+    --Button-box-shadow-color: var(--sds-clr-gray-06);
 
-    --Button-color-text-disabled: var(--color-gray-70);
-    --Button-color-background-disabled: var(--color-gray-50);
-    --Button-color-border-disabled: var(--color-gray-50);
+    --Button-color-text-disabled: var(--sds-clr-gray-09);
+    --Button-color-icon-disabled: var(--sds-clr-gray-09);
+    --Button-color-background-disabled: var(--sds-clr-gray-03);
+    --Button-color-border-disabled: var(--sds-clr-gray-06);
 
     @include buttonState();
   }
 
   &--tertiary {
-    --Button-color-text-default: var(--color-gray-00);
-    --Button-color-background-default: var(--color-gray-90);
-    --Button-color-border-default: var(--color-gray-80);
+    --Button-color-text-default: var(--sds-clr-gray-12);
+    --Button-color-icon-default: var(--sds-clr-gray-09);
+    --Button-color-background-default: var(--sds-clr-gray-01);
+    --Button-color-border-default: var(--sds-clr-gray-06);
 
-    --Button-color-text-hover: var(--color-gray-00);
-    --Button-color-background-hover: var(--color-gray-80);
-    --Button-color-border-hover: var(--color-gray-70);
+    --Button-color-text-hover: var(--sds-clr-gray-12);
+    --Button-color-icon-hover: var(--sds-clr-gray-09);
+    --Button-color-background-hover: var(--sds-clr-gray-04);
+    --Button-color-border-hover: var(--sds-clr-gray-07);
 
-    --Button-color-text-active: var(--color-gray-30);
-    --Button-color-background-active: var(--color-gray-80);
-    --Button-color-border-active: var(--color-gray-60);
+    --Button-color-text-active: var(--sds-clr-gray-12);
+    --Button-color-icon-active: var(--sds-clr-gray-09);
+    --Button-color-background-active: var(--sds-clr-gray-04);
+    --Button-color-border-active: var(--sds-clr-gray-06);
+    // TODO:
+    --Button-box-shadow-color: var(--sds-clr-gray-05);
 
-    --Button-color-text-disabled: var(--color-gray-50);
-    --Button-color-background-disabled: var(--color-gray-70);
-    --Button-color-border-disabled: var(--color-gray-70);
+    --Button-color-text-disabled: var(--sds-clr-gray-09);
+    --Button-color-icon-disabled: var(--sds-clr-gray-09);
+    --Button-color-background-disabled: var(--sds-clr-gray-03);
+    --Button-color-border-disabled: var(--sds-clr-gray-06);
 
     @include buttonState();
   }
 
   &--destructive {
-    --Button-color-text-default: var(--color-white);
-    --Button-color-background-default: var(--color-red-60);
-    --Button-color-border-default: var(--color-red-50);
+    --Button-color-text-default: var(--sds-clr-white);
+    --Button-color-icon-default: var(--sds-clr-white);
+    --Button-color-background-default: var(--sds-clr-red-09);
+    --Button-color-border-default: var(--sds-clr-red-09);
 
-    --Button-color-text-hover: var(--color-white);
-    --Button-color-background-hover: var(--color-red-70);
-    --Button-color-border-hover: var(--color-red-50);
+    --Button-color-text-hover: var(--sds-clr-white);
+    --Button-color-icon-hover: var(--sds-clr-white);
+    --Button-color-background-hover: var(--sds-clr-red-10);
+    --Button-color-border-hover: var(--sds-clr-red-10);
 
-    --Button-color-text-active: var(--color-gray-00);
-    --Button-color-background-active: var(--color-red-80);
-    --Button-color-border-active: var(--color-red-50);
+    --Button-color-text-active: var(--sds-clr-white);
+    --Button-color-icon-active: var(--sds-clr-white);
+    --Button-color-background-active: var(--sds-clr-red-10);
+    --Button-color-border-active: var(--sds-clr-red-10);
+    // TODO:
+    --Button-box-shadow-color: var(--sds-clr-red-06);
 
-    --Button-color-text-disabled: var(--color-red-70);
-    --Button-color-background-disabled: var(--color-red-50);
-    --Button-color-border-disabled: var(--color-red-50);
+    --Button-color-text-disabled: var(--sds-clr-gray-09);
+    --Button-color-icon-disabled: var(--sds-clr-gray-09);
+    --Button-color-background-disabled: var(--sds-clr-gray-03);
+    --Button-color-border-disabled: var(--sds-clr-gray-06);
 
     @include buttonState();
   }
 
   &--error {
-    --Button-color-text-default: var(--color-red-60);
-    --Button-color-background-default: var(--color-red-10);
-    --Button-color-border-default: var(--color-red-30);
+    --Button-color-text-default: var(--sds-clr-red-11);
+    --Button-color-icon-default: var(--sds-clr-red-08);
+    --Button-color-background-default: var(--sds-clr-red-01);
+    --Button-color-border-default: var(--sds-clr-red-06);
 
-    --Button-color-text-hover: var(--color-red-60);
-    --Button-color-background-hover: var(--color-red-20);
-    --Button-color-border-hover: var(--color-red-40);
+    --Button-color-text-hover: var(--sds-clr-red-11);
+    --Button-color-icon-hover: var(--sds-clr-red-08);
+    --Button-color-background-hover: var(--sds-clr-red-03);
+    --Button-color-border-hover: var(--sds-clr-red-07);
 
-    --Button-color-text-active: var(--color-red-60);
-    --Button-color-background-active: var(--color-red-30);
-    --Button-color-border-active: var(--color-red-50);
+    --Button-color-text-active: var(--sds-clr-red-11);
+    --Button-color-icon-active: var(--sds-clr-red-08);
+    --Button-color-background-active: var(--sds-clr-red-03);
+    --Button-color-border-active: var(--sds-clr-red-07);
+    // TODO:
+    --Button-box-shadow-color: var(--sds-clr-red-05);
 
-    --Button-color-text-disabled: var(--color-red-40);
-    --Button-color-background-disabled: var(--color-red-10);
-    --Button-color-border-disabled: var(--color-red-30);
+    --Button-color-text-disabled: var(--sds-clr-gray-09);
+    --Button-color-icon-disabled: var(--sds-clr-gray-09);
+    --Button-color-background-disabled: var(--sds-clr-gray-03);
+    --Button-color-border-disabled: var(--sds-clr-gray-06);
 
     @include buttonState();
   }
 
   &--success {
-    --Button-color-text-default: var(--color-green-60);
-    --Button-color-background-default: var(--color-green-10);
-    --Button-color-border-default: var(--color-green-30);
+    --Button-color-text-default: var(--sds-clr-green-11);
+    --Button-color-icon-default: var(--sds-clr-green-08);
+    --Button-color-background-default: var(--sds-clr-green-01);
+    --Button-color-border-default: var(--sds-clr-green-06);
 
-    --Button-color-text-hover: var(--color-green-60);
-    --Button-color-background-hover: var(--color-green-20);
-    --Button-color-border-hover: var(--color-green-40);
+    --Button-color-text-hover: var(--sds-clr-green-11);
+    --Button-color-icon-hover: var(--sds-clr-green-08);
+    --Button-color-background-hover: var(--sds-clr-green-03);
+    --Button-color-border-hover: var(--sds-clr-green-07);
 
-    --Button-color-text-active: var(--color-green-60);
-    --Button-color-background-active: var(--color-green-30);
-    --Button-color-border-active: var(--color-green-50);
+    --Button-color-text-active: var(--sds-clr-green-11);
+    --Button-color-icon-active: var(--sds-clr-green-08);
+    --Button-color-background-active: var(--sds-clr-green-03);
+    --Button-color-border-active: var(--sds-clr-green-07);
+    // TODO:
+    --Button-box-shadow-color: var(--sds-clr-green-05);
 
-    --Button-color-text-disabled: var(--color-green-40);
-    --Button-color-background-disabled: var(--color-green-10);
-    --Button-color-border-disabled: var(--color-green-30);
+    --Button-color-text-disabled: var(--sds-clr-gray-09);
+    --Button-color-icon-disabled: var(--sds-clr-gray-09);
+    --Button-color-background-disabled: var(--sds-clr-gray-03);
+    --Button-color-border-disabled: var(--sds-clr-gray-06);
 
     @include buttonState();
   }
 
   // Size
+  &--sm {
+    --Button-height: #{pxToRem(26px)};
+    --Button-font-size: #{pxToRem(12px)};
+    --Button-line-height: #{pxToRem(18px)};
+    --Button-padding-vertical: #{pxToRem(4px)};
+    --Button-padding-horizontal: #{pxToRem(8px)};
+    --Button-border-radius: #{pxToRem(4px)};
+  }
+
   &--md {
+    --Button-height: #{pxToRem(32px)};
+    --Button-font-size: #{pxToRem(14px)};
+    --Button-line-height: #{pxToRem(20px)};
+    --Button-padding-vertical: #{pxToRem(6px)};
+    --Button-padding-horizontal: #{pxToRem(10px)};
+    --Button-border-radius: #{pxToRem(6px)};
+  }
+
+  &--lg {
+    --Button-height: #{pxToRem(40px)};
     --Button-font-size: #{pxToRem(16px)};
     --Button-line-height: #{pxToRem(24px)};
     --Button-padding-vertical: #{pxToRem(8px)};
     --Button-padding-horizontal: #{pxToRem(12px)};
-
-    &.Button--pill {
-      --Button-padding-horizontal: #{pxToRem(14px)};
-    }
-
-    &.Button--extra-padding {
-      --Button-padding-vertical: #{pxToRem(12px)};
-      --Button-padding-horizontal: #{pxToRem(16px)};
-    }
-  }
-
-  &--sm {
-    --Button-font-size: #{pxToRem(14px)};
-    --Button-line-height: #{pxToRem(22px)};
-    --Button-padding-vertical: #{pxToRem(6px)};
-    --Button-padding-horizontal: #{pxToRem(10px)};
-
-    &.Button--pill {
-      --Button-padding-horizontal: #{pxToRem(12px)};
-    }
-
-    &.Button--extra-padding {
-      --Button-padding-vertical: #{pxToRem(10px)};
-      --Button-padding-horizontal: #{pxToRem(14px)};
-    }
-  }
-
-  &--xs {
-    --Button-font-size: #{pxToRem(12px)};
-    --Button-line-height: #{pxToRem(20px)};
-    --Button-padding-vertical: #{pxToRem(4px)};
-    --Button-padding-horizontal: #{pxToRem(8px)};
-
-    &.Button--pill {
-      --Button-padding-horizontal: #{pxToRem(10px)};
-    }
-
-    &.Button--extra-padding {
-      --Button-padding-vertical: #{pxToRem(8px)};
-      --Button-padding-horizontal: #{pxToRem(12px)};
-    }
+    --Button-border-radius: #{pxToRem(8px)};
   }
 
   // Custom
-  &--uppercase {
-    text-transform: uppercase;
-  }
-
   &--full-width {
     width: 100%;
   }
 
-  &--pill {
-    border-radius: var(--Button-line-height);
-  }
-
   // Loader
   .Loader {
-    --Loader-color: currentColor;
+    --Loader-size: var(--Button-font-size);
+    --Loader-color: var(--Button-color-icon-default);
   }
 }

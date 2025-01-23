@@ -9,138 +9,154 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  /* --color-purple-60 */
+  /* --sds-clr-lilac-09 */
   --ifm-color-primary: #6e56cf;
-  /* --color-purple-70 */
+  /* --sds-clr-lilac-11 */
   --ifm-color-primary-dark: #5746af;
-  /* --color-purple-80 */
+  /* --sds-clr-lilac-12 */
   --ifm-color-primary-darker: #20134b;
-  /* --color-purple-80 */
+  /* --sds-clr-lilac-12 */
   --ifm-color-primary-darkest: #20134b;
-  /* --color-purple-50 */
+  /* --sds-clr-lilac-08 */
   --ifm-color-primary-light: #aa99ec;
-  /* --color-purple-50 */
+  /* --sds-clr-lilac-08 */
   --ifm-color-primary-lighter: #aa99ec;
-  /* --color-purple-40 */
+  /* --sds-clr-lilac-05 */
   --ifm-color-primary-lightest: #e4defc;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
-  /* --color-gray-00 */
-  --ifm-background-color: #ffffff;
-  --ifm-navbar-background-color: #ffffff;
-  --ifm-footer-background-color: #ffffff;
-  /* --color-gray-30 */
-  --ifm-hr-background-color: #eeedef;
-  --ifm-toc-border-color: #eeedef;
+  /* --sds-clr-gray-01 */
+  --ifm-background-color: #fcfcfc;
+  --ifm-navbar-background-color: #fcfcfc;
+  --ifm-footer-background-color: #fcfcfc;
+  /* --sds-clr-gray-04 */
+  --ifm-hr-background-color: #ededed;
+  --ifm-toc-border-color: #ededed;
 
   --ifm-font-family-base: "Inter", sans-serif;
-  --ifm-font-family-monospace: "Roboto Mono", monospace;
+  --ifm-font-family-monospace: "Inconsolata", monospace;
 
-  /* --color-gray-70 */
-  --ifm-menu-color: #6f6e77;
-  /* --color-gray-90 */
-  --ifm-menu-color-active: #000000;
+  /* --sds-clr-gray-11 */
+  --ifm-menu-color: #6f6f6f;
+  /* --sds-clr-gray-12 */
+  --ifm-menu-color-active: #171717;
   --ifm-menu-color-background-active: transparent;
   --ifm-menu-color-background-hover: transparent;
 
-  /* --color-gray-70 */
-  --ifm-font-color-base: #6f6e77;
+  /* --sds-clr-gray-11 */
+  --ifm-font-color-base: #6f6f6f;
 
   /* Playground */
-  /* --color-gray-00 */
-  --ifm-pg-background: #ffffff;
-  /* --color-gray-30 */
-  --ifm-pg-background-dot: #eeedef;
-  /* --color-gray-30 */
-  --ifm-pg-cta-background: #eeedef;
-  /* --color-gray-90 */
-  --ifm-pg-cta-color: #000000;
+  /* --sds-clr-gray-01 */
+  --ifm-pg-background: #fcfcfc;
+  /* --sds-clr-gray-04 */
+  --ifm-pg-background-dot: #ededed;
+  /* --sds-clr-gray-04 */
+  --ifm-pg-cta-background: #ededed;
+  /* --sds-clr-gray-12 */
+  --ifm-pg-cta-color: #171717;
 
   /* Icons and logos */
-  /* --color-gray-20 */
-  --ifm-sds-icon-bg: #f4f2f4;
-  /* --color-gray-80 */
-  --ifm-sds-icon-fill: #1a1523;
-  /* --color-gray-70 */
-  --ifm-sds-icon-text: #6f6e77;
+  /* --sds-clr-gray-03 */
+  --ifm-sds-icon-bg: #f3f3f3;
+  /* --sds-clr-gray-12 */
+  --ifm-sds-icon-fill: #171717;
+  /* --sds-clr-gray-11 */
+  --ifm-sds-icon-text: #6f6f6f;
 
   /* Text colors */
-  --clr-heading: #6f6f6f;
-  --clr-text-secondary: #8f8f8f;
+  --clr-heading: #171717;
+  --clr-text-secondary: #858585;
 
   /* Select */
-  --sds-select-color-background: #ffffff;
-  --sds-select-color-background-option: #ffffff;
-  --sds-select-color-border: #eeedef;
-  --sds-select-color-border-hover: #e9e8ea;
-  --sds-select-color-border-focus: #c8c7cb;
-  --sds-select-color-text: #1a1523;
+  --sds-select-color-background: #fcfcfc;
+  --sds-select-color-background-option: #fcfcfc;
+  --sds-select-color-border: #e2e2e2;
+  --sds-select-color-border-hover: #dbdbdb;
+  --sds-select-color-border-focus: #c7c7c7;
+  --sds-select-color-text: #171717;
+
+  /* Badge for logo */
+  /* --sds-clr-lilac-11 */
+  --sds-badge-color-text: #5746af;
+  /* --sds-clr-lilac-02 */
+  --sds-badge-color-background: #fbfaff;
+  /* --sds-clr-lilac-06 */
+  --sds-badge-color-border: #d7cff9;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"]:root {
-  /* --color-purple-60 */
+  /* --sds-clr-lilac-09 */
   --ifm-color-primary: #7c66dc;
-  /* --color-purple-70 */
+  /* --sds-clr-lilac-11 */
   --ifm-color-primary-dark: #9e8cfc;
-  /* --color-purple-80 */
+  /* --sds-clr-lilac-12 */
   --ifm-color-primary-darker: #f1eefe;
-  /* --color-purple-80 */
+  /* --sds-clr-lilac-12 */
   --ifm-color-primary-darkest: #f1eefe;
-  /* --color-purple-50 */
-  --ifm-color-primary-light: #634cc9;
-  /* --color-purple-50 */
-  --ifm-color-primary-lighter: #634cc9;
-  /* --color-purple-40 */
+  /* --sds-clr-lilac-08 */
+  --ifm-color-primary-light: #5842c3;
+  /* --sds-clr-lilac-08 */
+  --ifm-color-primary-lighter: #5842c3;
+  /* --sds-clr-lilac-05 */
   --ifm-color-primary-lightest: #32275f;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
-  /* --color-gray-00 */
-  --ifm-background-color: #000000;
-  --ifm-navbar-background-color: #000000;
-  --ifm-footer-background-color: #000000;
-  /* --color-gray-30 */
-  --ifm-hr-background-color: #28282c;
-  --ifm-toc-border-color: #28282c;
+  /* --sds-clr-gray-01 */
+  --ifm-background-color: #161616;
+  --ifm-navbar-background-color: #161616;
+  --ifm-footer-background-color: #161616;
+  /* --sds-clr-gray-04 */
+  --ifm-hr-background-color: #282828;
+  --ifm-toc-border-color: #282828;
 
-  /* --color-gray-70 */
-  --ifm-menu-color: #a09fa6;
-  /* --color-gray-90 */
-  --ifm-menu-color-active: #ffffff;
+  /* --sds-clr-gray-11 */
+  --ifm-menu-color: #a0a0a0;
+  /* --sds-clr-gray-12 */
+  --ifm-menu-color-active: #ededed;
 
-  /* --color-gray-70 */
-  --ifm-font-color-base: #a09fa6;
+  /* --sds-clr-gray-11 */
+  --ifm-font-color-base: #a0a0a0;
 
   /* Playground */
-  /* --color-gray-00 */
-  --ifm-pg-background: #000000;
-  /* --color-gray-30 */
-  --ifm-pg-background-dot: #28282c;
-  /* --color-gray-30 */
-  --ifm-pg-cta-background: #28282c;
-  /* --color-gray-90 */
-  --ifm-pg-cta-color: #ffffff;
+  /* --sds-clr-gray-01 */
+  --ifm-pg-background: #161616;
+  /* --sds-clr-gray-04 */
+  --ifm-pg-background-dot: #282828;
+  /* --sds-clr-gray-04 */
+  --ifm-pg-cta-background: #282828;
+  /* --sds-clr-gray-12 */
+  --ifm-pg-cta-color: #ededed;
 
   /* Icons and logos */
-  /* --color-gray-20 */
-  --ifm-sds-icon-bg: #1c1c1f;
-  /* --color-gray-80 */
-  --ifm-sds-icon-fill: #ededef;
-  /* --color-gray-70 */
-  --ifm-sds-icon-text: #a09fa6;
+  /* --sds-clr-gray-03 */
+  --ifm-sds-icon-bg: #232323;
+  /* --sds-clr-gray-12 */
+  --ifm-sds-icon-fill: #ededed;
+  /* --sds-clr-gray-11 */
+  --ifm-sds-icon-text: #a0a0a0;
 
   /* Text colors */
-  --clr-heading: #a0a0a0;
-  --clr-text-secondary: #707070;
+  --clr-heading: #ededed;
+  --clr-text-secondary: #7e7e7e;
 
   /* Select */
-  --sds-select-color-background: #000000;
-  --sds-select-color-background-option: #000000;
-  --sds-select-color-border: #28282c;
-  --sds-select-color-border-hover: #2e2e32;
-  --sds-select-color-border-focus: #706f78;
-  --sds-select-color-text: #ededef;
+  --sds-select-color-background: #161616;
+  --sds-select-color-background-option: #161616;
+  --sds-select-color-border: #343434;
+  --sds-select-color-border-hover: #3e3e3e;
+  --sds-select-color-border-focus: #505050;
+  --sds-select-color-text: #ededed;
+
+  /* Badge for logo */
+  /* --sds-clr-lilac-11 */
+  --sds-badge-color-text: #9e8cfc;
+  /* --sds-clr-lilac-02 */
+  --sds-badge-color-background: #1c172b;
+  /* --sds-clr-lilac-06 */
+  --sds-badge-color-border: #392c72;
 }
 
 /* Typography */
@@ -226,14 +242,14 @@ table {
 
 .navbar__title {
   font-family: "Inter", sans-serif;
-  font-weight: 600;
-  font-size: 0.625rem;
-  line-height: 1rem;
-  text-transform: uppercase;
-  color: var(--ifm-color-primary);
-  border: 1px solid var(--ifm-color-primary);
-  padding: 0.125rem 0.25rem;
-  border-radius: 0.25rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--sds-badge-color-text);
+  border: 1px solid var(--sds-badge-color-border);
+  background-color: var(--sds-badge-color-background);
+  padding: 0.125rem 0.5rem;
+  border-radius: 6.25rem;
 }
 
 [data-theme="dark"] .navbar__logo {

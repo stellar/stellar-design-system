@@ -22,16 +22,16 @@ export const checkboxPreview: ComponentPreview = {
       prop: "fieldSize",
       options: [
         {
-          value: "md",
-          label: "MD",
-        },
-        {
           value: "sm",
           label: "SM",
         },
         {
-          value: "xs",
-          label: "XS",
+          value: "md",
+          label: "MD",
+        },
+        {
+          value: "lg",
+          label: "LG",
         },
       ],
     },
@@ -72,6 +72,21 @@ export const checkboxPreview: ComponentPreview = {
         {
           value: "error",
           label: "Error",
+        },
+      ],
+    },
+    {
+      type: "select",
+      prop: "success",
+      customValue: "Success message",
+      options: [
+        {
+          value: "",
+          label: "No success",
+        },
+        {
+          value: "success",
+          label: "Success",
         },
       ],
     },

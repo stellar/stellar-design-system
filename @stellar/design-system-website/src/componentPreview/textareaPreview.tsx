@@ -19,6 +19,21 @@ export const textareaPreview: ComponentPreview = {
     },
     {
       type: "select",
+      prop: "labelSuffix",
+      customValue: "optional",
+      options: [
+        {
+          value: "",
+          label: "No suffix",
+        },
+        {
+          value: "optional",
+          label: "Optional",
+        },
+      ],
+    },
+    {
+      type: "select",
       prop: "placeholder",
       customValue: "Placeholder",
       options: [
@@ -37,16 +52,16 @@ export const textareaPreview: ComponentPreview = {
       prop: "fieldSize",
       options: [
         {
-          value: "md",
-          label: "MD",
-        },
-        {
           value: "sm",
           label: "SM",
         },
         {
-          value: "xs",
-          label: "XS",
+          value: "md",
+          label: "MD",
+        },
+        {
+          value: "lg",
+          label: "LG",
         },
       ],
     },
@@ -64,11 +79,6 @@ export const textareaPreview: ComponentPreview = {
       type: "checkbox",
       prop: "isError",
       label: "Error",
-    },
-    {
-      type: "checkbox",
-      prop: "isExtraPadding",
-      label: "Extra padding",
     },
     {
       type: "select",
@@ -97,6 +107,64 @@ export const textareaPreview: ComponentPreview = {
         {
           value: "error",
           label: "Error",
+        },
+      ],
+    },
+    {
+      type: "select",
+      prop: "success",
+      customValue: "Success message",
+      options: [
+        {
+          value: "",
+          label: "No success",
+        },
+        {
+          value: "success",
+          label: "Success",
+        },
+      ],
+    },
+    {
+      type: "select",
+      prop: "hasCopyButton",
+      customValue: true,
+      options: [
+        {
+          value: "",
+          label: "No copy button",
+        },
+        {
+          value: "copy",
+          label: "Copy button",
+        },
+      ],
+    },
+    {
+      type: "select",
+      prop: "infoText",
+      options: [
+        {
+          value: "",
+          label: "No info text",
+        },
+        {
+          value: "Info text message",
+          label: "Info text",
+        },
+      ],
+    },
+    {
+      type: "select",
+      prop: "infoLink",
+      options: [
+        {
+          value: "",
+          label: "No info link",
+        },
+        {
+          value: "https://stellar.org",
+          label: "Info link",
         },
       ],
     },

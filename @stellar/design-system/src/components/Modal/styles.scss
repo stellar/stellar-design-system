@@ -8,15 +8,14 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: var(--z-index-modal);
-  min-width: var(--layout-window-width-min);
+  z-index: var(--sds-z-index-modal);
+  min-width: var(--sds-window-width-min);
   min-height: 100vh;
-  overflow: hidden;
 
   // Align to the bottom on small screen
   &[data-modal-align="bottom"] {
     .Modal__container {
-      @media (max-width: 600px) {
+      @media (max-width: 480px) {
         width: 100%;
         left: 0;
         top: auto;
@@ -31,50 +30,55 @@
   &__container {
     position: absolute;
     width: 96%;
-    max-width: 600px;
-    background-color: var(--color-gray-00);
-    border: 1px solid var(--color-gray-40);
+    max-width: 480px;
+    background-color: var(--sds-clr-gray-01);
+    border: 1px solid var(--sds-clr-gray-06);
+    box-shadow: pxToRem(0) pxToRem(10px) pxToRem(20px) pxToRem(-10px)
+      var(--sds-overlay-01);
     border-radius: pxToRem(8px);
-    z-index: calc(var(--z-index-modal) + 1);
-    padding: pxToRem(24px);
-    padding-right: 0;
+    z-index: calc(var(--sds-z-index-modal) + 1);
+    padding: pxToRem(16px);
     margin-top: var(--Modal-offset-top);
-    overflow: hidden;
     top: 35%;
     left: 50%;
     transform: translate(-50%, -35%);
   }
 
   &__content {
-    overflow-y: auto;
-    max-height: 80vh;
-    padding-right: pxToRem(24px);
-
-    @media (min-width: 600px) {
-      max-height: 70vh;
-    }
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:
+      minmax(0, max-content)
+      fit-content(20rem)
+      minmax(0, max-content);
 
     .ModalHeading {
-      color: var(--color-gray-80);
-      font-size: pxToRem(18px);
-      line-height: pxToRem(26px);
-      font-weight: var(--font-weight-medium);
+      color: var(--sds-clr-gray-12);
+      font-size: pxToRem(16px);
+      line-height: pxToRem(24px);
+      font-weight: var(--sds-fw-medium);
       margin: 0;
-      margin-bottom: pxToRem(16px);
+      margin-bottom: pxToRem(8px);
       width: calc(100% - 2rem);
     }
 
     .ModalBody {
-      color: var(--color-gray-60);
+      overflow-y: auto;
+      padding-right: pxToRem(12px);
+
+      color: var(--sds-clr-gray-11);
       font-size: pxToRem(14px);
-      line-height: pxToRem(22px);
+      line-height: pxToRem(20px);
+      font-weight: var(--sds-fw-regular);
 
       p,
       ul,
       ol {
-        color: var(--color-gray-60);
-        font-size: pxToRem(14px);
-        line-height: pxToRem(22px);
+        color: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        font-weight: inherit;
       }
 
       & > *:not(:last-child) {
@@ -84,35 +88,61 @@
 
     .ModalFooter {
       display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      flex-wrap: wrap;
       width: 100%;
-      margin-top: pxToRem(24px);
-      gap: pxToRem(12px);
+      margin-top: pxToRem(16px);
+      gap: pxToRem(8px);
+
+      &--right {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+      }
+
+      &--stretch {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        & > * {
+          flex: 1;
+        }
+      }
+
+      &--stack {
+        flex-direction: column;
+
+        & > * {
+          width: 100%;
+        }
+      }
+
+      .Button {
+        white-space: nowrap;
+      }
     }
   }
 
   &__close {
     position: absolute;
-    top: pxToRem(18px);
-    right: pxToRem(18px);
+    top: pxToRem(12px);
+    right: pxToRem(8px);
     cursor: pointer;
 
     .NavButton {
       --NavButton-size: #{pxToRem(32px)};
-      --NavButton-icon-size: #{pxToRem(24px)};
+      --NavButton-icon-size: #{pxToRem(20px)};
 
       svg {
-        fill: var(--color-gray-90);
+        stroke: var(--sds-clr-gray-09);
       }
     }
   }
 
   &__background {
     position: absolute;
-    background-color: #000;
-    opacity: 0.8;
+    background-color: var(--sds-overlay-05);
     top: 0;
     bottom: 0;
     left: 0;

@@ -6,16 +6,18 @@ import "./styles.css";
 // =============================================================================
 // Preview imports
 // =============================================================================
-import { assetIconPreview } from "@site/src/componentPreview/assetIconPreview";
+import { alertPreview } from "@site/src/componentPreview/alertPreview";
+import { assetPreview } from "@site/src/componentPreview/assetPreview";
 import { avatarPreview } from "@site/src/componentPreview/avatarPreview";
 import { badgePreview } from "@site/src/componentPreview/badgePreview";
 import { bannerPreview } from "@site/src/componentPreview/bannerPreview";
 import { buttonPreview } from "@site/src/componentPreview/buttonPreview";
 import { buttonPresetPreview } from "@site/src/componentPreview/buttonPresetPreview";
-import { captionPreview } from "@site/src/componentPreview/captionPreview";
 import { cardPreview } from "@site/src/componentPreview/cardPreview";
 import { checkboxPreview } from "@site/src/componentPreview/checkboxPreview";
+import { codePreview } from "@site/src/componentPreview/codePreview";
 import { copyTextPreview } from "@site/src/componentPreview/copyTextPreview";
+import { displayPreview } from "@site/src/componentPreview/displayPreview";
 import { headingPreview } from "@site/src/componentPreview/headingPreview";
 import { iconButtonPreview } from "@site/src/componentPreview/iconButtonPreview";
 import { inputPreview } from "@site/src/componentPreview/inputPreview";
@@ -24,16 +26,15 @@ import { linkPreview } from "@site/src/componentPreview/linkPreview";
 import { loaderPreview } from "@site/src/componentPreview/loaderPreview";
 import { modalPreview } from "@site/src/componentPreview/modalPreview";
 import { navButtonPreview } from "@site/src/componentPreview/navButtonPreview";
-import { notificationPreview } from "@site/src/componentPreview/notificationPreview ";
+import { notificationPreview } from "@site/src/componentPreview/notificationPreview";
 import { paginationPreview } from "@site/src/componentPreview/paginationPreview";
-import { paragraphPreview } from "@site/src/componentPreview/paragraphPreview";
 import { profilePreview } from "@site/src/componentPreview/profilePreview";
 import { projectLogoPreview } from "@site/src/componentPreview/projectLogoPreview";
 import { radioButtonPreview } from "@site/src/componentPreview/radioButtonPreview";
 import { selectPreview } from "@site/src/componentPreview/selectPreview";
 import { tablePreview } from "@site/src/componentPreview/tablePreview";
 import { textareaPreview } from "@site/src/componentPreview/textareaPreview";
-import { titlePreview } from "@site/src/componentPreview/titlePreview";
+import { textPreview } from "@site/src/componentPreview/textPreview";
 import { togglePreview } from "@site/src/componentPreview/togglePreview";
 import { tooltipPreview } from "@site/src/componentPreview/tooltipPreview";
 
@@ -41,18 +42,20 @@ import { tooltipPreview } from "@site/src/componentPreview/tooltipPreview";
 // Component previews
 // =============================================================================
 const previews: { [key: string]: ComponentPreview } = {
-  AssetIcon: assetIconPreview,
+  Alert: alertPreview,
+  Asset: assetPreview,
   Avatar: avatarPreview,
   Badge: badgePreview,
   Banner: bannerPreview,
   Button: buttonPreview,
   ButtonPreset: buttonPresetPreview,
-  Caption: captionPreview,
   Card: cardPreview,
   Checkbox: checkboxPreview,
+  Code: codePreview,
   Content: layoutPreview,
   CopyText: copyTextPreview,
   Footer: layoutPreview,
+  Display: displayPreview,
   Heading: headingPreview,
   Header: layoutPreview,
   IconButton: iconButtonPreview,
@@ -65,14 +68,13 @@ const previews: { [key: string]: ComponentPreview } = {
   NavButton: navButtonPreview,
   Notification: notificationPreview,
   Pagination: paginationPreview,
-  Paragraph: paragraphPreview,
   Profile: profilePreview,
   ProjectLogo: projectLogoPreview,
   RadioButton: radioButtonPreview,
   Select: selectPreview,
   Table: tablePreview,
   Textarea: textareaPreview,
-  Title: titlePreview,
+  Text: textPreview,
   Toggle: togglePreview,
   Tooltip: tooltipPreview,
 };
@@ -93,6 +95,10 @@ interface PreviewOptionSelect extends PreviewOptionBase {
   options: {
     value: string;
     label: string;
+    updateRelated?: {
+      prop: string;
+      value: any;
+    };
   }[];
 }
 
@@ -119,7 +125,7 @@ export const PreviewBlock = ({
   children: React.ReactElement;
 }) => {
   const [sds, setSds] = useState<any>({});
-  const { Checkbox, Select, Notification, Button, Modal } = sds;
+  const { Checkbox, Select, Notification, Text, Button, Modal, Input } = sds;
 
   // Importing SDS here because we need it async for server-side-rendering
   useEffect(() => {
@@ -138,8 +144,12 @@ export const PreviewBlock = ({
   }
 
   const [props, setProps] = useState({});
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isBasicModalOpen, setIsBasicModalOpen] = useState(false);
+  const [isModalWithButtonsOpen, setIsModalWithButtonsOpen] = useState(false);
+  const [isModalButtonsStretchOpen, setIsModalButtonsStretchOpen] =
+    useState(false);
+  const [isModalButtonsStackOpen, setIsModalButtonsStackOpen] = useState(false);
+  const [inputValue, setInputValue] = useState("");
 
   const handleSelectChange = (
     event: React.ChangeEvent<HTMLSelectElement>,
@@ -160,7 +170,30 @@ export const PreviewBlock = ({
     }
 
     if (value) {
-      setProps({ ..._props, [id]: customValue ?? value, ...valObj });
+      // Get data-update-related attribute from option
+      const updateRelatedString = event.target.options[
+        event.target.selectedIndex
+      ].getAttribute("data-update-related");
+
+      const updateRelated = updateRelatedString
+        ? JSON.parse(updateRelatedString)
+        : undefined;
+
+      const updatedProps = {
+        ..._props,
+        [id]: customValue ?? value,
+        ...valObj,
+      };
+
+      if (updateRelated) {
+        if (updateRelated.value) {
+          updatedProps[updateRelated.prop] = updateRelated.value;
+        } else {
+          delete updatedProps[updateRelated.prop];
+        }
+      }
+
+      setProps(updatedProps);
     } else {
       delete _props[id];
 
@@ -202,7 +235,13 @@ export const PreviewBlock = ({
       >
         <>
           {option.options.map((o) => (
-            <option value={o.value} key={o.value}>
+            <option
+              value={o.value}
+              key={o.value}
+              data-update-related={
+                o.updateRelated ? JSON.stringify(o.updateRelated) : undefined
+              }
+            >
               {o.label}
             </option>
           ))}
@@ -244,11 +283,19 @@ export const PreviewBlock = ({
   );
 
   const renderPreview = () => {
-    // Need to handle Notification manually because of name collision that
+    // Need to handle these manually because of name collision that
     // breaks rendering
     if (componentName === "Notification") {
       return Notification ? (
         <Notification title="Notification title" variant="primary" {...props} />
+      ) : null;
+    }
+
+    if (componentName === "Text") {
+      return Text ? (
+        <Text as="p" size="xs" {...props}>
+          Text
+        </Text>
       ) : null;
     }
 
@@ -257,27 +304,46 @@ export const PreviewBlock = ({
     if (componentName === "Modal") {
       return Button && Modal ? (
         <div className="PreviewBlock__block">
+          {/* Buttons */}
           <Button
             variant="primary"
             size="md"
             onClick={() => setIsBasicModalOpen(true)}
           >
-            Open basic modal
+            Basic modal
           </Button>
 
           <Button
             variant="primary"
             size="md"
-            onClick={() => setIsModalOpen(true)}
+            onClick={() => setIsModalWithButtonsOpen(true)}
           >
-            Open modal
+            Modal with buttons
           </Button>
 
+          <Button
+            variant="primary"
+            size="md"
+            onClick={() => setIsModalButtonsStretchOpen(true)}
+          >
+            Modal with stretched buttons
+          </Button>
+
+          <Button
+            variant="primary"
+            size="md"
+            onClick={() => setIsModalButtonsStackOpen(true)}
+          >
+            Modal with stacked buttons
+          </Button>
+
+          {/* Basic modal */}
           <Modal
             onClose={() => setIsBasicModalOpen(false)}
             parentId="preview-block"
             visible={isBasicModalOpen}
           >
+            <Modal.Heading>Modal heading</Modal.Heading>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
               eius beatae sint dolorem, excepturi quos enim, et ullam suscipit
@@ -286,10 +352,11 @@ export const PreviewBlock = ({
             </p>
           </Modal>
 
+          {/* Modal with buttons */}
           <Modal
-            onClose={() => setIsModalOpen(false)}
+            onClose={() => setIsModalWithButtonsOpen(false)}
             parentId="preview-block"
-            visible={isModalOpen}
+            visible={isModalWithButtonsOpen}
           >
             <Modal.Heading>Modal heading</Modal.Heading>
             <Modal.Body>
@@ -315,15 +382,105 @@ export const PreviewBlock = ({
               </p>
             </Modal.Body>
             <Modal.Footer>
-              <Button size="sm" variant="primary">
+              <Button size="md" variant="tertiary">
+                Cancel
+              </Button>
+              <Button size="md" variant="primary">
                 Submit
               </Button>
-              <Button size="sm" variant="secondary">
+            </Modal.Footer>
+          </Modal>
+
+          {/* Modal with stretched buttons */}
+          <Modal
+            onClose={() => setIsModalButtonsStretchOpen(false)}
+            parentId="preview-block"
+            visible={isModalButtonsStretchOpen}
+          >
+            <Modal.Heading>Modal heading</Modal.Heading>
+            <Modal.Body>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur eius beatae sint dolorem, excepturi quos enim, et ullam
+                suscipit voluptates voluptas accusantium repellendus amet
+                explicabo, iure veritatis aperiam alias molestiae.
+              </p>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur eius beatae sint dolorem, excepturi quos enim, et ullam
+                suscipit voluptates voluptas accusantium repellendus amet
+                explicabo, iure veritatis aperiam alias molestiae.
+              </p>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur eius beatae sint dolorem, excepturi quos enim, et ullam
+                suscipit voluptates voluptas accusantium repellendus amet
+                explicabo, iure veritatis aperiam alias molestiae.
+              </p>
+            </Modal.Body>
+            <Modal.Footer itemAlignment="stretch">
+              <Button size="md" variant="tertiary">
+                Cancel
+              </Button>
+              <Button size="md" variant="primary">
+                Submit
+              </Button>
+            </Modal.Footer>
+          </Modal>
+
+          {/* Modal with stacked buttons */}
+          <Modal
+            onClose={() => setIsModalButtonsStackOpen(false)}
+            parentId="preview-block"
+            visible={isModalButtonsStackOpen}
+          >
+            <Modal.Heading>Modal heading</Modal.Heading>
+            <Modal.Body>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur eius beatae sint dolorem, excepturi quos enim, et ullam
+                suscipit voluptates voluptas accusantium repellendus amet
+                explicabo, iure veritatis aperiam alias molestiae.
+              </p>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur eius beatae sint dolorem, excepturi quos enim, et ullam
+                suscipit voluptates voluptas accusantium repellendus amet
+                explicabo, iure veritatis aperiam alias molestiae.
+              </p>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur eius beatae sint dolorem, excepturi quos enim, et ullam
+                suscipit voluptates voluptas accusantium repellendus amet
+                explicabo, iure veritatis aperiam alias molestiae.
+              </p>
+            </Modal.Body>
+            <Modal.Footer itemAlignment="stack">
+              <Button size="md" variant="primary">
+                Submit
+              </Button>
+              <Button size="md" variant="tertiary">
                 Cancel
               </Button>
             </Modal.Footer>
           </Modal>
         </div>
+      ) : null;
+    }
+
+    if (componentName === "Input") {
+      return Input ? (
+        <Input
+          fieldSize="sm"
+          id="input"
+          onChange={(e) => setInputValue(e.target.value)}
+          value={inputValue}
+          {...props}
+        />
       ) : null;
     }
 

@@ -1,10 +1,24 @@
 @use "../../utils.scss" as *;
 
 .Tooltip {
-  padding: pxToRem(8px) pxToRem(12px);
+  padding: pxToRem(12px);
   width: max-content;
-  max-width: pxToRem(232px);
-  font-size: pxToRem(12px);
-  line-height: pxToRem(20px);
-  font-weight: var(--font-weight-medium);
+  max-width: pxToRem(240px);
+  display: flex;
+  flex-direction: column;
+  gap: pxToRem(8px);
+
+  &__title {
+    font-size: pxToRem(12px);
+    line-height: pxToRem(18px);
+    font-weight: var(--sds-fw-semi-bold);
+    color: var(--sds-clr-gray-12);
+  }
+
+  &__message {
+    font-size: pxToRem(12px);
+    line-height: pxToRem(18px);
+    font-weight: var(--sds-fw-medium);
+    color: var(--sds-clr-gray-11);
+  }
 }

@@ -74,11 +74,11 @@ export const iconButtonPreview: ComponentPreview = {
           label: "Default color",
         },
         {
-          value: "var(--color-purple-50)",
+          value: "var(--sds-clr-lilac-09)",
           label: "Purple",
         },
         {
-          value: "var(--color-yellow-50)",
+          value: "var(--sds-clr-gold-09)",
           label: "Yellow",
         },
       ],

@@ -25,17 +25,17 @@ const presetDetails = {
   copy: {
     label: "Copy",
     altText: "Copy",
-    icon: <Icon.ContentCopy />,
+    icon: <Icon.Copy01 />,
   },
   download: {
     label: "Download",
     altText: "Download",
-    icon: <Icon.Download />,
+    icon: <Icon.Download01 />,
   },
 };
 
 /**
- * `ButtonPreset` is similar to the {@button Button} component, and is used to trigger an action. There are two presets: `copy` and `download` and two variants 
+ * `ButtonPreset` is similar to the {@link Button} component, and is used to trigger an action. There are two presets: `copy` and `download` and two variants
  * for color: `default` and `highlight`.
  */
 export const ButtonPreset: React.FC<Props> = ({

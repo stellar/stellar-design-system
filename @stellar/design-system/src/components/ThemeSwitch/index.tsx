@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
+import { Toggle } from "../Toggle";
 import { Icon } from "../../icons";
-
-import "./styles.scss";
 
 export enum ThemeMode {
   LIGHT = "sds-theme-light",
@@ -61,9 +60,11 @@ export const ThemeSwitch = ({
     if (isDarkMode) {
       document.body.classList.remove(ThemeMode.LIGHT);
       document.body.classList.add(ThemeMode.DARK);
+      document.body.setAttribute("data-sds-theme", ThemeMode.DARK);
     } else {
       document.body.classList.remove(ThemeMode.DARK);
       document.body.classList.add(ThemeMode.LIGHT);
+      document.body.setAttribute("data-sds-theme", ThemeMode.LIGHT);
     }
   }, [disableSetThemeOnLoad, isDarkMode]);
 
@@ -86,28 +87,15 @@ export const ThemeSwitch = ({
   };
 
   return (
-    <label
-      className="ThemeSwitch"
-      htmlFor="theme-switch"
+    <Toggle
+      id="theme-switch"
+      fieldSize="md"
+      checked={isDarkMode}
+      onChange={handleSwitch}
       title={`Switch to ${isDarkMode ? "light" : "dark"} theme`}
-    >
-      <input
-        type="checkbox"
-        id="theme-switch"
-        name="theme-switch"
-        checked={isDarkMode}
-        onChange={handleSwitch}
-      />
-      <div aria-hidden="true" className="ThemeSwitch__track" />
-      <div aria-hidden="true" className="ThemeSwitch__thumb">
-        <div className="ThemeSwitch__thumb__icon" data-mode={ThemeMode.DARK}>
-          <Icon.ModeDark />
-        </div>
-        <div className="ThemeSwitch__thumb__icon" data-mode={ThemeMode.LIGHT}>
-          <Icon.ModeLight />
-        </div>
-      </div>
-    </label>
+      iconChecked={<Icon.Moon01 />}
+      iconUnchecked={<Icon.Sun />}
+    />
   );
 };
 

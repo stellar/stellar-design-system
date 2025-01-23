@@ -1,6 +1,52 @@
 import "./styles.scss";
 
 // =============================================================================
+// Display
+// =============================================================================
+/** */
+export interface DisplayProps {
+  /** Display as `div` or `span` @defaultValue `div` */
+  as?: "div" | "span";
+  /** Additional classes */
+  addlClassName?: string;
+  /** Display size */
+  size: "xl" | "lg" | "md" | "sm" | "xs";
+  /** Display font weight @defaultValue `regular` */
+  weight?: "bold" | "semi-bold" | "medium" | "regular";
+  /** Display text */
+  children: string | React.ReactNode;
+}
+
+interface DProps
+  extends DisplayProps,
+    React.HtmlHTMLAttributes<HTMLDivElement | HTMLSpanElement> {
+  children: string | React.ReactNode;
+}
+
+/**
+ * Use `Display` for generic titles and captions using `div` and `span` elements.
+ */
+export const Display: React.FC<DProps> = ({
+  addlClassName,
+  as: HtmlTag = "div",
+  size,
+  weight = "regular",
+  children,
+  ...props
+}) => (
+  <HtmlTag
+    className={`Display Display--${size} ${
+      weight !== "regular" ? `Display--w-${weight}` : ""
+    } ${addlClassName || ""}`}
+    {...props}
+  >
+    {children}
+  </HtmlTag>
+);
+
+Display.displayName = "Display";
+
+// =============================================================================
 // Heading
 // =============================================================================
 /** */
@@ -10,7 +56,9 @@ export interface HeadingProps {
   /** Additional classes */
   addlClassName?: string;
   /** Heading size */
-  size: "xxl" | "xl" | "lg" | "md" | "sm" | "xs";
+  size: "xl" | "lg" | "md" | "sm" | "xs";
+  /** Heading font weight @defaultValue `regular` */
+  weight?: "bold" | "semi-bold" | "medium" | "regular";
   /** Heading text */
   children: string | React.ReactNode;
 }
@@ -28,11 +76,14 @@ export const Heading: React.FC<HProps> = ({
   addlClassName,
   as: HtmlTag,
   size,
+  weight = "regular",
   children,
   ...props
-}): JSX.Element => (
+}) => (
   <HtmlTag
-    className={`Heading Heading--${size} ${addlClassName || ""}`}
+    className={`Heading Heading--${size} ${
+      weight !== "regular" ? `Heading--w-${weight}` : ""
+    } ${addlClassName || ""}`}
     {...props}
   >
     {children}
@@ -42,116 +93,83 @@ export const Heading: React.FC<HProps> = ({
 Heading.displayName = "Heading";
 
 // =============================================================================
-// Caption
+// Text
 // =============================================================================
 /** */
-export interface CaptionProps {
-  /** Caption size */
-  size: "lg" | "md" | "sm" | "xs";
+export interface TextProps {
+  /** Text as `p`, `div`, `span`, or `h1` through `h6` */
+  as: "p" | "div" | "span" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   /** Additional classes */
   addlClassName?: string;
-  /** Caption text */
+  /** Text size */
+  size: "xl" | "lg" | "md" | "sm" | "xs";
+  /** Text font weight @defaultValue `regular` */
+  weight?: "bold" | "semi-bold" | "medium" | "regular";
+  /** Text content */
   children: string | React.ReactNode;
 }
 
-interface CProps
-  extends CaptionProps,
-    React.HtmlHTMLAttributes<HTMLDivElement> {
+interface TProps
+  extends TextProps,
+    React.HtmlHTMLAttributes<
+      HTMLParagraphElement | HTMLDivElement | HTMLSpanElement
+    > {
   children: string | React.ReactNode;
 }
 
 /**
- * Use the `Caption` component for eyebrow subtitles paired with a title and
- * secondary accent text in elements like badges and network status.
+ * `Text` is an HTML `p`, `div`, `span`, or heading `h1` through `h6` element tag used to display text.
  */
-export const Caption: React.FC<CProps> = ({
+export const Text: React.FC<TProps> = ({
+  as: HtmlTag,
   addlClassName,
   size,
+  weight = "regular",
   children,
   ...props
-}: CaptionProps) => (
-  <div className={`Caption Caption--${size} ${addlClassName || ""}`} {...props}>
+}) => (
+  <HtmlTag
+    className={`Text Text--${size} ${
+      weight !== "regular" ? `Text--w-${weight}` : ""
+    } ${addlClassName || ""}`}
+    {...props}
+  >
     {children}
-  </div>
+  </HtmlTag>
 );
 
-Caption.displayName = "Caption";
+Text.displayName = "Text";
 
 // =============================================================================
-// Paragraph
+// Code
 // =============================================================================
 /** */
-export interface ParagraphProps {
+export interface CodeProps {
   /** Additional classes */
   addlClassName?: string;
-  /** Paragraph size */
-  size: "lg" | "md" | "sm" | "xs";
-  /** Render paragraph as div */
-  asDiv?: boolean;
-  /** Paragraph text */
+  /** Code size */
+  size: "md" | "sm" | "xs";
+  /** Code content */
   children: string | React.ReactNode;
 }
 
-interface PProps
-  extends ParagraphProps,
-    React.HtmlHTMLAttributes<HTMLParagraphElement | HTMLDivElement> {
+interface CProps extends CodeProps, React.HtmlHTMLAttributes<HTMLElement> {
   children: string | React.ReactNode;
 }
 
 /**
- * The text paragraph is an HTML `p` (or `div`) tag, not a custom component.
+ * `Code` is an HTML `code` tag used to display text in computer code style
+ * (monospace font).
  */
-export const Paragraph: React.FC<PProps> = ({
-  addlClassName,
-  size,
-  children,
-  asDiv,
-  ...props
-}: ParagraphProps) => {
-  const HtmlTag = asDiv ? "div" : "p";
-
-  return (
-    <HtmlTag
-      className={`Paragraph Paragraph--${size} ${addlClassName || ""}`}
-      {...props}
-    >
-      {children}
-    </HtmlTag>
-  );
-};
-
-Paragraph.displayName = "Paragraph";
-
-// =============================================================================
-// Title
-// =============================================================================
-/** */
-export interface TitleProps {
-  /** Additional classes */
-  addlClassName?: string;
-  /** Title size */
-  size: "lg" | "md" | "sm" | "xs";
-  /** Title text */
-  children: string | React.ReactNode;
-}
-
-interface TProps extends TitleProps, React.HtmlHTMLAttributes<HTMLDivElement> {
-  children: string | React.ReactNode;
-}
-
-/**
- * Use the `Title` component when a semantic heading is not needed. For example, in a
- * banner title, navigation item, label, etc.
- */
-export const Title: React.FC<TProps> = ({
+export const Code: React.FC<CProps> = ({
   addlClassName,
   size,
   children,
   ...props
 }) => (
-  <div className={`Title Title--${size} ${addlClassName || ""}`} {...props}>
+  <code className={`Code Code--${size} ${addlClassName || ""}`} {...props}>
     {children}
-  </div>
+  </code>
 );
 
-Title.displayName = "Title";
+Code.displayName = "code";

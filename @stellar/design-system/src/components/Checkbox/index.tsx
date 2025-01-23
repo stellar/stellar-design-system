@@ -9,13 +9,15 @@ export interface CheckboxProps {
   id: string;
   // Note: cannot use "size" here because it's input's native property
   /** Size of the checkbox */
-  fieldSize: "md" | "sm" | "xs";
+  fieldSize: "sm" | "md" | "lg";
   /** Label of the checkbox */
   label?: string | React.ReactNode;
   /** Note message of the checkbox */
   note?: string | React.ReactNode;
   /** Error message of the checkbox */
   error?: string | React.ReactNode;
+  /** Success message of the input */
+  success?: string | React.ReactNode;
   /** Checkbox error without a message */
   isError?: boolean;
 }
@@ -35,6 +37,7 @@ export const Checkbox: React.FC<Props> = ({
   label,
   note,
   error,
+  success,
   isError,
   ...props
 }: Props) => {
@@ -61,8 +64,17 @@ export const Checkbox: React.FC<Props> = ({
         </label>
       </div>
 
-      {note && <FieldNote>{note}</FieldNote>}
-      {error && <FieldNote variant="error">{error}</FieldNote>}
+      {note && <FieldNote size={fieldSize}>{note}</FieldNote>}
+      {error && (
+        <FieldNote size={fieldSize} variant="error">
+          {error}
+        </FieldNote>
+      )}
+      {success && (
+        <FieldNote size={fieldSize} variant="success">
+          {success}
+        </FieldNote>
+      )}
     </div>
   );
 };

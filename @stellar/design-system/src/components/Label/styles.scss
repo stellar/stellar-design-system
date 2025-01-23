@@ -1,21 +1,56 @@
 @use "../../utils.scss" as *;
 
 .Label {
-  font-family: var(--font-family-base);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-gray-60);
+  --Label-height: #{pxToRem(18px)};
 
-  &--sm {
-    font-size: pxToRem(14px);
-    line-height: pxToRem(22px);
+  font-family: var(--sds-ff-base);
+  font-weight: var(--sds-fw-medium);
+  color: var(--sds-clr-gray-11);
+  display: flex;
+  gap: pxToRem(2px);
+
+  &__wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: pxToRem(4px);
   }
 
-  &--xs {
+  &--sm {
+    --Label-height: #{pxToRem(18px)};
     font-size: pxToRem(12px);
-    line-height: pxToRem(20px);
+    line-height: var(--Label-height);
+  }
+
+  &--md {
+    --Label-height: #{pxToRem(18px)};
+    font-size: pxToRem(12px);
+    line-height: var(--Label-height);
+  }
+
+  &--lg {
+    --Label-height: #{pxToRem(20px)};
+    font-size: pxToRem(14px);
+    line-height: var(--Label-height);
   }
 
   &--uppercase {
     text-transform: uppercase;
+  }
+
+  &__suffix {
+    color: var(--sds-clr-gray-11);
+  }
+
+  &__infoButton {
+    width: var(--Label-height);
+    height: var(--Label-height);
+    cursor: pointer;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      stroke: var(--sds-clr-gray-08);
+    }
   }
 }

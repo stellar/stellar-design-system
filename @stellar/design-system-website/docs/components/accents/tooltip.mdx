@@ -11,8 +11,13 @@ description: "Tooltip is used to display info in a bubble."
 
 ```tsx live
 <PreviewBlock componentName="Tooltip">
-  <Tooltip isVisible isContrast triggerEl={<>Tooltip trigger</>}>
-    Lorem ipsum dolor sit
+  <Tooltip
+    isVisible
+    isContrast
+    triggerEl={<>Tooltip trigger</>}
+    title="Lorem ipsum dolor sit"
+  >
+    Lorem, ipsum dolor sit amet consectetur adipis elit.
   </Tooltip>
 </PreviewBlock>
 ```
