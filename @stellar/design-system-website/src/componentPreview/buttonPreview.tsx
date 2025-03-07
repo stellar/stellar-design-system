@@ -64,6 +64,11 @@ export const buttonPreview: ComponentPreview = {
     },
     {
       type: "checkbox",
+      prop: "isRounded",
+      label: "Rounded",
+    },
+    {
+      type: "checkbox",
       prop: "isLoading",
       label: "Loading",
     },

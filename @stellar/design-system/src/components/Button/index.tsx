@@ -28,6 +28,8 @@ export interface ButtonProps {
   isLoading?: boolean;
   /** Sets width of the button to match the parent container */
   isFullWidth?: boolean;
+  /** Pill shaped button with rounded corners */
+  isRounded?: boolean;
   /** Show onClick action tooltip @defaultValue `false` */
   showActionTooltip?: boolean;
   /** Action tooltip text @defaultValue `Done` */
@@ -52,6 +54,7 @@ export const Button: React.FC<Props> = ({
   iconPosition = "right",
   isLoading,
   isFullWidth,
+  isRounded,
   showActionTooltip = false,
   actionTooltipText = "Done",
   actionTooltipPlacement = "bottom",
@@ -72,6 +75,7 @@ export const Button: React.FC<Props> = ({
     `Button--${variant}`,
     `Button--${size}`,
     ...(isFullWidth ? [`Button--full-width`] : []),
+    ...(isRounded ? [`Button--rounded`] : []),
   ].join(" ");
 
   const renderIcon = (position: "left" | "right") => {
