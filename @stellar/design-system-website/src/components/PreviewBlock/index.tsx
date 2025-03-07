@@ -18,6 +18,7 @@ import { checkboxPreview } from "@site/src/componentPreview/checkboxPreview";
 import { codePreview } from "@site/src/componentPreview/codePreview";
 import { copyTextPreview } from "@site/src/componentPreview/copyTextPreview";
 import { displayPreview } from "@site/src/componentPreview/displayPreview";
+import { framePreview } from "@site/src/componentPreview/framePreview";
 import { headingPreview } from "@site/src/componentPreview/headingPreview";
 import { iconButtonPreview } from "@site/src/componentPreview/iconButtonPreview";
 import { inputPreview } from "@site/src/componentPreview/inputPreview";
@@ -56,6 +57,7 @@ const previews: { [key: string]: ComponentPreview } = {
   CopyText: copyTextPreview,
   Footer: layoutPreview,
   Display: displayPreview,
+  Frame: framePreview,
   Heading: headingPreview,
   Header: layoutPreview,
   IconButton: iconButtonPreview,
@@ -219,7 +221,7 @@ export const PreviewBlock = ({
 
     setProps({
       ..._props,
-      [id]: checked ? customValue ?? true : false,
+      [id]: checked ? (customValue ?? true) : false,
     });
   };
 

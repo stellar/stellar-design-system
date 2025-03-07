@@ -9,6 +9,7 @@ export * from "./Card";
 export * from "./Checkbox";
 export * from "./CopyText";
 export * from "./Floater";
+export * from "./Frame";
 export * from "./IconButton";
 export * from "./Input";
 export * from "./Label";

@@ -1,0 +1,116 @@
+@use "../../utils.scss" as *;
+
+.Frame {
+  --Frame-size: #{pxToRem(0px)};
+  --Frame-icon-size: #{pxToRem(0px)};
+  --Frame-border-radius: 0;
+
+  --Frame-background-color: var(--sds-clr-gray-03);
+  --Frame-icon-color: var(--sds-clr-gray-09);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--Frame-size);
+  height: var(--Frame-size);
+  border-radius: var(--Frame-border-radius);
+  background-color: var(--Frame-background-color);
+
+  svg {
+    display: block;
+    width: var(--Frame-icon-size);
+    height: var(--Frame-icon-size);
+    stroke: var(--Frame-icon-color);
+  }
+
+  // Variant
+  &--default {
+    --Frame-background-color: var(--sds-clr-gray-03);
+    --Frame-icon-color: var(--sds-clr-gray-09);
+  }
+
+  &--brand {
+    --Frame-background-color: var(--sds-clr-lilac-03);
+    --Frame-icon-color: var(--sds-clr-lilac-09);
+  }
+
+  &--success {
+    --Frame-background-color: var(--sds-clr-green-03);
+    --Frame-icon-color: var(--sds-clr-green-09);
+  }
+
+  &--warning {
+    --Frame-background-color: var(--sds-clr-amber-03);
+    --Frame-icon-color: var(--sds-clr-amber-09);
+  }
+
+  &--error {
+    --Frame-background-color: var(--sds-clr-red-03);
+    --Frame-icon-color: var(--sds-clr-red-09);
+  }
+
+  &--gold {
+    --Frame-background-color: var(--sds-clr-gold-03);
+    --Frame-icon-color: var(--sds-clr-gold-09);
+  }
+
+  &--navy {
+    --Frame-background-color: var(--sds-clr-navy-03);
+    --Frame-icon-color: var(--sds-clr-navy-09);
+  }
+
+  &--teal {
+    --Frame-background-color: var(--sds-clr-teal-03);
+    --Frame-icon-color: var(--sds-clr-teal-09);
+  }
+
+  &--mint {
+    --Frame-background-color: var(--sds-clr-mint-03);
+    --Frame-icon-color: var(--sds-clr-mint-09);
+  }
+
+  &--lime {
+    --Frame-background-color: var(--sds-clr-lime-03);
+    --Frame-icon-color: var(--sds-clr-lime-09);
+  }
+
+  &--pink {
+    --Frame-background-color: var(--sds-clr-pink-03);
+    --Frame-icon-color: var(--sds-clr-pink-09);
+  }
+
+  // Size
+  &--sm {
+    --Frame-size: #{pxToRem(16px)};
+    --Frame-icon-size: #{pxToRem(8px)};
+  }
+
+  &--md {
+    --Frame-size: #{pxToRem(24px)};
+    --Frame-icon-size: #{pxToRem(16px)};
+  }
+
+  &--lg {
+    --Frame-size: #{pxToRem(32px)};
+    --Frame-icon-size: #{pxToRem(20px)};
+  }
+
+  // Shape
+  &--round {
+    --Frame-border-radius: calc(var(--Frame-size) / 2);
+  }
+
+  &--square {
+    &.Frame--sm {
+      --Frame-border-radius: #{pxToRem(4px)};
+    }
+
+    &.Frame--md {
+      --Frame-border-radius: #{pxToRem(6px)};
+    }
+
+    &.Frame--lg {
+      --Frame-border-radius: #{pxToRem(8px)};
+    }
+  }
+}
