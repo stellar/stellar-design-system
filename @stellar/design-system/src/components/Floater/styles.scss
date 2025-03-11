@@ -1,6 +1,8 @@
 @use "../../utils.scss" as *;
 
 .Floater {
+  --Floater-background-color: var(--sds-clr-tooltip-contrast-background);
+
   position: relative;
   z-index: 1;
 
@@ -15,22 +17,19 @@
     border-radius: pxToRem(6px);
     z-index: 1;
 
-    color: var(--sds-clr-gray-01);
-    background-color: var(--sds-clr-gray-12);
-    border: 1px solid var(--sds-clr-gray-12);
-    box-shadow: 0 pxToRem(12px) pxToRem(12px) pxToRem(-6px) rgba(0, 0, 0, 0.06);
+    color: var(--sds-clr-tooltip-contrast-text);
+    background-color: var(--Floater-background-color);
+    border: 1px solid var(--Floater-background-color);
+    box-shadow: 0 pxToRem(10px) pxToRem(12px) pxToRem(-6px)
+      var(--sds-overlay-01);
 
-    &--light {
-      color: var(--sds-clr-gray-11);
-      background-color: var(--sds-clr-gray-01);
-      border-color: var(--sds-clr-gray-06);
-      box-shadow: 0 pxToRem(10px) pxToRem(20px) pxToRem(-6px)
-        var(--sds-overlay-01);
+    // Target only direct child, not everything nested
+    & > .Floater__arrow svg {
+      fill: var(--Floater-background-color);
+    }
 
-      // Target only direct child, not everything nested
-      & > .Floater__arrow svg {
-        fill: var(--sds-clr-gray-06);
-      }
+    &[data-is-contrast="false"] {
+      --Floater-background-color: var(--sds-clr-tooltip-background);
     }
   }
 

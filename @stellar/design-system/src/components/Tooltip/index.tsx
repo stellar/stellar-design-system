@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Floater } from "../Floater";
 import "./styles.scss";
 
@@ -40,35 +39,19 @@ export const Tooltip: React.FC<TooltipProps> = ({
   placement = "right",
   isVisible,
   isContrast = true,
-}: TooltipProps) => {
-  const [theme, setTheme] = useState("sds-theme-dark");
-
-  const getContrastMode = () =>
-    theme === "sds-theme-dark" ? "sds-theme-light" : "sds-theme-dark";
-
-  return (
-    <Floater
-      placement={placement}
-      triggerEl={triggerEl}
-      isVisible={isVisible}
-      isContrast={isContrast}
-      showArrow={true}
-      callback={(isOpen) => {
-        if (isOpen) {
-          const theme = document.body.getAttribute("data-sds-theme");
-
-          if (theme) {
-            setTheme(theme);
-          }
-        }
-      }}
-    >
-      <div className={`Tooltip ${isContrast ? getContrastMode() : ""}`}>
-        {title ? <div className="Tooltip__title">{title}</div> : null}
-        {children ? <div className="Tooltip__message">{children}</div> : null}
-      </div>
-    </Floater>
-  );
-};
+}: TooltipProps) => (
+  <Floater
+    placement={placement}
+    triggerEl={triggerEl}
+    isVisible={isVisible}
+    isContrast={isContrast}
+    showArrow={true}
+  >
+    <div className="Tooltip" data-is-contrast={isContrast}>
+      {title ? <div className="Tooltip__title">{title}</div> : null}
+      {children ? <div className="Tooltip__message">{children}</div> : null}
+    </div>
+  </Floater>
+);
 
 Tooltip.displayName = "Tooltip";

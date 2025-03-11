@@ -1,24 +1,36 @@
 @use "../../utils.scss" as *;
 
 .Tooltip {
+  --Tooltip-background-color: var(--sds-clr-tooltip-contrast-background);
+  --Tooltip-title-color: var(--sds-clr-tooltip-contrast-title);
+  --Tooltip-message-color: var(--sds-clr-tooltip-contrast-text);
+
   padding: pxToRem(12px);
   width: max-content;
   max-width: pxToRem(240px);
   display: flex;
   flex-direction: column;
   gap: pxToRem(8px);
+  border-radius: pxToRem(6px);
+  background-color: var(--Tooltip-background-color);
 
   &__title {
     font-size: pxToRem(12px);
     line-height: pxToRem(18px);
     font-weight: var(--sds-fw-semi-bold);
-    color: var(--sds-clr-gray-12);
+    color: var(--Tooltip-title-color);
   }
 
   &__message {
     font-size: pxToRem(12px);
     line-height: pxToRem(18px);
     font-weight: var(--sds-fw-medium);
-    color: var(--sds-clr-gray-11);
+    color: var(--Tooltip-message-color);
+  }
+
+  &[data-is-contrast="false"] {
+    --Tooltip-background-color: var(--sds-clr-tooltip-background);
+    --Tooltip-title-color: var(--sds-clr-tooltip-title);
+    --Tooltip-message-color: var(--sds-clr-tooltip-text);
   }
 }

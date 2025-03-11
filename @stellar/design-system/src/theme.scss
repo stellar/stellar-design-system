@@ -176,6 +176,14 @@
   --sds-clr-pink-10: #d23197;
   --sds-clr-pink-11: #cd1d8d;
   --sds-clr-pink-12: #3b0a2a;
+
+  // Tooltip
+  --sds-clr-tooltip-background: #ededed;
+  --sds-clr-tooltip-title: #161616;
+  --sds-clr-tooltip-text: #505050;
+  --sds-clr-tooltip-contrast-background: #171717;
+  --sds-clr-tooltip-contrast-title: #fcfcfc;
+  --sds-clr-tooltip-contrast-text: #c7c7c7;
 }
 
 @mixin theme-dark {
@@ -353,6 +361,14 @@
   --sds-clr-pink-10: #e34ba9;
   --sds-clr-pink-11: #f65cb6;
   --sds-clr-pink-12: #feebf7;
+
+  // Tooltip
+  --sds-clr-tooltip-background: #171717;
+  --sds-clr-tooltip-title: #fcfcfc;
+  --sds-clr-tooltip-text: #c7c7c7;
+  --sds-clr-tooltip-contrast-background: #ededed;
+  --sds-clr-tooltip-contrast-title: #161616;
+  --sds-clr-tooltip-contrast-text: #505050;
 }
 
 @mixin theme-common {
