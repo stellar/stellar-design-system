@@ -1,0 +1,31 @@
+@use "../../utils.scss" as *;
+
+.App {
+  --App-size: #{pxToRem(16px)};
+
+  width: var(--App-size);
+  height: var(--App-size);
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &--sm {
+    --App-size: #{pxToRem(16px)};
+  }
+
+  &--md {
+    --App-size: #{pxToRem(24px)};
+  }
+
+  &--lg {
+    --App-size: #{pxToRem(32px)};
+  }
+
+  &--xl {
+    --App-size: #{pxToRem(40px)};
+  }
+}

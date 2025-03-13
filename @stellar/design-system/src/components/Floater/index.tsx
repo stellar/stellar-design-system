@@ -284,10 +284,6 @@ export const Floater: React.FC<FloaterProps> = ({
     };
   }, [isFloaterOpen, handleClickOutside]);
 
-  const additionalClasses = [
-    ...(isContrast ? [] : [`Floater__content--light`]),
-  ].join(" ");
-
   return (
     <div className="Floater" ref={parentRef}>
       <>
@@ -298,7 +294,11 @@ export const Floater: React.FC<FloaterProps> = ({
               onClick: toggleFloater,
             })}
       </>
-      <div ref={floaterRef} className={`Floater__content ${additionalClasses}`}>
+      <div
+        ref={floaterRef}
+        className="Floater__content"
+        data-is-contrast={isContrast}
+      >
         {children}
         {showArrow ? (
           <div className="Floater__arrow" ref={floaterArrowRef}>

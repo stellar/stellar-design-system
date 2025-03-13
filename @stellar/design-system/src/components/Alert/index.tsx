@@ -42,7 +42,7 @@ export type AlertActionLink = {
 /** Use `Alert` to show a message with or without an action. Place the alert `inline` to show it anywhere on the UI. `bottom` placement should be used only to show the alert at the bottom of the layout; it's the opposite of {@link Banner} which is used only at the top. */
 export type AlertProps = (AlertActionButton | AlertActionLink) & AlertBaseProps;
 
-/** */
+/** Display an alert message inline or at the bottom of the page */
 export const Alert: React.FC<AlertProps> = ({
   variant,
   placement,

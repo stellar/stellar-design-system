@@ -7,6 +7,7 @@ import "./styles.css";
 // Preview imports
 // =============================================================================
 import { alertPreview } from "@site/src/componentPreview/alertPreview";
+import { appPreview } from "@site/src/componentPreview/appPreview";
 import { assetPreview } from "@site/src/componentPreview/assetPreview";
 import { avatarPreview } from "@site/src/componentPreview/avatarPreview";
 import { badgePreview } from "@site/src/componentPreview/badgePreview";
@@ -18,6 +19,7 @@ import { checkboxPreview } from "@site/src/componentPreview/checkboxPreview";
 import { codePreview } from "@site/src/componentPreview/codePreview";
 import { copyTextPreview } from "@site/src/componentPreview/copyTextPreview";
 import { displayPreview } from "@site/src/componentPreview/displayPreview";
+import { framePreview } from "@site/src/componentPreview/framePreview";
 import { headingPreview } from "@site/src/componentPreview/headingPreview";
 import { iconButtonPreview } from "@site/src/componentPreview/iconButtonPreview";
 import { inputPreview } from "@site/src/componentPreview/inputPreview";
@@ -43,6 +45,7 @@ import { tooltipPreview } from "@site/src/componentPreview/tooltipPreview";
 // =============================================================================
 const previews: { [key: string]: ComponentPreview } = {
   Alert: alertPreview,
+  App: appPreview,
   Asset: assetPreview,
   Avatar: avatarPreview,
   Badge: badgePreview,
@@ -56,6 +59,7 @@ const previews: { [key: string]: ComponentPreview } = {
   CopyText: copyTextPreview,
   Footer: layoutPreview,
   Display: displayPreview,
+  Frame: framePreview,
   Heading: headingPreview,
   Header: layoutPreview,
   IconButton: iconButtonPreview,
@@ -219,7 +223,7 @@ export const PreviewBlock = ({
 
     setProps({
       ..._props,
-      [id]: checked ? customValue ?? true : false,
+      [id]: checked ? (customValue ?? true) : false,
     });
   };
 

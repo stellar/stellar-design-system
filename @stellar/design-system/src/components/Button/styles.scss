@@ -318,6 +318,10 @@
     width: 100%;
   }
 
+  &--rounded {
+    --Button-border-radius: calc(var(--Button-height) / 2) !important;
+  }
+
   // Loader
   .Loader {
     --Loader-size: var(--Button-font-size);
