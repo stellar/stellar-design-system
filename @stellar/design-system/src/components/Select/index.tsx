@@ -1,7 +1,7 @@
 import React, { cloneElement } from "react";
 import { Label } from "../Label";
-import { FieldNote } from "../utils/FieldNote";
 import { Icon } from "../../icons";
+import { FieldNote } from "../utils/FieldNote";
 import "./styles.scss";
 
 /** Including all valid [select attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attributes). */
@@ -25,8 +25,12 @@ export interface SelectProps {
   success?: string | React.ReactNode;
   /** Info text tooltip */
   infoText?: string | React.ReactNode;
+  /** Info text icon @defaultValue `<Icon.InfoCircle />` */
+  infoTextIcon?: React.ReactNode;
   /** External link to open in new window */
   infoLink?: string;
+  /** Info link icon @defaultValue `<Icon.BookOpen01 />` */
+  infoLinkIcon?: React.ReactNode;
   /** Make label uppercase */
   isLabelUppercase?: boolean;
   /** Select error without a message */
@@ -55,7 +59,9 @@ export const Select: React.FC<Props> = ({
   error,
   success,
   infoText,
+  infoTextIcon = <Icon.InfoCircle />,
   infoLink,
+  infoLinkIcon = <Icon.BookOpen01 />,
   isLabelUppercase,
   isError,
   customSelect,
@@ -81,7 +87,9 @@ export const Select: React.FC<Props> = ({
           size={fieldSize}
           labelSuffix={labelSuffix}
           infoText={infoText}
+          infoTextIcon={infoTextIcon}
           infoLink={infoLink}
+          infoLinkIcon={infoLinkIcon}
         >
           {label}
         </Label>
