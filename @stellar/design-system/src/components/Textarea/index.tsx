@@ -1,5 +1,6 @@
 import React, { cloneElement } from "react";
 import { Label } from "../Label";
+import { Icon } from "../../icons";
 import { FieldNote } from "../utils/FieldNote";
 import { InputCopyButton } from "../utils/InputCopyButton";
 import "./styles.scss";
@@ -25,8 +26,12 @@ export interface TextareaProps {
   success?: string | React.ReactNode;
   /** Info text tooltip */
   infoText?: string | React.ReactNode;
+  /** Info text icon @defaultValue `<Icon.InfoCircle />` */
+  infoTextIcon?: React.ReactNode;
   /** External link to open in new window */
   infoLink?: string;
+  /** Info link icon @defaultValue `<Icon.BookOpen01 />` */
+  infoLinkIcon?: React.ReactNode;
   /** Textarea error without a message */
   isError?: boolean;
   /** Make label uppercase */
@@ -57,7 +62,9 @@ export const Textarea: React.FC<Props> = ({
   error,
   success,
   infoText,
+  infoTextIcon = <Icon.InfoCircle />,
   infoLink,
+  infoLinkIcon = <Icon.BookOpen01 />,
   isError,
   isLabelUppercase,
   hasCopyButton,
@@ -90,7 +97,9 @@ export const Textarea: React.FC<Props> = ({
           size={fieldSize}
           labelSuffix={labelSuffix}
           infoText={infoText}
+          infoTextIcon={infoTextIcon}
           infoLink={infoLink}
+          infoLinkIcon={infoLinkIcon}
         >
           {label}
         </Label>
