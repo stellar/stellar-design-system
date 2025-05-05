@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, forwardRef } from "react";
 import { FloaterPlacement } from "../Floater";
 import { Loader } from "../Loader";
 import { Tooltip } from "../Tooltip";
@@ -46,96 +46,102 @@ interface Props
  * `Button` is used to trigger an action that is not opening a link (to trigger an action that opens a link, use {@link Link}
  * instead).
  */
-export const Button: React.FC<Props> = ({
-  variant,
-  size,
-  children,
-  icon,
-  iconPosition = "right",
-  isLoading,
-  isFullWidth,
-  isRounded,
-  showActionTooltip = false,
-  actionTooltipText = "Done",
-  actionTooltipPlacement = "bottom",
-  ...props
-}) => {
-  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
+export const Button = forwardRef<HTMLButtonElement, Props>(
+  (
+    {
+      variant,
+      size,
+      children,
+      icon,
+      iconPosition = "right",
+      isLoading,
+      isFullWidth,
+      isRounded,
+      showActionTooltip = false,
+      actionTooltipText = "Done",
+      actionTooltipPlacement = "bottom",
+      ...props
+    },
+    ref,
+  ) => {
+    const [isTooltipVisible, setIsTooltipVisible] = useState(false);
 
-  useEffect(() => {
-    if (isTooltipVisible) {
-      const t = setTimeout(() => {
-        setIsTooltipVisible(false);
-        clearTimeout(t);
-      }, 1000);
-    }
-  }, [isTooltipVisible]);
+    useEffect(() => {
+      if (isTooltipVisible) {
+        const t = setTimeout(() => {
+          setIsTooltipVisible(false);
+          clearTimeout(t);
+        }, 1000);
+      }
+    }, [isTooltipVisible]);
 
-  const additionalClasses = [
-    `Button--${variant}`,
-    `Button--${size}`,
-    ...(isFullWidth ? [`Button--full-width`] : []),
-    ...(isRounded ? [`Button--rounded`] : []),
-  ].join(" ");
+    const additionalClasses = [
+      `Button--${variant}`,
+      `Button--${size}`,
+      ...(isFullWidth ? [`Button--full-width`] : []),
+      ...(isRounded ? [`Button--rounded`] : []),
+    ].join(" ");
 
-  const renderIcon = (position: "left" | "right") => {
-    // By default, show loader on the right side
-    if (!icon && isLoading && position === "right") {
-      return <Loader />;
-    }
-
-    // If there is icon, replace icon with loader
-    if (icon && iconPosition === position) {
-      if (isLoading) {
+    const renderIcon = (position: "left" | "right") => {
+      // By default, show loader on the right side
+      if (!icon && isLoading && position === "right") {
         return <Loader />;
       }
 
-      return <span className="Button__icon">{icon}</span>;
+      // If there is icon, replace icon with loader
+      if (icon && iconPosition === position) {
+        if (isLoading) {
+          return <Loader />;
+        }
+
+        return <span className="Button__icon">{icon}</span>;
+      }
+
+      return null;
+    };
+
+    const renderButton = () => {
+      return (
+        <button
+          ref={ref}
+          className={`Button ${additionalClasses}`}
+          {...props}
+          {...(isLoading ? { disabled: true } : {})}
+          {...(props.onClick
+            ? {
+                onClick: (event) => {
+                  if (props.onClick) {
+                    props.onClick(event);
+
+                    if (showActionTooltip) {
+                      setIsTooltipVisible(true);
+                    }
+                  }
+                },
+              }
+            : {})}
+        >
+          {renderIcon("left")}
+          {children ?? null}
+          {renderIcon("right")}
+        </button>
+      );
+    };
+
+    if (showActionTooltip) {
+      return (
+        <Tooltip
+          triggerEl={renderButton()}
+          isVisible={isTooltipVisible}
+          placement={actionTooltipPlacement}
+        >
+          {actionTooltipText}
+        </Tooltip>
+      );
     }
 
-    return null;
-  };
-
-  const renderButton = () => {
-    return (
-      <button
-        className={`Button ${additionalClasses}`}
-        {...props}
-        {...(isLoading ? { disabled: true } : {})}
-        {...(props.onClick
-          ? {
-              onClick: (event) => {
-                if (props.onClick) {
-                  props.onClick(event);
-
-                  if (showActionTooltip) {
-                    setIsTooltipVisible(true);
-                  }
-                }
-              },
-            }
-          : {})}
-      >
-        {renderIcon("left")}
-        {children ?? null}
-        {renderIcon("right")}
-      </button>
-    );
-  };
-
-  if (showActionTooltip) {
-    return (
-      <Tooltip
-        triggerEl={renderButton()}
-        isVisible={isTooltipVisible}
-        placement={actionTooltipPlacement}
-      >
-        {actionTooltipText}
-      </Tooltip>
-    );
-  }
-
-  return renderButton();
-};
+    return renderButton();
+  },
+);
 
 Button.displayName = "Button";
