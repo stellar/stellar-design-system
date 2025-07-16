@@ -50,6 +50,10 @@ export const buttonPreview: ComponentPreview = {
           value: "lg",
           label: "LG",
         },
+        {
+          value: "xl",
+          label: "XL",
+        },
       ],
     },
     {
