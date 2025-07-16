@@ -17,7 +17,7 @@ export interface ButtonProps {
     | "error"
     | "success";
   /** Size of the button */
-  size: "sm" | "md" | "lg";
+  size: "sm" | "md" | "lg" | "xl";
   /** Label of the button */
   children?: string | React.ReactNode;
   /** Icon element */

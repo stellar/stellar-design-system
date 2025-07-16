@@ -313,6 +313,15 @@
     --Button-border-radius: #{pxToRem(8px)};
   }
 
+  &--xl {
+    --Button-height: #{pxToRem(48px)};
+    --Button-font-size: #{pxToRem(16px)};
+    --Button-line-height: #{pxToRem(24px)};
+    --Button-padding-vertical: #{pxToRem(12px)};
+    --Button-padding-horizontal: #{pxToRem(16px)};
+    --Button-border-radius: #{pxToRem(8px)};
+  }
+
   // Custom
   &--full-width {
     width: 100%;
