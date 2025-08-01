@@ -4,6 +4,7 @@
 .Heading {
   --Heading-font-size: #{pxToRem(56px)};
 
+  font-size: var(--Heading-font-size);
   font-family: var(--sds-ff-heading);
   font-weight: var(--sds-fw-regular);
   letter-spacing: calc(var(--Heading-font-size) * 0.04 * -1);
