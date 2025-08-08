@@ -32,6 +32,20 @@ export interface TextareaProps {
   infoLink?: string;
   /** Info link icon @defaultValue `<Icon.BookOpen01 />` */
   infoLinkIcon?: React.ReactNode;
+  /** Placement of tooltip relative to the label */
+  tooltipPlacement?:
+    | "top"
+    | "right"
+    | "bottom"
+    | "left"
+    | "top-start"
+    | "top-end"
+    | "right-start"
+    | "right-end"
+    | "bottom-start"
+    | "bottom-end"
+    | "left-start"
+    | "left-end";
   /** Textarea error without a message */
   isError?: boolean;
   /** Make label uppercase */
@@ -65,6 +79,7 @@ export const Textarea: React.FC<Props> = ({
   infoTextIcon = <Icon.InfoCircle />,
   infoLink,
   infoLinkIcon = <Icon.BookOpen01 />,
+  tooltipPlacement,
   isError,
   isLabelUppercase,
   hasCopyButton,
@@ -100,6 +115,7 @@ export const Textarea: React.FC<Props> = ({
           infoTextIcon={infoTextIcon}
           infoLink={infoLink}
           infoLinkIcon={infoLinkIcon}
+          tooltipPlacement={tooltipPlacement}
         >
           {label}
         </Label>

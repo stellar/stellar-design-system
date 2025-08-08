@@ -1,4 +1,5 @@
 import React from "react";
+import { Placement } from "@floating-ui/dom";
 import { Tooltip } from "../Tooltip";
 import { Icon } from "../../icons";
 import "./styles.scss";
@@ -13,6 +14,7 @@ interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
   infoTextIcon?: React.ReactNode;
   infoLink?: string;
   infoLinkIcon?: React.ReactNode;
+  tooltipPlacement?: Placement;
 }
 
 export const Label: React.FC<LabelProps> = ({
@@ -25,6 +27,7 @@ export const Label: React.FC<LabelProps> = ({
   infoTextIcon = <Icon.InfoCircle />,
   infoLink,
   infoLinkIcon = <Icon.BookOpen01 />,
+  tooltipPlacement,
   ...props
 }: LabelProps) => {
   const additionalClasses = [
@@ -63,6 +66,7 @@ export const Label: React.FC<LabelProps> = ({
               {infoTextIcon}
             </div>
           }
+          placement={tooltipPlacement}
         >
           {infoText}
         </Tooltip>
