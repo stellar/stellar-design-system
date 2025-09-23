@@ -66,7 +66,7 @@ interface Props
 /**
  * The `textarea` component is a multi-line text input element that inherits all native HTML `textarea` element attributes.
  */
-export const Textarea: React.FC<Props> = ({
+export const Textarea = ({
   id,
   fieldSize,
   children = "",
@@ -87,7 +87,7 @@ export const Textarea: React.FC<Props> = ({
   spellCheck = false,
   autoComplete = "off",
   ...props
-}: Props) => {
+}: Props): JSX.Element => {
   const additionalClasses = [
     `Textarea--${fieldSize}`,
     ...(props.disabled ? ["Textarea--disabled"] : []),

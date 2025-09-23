@@ -36,11 +36,11 @@ export type AvatarProps = (
 /**
  * A unique identicon of a public Stellar address, user initials (max two), or a default user icon. [We’re using stellar-identicon-js](https://github.com/Lobstrco/stellar-identicon-js).
  */
-export const Avatar: React.FC<AvatarProps> = ({
+export const Avatar = ({
   size,
   publicAddress,
   userName,
-}: AvatarProps) => {
+}: AvatarProps): JSX.Element => {
   const getInitials = (userName: string) => {
     const arr = userName.split(" ");
 

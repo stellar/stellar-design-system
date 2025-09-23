@@ -7,11 +7,11 @@ interface FieldNoteProps {
   children: string | React.ReactNode;
 }
 
-export const FieldNote: React.FC<FieldNoteProps> = ({
+export const FieldNote = ({
   variant = "note",
   size,
   children,
-}: FieldNoteProps) => (
+}: FieldNoteProps): JSX.Element => (
   <div className={`FieldNote FieldNote--${variant} FieldNote--${size}`}>
     {children}
   </div>

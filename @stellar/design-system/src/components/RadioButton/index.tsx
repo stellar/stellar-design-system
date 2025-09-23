@@ -21,12 +21,12 @@ interface Props
 /**
  * The `RadioButton` component is a form input element that allows you to select a single value from a group of options for submission. All native HTML `radio` input attributes apply.
  */
-export const RadioButton: React.FC<Props> = ({
+export const RadioButton = ({
   id,
   label,
   fieldSize,
   ...props
-}: Props) => {
+}: Props): JSX.Element => {
   const additionalClasses = [
     `RadioButton--${fieldSize}`,
     ...(props.disabled ? ["RadioButton--disabled"] : []),

@@ -26,14 +26,14 @@ interface DProps
 /**
  * Use `Display` for generic titles and captions using `div` and `span` elements.
  */
-export const Display: React.FC<DProps> = ({
+export const Display = ({
   addlClassName,
   as: HtmlTag = "div",
   size,
   weight = "regular",
   children,
   ...props
-}) => (
+}: DProps): JSX.Element => (
   <HtmlTag
     className={`Display Display--${size} ${
       weight !== "regular" ? `Display--w-${weight}` : ""
@@ -72,14 +72,14 @@ interface HProps
 /**
  * Use `Heading` for HTML headings `h1` through `h6`.
  */
-export const Heading: React.FC<HProps> = ({
+export const Heading = ({
   addlClassName,
   as: HtmlTag,
   size,
   weight = "regular",
   children,
   ...props
-}) => (
+}: HProps): JSX.Element => (
   <HtmlTag
     className={`Heading Heading--${size} ${
       weight !== "regular" ? `Heading--w-${weight}` : ""
@@ -120,14 +120,14 @@ interface TProps
 /**
  * `Text` is an HTML `p`, `div`, `span`, or heading `h1` through `h6` element tag used to display text.
  */
-export const Text: React.FC<TProps> = ({
+export const Text = ({
   as: HtmlTag,
   addlClassName,
   size,
   weight = "regular",
   children,
   ...props
-}) => (
+}: TProps): JSX.Element => (
   <HtmlTag
     className={`Text Text--${size} ${
       weight !== "regular" ? `Text--w-${weight}` : ""
@@ -161,12 +161,12 @@ interface CProps extends CodeProps, React.HtmlHTMLAttributes<HTMLElement> {
  * `Code` is an HTML `code` tag used to display text in computer code style
  * (monospace font).
  */
-export const Code: React.FC<CProps> = ({
+export const Code = ({
   addlClassName,
   size,
   children,
   ...props
-}) => (
+}: CProps): JSX.Element => (
   <code className={`Code Code--${size} ${addlClassName || ""}`} {...props}>
     {children}
   </code>

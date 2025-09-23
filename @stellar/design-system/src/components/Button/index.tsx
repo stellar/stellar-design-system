@@ -46,7 +46,7 @@ interface Props
  * `Button` is used to trigger an action that is not opening a link (to trigger an action that opens a link, use {@link Link}
  * instead).
  */
-export const Button: React.FC<Props> = ({
+export const Button = ({
   variant,
   size,
   children,
@@ -59,7 +59,7 @@ export const Button: React.FC<Props> = ({
   actionTooltipText = "Done",
   actionTooltipPlacement = "bottom",
   ...props
-}) => {
+}: Props): JSX.Element => {
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
 
   useEffect(() => {

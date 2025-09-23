@@ -28,13 +28,13 @@ interface Props
 /**
  * Use `notification` to draw a user's attention. There are five variants `primary`, `secondary`, `success`, `error`, and `warning`.
  */
-export const Notification: React.FC<Props> = ({
+export const Notification = ({
   variant,
   title,
   icon,
   isFilled,
   children,
-}: NotificationProps) => {
+}: Props): JSX.Element => {
   const additionalClasses = [
     `Notification--${variant}`,
     ...(isFilled ? [`Notification--filled`] : []),

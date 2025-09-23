@@ -36,7 +36,7 @@ export interface Props
  *
  * `Link` with external `href` (starting with `http(s)` or `//`) will have attributes `rel="noreferrer noopener"` and `target="_blank"` automatically added.
  */
-export const Link: React.FC<Props> = ({
+export const Link = ({
   children,
   variant = "primary",
   size,
@@ -48,7 +48,7 @@ export const Link: React.FC<Props> = ({
   customAnchor,
   addlClassName,
   ...props
-}) => {
+}: Props): JSX.Element => {
   const { href, onClick } = props;
   const isExternalLink = href?.startsWith("http") || href?.startsWith("//");
 

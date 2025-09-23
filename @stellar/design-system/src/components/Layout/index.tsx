@@ -8,10 +8,10 @@ import { NavButton } from "../NavButton";
 import "./styles.scss";
 
 interface LayoutComponent {
-  Inset: React.FC<InsetProps>;
-  Content: React.FC<ContentProps>;
-  Header: React.FC<HeaderProps>;
-  Footer: React.FC<FooterProps>;
+  Inset: (props: InsetProps) => JSX.Element;
+  Content: (props: ContentProps) => JSX.Element;
+  Header: (props: HeaderProps) => JSX.Element;
+  Footer: (props: FooterProps) => JSX.Element;
 }
 
 /**
@@ -30,9 +30,11 @@ export interface InsetProps {
 /**
  * Inset defines width/max-width and horizontal margins. It is used in upper level block/section components to have consistent horizontal styling.
  */
-export const Inset: React.FC<InsetProps> = ({ children }: InsetProps) => (
+export const Inset = ({ children }: InsetProps): JSX.Element => (
   <div className="Layout__inset">{children}</div>
 );
+
+Inset.displayName = "Layout.Inset";
 
 /** */
 export interface ContentProps {
@@ -43,9 +45,11 @@ export interface ContentProps {
 /**
  * The page level content of the website (all other content goes in here). This content is on the same level as the header and footer.
  */
-export const Content: React.FC<ContentProps> = ({ children }: ContentProps) => (
+export const Content = ({ children }: ContentProps): JSX.Element => (
   <div className="Layout__content">{children}</div>
 );
+
+Content.displayName = "Layout.Content";
 
 /** */
 export interface HeaderProps {
@@ -86,7 +90,7 @@ const stringToCamelcase = (str: string) =>
 /**
  * The header of the website with the Stellar logo, project name, and theme switch.
  */
-export const Header: React.FC<HeaderProps> = ({
+export const Header = ({
   projectId,
   projectTitle,
   projectLink,
@@ -98,7 +102,7 @@ export const Header: React.FC<HeaderProps> = ({
   contentCenter,
   contentRight,
   disableSetThemeOnLoad,
-}: HeaderProps) => {
+}: HeaderProps): JSX.Element => {
   // Set default mode to light, if there is no theme toggle
   useEffect(() => {
     if (disableSetThemeOnLoad) {
@@ -156,6 +160,8 @@ export const Header: React.FC<HeaderProps> = ({
   );
 };
 
+Header.displayName = "Layout.Header";
+
 /** */
 export interface FooterProps {
   /** Set custom margin top */
@@ -175,14 +181,14 @@ export interface FooterProps {
 /**
  * Footer of the website with GitHub, Terms of Service, and Privacy Policy links.
  */
-export const Footer: React.FC<FooterProps> = ({
+export const Footer = ({
   marginTop,
   hideLegalLinks,
   hideTopBorder,
   gitHubLink,
   gitHubLabel,
   children,
-}: FooterProps) => {
+}: FooterProps): JSX.Element => {
   const customStyle = {
     ...(marginTop ? { "--Layout-footer-margin-top": marginTop } : {}),
     ...(hideTopBorder ? { "--Layout-footer-border-color": "transparent" } : {}),
@@ -229,11 +235,9 @@ export const Footer: React.FC<FooterProps> = ({
   );
 };
 
+Footer.displayName = "Layout.Footer";
+
 Layout.Inset = Inset;
-Layout.Inset.displayName = "Layout.Inset";
 Layout.Content = Content;
-Layout.Content.displayName = "Layout.Content";
 Layout.Header = Header;
-Layout.Header.displayName = "Layout.Header";
 Layout.Footer = Footer;
-Layout.Footer.displayName = "Layout.Footer";

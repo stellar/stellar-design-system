@@ -17,7 +17,7 @@ export const ThemeSwitch = ({
   storageKeyId,
   onActionEnd,
   disableSetThemeOnLoad,
-}: ThemeSwitchProps) => {
+}: ThemeSwitchProps): JSX.Element => {
   const isBrowser =
     typeof window !== "undefined" && typeof localStorage !== "undefined";
   const prefersDarkMode = isBrowser

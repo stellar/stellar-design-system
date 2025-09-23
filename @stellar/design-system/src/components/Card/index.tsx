@@ -16,12 +16,12 @@ export interface CardProps {
 /**
  * The `card` container has flexible dimensions for any type of content.
  */
-export const Card: React.FC<CardProps> = ({
+export const Card = ({
   children,
   variant = "primary",
   noPadding,
   borderRadiusSize = "md",
-}: CardProps) => {
+}: CardProps): JSX.Element => {
   const additionalClasses = [
     `Card--${variant}`,
     ...(borderRadiusSize !== "md" ? [`Card--radius-${borderRadiusSize}`] : []),

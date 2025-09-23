@@ -35,7 +35,7 @@ interface Props
 /**
  * The `Toggle` component is similar to `Checkbox` component, which allows you to toggle/switch between on and off states.
  */
-export const Toggle: React.FC<Props> = ({
+export const Toggle = ({
   id,
   checked,
   fieldSize,
@@ -45,7 +45,7 @@ export const Toggle: React.FC<Props> = ({
   iconChecked,
   iconUnchecked,
   title,
-}: Props) => {
+}: Props): JSX.Element => {
   const [checkedValue, setCheckedValue] = useState(checked);
 
   useEffect(() => {

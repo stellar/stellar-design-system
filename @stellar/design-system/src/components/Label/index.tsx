@@ -17,7 +17,7 @@ interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
   tooltipPlacement?: Placement;
 }
 
-export const Label: React.FC<LabelProps> = ({
+export const Label = ({
   children,
   htmlFor,
   size = "sm",
@@ -29,7 +29,7 @@ export const Label: React.FC<LabelProps> = ({
   infoLinkIcon = <Icon.BookOpen01 />,
   tooltipPlacement,
   ...props
-}: LabelProps) => {
+}: LabelProps): JSX.Element => {
   const additionalClasses = [
     `Label--${size}`,
     ...(isUppercase ? ["Label--uppercase"] : []),

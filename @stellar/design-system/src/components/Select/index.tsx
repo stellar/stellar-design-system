@@ -63,7 +63,7 @@ interface Props
 /**
  * The `Select` component is a form `select` element that inherits all native HTML `select` element attributes.
  */
-export const Select: React.FC<Props> = ({
+export const Select = ({
   id,
   fieldSize,
   children,
@@ -81,7 +81,7 @@ export const Select: React.FC<Props> = ({
   isError,
   customSelect,
   ...props
-}: Props) => {
+}: Props): JSX.Element => {
   const additionalClasses = [
     `Select--${fieldSize}`,
     ...(props.disabled ? ["Select--disabled"] : []),

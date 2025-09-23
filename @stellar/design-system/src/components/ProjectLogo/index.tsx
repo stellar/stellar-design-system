@@ -16,11 +16,11 @@ export interface ProjectLogoProps {
 /**
  * `ProjectLogo` contains the name of the project and its link and are displayed in the page header.
  */
-export const ProjectLogo: React.FC<ProjectLogoProps> = ({
+export const ProjectLogo = ({
   title,
   link = "/",
   customAnchor,
-}) => {
+}: ProjectLogoProps): JSX.Element => {
   const AnchorComponent = () => {
     const anchorProps = {
       href: link,

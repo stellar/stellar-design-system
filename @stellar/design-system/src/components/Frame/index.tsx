@@ -26,7 +26,12 @@ export interface FrameProps {
 /**
  * `Frame` is used to show an icon inside a container.
  */
-export const Frame: React.FC<FrameProps> = ({ variant, size, icon, shape }) => {
+export const Frame = ({
+  variant,
+  size,
+  icon,
+  shape,
+}: FrameProps): JSX.Element => {
   const additionalClasses = [
     `Frame--${variant}`,
     `Frame--${size}`,

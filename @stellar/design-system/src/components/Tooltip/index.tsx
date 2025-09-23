@@ -32,14 +32,14 @@ export interface TooltipProps {
 /**
  * `Tooltip` is used to display info in a bubble. We are using [Floating UI](https://floating-ui.com/) for tooltip positioning.
  */
-export const Tooltip: React.FC<TooltipProps> = ({
+export const Tooltip = ({
   triggerEl,
   title,
   children,
   placement = "right",
   isVisible,
   isContrast = true,
-}: TooltipProps) => (
+}: TooltipProps): JSX.Element => (
   <Floater
     placement={placement}
     triggerEl={triggerEl}

@@ -42,7 +42,7 @@ export const ColorPaletteThemeSwitcher = () => {
           id="color-palette-theme"
           fieldSize="sm"
           onChange={handleThemeChange}
-          value={currentTheme}
+          value={currentTheme || ""}
         >
           <option value="light">Light</option>
           <option value="dark">Dark</option>

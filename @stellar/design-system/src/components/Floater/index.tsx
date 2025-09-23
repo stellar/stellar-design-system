@@ -144,7 +144,7 @@ const getArrowStyle = ({
   }
 };
 
-export const Floater: React.FC<FloaterProps> = ({
+export const Floater = ({
   triggerEl,
   children,
   placement,
@@ -155,7 +155,7 @@ export const Floater: React.FC<FloaterProps> = ({
   isContrast = true,
   showArrow = false,
   callback,
-}: FloaterProps) => {
+}: FloaterProps): JSX.Element => {
   const parentRef = useRef<HTMLDivElement | null>(null);
   const floaterRef = useRef<HTMLDivElement | null>(null);
   const floaterArrowRef = useRef<HTMLDivElement | null>(null);

@@ -15,11 +15,11 @@ export interface BannerProps {
 /**
  * Use `Banner` to display messages at the top of the page, stretching across the whole width. There are five variants `primary`, `secondary`, `success`, `warning`, and `error`.
  */
-export const Banner: React.FC<BannerProps> = ({
+export const Banner = ({
   variant,
   icon = <Icon.InfoCircle />,
   children,
-}) => (
+}: BannerProps): JSX.Element => (
   <div className={`Banner Banner--${variant}`}>
     <div className="Banner__message Banner__content">
       <div className="Banner__icon">{icon}</div>
