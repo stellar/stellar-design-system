@@ -1,11 +1,10 @@
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import esbuild from "rollup-plugin-esbuild";
-import postcss from "rollup-plugin-postcss";
+import sass from "rollup-plugin-sass";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import url from "@rollup/plugin-url";
 import svgr from "@svgr/rollup";
-import postcssPresetEnv from "postcss-preset-env";
 import path from "path";
 
 export default {
@@ -29,21 +28,14 @@ export default {
     }),
     commonjs(),
     esbuild(),
-    postcss({
-      extract: path.resolve("build/styles.min.css"),
-      modules: false,
-      autoModules: true,
-      use: [
-        [
-          "sass",
-          {
-            includePaths: ["src"],
-          },
-        ],
-      ],
-      extensions: [".css, .scss"],
-      plugins: [postcssPresetEnv()],
-      minimize: true,
+    sass({
+      output: path.resolve("build/styles.min.css"),
+      options: {
+        includePaths: ["src"],
+        outputStyle: "compressed",
+        // We do not silence deprecation warnings, but it’s an option.
+        // silenceDeprecations: ["legacy-js-api"],
+      },
     }),
     url({
       destDir: "build/assets/",
