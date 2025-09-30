@@ -26,7 +26,7 @@
     "@docusaurus/remark-plugin-npm2yarn": "^3.8.1",
     "@docusaurus/theme-live-codeblock": "^3.8.1",
     "@mdx-js/react": "^3.1.1",
-    "@stellar/design-system": "^3.2.0",
+    "@stellar/design-system": "^3.2.1",
     "clsx": "^2.1.1",
     "prism-react-renderer": "^2.4.1",
     "react": "^19.1.1",
