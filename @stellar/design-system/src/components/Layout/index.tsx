@@ -8,17 +8,20 @@ import { NavButton } from "../NavButton";
 import "./styles.scss";
 
 interface LayoutComponent {
-  Inset: (props: InsetProps) => JSX.Element;
-  Content: (props: ContentProps) => JSX.Element;
-  Header: (props: HeaderProps) => JSX.Element;
-  Footer: (props: FooterProps) => JSX.Element;
+  Inset?: (props: InsetProps) => JSX.Element;
+  Content?: (props: ContentProps) => JSX.Element;
+  Header?: (props: HeaderProps) => JSX.Element;
+  Footer?: (props: FooterProps) => JSX.Element;
 }
 
 /**
  * Use the `Layout` component’s sub-components, such as `Content`, `Inset`, `Header`, and `Footer`, to build page layouts.
  */
-export const Layout: LayoutComponent = () => {
-  // do nothing
+export const Layout = {} as LayoutComponent & {
+  Inset: (props: InsetProps) => JSX.Element;
+  Content: (props: ContentProps) => JSX.Element;
+  Header: (props: HeaderProps) => JSX.Element;
+  Footer: (props: FooterProps) => JSX.Element;
 };
 
 /** */

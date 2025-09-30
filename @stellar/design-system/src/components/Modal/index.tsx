@@ -9,9 +9,9 @@ import "./styles.scss";
 const MODAL_OPEN_CLASS_NAME = "modal-open";
 
 interface ModalComponent {
-  Heading: (props: ModalHeadingProps) => JSX.Element;
-  Body: (props: ModalBodyProps) => JSX.Element;
-  Footer: (props: ModalFooterProps) => JSX.Element;
+  Heading?: (props: ModalHeadingProps) => JSX.Element;
+  Body?: (props: ModalBodyProps) => JSX.Element;
+  Footer?: (props: ModalFooterProps) => JSX.Element;
 }
 
 /** */
