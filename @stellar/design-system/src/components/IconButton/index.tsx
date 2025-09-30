@@ -24,7 +24,7 @@ interface Props
 /**
  * `IconButton` is similar to the {@link Button} component and is used to trigger an action. There are five variants (color is the only difference): `default`, `error`, `success`, `warning`, and `highlight`.
  */
-export const IconButton: React.FC<Props> = ({
+export const IconButton = ({
   icon,
   altText,
   label,
@@ -32,7 +32,7 @@ export const IconButton: React.FC<Props> = ({
   customColor,
   customSize,
   ...props
-}: Props) => {
+}: Props): JSX.Element => {
   const customStyle = {
     ...(customColor ? { "--IconButton-color": customColor } : {}),
     ...(customSize ? { "--IconButton-size": customSize } : {}),

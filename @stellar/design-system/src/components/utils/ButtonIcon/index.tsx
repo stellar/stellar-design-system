@@ -15,10 +15,10 @@ interface ButtonIconProps {
   children: React.ReactNode;
 }
 
-export const ButtonIcon: React.FC<ButtonIconProps> & ButtonIconComponent = ({
+export const ButtonIcon = ({
   position,
   children,
-}: ButtonIconProps) => (
+}: ButtonIconProps & ButtonIconComponent): JSX.Element => (
   <span className={`ButtonIcon ButtonIcon--${position}`}>{children}</span>
 );
 

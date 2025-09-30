@@ -16,7 +16,7 @@ export const PieProgress = ({
   failed,
   customSize,
   customBackgroundColor,
-}: PieProgressProps) => {
+}: PieProgressProps): JSX.Element => {
   if (process.env.NODE_ENV === "development" && passed + failed > total) {
     throw new Error("PieProgress: passed + failed is greater than total");
   }

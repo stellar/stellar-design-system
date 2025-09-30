@@ -50,14 +50,14 @@ export type CopyTextProps = (CopyTextVariantProps | CopyTextEllipsisProps) &
 /**
  * Use the `CopyText` component to copy a string. We’re using [react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard) to handle the copy part.
  */
-export const CopyText: React.FC<CopyTextProps> = ({
+export const CopyText = ({
   textToCopy,
   variant = "inline",
   doneLabel = "Copied",
   tooltipPlacement = "bottom",
   title = "Copy",
   children,
-}: CopyTextProps) => {
+}: CopyTextProps): JSX.Element => {
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
 
   const handleCopyDone = () => {
@@ -79,9 +79,12 @@ export const CopyText: React.FC<CopyTextProps> = ({
         isVisible={isTooltipVisible}
         triggerEl={
           <CopyToClipboard text={textToCopy} onCopy={handleCopyDone}>
-            {cloneElement(children as React.ReactElement, {
-              title,
-            })}
+            {cloneElement(
+              children as React.ReactElement,
+              {
+                title,
+              } as React.HTMLAttributes<HTMLElement>,
+            )}
           </CopyToClipboard>
         }
         placement={tooltipPlacement}

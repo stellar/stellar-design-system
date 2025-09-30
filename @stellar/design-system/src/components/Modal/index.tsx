@@ -9,9 +9,9 @@ import "./styles.scss";
 const MODAL_OPEN_CLASS_NAME = "modal-open";
 
 interface ModalComponent {
-  Heading: React.FC<ModalHeadingProps>;
-  Body: React.FC<ModalBodyProps>;
-  Footer: React.FC<ModalFooterProps>;
+  Heading: (props: ModalHeadingProps) => JSX.Element;
+  Body: (props: ModalBodyProps) => JSX.Element;
+  Footer: (props: ModalFooterProps) => JSX.Element;
 }
 
 /** */
@@ -20,13 +20,13 @@ export interface ModalHeadingProps {
   children: string | React.ReactNode;
 }
 
-const ModalHeading: React.FC<ModalHeadingProps> = ({
-  children,
-}: ModalHeadingProps) => (
+const ModalHeading = ({ children }: ModalHeadingProps): JSX.Element => (
   <Heading as="h2" size="md" className="ModalHeading">
     {children}
   </Heading>
 );
+
+ModalHeading.displayName = "Modal.Heading";
 
 /** */
 export interface ModalBodyProps {
@@ -34,9 +34,11 @@ export interface ModalBodyProps {
   children: React.ReactNode;
 }
 
-const ModalBody: React.FC<ModalBodyProps> = ({ children }: ModalBodyProps) => (
+const ModalBody = ({ children }: ModalBodyProps): JSX.Element => (
   <div className="ModalBody">{children}</div>
 );
+
+ModalBody.displayName = "Modal.Body";
 
 /** */
 export interface ModalFooterProps {
@@ -46,12 +48,14 @@ export interface ModalFooterProps {
   itemAlignment?: "right" | "stretch" | "stack";
 }
 
-const ModalFooter: React.FC<ModalFooterProps> = ({
+const ModalFooter = ({
   children,
   itemAlignment = "right",
-}: ModalFooterProps) => (
+}: ModalFooterProps): JSX.Element => (
   <div className={`ModalFooter ModalFooter--${itemAlignment}`}>{children}</div>
 );
+
+ModalFooter.displayName = "Modal.Footer";
 
 /** */
 export interface ModalProps {
@@ -76,7 +80,7 @@ export interface ModalProps {
  *
  * Modal sub-components `Modal.Heading`, `Modal.Body`, and `Modal.Footer` help structure the modal content.
  */
-export const Modal: React.FC<ModalProps> & ModalComponent = ({
+export const Modal = ({
   parentId = "root",
   visible,
   onClose,
@@ -84,7 +88,7 @@ export const Modal: React.FC<ModalProps> & ModalComponent = ({
   offsetTop,
   alignToBottom,
   children,
-}: ModalProps) => {
+}: ModalProps & ModalComponent): JSX.Element | null => {
   const parent = document.getElementById(parentId);
 
   const customStyle = {
@@ -144,9 +148,7 @@ export const Modal: React.FC<ModalProps> & ModalComponent = ({
 };
 
 Modal.displayName = "Modal";
+
 Modal.Heading = ModalHeading;
-Modal.Heading.displayName = "Modal.Heading";
 Modal.Body = ModalBody;
-Modal.Body.displayName = "Modal.Body";
 Modal.Footer = ModalFooter;
-Modal.Footer.displayName = "Modal.Footer";

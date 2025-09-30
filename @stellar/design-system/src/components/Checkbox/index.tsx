@@ -31,7 +31,7 @@ interface Props
 /**
  * The `checkbox` component is a form input element that allows you to select single values for submission. All native HTML `checkbox` input attributes apply.
  */
-export const Checkbox: React.FC<Props> = ({
+export const Checkbox = ({
   id,
   fieldSize,
   label,
@@ -40,7 +40,7 @@ export const Checkbox: React.FC<Props> = ({
   success,
   isError,
   ...props
-}: Props) => {
+}: Props): JSX.Element => {
   const additionalClasses = [
     `Checkbox--${fieldSize}`,
     ...(props.disabled ? ["Checkbox--disabled"] : []),

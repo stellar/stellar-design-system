@@ -39,12 +39,12 @@ export type AssetProps = (SingleAssetProps | MultiAssetProps) & AssetBaseProps;
 /**
  * An asset image displayed in a circle from a URL source. The component can accept multiple sources to show a currency pair, for example.
  */
-export const Asset: React.FC<AssetProps> = ({
+export const Asset = ({
   variant,
   size,
   sourceOne,
   sourceTwo,
-}: AssetProps) => {
+}: AssetProps): JSX.Element => {
   const additionalClasses = [`Asset--${variant}`, `Asset--${size}`].join(" ");
 
   const renderImage = (source: AssetSource) => {

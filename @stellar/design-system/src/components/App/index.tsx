@@ -11,7 +11,7 @@ export interface AppProps {
 /**
  * `App` shows an app’s logo.
  */
-export const App: React.FC<AppProps> = ({ app, size }) => {
+export const App = ({ app, size }: AppProps): JSX.Element | null => {
   const appData = APP_DATA[app];
 
   if (!appData) {

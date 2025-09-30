@@ -20,14 +20,14 @@ export interface NavButtonProps {
 /**
  * `NavButton` triggers actions like toggling dark and light mode, closing a modal, and toggling side navigation.
  */
-export const NavButton: React.FC<NavButtonProps> = ({
+export const NavButton = ({
   id,
   title,
   onClick,
   icon,
   disabled,
   showBorder,
-}: NavButtonProps) => (
+}: NavButtonProps): JSX.Element => (
   <button
     id={id}
     className={`NavButton ${showBorder ? "NavButton--border" : ""}`}

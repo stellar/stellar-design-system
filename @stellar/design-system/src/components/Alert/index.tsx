@@ -43,7 +43,7 @@ export type AlertActionLink = {
 export type AlertProps = (AlertActionButton | AlertActionLink) & AlertBaseProps;
 
 /** Display an alert message inline or at the bottom of the page */
-export const Alert: React.FC<AlertProps> = ({
+export const Alert = ({
   variant,
   placement,
   title,
@@ -53,7 +53,7 @@ export const Alert: React.FC<AlertProps> = ({
   actionLabel = "Action",
   icon = <Icon.InfoCircle />,
   children,
-}: AlertProps) => {
+}: AlertProps): JSX.Element => {
   if (placement === "bottom" && actionLink) {
     throw Error(
       "Bottom alert cannot use `actionLink` because it's a button. Use `onAction` instead.",

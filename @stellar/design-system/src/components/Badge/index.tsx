@@ -30,7 +30,7 @@ export interface BadgeProps {
 /**
  * `Badge` is used to label or categorize an item or show status. There are five variants: `primary`, `secondary`, `tertiary`, `success`, `warning`, and `error`.
  */
-export const Badge: React.FC<BadgeProps> = ({
+export const Badge = ({
   variant = "primary",
   size = "sm",
   isOutlined,
@@ -39,7 +39,7 @@ export const Badge: React.FC<BadgeProps> = ({
   iconPosition = "right",
   isStatus,
   children,
-}) => {
+}: BadgeProps): JSX.Element => {
   const additionalClasses = [
     `Badge--${variant}`,
     `Badge--${size}`,

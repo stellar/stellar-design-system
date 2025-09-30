@@ -68,7 +68,7 @@ export const ComponentProps = ({
 
   const props = component?.children?.map((p) => <PropRow p={p} />);
 
-  const relatedTypeProps = relatedTypes?.map((t) => {
+  const relatedTypeProps = relatedTypes?.map((t: any) => {
     const props = t.children || t?.type?.declaration?.children;
 
     return (

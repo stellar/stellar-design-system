@@ -17,12 +17,12 @@ export interface PaginationProps {
 /**
  * Pagination provides a range of pages to display long lists of data.
  */
-export const Pagination: React.FC<PaginationProps> = ({
+export const Pagination = ({
   pageSize,
   itemCount,
   currentPage,
   setCurrentPage,
-}: PaginationProps) => {
+}: PaginationProps): JSX.Element | null => {
   if (!pageSize || !itemCount) {
     return null;
   }

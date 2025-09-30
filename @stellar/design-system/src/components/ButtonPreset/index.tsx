@@ -38,7 +38,7 @@ const presetDetails = {
  * `ButtonPreset` is similar to the {@link Button} component, and is used to trigger an action. There are two presets: `copy` and `download` and two variants
  * for color: `default` and `highlight`.
  */
-export const ButtonPreset: React.FC<Props> = ({
+export const ButtonPreset = ({
   altText,
   label,
   variant = "default",
@@ -46,7 +46,7 @@ export const ButtonPreset: React.FC<Props> = ({
   customColor,
   customSize,
   ...props
-}: Props) => {
+}: Props): JSX.Element => {
   const customStyle = {
     ...(customColor ? { "--IconButton-color": customColor } : {}),
     ...(customSize ? { "--IconButton-size": customSize } : {}),

@@ -77,7 +77,7 @@ interface Props
 /**
  * The `Input` component is a form input element that inherits all native HTML `input` element attributes.
  */
-export const Input: React.FC<Props> = ({
+export const Input = ({
   customInput,
   id,
   label,
@@ -98,7 +98,7 @@ export const Input: React.FC<Props> = ({
   infoLinkIcon = <Icon.BookOpen01 />,
   tooltipPlacement,
   ...props
-}: Props) => {
+}: Props): JSX.Element => {
   const [isPasswordMasked, setIsPasswordMasked] = useState(true);
 
   const additionalClasses = [

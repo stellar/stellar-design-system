@@ -29,7 +29,7 @@ export interface ProfileProps {
 /**
  * The `Profile` component shows an avatar with a Stellar address.
  */
-export const Profile: React.FC<ProfileProps> = ({
+export const Profile = ({
   publicAddress,
   size,
   federatedAddress,
@@ -39,7 +39,7 @@ export const Profile: React.FC<ProfileProps> = ({
   hideAvatar,
   isCopy,
   customAnchor,
-}: ProfileProps) => {
+}: ProfileProps): JSX.Element => {
   const address = federatedAddress ?? publicAddress;
   const additionalClasses = [
     `Profile--${size}`,
@@ -63,7 +63,7 @@ export const Profile: React.FC<ProfileProps> = ({
       return <button {...componentProps} onClick={onClick} />;
     } else if (href) {
       if (customAnchor) {
-        return cloneElement(customAnchor, { ...componentProps, href });
+        return cloneElement(customAnchor, { ...componentProps, href } as any);
       }
       // eslint-disable-next-line jsx-a11y/anchor-has-content
       return <a {...componentProps} href={href} />;
