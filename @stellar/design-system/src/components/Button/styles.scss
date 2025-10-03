@@ -289,7 +289,7 @@
   &--sm {
     --Button-height: #{pxToRem(26px)};
     --Button-font-size: #{pxToRem(12px)};
-    --Button-line-height: #{pxToRem(18px)};
+    --Button-line-height: #{pxToRem(20px)};
     --Button-padding-vertical: #{pxToRem(4px)};
     --Button-padding-horizontal: #{pxToRem(8px)};
     --Button-border-radius: #{pxToRem(4px)};
@@ -298,7 +298,7 @@
   &--md {
     --Button-height: #{pxToRem(32px)};
     --Button-font-size: #{pxToRem(14px)};
-    --Button-line-height: #{pxToRem(20px)};
+    --Button-line-height: #{pxToRem(22px)};
     --Button-padding-vertical: #{pxToRem(6px)};
     --Button-padding-horizontal: #{pxToRem(10px)};
     --Button-border-radius: #{pxToRem(6px)};
@@ -306,8 +306,8 @@
 
   &--lg {
     --Button-height: #{pxToRem(40px)};
-    --Button-font-size: #{pxToRem(16px)};
-    --Button-line-height: #{pxToRem(24px)};
+    --Button-font-size: #{pxToRem(14px)};
+    --Button-line-height: #{pxToRem(22px)};
     --Button-padding-vertical: #{pxToRem(8px)};
     --Button-padding-horizontal: #{pxToRem(12px)};
     --Button-border-radius: #{pxToRem(8px)};
