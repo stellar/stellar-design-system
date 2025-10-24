@@ -29,8 +29,8 @@
     "@stellar/design-system": "^3.2.4",
     "clsx": "^2.1.1",
     "prism-react-renderer": "^2.4.1",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "react-element-to-jsx-string": "^17.0.1",
     "rehype-parse": "^9.0.1",
     "rehype-react": "^8.0.0",
@@ -40,7 +40,7 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.9.2",
     "@docusaurus/tsconfig": "^3.9.2",
-    "eslint": "^9.36.0",
+    "eslint": "^9.38.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
@@ -48,7 +48,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-webpack-plugin": "^5.0.2",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   },
   "browserslist": {
     "production": [
