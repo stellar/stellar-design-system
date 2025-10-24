@@ -1,5 +1,5 @@
 import React, { cloneElement, useState } from "react";
-import CopyToClipboard from "react-copy-to-clipboard";
+import { CopyToClipboard } from "react-copy-to-clipboard-ts";
 import { Tooltip } from "../Tooltip";
 import "./styles.scss";
 
@@ -48,7 +48,7 @@ export type CopyTextProps = (CopyTextVariantProps | CopyTextEllipsisProps) &
   CopyTextBaseProps;
 
 /**
- * Use the `CopyText` component to copy a string. We’re using [react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard) to handle the copy part.
+ * Use the `CopyText` component to copy a string. We’re using [react-copy-to-clipboard-ts](https://github.com/t0yohei/react-copy-to-clipboard-ts) to handle the copy part.
  */
 export const CopyText = ({
   textToCopy,
@@ -79,12 +79,14 @@ export const CopyText = ({
         isVisible={isTooltipVisible}
         triggerEl={
           <CopyToClipboard text={textToCopy} onCopy={handleCopyDone}>
-            {cloneElement(
-              children as React.ReactElement,
-              {
-                title,
-              } as React.HTMLAttributes<HTMLElement>,
-            )}
+            <>
+              {cloneElement(
+                children as React.ReactElement,
+                {
+                  title,
+                } as React.HTMLAttributes<HTMLElement>,
+              )}
+            </>
           </CopyToClipboard>
         }
         placement={tooltipPlacement}
