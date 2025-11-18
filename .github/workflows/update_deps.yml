@@ -24,5 +24,6 @@ jobs:
           pinned: false
           close-previous: true
           labels: "design-system, dependencies"
+          project: 50
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
