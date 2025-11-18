@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directories: 
+    directories:
       - "/"
       - "/@stellar/design-system"
       - "/@stellar/design-system-website"
@@ -10,16 +10,15 @@ updates:
       day: "sunday"
       time: "02:00"
     open-pull-requests-limit: 2
-    groups:
-      minor-and-patch:
-        applies-to: version-updates
+    ignore:
+      - dependency-name: "*"
         update-types:
-        - "patch"
-        - "minor"
+          ["version-update:semver-minor", "version-update:semver-patch"]
+    groups:
       major:
         applies-to: version-updates
         update-types:
-        - "major"
+          - "major"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -30,7 +29,7 @@ updates:
     groups:
       all-actions:
         applies-to: version-updates
-        patterns: [ "*" ]
+        patterns: ["*"]
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
@@ -41,4 +40,4 @@ updates:
     groups:
       all-docker:
         applies-to: version-updates
-        patterns: [ "*" ]
+        patterns: ["*"]
