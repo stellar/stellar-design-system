@@ -70,12 +70,7 @@ const getArrowStyle = ({
   floaterX?: number;
   floaterY?: number;
 }) => {
-  const basePos = {
-    top: "auto",
-    bottom: "auto",
-    left: "auto",
-    right: "auto",
-  };
+  const basePos = { top: "auto", bottom: "auto", left: "auto", right: "auto" };
 
   const actualPlacement = getActualTooltipPlacement(
     placement,
@@ -85,22 +80,11 @@ const getArrowStyle = ({
 
   switch (actualPlacement) {
     case "top":
-      return {
-        ...basePos,
-        right: `${x}px`,
-        transform: "rotate(180deg)",
-      };
+      return { ...basePos, right: `${x}px`, transform: "rotate(180deg)" };
     case "top-start":
-      return {
-        ...basePos,
-        transform: "rotate(180deg)",
-      };
+      return { ...basePos, transform: "rotate(180deg)" };
     case "top-end":
-      return {
-        ...basePos,
-        right: "0px",
-        transform: "rotate(180deg)",
-      };
+      return { ...basePos, right: "0px", transform: "rotate(180deg)" };
     case "bottom":
       return {
         ...basePos,
@@ -109,11 +93,7 @@ const getArrowStyle = ({
         transform: "rotate(0deg)",
       };
     case "bottom-start":
-      return {
-        ...basePos,
-        top: "-12px",
-        transform: "rotate(0deg)",
-      };
+      return { ...basePos, top: "-12px", transform: "rotate(0deg)" };
     case "bottom-end":
       return {
         ...basePos,
@@ -187,12 +167,13 @@ export const Floater = ({
           },
         );
 
-        Object.assign(floaterRef.current.style, {
-          left: `${x}px`,
-          top: `${y}px`,
-          transform: "translateX(0)",
-        });
-
+        if (floaterRef.current?.style) {
+          Object.assign(floaterRef.current.style, {
+            left: `${x}px`,
+            top: `${y}px`,
+            transform: "translateX(0)",
+          });
+        }
         if (arrowEl && middlewareData.arrow) {
           const { x: arrowX, y: arrowY } = middlewareData.arrow;
 
