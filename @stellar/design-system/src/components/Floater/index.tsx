@@ -1,4 +1,4 @@
-import {
+import React, {
   useCallback,
   useLayoutEffect,
   useState,
@@ -272,8 +272,8 @@ export const Floater = ({
           ? triggerEl
           : cloneElement(triggerEl, {
               // Add floater click action
-              onClick: toggleFloater,
-            } as any)}
+              onClick: () => toggleFloater(!isFloaterOpen),
+            } as Partial<React.HTMLAttributes<HTMLElement>>)}
       </>
       <div
         ref={floaterRef}

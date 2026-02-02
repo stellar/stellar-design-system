@@ -1,3 +1,4 @@
+import React from "react";
 import "./styles.scss";
 
 // TODO: remove component?
@@ -17,6 +18,21 @@ export const PieProgress = ({
   customSize,
   customBackgroundColor,
 }: PieProgressProps): React.ReactElement => {
+  if (
+    typeof globalThis !== "undefined" &&
+    (globalThis as any).process?.env?.NODE_ENV !== "production"
+  ) {
+    if (passed + failed > total) {
+      // eslint-disable-next-line no-console
+      console.error(
+        "[PieProgress] Invalid props: passed (%d) + failed (%d) must not exceed total (%d).",
+        passed,
+        failed,
+        total,
+      );
+    }
+  }
+
   const passedPercentage = Math.round((passed / total) * 100);
   const failedPercentage = Math.round((failed / total) * 100);
   const backgroundPieces = `conic-gradient(

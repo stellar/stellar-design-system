@@ -1,3 +1,4 @@
+import React from "react";
 import { Floater } from "../Floater";
 import "./styles.scss";
 

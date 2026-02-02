@@ -1,3 +1,4 @@
+import React from "react";
 import { IconButton } from "../IconButton";
 import { Icon } from "../../icons";
 import "./styles.scss";

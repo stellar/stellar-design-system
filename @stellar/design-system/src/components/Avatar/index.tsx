@@ -1,3 +1,4 @@
+import React from "react";
 import { createStellarIdenticon } from "../../helpers/createStellarIdenticon";
 import { Icon } from "../../icons";
 import "./styles.scss";

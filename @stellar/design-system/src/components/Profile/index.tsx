@@ -1,4 +1,4 @@
-import { cloneElement } from "react";
+import React, { cloneElement } from "react";
 import { Avatar } from "../Avatar";
 import { CopyText } from "../CopyText";
 import { Icon } from "../../icons";
