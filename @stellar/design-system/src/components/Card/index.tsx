@@ -21,7 +21,7 @@ export const Card = ({
   variant = "primary",
   noPadding,
   borderRadiusSize = "md",
-}: CardProps): JSX.Element => {
+}: CardProps): React.ReactElement => {
   const additionalClasses = [
     `Card--${variant}`,
     ...(borderRadiusSize !== "md" ? [`Card--radius-${borderRadiusSize}`] : []),

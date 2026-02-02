@@ -39,8 +39,7 @@ export interface ButtonProps {
 }
 
 interface Props
-  extends ButtonProps,
-    React.ButtonHTMLAttributes<HTMLButtonElement> {}
+  extends ButtonProps, React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 /**
  * `Button` is used to trigger an action that is not opening a link (to trigger an action that opens a link, use {@link Link}
@@ -59,7 +58,7 @@ export const Button = ({
   actionTooltipText = "Done",
   actionTooltipPlacement = "bottom",
   ...props
-}: Props): JSX.Element => {
+}: Props): React.ReactElement => {
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
 
   useEffect(() => {

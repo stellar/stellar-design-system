@@ -40,7 +40,7 @@ export const Avatar = ({
   size,
   publicAddress,
   userName,
-}: AvatarProps): JSX.Element => {
+}: AvatarProps): React.ReactElement => {
   const getInitials = (userName: string) => {
     const arr = userName.split(" ");
 

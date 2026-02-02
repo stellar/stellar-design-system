@@ -19,7 +19,7 @@ export const Banner = ({
   variant,
   icon = <Icon.InfoCircle />,
   children,
-}: BannerProps): JSX.Element => (
+}: BannerProps): React.ReactElement => (
   <div className={`Banner Banner--${variant}`}>
     <div className="Banner__message Banner__content">
       <div className="Banner__icon">{icon}</div>

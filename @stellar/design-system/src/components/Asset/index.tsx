@@ -44,7 +44,7 @@ export const Asset = ({
   size,
   sourceOne,
   sourceTwo,
-}: AssetProps): JSX.Element => {
+}: AssetProps): React.ReactElement => {
   const additionalClasses = [`Asset--${variant}`, `Asset--${size}`].join(" ");
 
   const renderImage = (source: AssetSource) => {

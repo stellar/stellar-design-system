@@ -11,7 +11,7 @@ export const FieldNote = ({
   variant = "note",
   size,
   children,
-}: FieldNoteProps): JSX.Element => (
+}: FieldNoteProps): React.ReactElement => (
   <div className={`FieldNote FieldNote--${variant} FieldNote--${size}`}>
     {children}
   </div>

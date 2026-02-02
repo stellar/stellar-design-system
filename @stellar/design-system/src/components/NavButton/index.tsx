@@ -27,7 +27,7 @@ export const NavButton = ({
   icon,
   disabled,
   showBorder,
-}: NavButtonProps): JSX.Element => (
+}: NavButtonProps): React.ReactElement => (
   <button
     id={id}
     className={`NavButton ${showBorder ? "NavButton--border" : ""}`}

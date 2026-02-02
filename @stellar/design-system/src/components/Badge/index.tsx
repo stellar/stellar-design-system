@@ -39,7 +39,7 @@ export const Badge = ({
   iconPosition = "right",
   isStatus,
   children,
-}: BadgeProps): JSX.Element => {
+}: BadgeProps): React.ReactElement => {
   const additionalClasses = [
     `Badge--${variant}`,
     `Badge--${size}`,

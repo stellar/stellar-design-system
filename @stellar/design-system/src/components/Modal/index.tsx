@@ -9,9 +9,9 @@ import "./styles.scss";
 const MODAL_OPEN_CLASS_NAME = "modal-open";
 
 interface ModalComponent {
-  Heading?: (props: ModalHeadingProps) => JSX.Element;
-  Body?: (props: ModalBodyProps) => JSX.Element;
-  Footer?: (props: ModalFooterProps) => JSX.Element;
+  Heading?: (props: ModalHeadingProps) => React.ReactElement;
+  Body?: (props: ModalBodyProps) => React.ReactElement;
+  Footer?: (props: ModalFooterProps) => React.ReactElement;
 }
 
 /** */
@@ -20,7 +20,7 @@ export interface ModalHeadingProps {
   children: string | React.ReactNode;
 }
 
-const ModalHeading = ({ children }: ModalHeadingProps): JSX.Element => (
+const ModalHeading = ({ children }: ModalHeadingProps): React.ReactElement => (
   <Heading as="h2" size="md" className="ModalHeading">
     {children}
   </Heading>
@@ -34,7 +34,7 @@ export interface ModalBodyProps {
   children: React.ReactNode;
 }
 
-const ModalBody = ({ children }: ModalBodyProps): JSX.Element => (
+const ModalBody = ({ children }: ModalBodyProps): React.ReactElement => (
   <div className="ModalBody">{children}</div>
 );
 
@@ -51,7 +51,7 @@ export interface ModalFooterProps {
 const ModalFooter = ({
   children,
   itemAlignment = "right",
-}: ModalFooterProps): JSX.Element => (
+}: ModalFooterProps): React.ReactElement => (
   <div className={`ModalFooter ModalFooter--${itemAlignment}`}>{children}</div>
 );
 
@@ -88,7 +88,7 @@ export const Modal = ({
   offsetTop,
   alignToBottom,
   children,
-}: ModalProps & ModalComponent): JSX.Element | null => {
+}: ModalProps & ModalComponent): React.ReactElement | null => {
   const parent = document.getElementById(parentId);
 
   const customStyle = {

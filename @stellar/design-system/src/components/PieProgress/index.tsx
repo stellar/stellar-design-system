@@ -16,11 +16,7 @@ export const PieProgress = ({
   failed,
   customSize,
   customBackgroundColor,
-}: PieProgressProps): JSX.Element => {
-  if (process.env.NODE_ENV === "development" && passed + failed > total) {
-    throw new Error("PieProgress: passed + failed is greater than total");
-  }
-
+}: PieProgressProps): React.ReactElement => {
   const passedPercentage = Math.round((passed / total) * 100);
   const failedPercentage = Math.round((failed / total) * 100);
   const backgroundPieces = `conic-gradient(

@@ -31,7 +31,7 @@ export const Frame = ({
   size,
   icon,
   shape,
-}: FrameProps): JSX.Element => {
+}: FrameProps): React.ReactElement => {
   const additionalClasses = [
     `Frame--${variant}`,
     `Frame--${size}`,

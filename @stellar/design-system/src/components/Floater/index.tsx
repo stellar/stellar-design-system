@@ -20,8 +20,8 @@ import "./styles.scss";
 export type FloaterPlacement = Placement;
 
 interface FloaterProps {
-  triggerEl: JSX.Element;
-  children: JSX.Element | JSX.Element[];
+  triggerEl: React.ReactElement;
+  children: React.ReactElement | React.ReactElement[];
   placement: FloaterPlacement;
   isVisible?: boolean;
   offset?: number;
@@ -135,7 +135,7 @@ export const Floater = ({
   isContrast = true,
   showArrow = false,
   callback,
-}: FloaterProps): JSX.Element => {
+}: FloaterProps): React.ReactElement => {
   const parentRef = useRef<HTMLDivElement | null>(null);
   const floaterRef = useRef<HTMLDivElement | null>(null);
   const floaterArrowRef = useRef<HTMLDivElement | null>(null);
@@ -273,7 +273,7 @@ export const Floater = ({
           : cloneElement(triggerEl, {
               // Add floater click action
               onClick: toggleFloater,
-            })}
+            } as any)}
       </>
       <div
         ref={floaterRef}

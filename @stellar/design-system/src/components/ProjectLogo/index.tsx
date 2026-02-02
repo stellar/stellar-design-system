@@ -20,7 +20,7 @@ export const ProjectLogo = ({
   title,
   link = "/",
   customAnchor,
-}: ProjectLogoProps): JSX.Element => {
+}: ProjectLogoProps): React.ReactElement => {
   const AnchorComponent = () => {
     const anchorProps = {
       href: link,

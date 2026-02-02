@@ -52,7 +52,7 @@ export const Table = <T extends Record<string, any>>({
   isLoading,
   emptyMessage = "No data to show",
   pageSize,
-}: TableProps<T>): JSX.Element => {
+}: TableProps<T>): React.ReactElement => {
   const chunkData = useCallback(
     (items: T[]) => chunk(items, pageSize || items.length),
     [pageSize],

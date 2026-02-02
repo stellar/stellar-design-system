@@ -57,7 +57,7 @@ export const CopyText = ({
   tooltipPlacement = "bottom",
   title = "Copy",
   children,
-}: CopyTextProps): JSX.Element => {
+}: CopyTextProps): React.ReactElement => {
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
 
   const handleCopyDone = () => {

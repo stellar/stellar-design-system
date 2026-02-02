@@ -53,7 +53,7 @@ export const Alert = ({
   actionLabel = "Action",
   icon = <Icon.InfoCircle />,
   children,
-}: AlertProps): JSX.Element => {
+}: AlertProps): React.ReactElement => {
   if (placement === "bottom" && actionLink) {
     throw Error(
       "Bottom alert cannot use `actionLink` because it's a button. Use `onAction` instead.",

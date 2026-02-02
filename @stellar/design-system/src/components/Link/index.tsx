@@ -28,8 +28,7 @@ export interface LinkProps {
 }
 
 export interface Props
-  extends LinkProps,
-    React.AnchorHTMLAttributes<HTMLAnchorElement> {}
+  extends LinkProps, React.AnchorHTMLAttributes<HTMLAnchorElement> {}
 
 /**
  * The `Link` component is a styled HTML anchor (`a`) element. Use `Link` to open links or to navigate to other pages.
@@ -48,7 +47,7 @@ export const Link = ({
   customAnchor,
   addlClassName,
   ...props
-}: Props): JSX.Element => {
+}: Props): React.ReactElement => {
   const { href, onClick } = props;
   const isExternalLink = href?.startsWith("http") || href?.startsWith("//");
 

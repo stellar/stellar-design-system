@@ -18,8 +18,7 @@ export interface IconButtonProps {
 }
 
 interface Props
-  extends IconButtonProps,
-    React.ButtonHTMLAttributes<HTMLButtonElement> {}
+  extends IconButtonProps, React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 /**
  * `IconButton` is similar to the {@link Button} component and is used to trigger an action. There are five variants (color is the only difference): `default`, `error`, `success`, `warning`, and `highlight`.
@@ -32,7 +31,7 @@ export const IconButton = ({
   customColor,
   customSize,
   ...props
-}: Props): JSX.Element => {
+}: Props): React.ReactElement => {
   const customStyle = {
     ...(customColor ? { "--IconButton-color": customColor } : {}),
     ...(customSize ? { "--IconButton-size": customSize } : {}),
