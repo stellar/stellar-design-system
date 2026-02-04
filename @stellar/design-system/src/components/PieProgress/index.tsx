@@ -19,18 +19,11 @@ export const PieProgress = ({
   customBackgroundColor,
 }: PieProgressProps): React.ReactElement => {
   if (
-    typeof globalThis !== "undefined" &&
-    (globalThis as any).process?.env?.NODE_ENV !== "production"
+    typeof process !== "undefined" &&
+    process.env.NODE_ENV === "development" &&
+    passed + failed > total
   ) {
-    if (passed + failed > total) {
-      // eslint-disable-next-line no-console
-      console.error(
-        "[PieProgress] Invalid props: passed (%d) + failed (%d) must not exceed total (%d).",
-        passed,
-        failed,
-        total,
-      );
-    }
+    throw new Error("PieProgress: passed + failed is greater than total");
   }
 
   const passedPercentage = Math.round((passed / total) * 100);

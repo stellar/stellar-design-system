@@ -53,3 +53,44 @@ This project is tested with
 `clean` delete `node_modules` and `build` directories in the whole repo
 
 **Note** You need to run each `start` command in its own window or tab.
+
+### Test Locally Before Publishing
+
+- For updates that touch many files, ensure everything works locally before
+  publishing.
+- Recommended workflow:
+  1. Build SDS: Run `yarn build:sds` in the root directory.
+  2. In your consuming project (e.g., Lab), remove the installed SDS package
+     from `node_modules`.
+  3. Start the consuming project and confirm it errors due to missing SDS.
+  4. Copy the freshly built SDS files from `@stellar/design-system/build` and
+     paste them into the corresponding
+     `node_modules/@stellar/design-system/build` directory of the consuming
+     project.
+  5. Verify the consuming project works as expected with the new build.
+
+### Release Process
+
+To release a new version of the Stellar Design System (SDS) to npm:
+
+1. **Bump the Version**
+
+- For dependency updates or minor changes, bump the patch version in
+  `@stellar/design-system/package.json`.
+- For reference, see
+  [this example PR](https://github.com/stellar/stellar-design-system/pull/326/changes/07f9a7860dc1888138a1f24340a5566a3f826916).
+
+3. **Publish to npm**
+
+- After verifying locally, publish the new version to npm from the
+  `@stellar/design-system` directory:
+  ```bash
+  cd @stellar/design-system
+  npm publish
+  ```
+
+4. **Update Consuming Projects**
+
+- Update the SDS version in any consuming projects and verify integration.
+
+**Note:** Always ensure all tests pass and the build is clean before publishing.
