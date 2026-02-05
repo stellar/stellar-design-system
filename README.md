@@ -91,6 +91,6 @@ To release a new version of the Stellar Design System (SDS) to npm:
 
 4. **Update Consuming Projects**
 
-- Update the SDS version in any consuming projects and verify integration.
+- Once the new version is available on npm, you can update the SDS version in any consuming projects and verify integration.
 
 **Note:** Always ensure all tests pass and the build is clean before publishing.
