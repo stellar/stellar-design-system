@@ -75,22 +75,26 @@ To release a new version of the Stellar Design System (SDS) to npm:
 
 1. **Bump the Version**
 
-- For non-breaking dependency updates or minor changes, bump the patch version in
-  `@stellar/design-system/package.json`.
+- For non-breaking dependency updates or minor changes, bump the patch version
+  in `@stellar/design-system/package.json`.
 - For reference, see
   [this example PR](https://github.com/stellar/stellar-design-system/pull/326/changes/07f9a7860dc1888138a1f24340a5566a3f826916).
 
 3. **Publish to npm**
 
-- After verifying locally, publish the new version to npm from the
-  `@stellar/design-system` directory:
-  ```bash
-  cd @stellar/design-system
-  npm publish
-  ```
+1. Start drafting a new release on
+   [New release](https://github.com/stellar/stellar-design-system/releases/new)
+   page on GitHub.
+1. Create a new tag matching the new version of SDS (for example, v3.2.7).
+1. Set the Release title matching the tag.
+1. Add release notes. You can start by automatically generating the release
+   notes and tweaking if necessary.
+1. Make sure "Set as the latest release" is checked.
+1. Click "Publish release" button, which will trigger the release workflow.
 
-4. **Update Consuming Projects**
+1. **Update Consuming Projects**
 
-- Once the new version is available on npm, you can update the SDS version in any consuming projects and verify integration.
+- Once the new version is available on npm, you can update the SDS version in
+  any consuming projects and verify integration.
 
 **Note:** Always ensure all tests pass and the build is clean before publishing.
