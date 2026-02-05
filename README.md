@@ -69,7 +69,7 @@ This project is tested with
      project.
   5. Verify the consuming project works as expected with the new build.
 
-### Release Process
+## Release Process
 
 To release a new version of the Stellar Design System (SDS) to npm:
 
