@@ -75,7 +75,7 @@ To release a new version of the Stellar Design System (SDS) to npm:
 
 1. **Bump the Version**
 
-- For dependency updates or minor changes, bump the patch version in
+- For non-breaking dependency updates or minor changes, bump the patch version in
   `@stellar/design-system/package.json`.
 - For reference, see
   [this example PR](https://github.com/stellar/stellar-design-system/pull/326/changes/07f9a7860dc1888138a1f24340a5566a3f826916).
