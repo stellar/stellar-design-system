@@ -1,10 +1,11 @@
+import React from "react";
 import { Floater } from "../Floater";
 import "./styles.scss";
 
 /** */
 export interface TooltipProps {
   /** Element that shows or hides tooltip */
-  triggerEl: JSX.Element;
+  triggerEl: React.ReactElement;
   /** Tooltip title */
   title?: React.ReactNode;
   /** Content of the tooltip */
@@ -39,7 +40,7 @@ export const Tooltip = ({
   placement = "right",
   isVisible,
   isContrast = true,
-}: TooltipProps): JSX.Element => (
+}: TooltipProps): React.ReactElement => (
   <Floater
     placement={placement}
     triggerEl={triggerEl}

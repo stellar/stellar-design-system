@@ -1,3 +1,4 @@
+import React from "react";
 import "./styles.scss";
 
 // =============================================================================
@@ -18,7 +19,8 @@ export interface DisplayProps {
 }
 
 interface DProps
-  extends DisplayProps,
+  extends
+    DisplayProps,
     React.HtmlHTMLAttributes<HTMLDivElement | HTMLSpanElement> {
   children: string | React.ReactNode;
 }
@@ -33,7 +35,7 @@ export const Display = ({
   weight = "regular",
   children,
   ...props
-}: DProps): JSX.Element => (
+}: DProps): React.ReactElement => (
   <HtmlTag
     className={`Display Display--${size} ${
       weight !== "regular" ? `Display--w-${weight}` : ""
@@ -64,8 +66,7 @@ export interface HeadingProps {
 }
 
 interface HProps
-  extends HeadingProps,
-    React.HtmlHTMLAttributes<HTMLHeadingElement> {
+  extends HeadingProps, React.HtmlHTMLAttributes<HTMLHeadingElement> {
   children: string | React.ReactNode;
 }
 
@@ -79,7 +80,7 @@ export const Heading = ({
   weight = "regular",
   children,
   ...props
-}: HProps): JSX.Element => (
+}: HProps): React.ReactElement => (
   <HtmlTag
     className={`Heading Heading--${size} ${
       weight !== "regular" ? `Heading--w-${weight}` : ""
@@ -110,7 +111,8 @@ export interface TextProps {
 }
 
 interface TProps
-  extends TextProps,
+  extends
+    TextProps,
     React.HtmlHTMLAttributes<
       HTMLParagraphElement | HTMLDivElement | HTMLSpanElement
     > {
@@ -127,7 +129,7 @@ export const Text = ({
   weight = "regular",
   children,
   ...props
-}: TProps): JSX.Element => (
+}: TProps): React.ReactElement => (
   <HtmlTag
     className={`Text Text--${size} ${
       weight !== "regular" ? `Text--w-${weight}` : ""
@@ -166,7 +168,7 @@ export const Code = ({
   size,
   children,
   ...props
-}: CProps): JSX.Element => (
+}: CProps): React.ReactElement => (
   <code className={`Code Code--${size} ${addlClassName || ""}`} {...props}>
     {children}
   </code>

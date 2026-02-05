@@ -54,8 +54,7 @@ export interface SelectProps {
 }
 
 interface Props
-  extends SelectProps,
-    React.SelectHTMLAttributes<HTMLSelectElement> {
+  extends SelectProps, React.SelectHTMLAttributes<HTMLSelectElement> {
   id: string;
   children: React.ReactNode;
 }
@@ -81,7 +80,7 @@ export const Select = ({
   isError,
   customSelect,
   ...props
-}: Props): JSX.Element => {
+}: Props): React.ReactElement => {
   const additionalClasses = [
     `Select--${fieldSize}`,
     ...(props.disabled ? ["Select--disabled"] : []),

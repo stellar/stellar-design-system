@@ -8,20 +8,20 @@ import { NavButton } from "../NavButton";
 import "./styles.scss";
 
 interface LayoutComponent {
-  Inset?: (props: InsetProps) => JSX.Element;
-  Content?: (props: ContentProps) => JSX.Element;
-  Header?: (props: HeaderProps) => JSX.Element;
-  Footer?: (props: FooterProps) => JSX.Element;
+  Inset?: (props: InsetProps) => React.ReactElement;
+  Content?: (props: ContentProps) => React.ReactElement;
+  Header?: (props: HeaderProps) => React.ReactElement;
+  Footer?: (props: FooterProps) => React.ReactElement;
 }
 
 /**
- * Use the `Layout` component’s sub-components, such as `Content`, `Inset`, `Header`, and `Footer`, to build page layouts.
+ * Use the `Layout` component's sub-components, such as `Content`, `Inset`, `Header`, and `Footer`, to build page layouts.
  */
 export const Layout = {} as LayoutComponent & {
-  Inset: (props: InsetProps) => JSX.Element;
-  Content: (props: ContentProps) => JSX.Element;
-  Header: (props: HeaderProps) => JSX.Element;
-  Footer: (props: FooterProps) => JSX.Element;
+  Inset: (props: InsetProps) => React.ReactElement;
+  Content: (props: ContentProps) => React.ReactElement;
+  Header: (props: HeaderProps) => React.ReactElement;
+  Footer: (props: FooterProps) => React.ReactElement;
 };
 
 /** */
@@ -33,7 +33,7 @@ export interface InsetProps {
 /**
  * Inset defines width/max-width and horizontal margins. It is used in upper level block/section components to have consistent horizontal styling.
  */
-export const Inset = ({ children }: InsetProps): JSX.Element => (
+export const Inset = ({ children }: InsetProps): React.ReactElement => (
   <div className="Layout__inset">{children}</div>
 );
 
@@ -48,7 +48,7 @@ export interface ContentProps {
 /**
  * The page level content of the website (all other content goes in here). This content is on the same level as the header and footer.
  */
-export const Content = ({ children }: ContentProps): JSX.Element => (
+export const Content = ({ children }: ContentProps): React.ReactElement => (
   <div className="Layout__content">{children}</div>
 );
 
@@ -105,7 +105,7 @@ export const Header = ({
   contentCenter,
   contentRight,
   disableSetThemeOnLoad,
-}: HeaderProps): JSX.Element => {
+}: HeaderProps): React.ReactElement => {
   // Set default mode to light, if there is no theme toggle
   useEffect(() => {
     if (disableSetThemeOnLoad) {
@@ -191,7 +191,7 @@ export const Footer = ({
   gitHubLink,
   gitHubLabel,
   children,
-}: FooterProps): JSX.Element => {
+}: FooterProps): React.ReactElement => {
   const customStyle = {
     ...(marginTop ? { "--Layout-footer-margin-top": marginTop } : {}),
     ...(hideTopBorder ? { "--Layout-footer-border-color": "transparent" } : {}),

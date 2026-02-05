@@ -25,8 +25,7 @@ export interface ToggleProps {
 }
 
 interface Props
-  extends ToggleProps,
-    React.InputHTMLAttributes<HTMLInputElement> {
+  extends ToggleProps, React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
   onChange?: () => void;
   checked: boolean;
@@ -45,7 +44,7 @@ export const Toggle = ({
   iconChecked,
   iconUnchecked,
   title,
-}: Props): JSX.Element => {
+}: Props): React.ReactElement => {
   const [checkedValue, setCheckedValue] = useState(checked);
 
   useEffect(() => {

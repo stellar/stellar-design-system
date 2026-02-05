@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Toggle } from "../Toggle";
 import { Icon } from "../../icons";
 
@@ -17,7 +17,7 @@ export const ThemeSwitch = ({
   storageKeyId,
   onActionEnd,
   disableSetThemeOnLoad,
-}: ThemeSwitchProps): JSX.Element => {
+}: ThemeSwitchProps): React.ReactElement => {
   const isBrowser =
     typeof window !== "undefined" && typeof localStorage !== "undefined";
   const prefersDarkMode = isBrowser

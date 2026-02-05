@@ -1,3 +1,4 @@
+import React from "react";
 import { createStellarIdenticon } from "../../helpers/createStellarIdenticon";
 import { Icon } from "../../icons";
 import "./styles.scss";
@@ -40,7 +41,7 @@ export const Avatar = ({
   size,
   publicAddress,
   userName,
-}: AvatarProps): JSX.Element => {
+}: AvatarProps): React.ReactElement => {
   const getInitials = (userName: string) => {
     const arr = userName.split(" ");
 

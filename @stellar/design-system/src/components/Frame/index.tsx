@@ -1,3 +1,4 @@
+import React from "react";
 import "./styles.scss";
 
 /** */
@@ -31,7 +32,7 @@ export const Frame = ({
   size,
   icon,
   shape,
-}: FrameProps): JSX.Element => {
+}: FrameProps): React.ReactElement => {
   const additionalClasses = [
     `Frame--${variant}`,
     `Frame--${size}`,

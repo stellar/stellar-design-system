@@ -23,8 +23,7 @@ export interface CheckboxProps {
 }
 
 interface Props
-  extends CheckboxProps,
-    React.InputHTMLAttributes<HTMLInputElement> {
+  extends CheckboxProps, React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
 }
 
@@ -40,7 +39,7 @@ export const Checkbox = ({
   success,
   isError,
   ...props
-}: Props): JSX.Element => {
+}: Props): React.ReactElement => {
   const additionalClasses = [
     `Checkbox--${fieldSize}`,
     ...(props.disabled ? ["Checkbox--disabled"] : []),

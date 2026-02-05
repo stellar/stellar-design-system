@@ -57,8 +57,7 @@ export interface TextareaProps {
 }
 
 interface Props
-  extends TextareaProps,
-    React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  extends TextareaProps, React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   id: string;
   children?: string;
 }
@@ -87,7 +86,7 @@ export const Textarea = ({
   spellCheck = false,
   autoComplete = "off",
   ...props
-}: Props): JSX.Element => {
+}: Props): React.ReactElement => {
   const additionalClasses = [
     `Textarea--${fieldSize}`,
     ...(props.disabled ? ["Textarea--disabled"] : []),

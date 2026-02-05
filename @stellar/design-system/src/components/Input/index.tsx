@@ -69,8 +69,7 @@ export type InputCopyButton = {
 };
 
 interface Props
-  extends InputProps,
-    React.InputHTMLAttributes<HTMLInputElement> {
+  extends InputProps, React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
 }
 
@@ -98,7 +97,7 @@ export const Input = ({
   infoLinkIcon = <Icon.BookOpen01 />,
   tooltipPlacement,
   ...props
-}: Props): JSX.Element => {
+}: Props): React.ReactElement => {
   const [isPasswordMasked, setIsPasswordMasked] = useState(true);
 
   const additionalClasses = [

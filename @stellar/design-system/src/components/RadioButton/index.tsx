@@ -13,8 +13,7 @@ export interface RadioButtonProps {
 }
 
 interface Props
-  extends RadioButtonProps,
-    React.InputHTMLAttributes<HTMLInputElement> {
+  extends RadioButtonProps, React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
 }
 
@@ -26,7 +25,7 @@ export const RadioButton = ({
   label,
   fieldSize,
   ...props
-}: Props): JSX.Element => {
+}: Props): React.ReactElement => {
   const additionalClasses = [
     `RadioButton--${fieldSize}`,
     ...(props.disabled ? ["RadioButton--disabled"] : []),

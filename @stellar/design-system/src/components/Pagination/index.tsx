@@ -1,3 +1,4 @@
+import React from "react";
 import { IconButton } from "../IconButton";
 import { Icon } from "../../icons";
 import "./styles.scss";
@@ -22,7 +23,7 @@ export const Pagination = ({
   itemCount,
   currentPage,
   setCurrentPage,
-}: PaginationProps): JSX.Element | null => {
+}: PaginationProps): React.ReactElement | null => {
   if (!pageSize || !itemCount) {
     return null;
   }

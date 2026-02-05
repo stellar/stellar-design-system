@@ -1,3 +1,4 @@
+import React from "react";
 import "./styles.scss";
 
 // TODO: remove component?
@@ -16,8 +17,12 @@ export const PieProgress = ({
   failed,
   customSize,
   customBackgroundColor,
-}: PieProgressProps): JSX.Element => {
-  if (process.env.NODE_ENV === "development" && passed + failed > total) {
+}: PieProgressProps): React.ReactElement => {
+  if (
+    typeof process !== "undefined" &&
+    process.env.NODE_ENV === "development" &&
+    passed + failed > total
+  ) {
     throw new Error("PieProgress: passed + failed is greater than total");
   }
 

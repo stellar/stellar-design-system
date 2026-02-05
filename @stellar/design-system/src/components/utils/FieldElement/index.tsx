@@ -18,7 +18,7 @@ interface FieldElementProps {
 export const FieldElement = ({
   position,
   children,
-}: FieldElementProps & FieldElementComponent): JSX.Element => (
+}: FieldElementProps & FieldElementComponent): React.ReactElement => (
   <span className={`FieldElement FieldElement--${position}`}>{children}</span>
 );
 

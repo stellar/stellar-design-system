@@ -1,4 +1,4 @@
-import { cloneElement } from "react";
+import React, { cloneElement } from "react";
 import { Avatar } from "../Avatar";
 import { CopyText } from "../CopyText";
 import { Icon } from "../../icons";
@@ -39,7 +39,7 @@ export const Profile = ({
   hideAvatar,
   isCopy,
   customAnchor,
-}: ProfileProps): JSX.Element => {
+}: ProfileProps): React.ReactElement => {
   const address = federatedAddress ?? publicAddress;
   const additionalClasses = [
     `Profile--${size}`,

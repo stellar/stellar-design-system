@@ -18,8 +18,7 @@ export interface ButtonPresetProps {
 }
 
 interface Props
-  extends ButtonPresetProps,
-    React.ButtonHTMLAttributes<HTMLButtonElement> {}
+  extends ButtonPresetProps, React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 const presetDetails = {
   copy: {
@@ -46,7 +45,7 @@ export const ButtonPreset = ({
   customColor,
   customSize,
   ...props
-}: Props): JSX.Element => {
+}: Props): React.ReactElement => {
   const customStyle = {
     ...(customColor ? { "--IconButton-color": customColor } : {}),
     ...(customSize ? { "--IconButton-size": customSize } : {}),

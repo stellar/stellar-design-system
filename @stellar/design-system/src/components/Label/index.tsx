@@ -29,7 +29,7 @@ export const Label = ({
   infoLinkIcon = <Icon.BookOpen01 />,
   tooltipPlacement,
   ...props
-}: LabelProps): JSX.Element => {
+}: LabelProps): React.ReactElement => {
   const additionalClasses = [
     `Label--${size}`,
     ...(isUppercase ? ["Label--uppercase"] : []),

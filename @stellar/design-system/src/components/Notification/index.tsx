@@ -17,8 +17,7 @@ export interface NotificationProps {
 }
 
 interface Props
-  extends NotificationProps,
-    React.HtmlHTMLAttributes<HTMLDivElement> {
+  extends NotificationProps, React.HtmlHTMLAttributes<HTMLDivElement> {
   title: string;
 }
 
@@ -34,7 +33,7 @@ export const Notification = ({
   icon,
   isFilled,
   children,
-}: Props): JSX.Element => {
+}: Props): React.ReactElement => {
   const additionalClasses = [
     `Notification--${variant}`,
     ...(isFilled ? [`Notification--filled`] : []),

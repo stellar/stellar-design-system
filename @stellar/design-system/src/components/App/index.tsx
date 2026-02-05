@@ -1,3 +1,4 @@
+import React from "react";
 import "./styles.scss";
 
 /** */
@@ -11,7 +12,7 @@ export interface AppProps {
 /**
  * `App` shows an app’s logo.
  */
-export const App = ({ app, size }: AppProps): JSX.Element | null => {
+export const App = ({ app, size }: AppProps): React.ReactElement | null => {
   const appData = APP_DATA[app];
 
   if (!appData) {

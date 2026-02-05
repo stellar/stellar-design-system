@@ -18,7 +18,7 @@ interface ButtonIconProps {
 export const ButtonIcon = ({
   position,
   children,
-}: ButtonIconProps & ButtonIconComponent): JSX.Element => (
+}: ButtonIconProps & ButtonIconComponent): React.ReactElement => (
   <span className={`ButtonIcon ButtonIcon--${position}`}>{children}</span>
 );
 

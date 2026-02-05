@@ -6,6 +6,7 @@
     "resolveJsonModule": true,
     "target": "es5",
     "jsx": "react-jsx",
+    "types": ["react", "node"],
     "allowJs": true,
     "emitDecoratorMetadata": false,
     "experimentalDecorators": false,
