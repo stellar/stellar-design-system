@@ -15,9 +15,11 @@ export const ComponentDescription = ({
     throw Error(`Component "${componentName}" description not found.`);
   }
 
+  const comment = component?.comment || component?.signatures?.[0]?.comment;
+
   return (
     <p>
-      <ParseSummary summary={(component as any)?.comment?.summary} />
+      <ParseSummary summary={comment?.summary} />
     </p>
   );
 };

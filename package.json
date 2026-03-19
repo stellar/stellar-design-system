@@ -26,7 +26,9 @@
   "resolutions": {
     "glob": "11.1.0",
     "path-to-regexp": "1.9.0",
-    "cross-spawn": "7.0.6"
+    "cross-spawn": "7.0.6",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3"
   },
   "dependencies": {}
 }
