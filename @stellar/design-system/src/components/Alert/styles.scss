@@ -1,9 +1,13 @@
 @use "../../utils.scss" as *;
 
 .AlertContainer {
-  background-color: var(--sds-clr-gray-01);
+  --Alert-radius: #{pxToRem(8px)};
+  --Alert-background-color: var(--sds-clr-gray-01);
+  background-color: var(--Alert-background-color);
   width: 100%;
   border-top: 1px solid var(--sds-clr-gray-06);
+  border: 1px solid var(--Alert-border-color);
+  border-radius: var(--Alert-radius);
 }
 
 .Alert {
@@ -33,6 +37,10 @@
       width: pxToRem(24px);
       flex-shrink: 0;
       flex-grow: 0;
+    }
+
+    .Alert__content {
+      align-items: center;
     }
   }
 
@@ -117,12 +125,12 @@
   }
 
   &__icon {
-    width: pxToRem(32px);
-    height: pxToRem(32px);
-    border: 1px solid var(--sds-clr-gray-06);
-    background-color: var(--sds-clr-gray-02);
-    border-radius: pxToRem(6px);
-    padding: pxToRem(8px);
+    width: pxToRem(16px);
+    height: pxToRem(18px);
+    // border: 1px solid var(--sds-clr-gray-06);
+    // background-color: var(--sds-clr-gray-02);
+    // border-radius: pxToRem(6px);
+    // padding: pxToRem(8px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,6 +146,8 @@
   // Variant
   &--primary {
     --Alert-icon-color: var(--sds-clr-lilac-09);
+    --Alert-background-color: var(--sds-clr-lilac-01);
+    --Alert-border-color: var(--sds-clr-lilac-06);
   }
 
   &--secondary {
@@ -146,6 +156,8 @@
 
   &--success {
     --Alert-icon-color: var(--sds-clr-green-09);
+    --Alert-background-color: var(--sds-clr-green-01);
+    --Alert-border-color: var(--sds-clr-green-06);
   }
 
   &--warning {
@@ -154,6 +166,8 @@
 
   &--error {
     --Alert-icon-color: var(--sds-clr-red-09);
+    --Alert-background-color: var(--sds-clr-red-01);
+    --Alert-border-color: var(--sds-clr-red-06);
   }
 
   // SDS overrides

@@ -2,12 +2,10 @@
 
 .Card {
   --Card-color-background: var(--sds-clr-gray-01);
-  --Card-color-border: var(--sds-clr-gray-06);
   --Card-padding: #{pxToRem(24px)};
   --Card-radius: #{pxToRem(8px)};
 
   background-color: var(--Card-color-background);
-  border: 1px solid var(--Card-color-border);
   border-radius: var(--Card-radius);
   height: 100%;
   padding: var(--Card-padding);
@@ -19,11 +17,9 @@
 
   &--primary {
     --Card-color-background: var(--sds-clr-gray-01);
-    --Card-color-border: var(--sds-clr-gray-06);
   }
 
   &--secondary {
     --Card-color-background: var(--sds-clr-gray-03);
-    --Card-color-border: var(--sds-clr-gray-06);
   }
 }
