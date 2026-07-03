@@ -1,0 +1,106 @@
+name: Build and push stellar-design-system
+
+# Deployed to: https://github.com/stellar/stellar-design-system
+#
+# Converted from the Jenkins pipeline (Jenkinsfile). Builds the docker image
+# once and pushes it to the dev then prd ECR namespaces on pushes to main,
+# posting a Slack notification for each environment.
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  SLACK_CHANNEL: alerts-product-eng
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Determine image label
+        id: vars
+        run: echo "label=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: ECR login
+        id: ecr-login
+        uses: stellar/actions/sdf-ecr-login@main
+
+      - name: Build docker image
+        env:
+          LABEL: ${{ steps.vars.outputs.label }}
+        run: |
+          set -eu
+          make docker-build
+
+      # -------------------- Dev --------------------
+      - name: Push to Dev
+        id: push_dev
+        env:
+          ECR_REGISTRY: ${{ steps.ecr-login.outputs.ecr-registry }}
+          LABEL: ${{ steps.vars.outputs.label }}
+        run: |
+          set -eu
+          export TAG="${ECR_REGISTRY}/dev/stellar-design-system:${LABEL}"
+          docker tag "stellar/stellar-design-system:${LABEL}" "${TAG}"
+          ecr-push "${TAG}"
+
+      - name: Slack notification — dev success
+        if: steps.push_dev.outcome == 'success'
+        uses: slackapi/slack-github-action@45a88b9581bfab2566dc881e2cd66d334e621e2c # v3.0.3
+        with:
+          method: chat.postMessage
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
+          payload: |
+            channel: "${{ env.SLACK_CHANNEL }}"
+            text: "Stellar Design System *dev* <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|build> complete for <${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}|${{ steps.vars.outputs.label }}>."
+
+      - name: Slack notification — dev failure
+        if: failure() && steps.push_dev.conclusion == 'failure'
+        uses: slackapi/slack-github-action@45a88b9581bfab2566dc881e2cd66d334e621e2c # v3.0.3
+        with:
+          method: chat.postMessage
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
+          payload: |
+            channel: "${{ env.SLACK_CHANNEL }}"
+            text: "Stellar Design System *dev* <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|build> failed for <${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}|${{ steps.vars.outputs.label }}>."
+
+      # -------------------- Prd --------------------
+      - name: Push to Prd
+        id: push_prd
+        env:
+          ECR_REGISTRY: ${{ steps.ecr-login.outputs.ecr-registry }}
+          LABEL: ${{ steps.vars.outputs.label }}
+        run: |
+          set -eu
+          export TAG="${ECR_REGISTRY}/prd/stellar-design-system:${LABEL}"
+          docker tag "stellar/stellar-design-system:${LABEL}" "${TAG}"
+          ecr-push "${TAG}"
+
+      - name: Slack notification — prd success
+        if: steps.push_prd.outcome == 'success'
+        uses: slackapi/slack-github-action@45a88b9581bfab2566dc881e2cd66d334e621e2c # v3.0.3
+        with:
+          method: chat.postMessage
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
+          payload: |
+            channel: "${{ env.SLACK_CHANNEL }}"
+            text: "Stellar Design System *prd* <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|build> complete for <${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}|${{ steps.vars.outputs.label }}>."
+
+      - name: Slack notification — prd failure
+        if: failure() && steps.push_prd.conclusion == 'failure'
+        uses: slackapi/slack-github-action@45a88b9581bfab2566dc881e2cd66d334e621e2c # v3.0.3
+        with:
+          method: chat.postMessage
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
+          payload: |
+            channel: "${{ env.SLACK_CHANNEL }}"
+            text: "Stellar Design System *prd* <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|build> failed for <${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}|${{ steps.vars.outputs.label }}>."
