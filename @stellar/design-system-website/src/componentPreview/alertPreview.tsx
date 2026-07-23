@@ -11,10 +11,6 @@ export const alertPreview: ComponentPreview = {
           label: "Primary",
         },
         {
-          value: "secondary",
-          label: "Secondary",
-        },
-        {
           value: "success",
           label: "Success",
         },
@@ -25,20 +21,6 @@ export const alertPreview: ComponentPreview = {
         {
           value: "error",
           label: "Error",
-        },
-      ],
-    },
-    {
-      type: "select",
-      prop: "placement",
-      options: [
-        {
-          value: "inline",
-          label: "Inline",
-        },
-        {
-          value: "bottom",
-          label: "Bottom",
         },
       ],
     },

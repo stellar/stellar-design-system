@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "../Button";
 import { Card } from "../Card";
 import { Heading } from "../Typography";
 import { Icon } from "../../icons";
@@ -11,9 +10,7 @@ import "./styles.scss";
 /** */
 export type AlertBaseProps = {
   /** Alert variant */
-  variant: "primary" | "secondary" | "success" | "warning" | "error";
-  /** Alert placement */
-  placement: "inline" | "bottom";
+  variant: "primary" | "success" | "warning" | "error";
   /** Alert message title */
   title?: React.ReactNode;
   /** Dismiss and close action */
@@ -40,13 +37,11 @@ export type AlertActionLink = {
   onAction?: undefined;
 };
 
-/** Use `Alert` to show a message with or without an action. Place the alert `inline` to show it anywhere on the UI. `bottom` placement should be used only to show the alert at the bottom of the layout; it's the opposite of {@link Banner} which is used only at the top. */
+/** Use `Alert` to show a message with or without an action. */
 export type AlertProps = (AlertActionButton | AlertActionLink) & AlertBaseProps;
 
-/** Display an alert message inline or at the bottom of the page */
 export const Alert = ({
   variant,
-  placement,
   title,
   onClose,
   onAction,
@@ -55,26 +50,8 @@ export const Alert = ({
   icon = <Icon.InfoCircle />,
   children,
 }: AlertProps): React.ReactElement => {
-  if (placement === "bottom" && actionLink) {
-    throw Error(
-      "Bottom alert cannot use `actionLink` because it's a button. Use `onAction` instead.",
-    );
-  }
-
   const getActionVariant = () => {
-    if (placement === "inline") {
-      return variant === "error" ? "error" : "primary";
-    } else {
-      if (variant === "primary") {
-        return "primary";
-      }
-
-      if (variant === "error") {
-        return "error";
-      }
-
-      return "secondary";
-    }
+    return variant === "error" ? "error" : "primary";
   };
 
   const renderDismissElement = () => {
@@ -82,18 +59,10 @@ export const Alert = ({
       return null;
     }
 
-    if (placement === "inline") {
-      return (
-        <Link variant="secondary" role="button" onClick={onClose}>
-          Dismiss
-        </Link>
-      );
-    }
-
     return (
-      <Button variant="tertiary" onClick={onClose} size="md">
+      <Link variant="secondary" role="button" onClick={onClose}>
         Dismiss
-      </Button>
+      </Link>
     );
   };
 
@@ -102,32 +71,21 @@ export const Alert = ({
       return null;
     }
 
-    if (placement === "inline") {
-      return (
-        <Link
-          variant={getActionVariant()}
-          role={onAction ? "button" : "link"}
-          onClick={onAction}
-          href={actionLink}
-        >
-          {actionLabel}
-        </Link>
-      );
-    }
-
     return (
-      <Button variant={getActionVariant()} onClick={onClose} size="md">
+      <Link
+        variant={getActionVariant()}
+        role={onAction ? "button" : "link"}
+        onClick={onAction}
+        href={actionLink}
+      >
         {actionLabel}
-      </Button>
+      </Link>
     );
   };
 
   const renderAlert = () => {
     return (
-      <div
-        role="alert"
-        className={`Alert Alert--${variant} Alert--${placement}`}
-      >
+      <div role="alert" className={`Alert Alert--${variant}`}>
         <div className="Alert__content">
           <div className="Alert__content__iconContainer">
             <div className="Alert__icon">{icon}</div>
@@ -164,12 +122,10 @@ export const Alert = ({
     );
   };
 
-  return placement === "inline" ? (
-    <Card noPadding variant={variant === "secondary" ? "secondary" : "primary"}>
+  return (
+    <Card noPadding variant="primary">
       {renderAlert()}
     </Card>
-  ) : (
-    <div className="AlertContainer">{renderAlert()}</div>
   );
 };
 
