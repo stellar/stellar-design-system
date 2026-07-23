@@ -37,9 +37,10 @@ export type AlertActionLink = {
   onAction?: undefined;
 };
 
-/** Use `Alert` to show a message with or without an action. */
+/** */
 export type AlertProps = (AlertActionButton | AlertActionLink) & AlertBaseProps;
 
+/** Use `Alert` to show a message with or without an action. */
 export const Alert = ({
   variant,
   title,
