@@ -61,7 +61,7 @@ export const Alert = ({
     }
 
     return (
-      <Link variant="secondary" role="button" onClick={onClose}>
+      <Link variant="secondary" role="link" onClick={onClose}>
         Dismiss
       </Link>
     );
