@@ -66,5 +66,39 @@ export const notificationPreview: ComponentPreview = {
         },
       ],
     },
+    {
+      type: "select",
+      prop: "onClose",
+      customValue: () => {
+        console.log("Close action");
+      },
+      options: [
+        {
+          value: "",
+          label: "No close action",
+        },
+        {
+          value: "Close action",
+          label: "Close action",
+        },
+      ],
+    },
+    {
+      type: "select",
+      prop: "onAction",
+      customValue: () => {
+        console.log("Action");
+      },
+      options: [
+        {
+          value: "",
+          label: "No action",
+        },
+        {
+          value: "Action",
+          label: "Action",
+        },
+      ],
+    },
   ],
 };
