@@ -1,4 +1,3 @@
-export * from "./Alert";
 export * from "./App";
 export * from "./Asset";
 export * from "./Avatar";
