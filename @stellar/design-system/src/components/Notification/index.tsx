@@ -30,8 +30,10 @@ export type NotificationActionButton = {
   onClose?: () => void;
 };
 
-export type NotificationProps = NotificationActionButton &
-  NotificationBaseProps;
+/** */
+export interface NotificationProps
+  extends NotificationBaseProps,
+    NotificationActionButton {}
 
 // TODO: Notification: floating with max width
 
