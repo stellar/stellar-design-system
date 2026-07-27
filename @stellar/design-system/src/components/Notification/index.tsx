@@ -38,7 +38,7 @@ export interface NotificationProps
 // TODO: Notification: floating with max width
 
 /**
- * Use `notification` to draw a user's attention. There are five variants `primary`,  `success`, `error`, and `warning`.
+ * Use `notification` to draw a user's attention. There are five variants `primary`, `success`, `error`, and `warning`.
  */
 export const Notification = ({
   variant,
@@ -97,7 +97,9 @@ export const Notification = ({
             <div className="Notification__content__title">{title}</div>
 
             {children ? (
-              <div className="Notification__content__message">{children}</div>
+              <div className="Notification__content__message">
+                <div>{children}</div>
+              </div>
             ) : null}
           </div>
 
