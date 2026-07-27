@@ -99,6 +99,10 @@
     --Notification-color-border: var(--sds-clr-lilac-06);
     --Notification-color-icon: var(--sds-clr-lilac-09);
     --Notification-color-action: var(--sds-clr-lilac-11);
+
+    &.Notification--filled {
+      --Notification-color-background: var(--sds-clr-lilac-03);
+    }
   }
 
   &--success {
