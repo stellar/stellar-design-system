@@ -7,9 +7,9 @@ import "./styles.scss";
 /** */
 export interface NotificationBaseProps {
   /** Variant of the notification */
-  variant: "primary" | "secondary" | "success" | "error" | "warning";
+  variant: "primary" | "success" | "error" | "warning";
   /** Notification title */
-  title: string;
+  title: string | React.ReactNode;
   /** Notification icon @defaultValue `<Icon.InfoCircle />` */
   icon?: React.ReactNode;
   /** Notification background */
@@ -25,7 +25,7 @@ export type NotificationActionButton = {
   /** Notification action label @defaultValue `Action` */
   actionLabel?: string;
   /** Notification action link */
-  actionLink?: undefined;
+  actionLink?: string;
   /** Dismiss and close action */
   onClose?: () => void;
 };
@@ -38,7 +38,7 @@ export interface NotificationProps
 // TODO: Notification: floating with max width
 
 /**
- * Use `notification` to draw a user's attention. There are five variants `primary`, `secondary`, `success`, `error`, and `warning`.
+ * Use `notification` to draw a user's attention. There are five variants `primary`,  `success`, `error`, and `warning`.
  */
 export const Notification = ({
   variant,

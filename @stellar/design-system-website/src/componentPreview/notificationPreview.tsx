@@ -13,10 +13,6 @@ export const notificationPreview: ComponentPreview = {
           label: "Primary",
         },
         {
-          value: "secondary",
-          label: "Secondary",
-        },
-        {
           value: "success",
           label: "Success",
         },
