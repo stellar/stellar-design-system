@@ -71,14 +71,14 @@ export const Notification = ({
     }
 
     return (
-      <Button variant="tertiary" onClick={onClose} size="md">
+      <Button variant="error" onClick={onClose} size="md">
         Dismiss
       </Button>
     );
   };
 
   const getActionVariant = () => {
-    return variant === "error" ? "error" : "primary";
+    return variant === "error" ? "error" : "tertiary";
   };
 
   return (
@@ -102,9 +102,8 @@ export const Notification = ({
 
           {onClose || onAction ? (
             <div className="Notification__content__buttons">
-              {renderDismissElement()}
-
               {renderActionElement()}
+              {renderDismissElement()}
             </div>
           ) : null}
         </div>
