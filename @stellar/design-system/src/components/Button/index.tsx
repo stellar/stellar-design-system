@@ -19,7 +19,7 @@ export interface ButtonProps {
   /** Size of the button */
   size: "sm" | "md" | "lg" | "xl";
   /** Label of the button */
-  children?: string | React.ReactNode;
+  children?: React.ReactNode;
   /** Icon element */
   icon?: React.ReactNode;
   /** Position of the icon @defaultValue `right` */

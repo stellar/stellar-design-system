@@ -9,13 +9,13 @@ export interface NotificationBaseProps {
   /** Variant of the notification */
   variant: "primary" | "success" | "error" | "warning";
   /** Notification title */
-  title: string | React.ReactNode;
+  title: React.ReactNode;
   /** Notification icon @defaultValue `<Icon.InfoCircle />` */
   icon?: React.ReactNode;
   /** Notification background */
   isFilled?: boolean;
   /** Notification message */
-  children?: string | React.ReactNode;
+  children?: React.ReactNode;
 }
 
 /** */

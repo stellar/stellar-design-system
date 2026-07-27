@@ -15,14 +15,13 @@ export interface DisplayProps {
   /** Display font weight @defaultValue `regular` */
   weight?: "bold" | "semi-bold" | "medium" | "regular";
   /** Display text */
-  children: string | React.ReactNode;
+  children: React.ReactNode;
 }
 
 interface DProps
-  extends
-    DisplayProps,
+  extends DisplayProps,
     React.HtmlHTMLAttributes<HTMLDivElement | HTMLSpanElement> {
-  children: string | React.ReactNode;
+  children: React.ReactNode;
 }
 
 /**
@@ -62,12 +61,13 @@ export interface HeadingProps {
   /** Heading font weight @defaultValue `regular` */
   weight?: "bold" | "semi-bold" | "medium" | "regular";
   /** Heading text */
-  children: string | React.ReactNode;
+  children: React.ReactNode;
 }
 
 interface HProps
-  extends HeadingProps, React.HtmlHTMLAttributes<HTMLHeadingElement> {
-  children: string | React.ReactNode;
+  extends HeadingProps,
+    React.HtmlHTMLAttributes<HTMLHeadingElement> {
+  children: React.ReactNode;
 }
 
 /**
@@ -107,16 +107,15 @@ export interface TextProps {
   /** Text font weight @defaultValue `regular` */
   weight?: "bold" | "semi-bold" | "medium" | "regular";
   /** Text content */
-  children: string | React.ReactNode;
+  children: React.ReactNode;
 }
 
 interface TProps
-  extends
-    TextProps,
+  extends TextProps,
     React.HtmlHTMLAttributes<
       HTMLParagraphElement | HTMLDivElement | HTMLSpanElement
     > {
-  children: string | React.ReactNode;
+  children: React.ReactNode;
 }
 
 /**
@@ -152,11 +151,11 @@ export interface CodeProps {
   /** Code size */
   size: "md" | "sm" | "xs";
   /** Code content */
-  children: string | React.ReactNode;
+  children: React.ReactNode;
 }
 
 interface CProps extends CodeProps, React.HtmlHTMLAttributes<HTMLElement> {
-  children: string | React.ReactNode;
+  children: React.ReactNode;
 }
 
 /**

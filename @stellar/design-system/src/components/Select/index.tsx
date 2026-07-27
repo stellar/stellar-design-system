@@ -14,17 +14,17 @@ export interface SelectProps {
   /** Select options or optgroup with options */
   children: React.ReactNode;
   /** Label of the select */
-  label?: string | React.ReactNode;
+  label?: React.ReactNode;
   /** Adds suffix to the label */
-  labelSuffix?: string | React.ReactNode;
+  labelSuffix?: React.ReactNode;
   /** Note message of the select */
-  note?: string | React.ReactNode;
+  note?: React.ReactNode;
   /** Error message of the select */
   error?: string | string;
   /** Success message of the input */
-  success?: string | React.ReactNode;
+  success?: React.ReactNode;
   /** Info text tooltip */
-  infoText?: string | React.ReactNode;
+  infoText?: React.ReactNode;
   /** Info text icon @defaultValue `<Icon.InfoCircle />` */
   infoTextIcon?: React.ReactNode;
   /** External link to open in new window */

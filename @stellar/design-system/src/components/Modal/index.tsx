@@ -17,7 +17,7 @@ interface ModalComponent {
 /** */
 export interface ModalHeadingProps {
   /** Content of the modal heading */
-  children: string | React.ReactNode;
+  children: React.ReactNode;
 }
 
 const ModalHeading = ({ children }: ModalHeadingProps): React.ReactElement => (

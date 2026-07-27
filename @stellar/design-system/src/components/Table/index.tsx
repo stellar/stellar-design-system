@@ -12,7 +12,7 @@ export interface TableColumnLabel {
   /** Path to data property in object, it is used in sorting */
   id: string;
   /** Column label */
-  label: string | React.ReactNode;
+  label: React.ReactNode;
   /** Enable sorting for this column using ID */
   sortBy?: boolean;
 }
