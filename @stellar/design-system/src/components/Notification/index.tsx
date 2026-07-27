@@ -24,8 +24,6 @@ export type NotificationActionButton = {
   onAction?: () => void;
   /** Notification action label @defaultValue `Action` */
   actionLabel?: string;
-  /** Notification action link */
-  actionLink?: string;
   /** Dismiss and close action */
   onClose?: () => void;
 };
@@ -48,7 +46,6 @@ export const Notification = ({
   children,
   onAction,
   onClose,
-  actionLink,
   actionLabel = "Action",
 }: NotificationProps): React.ReactElement => {
   const additionalClasses = [
@@ -57,12 +54,12 @@ export const Notification = ({
   ].join(" ");
 
   const renderActionElement = () => {
-    if (!(onAction || actionLink)) {
+    if (!onAction) {
       return null;
     }
 
     return (
-      <Button variant={getActionVariant()} size="md">
+      <Button variant={getActionVariant()} onClick={onAction} size="md">
         {actionLabel}
       </Button>
     );
@@ -103,7 +100,7 @@ export const Notification = ({
             ) : null}
           </div>
 
-          {onClose || onAction || actionLink ? (
+          {onClose || onAction ? (
             <div className="Notification__content__buttons">
               {renderDismissElement()}
 

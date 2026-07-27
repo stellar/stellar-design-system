@@ -6,14 +6,15 @@ export interface RadioButtonProps {
   /** ID of the radio button (should be unique) */
   id: string;
   /** Label of the radio button */
-  label: string | React.ReactNode;
+  label: React.ReactNode;
   // Note: cannot use "size" here because it's input's native property
   /** Size of the radio button */
   fieldSize: "sm" | "md" | "lg";
 }
 
 interface Props
-  extends RadioButtonProps, React.InputHTMLAttributes<HTMLInputElement> {
+  extends RadioButtonProps,
+    React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
 }
 
