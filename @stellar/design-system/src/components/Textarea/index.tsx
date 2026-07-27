@@ -15,17 +15,17 @@ export interface TextareaProps {
   /** Content of the textarea */
   children?: string;
   /** Label of the textarea */
-  label?: string | React.ReactNode;
+  label?: React.ReactNode;
   /** Adds suffix to the label */
-  labelSuffix?: string | React.ReactNode;
+  labelSuffix?: React.ReactNode;
   /** Note message of the textarea */
-  note?: string | React.ReactNode;
+  note?: React.ReactNode;
   /** Error message of the textarea */
-  error?: string | React.ReactNode;
+  error?: React.ReactNode;
   /** Success message of the input */
-  success?: string | React.ReactNode;
+  success?: React.ReactNode;
   /** Info text tooltip */
-  infoText?: string | React.ReactNode;
+  infoText?: React.ReactNode;
   /** Info text icon @defaultValue `<Icon.InfoCircle />` */
   infoTextIcon?: React.ReactNode;
   /** External link to open in new window */

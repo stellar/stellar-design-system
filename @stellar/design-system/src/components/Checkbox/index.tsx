@@ -11,19 +11,20 @@ export interface CheckboxProps {
   /** Size of the checkbox */
   fieldSize: "sm" | "md" | "lg";
   /** Label of the checkbox */
-  label?: string | React.ReactNode;
+  label?: React.ReactNode;
   /** Note message of the checkbox */
-  note?: string | React.ReactNode;
+  note?: React.ReactNode;
   /** Error message of the checkbox */
-  error?: string | React.ReactNode;
+  error?: React.ReactNode;
   /** Success message of the input */
-  success?: string | React.ReactNode;
+  success?: React.ReactNode;
   /** Checkbox error without a message */
   isError?: boolean;
 }
 
 interface Props
-  extends CheckboxProps, React.InputHTMLAttributes<HTMLInputElement> {
+  extends CheckboxProps,
+    React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
 }
 

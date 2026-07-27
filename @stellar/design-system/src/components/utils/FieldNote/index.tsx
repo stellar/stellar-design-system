@@ -4,7 +4,7 @@ import "./styles.scss";
 interface FieldNoteProps {
   variant?: "note" | "error" | "success";
   size: "sm" | "md" | "lg";
-  children: string | React.ReactNode;
+  children: React.ReactNode;
 }
 
 export const FieldNote = ({

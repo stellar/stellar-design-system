@@ -7,15 +7,15 @@ import "./styles.scss";
 /** */
 export interface NotificationBaseProps {
   /** Variant of the notification */
-  variant: "primary" | "secondary" | "success" | "error" | "warning";
+  variant: "primary" | "success" | "error" | "warning";
   /** Notification title */
-  title: string;
+  title: React.ReactNode;
   /** Notification icon @defaultValue `<Icon.InfoCircle />` */
   icon?: React.ReactNode;
   /** Notification background */
   isFilled?: boolean;
   /** Notification message */
-  children?: string | React.ReactNode;
+  children?: React.ReactNode;
 }
 
 /** */
@@ -24,8 +24,6 @@ export type NotificationActionButton = {
   onAction?: () => void;
   /** Notification action label @defaultValue `Action` */
   actionLabel?: string;
-  /** Notification action link */
-  actionLink?: undefined;
   /** Dismiss and close action */
   onClose?: () => void;
 };
@@ -38,7 +36,7 @@ export interface NotificationProps
 // TODO: Notification: floating with max width
 
 /**
- * Use `notification` to draw a user's attention. There are five variants `primary`, `secondary`, `success`, `error`, and `warning`.
+ * Use `notification` to draw a user's attention. There are five variants `primary`, `success`, `error`, and `warning`.
  */
 export const Notification = ({
   variant,
@@ -48,7 +46,6 @@ export const Notification = ({
   children,
   onAction,
   onClose,
-  actionLink,
   actionLabel = "Action",
 }: NotificationProps): React.ReactElement => {
   const additionalClasses = [
@@ -57,12 +54,12 @@ export const Notification = ({
   ].join(" ");
 
   const renderActionElement = () => {
-    if (!(onAction || actionLink)) {
+    if (!onAction) {
       return null;
     }
 
     return (
-      <Button variant={getActionVariant()} size="md">
+      <Button variant={getActionVariant()} onClick={onAction} size="md">
         {actionLabel}
       </Button>
     );
@@ -74,14 +71,14 @@ export const Notification = ({
     }
 
     return (
-      <Button variant="tertiary" onClick={onClose} size="md">
+      <Button variant="error" onClick={onClose} size="md">
         Dismiss
       </Button>
     );
   };
 
   const getActionVariant = () => {
-    return variant === "error" ? "error" : "primary";
+    return variant === "error" ? "error" : "tertiary";
   };
 
   return (
@@ -97,15 +94,16 @@ export const Notification = ({
             <div className="Notification__content__title">{title}</div>
 
             {children ? (
-              <div className="Notification__content__message">{children}</div>
+              <div className="Notification__content__message">
+                <div>{children}</div>
+              </div>
             ) : null}
           </div>
 
-          {onClose || onAction || actionLink ? (
+          {onClose || onAction ? (
             <div className="Notification__content__buttons">
-              {renderDismissElement()}
-
               {renderActionElement()}
+              {renderDismissElement()}
             </div>
           ) : null}
         </div>

@@ -6,7 +6,7 @@ import "./styles.scss";
  */
 export interface LinkProps {
   /** Content of the link */
-  children?: string | React.ReactNode;
+  children?: React.ReactNode;
   /** Variant of the link @defaultValue `primary` */
   variant?: "primary" | "secondary" | "success" | "warning" | "error";
   /** Size of the link, will inherit parent size if not set */

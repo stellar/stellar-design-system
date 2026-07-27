@@ -13,9 +13,9 @@ export interface InputProps {
   /** Size of the input */
   fieldSize: "sm" | "md" | "lg";
   /** Label of the input */
-  label?: string | React.ReactNode;
+  label?: React.ReactNode;
   /** Adds suffix to the label */
-  labelSuffix?: string | React.ReactNode;
+  labelSuffix?: React.ReactNode;
   /** Make label uppercase */
   isLabelUppercase?: boolean;
   /** Input error without a message */
@@ -23,21 +23,21 @@ export interface InputProps {
   /** Password input preset with show/hide button */
   isPassword?: boolean;
   /** Left side element of the input. */
-  leftElement?: string | React.ReactNode;
+  leftElement?: React.ReactNode;
   /** Right side element of the input. */
-  rightElement?: string | React.ReactNode;
+  rightElement?: React.ReactNode;
   /** Note message of the input */
-  note?: string | React.ReactNode;
+  note?: React.ReactNode;
   /** Error message of the input */
-  error?: string | React.ReactNode;
+  error?: React.ReactNode;
   /** Success message of the input */
-  success?: string | React.ReactNode;
+  success?: React.ReactNode;
   /** Use a specific input rather than a generic HTML input (useful for Formik or otherwise controlled inputs) */
   customInput?: React.ReactElement;
   /** Copy button options */
   copyButton?: InputCopyButton;
   /** Info text tooltip */
-  infoText?: string | React.ReactNode;
+  infoText?: React.ReactNode;
   /** Info text icon @defaultValue `<Icon.InfoCircle />` */
   infoTextIcon?: React.ReactNode;
   /** External link to open in new window */

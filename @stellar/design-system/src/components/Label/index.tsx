@@ -5,12 +5,12 @@ import { Icon } from "../../icons";
 import "./styles.scss";
 
 interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
-  children: string | React.ReactNode;
+  children: React.ReactNode;
   htmlFor: string;
   size: "sm" | "md" | "lg";
   isUppercase?: boolean;
-  labelSuffix?: string | React.ReactNode;
-  infoText?: string | React.ReactNode;
+  labelSuffix?: React.ReactNode;
+  infoText?: React.ReactNode;
   infoTextIcon?: React.ReactNode;
   infoLink?: string;
   infoLinkIcon?: React.ReactNode;

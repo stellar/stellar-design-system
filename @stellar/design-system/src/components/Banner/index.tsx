@@ -9,7 +9,7 @@ export interface BannerProps {
   /** Notification icon @defaultValue `<Icon.InfoCircle />` */
   icon?: React.ReactNode;
   /** Message to display in the banner */
-  children: string | React.ReactNode;
+  children: React.ReactNode;
 }
 
 /**
