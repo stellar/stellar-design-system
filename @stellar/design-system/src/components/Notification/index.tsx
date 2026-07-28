@@ -82,7 +82,7 @@ export const Notification = ({
   };
 
   return (
-    <div className={`Notification ${additionalClasses}`}>
+    <div className={`Notification ${additionalClasses}`} role="alert">
       <div className="Notification__content">
         <div className="Notification__content__iconContainer">
           <div className="Notification__icon">
