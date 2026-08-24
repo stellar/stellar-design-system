@@ -1,7 +1,6 @@
-# .github/workflows/pr-preview.yml
-#
-# Builds a preview image, marks the PR so ArgoCD's ApplicationSet picks it up,
-# and comments the URL. ArgoCD does the actual deploying.
+# Thin caller for the pr-preview composite action, which does all the work:
+# gate on org membership, build + push the preview image, label the PR for
+# ArgoCD's ApplicationSet, comment the URL, and tear down on close.
 
 name: pr-preview
 
@@ -17,122 +16,24 @@ permissions:
   id-token: write        # OIDC -> AWS. Silently ignored on `pull_request` forks.
   pull-requests: write   # labels + comments
 
-env:
-  # gh CLI infers the repo from the git remote. The gate/revoke/closed jobs do
-  # not check out anything, so there is no remote and gh would fail without this.
-  GH_REPO: ${{ github.repository }}
-  ECR_REPOSITORY: dev/stellar-design-system
-  PREVIEW_HOST: design-system-pr-${{ github.event.pull_request.number }}.preview.stellar.org
-
 # A rapid second push cancels the in-flight build rather than racing it.
 concurrency:
   group: pr-preview-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 
 jobs:
-  # ---------------------------------------------------------------------------
-  # 1. Is the PR author a member of the stellar org?
-  #    GITHUB_TOKEN cannot read org membership, so this needs an App token.
-  #    The gate applies to every PR - branch or fork - so an org member's
-  #    fork PR gets a preview while an outside collaborator's does not.
-  #    Safe on fork PRs: this job never checks out or runs fork code, so the
-  #    App token is only ever handled by base-repo workflow steps.
-  # ---------------------------------------------------------------------------
-  gate:
-    if: github.event.action != 'closed'
+  preview:
     runs-on: ubuntu-latest
-    outputs:
-      member: ${{ steps.check.outputs.member }}
     steps:
-      - id: app-token
-        uses: actions/create-github-app-token@v2
+      # Checks out the BASE ref (the pull_request_target default), never the
+      # PR head - this only exists so the local composite action is on disk.
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: stellar/actions/sdf-pr-preview@main
         with:
           app-id: ${{ vars.PREVIEW_BOT_APP_ID }}
           private-key: ${{ secrets.PREVIEW_BOT_PRIVATE_KEY }}
-          owner: ${{ github.repository_owner }}
-
-      - id: check
-        env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
-          AUTHOR: ${{ github.event.pull_request.user.login }}
-          ORG: ${{ github.repository_owner }}
-        run: |
-          # 204 = member (including private membership), 404 = not a member.
-          if gh api "/orgs/${ORG}/members/${AUTHOR}" --silent 2>/dev/null; then
-            echo "member=true" >> "$GITHUB_OUTPUT"
-            echo "::notice::${AUTHOR} is a member of ${ORG} - preview enabled"
-          else
-            echo "member=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::${AUTHOR} is not a member of ${ORG} - preview skipped"
-          fi
-
-  # ---------------------------------------------------------------------------
-  # 2. Build, push, then mark the PR.
-  # ---------------------------------------------------------------------------
-  build:
-    needs: gate
-    if: needs.gate.outputs.member == 'true'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          # Build the PR head, not the synthetic merge commit. This SHA must
-          # match what the ApplicationSet injects as {{ .head_sha }}.
-          ref: ${{ github.event.pull_request.head.sha }}
-          persist-credentials: false
-
-      - uses: docker/setup-buildx-action@v3
-
-      # Handles OIDC auth, role assumption, and ECR login internally.
-      - id: ecr
-        uses: stellar/actions/sdf-ecr-login@main
-
-      - uses: docker/build-push-action@v6
-        with:
-          context: .
-          push: true
-          tags: ${{ steps.ecr.outputs.ecr-registry }}/${{ env.ECR_REPOSITORY }}:pr-${{ github.event.pull_request.number }}-${{ github.event.pull_request.head.sha }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-
-      - name: Enable preview
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh pr edit "${{ github.event.pull_request.number }}" --add-label preview
-
-      - name: Comment preview URL
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh pr comment "${{ github.event.pull_request.number }}" --body "PR Preview: https://${{ env.PREVIEW_HOST }}"
-
-  # ---------------------------------------------------------------------------
-  # 3. Non-member PR: make sure no stale label survives.
-  #    Keeps CI authoritative - a hand-applied label cannot create a preview
-  #    for an image that was never built.
-  # ---------------------------------------------------------------------------
-  revoke:
-    needs: gate
-    if: needs.gate.outputs.member != 'true'
-    runs-on: ubuntu-latest
-    steps:
-      - env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh pr edit "${{ github.event.pull_request.number }}" --remove-label preview || true
-
-  # ---------------------------------------------------------------------------
-  # 4. PR closed or merged.
-  #    Redundant with the generator (a closed PR leaves its result set anyway),
-  #    but it makes teardown immediate and leaves a trace in the PR timeline.
-  # ---------------------------------------------------------------------------
-  closed:
-    if: github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    steps:
-      - env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh pr edit "${{ github.event.pull_request.number }}" --remove-label preview || true
-
-      - name: Comment teardown
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh pr comment "${{ github.event.pull_request.number }}" --body 'PR Preview: torn down'
+          ecr-repository: dev/stellar-design-system
+          preview-host: design-system-pr-${{ github.event.pull_request.number }}.preview.stellar.org
