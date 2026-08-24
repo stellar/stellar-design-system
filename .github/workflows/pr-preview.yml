@@ -1,0 +1,147 @@
+# .github/workflows/pr-preview.yml
+#
+# Builds a preview image, marks the PR so ArgoCD's ApplicationSet picks it up,
+# and comments the URL. ArgoCD does the actual deploying.
+
+name: pr-preview
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, closed]
+
+# pull_request_target runs in base-repo context, so these are real write
+# permissions even for fork PRs. That is the entire reason this event is used:
+# on `pull_request`, fork runs get no OIDC token and a read-only token.
+permissions:
+  contents: read
+  id-token: write        # OIDC -> AWS. Silently ignored on `pull_request` forks.
+  pull-requests: write   # labels + comments
+
+env:
+  # gh CLI infers the repo from the git remote. The gate/revoke/closed jobs do
+  # not check out anything, so there is no remote and gh would fail without this.
+  GH_REPO: ${{ github.repository }}
+  AWS_REGION: us-east-1
+  ECR_REPOSITORY: design-system-preview
+  IAM_ROLE: arn:aws:iam::<ACCOUNT_ID>:role/gha-previews-ecr-push
+  PREVIEW_HOST: design-system-pr-${{ github.event.pull_request.number }}.preview.stellar.org
+
+# A rapid second push cancels the in-flight build rather than racing it.
+concurrency:
+  group: pr-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # 1. Is the PR author a member of the stellar org?
+  #    GITHUB_TOKEN cannot read org membership, so this needs an App token.
+  # ---------------------------------------------------------------------------
+  gate:
+    if: github.event.action != 'closed'
+    runs-on: ubuntu-latest
+    outputs:
+      member: ${{ steps.check.outputs.member }}
+    steps:
+      - id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ vars.PREVIEW_BOT_APP_ID }}
+          private-key: ${{ secrets.PREVIEW_BOT_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+
+      - id: check
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          AUTHOR: ${{ github.event.pull_request.user.login }}
+          ORG: ${{ github.repository_owner }}
+        run: |
+          # 204 = member (including private membership), 404 = not a member.
+          if gh api "/orgs/${ORG}/members/${AUTHOR}" --silent 2>/dev/null; then
+            echo "member=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::${AUTHOR} is a member of ${ORG} - preview enabled"
+          else
+            echo "member=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::${AUTHOR} is not a member of ${ORG} - preview skipped"
+          fi
+
+  # ---------------------------------------------------------------------------
+  # 2. Build, push, then mark the PR.
+  # ---------------------------------------------------------------------------
+  build:
+    needs: gate
+    if: needs.gate.outputs.member == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Build the PR head, not the synthetic merge commit. This SHA must
+          # match what the ApplicationSet injects as {{ .head_sha }}.
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ env.IAM_ROLE }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - id: ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:pr-${{ github.event.pull_request.number }}-${{ github.event.pull_request.head.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      # >>> THIS is the step you were looking for. <<<
+      # Applied only after the push succeeds, so the ApplicationSet never
+      # renders an Application whose image does not exist yet.
+      # The `preview` label must already exist in the repo - see setup below.
+      - name: Enable preview
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr edit "${{ github.event.pull_request.number }}" --add-label preview
+
+      - uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: preview
+          number: ${{ github.event.pull_request.number }}
+          message: |
+            PR Preview: https://${{ env.PREVIEW_HOST }}
+
+  # ---------------------------------------------------------------------------
+  # 3. Non-member PR: make sure no stale label survives.
+  #    Keeps CI authoritative - a hand-applied label cannot create a preview
+  #    for an image that was never built.
+  # ---------------------------------------------------------------------------
+  revoke:
+    needs: gate
+    if: needs.gate.outputs.member != 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr edit "${{ github.event.pull_request.number }}" --remove-label preview || true
+
+  # ---------------------------------------------------------------------------
+  # 4. PR closed or merged.
+  #    Redundant with the generator (a closed PR leaves its result set anyway),
+  #    but it makes teardown immediate and leaves a trace in the PR timeline.
+  # ---------------------------------------------------------------------------
+  closed:
+    if: github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr edit "${{ github.event.pull_request.number }}" --remove-label preview || true
+
+      - uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: preview
+          number: ${{ github.event.pull_request.number }}
+          message: 'PR Preview: torn down'
