@@ -21,9 +21,7 @@ env:
   # gh CLI infers the repo from the git remote. The gate/revoke/closed jobs do
   # not check out anything, so there is no remote and gh would fail without this.
   GH_REPO: ${{ github.repository }}
-  AWS_REGION: us-east-1
-  ECR_REPOSITORY: design-system-preview
-  IAM_ROLE: arn:aws:iam::<ACCOUNT_ID>:role/gha-previews-ecr-push
+  ECR_REPOSITORY: dev/stellar-design-system
   PREVIEW_HOST: design-system-pr-${{ github.event.pull_request.number }}.preview.stellar.org
 
 # A rapid second push cancels the in-flight build rather than racing it.
@@ -35,6 +33,10 @@ jobs:
   # ---------------------------------------------------------------------------
   # 1. Is the PR author a member of the stellar org?
   #    GITHUB_TOKEN cannot read org membership, so this needs an App token.
+  #    The gate applies to every PR - branch or fork - so an org member's
+  #    fork PR gets a preview while an outside collaborator's does not.
+  #    Safe on fork PRs: this job never checks out or runs fork code, so the
+  #    App token is only ever handled by base-repo workflow steps.
   # ---------------------------------------------------------------------------
   gate:
     if: github.event.action != 'closed'
@@ -81,37 +83,27 @@ jobs:
 
       - uses: docker/setup-buildx-action@v3
 
-      - uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: ${{ env.IAM_ROLE }}
-          aws-region: ${{ env.AWS_REGION }}
-
+      # Handles OIDC auth, role assumption, and ECR login internally.
       - id: ecr
-        uses: aws-actions/amazon-ecr-login@v2
+        uses: stellar/actions/sdf-ecr-login@main
 
       - uses: docker/build-push-action@v6
         with:
           context: .
           push: true
-          tags: ${{ steps.ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:pr-${{ github.event.pull_request.number }}-${{ github.event.pull_request.head.sha }}
+          tags: ${{ steps.ecr.outputs.ecr-registry }}/${{ env.ECR_REPOSITORY }}:pr-${{ github.event.pull_request.number }}-${{ github.event.pull_request.head.sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      # >>> THIS is the step you were looking for. <<<
-      # Applied only after the push succeeds, so the ApplicationSet never
-      # renders an Application whose image does not exist yet.
-      # The `preview` label must already exist in the repo - see setup below.
       - name: Enable preview
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh pr edit "${{ github.event.pull_request.number }}" --add-label preview
 
-      - uses: marocchino/sticky-pull-request-comment@v2
-        with:
-          header: preview
-          number: ${{ github.event.pull_request.number }}
-          message: |
-            PR Preview: https://${{ env.PREVIEW_HOST }}
+      - name: Comment preview URL
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr comment "${{ github.event.pull_request.number }}" --body "PR Preview: https://${{ env.PREVIEW_HOST }}"
 
   # ---------------------------------------------------------------------------
   # 3. Non-member PR: make sure no stale label survives.
@@ -140,8 +132,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh pr edit "${{ github.event.pull_request.number }}" --remove-label preview || true
 
-      - uses: marocchino/sticky-pull-request-comment@v2
-        with:
-          header: preview
-          number: ${{ github.event.pull_request.number }}
-          message: 'PR Preview: torn down'
+      - name: Comment teardown
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr comment "${{ github.event.pull_request.number }}" --body 'PR Preview: torn down'
