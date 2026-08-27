@@ -1,6 +1,4 @@
-# Thin caller for the pr-preview composite action, which does all the work:
-# gate on org membership, build + push the preview image, label the PR for
-# ArgoCD's ApplicationSet, comment the URL, and tear down on close.
+# See https://github.com/stellar/actions/tree/main/sdf-pr-preview
 
 name: pr-preview
 
@@ -9,31 +7,57 @@ on:
     types: [opened, synchronize, reopened, closed]
 
 # pull_request_target runs in base-repo context, so these are real write
-# permissions even for fork PRs. That is the entire reason this event is used:
-# on `pull_request`, fork runs get no OIDC token and a read-only token.
+# permissions even for fork PRs. On `pull_request`, fork runs get no OIDC
+# token and a read-only token.
 permissions:
   contents: read
-  id-token: write        # OIDC -> AWS. Silently ignored on `pull_request` forks.
-  pull-requests: write   # labels + comments
+  id-token: write
+  pull-requests: write
 
-# A rapid second push cancels the in-flight build rather than racing it.
 concurrency:
   group: pr-preview-${{ github.event.pull_request.number }}
   cancel-in-progress: true
+
+env:
+  ECR_REPOSITORY: dev/stellar-design-system
+  PREVIEW_HOST: design-system-pr-${{ github.event.pull_request.number }}.preview.stellar.org
 
 jobs:
   preview:
     runs-on: ubuntu-latest
     steps:
-      # Checks out the BASE ref (the pull_request_target default), never the
-      # PR head - this only exists so the local composite action is on disk.
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-
-      - uses: stellar/actions/sdf-pr-preview@main
+      # Nothing that touches PR code may run before the gate, and every step
+      # after it must be guarded by `member == 'true'`.
+      - id: gate
+        uses: stellar/actions/sdf-pr-preview/gate@main
         with:
           app-id: ${{ vars.PREVIEW_BOT_APP_ID }}
           private-key: ${{ secrets.PREVIEW_BOT_PRIVATE_KEY }}
-          ecr-repository: dev/stellar-design-system
-          preview-host: design-system-pr-${{ github.event.pull_request.number }}.preview.stellar.org
+
+      # PR head SHA, not the default base ref - must match the
+      # ApplicationSet's {{ .head_sha }}.
+      - uses: actions/checkout@v6
+        if: steps.gate.outputs.member == 'true'
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+
+      - id: ecr
+        if: steps.gate.outputs.member == 'true'
+        uses: stellar/actions/sdf-ecr-login@main
+
+      - name: Build and push preview image
+        if: steps.gate.outputs.member == 'true'
+        env:
+          TAG: ${{ steps.ecr.outputs.ecr-registry }}/${{ env.ECR_REPOSITORY }}:${{ steps.gate.outputs.image-tag }}
+        run: |
+          set -eu
+          make docker-build
+          make docker-push
+          echo "IMAGE=${TAG}" >> "$GITHUB_ENV"
+
+      - uses: stellar/actions/sdf-pr-preview/publish@main
+        if: steps.gate.outputs.member == 'true'
+        with:
+          images: ${{ env.IMAGE }}
+          preview-host: ${{ env.PREVIEW_HOST }}
