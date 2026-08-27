@@ -1,0 +1,39 @@
+# Thin caller for the pr-preview composite action, which does all the work:
+# gate on org membership, build + push the preview image, label the PR for
+# ArgoCD's ApplicationSet, comment the URL, and tear down on close.
+
+name: pr-preview
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, closed]
+
+# pull_request_target runs in base-repo context, so these are real write
+# permissions even for fork PRs. That is the entire reason this event is used:
+# on `pull_request`, fork runs get no OIDC token and a read-only token.
+permissions:
+  contents: read
+  id-token: write        # OIDC -> AWS. Silently ignored on `pull_request` forks.
+  pull-requests: write   # labels + comments
+
+# A rapid second push cancels the in-flight build rather than racing it.
+concurrency:
+  group: pr-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks out the BASE ref (the pull_request_target default), never the
+      # PR head - this only exists so the local composite action is on disk.
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: stellar/actions/sdf-pr-preview@main
+        with:
+          app-id: ${{ vars.PREVIEW_BOT_APP_ID }}
+          private-key: ${{ secrets.PREVIEW_BOT_PRIVATE_KEY }}
+          ecr-repository: dev/stellar-design-system
+          preview-host: design-system-pr-${{ github.event.pull_request.number }}.preview.stellar.org
