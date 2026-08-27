@@ -20,7 +20,7 @@ concurrency:
 
 env:
   ECR_REPOSITORY: dev/stellar-design-system
-  PREVIEW_HOST: design-system-pr-${{ github.event.pull_request.number }}.preview.stellar.org
+  PREVIEW_HOST: design-system-pr-${{ github.event.pull_request.number }}.previews.kube001.services.stellar-ops.com
 
 jobs:
   preview:
