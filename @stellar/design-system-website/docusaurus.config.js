@@ -54,6 +54,8 @@ const config = {
           // editUrl:
           //   "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
+        // The site has no blog. Without this, Docusaurus 3.10+ creates an empty /blog page.
+        blog: false,
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
