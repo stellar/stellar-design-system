@@ -1,0 +1,11 @@
+{
+  "workspace": ".",
+  "javascript_sast_enabled": true,
+  "sast_ignore_overrides": "js-express-async-no-error-handler:@stellar/design-system/src/components/Layout/index.tsx,js-unhandled-promise-rejection:@stellar/design-system-website/src/components/AssetPreview/index.tsx,js-unhandled-promise-rejection:@stellar/design-system-website/src/components/PreviewBlock/index.tsx,js-unhandled-promise-rejection:@stellar/design-system-website/src/theme/Playground/index.js,js-unhandled-promise-rejection:@stellar/design-system/src/components/Floater/index.tsx",
+  "secret_scanning_enabled": true,
+  "console_tabular_enabled": true,
+  "dockerfiles": "Dockerfile",
+  "socket_tier_1_enabled": false,
+  "trivy_vuln_enabled": false,
+  "trufflehog_exclude_dir": "node_modules,dist,build,.git,yarn.lock,package-lock.json,pnpm-lock.yaml,Cargo.lock,go.sum,poetry.lock,Gemfile.lock,composer.lock"
+}
